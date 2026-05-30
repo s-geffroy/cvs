@@ -7,6 +7,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Published — Phase 1b en ligne (2026-05-30)
+
+- Dépôt initialisé sur `git@github.com:s-geffroy/cvs.git` (public).
+- GitHub Pages activé avec source = GitHub Actions.
+- Premier déploiement automatique réussi via `.github/workflows/publish.yml`.
+- URL Pages : <https://s-geffroy.github.io/cvs/> — accueil, fiches civilisations, méthodologie, ADM1, sources, schémas servis avec bannière éthique sur chaque page.
+
 ### Added — Phase 1b livrée (2026-05-30)
 
 - `mkdocs.yml` Material avec navigation Phase 1b (Accueil, Méthodologie, Taxonomie, Civilisations ×11, Sources, Schémas, ADM1, Relecture).
