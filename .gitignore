@@ -1,0 +1,34 @@
+# Build artefacts
+dist/
+build_site/
+site/
+outputs/
+.cache/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.eggs/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Virtualenvs (never used — Docker only — but guard anyway)
+.venv/
+venv/
+env/
+
+# OS / IDE
+.DS_Store
+.idea/
+.vscode/
+
+# Local secrets / env
+.env
+.env.*
+!.env.example
+
+# Streamlit
+.streamlit/secrets.toml

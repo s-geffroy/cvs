@@ -1,0 +1,16 @@
+# Sources & bibliographie
+
+!!! warning "Avertissement éthique"
+    {{ ethical_warning_fr }}
+
+## Bibliographie
+
+| ID | Type | Citation | Licence |
+|---|---|---|---|
+{% for entry in bibliography %}
+| `{{ entry.id }}` | {{ entry.type }} | {{ entry.citation }}{% if entry.url %} ([URL]({{ entry.url }})){% endif %} | {{ entry.license or "—" }} |
+{% endfor %}
+
+## SOURCES.md (catalogue complet)
+
+{{ sources_md_content }}

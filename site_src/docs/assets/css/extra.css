@@ -1,0 +1,31 @@
+/* Sticky, non-dismissable ethics banner above the Material header. */
+.cvs-ethics-banner {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: #fff3cd;
+  color: #664d03;
+  border-bottom: 1px solid #ffecb5;
+  padding: 0.55rem 1rem;
+  font-size: 0.85rem;
+  text-align: center;
+  line-height: 1.4;
+}
+
+[data-md-color-scheme="slate"] .cvs-ethics-banner {
+  background: #3e3a1f;
+  color: #ffe69c;
+  border-bottom: 1px solid #5a531f;
+}
+
+/* "In review" badge for Phase 1b pages */
+.cvs-review-badge {
+  display: inline-block;
+  padding: 0.15rem 0.5rem;
+  background: #ff8c00;
+  color: white;
+  border-radius: 0.3rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  vertical-align: middle;
+}

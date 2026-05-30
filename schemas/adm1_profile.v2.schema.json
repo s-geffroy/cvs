@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "adm1_profile.v2.schema.json",
+  "title": "ADM1 Profile v2 — Prepared, Not Active in V1",
+  "description": "Extends the v1 prepared schema with B_vec slots so future activation only requires populating x_viz and x_score.",
+  "type": "object",
+  "required": ["unit_type", "unit_id", "activation_status"],
+  "properties": {
+    "unit_type": { "const": "adm1" },
+    "unit_id": { "type": "string" },
+    "parent_iso3": { "type": "string", "minLength": 3, "maxLength": 3 },
+    "activation_status": { "const": "prepared_not_active" },
+    "future_required_fields": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "x_viz": {
+      "type": ["array", "null"],
+      "minItems": 2,
+      "maxItems": 2
+    },
+    "x_score": {
+      "type": ["array", "null"],
+      "minItems": 6,
+      "maxItems": 6
+    }
+  },
+  "additionalProperties": false
+}

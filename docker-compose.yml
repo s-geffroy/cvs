@@ -1,0 +1,46 @@
+services:
+  civvec_ui:
+    build:
+      context: .
+      dockerfile: Dockerfile.ui
+    container_name: civvec_ui
+    ports:
+      - "8501:8501"
+    volumes:
+      - ./taxonomies:/app/taxonomies
+      - ./packages/civvec_core/basis:/app/packages/civvec_core/basis
+      - ./data_sources:/app/data_sources:ro
+      - ./docs:/app/docs:ro
+      - ./schemas:/app/schemas:ro
+      - ./outputs:/app/outputs
+    environment:
+      - PYTHONPATH=/app
+      - CIVVEC_ENV=local
+
+  civvec_site:
+    build:
+      context: .
+      dockerfile: Dockerfile.site
+      target: builder
+    container_name: civvec_site
+    volumes:
+      - ./dist:/app/dist
+      - ./taxonomies:/app/taxonomies
+      - ./packages/civvec_core/basis:/app/packages/civvec_core/basis
+      - ./data_sources:/app/data_sources:ro
+      - ./docs:/app/docs:ro
+      - ./schemas:/app/schemas:ro
+      - ./site_src:/app/site_src
+    environment:
+      - PYTHONPATH=/app
+
+  civvec_site_preview:
+    image: nginx:alpine
+    container_name: civvec_site_preview
+    ports:
+      - "8080:80"
+    volumes:
+      - ./dist:/usr/share/nginx/html:ro
+    depends_on:
+      civvec_site:
+        condition: service_completed_successfully

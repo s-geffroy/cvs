@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "distance_matrix.schema.json",
+  "title": "State-State Distance Matrix",
+  "description": "Precomputed pairwise civilizational distances over multiple metrics.",
+  "type": "object",
+  "required": ["metric", "labels", "matrix"],
+  "properties": {
+    "metric": {
+      "type": "string",
+      "enum": [
+        "d_viz",
+        "d_score_euclidean",
+        "d_score_mahalanobis",
+        "d_w_cosine",
+        "d_w_js",
+        "d_w_wasserstein",
+        "d_T_frobenius",
+        "d_hybrid"
+      ]
+    },
+    "labels": {
+      "type": "array",
+      "items": { "type": "string", "minLength": 3, "maxLength": 3 }
+    },
+    "matrix": {
+      "type": "array",
+      "items": {
+        "type": "array",
+        "items": { "type": "number", "minimum": 0 }
+      }
+    },
+    "hybrid_weights": {
+      "type": "object",
+      "properties": {
+        "alpha": { "type": "number", "minimum": 0, "maximum": 1 },
+        "beta": { "type": "number", "minimum": 0, "maximum": 1 },
+        "gamma": { "type": "number", "minimum": 0, "maximum": 1 }
+      }
+    }
+  }
+}

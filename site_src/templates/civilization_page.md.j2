@@ -1,0 +1,84 @@
+# {{ civ.label }} (`{{ civ.id }}`)
+
+!!! warning "Avertissement éthique"
+    {{ ethical_warning_fr }}
+
+**Statut** : {{ "extension Huntington" if civ.extension_to_huntington else "civilisation canonique Huntington" }} ·
+**Couverture archétypes** : {{ "faible (low_archetype_coverage)" if civ.low_archetype_coverage else "complète" }}
+
+## Synthèse
+
+{{ civ.short_description }}
+
+## Description longue
+
+{{ civ.long_description }}
+
+## Cartographie académique
+
+| Repère | Valeur |
+|---|---|
+| Étiquette Huntington | `{{ civ.huntington_label or "—" }}` |
+| Clusters Inglehart-Welzel | {{ civ.iw_clusters | join(", ") if civ.iw_clusters else "—" }} |
+| Quadrant IW | `{{ civ.iw_quadrant or "—" }}` |
+| Hofstede archétypes | {{ civ.hofstede_archetype_states | join(", ") }} |
+
+{% if civ.hofstede_typical_range %}
+### Plages Hofstede typiques
+
+| Dimension | Min | Max |
+|---|---|---|
+{% for dim, rng in civ.hofstede_typical_range.items() %}
+| {{ dim | upper }} | {{ rng[0] }} | {{ rng[1] }} |
+{% endfor %}
+{% endif %}
+
+{% if civ.mu_viz and civ.mu_score %}
+## Coordonnées B_vec (centroïdes)
+
+- **`μ_viz`** (Inglehart-Welzel : TS, SE) = `[{{ "%.2f" | format(civ.mu_viz[0]) }}, {{ "%.2f" | format(civ.mu_viz[1]) }}]`
+- **`μ_score`** (Hofstede PDI, IDV, MAS, UAI, LTO, IVR) =
+  `[{{ civ.mu_score | map("round", 1) | join(", ") }}]`
+{% endif %}
+
+## États membres
+
+| ISO3 | Rôle | Rationale | Citations |
+|---|---|---|---|
+{% for member in civ.member_states %}
+| `{{ member.iso3 }}` | {{ member.role }} | {{ member.rationale }} | {{ member.citation_ids | join(", ") }} |
+{% endfor %}
+
+{% if civ.sub_clusters %}
+## Sous-clusters
+
+{% for cluster in civ.sub_clusters %}
+- **{{ cluster.label }}** (`{{ cluster.id }}`) — {{ cluster.states | join(", ") }}
+{% endfor %}
+{% endif %}
+
+{% if civ.ambiguous_cases %}
+## Cas ambigus / controverses documentées
+
+{% for case in civ.ambiguous_cases %}
+### `{{ case.iso3 }}`
+
+- **Civilisations en concurrence** : {{ case.civilizations_competing | join(", ") }}
+- **Discussion** : {{ case.discussion }}
+- **Citations** : {{ case.citation_ids | join(", ") }}
+{% endfor %}
+{% endif %}
+
+## Citations
+
+{% for citation_id in civ.citation_ids %}
+{% if citation_id in biblio_index %}
+- **[{{ citation_id }}]** {{ biblio_index[citation_id].citation }}{% if biblio_index[citation_id].url %} — [URL]({{ biblio_index[citation_id].url }}){% endif %}
+{% else %}
+- **[{{ citation_id }}]** *(citation orpheline — à corriger)*
+{% endif %}
+{% endfor %}
+
+---
+
+[Retour à la taxonomie](../index.md) · [Méthodologie B_doc](../../methodology/08_civilizational_basis.md) · [Algèbre des distances](../../methodology/10_distance_algebra.md)

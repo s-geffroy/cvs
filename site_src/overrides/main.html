@@ -1,0 +1,12 @@
+{#-
+  Sticky, non-dismissable ethics banner on every page.
+  We extend Material's base.html via `main.html` and inject content into the
+  `announce` block (rendered above the header on every page).
+-#}
+{% extends "base.html" %}
+
+{% block announce %}
+  <strong>⚠️ Avertissement éthique</strong> —
+  Ce profil est inféré à partir de sources publiques agrégées.
+  Il ne doit pas être utilisé pour classer des individus réels.
+{% endblock %}

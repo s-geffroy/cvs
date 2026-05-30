@@ -1,0 +1,65 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "basis.schema.json",
+  "title": "Vector Basis Definition",
+  "description": "Formal definition of a vector basis (B_viz or B_score) for the civilizational state space.",
+  "type": "object",
+  "required": ["id", "version", "dimensions", "axes", "domain", "sources"],
+  "properties": {
+    "id": {
+      "type": "string",
+      "enum": ["B_viz", "B_score"]
+    },
+    "version": {
+      "type": "string",
+      "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"
+    },
+    "label": {
+      "type": "string"
+    },
+    "dimensions": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "axes": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["id", "label", "source", "domain"],
+        "properties": {
+          "id": { "type": "string" },
+          "label": { "type": "string" },
+          "source": { "type": "string" },
+          "domain": {
+            "type": "array",
+            "minItems": 2,
+            "maxItems": 2,
+            "items": { "type": "number" }
+          },
+          "interpretation_low": { "type": "string" },
+          "interpretation_high": { "type": "string" }
+        }
+      }
+    },
+    "orthogonality": {
+      "type": "string",
+      "enum": ["empirical_orthogonal_by_construction", "assumed_orthogonal", "non_orthogonal"]
+    },
+    "domain": {
+      "type": "array",
+      "items": {
+        "type": "array",
+        "minItems": 2,
+        "maxItems": 2,
+        "items": { "type": "number" }
+      }
+    },
+    "sources": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "type": "string" }
+    }
+  },
+  "additionalProperties": false
+}

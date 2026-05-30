@@ -1,0 +1,85 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "state_profile.v2.schema.json",
+  "title": "State Profile v2 (with B_vec coordinates and tension tensor)",
+  "type": "object",
+  "required": [
+    "unit_type",
+    "unit_id",
+    "generation_mode",
+    "adm1_status",
+    "x_viz",
+    "x_score",
+    "affinity_vector",
+    "tension_tensor",
+    "publication_warning",
+    "evidence_trace",
+    "data_quality"
+  ],
+  "properties": {
+    "unit_type": { "const": "state" },
+    "unit_id": { "type": "string" },
+    "iso3": { "type": "string", "minLength": 3, "maxLength": 3 },
+    "iso2": { "type": "string", "minLength": 2, "maxLength": 2 },
+    "generation_mode": { "const": "source_only" },
+    "adm1_status": { "const": "prepared_not_active" },
+    "x_viz": {
+      "type": "array",
+      "minItems": 2,
+      "maxItems": 2,
+      "items": { "type": ["number", "null"] }
+    },
+    "x_score": {
+      "type": "array",
+      "minItems": 6,
+      "maxItems": 6,
+      "items": { "type": ["number", "null"] }
+    },
+    "affinity_vector": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "number",
+        "minimum": 0,
+        "maximum": 1
+      }
+    },
+    "tension_tensor": {
+      "type": "object",
+      "required": ["matrix", "eigenvalues", "anisotropy"],
+      "properties": {
+        "matrix": {
+          "type": "array",
+          "minItems": 6,
+          "maxItems": 6,
+          "items": {
+            "type": "array",
+            "minItems": 6,
+            "maxItems": 6,
+            "items": { "type": "number" }
+          }
+        },
+        "eigenvalues": {
+          "type": "array",
+          "minItems": 6,
+          "maxItems": 6,
+          "items": { "type": "number" }
+        },
+        "invariants": {
+          "type": "object",
+          "properties": {
+            "I1": { "type": "number" },
+            "I2": { "type": "number" },
+            "det": { "type": "number" }
+          }
+        },
+        "anisotropy": { "type": "number", "minimum": 0, "maximum": 1 }
+      }
+    },
+    "data_quality": { "type": "object" },
+    "publication_warning": { "type": "string" },
+    "evidence_trace": {
+      "type": "array",
+      "items": { "type": "string" }
+    }
+  }
+}

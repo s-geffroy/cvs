@@ -1,0 +1,66 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "civilization_centroid.schema.json",
+  "title": "Civilization Centroid",
+  "description": "Barycentre of a macro-civilization in B_viz (2D) and B_score (6D), with covariance/variance and member states.",
+  "type": "object",
+  "required": ["civilization_id", "mu_viz", "sigma_viz", "mu_score", "sigma_score", "member_states", "low_archetype_coverage"],
+  "properties": {
+    "civilization_id": { "type": "string" },
+    "mu_viz": {
+      "type": "array",
+      "description": "Mean position in B_viz = R^2 (Inglehart-Welzel: TS, SE).",
+      "minItems": 2,
+      "maxItems": 2,
+      "items": { "type": "number" }
+    },
+    "sigma_viz": {
+      "type": "array",
+      "description": "2x2 covariance matrix in B_viz.",
+      "minItems": 2,
+      "maxItems": 2,
+      "items": {
+        "type": "array",
+        "minItems": 2,
+        "maxItems": 2,
+        "items": { "type": "number" }
+      }
+    },
+    "mu_score": {
+      "type": "array",
+      "description": "Mean position in B_score = R^6 (Hofstede: PDI, IDV, MAS, UAI, LTO, IVR).",
+      "minItems": 6,
+      "maxItems": 6,
+      "items": { "type": "number", "minimum": 0, "maximum": 100 }
+    },
+    "sigma_score": {
+      "type": "array",
+      "description": "Per-axis standard deviation (length 6).",
+      "minItems": 6,
+      "maxItems": 6,
+      "items": { "type": "number", "minimum": 0 }
+    },
+    "member_states": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["iso3", "weight"],
+        "properties": {
+          "iso3": { "type": "string", "minLength": 3, "maxLength": 3 },
+          "weight": { "type": "number", "minimum": 0, "maximum": 1 },
+          "role": { "type": "string", "enum": ["core", "periphery", "ambiguous", "interface"] }
+        }
+      }
+    },
+    "low_archetype_coverage": { "type": "boolean" },
+    "computed_from_n_states": { "type": "integer", "minimum": 0 },
+    "evidence_basis": {
+      "type": "object",
+      "properties": {
+        "iw_states_used": { "type": "integer", "minimum": 0 },
+        "hofstede_states_used": { "type": "integer", "minimum": 0 }
+      }
+    }
+  },
+  "additionalProperties": false
+}

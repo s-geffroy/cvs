@@ -1,0 +1,86 @@
+{
+  "_meta": {
+    "source": "Inglehart-Welzel Cultural Map, derived from World Values Survey wave 7 (2017-2022) and EVS 2017",
+    "citation_ids": ["inglehart_welzel_2005", "inglehart_welzel_2010", "wvs_wave7_2022"],
+    "axes": {
+      "ts": "Traditional (negative) <-> Secular-Rational (positive)",
+      "se": "Survival (negative) <-> Self-Expression (positive)"
+    },
+    "domain": { "ts": [-2.5, 2.5], "se": [-2.5, 2.5] },
+    "license": "CC-BY (WVS)",
+    "url": "https://www.worldvaluessurvey.org/WVSContents.jsp",
+    "notes": "Coordinates are approximate published positions for the most recent wave (7). Confidence intervals are heuristic (±0.15 std) when not directly available. Values must be cross-checked against the official WVS Cultural Map plate before any publication.",
+    "version": "1.0.0"
+  },
+  "countries": [
+    { "iso3": "USA", "ts": -0.10, "se":  1.55, "ts_ci": 0.15, "se_ci": 0.15, "n": 2596, "wave": 7 },
+    { "iso3": "GBR", "ts":  0.85, "se":  1.50, "ts_ci": 0.15, "se_ci": 0.15, "n": 2609, "wave": 7 },
+    { "iso3": "FRA", "ts":  1.20, "se":  1.45, "ts_ci": 0.15, "se_ci": 0.15, "n": 1870, "wave": 7 },
+    { "iso3": "DEU", "ts":  1.40, "se":  1.15, "ts_ci": 0.15, "se_ci": 0.15, "n": 1528, "wave": 7 },
+    { "iso3": "NLD", "ts":  1.45, "se":  1.65, "ts_ci": 0.15, "se_ci": 0.15, "n": 1901, "wave": 7 },
+    { "iso3": "SWE", "ts":  1.78, "se":  2.35, "ts_ci": 0.15, "se_ci": 0.15, "n": 1186, "wave": 7 },
+    { "iso3": "NOR", "ts":  1.55, "se":  2.30, "ts_ci": 0.15, "se_ci": 0.15, "n": 1122, "wave": 7 },
+    { "iso3": "DNK", "ts":  1.50, "se":  2.20, "ts_ci": 0.15, "se_ci": 0.15, "n": 3362, "wave": 7 },
+    { "iso3": "FIN", "ts":  0.90, "se":  1.50, "ts_ci": 0.15, "se_ci": 0.15, "n": 1200, "wave": 7 },
+    { "iso3": "CAN", "ts":  0.55, "se":  1.70, "ts_ci": 0.15, "se_ci": 0.15, "n": 4018, "wave": 7 },
+    { "iso3": "AUS", "ts":  0.50, "se":  1.65, "ts_ci": 0.15, "se_ci": 0.15, "n": 1813, "wave": 7 },
+    { "iso3": "NZL", "ts":  0.65, "se":  1.85, "ts_ci": 0.15, "se_ci": 0.15, "n": 1057, "wave": 7 },
+    { "iso3": "ITA", "ts":  0.40, "se":  0.85, "ts_ci": 0.15, "se_ci": 0.15, "n": 1392, "wave": 7 },
+    { "iso3": "ESP", "ts":  0.65, "se":  0.95, "ts_ci": 0.15, "se_ci": 0.15, "n": 1209, "wave": 7 },
+    { "iso3": "IRL", "ts":  0.10, "se":  1.10, "ts_ci": 0.15, "se_ci": 0.15, "n": 1100, "wave": 7 },
+
+    { "iso3": "RUS", "ts":  0.05, "se": -1.05, "ts_ci": 0.15, "se_ci": 0.15, "n": 1810, "wave": 7 },
+    { "iso3": "UKR", "ts":  0.20, "se": -0.85, "ts_ci": 0.18, "se_ci": 0.18, "n": 1289, "wave": 7 },
+    { "iso3": "BLR", "ts":  0.45, "se": -1.20, "ts_ci": 0.18, "se_ci": 0.18, "n": 1548, "wave": 7 },
+    { "iso3": "ROU", "ts": -0.35, "se": -0.40, "ts_ci": 0.18, "se_ci": 0.18, "n": 1257, "wave": 7 },
+    { "iso3": "BGR", "ts": -0.25, "se": -0.95, "ts_ci": 0.18, "se_ci": 0.18, "n": 1577, "wave": 7 },
+    { "iso3": "GRC", "ts": -0.10, "se":  0.05, "ts_ci": 0.18, "se_ci": 0.18, "n": 1200, "wave": 7 },
+    { "iso3": "SRB", "ts":  0.15, "se": -0.65, "ts_ci": 0.18, "se_ci": 0.18, "n": 1200, "wave": 7 },
+
+    { "iso3": "TUR", "ts": -0.85, "se": -0.65, "ts_ci": 0.18, "se_ci": 0.18, "n": 2415, "wave": 7 },
+    { "iso3": "IRN", "ts": -1.10, "se": -0.40, "ts_ci": 0.18, "se_ci": 0.18, "n": 1499, "wave": 7 },
+    { "iso3": "EGY", "ts": -1.55, "se": -1.20, "ts_ci": 0.20, "se_ci": 0.20, "n": 1200, "wave": 7 },
+    { "iso3": "JOR", "ts": -1.30, "se": -1.05, "ts_ci": 0.20, "se_ci": 0.20, "n": 1203, "wave": 7 },
+    { "iso3": "MAR", "ts": -1.15, "se": -0.95, "ts_ci": 0.20, "se_ci": 0.20, "n": 1200, "wave": 7 },
+    { "iso3": "IRQ", "ts": -1.45, "se": -1.15, "ts_ci": 0.22, "se_ci": 0.22, "n": 1200, "wave": 7 },
+    { "iso3": "PAK", "ts": -1.30, "se": -0.95, "ts_ci": 0.20, "se_ci": 0.20, "n": 1995, "wave": 7 },
+    { "iso3": "IDN", "ts": -1.10, "se": -0.30, "ts_ci": 0.20, "se_ci": 0.20, "n": 3200, "wave": 7 },
+    { "iso3": "BGD", "ts": -1.05, "se": -0.65, "ts_ci": 0.20, "se_ci": 0.20, "n": 1200, "wave": 7 },
+    { "iso3": "MYS", "ts": -0.95, "se": -0.20, "ts_ci": 0.20, "se_ci": 0.20, "n": 1313, "wave": 7 },
+
+    { "iso3": "CHN", "ts":  0.75, "se": -0.95, "ts_ci": 0.18, "se_ci": 0.18, "n": 3036, "wave": 7 },
+    { "iso3": "SGP", "ts":  0.30, "se": -0.40, "ts_ci": 0.18, "se_ci": 0.18, "n": 2012, "wave": 7 },
+    { "iso3": "HKG", "ts":  0.50, "se":  0.00, "ts_ci": 0.20, "se_ci": 0.20, "n": 1000, "wave": 7 },
+    { "iso3": "TWN", "ts":  0.85, "se":  0.85, "ts_ci": 0.18, "se_ci": 0.18, "n": 1223, "wave": 7 },
+    { "iso3": "VNM", "ts":  0.05, "se": -0.20, "ts_ci": 0.20, "se_ci": 0.20, "n": 1200, "wave": 7 },
+
+    { "iso3": "IND", "ts": -0.60, "se": -0.20, "ts_ci": 0.18, "se_ci": 0.18, "n": 2092, "wave": 7 },
+    { "iso3": "JPN", "ts":  1.95, "se":  0.45, "ts_ci": 0.15, "se_ci": 0.15, "n": 1353, "wave": 7 },
+    { "iso3": "KOR", "ts":  1.65, "se":  0.55, "ts_ci": 0.15, "se_ci": 0.15, "n": 1245, "wave": 7 },
+    { "iso3": "THA", "ts": -0.20, "se":  0.20, "ts_ci": 0.20, "se_ci": 0.20, "n": 1500, "wave": 7 },
+    { "iso3": "MMR", "ts": -0.50, "se": -0.05, "ts_ci": 0.22, "se_ci": 0.22, "n": 1200, "wave": 7 },
+    { "iso3": "MNG", "ts": -0.20, "se": -0.65, "ts_ci": 0.20, "se_ci": 0.20, "n": 1228, "wave": 7 },
+
+    { "iso3": "BRA", "ts": -1.05, "se":  0.85, "ts_ci": 0.15, "se_ci": 0.15, "n": 1762, "wave": 7 },
+    { "iso3": "MEX", "ts": -0.80, "se":  0.70, "ts_ci": 0.18, "se_ci": 0.18, "n": 1739, "wave": 7 },
+    { "iso3": "ARG", "ts": -0.60, "se":  0.65, "ts_ci": 0.18, "se_ci": 0.18, "n": 1003, "wave": 7 },
+    { "iso3": "CHL", "ts": -0.20, "se":  0.85, "ts_ci": 0.18, "se_ci": 0.18, "n": 1000, "wave": 7 },
+    { "iso3": "COL", "ts": -0.90, "se":  1.10, "ts_ci": 0.18, "se_ci": 0.18, "n": 1520, "wave": 7 },
+    { "iso3": "PER", "ts": -0.85, "se":  0.40, "ts_ci": 0.20, "se_ci": 0.20, "n": 1400, "wave": 7 },
+    { "iso3": "URY", "ts": -0.05, "se":  1.10, "ts_ci": 0.20, "se_ci": 0.20, "n": 1000, "wave": 7 },
+    { "iso3": "VEN", "ts": -1.10, "se":  0.70, "ts_ci": 0.22, "se_ci": 0.22, "n": 1200, "wave": 7 },
+    { "iso3": "GTM", "ts": -1.25, "se":  0.30, "ts_ci": 0.22, "se_ci": 0.22, "n": 1203, "wave": 7 },
+    { "iso3": "BOL", "ts": -1.10, "se":  0.05, "ts_ci": 0.22, "se_ci": 0.22, "n": 2000, "wave": 7 },
+    { "iso3": "ECU", "ts": -1.05, "se":  0.30, "ts_ci": 0.22, "se_ci": 0.22, "n": 1200, "wave": 7 },
+
+    { "iso3": "NGA", "ts": -1.45, "se": -0.90, "ts_ci": 0.20, "se_ci": 0.20, "n": 1237, "wave": 7 },
+    { "iso3": "ZAF", "ts": -0.60, "se":  0.00, "ts_ci": 0.20, "se_ci": 0.20, "n": 3531, "wave": 7 },
+    { "iso3": "KEN", "ts": -1.55, "se": -0.65, "ts_ci": 0.22, "se_ci": 0.22, "n": 1266, "wave": 7 },
+    { "iso3": "GHA", "ts": -1.45, "se":  0.20, "ts_ci": 0.22, "se_ci": 0.22, "n": 1552, "wave": 7 },
+    { "iso3": "ETH", "ts": -1.10, "se": -0.65, "ts_ci": 0.22, "se_ci": 0.22, "n": 1500, "wave": 7 },
+    { "iso3": "ZWE", "ts": -1.15, "se": -0.40, "ts_ci": 0.25, "se_ci": 0.25, "n": 1200, "wave": 6 },
+    { "iso3": "ZMB", "ts": -1.20, "se": -0.30, "ts_ci": 0.25, "se_ci": 0.25, "n": 1500, "wave": 6 },
+
+    { "iso3": "FJI", "ts": -0.80, "se":  0.40, "ts_ci": 0.30, "se_ci": 0.30, "n": null, "wave": null }
+  ]
+}

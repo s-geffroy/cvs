@@ -1,0 +1,66 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "state_coordinates.schema.json",
+  "title": "State Coordinates in B_vec",
+  "description": "Coordinates of a sovereign state in B_viz (2D) and B_score (6D), with confidence intervals and source provenance.",
+  "type": "object",
+  "required": ["iso3", "x_viz", "x_score", "affinity_vector", "data_quality"],
+  "properties": {
+    "iso3": { "type": "string", "minLength": 3, "maxLength": 3 },
+    "iso2": { "type": "string", "minLength": 2, "maxLength": 2 },
+    "label": { "type": "string" },
+    "x_viz": {
+      "type": "array",
+      "minItems": 2,
+      "maxItems": 2,
+      "items": { "type": ["number", "null"] }
+    },
+    "x_viz_ellipse": {
+      "type": "object",
+      "properties": {
+        "sigma": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 2,
+          "items": {
+            "type": "array",
+            "minItems": 2,
+            "maxItems": 2,
+            "items": { "type": "number" }
+          }
+        },
+        "confidence_level": { "type": "number", "minimum": 0, "maximum": 1 }
+      }
+    },
+    "x_score": {
+      "type": "array",
+      "minItems": 6,
+      "maxItems": 6,
+      "items": { "type": ["number", "null"] }
+    },
+    "affinity_vector": {
+      "type": "object",
+      "description": "Derived simplex weights over the 11 macro-civilizations (softmax inverse-distance in B_score).",
+      "additionalProperties": {
+        "type": "number",
+        "minimum": 0,
+        "maximum": 1
+      }
+    },
+    "data_quality": {
+      "type": "object",
+      "required": ["iw_coverage", "hofstede_coverage", "low_evidence"],
+      "properties": {
+        "iw_coverage": { "type": "string", "enum": ["present", "imputed", "missing"] },
+        "hofstede_coverage": { "type": "string", "enum": ["present", "imputed", "missing"] },
+        "low_evidence": { "type": "boolean" },
+        "notes": { "type": "string" }
+      }
+    },
+    "source_refs": {
+      "type": "array",
+      "items": { "type": "string" }
+    }
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,29 @@
+FROM python:3.11-slim
+
+ENV PYTHONDONTWRITEBYTECODE=1 \
+    PYTHONUNBUFFERED=1 \
+    PIP_NO_CACHE_DIR=1
+
+WORKDIR /app
+
+RUN apt-get update \
+    && apt-get install -y --no-install-recommends build-essential \
+    && rm -rf /var/lib/apt/lists/*
+
+COPY pyproject.toml README.md /app/
+COPY apps /app/apps
+COPY packages /app/packages
+COPY schemas /app/schemas
+COPY taxonomies /app/taxonomies
+COPY data_sources /app/data_sources
+COPY docs /app/docs
+COPY tests /app/tests
+
+RUN pip install --upgrade pip \
+    && pip install -e ".[ui,dev]"
+
+ENV PYTHONPATH=/app
+
+EXPOSE 8501
+
+CMD ["bash", "-lc", "civvec basis build && civvec ui --host 0.0.0.0 --port 8501"]

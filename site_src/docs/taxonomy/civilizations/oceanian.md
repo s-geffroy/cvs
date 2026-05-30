@@ -1,0 +1,98 @@
+# Oceanian (`oceanian`)
+
+!!! warning "Avertissement éthique"
+    Ce profil est inféré à partir de sources publiques agrégées. Il ne doit pas être utilisé pour classer des individus réels.
+
+**Statut** : extension Huntington ·
+**Couverture archétypes** : faible (low_archetype_coverage)
+
+## Synthèse
+
+Civilisation pacifique articulée par Hau'ofa (1994) comme 'Sea of Islands' — identité polynésienne, mélanésienne, micronésienne distincte de la classification Western.
+
+## Description longue
+
+Extension de Huntington. États-membres: Nouvelle-Zélande (ambiguë Western/Oceanian), Australie (composante aborigène faible numériquement), Fidji, États insulaires (PNG, Samoa, Tonga, Vanuatu — données absentes). IW: TS+ pour NZL/AUS, mais SE+ avec composante communautaire pacifique. Drapeau low_archetype_coverage par manque de données Hofstede.
+
+## Cartographie académique
+
+| Repère | Valeur |
+|---|---|
+| Étiquette Huntington | `—` |
+| Clusters Inglehart-Welzel | — |
+| Quadrant IW | `TS+ / SE+` |
+| Hofstede archétypes | NZL, FJI |
+
+
+### Plages Hofstede typiques
+
+| Dimension | Min | Max |
+|---|---|---|
+
+| PDI | 22 | 78 |
+
+| IDV | 14 | 79 |
+
+| MAS | 46 | 58 |
+
+| UAI | 48 | 49 |
+
+
+
+
+## Coordonnées B_vec (centroïdes)
+
+- **`μ_viz`** (Inglehart-Welzel : TS, SE) = `[-0.08, 1.12]`
+- **`μ_score`** (Hofstede PDI, IDV, MAS, UAI, LTO, IVR) =
+  `[50.0, 46.5, 52.0, 48.5, 39.8, 60.8]`
+
+
+## États membres
+
+| ISO3 | Rôle | Rationale | Citations |
+|---|---|---|---|
+
+| `NZL` | core | Nouvelle-Zélande, identité bi-culturelle Pakeha/Maori, partenariat Te Tiriti | hauofa_1994 |
+
+| `FJI` | core | Fidji, mélanésien | hauofa_1994 |
+
+| `AUS` | interface | Australie: cluster Western dominant, composante aborigène minoritaire mais reconnue (Uluru Statement 2017) | hauofa_1994 |
+
+
+
+## Sous-clusters
+
+
+- **Polynésie** (`polynesia`) — NZL
+
+- **Mélanésie** (`melanesia`) — FJI
+
+
+
+
+## Cas ambigus / controverses documentées
+
+
+### `NZL`
+
+- **Civilisations en concurrence** : western, oceanian
+- **Discussion** : Nouvelle-Zélande: Anglo-celtique majoritaire, mais Te Tiriti o Waitangi (1840) consacre un partenariat avec les Maoris.
+- **Citations** : huntington_1996, hauofa_1994
+
+
+
+## Citations
+
+
+
+- **[hauofa_1994]** Hau'ofa, E. (1994). Our Sea of Islands. The Contemporary Pacific, 6(1), 147-161.
+
+
+
+- **[huntington_1996]** Huntington, S. P. (1996). The Clash of Civilizations and the Remaking of World Order. Simon & Schuster.
+
+
+
+---
+
+[Retour à la taxonomie](../index.md) · [Méthodologie B_doc](../../methodology/08_civilizational_basis.md) · [Algèbre des distances](../../methodology/10_distance_algebra.md)

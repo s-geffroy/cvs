@@ -1,0 +1,13 @@
+# Schémas JSON v2
+
+!!! warning "Avertissement éthique"
+    {{ ethical_warning_fr }}
+
+Tous les schémas sont publiés au format **JSON Schema draft 2020-12**.
+Téléchargeables directement depuis cette page (servis statiquement par GitHub Pages).
+
+| Schéma | Description | Téléchargement |
+|---|---|---|
+{% for schema in schemas %}
+| `{{ schema.name }}` | {{ schema.title }} | [`{{ schema.name }}`]({{ schema.relative_url }}) |
+{% endfor %}

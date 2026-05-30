@@ -1,0 +1,38 @@
+# Multi-stage Dockerfile for the static GitHub Pages site (Phase 1b / Phase 2).
+# Stage 1 builds the site into /app/dist; stage 2 ships a thin nginx-able payload.
+
+FROM python:3.11-slim AS builder
+
+ENV PYTHONDONTWRITEBYTECODE=1 \
+    PYTHONUNBUFFERED=1 \
+    PIP_NO_CACHE_DIR=1
+
+WORKDIR /app
+
+RUN apt-get update \
+    && apt-get install -y --no-install-recommends build-essential \
+    && rm -rf /var/lib/apt/lists/*
+
+COPY pyproject.toml README.md /app/
+COPY apps /app/apps
+COPY packages /app/packages
+COPY schemas /app/schemas
+COPY taxonomies /app/taxonomies
+COPY data_sources /app/data_sources
+COPY docs /app/docs
+COPY site_src /app/site_src
+COPY mkdocs.yml /app/mkdocs.yml
+COPY tests /app/tests
+
+RUN pip install --upgrade pip \
+    && pip install -e ".[basis,site,dev]"
+
+ENV PYTHONPATH=/app
+
+CMD ["bash", "-lc", "civvec basis build && civvec site build --strict"]
+
+
+FROM nginx:alpine AS preview
+
+COPY --from=builder /app/dist /usr/share/nginx/html
+EXPOSE 80

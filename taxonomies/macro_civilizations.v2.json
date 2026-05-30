@@ -1,0 +1,2196 @@
+{
+  "version": "2.0.0-state-first-adm1-ready-two-bases",
+  "applicable_unit_types": [
+    "state",
+    "adm1"
+  ],
+  "policy": {
+    "raw_vector_is_source_of_truth": true,
+    "normalized_vector_visualization_only": true,
+    "adm1_subdivision_required_later": true,
+    "two_bases_coupled": true
+  },
+  "bibliography": [
+    {
+      "id": "huntington_1996",
+      "type": "book",
+      "citation": "Huntington, S. P. (1996). The Clash of Civilizations and the Remaking of World Order. Simon & Schuster.",
+      "url": null,
+      "license": "Copyright — academic citation only"
+    },
+    {
+      "id": "inglehart_welzel_2005",
+      "type": "book",
+      "citation": "Inglehart, R., & Welzel, C. (2005). Modernization, Cultural Change, and Democracy. Cambridge University Press.",
+      "url": null,
+      "license": "Copyright — academic citation only"
+    },
+    {
+      "id": "inglehart_welzel_2010",
+      "type": "article",
+      "citation": "Inglehart, R., & Welzel, C. (2010). Changing Mass Priorities: The Link Between Modernization and Democracy. Perspectives on Politics, 8(2), 551-567.",
+      "url": "https://www.cambridge.org/core/journals/perspectives-on-politics",
+      "license": "Subscription"
+    },
+    {
+      "id": "hofstede_2010",
+      "type": "book",
+      "citation": "Hofstede, G., Hofstede, G. J., & Minkov, M. (2010). Cultures and Organizations: Software of the Mind (3rd ed.). McGraw-Hill.",
+      "url": "https://www.hofstede-insights.com/country-comparison-tool",
+      "license": "Scientific use"
+    },
+    {
+      "id": "wvs_wave7_2022",
+      "type": "dataset",
+      "citation": "Haerpfer, C., Inglehart, R., Moreno, A., Welzel, C., et al. (2022). World Values Survey: Round Seven — Country-Pooled Datafile v5.0. JD Systems Institute & WVSA Secretariat. doi:10.14281/18241.20",
+      "url": "https://www.worldvaluessurvey.org/WVSContents.jsp",
+      "license": "CC-BY"
+    },
+    {
+      "id": "smith_2012",
+      "type": "book",
+      "citation": "Smith, L. T. (2012). Decolonizing Methodologies: Research and Indigenous Peoples (2nd ed.). Zed Books.",
+      "url": null,
+      "license": "Copyright — academic citation only"
+    },
+    {
+      "id": "un_unpfii",
+      "type": "report",
+      "citation": "United Nations Permanent Forum on Indigenous Issues.",
+      "url": "https://www.un.org/development/desa/indigenouspeoples/",
+      "license": "Public"
+    },
+    {
+      "id": "hauofa_1994",
+      "type": "article",
+      "citation": "Hau'ofa, E. (1994). Our Sea of Islands. The Contemporary Pacific, 6(1), 147-161.",
+      "url": null,
+      "license": "Copyright — academic citation only"
+    },
+    {
+      "id": "sen_2006",
+      "type": "book",
+      "citation": "Sen, A. (2006). Identity and Violence: The Illusion of Destiny. W. W. Norton.",
+      "url": null,
+      "license": "Copyright — academic citation only"
+    }
+  ],
+  "civilizations": [
+    {
+      "id": "western",
+      "label": "Western",
+      "short_description": "Civilisation occidentale moderne issue de l'héritage gréco-romain, du christianisme latin et de la modernité européenne (Renaissance, Lumières, révolutions industrielles et démocratiques).",
+      "long_description": "Caractérisée par un fort post-matérialisme (SE++), une laïcisation avancée (TS+), un individualisme élevé (Hofstede IDV>65 typique), une faible distance hiérarchique (PDI<45 typique en Europe du Nord), une orientation à long terme variable et un indice d'indulgence généralement élevé. Inclut sous-clusters: Anglo, Europe du Nord protestante, Europe latine catholique, Europe germanique. Frontière sud-est avec Orthodox (Ukraine, Balkans), nord-africaine avec Islamic (Maghreb), latino-américaine via héritage ibérique.",
+      "huntington_label": "Western",
+      "huntington_page_refs": [
+        "chapter 2",
+        "fig. 1.3"
+      ],
+      "iw_clusters": [
+        "Protestant Europe",
+        "Catholic Europe",
+        "English-Speaking"
+      ],
+      "iw_quadrant": "TS+ / SE+",
+      "hofstede_archetype_states": [
+        "USA",
+        "GBR",
+        "FRA",
+        "DEU",
+        "NLD",
+        "SWE",
+        "CAN",
+        "AUS"
+      ],
+      "hofstede_typical_range": {
+        "pdi": [
+          18,
+          68
+        ],
+        "idv": [
+          60,
+          91
+        ],
+        "mas": [
+          5,
+          70
+        ],
+        "uai": [
+          23,
+          86
+        ],
+        "lto": [
+          21,
+          83
+        ],
+        "ivr": [
+          30,
+          78
+        ]
+      },
+      "member_states": [
+        {
+          "iso3": "USA",
+          "role": "core",
+          "rationale": "Anglo, protestant majoritaire",
+          "citation_ids": [
+            "huntington_1996",
+            "inglehart_welzel_2010"
+          ]
+        },
+        {
+          "iso3": "GBR",
+          "role": "core",
+          "rationale": "Anglo",
+          "citation_ids": [
+            "huntington_1996"
+          ]
+        },
+        {
+          "iso3": "FRA",
+          "role": "core",
+          "rationale": "Europe latine, République laïque",
+          "citation_ids": [
+            "huntington_1996"
+          ]
+        },
+        {
+          "iso3": "DEU",
+          "role": "core",
+          "rationale": "Europe germanique",
+          "citation_ids": [
+            "huntington_1996"
+          ]
+        },
+        {
+          "iso3": "NLD",
+          "role": "core",
+          "rationale": "Europe protestante de l'Ouest",
+          "citation_ids": [
+            "huntington_1996"
+          ]
+        },
+        {
+          "iso3": "SWE",
+          "role": "core",
+          "rationale": "Europe nordique",
+          "citation_ids": [
+            "huntington_1996"
+          ]
+        },
+        {
+          "iso3": "NOR",
+          "role": "core",
+          "rationale": "Europe nordique",
+          "citation_ids": [
+            "huntington_1996"
+          ]
+        },
+        {
+          "iso3": "DNK",
+          "role": "core",
+          "rationale": "Europe nordique",
+          "citation_ids": [
+            "huntington_1996"
+          ]
+        },
+        {
+          "iso3": "FIN",
+          "role": "core",
+          "rationale": "Europe nordique, héritage luthérien",
+          "citation_ids": [
+            "huntington_1996"
+          ]
+        },
+        {
+          "iso3": "CAN",
+          "role": "core",
+          "rationale": "Anglo + québécois latin",
+          "citation_ids": [
+            "huntington_1996"
+          ]
+        },
+        {
+          "iso3": "AUS",
+          "role": "core",
+          "rationale": "Anglo, présence Oceanian discutée",
+          "citation_ids": [
+            "huntington_1996",
+            "hauofa_1994"
+          ]
+        },
+        {
+          "iso3": "NZL",
+          "role": "ambiguous",
+          "rationale": "Western Anglo + identité pacifique (Hau'ofa 1994)",
+          "citation_ids": [
+            "huntington_1996",
+            "hauofa_1994"
+          ]
+        },
+        {
+          "iso3": "ITA",
+          "role": "core",
+          "rationale": "Europe latine, catholicisme historique",
+          "citation_ids": [
+            "huntington_1996"
+          ]
+        },
+        {
+          "iso3": "ESP",
+          "role": "core",
+          "rationale": "Europe latine ibérique",
+          "citation_ids": [
+            "huntington_1996"
+          ]
+        },
+        {
+          "iso3": "IRL",
+          "role": "core",
+          "rationale": "Anglo + catholicisme",
+          "citation_ids": [
+            "huntington_1996"
+          ]
+        }
+      ],
+      "sub_clusters": [
+        {
+          "id": "english_speaking",
+          "label": "Anglo / English-speaking",
+          "states": [
+            "USA",
+            "GBR",
+            "CAN",
+            "AUS",
+            "NZL",
+            "IRL"
+          ],
+          "citation_ids": [
+            "inglehart_welzel_2010"
+          ]
+        },
+        {
+          "id": "protestant_europe",
+          "label": "Protestant Europe",
+          "states": [
+            "DEU",
+            "NLD",
+            "SWE",
+            "NOR",
+            "DNK",
+            "FIN"
+          ],
+          "citation_ids": [
+            "inglehart_welzel_2010"
+          ]
+        },
+        {
+          "id": "catholic_europe",
+          "label": "Catholic Europe",
+          "states": [
+            "FRA",
+            "ITA",
+            "ESP",
+            "IRL"
+          ],
+          "citation_ids": [
+            "inglehart_welzel_2010"
+          ]
+        }
+      ],
+      "ambiguous_cases": [
+        {
+          "iso3": "ISR",
+          "civilizations_competing": [
+            "western",
+            "islamic"
+          ],
+          "discussion": "Identité civilisationnelle juive distincte, alliée Western politiquement mais ancrée Moyen-Orient géographiquement.",
+          "citation_ids": [
+            "huntington_1996"
+          ]
+        },
+        {
+          "iso3": "MEX",
+          "civilizations_competing": [
+            "western",
+            "latin_american"
+          ],
+          "discussion": "Huntington (1996) classe Mexique en Latin American mais membre USMCA, partage IW Western+catholique.",
+          "citation_ids": [
+            "huntington_1996"
+          ]
+        }
+      ],
+      "sources": [
+        "Huntington 1996",
+        "Inglehart & Welzel 2005/2010",
+        "Hofstede 2010",
+        "WVS wave 7"
+      ],
+      "citation_ids": [
+        "huntington_1996",
+        "inglehart_welzel_2005",
+        "inglehart_welzel_2010",
+        "hofstede_2010",
+        "wvs_wave7_2022"
+      ],
+      "low_archetype_coverage": false,
+      "extension_to_huntington": false,
+      "mu_viz": [
+        0.9092857142857145,
+        1.5642857142857143
+      ],
+      "sigma_viz": [
+        [
+          0.3168352040816327,
+          0.1553316326530612
+        ],
+        [
+          0.1553316326530612,
+          0.20658163265306123
+        ]
+      ],
+      "mu_score": [
+        38.642857142857146,
+        74.42857142857143,
+        42.785714285714285,
+        52.92857142857143,
+        45.785714285714285,
+        59.357142857142854
+      ],
+      "sigma_score": [
+        12.08663454787467,
+        10.695221133854167,
+        23.46175785470162,
+        18.997985929770426,
+        17.558793366566963,
+        13.552053839374537
+      ]
+    },
+    {
+      "id": "orthodox",
+      "label": "Orthodox",
+      "short_description": "Civilisation issue de Byzance et du christianisme orthodoxe slave, marquée par l'autocratie, le collectivisme et un héritage de modernisation tardive.",
+      "long_description": "Distance hiérarchique très élevée (PDI souvent >85), individualisme bas-moyen (IDV 25-39), évitement d'incertitude élevé (UAI>85), restraint marqué (IVR<28). IW: TS modéré, SE négatif (survival). Inclut Russie, Ukraine, Biélorussie, Roumanie, Bulgarie, Grèce, Serbie. Frontière avec Western (Pologne, États baltes, Hongrie controversés), avec Islamic (Caucase, Balkans bosniaques).",
+      "huntington_label": "Orthodox",
+      "huntington_page_refs": [
+        "chapter 2"
+      ],
+      "iw_clusters": [
+        "Orthodox Europe"
+      ],
+      "iw_quadrant": "TS≈0 / SE-",
+      "hofstede_archetype_states": [
+        "RUS",
+        "UKR",
+        "ROU",
+        "BGR",
+        "GRC",
+        "SRB"
+      ],
+      "hofstede_typical_range": {
+        "pdi": [
+          60,
+          95
+        ],
+        "idv": [
+          25,
+          39
+        ],
+        "mas": [
+          20,
+          57
+        ],
+        "uai": [
+          85,
+          112
+        ],
+        "lto": [
+          45,
+          86
+        ],
+        "ivr": [
+          15,
+          50
+        ]
+      },
+      "member_states": [
+        {
+          "iso3": "RUS",
+          "role": "core",
+          "rationale": "Russie, héritage byzantin via Moscou-Tiers Rome",
+          "citation_ids": [
+            "huntington_1996"
+          ]
+        },
+        {
+          "iso3": "UKR",
+          "role": "core",
+          "rationale": "Christianisme orthodoxe, partition uniate",
+          "citation_ids": [
+            "huntington_1996"
+          ]
+        },
+        {
+          "iso3": "BLR",
+          "role": "core",
+          "rationale": "Christianisme orthodoxe",
+          "citation_ids": [
+            "huntington_1996"
+          ]
+        },
+        {
+          "iso3": "ROU",
+          "role": "core",
+          "rationale": "Roumain orthodoxe",
+          "citation_ids": [
+            "huntington_1996"
+          ]
+        },
+        {
+          "iso3": "BGR",
+          "role": "core",
+          "rationale": "Bulgare orthodoxe",
+          "citation_ids": [
+            "huntington_1996"
+          ]
+        },
+        {
+          "iso3": "GRC",
+          "role": "core",
+          "rationale": "Grec orthodoxe, membre UE — frontière Western",
+          "citation_ids": [
+            "huntington_1996"
+          ]
+        },
+        {
+          "iso3": "SRB",
+          "role": "core",
+          "rationale": "Serbe orthodoxe",
+          "citation_ids": [
+            "huntington_1996"
+          ]
+        }
+      ],
+      "sub_clusters": [
+        {
+          "id": "slavic_orthodox",
+          "label": "Orthodoxe slave",
+          "states": [
+            "RUS",
+            "UKR",
+            "BLR",
+            "SRB"
+          ],
+          "citation_ids": [
+            "huntington_1996"
+          ]
+        },
+        {
+          "id": "balkan_orthodox",
+          "label": "Orthodoxe balkanique",
+          "states": [
+            "BGR",
+            "ROU",
+            "GRC",
+            "SRB"
+          ],
+          "citation_ids": [
+            "huntington_1996"
+          ]
+        }
+      ],
+      "ambiguous_cases": [
+        {
+          "iso3": "UKR",
+          "civilizations_competing": [
+            "orthodox",
+            "western"
+          ],
+          "discussion": "Partition uniate vs orthodoxe, alignement EU/OTAN depuis 2014/2022.",
+          "citation_ids": [
+            "huntington_1996"
+          ]
+        },
+        {
+          "iso3": "GRC",
+          "civilizations_competing": [
+            "orthodox",
+            "western"
+          ],
+          "discussion": "Membre UE/OTAN, mais identité orthodoxe persistante.",
+          "citation_ids": [
+            "huntington_1996"
+          ]
+        }
+      ],
+      "sources": [
+        "Huntington 1996",
+        "WVS wave 7",
+        "Hofstede 2010"
+      ],
+      "citation_ids": [
+        "huntington_1996",
+        "inglehart_welzel_2010",
+        "hofstede_2010",
+        "wvs_wave7_2022"
+      ],
+      "low_archetype_coverage": false,
+      "extension_to_huntington": false,
+      "mu_viz": [
+        0.021428571428571425,
+        -0.7214285714285714
+      ],
+      "sigma_viz": [
+        [
+          0.06561224489795918,
+          -0.05418367346938775
+        ],
+        [
+          -0.05418367346938775,
+          0.15846938775510203
+        ]
+      ],
+      "mu_score": [
+        83.71428571428571,
+        29.857142857142858,
+        37.857142857142854,
+        94.85714285714286,
+        66.57142857142857,
+        23.857142857142858
+      ],
+      "sigma_score": [
+        12.406384136682966,
+        5.082984821330627,
+        11.050902631893551,
+        7.772268862134539,
+        15.53665842779717,
+        11.36949014346945
+      ]
+    },
+    {
+      "id": "islamic",
+      "label": "Islamic",
+      "short_description": "Civilisation organisée autour de l'Islam comme cadre normatif et culturel, hétérogène (sunnite, chiite, soufi) et géographiquement vaste (MENA, Asie du Sud, Asie du Sud-Est).",
+      "long_description": "IW: TS négatif (traditionnel), SE négatif (survival) — quadrant Sud-Ouest. Hofstede: PDI élevé (55-100), IDV bas (14-46), UAI moyen-élevé (36-85), restraint marqué (IVR souvent <50). Distingue sous-clusters: arabe (Maghreb + Mashreq), turco-iranien (Turquie, Iran), sud-asiatique (Pakistan, Bangladesh), sud-est asiatique (Indonésie, Malaisie). Frontières: Orthodox (Caucase), Hindic (Inde-Pakistan), Sinic (Xinjiang).",
+      "huntington_label": "Islamic",
+      "huntington_page_refs": [
+        "chapter 2",
+        "chapter 7"
+      ],
+      "iw_clusters": [
+        "African-Islamic"
+      ],
+      "iw_quadrant": "TS- / SE-",
+      "hofstede_archetype_states": [
+        "TUR",
+        "EGY",
+        "SAU",
+        "IDN",
+        "PAK",
+        "IRN"
+      ],
+      "hofstede_typical_range": {
+        "pdi": [
+          55,
+          100
+        ],
+        "idv": [
+          14,
+          46
+        ],
+        "mas": [
+          43,
+          70
+        ],
+        "uai": [
+          36,
+          85
+        ],
+        "lto": [
+          7,
+          62
+        ],
+        "ivr": [
+          0,
+          57
+        ]
+      },
+      "member_states": [
+        {
+          "iso3": "TUR",
+          "role": "core",
+          "rationale": "Turquie, héritage ottoman, identité islamique post-Atatürk",
+          "citation_ids": [
+            "huntington_1996"
+          ]
+        },
+        {
+          "iso3": "IRN",
+          "role": "core",
+          "rationale": "Iran, chiite, distinct du monde arabe sunnite",
+          "citation_ids": [
+            "huntington_1996"
+          ]
+        },
+        {
+          "iso3": "EGY",
+          "role": "core",
+          "rationale": "Égypte, centre intellectuel sunnite (Al-Azhar)",
+          "citation_ids": [
+            "huntington_1996"
+          ]
+        },
+        {
+          "iso3": "SAU",
+          "role": "core",
+          "rationale": "Arabie Saoudite, gardien des lieux saints",
+          "citation_ids": [
+            "huntington_1996"
+          ]
+        },
+        {
+          "iso3": "JOR",
+          "role": "core",
+          "rationale": "Jordanie, monarchie sunnite",
+          "citation_ids": [
+            "huntington_1996"
+          ]
+        },
+        {
+          "iso3": "MAR",
+          "role": "core",
+          "rationale": "Maroc, Maghreb arabo-berbère",
+          "citation_ids": [
+            "huntington_1996"
+          ]
+        },
+        {
+          "iso3": "IRQ",
+          "role": "core",
+          "rationale": "Irak, sunnite-chiite",
+          "citation_ids": [
+            "huntington_1996"
+          ]
+        },
+        {
+          "iso3": "PAK",
+          "role": "core",
+          "rationale": "Pakistan, État islamique sud-asiatique",
+          "citation_ids": [
+            "huntington_1996"
+          ]
+        },
+        {
+          "iso3": "BGD",
+          "role": "core",
+          "rationale": "Bangladesh, sunnite bengali",
+          "citation_ids": [
+            "huntington_1996"
+          ]
+        },
+        {
+          "iso3": "IDN",
+          "role": "core",
+          "rationale": "Indonésie, plus grand pays musulman",
+          "citation_ids": [
+            "huntington_1996"
+          ]
+        },
+        {
+          "iso3": "MYS",
+          "role": "core",
+          "rationale": "Malaisie, islam malais",
+          "citation_ids": [
+            "huntington_1996"
+          ]
+        }
+      ],
+      "sub_clusters": [
+        {
+          "id": "arab_islamic",
+          "label": "Islam arabe",
+          "states": [
+            "EGY",
+            "SAU",
+            "JOR",
+            "MAR",
+            "IRQ"
+          ],
+          "citation_ids": [
+            "huntington_1996"
+          ]
+        },
+        {
+          "id": "turco_iranian",
+          "label": "Turco-iranien",
+          "states": [
+            "TUR",
+            "IRN"
+          ],
+          "citation_ids": [
+            "huntington_1996"
+          ]
+        },
+        {
+          "id": "south_asian_islamic",
+          "label": "Islam sud-asiatique",
+          "states": [
+            "PAK",
+            "BGD"
+          ],
+          "citation_ids": [
+            "huntington_1996"
+          ]
+        },
+        {
+          "id": "southeast_asian_islamic",
+          "label": "Islam sud-est asiatique",
+          "states": [
+            "IDN",
+            "MYS"
+          ],
+          "citation_ids": [
+            "huntington_1996"
+          ]
+        }
+      ],
+      "ambiguous_cases": [
+        {
+          "iso3": "TUR",
+          "civilizations_competing": [
+            "islamic",
+            "western"
+          ],
+          "discussion": "Candidat UE depuis 1999, alliance OTAN, mais réislamisation politique. Huntington classait Turquie en État 'déchiré' (torn state).",
+          "citation_ids": [
+            "huntington_1996"
+          ]
+        },
+        {
+          "iso3": "ISR",
+          "civilizations_competing": [
+            "western",
+            "islamic"
+          ],
+          "discussion": "État juif au Moyen-Orient — ni Western ni Islamic stricto sensu.",
+          "citation_ids": [
+            "huntington_1996"
+          ]
+        }
+      ],
+      "sources": [
+        "Huntington 1996",
+        "WVS wave 7",
+        "Hofstede 2010"
+      ],
+      "citation_ids": [
+        "huntington_1996",
+        "inglehart_welzel_2010",
+        "hofstede_2010",
+        "wvs_wave7_2022"
+      ],
+      "low_archetype_coverage": false,
+      "extension_to_huntington": false,
+      "mu_viz": [
+        -1.18,
+        -0.7500000000000001
+      ],
+      "sigma_viz": [
+        [
+          0.043100000000000006,
+          0.05649999999999998
+        ],
+        [
+          0.05649999999999998,
+          0.11799999999999997
+        ]
+      ],
+      "mu_score": [
+        76.0909090909091,
+        28.0,
+        51.09090909090909,
+        66.9090909090909,
+        32.54545454545455,
+        31.363636363636363
+      ],
+      "sigma_score": [
+        14.43137078762504,
+        9.816498172140427,
+        7.751299544469893,
+        14.878016396711843,
+        17.364350294699335,
+        18.47983041673827
+      ]
+    },
+    {
+      "id": "sinic",
+      "label": "Sinic",
+      "short_description": "Civilisation confucéenne centrée sur la Chine et ses diasporas/sphères d'influence (Singapour, Taïwan, Hong Kong, Vietnam).",
+      "long_description": "IW: TS+ (laïcisation forte, post-confucianisme), SE négatif (survival). Hofstede: PDI élevé (58-100), IDV bas (17-26), MAS moyen (45-66), LTO très élevé (61-93). Civilisation confucéenne caractérisée par l'orientation long terme exceptionnelle (`lto`), le collectivisme, la pragmatique. Distinction interne: continentale (CHN, VNM), insulaire/diasporique (TWN, SGP, HKG).",
+      "huntington_label": "Sinic / Confucian",
+      "huntington_page_refs": [
+        "chapter 2"
+      ],
+      "iw_clusters": [
+        "Confucian"
+      ],
+      "iw_quadrant": "TS+ / SE-",
+      "hofstede_archetype_states": [
+        "CHN",
+        "SGP",
+        "TWN",
+        "VNM",
+        "HKG"
+      ],
+      "hofstede_typical_range": {
+        "pdi": [
+          58,
+          100
+        ],
+        "idv": [
+          17,
+          26
+        ],
+        "mas": [
+          40,
+          66
+        ],
+        "uai": [
+          8,
+          69
+        ],
+        "lto": [
+          57,
+          93
+        ],
+        "ivr": [
+          17,
+          49
+        ]
+      },
+      "member_states": [
+        {
+          "iso3": "CHN",
+          "role": "core",
+          "rationale": "Chine continentale, cœur Han",
+          "citation_ids": [
+            "huntington_1996"
+          ]
+        },
+        {
+          "iso3": "SGP",
+          "role": "core",
+          "rationale": "Singapour, majorité chinoise, cité-État confucéenne",
+          "citation_ids": [
+            "huntington_1996"
+          ]
+        },
+        {
+          "iso3": "HKG",
+          "role": "core",
+          "rationale": "Hong Kong, RAS de Chine, hybride Sinic-Western",
+          "citation_ids": [
+            "huntington_1996"
+          ]
+        },
+        {
+          "iso3": "TWN",
+          "role": "core",
+          "rationale": "Taïwan, République de Chine",
+          "citation_ids": [
+            "huntington_1996"
+          ]
+        },
+        {
+          "iso3": "VNM",
+          "role": "core",
+          "rationale": "Vietnam, sinisation millénaire (1000 ans de domination chinoise)",
+          "citation_ids": [
+            "huntington_1996"
+          ]
+        }
+      ],
+      "sub_clusters": [
+        {
+          "id": "mainland_sinic",
+          "label": "Sinic continental",
+          "states": [
+            "CHN",
+            "VNM"
+          ],
+          "citation_ids": [
+            "huntington_1996"
+          ]
+        },
+        {
+          "id": "insular_sinic",
+          "label": "Sinic insulaire / diasporique",
+          "states": [
+            "TWN",
+            "SGP",
+            "HKG"
+          ],
+          "citation_ids": [
+            "huntington_1996"
+          ]
+        }
+      ],
+      "ambiguous_cases": [
+        {
+          "iso3": "KOR",
+          "civilizations_competing": [
+            "sinic",
+            "buddhist",
+            "japanese"
+          ],
+          "discussion": "Corée du Sud: héritage confucéen (Sinic) mais identité distincte du fait de l'occupation japonaise et de l'orientation Western post-1953. Classée ici en Buddhist par défaut, mais affinités Sinic fortes.",
+          "citation_ids": [
+            "huntington_1996"
+          ]
+        },
+        {
+          "iso3": "SGP",
+          "civilizations_competing": [
+            "sinic",
+            "islamic",
+            "western"
+          ],
+          "discussion": "Multi-ethnique (chinois, malais, indien), mais Sinic dominant culturellement.",
+          "citation_ids": [
+            "huntington_1996"
+          ]
+        }
+      ],
+      "sources": [
+        "Huntington 1996",
+        "WVS wave 7",
+        "Hofstede 2010"
+      ],
+      "citation_ids": [
+        "huntington_1996",
+        "inglehart_welzel_2010",
+        "hofstede_2010",
+        "wvs_wave7_2022"
+      ],
+      "low_archetype_coverage": false,
+      "extension_to_huntington": false,
+      "mu_viz": [
+        0.48999999999999994,
+        -0.14000000000000004
+      ],
+      "sigma_viz": [
+        [
+          0.0854,
+          0.0446
+        ],
+        [
+          0.0446,
+          0.34540000000000004
+        ]
+      ],
+      "mu_score": [
+        70.0,
+        20.4,
+        51.2,
+        33.2,
+        74.0,
+        34.2
+      ],
+      "sigma_score": [
+        7.26636084983398,
+        2.576819745345025,
+        9.239047569960878,
+        19.772708463940898,
+        14.085453489327207,
+        12.319090875547595
+      ]
+    },
+    {
+      "id": "hindic",
+      "label": "Hindic",
+      "short_description": "Civilisation hindoue centrée sur l'Inde, marquée par le système des castes, l'héritage sanskrit, et un syncrétisme religieux (hindouisme, sikhisme, jaïnisme).",
+      "long_description": "IW: TS modérément négatif, SE négatif. Hofstede: PDI élevé (77), IDV bas-moyen (48), MAS moyen, UAI relativement bas (40), LTO modéré (51), IVR bas (26). Inclut principalement l'Inde et des populations diasporiques. Frontière avec Islamic (Pakistan, Bangladesh), Sinic (Tibet, Népal), Buddhist (Sri Lanka, Népal).",
+      "huntington_label": "Hindu",
+      "huntington_page_refs": [
+        "chapter 2"
+      ],
+      "iw_clusters": [
+        "South Asia"
+      ],
+      "iw_quadrant": "TS- / SE-",
+      "hofstede_archetype_states": [
+        "IND"
+      ],
+      "hofstede_typical_range": {
+        "pdi": [
+          70,
+          80
+        ],
+        "idv": [
+          40,
+          55
+        ],
+        "mas": [
+          50,
+          60
+        ],
+        "uai": [
+          35,
+          50
+        ],
+        "lto": [
+          45,
+          60
+        ],
+        "ivr": [
+          20,
+          35
+        ]
+      },
+      "member_states": [
+        {
+          "iso3": "IND",
+          "role": "core",
+          "rationale": "Inde, majorité hindoue, héritage sanskrit",
+          "citation_ids": [
+            "huntington_1996"
+          ]
+        },
+        {
+          "iso3": "NPL",
+          "role": "periphery",
+          "rationale": "Népal, monarchie hindoue historique (jusqu'en 2008), majorité hindoue",
+          "citation_ids": [
+            "huntington_1996"
+          ]
+        },
+        {
+          "iso3": "LKA",
+          "role": "periphery",
+          "rationale": "Sri Lanka, hindoue (Tamouls) + bouddhiste (Cingalais)",
+          "citation_ids": [
+            "huntington_1996"
+          ]
+        },
+        {
+          "iso3": "MUS",
+          "role": "periphery",
+          "rationale": "Île Maurice, majorité hindoue (diaspora indienne)",
+          "citation_ids": [
+            "huntington_1996"
+          ]
+        }
+      ],
+      "sub_clusters": [
+        {
+          "id": "indian_subcontinent_hindu",
+          "label": "Sous-continent indien hindou",
+          "states": [
+            "IND",
+            "NPL",
+            "LKA"
+          ],
+          "citation_ids": [
+            "huntington_1996"
+          ]
+        }
+      ],
+      "ambiguous_cases": [
+        {
+          "iso3": "LKA",
+          "civilizations_competing": [
+            "hindic",
+            "buddhist"
+          ],
+          "discussion": "Sri Lanka: bouddhiste cingalais majoritaire, hindou tamoul minoritaire, conflit civilisationnel historique.",
+          "citation_ids": [
+            "huntington_1996"
+          ]
+        }
+      ],
+      "sources": [
+        "Huntington 1996",
+        "WVS wave 7",
+        "Hofstede 2010"
+      ],
+      "citation_ids": [
+        "huntington_1996",
+        "inglehart_welzel_2010",
+        "hofstede_2010",
+        "wvs_wave7_2022"
+      ],
+      "low_archetype_coverage": true,
+      "extension_to_huntington": false,
+      "mu_viz": [
+        -0.6,
+        -0.2
+      ],
+      "sigma_viz": [
+        [
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0
+        ]
+      ],
+      "mu_score": [
+        77.0,
+        48.0,
+        56.0,
+        40.0,
+        51.0,
+        26.0
+      ],
+      "sigma_score": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "id": "japanese",
+      "label": "Japanese",
+      "short_description": "Civilisation japonaise unique (sui generis chez Huntington), synthèse shintoïste-bouddhiste-confucéenne, modernisation Meiji et post-1945.",
+      "long_description": "IW: TS très élevé (laïcisation extrême, religiosité instrumentale), SE moyen. Hofstede: PDI moyen (54), IDV bas (46), MAS très élevé (95), UAI très élevé (92), LTO très élevé (88), IVR moyen (42). Civilisation à un État (Japon), distinguée par Huntington comme entité séparée de Sinic et Buddhist.",
+      "huntington_label": "Japanese",
+      "huntington_page_refs": [
+        "chapter 2"
+      ],
+      "iw_clusters": [
+        "Confucian (Japan)"
+      ],
+      "iw_quadrant": "TS++ / SE≈0",
+      "hofstede_archetype_states": [
+        "JPN"
+      ],
+      "hofstede_typical_range": {
+        "pdi": [
+          50,
+          60
+        ],
+        "idv": [
+          40,
+          50
+        ],
+        "mas": [
+          90,
+          95
+        ],
+        "uai": [
+          90,
+          95
+        ],
+        "lto": [
+          85,
+          90
+        ],
+        "ivr": [
+          40,
+          45
+        ]
+      },
+      "member_states": [
+        {
+          "iso3": "JPN",
+          "role": "core",
+          "rationale": "Japon, civilisation sui generis",
+          "citation_ids": [
+            "huntington_1996"
+          ]
+        }
+      ],
+      "sub_clusters": [],
+      "ambiguous_cases": [],
+      "sources": [
+        "Huntington 1996",
+        "WVS wave 7",
+        "Hofstede 2010"
+      ],
+      "citation_ids": [
+        "huntington_1996",
+        "inglehart_welzel_2010",
+        "hofstede_2010",
+        "wvs_wave7_2022"
+      ],
+      "low_archetype_coverage": true,
+      "extension_to_huntington": false,
+      "mu_viz": [
+        1.95,
+        0.45
+      ],
+      "sigma_viz": [
+        [
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0
+        ]
+      ],
+      "mu_score": [
+        54.0,
+        46.0,
+        95.0,
+        92.0,
+        88.0,
+        42.0
+      ],
+      "sigma_score": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "id": "buddhist",
+      "label": "Buddhist",
+      "short_description": "Sphère bouddhiste de l'Asie de l'Est et du Sud-Est (Thaïlande, Cambodge, Laos, Myanmar, Mongolie, Corée du Sud — controversée).",
+      "long_description": "Extension de Huntington qui classait le bouddhisme comme civilisation 'non clairement délimitée'. IW: TS modéré, SE proche de zéro. Hofstede divers: PDI moyen-élevé, IDV bas, UAI variable. Inclut Theravada (THA, MMR, LAO, KHM) et Mahayana (KOR, MNG, certaines régions vietnamiennes).",
+      "huntington_label": "Buddhist (not clearly delineated)",
+      "huntington_page_refs": [
+        "chapter 2"
+      ],
+      "iw_clusters": [
+        "Southeast Asia"
+      ],
+      "iw_quadrant": "TS≈0 / SE≈0",
+      "hofstede_archetype_states": [
+        "THA",
+        "KOR",
+        "MMR",
+        "MNG"
+      ],
+      "hofstede_typical_range": {
+        "pdi": [
+          60,
+          95
+        ],
+        "idv": [
+          18,
+          25
+        ],
+        "mas": [
+          34,
+          50
+        ],
+        "uai": [
+          60,
+          95
+        ],
+        "lto": [
+          30,
+          100
+        ],
+        "ivr": [
+          25,
+          45
+        ]
+      },
+      "member_states": [
+        {
+          "iso3": "THA",
+          "role": "core",
+          "rationale": "Thaïlande, Theravada",
+          "citation_ids": [
+            "huntington_1996"
+          ]
+        },
+        {
+          "iso3": "KHM",
+          "role": "core",
+          "rationale": "Cambodge, Theravada",
+          "citation_ids": [
+            "huntington_1996"
+          ]
+        },
+        {
+          "iso3": "LAO",
+          "role": "core",
+          "rationale": "Laos, Theravada",
+          "citation_ids": [
+            "huntington_1996"
+          ]
+        },
+        {
+          "iso3": "MMR",
+          "role": "core",
+          "rationale": "Myanmar, Theravada",
+          "citation_ids": [
+            "huntington_1996"
+          ]
+        },
+        {
+          "iso3": "MNG",
+          "role": "core",
+          "rationale": "Mongolie, Mahayana tibétain",
+          "citation_ids": [
+            "huntington_1996"
+          ]
+        },
+        {
+          "iso3": "KOR",
+          "role": "ambiguous",
+          "rationale": "Corée du Sud: bouddhisme historique + confucianisme actif + christianisme important. Classification débattue Sinic/Buddhist.",
+          "citation_ids": [
+            "huntington_1996"
+          ]
+        },
+        {
+          "iso3": "BTN",
+          "role": "core",
+          "rationale": "Bhoutan, Mahayana",
+          "citation_ids": [
+            "huntington_1996"
+          ]
+        }
+      ],
+      "sub_clusters": [
+        {
+          "id": "theravada",
+          "label": "Theravada",
+          "states": [
+            "THA",
+            "KHM",
+            "LAO",
+            "MMR"
+          ],
+          "citation_ids": [
+            "huntington_1996"
+          ]
+        },
+        {
+          "id": "mahayana",
+          "label": "Mahayana",
+          "states": [
+            "KOR",
+            "MNG",
+            "BTN"
+          ],
+          "citation_ids": [
+            "huntington_1996"
+          ]
+        }
+      ],
+      "ambiguous_cases": [
+        {
+          "iso3": "KOR",
+          "civilizations_competing": [
+            "buddhist",
+            "sinic"
+          ],
+          "discussion": "Corée: forte sinisation confucéenne historique. Inglehart-Welzel la place proche du cluster Confucian. Choix éditorial: Buddhist par tradition religieuse, mais membre périphérie Sinic.",
+          "citation_ids": [
+            "huntington_1996"
+          ]
+        },
+        {
+          "iso3": "VNM",
+          "civilizations_competing": [
+            "sinic",
+            "buddhist"
+          ],
+          "discussion": "Vietnam: Mahayana actif mais classé Sinic par convention historique.",
+          "citation_ids": [
+            "huntington_1996"
+          ]
+        }
+      ],
+      "sources": [
+        "Huntington 1996",
+        "WVS wave 7",
+        "Hofstede 2010"
+      ],
+      "citation_ids": [
+        "huntington_1996",
+        "inglehart_welzel_2010",
+        "hofstede_2010"
+      ],
+      "low_archetype_coverage": false,
+      "extension_to_huntington": true,
+      "mu_viz": [
+        -0.3,
+        -0.16666666666666666
+      ],
+      "sigma_viz": [
+        [
+          0.02,
+          -0.011666666666666667
+        ],
+        [
+          -0.011666666666666667,
+          0.12722222222222226
+        ]
+      ],
+      "mu_score": [
+        79.0,
+        20.333333333333332,
+        44.0,
+        72.0,
+        42.833333333333336,
+        44.833333333333336
+      ],
+      "sigma_score": [
+        11.86029791643813,
+        0.4714045207910317,
+        7.118052168020874,
+        14.236104336041748,
+        8.409650541028576,
+        6.328945848682508
+      ]
+    },
+    {
+      "id": "latin_american",
+      "label": "Latin American",
+      "short_description": "Civilisation issue de la colonisation ibérique des Amériques, catholicisme dominant, métissage avec substrats indigènes et africains.",
+      "long_description": "IW: TS très négatif (catholicisme persistant, valeurs traditionnelles), SE positif (post-matérialisme paradoxal lié à la chaleur sociale, à l'autonomie individuelle). Hofstede: PDI élevé (49-95), IDV bas (6-46), UAI très élevé (76-101), IVR variable (mais souvent élevé). Sous-clusters: Cône Sud (ARG, CHL, URY), Mexique/Amérique centrale, Andin, Brésil. Frontière avec Western (héritage ibérique partagé) et Indigenous (BOL, ECU, PER).",
+      "huntington_label": "Latin American",
+      "huntington_page_refs": [
+        "chapter 2"
+      ],
+      "iw_clusters": [
+        "Catholic Latin America"
+      ],
+      "iw_quadrant": "TS- / SE+",
+      "hofstede_archetype_states": [
+        "BRA",
+        "MEX",
+        "ARG",
+        "CHL",
+        "COL"
+      ],
+      "hofstede_typical_range": {
+        "pdi": [
+          49,
+          95
+        ],
+        "idv": [
+          6,
+          46
+        ],
+        "mas": [
+          28,
+          73
+        ],
+        "uai": [
+          76,
+          101
+        ],
+        "lto": [
+          13,
+          44
+        ],
+        "ivr": [
+          46,
+          100
+        ]
+      },
+      "member_states": [
+        {
+          "iso3": "BRA",
+          "role": "core",
+          "rationale": "Brésil, héritage portugais",
+          "citation_ids": [
+            "huntington_1996"
+          ]
+        },
+        {
+          "iso3": "MEX",
+          "role": "core",
+          "rationale": "Mexique, héritage espagnol + substrat mésoaméricain",
+          "citation_ids": [
+            "huntington_1996"
+          ]
+        },
+        {
+          "iso3": "ARG",
+          "role": "core",
+          "rationale": "Argentine, Cône Sud, fortement européanisé",
+          "citation_ids": [
+            "huntington_1996"
+          ]
+        },
+        {
+          "iso3": "CHL",
+          "role": "core",
+          "rationale": "Chili, Cône Sud",
+          "citation_ids": [
+            "huntington_1996"
+          ]
+        },
+        {
+          "iso3": "COL",
+          "role": "core",
+          "rationale": "Colombie, andine",
+          "citation_ids": [
+            "huntington_1996"
+          ]
+        },
+        {
+          "iso3": "PER",
+          "role": "core",
+          "rationale": "Pérou, andin + substrat quechua-aymara",
+          "citation_ids": [
+            "huntington_1996"
+          ]
+        },
+        {
+          "iso3": "URY",
+          "role": "core",
+          "rationale": "Uruguay, Cône Sud, laïcisé",
+          "citation_ids": [
+            "huntington_1996"
+          ]
+        },
+        {
+          "iso3": "VEN",
+          "role": "core",
+          "rationale": "Venezuela, caribéen",
+          "citation_ids": [
+            "huntington_1996"
+          ]
+        },
+        {
+          "iso3": "GTM",
+          "role": "core",
+          "rationale": "Guatemala, méso-américain + substrat maya",
+          "citation_ids": [
+            "huntington_1996"
+          ]
+        },
+        {
+          "iso3": "BOL",
+          "role": "interface",
+          "rationale": "Bolivie, identité plurinationale (latino + aymara/quechua/guarani)",
+          "citation_ids": [
+            "huntington_1996",
+            "smith_2012"
+          ]
+        },
+        {
+          "iso3": "ECU",
+          "role": "interface",
+          "rationale": "Équateur, identité métisse + indigène (Kichwa)",
+          "citation_ids": [
+            "huntington_1996",
+            "smith_2012"
+          ]
+        }
+      ],
+      "sub_clusters": [
+        {
+          "id": "southern_cone",
+          "label": "Cône Sud",
+          "states": [
+            "ARG",
+            "CHL",
+            "URY"
+          ],
+          "citation_ids": [
+            "huntington_1996"
+          ]
+        },
+        {
+          "id": "andean",
+          "label": "Andin",
+          "states": [
+            "COL",
+            "PER",
+            "BOL",
+            "ECU"
+          ],
+          "citation_ids": [
+            "huntington_1996"
+          ]
+        },
+        {
+          "id": "mexican_central_american",
+          "label": "Mexique / Amérique centrale",
+          "states": [
+            "MEX",
+            "GTM"
+          ],
+          "citation_ids": [
+            "huntington_1996"
+          ]
+        },
+        {
+          "id": "brazil_caribbean",
+          "label": "Brésil + Caraïbes",
+          "states": [
+            "BRA",
+            "VEN"
+          ],
+          "citation_ids": [
+            "huntington_1996"
+          ]
+        }
+      ],
+      "ambiguous_cases": [
+        {
+          "iso3": "MEX",
+          "civilizations_competing": [
+            "latin_american",
+            "western"
+          ],
+          "discussion": "Membre USMCA, intégration économique nord-américaine, mais identité culturelle latino-américaine forte.",
+          "citation_ids": [
+            "huntington_1996"
+          ]
+        },
+        {
+          "iso3": "BOL",
+          "civilizations_competing": [
+            "latin_american",
+            "indigenous"
+          ],
+          "discussion": "Constitution 2009 reconnaît État plurinational. Identité indigène majoritaire dans certaines régions.",
+          "citation_ids": [
+            "smith_2012",
+            "un_unpfii"
+          ]
+        }
+      ],
+      "sources": [
+        "Huntington 1996",
+        "WVS wave 7",
+        "Hofstede 2010"
+      ],
+      "citation_ids": [
+        "huntington_1996",
+        "inglehart_welzel_2010",
+        "hofstede_2010",
+        "wvs_wave7_2022"
+      ],
+      "low_archetype_coverage": false,
+      "extension_to_huntington": false,
+      "mu_viz": [
+        -0.7555555555555556,
+        0.7388888888888889
+      ],
+      "sigma_viz": [
+        [
+          0.14580246913580247,
+          0.05354938271604939
+        ],
+        [
+          0.05354938271604939,
+          0.06709876543209878
+        ]
+      ],
+      "mu_score": [
+        70.0,
+        24.444444444444443,
+        50.666666666666664,
+        85.88888888888889,
+        28.75,
+        69.75
+      ],
+      "sigma_score": [
+        12.840906856172149,
+        12.962433851635451,
+        14.832396974191324,
+        8.47800349197124,
+        13.86442289539028,
+        18.12456896039186
+      ]
+    },
+    {
+      "id": "african",
+      "label": "African",
+      "short_description": "Civilisation subsaharienne hétérogène, marquée par la diversité ethnique, le syncrétisme religieux (christianisme + islam + traditions ancestrales) et l'héritage colonial.",
+      "long_description": "Huntington note la difficulté de parler d'une 'civilisation africaine' unique. IW: TS très négatif, SE négatif. Hofstede: couverture incomplète (NGA, ZAF, KEN, GHA, ETH partiels). PDI élevé, IDV bas, IVR variable. Sous-clusters géographiques: Afrique de l'Ouest (NGA, GHA), Afrique de l'Est (KEN, ETH), Afrique australe (ZAF, ZWE, ZMB).",
+      "huntington_label": "African (possibly)",
+      "huntington_page_refs": [
+        "chapter 2"
+      ],
+      "iw_clusters": [
+        "African-Islamic"
+      ],
+      "iw_quadrant": "TS-- / SE-",
+      "hofstede_archetype_states": [
+        "NGA",
+        "ZAF",
+        "KEN",
+        "GHA"
+      ],
+      "hofstede_typical_range": {
+        "pdi": [
+          49,
+          80
+        ],
+        "idv": [
+          15,
+          65
+        ],
+        "mas": [
+          40,
+          65
+        ],
+        "uai": [
+          49,
+          65
+        ],
+        "lto": [
+          4,
+          34
+        ],
+        "ivr": [
+          63,
+          84
+        ]
+      },
+      "member_states": [
+        {
+          "iso3": "NGA",
+          "role": "core",
+          "rationale": "Nigéria, État le plus peuplé d'Afrique, ouest-africain",
+          "citation_ids": [
+            "huntington_1996"
+          ]
+        },
+        {
+          "iso3": "ZAF",
+          "role": "core",
+          "rationale": "Afrique du Sud, hybride afro-européen post-apartheid",
+          "citation_ids": [
+            "huntington_1996"
+          ]
+        },
+        {
+          "iso3": "KEN",
+          "role": "core",
+          "rationale": "Kenya, est-africain",
+          "citation_ids": [
+            "huntington_1996"
+          ]
+        },
+        {
+          "iso3": "GHA",
+          "role": "core",
+          "rationale": "Ghana, ouest-africain anglophone",
+          "citation_ids": [
+            "huntington_1996"
+          ]
+        },
+        {
+          "iso3": "ETH",
+          "role": "core",
+          "rationale": "Éthiopie, jamais colonisée, orthodoxe-musulmane",
+          "citation_ids": [
+            "huntington_1996"
+          ]
+        },
+        {
+          "iso3": "ZWE",
+          "role": "periphery",
+          "rationale": "Zimbabwe, austral",
+          "citation_ids": [
+            "huntington_1996"
+          ]
+        },
+        {
+          "iso3": "ZMB",
+          "role": "periphery",
+          "rationale": "Zambie, australe",
+          "citation_ids": [
+            "huntington_1996"
+          ]
+        }
+      ],
+      "sub_clusters": [
+        {
+          "id": "west_africa",
+          "label": "Afrique de l'Ouest",
+          "states": [
+            "NGA",
+            "GHA"
+          ],
+          "citation_ids": [
+            "huntington_1996"
+          ]
+        },
+        {
+          "id": "east_africa",
+          "label": "Afrique de l'Est",
+          "states": [
+            "KEN",
+            "ETH"
+          ],
+          "citation_ids": [
+            "huntington_1996"
+          ]
+        },
+        {
+          "id": "southern_africa",
+          "label": "Afrique australe",
+          "states": [
+            "ZAF",
+            "ZWE",
+            "ZMB"
+          ],
+          "citation_ids": [
+            "huntington_1996"
+          ]
+        }
+      ],
+      "ambiguous_cases": [
+        {
+          "iso3": "ETH",
+          "civilizations_competing": [
+            "african",
+            "orthodox"
+          ],
+          "discussion": "Éthiopie: christianisme orthodoxe tewahedo, parfois rapproché du monde orthodoxe.",
+          "citation_ids": [
+            "huntington_1996"
+          ]
+        },
+        {
+          "iso3": "ZAF",
+          "civilizations_competing": [
+            "african",
+            "western"
+          ],
+          "discussion": "Afrique du Sud post-apartheid: identité hybride afrikaans/anglo + bantoue.",
+          "citation_ids": [
+            "huntington_1996"
+          ]
+        }
+      ],
+      "sources": [
+        "Huntington 1996",
+        "WVS wave 7",
+        "Hofstede 2010"
+      ],
+      "citation_ids": [
+        "huntington_1996",
+        "inglehart_welzel_2010",
+        "hofstede_2010",
+        "wvs_wave7_2022"
+      ],
+      "low_archetype_coverage": false,
+      "extension_to_huntington": false,
+      "mu_viz": [
+        -1.2208333333333334,
+        -0.39166666666666666
+      ],
+      "sigma_viz": [
+        [
+          0.10269097222222222,
+          0.04642361111111112
+        ],
+        [
+          0.04642361111111112,
+          0.14993055555555554
+        ]
+      ],
+      "mu_score": [
+        70.66666666666667,
+        30.416666666666668,
+        58.0,
+        54.833333333333336,
+        34.854166666666664,
+        62.854166666666664
+      ],
+      "sigma_score": [
+        10.514540197058336,
+        16.260680250906546,
+        8.266397845091497,
+        5.177408189003022,
+        19.966497547280433,
+        11.867084350093002
+      ]
+    },
+    {
+      "id": "indigenous",
+      "label": "Indigenous",
+      "short_description": "Civilisation autochtone, non couverte par Huntington. Identité épistémique distincte (cosmologies, droit coutumier, relation à la terre), souvent en strate au sein d'États multi-civilisationnels.",
+      "long_description": "Aucun État souverain n'est purement indigène. Présence forte en strate en BOL (aymara, quechua, guarani), ECU (kichwa), PER, GTM (maya), CAN (Premières Nations), AUS (aborigènes), NZL (Maori), NOR/SWE/FIN (Sami). Reconnaissance ONU via Permanent Forum on Indigenous Issues. Drapeau low_archetype_coverage car données IW/Hofstede absentes pour cette population transversale.",
+      "huntington_label": null,
+      "huntington_page_refs": [],
+      "iw_clusters": [],
+      "iw_quadrant": "TS-- / SE-",
+      "hofstede_archetype_states": [
+        "BOL",
+        "ECU"
+      ],
+      "hofstede_typical_range": {
+        "pdi": [
+          70,
+          90
+        ],
+        "idv": [
+          6,
+          15
+        ],
+        "mas": [
+          30,
+          60
+        ],
+        "uai": [
+          65,
+          90
+        ]
+      },
+      "member_states": [
+        {
+          "iso3": "BOL",
+          "role": "core",
+          "rationale": "Bolivie, État plurinational (2009), majorité indigène",
+          "citation_ids": [
+            "smith_2012",
+            "un_unpfii"
+          ]
+        },
+        {
+          "iso3": "ECU",
+          "role": "periphery",
+          "rationale": "Équateur, État plurinational (2008), populations kichwa/shuar",
+          "citation_ids": [
+            "smith_2012",
+            "un_unpfii"
+          ]
+        },
+        {
+          "iso3": "GTM",
+          "role": "interface",
+          "rationale": "Guatemala, populations mayas majoritaires dans certaines régions",
+          "citation_ids": [
+            "smith_2012"
+          ]
+        },
+        {
+          "iso3": "PER",
+          "role": "interface",
+          "rationale": "Pérou, populations quechua-aymara",
+          "citation_ids": [
+            "smith_2012"
+          ]
+        }
+      ],
+      "sub_clusters": [
+        {
+          "id": "andean_indigenous",
+          "label": "Andin indigène",
+          "states": [
+            "BOL",
+            "ECU",
+            "PER"
+          ],
+          "citation_ids": [
+            "smith_2012"
+          ]
+        },
+        {
+          "id": "mesoamerican_indigenous",
+          "label": "Mésoaméricain indigène",
+          "states": [
+            "GTM"
+          ],
+          "citation_ids": [
+            "smith_2012"
+          ]
+        }
+      ],
+      "ambiguous_cases": [
+        {
+          "iso3": "BOL",
+          "civilizations_competing": [
+            "indigenous",
+            "latin_american"
+          ],
+          "discussion": "État plurinational reconnaît cosmovisions indigènes, mais classification IW/Hofstede agrège l'ensemble.",
+          "citation_ids": [
+            "smith_2012",
+            "un_unpfii"
+          ]
+        }
+      ],
+      "sources": [
+        "Smith 2012",
+        "UN Permanent Forum on Indigenous Issues"
+      ],
+      "citation_ids": [
+        "smith_2012",
+        "un_unpfii"
+      ],
+      "low_archetype_coverage": true,
+      "extension_to_huntington": true,
+      "mu_viz": [
+        -1.0833333333333333,
+        0.13333333333333333
+      ],
+      "sigma_viz": [
+        [
+          0.0005555555555555565,
+          0.00277777777777778
+        ],
+        [
+          0.00277777777777778,
+          0.013888888888888888
+        ]
+      ],
+      "mu_score": [
+        78.0,
+        9.333333333333334,
+        49.0,
+        80.33333333333333,
+        54.166666666666664,
+        54.166666666666664
+      ],
+      "sigma_score": [
+        0.0,
+        0.9428090415820634,
+        9.899494936611665,
+        9.428090415820634,
+        0.11785113019775792,
+        0.11785113019775792
+      ]
+    },
+    {
+      "id": "oceanian",
+      "label": "Oceanian",
+      "short_description": "Civilisation pacifique articulée par Hau'ofa (1994) comme 'Sea of Islands' — identité polynésienne, mélanésienne, micronésienne distincte de la classification Western.",
+      "long_description": "Extension de Huntington. États-membres: Nouvelle-Zélande (ambiguë Western/Oceanian), Australie (composante aborigène faible numériquement), Fidji, États insulaires (PNG, Samoa, Tonga, Vanuatu — données absentes). IW: TS+ pour NZL/AUS, mais SE+ avec composante communautaire pacifique. Drapeau low_archetype_coverage par manque de données Hofstede.",
+      "huntington_label": null,
+      "huntington_page_refs": [],
+      "iw_clusters": [],
+      "iw_quadrant": "TS+ / SE+",
+      "hofstede_archetype_states": [
+        "NZL",
+        "FJI"
+      ],
+      "hofstede_typical_range": {
+        "pdi": [
+          22,
+          78
+        ],
+        "idv": [
+          14,
+          79
+        ],
+        "mas": [
+          46,
+          58
+        ],
+        "uai": [
+          48,
+          49
+        ]
+      },
+      "member_states": [
+        {
+          "iso3": "NZL",
+          "role": "core",
+          "rationale": "Nouvelle-Zélande, identité bi-culturelle Pakeha/Maori, partenariat Te Tiriti",
+          "citation_ids": [
+            "hauofa_1994"
+          ]
+        },
+        {
+          "iso3": "FJI",
+          "role": "core",
+          "rationale": "Fidji, mélanésien",
+          "citation_ids": [
+            "hauofa_1994"
+          ]
+        },
+        {
+          "iso3": "AUS",
+          "role": "interface",
+          "rationale": "Australie: cluster Western dominant, composante aborigène minoritaire mais reconnue (Uluru Statement 2017)",
+          "citation_ids": [
+            "hauofa_1994"
+          ]
+        }
+      ],
+      "sub_clusters": [
+        {
+          "id": "polynesia",
+          "label": "Polynésie",
+          "states": [
+            "NZL"
+          ],
+          "citation_ids": [
+            "hauofa_1994"
+          ]
+        },
+        {
+          "id": "melanesia",
+          "label": "Mélanésie",
+          "states": [
+            "FJI"
+          ],
+          "citation_ids": [
+            "hauofa_1994"
+          ]
+        }
+      ],
+      "ambiguous_cases": [
+        {
+          "iso3": "NZL",
+          "civilizations_competing": [
+            "western",
+            "oceanian"
+          ],
+          "discussion": "Nouvelle-Zélande: Anglo-celtique majoritaire, mais Te Tiriti o Waitangi (1840) consacre un partenariat avec les Maoris.",
+          "citation_ids": [
+            "huntington_1996",
+            "hauofa_1994"
+          ]
+        }
+      ],
+      "sources": [
+        "Hau'ofa 1994",
+        "Huntington 1996 (par défaut classait NZL/AUS en Western)"
+      ],
+      "citation_ids": [
+        "hauofa_1994",
+        "huntington_1996"
+      ],
+      "low_archetype_coverage": true,
+      "extension_to_huntington": true,
+      "mu_viz": [
+        -0.07500000000000001,
+        1.125
+      ],
+      "sigma_viz": [
+        [
+          0.5256250000000001,
+          0.5256250000000001
+        ],
+        [
+          0.5256250000000001,
+          0.525625
+        ]
+      ],
+      "mu_score": [
+        50.0,
+        46.5,
+        52.0,
+        48.5,
+        39.75,
+        60.75
+      ],
+      "sigma_score": [
+        28.0,
+        32.5,
+        6.0,
+        0.5,
+        6.75,
+        14.25
+      ]
+    }
+  ]
+}

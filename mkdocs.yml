@@ -1,0 +1,101 @@
+site_name: Civilizational Vector State (cvs)
+site_description: >-
+  Pipeline bayésien d'affiliation civilisationnelle des États souverains à
+  partir de sources publiques (Huntington, Inglehart-Welzel, Hofstede, WVS).
+  Deux bases (documentaire + vectorielle), mécanique tensorielle, algèbre des
+  distances. Phase 1b — taxonomie + méthodologie publiées pour relecture.
+site_url: https://s-geffroy.github.io/cvs/
+repo_url: https://github.com/s-geffroy/cvs
+repo_name: s-geffroy/cvs
+edit_uri: edit/main/site_src/docs/
+docs_dir: site_src/docs
+site_dir: dist
+
+strict: true
+
+theme:
+  name: material
+  custom_dir: site_src/overrides
+  language: fr
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.expand
+    - navigation.indexes
+    - navigation.top
+    - search.highlight
+    - content.action.edit
+    - content.code.copy
+    - toc.follow
+  palette:
+    - scheme: default
+      primary: indigo
+      accent: deep orange
+      toggle:
+        icon: material/weather-night
+        name: Thème sombre
+    - scheme: slate
+      primary: indigo
+      accent: deep orange
+      toggle:
+        icon: material/weather-sunny
+        name: Thème clair
+
+extra_css:
+  - assets/css/extra.css
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - md_in_html
+  - tables
+  - toc:
+      permalink: true
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+
+plugins:
+  - search
+
+nav:
+  - Accueil: index.md
+  - Éthique: ethics.md
+  - Méthodologie:
+      - methodology/index.md
+      - "00 — Décisions": methodology/00_project_decisions.md
+      - "01 — Modèle conceptuel": methodology/01_conceptual_model.md
+      - "02 — Source-only": methodology/02_source_only_methodology.md
+      - "03 — Scope État": methodology/03_state_first_scope.md
+      - "04 — ADM1 préparé": methodology/04_adm1_preparation_policy.md
+      - "05 — Calibration scoring": methodology/05_scoring_calibration.md
+      - "06 — Outputs": methodology/06_outputs_and_storage.md
+      - "07 — Éthique publication": methodology/07_ethics_publication_policy.md
+      - "08 — Base civilisationnelle": methodology/08_civilizational_basis.md
+      - "09 — Mécanique tensorielle": methodology/09_civilizational_mechanics.md
+      - "10 — Algèbre des distances": methodology/10_distance_algebra.md
+  - Taxonomie:
+      - taxonomy/index.md
+      - Civilisations:
+          - taxonomy/civilizations/western.md
+          - taxonomy/civilizations/orthodox.md
+          - taxonomy/civilizations/islamic.md
+          - taxonomy/civilizations/sinic.md
+          - taxonomy/civilizations/hindic.md
+          - taxonomy/civilizations/japanese.md
+          - taxonomy/civilizations/buddhist.md
+          - taxonomy/civilizations/latin_american.md
+          - taxonomy/civilizations/african.md
+          - taxonomy/civilizations/indigenous.md
+          - taxonomy/civilizations/oceanian.md
+  - Sources: sources/index.md
+  - Schémas: schemas/index.md
+  - ADM1 (préparé): adm1_policy.md
+  - Relecture: review/index.md

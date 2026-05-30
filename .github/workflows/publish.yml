@@ -1,0 +1,63 @@
+name: Publish GitHub Pages (Phase 1b)
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Build site image (Phase 1b builder stage)
+        run: |
+          docker build -f Dockerfile.site --target builder -t cvs-site:builder .
+
+      - name: Run site build in container
+        run: |
+          mkdir -p "$PWD/dist"
+          docker run --rm \
+            -v "$PWD/dist:/app/dist" \
+            cvs-site:builder \
+            bash -lc "civvec basis build && civvec site build --strict"
+
+      - name: Run pytest in container
+        run: |
+          docker run --rm \
+            -v "$PWD/dist:/app/dist" \
+            cvs-site:builder \
+            bash -lc "pytest -v"
+
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

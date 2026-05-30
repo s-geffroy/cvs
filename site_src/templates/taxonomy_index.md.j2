@@ -1,0 +1,38 @@
+# Taxonomie hyper-détaillée — `macro_civilizations.v{{ version_major }}`
+
+!!! warning "Avertissement éthique"
+    {{ ethical_warning_fr }}
+
+!!! info "Statut : en relecture (Phase 1b)"
+    Cette taxonomie est publiée dès maintenant pour permettre la relecture par des tiers
+    avant la stabilisation des États en Phase 2. Toute remarque est bienvenue via
+    [issue GitHub](https://github.com/s-geffroy/cvs/issues).
+
+Version actuelle : **`{{ taxonomy.version }}`** — {{ taxonomy.civilizations | length }} civilisations.
+
+## Index des civilisations
+
+| ID | Label | Quadrant IW | Couverture archétypes | Extension Huntington |
+|---|---|---|---|---|
+{% for civ in taxonomy.civilizations %}
+| [`{{ civ.id }}`](civilizations/{{ civ.id }}.md) | {{ civ.label }} | `{{ civ.iw_quadrant or "—" }}` | {{ "⚠️ faible" if civ.low_archetype_coverage else "complète" }} | {{ "✓" if civ.extension_to_huntington else "—" }} |
+{% endfor %}
+
+## Politique
+
+| Clé | Valeur |
+|---|---|
+{% for key, value in taxonomy.policy.items() %}
+| `{{ key }}` | `{{ value }}` |
+{% endfor %}
+
+## Couplage B_doc ↔ B_vec
+
+Chaque civilisation porte simultanément :
+
+- **`citation_ids[]`** vers `bibliography[]` racine (B_doc),
+- **`mu_viz`** dans `B_viz = ℝ²` (Inglehart-Welzel),
+- **`mu_score`** dans `B_score = ℝ⁶` (Hofstede 6D).
+
+Aucune coordonnée n'est orpheline ; aucune citation n'est orpheline.
+Tests d'invariants : `tests/test_bases_coupling.py`.

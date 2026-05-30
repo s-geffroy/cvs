@@ -1,0 +1,31 @@
+{
+  "id": "B_viz",
+  "version": "2.0.0",
+  "label": "Inglehart-Welzel cultural map basis",
+  "dimensions": 2,
+  "axes": [
+    {
+      "id": "e_TS",
+      "label": "Traditional <-> Secular-Rational",
+      "source": "inglehart_welzel",
+      "domain": [-2.5, 2.5],
+      "interpretation_low": "Traditional: religion, family ties, authority, deference",
+      "interpretation_high": "Secular-Rational: laicism, individual reasoning, weak deference"
+    },
+    {
+      "id": "e_SE",
+      "label": "Survival <-> Self-Expression",
+      "source": "inglehart_welzel",
+      "domain": [-2.5, 2.5],
+      "interpretation_low": "Survival: material security, in-group conformity, low trust",
+      "interpretation_high": "Self-Expression: autonomy, diversity tolerance, post-materialism"
+    }
+  ],
+  "orthogonality": "empirical_orthogonal_by_construction",
+  "domain": [[-2.5, 2.5], [-2.5, 2.5]],
+  "sources": [
+    "inglehart_welzel_2005",
+    "inglehart_welzel_2010",
+    "wvs_wave7_2022"
+  ]
+}

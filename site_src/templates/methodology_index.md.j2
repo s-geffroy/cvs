@@ -1,0 +1,10 @@
+# Méthodologie
+
+!!! warning "Avertissement éthique"
+    {{ ethical_warning_fr }}
+
+| # | Document |
+|---|---|
+{% for doc in methodology_docs %}
+| {{ doc.number }} | [{{ doc.title }}]({{ doc.filename }}) |
+{% endfor %}

@@ -1,0 +1,59 @@
+{
+  "id": "B_score",
+  "version": "2.0.0",
+  "label": "Hofstede 6-dimensional psycho-social basis",
+  "dimensions": 6,
+  "axes": [
+    {
+      "id": "e_PDI",
+      "label": "Power Distance Index",
+      "source": "hofstede",
+      "domain": [0, 100],
+      "interpretation_low": "Egalitarian, decentralised authority",
+      "interpretation_high": "Hierarchical, centralised authority"
+    },
+    {
+      "id": "e_IDV",
+      "label": "Individualism vs Collectivism",
+      "source": "hofstede",
+      "domain": [0, 100],
+      "interpretation_low": "Collectivist, in-group loyalty",
+      "interpretation_high": "Individualist, self-reliance"
+    },
+    {
+      "id": "e_MAS",
+      "label": "Masculinity vs Femininity",
+      "source": "hofstede",
+      "domain": [0, 100],
+      "interpretation_low": "Feminine: cooperation, modesty, caring",
+      "interpretation_high": "Masculine: competition, achievement, assertiveness"
+    },
+    {
+      "id": "e_UAI",
+      "label": "Uncertainty Avoidance Index",
+      "source": "hofstede",
+      "domain": [0, 100],
+      "interpretation_low": "Tolerant of ambiguity, flexible",
+      "interpretation_high": "Avoidance of ambiguity, rules and structure"
+    },
+    {
+      "id": "e_LTO",
+      "label": "Long-Term Orientation",
+      "source": "hofstede",
+      "domain": [0, 100],
+      "interpretation_low": "Short-term, traditional, normative",
+      "interpretation_high": "Long-term, pragmatic, future-oriented"
+    },
+    {
+      "id": "e_IVR",
+      "label": "Indulgence vs Restraint",
+      "source": "hofstede",
+      "domain": [0, 100],
+      "interpretation_low": "Restraint: controlled gratification, strict social norms",
+      "interpretation_high": "Indulgence: free gratification, leisure-oriented"
+    }
+  ],
+  "orthogonality": "empirical_orthogonal_by_construction",
+  "domain": [[0, 100], [0, 100], [0, 100], [0, 100], [0, 100], [0, 100]],
+  "sources": ["hofstede_2010"]
+}
