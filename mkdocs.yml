@@ -51,7 +51,7 @@ extra_javascript:
   - https://cdn.plot.ly/plotly-2.35.2.min.js
   - assets/js/map.js
   - assets/js/basis_viz.js
-  - assets/js/tensors.js
+  - assets/js/moments.js
   - assets/js/distances.js
 
 not_in_nav: |
@@ -93,8 +93,13 @@ nav:
       - "06 — Outputs": methodology/06_outputs_and_storage.md
       - "07 — Éthique publication": methodology/07_ethics_publication_policy.md
       - "08 — Base civilisationnelle": methodology/08_civilizational_basis.md
-      - "09 — Mécanique tensorielle": methodology/09_civilizational_mechanics.md
+      - "09 — Second moment civilisationnel": methodology/09_civilizational_second_moment.md
       - "10 — Algèbre des distances": methodology/10_distance_algebra.md
+      - "11 — Critiques et réponses": methodology/11_critiques_and_responses.md
+      - "12 — Validation empirique externe": methodology/12_empirical_validation.md
+      - "13 — Analyse de sensibilité": methodology/13_sensitivity_analysis.md
+      - "14 — Baseline non-supervisé": methodology/14_baseline_unsupervised.md
+      - "15 — Glossaire": methodology/15_glossary.md
   - Taxonomie:
       - taxonomy/index.md
       - Civilisations:
@@ -113,7 +118,7 @@ nav:
       - states/index.md
   - Carte: map/index.md
   - Base vectorielle: basis/index.md
-  - Tensions: tensions/index.md
+  - Moments M(s): moments/index.md
   - Distances: distances/index.md
   - Sources: sources/index.md
   - Schémas: schemas/index.md

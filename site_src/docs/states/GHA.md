@@ -70,21 +70,34 @@ Somme = 1, w ≥ 0.
 
 
 
-## Tenseur de tension civilisationnelle `T(GHA)`
+## Second moment civilisationnel `M(GHA)`
 
-`T(s) ∈ ℝ^{6×6}` symétrique semi-défini positif, analogue au tenseur des contraintes
-en mécanique des milieux continus. Cf. [Méthodologie 09](../methodology/09_civilizational_mechanics.md).
+`M(s) ∈ ℝ^{6×6}` symétrique semi-défini positif :
+
+```
+M(s) = Σᵢ wₛ[i] · (μᵢ − xₛ)(μᵢ − xₛ)ᵀ
+     = Cov_w(μ; wₛ) + (μ̄ − xₛ)(μ̄ − xₛ)ᵀ · Σᵢ wₛ[i]
+```
+
+Cf. [Méthodologie 09 — Second moment civilisationnel](../methodology/09_civilizational_second_moment.md).
 
 ### Invariants scalaires
 
-| Invariant | Valeur | Interprétation |
+| Invariant | Valeur | Définition |
 |---|---|---|
-| `I1 = tr(T)` | `2731.77` | Tension totale |
-| `I2` (déviatorique) | `3204824.13` | Asymétrie |
-| `det(T)` | `3.58e+12` | Rigidité |
+| `I1 = tr(M)` | `2731.77` | Magnitude totale du second moment |
+| `I2` (von Mises) | `2192.54` | √(3/2 · s:s) avec `s = M − tr(M)/6 · I` |
+| `det(M)` | `3.58e+12` | Déterminant |
 | `A` (anisotropie) | `0.996` | (λ₁−λ₆)/λ₁ |
 
-### Tensions principales (eigenvalues triées)
+### Décomposition M = Cov_w + biais
+
+| Composante | tr(.) | Interprétation |
+|---|---|---|
+| Dispersion intra (Cov_w) | `822.57` | Étalement pondéré des centroïdes autour de μ̄ |
+| Biais (μ̄ − xₛ)(μ̄ − xₛ)ᵀ | `1909.19` | Écart de l'État à son barycentre d'affinité |
+
+### Valeurs propres (descendantes)
 
 `[2071.45, 322.73, 214.3, 79.22, 35.05, 9.01]`
 

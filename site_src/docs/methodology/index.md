@@ -24,7 +24,17 @@
 
 | 08 | [Base civilisationnelle (B_doc + B_vec)](08_civilizational_basis.md) |
 
-| 09 | [Mécanique tensorielle](09_civilizational_mechanics.md) |
+| 09 | [Second moment civilisationnel](09_civilizational_second_moment.md) |
 
 | 10 | [Algèbre des distances](10_distance_algebra.md) |
+
+| 11 | [Critiques et réponses](11_critiques_and_responses.md) |
+
+| 12 | [Validation empirique externe](12_empirical_validation.md) |
+
+| 13 | [Analyse de sensibilité](13_sensitivity_analysis.md) |
+
+| 14 | [Baseline non-supervisé](14_baseline_unsupervised.md) |
+
+| 15 | [Glossaire](15_glossary.md) |
 

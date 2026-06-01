@@ -17,9 +17,10 @@ B_VIZ_PATH = BASIS_DIR / "B_viz.json"
 B_SCORE_PATH = BASIS_DIR / "B_score.json"
 CIVILIZATION_CENTROIDS_PATH = BASIS_DIR / "civilization_centroids.json"
 STATE_COORDINATES_PATH = BASIS_DIR / "state_coordinates.json"
-STATE_TENSORS_PATH = BASIS_DIR / "state_tensors.json"
+STATE_MOMENTS_PATH = BASIS_DIR / "state_moments.json"
 
 SCHEMAS_DIR = REPO_ROOT / "schemas"
 
 OUTPUTS_DIR = REPO_ROOT / "outputs"
 DISTANCES_DIR = OUTPUTS_DIR / "distances"
+EMPIRICAL_DIR = OUTPUTS_DIR / "empirical"

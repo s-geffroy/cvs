@@ -104,7 +104,7 @@ def test_schemas_index_lists_all_schemas(built_dist: Path) -> None:
     schemas_html = (built_dist / "schemas" / "index.html").read_text()
     for schema_name in (
         "macro_civilizations.schema.json",
-        "state_tension.schema.json",
+        "state_moment.schema.json",
         "distance_matrix.schema.json",
         "adm1_profile.v2.schema.json",
     ):
@@ -130,8 +130,8 @@ def test_ethical_warning_fr_includes_individuals_clause() -> None:
 
 
 # ---------------------------------------------------------------------------
-# Phase 2 invariants — states + map + basis + tensions + distances.
-# These tests only run when the basis artefacts (state_coordinates, tensors,
+# Phase 2 invariants — states + map + basis + moments + distances.
+# These tests only run when the basis artefacts (state_coordinates, moments,
 # centroids) are available — they're produced by `civvec basis build`, which
 # is always run before pytest in the container CMD.
 # ---------------------------------------------------------------------------
@@ -143,7 +143,7 @@ def _phase2_artefact_paths_present() -> bool:
         B_VIZ_PATH,
         CIVILIZATION_CENTROIDS_PATH,
         STATE_COORDINATES_PATH,
-        STATE_TENSORS_PATH,
+        STATE_MOMENTS_PATH,
     )
 
     return all(
@@ -153,7 +153,7 @@ def _phase2_artefact_paths_present() -> bool:
             B_SCORE_PATH,
             CIVILIZATION_CENTROIDS_PATH,
             STATE_COORDINATES_PATH,
-            STATE_TENSORS_PATH,
+            STATE_MOMENTS_PATH,
         )
     )
 
@@ -165,13 +165,13 @@ def test_phase2_states_index_present(built_dist: Path) -> None:
     assert "ne doit pas être utilisé" in states_index_html
 
 
-def test_phase2_state_page_FRA_contains_x_viz_and_hofstede_and_tension(built_dist: Path) -> None:
+def test_phase2_state_page_FRA_contains_x_viz_hofstede_and_second_moment(built_dist: Path) -> None:
     if not _phase2_artefact_paths_present():
         pytest.skip("Phase 2 artefacts not built — skipping")
     fra_html = (built_dist / "states" / "FRA" / "index.html").read_text()
     assert "x_viz" in fra_html
     assert "Power Distance" in fra_html
-    assert "Tenseur de tension" in fra_html
+    assert "Second moment civilisationnel" in fra_html
     assert "FRA.profile.json" in fra_html
 
 
@@ -181,7 +181,7 @@ def test_phase2_state_data_assets_present(built_dist: Path) -> None:
     for relative_path in (
         "assets/data/state_coordinates.json",
         "assets/data/civilization_centroids.json",
-        "assets/data/state_tensors.json",
+        "assets/data/state_moments.json",
         "assets/data/state_distance_matrix.json",
         "assets/data/B_viz.json",
         "assets/data/B_score.json",
@@ -208,12 +208,12 @@ def test_phase2_basis_page_loads_plotly_and_centroids(built_dist: Path) -> None:
     assert "plotly" in basis_html.lower()
 
 
-def test_phase2_tensions_page_present(built_dist: Path) -> None:
+def test_phase2_moments_page_present(built_dist: Path) -> None:
     if not _phase2_artefact_paths_present():
         pytest.skip("Phase 2 artefacts not built — skipping")
-    tensions_html = (built_dist / "tensions" / "index.html").read_text()
-    assert 'id="civvec-tensions-heatmap"' in tensions_html
-    assert "anisotropie" in tensions_html.lower()
+    moments_html = (built_dist / "moments" / "index.html").read_text()
+    assert 'id="civvec-moments-heatmap"' in moments_html
+    assert "anisotropie" in moments_html.lower()
 
 
 def test_phase2_distances_page_present(built_dist: Path) -> None:

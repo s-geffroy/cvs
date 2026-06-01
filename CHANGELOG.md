@@ -7,6 +7,54 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed — v3.0.0a1 : rigueur méthodologique étoffée (2026-06-01)
+
+**Breaking change** : le **tenseur de tension `T(s)`** est renommé en
+**second moment civilisationnel `M(s)`**. Contenu mathématique identique,
+nom corrigé pour évacuer le *physics envy* et clarifier la nature de l'objet.
+
+#### Code (synchrone, breaking)
+
+- `apps/basis_builder/tensors.py` → `apps/basis_builder/moments.py` ; `compute_tension_tensor` → `compute_second_moment` ; `StateTension` → `StateSecondMoment`.
+- `schemas/state_tension.schema.json` → `schemas/state_moment.schema.json` ; champ JSON `T` → `M` ; nouveaux champs `decomposition.{weighted_barycentre_mu_bar, intra_civilizational_covariance, bias_term, trace_intra, trace_bias}`.
+- `packages/civvec_core/algebra/distances.py` : `d_T_frobenius` → `d_M_frobenius` ; **nouvelle métrique** `d_score_mahalanobis_intra` (covariance intra-civilisationnelle pondérée, plus robuste que la version centroïdes) ; ancienne version renommée `d_score_mahalanobis_centroids` ; **nouvelle fonction** `normalise_distances_by_panel_median` pour normaliser les composantes de `d_hyb` avant combinaison convexe.
+- `apps/site_builder/builder.py` : ré-écriture du calcul de la matrice de distances ; publie désormais 9 métriques (avec les deux Mahalanobis et la normalisation par médiane).
+- `tests/test_tensor_mechanics.py` → `tests/test_moment_mechanics.py` ; nouveau test `test_decomposition_consistency` (M = Cov_w + biais vérifié numériquement).
+- Streamlit page `8_State_Tensions.py` → `8_State_Moments.py` ; JS `tensors.js` → `moments.js` ; CSS/HTML ids `civvec-tensions-*` → `civvec-moments-*`.
+- Site nav : `/tensions/` → `/moments/`.
+- `pyproject.toml` : version `2.0.0a1` → `3.0.0a1`.
+
+#### Invariant `I2` von Mises — formule corrigée
+
+L'ancien `I2 = tr(M²) − tr(M)²/n` n'était pas la définition canonique. Remplacé par `I2_von_mises = √(3/2 · s:s)` avec `s = M − tr(M)/6 · I` (déviateur), conforme à l'usage en mécanique des solides.
+
+#### Documentation méthodologique
+
+- **Nouvelle [doc 09](docs/09_civilizational_second_moment.md)** — *Second moment civilisationnel `M(s)`* (renommée et restructurée) avec dérivation rigoureuse `M = Cov_w + biais`, démonstration formelle, et discussion explicite de la valeur informationnelle au-delà de `xₛ`.
+- **Nouvelle [doc 10](docs/10_distance_algebra.md)** — *Algèbre des distances* étoffée : Mahalanobis intra vs centroïdes, normalisation par médiane panel pour `d_hyb`, circularité de Wasserstein explicitement reconnue.
+- **Nouvelle [doc 11](docs/11_critiques_and_responses.md)** — *Critiques académiques et réponses du projet* : 27 critiques anticipées (Huntington, Hofstede, IW, WVS, mélange hybride, physics envy, redondance M↔x, Mahalanobis, d_hyb, essentialisme étatique, etc.) avec sources académiques et statut de la réponse (fix, atténuée, admise, travail futur).
+- **Nouvelle [doc 12](docs/12_empirical_validation.md)** — *Validation empirique externe* : corrélations Spearman + bootstrap CI95 de `wₛ` contre Pew Religious Composition (2020), World Bank WGI Rule of Law (2022), Fund For Peace FSI (2024).
+- **Nouvelle [doc 13](docs/13_sensitivity_analysis.md)** — *Analyse de sensibilité* : LOO sur archétypes, sweep `β` softmax (0.01 à 0.2), sweep `(α, β, γ)` hybride sur grille simplexe.
+- **Nouvelle [doc 14](docs/14_baseline_unsupervised.md)** — *Baseline non-supervisé* : k-means k=11 + HDBSCAN-lite sur WVS+Hofstede brut comparé à la taxonomie Huntington-informée (ARI, NMI).
+- **Nouvelle [doc 15](docs/15_glossary.md)** — *Glossaire* complet : tous les symboles, distances, drapeaux qualité, sources, acronymes.
+- **Doc 07 étoffée** (8 lignes → ~110 lignes) : audience cible, restrictions d'usage géopolitique, sources/licences/consent WVS, gouvernance des modifications, mécanisme de retrait, conflits d'intérêt, règles d'inférence interdites explicites.
+- **Doc 08 corrigée** : orthogonalité Hofstede étiquetée *postulée non vérifiée empiriquement* (était trompeur en v2.0) ; nouvelle §3.4 « Règle de désambiguïsation » entre civilisations chevauchantes (KOR, THA, BOL, NZL, etc.) ; procédure d'imputation explicitée.
+- **Docs 00–06 harmonisées** en prose long-form (~30-60 lignes chacune) au lieu du quasi-JSON cryptique de la v2.0.
+
+#### Code empirique (nouveau)
+
+- `apps/empirical/sensitivity.py` : LOO + β-sweep + `(α, β, γ)`-sweep.
+- `apps/empirical/baseline_clustering.py` : k-means pure NumPy + HDBSCAN-lite (single-linkage + gap) + ARI + NMI.
+- `apps/empirical/external_validation.py` : Spearman + bootstrap 1000.
+- `apps/cli/empirical.py` : sous-commandes `civvec empirical {sensitivity, baseline, validate, all}`.
+- Données curées committées : `data_sources/pew/religious_composition_2020.json`, `data_sources/wgi/rule_of_law_2022.json`, `data_sources/fsi/fragility_states_index_2024.json` (63 ISO3 chacune, citation complète).
+- Artefacts générés : `outputs/empirical/{sensitivity_leave_one_out, sensitivity_beta_sweep, sensitivity_hybrid_weights, baseline_clustering, external_validation}.json` + copie dans `assets/data/empirical/`.
+
+#### Tests étendus
+
+- 22 tests Phase 2 sur le site, 16 tests `test_moment_mechanics.py` (avec `test_decomposition_consistency` nouveau), 15 tests `test_distance_algebra.py` (avec les deux Mahalanobis et `normalise_distances_by_panel_median`).
+- Vérification end-to-end : `docker compose build` ✓, suite **56 tests** ✓ en image site, suite **38 tests** ✓ en image UI.
+
 ### Published — Phase 2 en ligne (2026-06-01)
 
 - Republication automatique via `.github/workflows/publish.yml` (workflow run 26748986987, conclusion=success).

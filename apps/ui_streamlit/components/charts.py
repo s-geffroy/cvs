@@ -90,10 +90,11 @@ def heatmap(matrix: np.ndarray, labels: list[str], title: str = "") -> go.Figure
     return figure
 
 
-def tensor_heatmap(tensor_matrix: np.ndarray, title: str = "") -> go.Figure:
+def moment_heatmap(moment_matrix: np.ndarray, title: str = "") -> go.Figure:
+    """6x6 heatmap of the civilizational second moment M(s) over Hofstede axes."""
     figure = go.Figure(
         data=go.Heatmap(
-            z=tensor_matrix,
+            z=moment_matrix,
             x=list(HOFSTEDE_AXES),
             y=list(HOFSTEDE_AXES),
             colorscale="RdBu_r",
@@ -107,11 +108,11 @@ def tensor_heatmap(tensor_matrix: np.ndarray, title: str = "") -> go.Figure:
 def eigenvalues_bar(eigenvalues: list[float], title: str = "") -> go.Figure:
     figure = go.Figure(
         data=go.Bar(
-            x=[f"λ_{i + 1}" for i in range(len(eigenvalues))],
+            x=[f"λ_{index + 1}" for index in range(len(eigenvalues))],
             y=eigenvalues,
         )
     )
-    figure.update_layout(title=title, height=350, yaxis_title="tension principale")
+    figure.update_layout(title=title, height=350, yaxis_title="valeur propre λₖ")
     return figure
 
 

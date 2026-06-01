@@ -44,5 +44,5 @@ Les graphiques interactifs nécessitent JavaScript. Les données restent téléc
 
 [Liste des États](../states/index.md) ·
 [Carte interactive](../map/index.md) ·
-[Tensions](../tensions/index.md) ·
+[Second moment M(s)](../moments/index.md) ·
 [Distances](../distances/index.md)

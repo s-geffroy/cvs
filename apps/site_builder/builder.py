@@ -18,9 +18,10 @@ from apps.basis_builder.paths import (
     B_SCORE_PATH,
     B_VIZ_PATH,
     CIVILIZATION_CENTROIDS_PATH,
+    EMPIRICAL_DIR,
     REPO_ROOT,
     STATE_COORDINATES_PATH,
-    STATE_TENSORS_PATH,
+    STATE_MOMENTS_PATH,
 )
 from apps.site_builder.guards import ETHICAL_WARNING, ETHICAL_WARNING_FR
 from apps.site_builder.loaders import (
@@ -45,10 +46,11 @@ SCHEMAS_ASSETS_DIR = SITE_DOCS_DIR / "assets" / "schemas"
 STATES_OUT_DIR = SITE_DOCS_DIR / "states"
 MAP_OUT_DIR = SITE_DOCS_DIR / "map"
 BASIS_OUT_DIR = SITE_DOCS_DIR / "basis"
-TENSIONS_OUT_DIR = SITE_DOCS_DIR / "tensions"
+MOMENTS_OUT_DIR = SITE_DOCS_DIR / "moments"
 DISTANCES_OUT_DIR = SITE_DOCS_DIR / "distances"
 DATA_ASSETS_DIR = SITE_DOCS_DIR / "assets" / "data"
 DATA_STATES_DIR = DATA_ASSETS_DIR / "states"
+DATA_EMPIRICAL_DIR = DATA_ASSETS_DIR / "empirical"
 
 PHASE2_PINNED_MAPLIBRE_VERSION = "4.7.1"
 PHASE2_PINNED_PLOTLY_VERSION = "2.35.2"
@@ -63,8 +65,13 @@ METHODOLOGY_TITLES = {
     "06": "Outputs et stockage",
     "07": "Éthique de publication",
     "08": "Base civilisationnelle (B_doc + B_vec)",
-    "09": "Mécanique tensorielle",
+    "09": "Second moment civilisationnel",
     "10": "Algèbre des distances",
+    "11": "Critiques et réponses",
+    "12": "Validation empirique externe",
+    "13": "Analyse de sensibilité",
+    "14": "Baseline non-supervisé",
+    "15": "Glossaire",
 }
 
 
@@ -176,7 +183,7 @@ def _load_phase2_artefacts() -> dict | None:
     required_paths = [
         STATE_COORDINATES_PATH,
         CIVILIZATION_CENTROIDS_PATH,
-        STATE_TENSORS_PATH,
+        STATE_MOMENTS_PATH,
         B_VIZ_PATH,
         B_SCORE_PATH,
     ]
@@ -185,7 +192,7 @@ def _load_phase2_artefacts() -> dict | None:
     return {
         "state_coordinates": json.loads(STATE_COORDINATES_PATH.read_text()),
         "centroids": json.loads(CIVILIZATION_CENTROIDS_PATH.read_text()),
-        "tensors": json.loads(STATE_TENSORS_PATH.read_text()),
+        "moments": json.loads(STATE_MOMENTS_PATH.read_text()),
         "b_viz": json.loads(B_VIZ_PATH.read_text()),
         "b_score": json.loads(B_SCORE_PATH.read_text()),
     }
@@ -202,13 +209,18 @@ def _civilization_label_index(centroids_payload: dict) -> dict[str, str]:
 
 def _copy_basis_artefacts_to_data_assets(artefacts: dict) -> None:
     DATA_ASSETS_DIR.mkdir(parents=True, exist_ok=True)
+    DATA_EMPIRICAL_DIR.mkdir(parents=True, exist_ok=True)
     shutil.copyfile(STATE_COORDINATES_PATH, DATA_ASSETS_DIR / "state_coordinates.json")
     shutil.copyfile(CIVILIZATION_CENTROIDS_PATH, DATA_ASSETS_DIR / "civilization_centroids.json")
-    shutil.copyfile(STATE_TENSORS_PATH, DATA_ASSETS_DIR / "state_tensors.json")
+    shutil.copyfile(STATE_MOMENTS_PATH, DATA_ASSETS_DIR / "state_moments.json")
     shutil.copyfile(B_VIZ_PATH, DATA_ASSETS_DIR / "B_viz.json")
     shutil.copyfile(B_SCORE_PATH, DATA_ASSETS_DIR / "B_score.json")
     if NATURAL_EARTH_ADM0_PATH.exists():
         shutil.copyfile(NATURAL_EARTH_ADM0_PATH, DATA_ASSETS_DIR / "global_state_baseline.geojson")
+
+    if EMPIRICAL_DIR.exists():
+        for empirical_path in EMPIRICAL_DIR.glob("*.json"):
+            shutil.copyfile(empirical_path, DATA_EMPIRICAL_DIR / empirical_path.name)
 
 
 def _affinity_table(state_entry: dict, label_index: dict[str, str]) -> list[dict]:
@@ -229,7 +241,7 @@ def render_states(artefacts: dict) -> None:
     states_index_template = env.get_template("states_index.md.j2")
 
     state_entries = artefacts["state_coordinates"]["states"]
-    tensors_by_iso3 = {entry["iso3"]: entry for entry in artefacts["tensors"]["tensions"]}
+    moments_by_iso3 = {entry["iso3"]: entry for entry in artefacts["moments"]["moments"]}
     label_index = _civilization_label_index(artefacts["centroids"])
     affinity_beta = artefacts["state_coordinates"]["_meta"]["affinity_beta"]
 
@@ -248,7 +260,7 @@ def render_states(artefacts: dict) -> None:
 
         rendered = state_template.render(
             state=state_entry,
-            tension=tensors_by_iso3.get(iso3),
+            moment=moments_by_iso3.get(iso3),
             affinity_table=affinity_rows,
             affinity_beta=affinity_beta,
             has_geometry=has_geometry,
@@ -305,14 +317,14 @@ def render_basis_page(artefacts: dict) -> None:
     )
 
 
-def render_tensions_page(artefacts: dict) -> None:
-    TENSIONS_OUT_DIR.mkdir(parents=True, exist_ok=True)
+def render_moments_page(artefacts: dict) -> None:
+    MOMENTS_OUT_DIR.mkdir(parents=True, exist_ok=True)
     env = _jinja_env()
-    tensions_template = env.get_template("tensions_page.md.j2")
-    (TENSIONS_OUT_DIR / "index.md").write_text(
-        tensions_template.render(
+    moments_template = env.get_template("moments_page.md.j2")
+    (MOMENTS_OUT_DIR / "index.md").write_text(
+        moments_template.render(
             ethical_warning_fr=ETHICAL_WARNING_FR,
-            state_count=len(artefacts["tensors"]["tensions"]),
+            state_count=len(artefacts["moments"]["moments"]),
         )
     )
 
@@ -323,29 +335,35 @@ def _compute_state_distance_matrix(artefacts: dict) -> dict:
         HybridWeights,
         civilization_ground_cost_squared,
         d_hybrid,
+        d_M_frobenius,
         d_score_euclidean,
-        d_score_mahalanobis,
-        d_T_frobenius,
+        d_score_mahalanobis_centroids,
+        d_score_mahalanobis_intra,
         d_viz,
         d_w_cosine,
         d_w_js,
         d_w_wasserstein,
-        weighted_covariance_inverse,
+        intra_civilizational_covariance_inverse,
+        weighted_centroid_covariance_inverse,
     )
 
     states = artefacts["state_coordinates"]["states"]
     centroids = artefacts["centroids"]["centroids"]
-    tensors_by_iso3 = {
-        entry["iso3"]: np.asarray(entry["T"], dtype=float)
-        for entry in artefacts["tensors"]["tensions"]
+    moments_by_iso3 = {
+        entry["iso3"]: np.asarray(entry["M"], dtype=float)
+        for entry in artefacts["moments"]["moments"]
     }
 
     civilization_id_order = [centroid["civilization_id"] for centroid in centroids]
     centroid_mu_scores = np.asarray(
         [centroid["mu_score"] for centroid in centroids], dtype=float
     )
+    centroid_sigma_scores = np.asarray(
+        [centroid["sigma_score"] for centroid in centroids], dtype=float
+    )
     ground_cost_squared = civilization_ground_cost_squared(centroid_mu_scores)
-    covariance_inverse = weighted_covariance_inverse(centroid_mu_scores)
+    covariance_inverse_centroids = weighted_centroid_covariance_inverse(centroid_mu_scores)
+    covariance_inverse_intra = intra_civilizational_covariance_inverse(centroid_sigma_scores)
     hybrid_weights = HybridWeights()
 
     eligible_states: list[dict] = []
@@ -354,20 +372,22 @@ def _compute_state_distance_matrix(artefacts: dict) -> dict:
             continue
         if not state_entry.get("x_viz") or any(value is None for value in state_entry["x_viz"]):
             continue
-        if state_entry["iso3"] not in tensors_by_iso3:
+        if state_entry["iso3"] not in moments_by_iso3:
             continue
         eligible_states.append(state_entry)
 
     iso3_order = [state_entry["iso3"] for state_entry in eligible_states]
     n_states = len(eligible_states)
 
-    matrices: dict[str, list[list[float]]] = {
-        metric: [[0.0] * n_states for _ in range(n_states)]
-        for metric in (
-            "d_viz", "d_score_euclidean", "d_score_mahalanobis",
-            "d_w_cosine", "d_w_js", "d_w_wasserstein",
-            "d_T_frobenius", "d_hybrid",
-        )
+    metric_keys = (
+        "d_viz", "d_score_euclidean",
+        "d_score_mahalanobis_centroids", "d_score_mahalanobis_intra",
+        "d_w_cosine", "d_w_js", "d_w_wasserstein",
+        "d_M_frobenius",
+    )
+    matrices_unnormalised: dict[str, np.ndarray] = {
+        metric: np.zeros((n_states, n_states), dtype=float)
+        for metric in metric_keys
     }
 
     x_viz_array = np.asarray(
@@ -381,27 +401,59 @@ def _compute_state_distance_matrix(artefacts: dict) -> dict:
          for state_entry in eligible_states],
         dtype=float,
     )
-    tensor_array = np.asarray(
-        [tensors_by_iso3[state_entry["iso3"]] for state_entry in eligible_states], dtype=float
+    moment_array = np.asarray(
+        [moments_by_iso3[state_entry["iso3"]] for state_entry in eligible_states], dtype=float
     )
 
-    for i in range(n_states):
-        for j in range(i, n_states):
-            d_v = d_viz(x_viz_array[i], x_viz_array[j])
-            d_se = d_score_euclidean(x_score_array[i], x_score_array[j])
-            d_sm = d_score_mahalanobis(x_score_array[i], x_score_array[j], covariance_inverse)
-            d_wc = d_w_cosine(affinity_array[i], affinity_array[j])
-            d_wj = d_w_js(affinity_array[i], affinity_array[j])
-            d_ww = d_w_wasserstein(affinity_array[i], affinity_array[j], ground_cost_squared)
-            d_tf = d_T_frobenius(tensor_array[i], tensor_array[j])
-            d_h = d_hybrid(d_sm, d_ww, d_tf, hybrid_weights)
+    for left in range(n_states):
+        for right in range(left, n_states):
+            d_v = d_viz(x_viz_array[left], x_viz_array[right])
+            d_se = d_score_euclidean(x_score_array[left], x_score_array[right])
+            d_sm_centroids = d_score_mahalanobis_centroids(
+                x_score_array[left], x_score_array[right], covariance_inverse_centroids
+            )
+            d_sm_intra = d_score_mahalanobis_intra(
+                x_score_array[left], x_score_array[right], covariance_inverse_intra
+            )
+            d_wc = d_w_cosine(affinity_array[left], affinity_array[right])
+            d_wj = d_w_js(affinity_array[left], affinity_array[right])
+            d_ww = d_w_wasserstein(affinity_array[left], affinity_array[right], ground_cost_squared)
+            d_mf = d_M_frobenius(moment_array[left], moment_array[right])
             for matrix_key, value in (
-                ("d_viz", d_v), ("d_score_euclidean", d_se), ("d_score_mahalanobis", d_sm),
+                ("d_viz", d_v), ("d_score_euclidean", d_se),
+                ("d_score_mahalanobis_centroids", d_sm_centroids),
+                ("d_score_mahalanobis_intra", d_sm_intra),
                 ("d_w_cosine", d_wc), ("d_w_js", d_wj), ("d_w_wasserstein", d_ww),
-                ("d_T_frobenius", d_tf), ("d_hybrid", d_h),
+                ("d_M_frobenius", d_mf),
             ):
-                matrices[matrix_key][i][j] = value
-                matrices[matrix_key][j][i] = value
+                matrices_unnormalised[matrix_key][left, right] = value
+                matrices_unnormalised[matrix_key][right, left] = value
+
+    from packages.civvec_core.algebra.distances import normalise_distances_by_panel_median
+    median_normaliser: dict[str, float] = {}
+    for metric_key in metric_keys:
+        upper_triangle_values = matrices_unnormalised[metric_key][np.triu_indices(n_states, k=1)]
+        median_normaliser[metric_key] = float(np.median(upper_triangle_values)) if n_states > 1 else 1.0
+
+    normalised_d_sm_intra = normalise_distances_by_panel_median(
+        matrices_unnormalised["d_score_mahalanobis_intra"]
+    )
+    normalised_d_ww = normalise_distances_by_panel_median(
+        matrices_unnormalised["d_w_wasserstein"]
+    )
+    normalised_d_mf = normalise_distances_by_panel_median(
+        matrices_unnormalised["d_M_frobenius"]
+    )
+    hybrid_matrix = (
+        hybrid_weights.alpha * normalised_d_sm_intra
+        + hybrid_weights.beta * normalised_d_ww
+        + hybrid_weights.gamma * normalised_d_mf
+    )
+
+    matrices: dict[str, list[list[float]]] = {
+        metric: matrices_unnormalised[metric].tolist() for metric in metric_keys
+    }
+    matrices["d_hybrid"] = hybrid_matrix.tolist()
 
     return {
         "_meta": {
@@ -412,6 +464,13 @@ def _compute_state_distance_matrix(artefacts: dict) -> dict:
                 "beta": hybrid_weights.beta,
                 "gamma": hybrid_weights.gamma,
             },
+            "hybrid_components_normalised_by": "panel_median",
+            "hybrid_components": [
+                "d_score_mahalanobis_intra",
+                "d_w_wasserstein",
+                "d_M_frobenius",
+            ],
+            "panel_medians": median_normaliser,
             "affinity_beta": artefacts["state_coordinates"]["_meta"]["affinity_beta"],
         },
         "iso3_order": iso3_order,
@@ -447,11 +506,11 @@ def render_phase2() -> None:
     render_states(artefacts)
     render_map_page(artefacts)
     render_basis_page(artefacts)
-    render_tensions_page(artefacts)
+    render_moments_page(artefacts)
     render_distances_page(artefacts)
     print(
         f"[site] Phase 2 rendered: {len(artefacts['state_coordinates']['states'])} states, "
-        "map + basis + tensions + distances pages."
+        "map + basis + moments + distances pages."
     )
 
 

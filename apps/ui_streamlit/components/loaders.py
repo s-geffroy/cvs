@@ -1,4 +1,4 @@
-"""Cached loaders for taxonomy, centroids, state coordinates, tensors."""
+"""Cached loaders for taxonomy, centroids, state coordinates, second moments."""
 from __future__ import annotations
 
 import json
@@ -11,14 +11,14 @@ from apps.basis_builder.paths import (
     CIVILIZATION_CENTROIDS_PATH,
     MACRO_CIVILIZATIONS_V2_PATH,
     STATE_COORDINATES_PATH,
-    STATE_TENSORS_PATH,
+    STATE_MOMENTS_PATH,
 )
 
 
-def _safe_load(path: Path) -> dict[str, Any] | None:
-    if not path.exists():
+def _safe_load(target_path: Path) -> dict[str, Any] | None:
+    if not target_path.exists():
         return None
-    return json.loads(path.read_text())
+    return json.loads(target_path.read_text())
 
 
 @st.cache_data(show_spinner=False)
@@ -42,5 +42,5 @@ def load_state_coordinates() -> dict[str, Any] | None:
 
 
 @st.cache_data(show_spinner=False)
-def load_state_tensors() -> dict[str, Any] | None:
-    return _safe_load(STATE_TENSORS_PATH)
+def load_state_moments() -> dict[str, Any] | None:
+    return _safe_load(STATE_MOMENTS_PATH)

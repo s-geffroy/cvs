@@ -1,0 +1,339 @@
+{
+  "_meta": {
+    "method": "spearman_correlation_w_s_vs_external",
+    "indicators_used": [
+      "pew_dominant_religion_share_2020",
+      "wgi_rule_of_law_2022",
+      "fsi_total_2024"
+    ],
+    "civilization_id_order": [
+      "western",
+      "orthodox",
+      "islamic",
+      "sinic",
+      "hindic",
+      "japanese",
+      "buddhist",
+      "latin_american",
+      "african",
+      "indigenous",
+      "oceanian"
+    ],
+    "iso3_order": [
+      "ARG",
+      "AUS",
+      "BGD",
+      "BGR",
+      "BLR",
+      "BOL",
+      "BRA",
+      "CAN",
+      "CHL",
+      "CHN",
+      "COL",
+      "DEU",
+      "DNK",
+      "ECU",
+      "EGY",
+      "ESP",
+      "ETH",
+      "FIN",
+      "FJI",
+      "FRA",
+      "GBR",
+      "GHA",
+      "GRC",
+      "GTM",
+      "HKG",
+      "IDN",
+      "IND",
+      "IRL",
+      "IRN",
+      "IRQ",
+      "ITA",
+      "JOR",
+      "JPN",
+      "KEN",
+      "KOR",
+      "MAR",
+      "MEX",
+      "MMR",
+      "MNG",
+      "MYS",
+      "NGA",
+      "NLD",
+      "NOR",
+      "NZL",
+      "PAK",
+      "PER",
+      "ROU",
+      "RUS",
+      "SAU",
+      "SGP",
+      "SRB",
+      "SWE",
+      "THA",
+      "TUR",
+      "TWN",
+      "UKR",
+      "URY",
+      "USA",
+      "VEN",
+      "VNM",
+      "ZAF",
+      "ZMB",
+      "ZWE"
+    ]
+  },
+  "indicators": {
+    "pew_dominant_religion_share_2020": {
+      "indicator_id": "pew_dominant_religion_share_2020",
+      "n_states_with_indicator_value": 63,
+      "correlations_per_civilization": [
+        {
+          "civilization_id": "islamic",
+          "n_states_paired": 63,
+          "spearman_rho": 0.522897465437788,
+          "bootstrap_ci_95_lower": 0.29830909178187415,
+          "bootstrap_ci_95_upper": 0.6933251728110598
+        },
+        {
+          "civilization_id": "buddhist",
+          "n_states_paired": 63,
+          "spearman_rho": 0.4933275729646697,
+          "bootstrap_ci_95_lower": 0.282614487327189,
+          "bootstrap_ci_95_upper": 0.6561911962365592
+        },
+        {
+          "civilization_id": "latin_american",
+          "n_states_paired": 63,
+          "spearman_rho": 0.47047811059907835,
+          "bootstrap_ci_95_lower": 0.2574680779569893,
+          "bootstrap_ci_95_upper": 0.6378900249615975
+        },
+        {
+          "civilization_id": "indigenous",
+          "n_states_paired": 63,
+          "spearman_rho": 0.31586021505376344,
+          "bootstrap_ci_95_lower": 0.05952860983102922,
+          "bootstrap_ci_95_upper": 0.532315668202765
+        },
+        {
+          "civilization_id": "sinic",
+          "n_states_paired": 63,
+          "spearman_rho": -0.23142281105990783,
+          "bootstrap_ci_95_lower": -0.4764748943932411,
+          "bootstrap_ci_95_upper": 0.04443884408602147
+        },
+        {
+          "civilization_id": "western",
+          "n_states_paired": 63,
+          "spearman_rho": -0.2310867895545315,
+          "bootstrap_ci_95_lower": -0.44103422619047616,
+          "bootstrap_ci_95_upper": 0.015363383256528416
+        },
+        {
+          "civilization_id": "african",
+          "n_states_paired": 63,
+          "spearman_rho": 0.2306067588325653,
+          "bootstrap_ci_95_lower": -0.012761616743471458,
+          "bootstrap_ci_95_upper": 0.4691352246543779
+        },
+        {
+          "civilization_id": "orthodox",
+          "n_states_paired": 63,
+          "spearman_rho": 0.22729454685099845,
+          "bootstrap_ci_95_lower": -0.01748631912442395,
+          "bootstrap_ci_95_upper": 0.4663102438556067
+        },
+        {
+          "civilization_id": "oceanian",
+          "n_states_paired": 63,
+          "spearman_rho": -0.1660426267281106,
+          "bootstrap_ci_95_lower": -0.3916786674347158,
+          "bootstrap_ci_95_upper": 0.08205045122887863
+        },
+        {
+          "civilization_id": "hindic",
+          "n_states_paired": 63,
+          "spearman_rho": -0.14688940092165897,
+          "bootstrap_ci_95_lower": -0.3973118279569892,
+          "bootstrap_ci_95_upper": 0.1205861175115207
+        },
+        {
+          "civilization_id": "japanese",
+          "n_states_paired": 63,
+          "spearman_rho": -0.14122503840245776,
+          "bootstrap_ci_95_lower": -0.3791114631336405,
+          "bootstrap_ci_95_upper": 0.11910042242703528
+        }
+      ]
+    },
+    "wgi_rule_of_law_2022": {
+      "indicator_id": "wgi_rule_of_law_2022",
+      "n_states_with_indicator_value": 63,
+      "correlations_per_civilization": [
+        {
+          "civilization_id": "western",
+          "n_states_paired": 63,
+          "spearman_rho": 0.6269201228878648,
+          "bootstrap_ci_95_lower": 0.40088685675883257,
+          "bootstrap_ci_95_upper": 0.7759264592933948
+        },
+        {
+          "civilization_id": "indigenous",
+          "n_states_paired": 63,
+          "spearman_rho": -0.5865495391705069,
+          "bootstrap_ci_95_lower": -0.7292218701996928,
+          "bootstrap_ci_95_upper": -0.37692852342549926
+        },
+        {
+          "civilization_id": "buddhist",
+          "n_states_paired": 63,
+          "spearman_rho": -0.5724846390168971,
+          "bootstrap_ci_95_lower": -0.716361847158218,
+          "bootstrap_ci_95_upper": -0.350128408218126
+        },
+        {
+          "civilization_id": "islamic",
+          "n_states_paired": 63,
+          "spearman_rho": -0.5047043010752689,
+          "bootstrap_ci_95_lower": -0.6881864439324117,
+          "bootstrap_ci_95_upper": -0.25586957565284185
+        },
+        {
+          "civilization_id": "oceanian",
+          "n_states_paired": 63,
+          "spearman_rho": 0.4766225038402458,
+          "bootstrap_ci_95_lower": 0.2000192012288787,
+          "bootstrap_ci_95_upper": 0.6673951132872504
+        },
+        {
+          "civilization_id": "latin_american",
+          "n_states_paired": 63,
+          "spearman_rho": -0.38335253456221197,
+          "bootstrap_ci_95_lower": -0.562371591781874,
+          "bootstrap_ci_95_upper": -0.1562692012288787
+        },
+        {
+          "civilization_id": "orthodox",
+          "n_states_paired": 63,
+          "spearman_rho": -0.3792242703533026,
+          "bootstrap_ci_95_lower": -0.5879416282642088,
+          "bootstrap_ci_95_upper": -0.10090005760368669
+        },
+        {
+          "civilization_id": "african",
+          "n_states_paired": 63,
+          "spearman_rho": -0.2887384792626728,
+          "bootstrap_ci_95_lower": -0.5281862039170507,
+          "bootstrap_ci_95_upper": -0.05186371927803382
+        },
+        {
+          "civilization_id": "hindic",
+          "n_states_paired": 63,
+          "spearman_rho": 0.0967741935483871,
+          "bootstrap_ci_95_lower": -0.13988215245775726,
+          "bootstrap_ci_95_upper": 0.3491515456989246
+        },
+        {
+          "civilization_id": "sinic",
+          "n_states_paired": 63,
+          "spearman_rho": -0.07426075268817205,
+          "bootstrap_ci_95_lower": -0.31299803187403996,
+          "bootstrap_ci_95_upper": 0.16983846966205837
+        },
+        {
+          "civilization_id": "japanese",
+          "n_states_paired": 63,
+          "spearman_rho": -0.03192204301075269,
+          "bootstrap_ci_95_lower": -0.2607742895545313,
+          "bootstrap_ci_95_upper": 0.22427995391705066
+        }
+      ]
+    },
+    "fsi_total_2024": {
+      "indicator_id": "fsi_total_2024",
+      "n_states_with_indicator_value": 63,
+      "correlations_per_civilization": [
+        {
+          "civilization_id": "western",
+          "n_states_paired": 63,
+          "spearman_rho": -0.5703725038402457,
+          "bootstrap_ci_95_lower": -0.718849606374808,
+          "bootstrap_ci_95_upper": -0.3383424539170507
+        },
+        {
+          "civilization_id": "islamic",
+          "n_states_paired": 63,
+          "spearman_rho": 0.5583717357910907,
+          "bootstrap_ci_95_lower": 0.33629032258064523,
+          "bootstrap_ci_95_upper": 0.7141921082949308
+        },
+        {
+          "civilization_id": "buddhist",
+          "n_states_paired": 63,
+          "spearman_rho": 0.5543874807987711,
+          "bootstrap_ci_95_lower": 0.3246807795698925,
+          "bootstrap_ci_95_upper": 0.6992727534562212
+        },
+        {
+          "civilization_id": "indigenous",
+          "n_states_paired": 63,
+          "spearman_rho": 0.4941916282642089,
+          "bootstrap_ci_95_lower": 0.23948492703533025,
+          "bootstrap_ci_95_upper": 0.6639304915514593
+        },
+        {
+          "civilization_id": "oceanian",
+          "n_states_paired": 63,
+          "spearman_rho": -0.3990495391705069,
+          "bootstrap_ci_95_lower": -0.6012912826420891,
+          "bootstrap_ci_95_upper": -0.1312259984639017
+        },
+        {
+          "civilization_id": "african",
+          "n_states_paired": 63,
+          "spearman_rho": 0.34735023041474655,
+          "bootstrap_ci_95_lower": 0.11351046466973888,
+          "bootstrap_ci_95_upper": 0.5674791186635945
+        },
+        {
+          "civilization_id": "latin_american",
+          "n_states_paired": 63,
+          "spearman_rho": 0.3262768817204301,
+          "bootstrap_ci_95_lower": 0.10473310291858684,
+          "bootstrap_ci_95_upper": 0.508749759984639
+        },
+        {
+          "civilization_id": "orthodox",
+          "n_states_paired": 63,
+          "spearman_rho": 0.28811443932411673,
+          "bootstrap_ci_95_lower": 0.007993711597542264,
+          "bootstrap_ci_95_upper": 0.505880376344086
+        },
+        {
+          "civilization_id": "sinic",
+          "n_states_paired": 63,
+          "spearman_rho": 0.14338517665130568,
+          "bootstrap_ci_95_lower": -0.10684403801843315,
+          "bootstrap_ci_95_upper": 0.384317396313364
+        },
+        {
+          "civilization_id": "japanese",
+          "n_states_paired": 63,
+          "spearman_rho": -0.06326804915514593,
+          "bootstrap_ci_95_lower": -0.32573204685099844,
+          "bootstrap_ci_95_upper": 0.1887600806451612
+        },
+        {
+          "civilization_id": "hindic",
+          "n_states_paired": 63,
+          "spearman_rho": 0.04085061443932412,
+          "bootstrap_ci_95_lower": -0.205510752688172,
+          "bootstrap_ci_95_upper": 0.25687043970814133
+        }
+      ]
+    }
+  }
+}

@@ -1,6 +1,6 @@
 [project]
 name = "civvec"
-version = "2.0.0a1"
+version = "3.0.0a1"
 description = "Civilizational Vector State — two-bases (B_doc + B_vec) civilizational affiliation engine with tensor mechanics and distance algebra."
 requires-python = ">=3.11"
 authors = [

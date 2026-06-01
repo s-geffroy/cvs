@@ -39,11 +39,11 @@ Les graphiques interactifs nécessitent JavaScript. Données téléchargeables :
 
 ## Téléchargements
 
-- [`state_distance_matrix.json`](../assets/data/state_distance_matrix.json) — matrices complètes (`d_score^E`, `d_w^cos`, `d_w^JS`, `d_T`, `d_hyb`)
+- [`state_distance_matrix.json`](../assets/data/state_distance_matrix.json) — matrices complètes (`d_viz`, `d_score^E`, `d_score^M_intra`, `d_score^M_centroids`, `d_w^cos`, `d_w^JS`, `d_w^W`, `d_M_F`, `d_hyb`)
 - Code source : [`packages/civvec_core/algebra/distances.py`](https://github.com/s-geffroy/cvs/blob/main/packages/civvec_core/algebra/distances.py)
 
 ---
 
 [Liste des États](../states/index.md) ·
-[Tensions](../tensions/index.md) ·
+[Second moment M(s)](../moments/index.md) ·
 [Base vectorielle](../basis/index.md)

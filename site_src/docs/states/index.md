@@ -141,12 +141,12 @@ voir [`08_civilizational_basis.md`](../methodology/08_civilizational_basis.md).
 
 - [Coordonnées États (`state_coordinates.json`)](../assets/data/state_coordinates.json)
 - [Centroïdes civilisationnels (`civilization_centroids.json`)](../assets/data/civilization_centroids.json)
-- [Tenseurs de tension (`state_tensors.json`)](../assets/data/state_tensors.json)
+- [Seconds moments (`state_moments.json`)](../assets/data/state_moments.json)
 - [Géométries ADM0 110m (`global_state_baseline.geojson`)](../assets/data/global_state_baseline.geojson)
 
 ---
 
 [Carte interactive](../map/index.md) ·
 [Base vectorielle B_vec](../basis/index.md) ·
-[Tensions](../tensions/index.md) ·
+[Second moment M(s)](../moments/index.md) ·
 [Distances](../distances/index.md)

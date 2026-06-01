@@ -1,0 +1,457 @@
+{
+  "_meta": {
+    "method": "baseline_clustering",
+    "n_samples": 53,
+    "n_features": 8,
+    "feature_order": [
+      "TS",
+      "SE",
+      "PDI",
+      "IDV",
+      "MAS",
+      "UAI",
+      "LTO",
+      "IVR"
+    ]
+  },
+  "huntington_labels_argmax_w_s": true,
+  "iso3_assignments": [
+    {
+      "iso3": "ARG",
+      "huntington_label": 7,
+      "kmeans_label": 1,
+      "hdbscan_label": 2
+    },
+    {
+      "iso3": "AUS",
+      "huntington_label": 0,
+      "kmeans_label": 9,
+      "hdbscan_label": 2
+    },
+    {
+      "iso3": "BGD",
+      "huntington_label": 2,
+      "kmeans_label": 4,
+      "hdbscan_label": 2
+    },
+    {
+      "iso3": "BGR",
+      "huntington_label": 1,
+      "kmeans_label": 8,
+      "hdbscan_label": 2
+    },
+    {
+      "iso3": "BLR",
+      "huntington_label": 1,
+      "kmeans_label": 8,
+      "hdbscan_label": 2
+    },
+    {
+      "iso3": "BRA",
+      "huntington_label": 7,
+      "kmeans_label": 1,
+      "hdbscan_label": 2
+    },
+    {
+      "iso3": "CAN",
+      "huntington_label": 0,
+      "kmeans_label": 9,
+      "hdbscan_label": 2
+    },
+    {
+      "iso3": "CHL",
+      "huntington_label": 7,
+      "kmeans_label": 1,
+      "hdbscan_label": 2
+    },
+    {
+      "iso3": "CHN",
+      "huntington_label": 3,
+      "kmeans_label": 7,
+      "hdbscan_label": 2
+    },
+    {
+      "iso3": "COL",
+      "huntington_label": 7,
+      "kmeans_label": 5,
+      "hdbscan_label": 2
+    },
+    {
+      "iso3": "DEU",
+      "huntington_label": 5,
+      "kmeans_label": 3,
+      "hdbscan_label": 2
+    },
+    {
+      "iso3": "DNK",
+      "huntington_label": 0,
+      "kmeans_label": 2,
+      "hdbscan_label": 2
+    },
+    {
+      "iso3": "EGY",
+      "huntington_label": 2,
+      "kmeans_label": 4,
+      "hdbscan_label": 2
+    },
+    {
+      "iso3": "ESP",
+      "huntington_label": 6,
+      "kmeans_label": 0,
+      "hdbscan_label": 2
+    },
+    {
+      "iso3": "FIN",
+      "huntington_label": 0,
+      "kmeans_label": 2,
+      "hdbscan_label": 2
+    },
+    {
+      "iso3": "FRA",
+      "huntington_label": 0,
+      "kmeans_label": 3,
+      "hdbscan_label": 2
+    },
+    {
+      "iso3": "GBR",
+      "huntington_label": 0,
+      "kmeans_label": 9,
+      "hdbscan_label": 2
+    },
+    {
+      "iso3": "GHA",
+      "huntington_label": 7,
+      "kmeans_label": 5,
+      "hdbscan_label": 2
+    },
+    {
+      "iso3": "GRC",
+      "huntington_label": 7,
+      "kmeans_label": 1,
+      "hdbscan_label": 2
+    },
+    {
+      "iso3": "HKG",
+      "huntington_label": 3,
+      "kmeans_label": 7,
+      "hdbscan_label": 2
+    },
+    {
+      "iso3": "IDN",
+      "huntington_label": 3,
+      "kmeans_label": 6,
+      "hdbscan_label": 2
+    },
+    {
+      "iso3": "IND",
+      "huntington_label": 4,
+      "kmeans_label": 6,
+      "hdbscan_label": 2
+    },
+    {
+      "iso3": "IRL",
+      "huntington_label": 0,
+      "kmeans_label": 9,
+      "hdbscan_label": 2
+    },
+    {
+      "iso3": "IRN",
+      "huntington_label": 2,
+      "kmeans_label": 1,
+      "hdbscan_label": 2
+    },
+    {
+      "iso3": "IRQ",
+      "huntington_label": 2,
+      "kmeans_label": 4,
+      "hdbscan_label": 2
+    },
+    {
+      "iso3": "ITA",
+      "huntington_label": 0,
+      "kmeans_label": 3,
+      "hdbscan_label": 2
+    },
+    {
+      "iso3": "JOR",
+      "huntington_label": 2,
+      "kmeans_label": 4,
+      "hdbscan_label": 2
+    },
+    {
+      "iso3": "JPN",
+      "huntington_label": 5,
+      "kmeans_label": 10,
+      "hdbscan_label": -1
+    },
+    {
+      "iso3": "KOR",
+      "huntington_label": 1,
+      "kmeans_label": 0,
+      "hdbscan_label": -1
+    },
+    {
+      "iso3": "MAR",
+      "huntington_label": 2,
+      "kmeans_label": 4,
+      "hdbscan_label": 2
+    },
+    {
+      "iso3": "MEX",
+      "huntington_label": 7,
+      "kmeans_label": 5,
+      "hdbscan_label": 2
+    },
+    {
+      "iso3": "MNG",
+      "huntington_label": 6,
+      "kmeans_label": 8,
+      "hdbscan_label": 2
+    },
+    {
+      "iso3": "MYS",
+      "huntington_label": 8,
+      "kmeans_label": 6,
+      "hdbscan_label": 2
+    },
+    {
+      "iso3": "NGA",
+      "huntington_label": 8,
+      "kmeans_label": 5,
+      "hdbscan_label": 2
+    },
+    {
+      "iso3": "NLD",
+      "huntington_label": 0,
+      "kmeans_label": 2,
+      "hdbscan_label": 2
+    },
+    {
+      "iso3": "NOR",
+      "huntington_label": 0,
+      "kmeans_label": 2,
+      "hdbscan_label": 2
+    },
+    {
+      "iso3": "NZL",
+      "huntington_label": 0,
+      "kmeans_label": 9,
+      "hdbscan_label": 2
+    },
+    {
+      "iso3": "PAK",
+      "huntington_label": 2,
+      "kmeans_label": 4,
+      "hdbscan_label": 2
+    },
+    {
+      "iso3": "PER",
+      "huntington_label": 7,
+      "kmeans_label": 1,
+      "hdbscan_label": 2
+    },
+    {
+      "iso3": "ROU",
+      "huntington_label": 1,
+      "kmeans_label": 8,
+      "hdbscan_label": 2
+    },
+    {
+      "iso3": "RUS",
+      "huntington_label": 1,
+      "kmeans_label": 8,
+      "hdbscan_label": 2
+    },
+    {
+      "iso3": "SGP",
+      "huntington_label": 3,
+      "kmeans_label": 7,
+      "hdbscan_label": 2
+    },
+    {
+      "iso3": "SRB",
+      "huntington_label": 1,
+      "kmeans_label": 8,
+      "hdbscan_label": 2
+    },
+    {
+      "iso3": "SWE",
+      "huntington_label": 0,
+      "kmeans_label": 2,
+      "hdbscan_label": 2
+    },
+    {
+      "iso3": "THA",
+      "huntington_label": 6,
+      "kmeans_label": 1,
+      "hdbscan_label": 2
+    },
+    {
+      "iso3": "TUR",
+      "huntington_label": 6,
+      "kmeans_label": 1,
+      "hdbscan_label": 2
+    },
+    {
+      "iso3": "TWN",
+      "huntington_label": 3,
+      "kmeans_label": 0,
+      "hdbscan_label": -1
+    },
+    {
+      "iso3": "UKR",
+      "huntington_label": 1,
+      "kmeans_label": 8,
+      "hdbscan_label": 2
+    },
+    {
+      "iso3": "URY",
+      "huntington_label": 7,
+      "kmeans_label": 1,
+      "hdbscan_label": 2
+    },
+    {
+      "iso3": "USA",
+      "huntington_label": 0,
+      "kmeans_label": 9,
+      "hdbscan_label": 2
+    },
+    {
+      "iso3": "VEN",
+      "huntington_label": 7,
+      "kmeans_label": 5,
+      "hdbscan_label": 2
+    },
+    {
+      "iso3": "VNM",
+      "huntington_label": 3,
+      "kmeans_label": 6,
+      "hdbscan_label": 2
+    },
+    {
+      "iso3": "ZAF",
+      "huntington_label": 10,
+      "kmeans_label": 9,
+      "hdbscan_label": 2
+    }
+  ],
+  "kmeans": {
+    "k": 11,
+    "adjusted_rand_index_vs_huntington": 0.4592171847567903,
+    "normalised_mutual_information_vs_huntington": 0.7209034956971831,
+    "confusion_matrix_records": [
+      {
+        "huntington_label": 0,
+        "kmeans_label": 2,
+        "count": 5
+      },
+      {
+        "huntington_label": 0,
+        "kmeans_label": 3,
+        "count": 2
+      },
+      {
+        "huntington_label": 0,
+        "kmeans_label": 9,
+        "count": 6
+      },
+      {
+        "huntington_label": 1,
+        "kmeans_label": 0,
+        "count": 1
+      },
+      {
+        "huntington_label": 1,
+        "kmeans_label": 8,
+        "count": 6
+      },
+      {
+        "huntington_label": 2,
+        "kmeans_label": 1,
+        "count": 1
+      },
+      {
+        "huntington_label": 2,
+        "kmeans_label": 4,
+        "count": 6
+      },
+      {
+        "huntington_label": 3,
+        "kmeans_label": 0,
+        "count": 1
+      },
+      {
+        "huntington_label": 3,
+        "kmeans_label": 6,
+        "count": 2
+      },
+      {
+        "huntington_label": 3,
+        "kmeans_label": 7,
+        "count": 3
+      },
+      {
+        "huntington_label": 4,
+        "kmeans_label": 6,
+        "count": 1
+      },
+      {
+        "huntington_label": 5,
+        "kmeans_label": 3,
+        "count": 1
+      },
+      {
+        "huntington_label": 5,
+        "kmeans_label": 10,
+        "count": 1
+      },
+      {
+        "huntington_label": 6,
+        "kmeans_label": 0,
+        "count": 1
+      },
+      {
+        "huntington_label": 6,
+        "kmeans_label": 1,
+        "count": 2
+      },
+      {
+        "huntington_label": 6,
+        "kmeans_label": 8,
+        "count": 1
+      },
+      {
+        "huntington_label": 7,
+        "kmeans_label": 1,
+        "count": 6
+      },
+      {
+        "huntington_label": 7,
+        "kmeans_label": 5,
+        "count": 4
+      },
+      {
+        "huntington_label": 8,
+        "kmeans_label": 5,
+        "count": 1
+      },
+      {
+        "huntington_label": 8,
+        "kmeans_label": 6,
+        "count": 1
+      },
+      {
+        "huntington_label": 10,
+        "kmeans_label": 9,
+        "count": 1
+      }
+    ]
+  },
+  "hdbscan_lite": {
+    "min_cluster_size": 3,
+    "n_clusters_found": 1,
+    "n_noise_points": 3,
+    "adjusted_rand_index_vs_huntington_non_noise": 0.0,
+    "normalised_mutual_information_vs_huntington_non_noise": 0.0
+  }
+}

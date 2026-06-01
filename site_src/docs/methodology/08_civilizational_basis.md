@@ -1,6 +1,6 @@
 # 08 — Base civilisationnelle : synthèse hybride et coordonnées vectorielles
 
-> **Avertissement éthique** : Ce profil est inféré à partir de sources publiques agrégées. **Il ne doit pas être utilisé pour classer des individus réels.** Voir [`07_ethics_publication_policy.md`](07_ethics_publication_policy.md).
+> **Avertissement éthique** : Ce profil est inféré à partir de sources publiques agrégées. **Il ne doit pas être utilisé pour classer des individus réels.** Voir [`07_ethics_publication_policy.md](07_ethics_publication_policy.md).
 
 Le projet `cvs/` repose sur **deux bases interdépendantes** qui co-évoluent et se valident mutuellement.
 
@@ -32,7 +32,7 @@ Ces deux axes définissent **`B_viz = ℝ²`** — la base de visualisation prim
 
 ### 1.3 Hofstede fournit la résolution fine
 
-Les 6 dimensions Hofstede (PDI, IDV, MAS, UAI, LTO, IVR) sont calibrées empiriquement sur des populations de travailleurs IBM (1967-1973, étendues 1990s-2010s) et offrent une **base orthogonale par construction** (factor analysis indépendante par dimension).
+Les 6 dimensions Hofstede (PDI, IDV, MAS, UAI, LTO, IVR) sont calibrées empiriquement sur des populations de travailleurs IBM (1967-1973, étendues 1990s-2010s) et **postulent** une indépendance dimensionnelle par construction factorielle. **L'orthogonalité empirique n'est pas vérifiée** sur les valeurs contemporaines : MAS et IDV sont notoirement corrélées (cf. McSweeney 2002, Schmitz & Weber 2014), UAI a une faible variance expliquée. La v3.0 étiquette donc l'orthogonalité comme **postulée**, pas **mesurée** (voir [doc 11](11_critiques_and_responses.md) section A2, et la métrique `d_score_mahalanobis_intra` introduite pour pondérer les axes selon leur variance intra-civilisationnelle — cf. [doc 10](10_distance_algebra.md)).
 
 Ces 6 axes définissent **`B_score = ℝ⁶`** — la base de scoring fin.
 
@@ -79,6 +79,28 @@ Hau'ofa (1994) « Our Sea of Islands » articule une identité pacifique distinc
 
 **Drapeau** `low_archetype_coverage: true` car peu de données Hofstede pour les micro-États du Pacifique.
 
+### 3.4 Règle de désambiguïsation entre civilisations chevauchantes
+
+Pour les États dont l'identité chevauche plusieurs catégories, la v3.0 publie une **règle de priorité explicite** :
+
+| Cas | Décision | Justification |
+|---|---|---|
+| KOR | `sinic` core, `buddhist` periphery | Influence sinique structurelle (caractères chinois historiques, confucianisme) ; bouddhisme = minorité religieuse mais non structurellement définissante. |
+| THA | `buddhist` core, `sinic` periphery | Bouddhisme theravāda = identité dominante ; influences siniques historiques mais non structurelles. |
+| MMR | `buddhist` core | Bouddhisme theravāda dominant, identité bouddhiste affirmée. |
+| MNG | `buddhist` core, `sinic` periphery | Bouddhisme tibétain dominant ; héritage historique sinique périphérique. |
+| BOL | `latin_american` core, `indigenous` periphery | Identité latino-américaine officielle ; stratification indigène significative mais non dominante. |
+| ECU | `latin_american` core, `indigenous` periphery | Idem BOL. |
+| PER | `latin_american` core, `indigenous` periphery | Idem BOL. |
+| NZL | `western` core, `oceanian` periphery | Anglo-saxon dominant ; identité polynésienne secondaire (māori). |
+| AUS | `western` core, `oceanian` periphery | Idem NZL. |
+| FJI | `oceanian` core | Petit État, identité polynésienne primaire. |
+| TUR | `islamic` core, `western` ambiguous | Pays musulman majoritaire mais avec une affiliation européenne contestée — `ambiguous_cases` documenté. |
+| RUS | `orthodox` core | Identité orthodoxe russe affirmée ; pas de chevauchement structurel. |
+| IRN | `islamic` core (chiite) | Identité chiite spécifique, marquée. |
+
+Pour les cas restant **véritablement ambigus** après application de cette règle, les États sont listés dans `taxonomies/macro_civilizations.v2.json:ambiguous_cases` de la civilisation où ils sont **moins fortement** rattachés — ce qui les laisse présents dans la documentation sans influencer le centroïde.
+
 ## 4. Formules de projection (lien vers B_vec)
 
 ### 4.1 Centroïdes de civilisation
@@ -108,11 +130,12 @@ Paramètre `β = 0.05` par défaut (échelle Hofstede 0-100, distances typiques 
 
 ## 5. Limites assumées
 
-1. **Hofstede couvre ~100 pays** : ETH, FJI, et plusieurs micro-États manquent ou sont imputés depuis des proxies régionaux. Drapeau `imputed` dans `state_coordinates.json`.
-2. **IW manque pour certains pays africains/asiatiques** : utilisation des waves antérieures (5, 6) si wave 7 manque.
-3. **Les axes IW ne sont pas strictement orthogonaux** en wave 7 (corrélation ~0.15) — étiquetés `empirical_orthogonal_by_construction` mais validation à conduire.
-4. **Hofstede et IW datent de différentes vagues** : pas de simultanéité temporelle stricte.
-5. **Les centroïdes sont sensibles au choix d'États archétypes** — la UI Streamlit permet d'itérer.
+1. **Hofstede couvre ~100 pays** : ETH, FJI, et plusieurs micro-États manquent ou sont imputés depuis des proxies régionaux. Procédure d'imputation explicite : `np.nanmean` sur les axes disponibles, flag `coverage: imputed` posé sur l'État, propagation jusqu'aux outputs. Drapeau `imputed` dans `state_coordinates.json`.
+2. **IW manque pour certains pays africains/asiatiques** : utilisation des waves antérieures (5, 6) si wave 7 manque. Drapeau `iw_coverage` est positionné à `missing` quand aucune wave n'est disponible.
+3. **Les axes IW ne sont pas strictement orthogonaux** en wave 7 (corrélation ~0.15) — orthogonalité **postulée par construction factorielle**, non vérifiée empiriquement. La v3.0 corrige l'étiquetage trompeur de la v2.0 (`empirical_orthogonal_by_construction` → `postulated_orthogonal_not_empirically_verified`).
+4. **Hofstede et IW datent de différentes vagues** : pas de simultanéité temporelle stricte. Hofstede 2010 (consolidation 2015) vs WVS wave 7 (2017-2022). Limite reconnue, non corrigeable en V1.
+5. **Les centroïdes sont sensibles au choix d'États archétypes** — sensibilité quantifiée par leave-one-out dans [doc 13](13_sensitivity_analysis.md). La UI Streamlit permet d'itérer interactivement.
+6. **Le poids periphery=0.5 est éditorial** : justification non empirique. Sensibilité à ce choix testée dans [doc 13](13_sensitivity_analysis.md). Valeurs alternatives (0.25, 0.75) discutées.
 
 ## 6. Cohérence garantie
 
@@ -131,4 +154,4 @@ Tests automatiques (`tests/test_documentary_basis.py`, `test_vector_basis.py`, `
 - `taxonomies/macro_civilizations.v2.json` : version `2.0.0`.
 - `packages/civvec_core/basis/B_viz.json` : version `2.0.0`.
 - `packages/civvec_core/basis/B_score.json` : version `2.0.0`.
-- Toute modification d'un centroïde, d'une bibliographie ou d'un État archétype incrémente la version mineure (`2.x.0`) et est consignée dans `CHANGELOG.md`.
+- Toute modification d'un centroïde, d'une bibliographie ou d'un État archétype incrémente la version mineure (`2.x.0`) et est consignée dans `CHANGELOG.md.

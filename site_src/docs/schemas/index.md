@@ -21,7 +21,7 @@ Téléchargeables directement depuis cette page (servis statiquement par GitHub 
 
 | `state_coordinates.schema.json` | State Coordinates in B_vec | [`state_coordinates.schema.json`](../assets/schemas/state_coordinates.schema.json) |
 
-| `state_profile.v2.schema.json` | State Profile v2 (with B_vec coordinates and tension tensor) | [`state_profile.v2.schema.json`](../assets/schemas/state_profile.v2.schema.json) |
+| `state_moment.schema.json` | State Civilizational Second Moment M(s) | [`state_moment.schema.json`](../assets/schemas/state_moment.schema.json) |
 
-| `state_tension.schema.json` | State Civilizational Tension Tensor | [`state_tension.schema.json`](../assets/schemas/state_tension.schema.json) |
+| `state_profile.v2.schema.json` | State Profile v2 (with B_vec coordinates and tension tensor) | [`state_profile.v2.schema.json`](../assets/schemas/state_profile.v2.schema.json) |
 

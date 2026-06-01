@@ -1,0 +1,103 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "state_moment.schema.json",
+  "title": "State Civilizational Second Moment M(s)",
+  "description": "M(s) = Sum_i w_s[i] * (mu_i - x_s)(mu_i - x_s)^T in R^{6x6}, symmetric positive semi-definite. Equal to Cov_w(mu;w) + weight_sum * (mu_bar - x_s)(mu_bar - x_s)^T where mu_bar = Sum_i w_s[i] * mu_i. Not a covariance: x_s is not the weighted barycentre. The historical 'tension tensor T(s)' name is deprecated; see docs/11_critiques_and_responses.md sections C9-C13.",
+  "type": "object",
+  "required": ["iso3", "M", "eigenvalues", "eigenvectors", "invariants", "anisotropy"],
+  "properties": {
+    "iso3": { "type": "string", "minLength": 3, "maxLength": 3 },
+    "M": {
+      "type": "array",
+      "minItems": 6,
+      "maxItems": 6,
+      "description": "6x6 symmetric PSD matrix; weighted second moment of (mu_i - x_s) under w_s.",
+      "items": {
+        "type": "array",
+        "minItems": 6,
+        "maxItems": 6,
+        "items": { "type": "number" }
+      }
+    },
+    "eigenvalues": {
+      "type": "array",
+      "description": "Sorted descending: lambda_1 >= ... >= lambda_6 >= 0. Directional dispersion magnitudes.",
+      "minItems": 6,
+      "maxItems": 6,
+      "items": { "type": "number" }
+    },
+    "eigenvectors": {
+      "type": "array",
+      "description": "Orthonormal basis: column k is e_k in B_score associated with lambda_k.",
+      "minItems": 6,
+      "maxItems": 6,
+      "items": {
+        "type": "array",
+        "minItems": 6,
+        "maxItems": 6,
+        "items": { "type": "number" }
+      }
+    },
+    "invariants": {
+      "type": "object",
+      "required": ["I1_trace", "I2_von_mises", "det"],
+      "properties": {
+        "I1_trace": { "type": "number", "description": "tr(M) - total second-moment magnitude" },
+        "I2_von_mises": { "type": "number", "description": "sqrt(3/2 * s:s) with s = M - tr(M)/6 * I; standard von Mises invariant of the deviatoric part" },
+        "det": { "type": "number", "description": "det(M)" }
+      }
+    },
+    "anisotropy": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1,
+      "description": "A = (lambda_1 - lambda_6) / lambda_1, or 0 when lambda_1 ~ 0."
+    },
+    "quality_flags": {
+      "type": "object",
+      "properties": {
+        "monocivilizational": { "type": "boolean" },
+        "low_evidence": { "type": "boolean" },
+        "computed_from_imputed": { "type": "boolean" }
+      }
+    },
+    "decomposition": {
+      "type": "object",
+      "description": "Decomposition M = Cov_w + bias_term that disentangles intra-civilizational dispersion from the state's bias relative to the weighted barycentre mu_bar.",
+      "required": ["weighted_barycentre_mu_bar", "intra_civilizational_covariance", "bias_term"],
+      "properties": {
+        "weighted_barycentre_mu_bar": {
+          "type": "array",
+          "minItems": 6,
+          "maxItems": 6,
+          "items": { "type": "number" }
+        },
+        "intra_civilizational_covariance": {
+          "type": "array",
+          "minItems": 6,
+          "maxItems": 6,
+          "items": {
+            "type": "array",
+            "minItems": 6,
+            "maxItems": 6,
+            "items": { "type": "number" }
+          }
+        },
+        "bias_term": {
+          "type": "array",
+          "minItems": 6,
+          "maxItems": 6,
+          "items": {
+            "type": "array",
+            "minItems": 6,
+            "maxItems": 6,
+            "items": { "type": "number" }
+          }
+        },
+        "trace_intra": { "type": "number" },
+        "trace_bias": { "type": "number" }
+      }
+    }
+  },
+  "additionalProperties": false
+}

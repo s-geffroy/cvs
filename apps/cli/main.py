@@ -4,18 +4,20 @@ from __future__ import annotations
 import typer
 
 from . import basis as basis_module
+from . import empirical as empirical_module
 from . import site as site_module
 from . import ui as ui_module
 
 app = typer.Typer(
     name="civvec",
-    help="Civilizational Vector State CLI (cvs/ v2 — two bases, tensor mechanics, distance algebra).",
+    help="Civilizational Vector State CLI (cvs/ v3 — two bases, second moment M(s), distance algebra).",
     no_args_is_help=True,
 )
 
 app.add_typer(basis_module.app, name="basis", help="Build and validate B_vec.")
 app.add_typer(ui_module.app, name="ui", help="Launch the Streamlit UI in Docker.")
 app.add_typer(site_module.app, name="site", help="Render and build the GitHub Pages site (Phase 1b/2).")
+app.add_typer(empirical_module.app, name="empirical", help="Run empirical analyses (sensitivity, baseline, external validation).")
 
 
 @app.command("score")

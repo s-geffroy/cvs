@@ -1,0 +1,525 @@
+{
+  "_meta": {
+    "method": "leave_one_out_archetype",
+    "dimension_order_score": [
+      "pdi",
+      "idv",
+      "mas",
+      "uai",
+      "lto",
+      "ivr"
+    ],
+    "weighting_scheme": "role_default (core=1, periphery=0.5, ambiguous=0)"
+  },
+  "civilizations": [
+    {
+      "civilization_id": "western",
+      "archetype_displacements": [
+        {
+          "omitted_iso3": "DEU",
+          "role": "core",
+          "mu_score_displacement": 3.855894259571634,
+          "mu_viz_displacement": 0.04940073803830901
+        },
+        {
+          "omitted_iso3": "SWE",
+          "role": "core",
+          "mu_score_displacement": 3.8230901894655607,
+          "mu_viz_displacement": 0.0902163837349718
+        },
+        {
+          "omitted_iso3": "ITA",
+          "role": "core",
+          "mu_score_displacement": 3.8094678954758288,
+          "mu_viz_displacement": 0.06748114005238923
+        },
+        {
+          "omitted_iso3": "FRA",
+          "role": "core",
+          "mu_score_displacement": 3.762693366379972,
+          "mu_viz_displacement": 0.02402858509824193
+        },
+        {
+          "omitted_iso3": "DNK",
+          "role": "core",
+          "mu_score_displacement": 3.6642420067951016,
+          "mu_viz_displacement": 0.06675380982891933
+        },
+        {
+          "omitted_iso3": "ESP",
+          "role": "core",
+          "mu_score_displacement": 3.6251621352961734,
+          "mu_viz_displacement": 0.05128964164130296
+        },
+        {
+          "omitted_iso3": "IRL",
+          "role": "core",
+          "mu_score_displacement": 3.073590227936144,
+          "mu_viz_displacement": 0.07176987351665076
+        },
+        {
+          "omitted_iso3": "NOR",
+          "role": "core",
+          "mu_score_displacement": 2.9208710589524816,
+          "mu_viz_displacement": 0.0750459546044934
+        },
+        {
+          "omitted_iso3": "NLD",
+          "role": "core",
+          "mu_score_displacement": 2.8625529927876143,
+          "mu_viz_displacement": 0.04211275914198007
+        },
+        {
+          "omitted_iso3": "AUS",
+          "role": "core",
+          "mu_score_displacement": 2.8034741760218362,
+          "mu_viz_displacement": 0.032166517074029455
+        },
+        {
+          "omitted_iso3": "GBR",
+          "role": "core",
+          "mu_score_displacement": 2.6714656381768065,
+          "mu_viz_displacement": 0.0067268995379769735
+        },
+        {
+          "omitted_iso3": "USA",
+          "role": "core",
+          "mu_score_displacement": 2.6197039317013946,
+          "mu_viz_displacement": 0.0776451393257202
+        },
+        {
+          "omitted_iso3": "FIN",
+          "role": "core",
+          "mu_score_displacement": 1.7994903946599403,
+          "mu_viz_displacement": 0.004996375935740302
+        },
+        {
+          "omitted_iso3": "CAN",
+          "role": "core",
+          "mu_score_displacement": 1.356163725631424,
+          "mu_viz_displacement": 0.02954332810839566
+        },
+        {
+          "omitted_iso3": "NZL",
+          "role": "ambiguous",
+          "mu_score_displacement": 0.0,
+          "mu_viz_displacement": 0.0
+        }
+      ],
+      "max_score_displacement": 3.855894259571634
+    },
+    {
+      "civilization_id": "orthodox",
+      "archetype_displacements": [
+        {
+          "omitted_iso3": "GRC",
+          "role": "core",
+          "mu_score_displacement": 8.161424112090678,
+          "mu_viz_displacement": 0.13015449567250517
+        },
+        {
+          "omitted_iso3": "BLR",
+          "role": "core",
+          "mu_score_displacement": 4.584059930037658,
+          "mu_viz_displacement": 0.10707008110379708
+        },
+        {
+          "omitted_iso3": "UKR",
+          "role": "core",
+          "mu_score_displacement": 4.1563818645646124,
+          "mu_viz_displacement": 0.036673623335117485
+        },
+        {
+          "omitted_iso3": "RUS",
+          "role": "core",
+          "mu_score_displacement": 3.3180773330663285,
+          "mu_viz_displacement": 0.05496855419340572
+        },
+        {
+          "omitted_iso3": "BGR",
+          "role": "core",
+          "mu_score_displacement": 3.151233426587682,
+          "mu_viz_displacement": 0.059141630230353494
+        },
+        {
+          "omitted_iso3": "ROU",
+          "role": "core",
+          "mu_score_displacement": 2.9225644937203072,
+          "mu_viz_displacement": 0.08186633927121047
+        },
+        {
+          "omitted_iso3": "SRB",
+          "role": "core",
+          "mu_score_displacement": 2.852476347876129,
+          "mu_viz_displacement": 0.024513405097588075
+        }
+      ],
+      "max_score_displacement": 8.161424112090678
+    },
+    {
+      "civilization_id": "islamic",
+      "archetype_displacements": [
+        {
+          "omitted_iso3": "MYS",
+          "role": "core",
+          "mu_score_displacement": 4.754901777018209,
+          "mu_viz_displacement": 0.06623937138128393
+        },
+        {
+          "omitted_iso3": "PAK",
+          "role": "core",
+          "mu_score_displacement": 4.404439908670671,
+          "mu_viz_displacement": 0.025915341754868072
+        },
+        {
+          "omitted_iso3": "EGY",
+          "role": "core",
+          "mu_score_displacement": 4.069286289890517,
+          "mu_viz_displacement": 0.0647311629494646
+        },
+        {
+          "omitted_iso3": "IDN",
+          "role": "core",
+          "mu_score_displacement": 3.8661702920684595,
+          "mu_viz_displacement": 0.05078397725345089
+        },
+        {
+          "omitted_iso3": "IRQ",
+          "role": "core",
+          "mu_score_displacement": 3.6188898347923817,
+          "mu_viz_displacement": 0.05362190449783866
+        },
+        {
+          "omitted_iso3": "SAU",
+          "role": "core",
+          "mu_score_displacement": 3.2482162937386256,
+          "mu_viz_displacement": 0.0
+        },
+        {
+          "omitted_iso3": "IRN",
+          "role": "core",
+          "mu_score_displacement": 3.2292695487032086,
+          "mu_viz_displacement": 0.03989182904670275
+        },
+        {
+          "omitted_iso3": "TUR",
+          "role": "core",
+          "mu_score_displacement": 3.22377531362334,
+          "mu_viz_displacement": 0.03831319922125921
+        },
+        {
+          "omitted_iso3": "MAR",
+          "role": "core",
+          "mu_score_displacement": 2.7392766132021715,
+          "mu_viz_displacement": 0.022470831573507547
+        },
+        {
+          "omitted_iso3": "JOR",
+          "role": "core",
+          "mu_score_displacement": 2.2158519806160353,
+          "mu_viz_displacement": 0.03590109871423007
+        },
+        {
+          "omitted_iso3": "BGD",
+          "role": "core",
+          "mu_score_displacement": 2.1917199555683116,
+          "mu_viz_displacement": 0.018223577185396193
+        }
+      ],
+      "max_score_displacement": 4.754901777018209
+    },
+    {
+      "civilization_id": "sinic",
+      "archetype_displacements": [
+        {
+          "omitted_iso3": "TWN",
+          "role": "core",
+          "mu_score_displacement": 11.334901852243807,
+          "mu_viz_displacement": 0.2633557479911915
+        },
+        {
+          "omitted_iso3": "SGP",
+          "role": "core",
+          "mu_score_displacement": 7.091720524668183,
+          "mu_viz_displacement": 0.08050621094052315
+        },
+        {
+          "omitted_iso3": "CHN",
+          "role": "core",
+          "mu_score_displacement": 6.13636700336608,
+          "mu_viz_displacement": 0.21267639737403868
+        },
+        {
+          "omitted_iso3": "HKG",
+          "role": "core",
+          "mu_score_displacement": 5.816356247686345,
+          "mu_viz_displacement": 0.0350891721190455
+        },
+        {
+          "omitted_iso3": "VNM",
+          "role": "core",
+          "mu_score_displacement": 5.156791638218475,
+          "mu_viz_displacement": 0.11101801655587264
+        }
+      ],
+      "max_score_displacement": 11.334901852243807
+    },
+    {
+      "civilization_id": "hindic",
+      "archetype_displacements": [
+        {
+          "omitted_iso3": "NPL",
+          "role": "periphery",
+          "mu_score_displacement": 0.0,
+          "mu_viz_displacement": 0.0
+        },
+        {
+          "omitted_iso3": "LKA",
+          "role": "periphery",
+          "mu_score_displacement": 0.0,
+          "mu_viz_displacement": 0.0
+        },
+        {
+          "omitted_iso3": "MUS",
+          "role": "periphery",
+          "mu_score_displacement": 0.0,
+          "mu_viz_displacement": 0.0
+        },
+        {
+          "omitted_iso3": "IND",
+          "role": "core",
+          "mu_score_displacement": NaN,
+          "mu_viz_displacement": NaN
+        }
+      ],
+      "max_score_displacement": 0.0
+    },
+    {
+      "civilization_id": "japanese",
+      "archetype_displacements": [],
+      "max_score_displacement": 0.0
+    },
+    {
+      "civilization_id": "buddhist",
+      "archetype_displacements": [
+        {
+          "omitted_iso3": "MNG",
+          "role": "core",
+          "mu_score_displacement": 12.99198470852959,
+          "mu_viz_displacement": 0.24678488158268078
+        },
+        {
+          "omitted_iso3": "THA",
+          "role": "core",
+          "mu_score_displacement": 11.252777434926898,
+          "mu_viz_displacement": 0.19002923751652304
+        },
+        {
+          "omitted_iso3": "MMR",
+          "role": "core",
+          "mu_score_displacement": 9.12870929175277,
+          "mu_viz_displacement": 0.11577036657874835
+        },
+        {
+          "omitted_iso3": "KHM",
+          "role": "core",
+          "mu_score_displacement": 0.0,
+          "mu_viz_displacement": 0.0
+        },
+        {
+          "omitted_iso3": "LAO",
+          "role": "core",
+          "mu_score_displacement": 0.0,
+          "mu_viz_displacement": 0.0
+        },
+        {
+          "omitted_iso3": "KOR",
+          "role": "ambiguous",
+          "mu_score_displacement": 0.0,
+          "mu_viz_displacement": 0.0
+        },
+        {
+          "omitted_iso3": "BTN",
+          "role": "core",
+          "mu_score_displacement": 0.0,
+          "mu_viz_displacement": 0.0
+        }
+      ],
+      "max_score_displacement": 12.99198470852959
+    },
+    {
+      "civilization_id": "latin_american",
+      "archetype_displacements": [
+        {
+          "omitted_iso3": "GTM",
+          "role": "core",
+          "mu_score_displacement": 6.1762157047903345,
+          "mu_viz_displacement": 0.08264180667117912
+        },
+        {
+          "omitted_iso3": "VEN",
+          "role": "core",
+          "mu_score_displacement": 5.519931355389293,
+          "mu_viz_displacement": 0.04332910413835145
+        },
+        {
+          "omitted_iso3": "MEX",
+          "role": "core",
+          "mu_score_displacement": 4.4515161838273185,
+          "mu_viz_displacement": 0.007382045703288009
+        },
+        {
+          "omitted_iso3": "ARG",
+          "role": "core",
+          "mu_score_displacement": 4.090239459356448,
+          "mu_viz_displacement": 0.022395160411940337
+        },
+        {
+          "omitted_iso3": "URY",
+          "role": "core",
+          "mu_score_displacement": 3.612049157009676,
+          "mu_viz_displacement": 0.09907461491718064
+        },
+        {
+          "omitted_iso3": "COL",
+          "role": "core",
+          "mu_score_displacement": 3.4822251748285717,
+          "mu_viz_displacement": 0.0486160711755199
+        },
+        {
+          "omitted_iso3": "PER",
+          "role": "core",
+          "mu_score_displacement": 3.450043751959112,
+          "mu_viz_displacement": 0.0439753894416321
+        },
+        {
+          "omitted_iso3": "BRA",
+          "role": "core",
+          "mu_score_displacement": 3.146044112389203,
+          "mu_viz_displacement": 0.039338913995190475
+        },
+        {
+          "omitted_iso3": "CHL",
+          "role": "core",
+          "mu_score_displacement": 2.992181330176087,
+          "mu_viz_displacement": 0.07081971546656633
+        },
+        {
+          "omitted_iso3": "BOL",
+          "role": "interface",
+          "mu_score_displacement": 0.0,
+          "mu_viz_displacement": 0.0
+        },
+        {
+          "omitted_iso3": "ECU",
+          "role": "interface",
+          "mu_score_displacement": 0.0,
+          "mu_viz_displacement": 0.0
+        }
+      ],
+      "max_score_displacement": 6.1762157047903345
+    },
+    {
+      "civilization_id": "african",
+      "archetype_displacements": [
+        {
+          "omitted_iso3": "GHA",
+          "role": "core",
+          "mu_score_displacement": 8.456409879822266,
+          "mu_viz_displacement": 0.12689945713919445
+        },
+        {
+          "omitted_iso3": "ZAF",
+          "role": "core",
+          "mu_score_displacement": 8.307177702980047,
+          "mu_viz_displacement": 0.14681100851851078
+        },
+        {
+          "omitted_iso3": "NGA",
+          "role": "core",
+          "mu_score_displacement": 6.375149780375537,
+          "mu_viz_displacement": 0.11152042662918567
+        },
+        {
+          "omitted_iso3": "ETH",
+          "role": "core",
+          "mu_score_displacement": 4.802346793206651,
+          "mu_viz_displacement": 0.05703921652882527
+        },
+        {
+          "omitted_iso3": "KEN",
+          "role": "core",
+          "mu_score_displacement": 4.292439250848193,
+          "mu_viz_displacement": 0.08368675057750936
+        },
+        {
+          "omitted_iso3": "ZWE",
+          "role": "periphery",
+          "mu_score_displacement": 2.0166337252278526,
+          "mu_viz_displacement": 0.006483804079024046
+        },
+        {
+          "omitted_iso3": "ZMB",
+          "role": "periphery",
+          "mu_score_displacement": 2.0134295017670376,
+          "mu_viz_displacement": 0.008545844070211006
+        }
+      ],
+      "max_score_displacement": 8.456409879822266
+    },
+    {
+      "civilization_id": "indigenous",
+      "archetype_displacements": [
+        {
+          "omitted_iso3": "BOL",
+          "role": "core",
+          "mu_score_displacement": 19.380689128901246,
+          "mu_viz_displacement": 0.16996731711975946
+        },
+        {
+          "omitted_iso3": "ECU",
+          "role": "periphery",
+          "mu_score_displacement": 9.690344564450628,
+          "mu_viz_displacement": 0.08498365855987977
+        },
+        {
+          "omitted_iso3": "GTM",
+          "role": "interface",
+          "mu_score_displacement": 0.0,
+          "mu_viz_displacement": 0.0
+        },
+        {
+          "omitted_iso3": "PER",
+          "role": "interface",
+          "mu_score_displacement": 0.0,
+          "mu_viz_displacement": 0.0
+        }
+      ],
+      "max_score_displacement": 19.380689128901246
+    },
+    {
+      "civilization_id": "oceanian",
+      "archetype_displacements": [
+        {
+          "omitted_iso3": "NZL",
+          "role": "core",
+          "mu_score_displacement": 46.09907808188793,
+          "mu_viz_displacement": 1.0253048327204939
+        },
+        {
+          "omitted_iso3": "FJI",
+          "role": "core",
+          "mu_score_displacement": 46.09907808188793,
+          "mu_viz_displacement": 1.025304832720494
+        },
+        {
+          "omitted_iso3": "AUS",
+          "role": "interface",
+          "mu_score_displacement": 0.0,
+          "mu_viz_displacement": 0.0
+        }
+      ],
+      "max_score_displacement": 46.09907808188793
+    }
+  ]
+}

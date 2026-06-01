@@ -26,4 +26,4 @@ def test_charts_module_imports() -> None:
     module = importlib.import_module("apps.ui_streamlit.components.charts")
     assert hasattr(module, "scatter_viz")
     assert hasattr(module, "radar_score")
-    assert hasattr(module, "tensor_heatmap")
+    assert hasattr(module, "moment_heatmap")

@@ -26,12 +26,12 @@ def computed_state_coordinates(computed_centroids):
 
 
 @pytest.fixture(scope="session")
-def computed_state_tensions(computed_centroids, computed_state_coordinates):
-    from apps.basis_builder.tensors import compute_tension_tensor
+def computed_state_moments(computed_centroids, computed_state_coordinates):
+    from apps.basis_builder.moments import compute_second_moment
 
-    tensions = {}
+    moments = {}
     for iso3, state in computed_state_coordinates.items():
-        tension = compute_tension_tensor(state, computed_centroids)
-        if tension is not None:
-            tensions[iso3] = tension
-    return tensions
+        moment = compute_second_moment(state, computed_centroids)
+        if moment is not None:
+            moments[iso3] = moment
+    return moments

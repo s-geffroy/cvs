@@ -1,0 +1,474 @@
+{
+  "_meta": {
+    "method": "hybrid_weights_sweep",
+    "n_states": 62,
+    "grid_step": 0.1,
+    "default_weights": {
+      "alpha": 0.4,
+      "beta": 0.4,
+      "gamma": 0.2
+    }
+  },
+  "iso3_order": [
+    "ARG",
+    "AUS",
+    "BGD",
+    "BGR",
+    "BLR",
+    "BOL",
+    "BRA",
+    "CAN",
+    "CHL",
+    "CHN",
+    "COL",
+    "DEU",
+    "DNK",
+    "ECU",
+    "EGY",
+    "ESP",
+    "ETH",
+    "FIN",
+    "FJI",
+    "FRA",
+    "GBR",
+    "GHA",
+    "GRC",
+    "GTM",
+    "HKG",
+    "IDN",
+    "IND",
+    "IRL",
+    "IRN",
+    "IRQ",
+    "ITA",
+    "JOR",
+    "JPN",
+    "KEN",
+    "KOR",
+    "MAR",
+    "MEX",
+    "MMR",
+    "MNG",
+    "MYS",
+    "NGA",
+    "NLD",
+    "NOR",
+    "NZL",
+    "PAK",
+    "PER",
+    "ROU",
+    "RUS",
+    "SGP",
+    "SRB",
+    "SWE",
+    "THA",
+    "TUR",
+    "TWN",
+    "UKR",
+    "URY",
+    "USA",
+    "VEN",
+    "VNM",
+    "ZAF",
+    "ZMB",
+    "ZWE"
+  ],
+  "grid_results": [
+    {
+      "alpha": 0.0,
+      "beta": 0.0,
+      "gamma": 1.0,
+      "spearman_rho_vs_default": 0.696730862511242
+    },
+    {
+      "alpha": 0.0,
+      "beta": 0.1,
+      "gamma": 0.9,
+      "spearman_rho_vs_default": 0.7517861830087428
+    },
+    {
+      "alpha": 0.0,
+      "beta": 0.2,
+      "gamma": 0.8,
+      "spearman_rho_vs_default": 0.8090721229026298
+    },
+    {
+      "alpha": 0.0,
+      "beta": 0.30000000000000004,
+      "gamma": 0.7,
+      "spearman_rho_vs_default": 0.8666168635693804
+    },
+    {
+      "alpha": 0.0,
+      "beta": 0.4,
+      "gamma": 0.6,
+      "spearman_rho_vs_default": 0.9194629861780256
+    },
+    {
+      "alpha": 0.0,
+      "beta": 0.5,
+      "gamma": 0.5,
+      "spearman_rho_vs_default": 0.9588865511743773
+    },
+    {
+      "alpha": 0.0,
+      "beta": 0.6000000000000001,
+      "gamma": 0.3999999999999999,
+      "spearman_rho_vs_default": 0.9792678493943974
+    },
+    {
+      "alpha": 0.0,
+      "beta": 0.7000000000000001,
+      "gamma": 0.29999999999999993,
+      "spearman_rho_vs_default": 0.9802994517701883
+    },
+    {
+      "alpha": 0.0,
+      "beta": 0.8,
+      "gamma": 0.19999999999999996,
+      "spearman_rho_vs_default": 0.9663112694645168
+    },
+    {
+      "alpha": 0.0,
+      "beta": 0.9,
+      "gamma": 0.09999999999999998,
+      "spearman_rho_vs_default": 0.9421411381516162
+    },
+    {
+      "alpha": 0.0,
+      "beta": 1.0,
+      "gamma": 0.0,
+      "spearman_rho_vs_default": 0.9060912680444613
+    },
+    {
+      "alpha": 0.1,
+      "beta": 0.0,
+      "gamma": 0.9,
+      "spearman_rho_vs_default": 0.7350612509418605
+    },
+    {
+      "alpha": 0.1,
+      "beta": 0.1,
+      "gamma": 0.8,
+      "spearman_rho_vs_default": 0.7925587652679261
+    },
+    {
+      "alpha": 0.1,
+      "beta": 0.2,
+      "gamma": 0.7,
+      "spearman_rho_vs_default": 0.8505003637184223
+    },
+    {
+      "alpha": 0.1,
+      "beta": 0.30000000000000004,
+      "gamma": 0.6,
+      "spearman_rho_vs_default": 0.9074046667936944
+    },
+    {
+      "alpha": 0.1,
+      "beta": 0.4,
+      "gamma": 0.5,
+      "spearman_rho_vs_default": 0.9533528421492216
+    },
+    {
+      "alpha": 0.1,
+      "beta": 0.5,
+      "gamma": 0.4,
+      "spearman_rho_vs_default": 0.9817465561479434
+    },
+    {
+      "alpha": 0.1,
+      "beta": 0.6000000000000001,
+      "gamma": 0.29999999999999993,
+      "spearman_rho_vs_default": 0.9896107054937746
+    },
+    {
+      "alpha": 0.1,
+      "beta": 0.7000000000000001,
+      "gamma": 0.19999999999999996,
+      "spearman_rho_vs_default": 0.979844352543675
+    },
+    {
+      "alpha": 0.1,
+      "beta": 0.8,
+      "gamma": 0.09999999999999998,
+      "spearman_rho_vs_default": 0.9580904025949714
+    },
+    {
+      "alpha": 0.1,
+      "beta": 0.9,
+      "gamma": 0.0,
+      "spearman_rho_vs_default": 0.9250041770253791
+    },
+    {
+      "alpha": 0.2,
+      "beta": 0.0,
+      "gamma": 0.8,
+      "spearman_rho_vs_default": 0.7745599464943236
+    },
+    {
+      "alpha": 0.2,
+      "beta": 0.1,
+      "gamma": 0.7000000000000001,
+      "spearman_rho_vs_default": 0.8331697926965597
+    },
+    {
+      "alpha": 0.2,
+      "beta": 0.2,
+      "gamma": 0.6000000000000001,
+      "spearman_rho_vs_default": 0.8912281437757069
+    },
+    {
+      "alpha": 0.2,
+      "beta": 0.30000000000000004,
+      "gamma": 0.5,
+      "spearman_rho_vs_default": 0.9428425518841566
+    },
+    {
+      "alpha": 0.2,
+      "beta": 0.4,
+      "gamma": 0.4,
+      "spearman_rho_vs_default": 0.9791708572235671
+    },
+    {
+      "alpha": 0.2,
+      "beta": 0.5,
+      "gamma": 0.30000000000000004,
+      "spearman_rho_vs_default": 0.9946971839830301
+    },
+    {
+      "alpha": 0.2,
+      "beta": 0.6000000000000001,
+      "gamma": 0.19999999999999996,
+      "spearman_rho_vs_default": 0.9906439174551285
+    },
+    {
+      "alpha": 0.2,
+      "beta": 0.7000000000000001,
+      "gamma": 0.09999999999999998,
+      "spearman_rho_vs_default": 0.9712844256767122
+    },
+    {
+      "alpha": 0.2,
+      "beta": 0.8,
+      "gamma": 0.0,
+      "spearman_rho_vs_default": 0.9410633050001909
+    },
+    {
+      "alpha": 0.30000000000000004,
+      "beta": 0.0,
+      "gamma": 0.7,
+      "spearman_rho_vs_default": 0.8138302565847977
+    },
+    {
+      "alpha": 0.30000000000000004,
+      "beta": 0.1,
+      "gamma": 0.6,
+      "spearman_rho_vs_default": 0.8723928853194777
+    },
+    {
+      "alpha": 0.30000000000000004,
+      "beta": 0.2,
+      "gamma": 0.49999999999999994,
+      "spearman_rho_vs_default": 0.9275900676254863
+    },
+    {
+      "alpha": 0.30000000000000004,
+      "beta": 0.30000000000000004,
+      "gamma": 0.3999999999999999,
+      "spearman_rho_vs_default": 0.9709044587809361
+    },
+    {
+      "alpha": 0.30000000000000004,
+      "beta": 0.4,
+      "gamma": 0.29999999999999993,
+      "spearman_rho_vs_default": 0.9947485664972414
+    },
+    {
+      "alpha": 0.30000000000000004,
+      "beta": 0.5,
+      "gamma": 0.19999999999999996,
+      "spearman_rho_vs_default": 0.9975342231697304
+    },
+    {
+      "alpha": 0.30000000000000004,
+      "beta": 0.6000000000000001,
+      "gamma": 0.09999999999999987,
+      "spearman_rho_vs_default": 0.9822652686093957
+    },
+    {
+      "alpha": 0.30000000000000004,
+      "beta": 0.7000000000000001,
+      "gamma": 0.0,
+      "spearman_rho_vs_default": 0.9546092931578647
+    },
+    {
+      "alpha": 0.4,
+      "beta": 0.0,
+      "gamma": 0.6,
+      "spearman_rho_vs_default": 0.8516166636577887
+    },
+    {
+      "alpha": 0.4,
+      "beta": 0.1,
+      "gamma": 0.5,
+      "spearman_rho_vs_default": 0.9084114279581179
+    },
+    {
+      "alpha": 0.4,
+      "beta": 0.2,
+      "gamma": 0.39999999999999997,
+      "spearman_rho_vs_default": 0.957298181262369
+    },
+    {
+      "alpha": 0.4,
+      "beta": 0.30000000000000004,
+      "gamma": 0.29999999999999993,
+      "spearman_rho_vs_default": 0.9894279314630304
+    },
+    {
+      "alpha": 0.4,
+      "beta": 0.4,
+      "gamma": 0.19999999999999996,
+      "spearman_rho_vs_default": 1.0
+    },
+    {
+      "alpha": 0.4,
+      "beta": 0.5,
+      "gamma": 0.09999999999999998,
+      "spearman_rho_vs_default": 0.9904467778288693
+    },
+    {
+      "alpha": 0.4,
+      "beta": 0.6000000000000001,
+      "gamma": 0.0,
+      "spearman_rho_vs_default": 0.9658325694900413
+    },
+    {
+      "alpha": 0.5,
+      "beta": 0.0,
+      "gamma": 0.5,
+      "spearman_rho_vs_default": 0.8866896803684279
+    },
+    {
+      "alpha": 0.5,
+      "beta": 0.1,
+      "gamma": 0.4,
+      "spearman_rho_vs_default": 0.938884898642871
+    },
+    {
+      "alpha": 0.5,
+      "beta": 0.2,
+      "gamma": 0.3,
+      "spearman_rho_vs_default": 0.9784105347889737
+    },
+    {
+      "alpha": 0.5,
+      "beta": 0.30000000000000004,
+      "gamma": 0.19999999999999996,
+      "spearman_rho_vs_default": 0.9973746026812572
+    },
+    {
+      "alpha": 0.5,
+      "beta": 0.4,
+      "gamma": 0.09999999999999998,
+      "spearman_rho_vs_default": 0.9949453015088277
+    },
+    {
+      "alpha": 0.5,
+      "beta": 0.5,
+      "gamma": 0.0,
+      "spearman_rho_vs_default": 0.9746122411661747
+    },
+    {
+      "alpha": 0.6000000000000001,
+      "beta": 0.0,
+      "gamma": 0.3999999999999999,
+      "spearman_rho_vs_default": 0.9172844218790132
+    },
+    {
+      "alpha": 0.6000000000000001,
+      "beta": 0.1,
+      "gamma": 0.29999999999999993,
+      "spearman_rho_vs_default": 0.9621489042688605
+    },
+    {
+      "alpha": 0.6000000000000001,
+      "beta": 0.2,
+      "gamma": 0.1999999999999999,
+      "spearman_rho_vs_default": 0.9894948614735118
+    },
+    {
+      "alpha": 0.6000000000000001,
+      "beta": 0.30000000000000004,
+      "gamma": 0.09999999999999987,
+      "spearman_rho_vs_default": 0.9950646770343498
+    },
+    {
+      "alpha": 0.6000000000000001,
+      "beta": 0.4,
+      "gamma": 0.0,
+      "spearman_rho_vs_default": 0.9806463911059732
+    },
+    {
+      "alpha": 0.7000000000000001,
+      "beta": 0.0,
+      "gamma": 0.29999999999999993,
+      "spearman_rho_vs_default": 0.9414443348967964
+    },
+    {
+      "alpha": 0.7000000000000001,
+      "beta": 0.1,
+      "gamma": 0.19999999999999993,
+      "spearman_rho_vs_default": 0.9762650033738297
+    },
+    {
+      "alpha": 0.7000000000000001,
+      "beta": 0.2,
+      "gamma": 0.09999999999999992,
+      "spearman_rho_vs_default": 0.99026592216857
+    },
+    {
+      "alpha": 0.7000000000000001,
+      "beta": 0.30000000000000004,
+      "gamma": 0.0,
+      "spearman_rho_vs_default": 0.9832196854124468
+    },
+    {
+      "alpha": 0.8,
+      "beta": 0.0,
+      "gamma": 0.19999999999999996,
+      "spearman_rho_vs_default": 0.9579906224870745
+    },
+    {
+      "alpha": 0.8,
+      "beta": 0.1,
+      "gamma": 0.09999999999999995,
+      "spearman_rho_vs_default": 0.9804264368909629
+    },
+    {
+      "alpha": 0.8,
+      "beta": 0.2,
+      "gamma": 0.0,
+      "spearman_rho_vs_default": 0.9814835850045472
+    },
+    {
+      "alpha": 0.9,
+      "beta": 0.0,
+      "gamma": 0.09999999999999998,
+      "spearman_rho_vs_default": 0.9655618716260926
+    },
+    {
+      "alpha": 0.9,
+      "beta": 0.1,
+      "gamma": 0.0,
+      "spearman_rho_vs_default": 0.9749620234524248
+    },
+    {
+      "alpha": 1.0,
+      "beta": 0.0,
+      "gamma": 0.0,
+      "spearman_rho_vs_default": 0.963741563451327
+    }
+  ]
+}

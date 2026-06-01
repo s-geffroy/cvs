@@ -1,0 +1,114 @@
+# 12 — Validation empirique externe
+
+> **Avertissement éthique** : Ce profil est inféré à partir de sources publiques agrégées. **Il ne doit pas être utilisé pour classer des individus réels.** Voir [`07_ethics_publication_policy.md](07_ethics_publication_policy.md).
+
+## 1. Objectif
+
+Vérifier si le vecteur d'affinité civilisationnelle `wₛ ∈ Δ¹⁰` calculé par
+`cvs/` (Huntington + Hofstede + IW) **se corrèle** à des indicateurs externes
+**indépendants** publiés par des institutions tierces. Une corrélation forte
+sur certaines civilisations conforte la cohérence du scoring ; son absence
+indique un défaut de validité externe.
+
+Cette validation **ne prouve pas** que le scoring est correct — elle teste
+si ses prédictions implicites se vérifient sur des panels indépendants.
+
+## 2. Indicateurs externes utilisés
+
+| Indicateur | Source | Année | Type |
+|---|---|---|---|
+| **Pew Religious Composition** — part du groupe religieux dominant | Pew Research Center | 2020 | % de la population (0-100) |
+| **WGI Rule of Law** — État de droit | World Bank — Worldwide Governance Indicators | 2022 | z-score (-2.5 à +2.5) |
+| **FSI Total** — fragilité étatique | Fund For Peace — Fragile States Index | 2024 | 0 (stable) à 120 (alerte) |
+
+Les trois indicateurs sont **publics** et capturent des dimensions
+différentes : croyance religieuse, gouvernance, stabilité. Données bundleées
+dans `data_sources/{pew,wgi,fsi}/` avec citation complète des sources.
+
+## 3. Protocole
+
+Pour chaque indicateur externe et chaque civilisation `c_i` :
+
+1. Construire le couple `(wₛ[i], indicateur(s))` pour chaque ISO3 dans le
+   panel intersection (`cvs/` × données externes disponibles).
+2. Calculer le **coefficient de corrélation de rangs de Spearman** `ρ` entre
+   `wₛ[i]` et l'indicateur.
+3. **Intervalle de confiance bootstrap à 95%** par tirage avec remise sur
+   les ISO3 (`n_bootstrap = 1000`).
+
+La corrélation de Spearman est privilégiée à Pearson car (a) les vecteurs
+d'affinité sont sur le simplexe (skewed) et (b) `ρ` est robuste aux
+non-linéarités monotones.
+
+## 4. Hypothèses testables
+
+| Civilisation | Indicateur | Direction attendue |
+|---|---|---|
+| `western` | WGI Rule of Law | corrélation **positive** (États occidentaux ont une gouvernance plus stable) |
+| `western` | FSI | corrélation **négative** (États occidentaux moins fragiles) |
+| `islamic` | Pew (musulman dominant) | corrélation **positive forte** |
+| `sinic` | Pew (unaffiliated dominant ou bouddhiste) | corrélation modérée |
+| `hindic` | Pew (hindou dominant) | corrélation **positive forte** |
+| `latin_american` | Pew (chrétien dominant) | corrélation **positive** |
+| `african` | FSI | corrélation positive (États africains parmi les plus fragiles) |
+
+Une absence de signal sur ces hypothèses naïves serait un signal d'alerte.
+
+## 5. Données et reproductibilité
+
+Les résultats numériques sont stockés dans
+**`assets/data/empirical/external_validation.json`** (généré par
+`civvec empirical validate`), avec pour chaque indicateur et chaque
+civilisation : `n_states_paired`, `spearman_rho`, `bootstrap_ci_95_lower`,
+`bootstrap_ci_95_upper`.
+
+Pour reproduire :
+
+```bash
+docker compose run --rm civvec_site civvec empirical validate
+```
+
+## 6. Lecture
+
+Le tableau publié est ordonné par valeur absolue de `ρ` au sein de chaque
+indicateur — les civilisations en haut de chaque section indiquent les
+corrélations les plus fortes (positives ou négatives). Les intervalles
+bootstrap permettent de filtrer les associations significatives à 95%.
+
+### 6.1 Critères de validité
+
+- **ρ > 0.5 avec CI95 entièrement > 0** : association forte cohérente.
+- **|ρ| < 0.2 et CI95 chevauche 0** : pas de signal.
+- **Direction opposée à l'attendu** : signal d'alerte — réviser la
+  taxonomie ou les centroïdes pour la civilisation concernée.
+
+### 6.2 Cas de figure
+
+Si les hypothèses `western ↔ WGI+`, `islamic ↔ Pew(musulman)+`, etc.
+**ne sont pas vérifiées**, plusieurs explications possibles :
+
+1. Mauvaise calibration du softmax (β) — voir [doc 13](13_sensitivity_analysis.md).
+2. Mauvais États archétypes (LOO instable) — voir
+   [doc 13](13_sensitivity_analysis.md).
+3. Limites intrinsèques de l'approche Huntington+Hofstede pour capturer la
+   dimension testée — limite assumée à documenter.
+
+## 7. Limites
+
+1. **Spearman, pas causalité** : une corrélation forte ne prouve pas une
+   correspondance ontologique. Une civilisation `cvs/` peut être un proxy
+   d'autre chose.
+2. **Indicateurs imparfaits** : Pew n'est pas une mesure de civilisation,
+   WGI peut refléter des biais occidentaux de l'évaluation institutionnelle.
+3. **Panel limité** : ~60 ISO3 — significativité statistique modérée.
+4. **Aucune correction multi-test** : on calcule 11 (civilisations) × 3
+   (indicateurs) = 33 tests. Une correction Bonferroni serait à 95% / 33 ≈
+   99.85% par test — exigeante. Les CI bootstrap à 95% ne corrigent pas
+   pour la multiplicité.
+
+## 8. Travaux futurs
+
+- Ajouter Polity V (régime politique).
+- Ajouter UNESCO sur le patrimoine culturel.
+- Validation longitudinale (waves WVS successives) pour vérifier la
+  stabilité du scoring dans le temps.

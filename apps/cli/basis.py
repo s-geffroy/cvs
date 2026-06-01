@@ -16,25 +16,25 @@ from apps.basis_builder.geometries import (
     NATURAL_EARTH_ADM0_PATH,
     fetch_and_filter_natural_earth_admin0,
 )
+from apps.basis_builder.moments import compute_all_second_moments, write_second_moments
 from apps.basis_builder.paths import (
     BASIS_DIR,
     CIVILIZATION_CENTROIDS_PATH,
     MACRO_CIVILIZATIONS_V2_PATH,
     SCHEMAS_DIR,
     STATE_COORDINATES_PATH,
-    STATE_TENSORS_PATH,
+    STATE_MOMENTS_PATH,
 )
 from apps.basis_builder.projector import project_states, write_state_coordinates
-from apps.basis_builder.tensors import compute_all_tensions, write_tensions
 
 app = typer.Typer(no_args_is_help=True)
 
 
 @app.command("build")
 def build(
-    skip_tensors: bool = typer.Option(False, "--skip-tensors", help="Do not compute T(s)."),
+    skip_moments: bool = typer.Option(False, "--skip-moments", help="Do not compute M(s)."),
 ) -> None:
-    """Compute centroids, project states, derive affinity vectors, compute tension tensors."""
+    """Compute centroids, project states, derive affinity vectors, compute second moments M(s)."""
     typer.echo("[1/4] computing civilization centroids...")
     centroids = compute_centroids()
     write_centroids(centroids)
@@ -48,13 +48,13 @@ def build(
     write_state_coordinates(state_coords)
     typer.echo(f"      wrote {STATE_COORDINATES_PATH.relative_to(BASIS_DIR.parents[2])}")
 
-    if skip_tensors:
-        typer.echo("[4/4] skipped tensor computation (per --skip-tensors)")
+    if skip_moments:
+        typer.echo("[4/4] skipped second-moment computation (per --skip-moments)")
         return
-    typer.echo("[4/4] computing state tension tensors T(s)...")
-    tensions = compute_all_tensions()
-    write_tensions(tensions)
-    typer.echo(f"      wrote {STATE_TENSORS_PATH.relative_to(BASIS_DIR.parents[2])}")
+    typer.echo("[4/4] computing state second moments M(s)...")
+    moments = compute_all_second_moments()
+    write_second_moments(moments)
+    typer.echo(f"      wrote {STATE_MOMENTS_PATH.relative_to(BASIS_DIR.parents[2])}")
 
 
 @app.command("fetch-geometries")

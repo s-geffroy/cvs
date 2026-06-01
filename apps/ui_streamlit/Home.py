@@ -21,8 +21,8 @@ Le projet repose sur **deux bases** :
 
 Étendu par :
 
-- **Mécanique tensorielle** : `T(s) ∈ ℝ^{6×6}` — tensions internes d'un État, analogue au tenseur des contraintes en milieux continus.
-- **Algèbre des distances** : `d_viz`, `d_score^M`, `d_w^W` (Wasserstein-2), `d_T`, `d_hyb` — comparaisons rigoureuses entre États.
+- **Second moment civilisationnel** `M(s) ∈ ℝ^{6×6}` — dispersion pondérée des centroïdes civilisationnels autour de `xₛ` ; renommé en v3.0 depuis l'ancien « tenseur de tension T(s) » pour évacuer l'analogie mécanique trompeuse (cf. doc 11).
+- **Algèbre des distances** : `d_viz`, `d_score^M_intra`, `d_w^W` (Wasserstein-2), `d_M_F`, `d_hyb` — comparaisons rigoureuses entre États.
 
 ### Pages
 
@@ -34,8 +34,8 @@ Le projet repose sur **deux bases** :
 | **4 — Compare States** | Superposition radars/scatter de 2 à 5 États. |
 | **5 — Diagnostics** | Couverture des données, citations orphelines, drapeaux qualité. |
 | **6 — Sources** | Bibliographie complète + licences. |
-| **7 — Methodology** | Docs `00..10` rendus en HTML. |
-| **8 — State Tensions** | Tenseurs `T(s)`, eigenvalues, glyphs ellipsoïdaux, anisotropie. |
+| **7 — Methodology** | Docs `00..15` rendus en HTML (incluant critiques, validation, sensibilité, baseline, glossaire). |
+| **8 — Second Moment M(s)** | Heatmap M(s) 6×6, valeurs propres, directions principales, décomposition Cov + biais, anisotropie. |
 | **9 — Distance Algebra** | Toutes les distances, heatmap, dendrogramme Ward, ajustement `(α, β, γ)`. |
 
 ### Commandes utiles

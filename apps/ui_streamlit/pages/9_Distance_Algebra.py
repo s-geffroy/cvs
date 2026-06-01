@@ -1,4 +1,4 @@
-"""Page 9 — Algèbre des distances civilisationnelles."""
+"""Page 9 — Algèbre des distances civilisationnelles (v3.0)."""
 from __future__ import annotations
 
 import numpy as np
@@ -9,14 +9,16 @@ from packages.civvec_core.algebra.distances import (
     HybridWeights,
     civilization_ground_cost_squared,
     d_hybrid,
+    d_M_frobenius,
     d_score_euclidean,
-    d_score_mahalanobis,
-    d_T_frobenius,
+    d_score_mahalanobis_centroids,
+    d_score_mahalanobis_intra,
     d_viz,
     d_w_cosine,
     d_w_js,
     d_w_wasserstein,
-    weighted_covariance_inverse,
+    intra_civilizational_covariance_inverse,
+    weighted_centroid_covariance_inverse,
 )
 from apps.ui_streamlit.components import charts, ethics_banner, loaders
 
@@ -27,111 +29,137 @@ st.title("Algèbre des distances")
 
 state_payload = loaders.load_state_coordinates()
 centroids_payload = loaders.load_centroids()
-tensors_payload = loaders.load_state_tensors()
+moments_payload = loaders.load_state_moments()
 if state_payload is None or centroids_payload is None:
     st.warning("Bases non calculées. Lance `civvec basis build`.")
     st.stop()
 
-states_by_iso3 = {s["iso3"]: s for s in state_payload["states"]}
-tensions_by_iso3 = (
-    {t["iso3"]: t for t in tensors_payload["tensions"]} if tensors_payload else {}
+states_by_iso3 = {entry["iso3"]: entry for entry in state_payload["states"]}
+moments_by_iso3 = (
+    {entry["iso3"]: entry for entry in moments_payload["moments"]}
+    if moments_payload
+    else {}
 )
-civilization_ids_order = [c["civilization_id"] for c in centroids_payload["centroids"]]
+civilization_ids_order = [centroid["civilization_id"] for centroid in centroids_payload["centroids"]]
 mu_score_matrix = np.array(
     [
-        [v if v is not None else 50.0 for v in c["mu_score"]]
-        for c in centroids_payload["centroids"]
+        [value if value is not None else 50.0 for value in centroid["mu_score"]]
+        for centroid in centroids_payload["centroids"]
+    ]
+)
+sigma_score_matrix = np.array(
+    [
+        [value if value is not None else 0.0 for value in centroid.get("sigma_score", [0.0] * 6)]
+        for centroid in centroids_payload["centroids"]
     ]
 )
 ground_cost_squared = civilization_ground_cost_squared(mu_score_matrix)
-covariance_inverse = weighted_covariance_inverse(mu_score_matrix)
+covariance_inverse_centroids = weighted_centroid_covariance_inverse(mu_score_matrix)
+covariance_inverse_intra = intra_civilizational_covariance_inverse(sigma_score_matrix)
 
-selected = st.multiselect(
+selected_iso3s = st.multiselect(
     "ISO3 (2-10)",
     sorted(states_by_iso3.keys()),
     default=["FRA", "DEU", "JPN", "BRA", "RUS"][: min(5, len(states_by_iso3))],
     max_selections=10,
 )
-if len(selected) < 2:
+if len(selected_iso3s) < 2:
     st.info("Sélectionne au moins 2 États.")
     st.stop()
 
 col_alpha, col_beta, col_gamma = st.columns(3)
-alpha = col_alpha.slider("α (Mahalanobis)", 0.0, 1.0, 0.4, 0.05)
-beta = col_beta.slider("β (Wasserstein)", 0.0, 1.0, 0.4, 0.05)
-gamma_raw = max(0.0, 1.0 - alpha - beta)
-col_gamma.metric("γ (Frobenius)", f"{gamma_raw:.2f}")
+alpha_weight = col_alpha.slider("α (Mahalanobis intra)", 0.0, 1.0, 0.4, 0.05)
+beta_weight = col_beta.slider("β (Wasserstein)", 0.0, 1.0, 0.4, 0.05)
+gamma_weight_raw = max(0.0, 1.0 - alpha_weight - beta_weight)
+col_gamma.metric("γ (Frobenius M)", f"{gamma_weight_raw:.2f}")
 
-if not np.isclose(alpha + beta + gamma_raw, 1.0):
+if not np.isclose(alpha_weight + beta_weight + gamma_weight_raw, 1.0):
     st.warning("Re-normalisation auto pour α + β + γ = 1.")
-total = alpha + beta + gamma_raw
-weights = HybridWeights(
-    alpha=alpha / total, beta=beta / total, gamma=gamma_raw / total
+total_weight = alpha_weight + beta_weight + gamma_weight_raw
+hybrid_weights = HybridWeights(
+    alpha=alpha_weight / total_weight,
+    beta=beta_weight / total_weight,
+    gamma=gamma_weight_raw / total_weight,
 )
 
 st.subheader("Toutes les distances par paire")
-pairs: list[dict[str, float | str]] = []
-for source in selected:
-    for target in selected:
-        if source >= target:
+pair_rows: list[dict[str, float | str]] = []
+for source_iso3 in selected_iso3s:
+    for target_iso3 in selected_iso3s:
+        if source_iso3 >= target_iso3:
             continue
-        state_source = states_by_iso3[source]
-        state_target = states_by_iso3[target]
-        x_viz_s = np.array(state_source["x_viz"], dtype=float)
-        x_viz_t = np.array(state_target["x_viz"], dtype=float)
-        x_score_s = np.array(state_source["x_score"], dtype=float)
-        x_score_t = np.array(state_target["x_score"], dtype=float)
-        weights_source = np.array(
-            [state_source["affinity_vector"][cid] for cid in civilization_ids_order]
+        state_source = states_by_iso3[source_iso3]
+        state_target = states_by_iso3[target_iso3]
+        x_viz_source = np.array(state_source["x_viz"], dtype=float)
+        x_viz_target = np.array(state_target["x_viz"], dtype=float)
+        x_score_source = np.array(state_source["x_score"], dtype=float)
+        x_score_target = np.array(state_target["x_score"], dtype=float)
+        affinity_source = np.array(
+            [state_source["affinity_vector"][civ_id] for civ_id in civilization_ids_order]
         )
-        weights_target = np.array(
-            [state_target["affinity_vector"][cid] for cid in civilization_ids_order]
+        affinity_target = np.array(
+            [state_target["affinity_vector"][civ_id] for civ_id in civilization_ids_order]
         )
 
-        d_score_mahalanobis_value = d_score_mahalanobis(
-            x_score_s, x_score_t, covariance_inverse
+        d_score_mahalanobis_centroids_value = d_score_mahalanobis_centroids(
+            x_score_source, x_score_target, covariance_inverse_centroids
+        )
+        d_score_mahalanobis_intra_value = d_score_mahalanobis_intra(
+            x_score_source, x_score_target, covariance_inverse_intra
         )
         d_w_wasserstein_value = d_w_wasserstein(
-            weights_source, weights_target, ground_cost_squared
+            affinity_source, affinity_target, ground_cost_squared
         )
-        tensor_source = np.array(tensions_by_iso3[source]["T"]) if source in tensions_by_iso3 else np.zeros((6, 6))
-        tensor_target = np.array(tensions_by_iso3[target]["T"]) if target in tensions_by_iso3 else np.zeros((6, 6))
-        d_T_value = d_T_frobenius(tensor_source, tensor_target)
+        moment_source = (
+            np.array(moments_by_iso3[source_iso3]["M"])
+            if source_iso3 in moments_by_iso3
+            else np.zeros((6, 6))
+        )
+        moment_target = (
+            np.array(moments_by_iso3[target_iso3]["M"])
+            if target_iso3 in moments_by_iso3
+            else np.zeros((6, 6))
+        )
+        d_M_frobenius_value = d_M_frobenius(moment_source, moment_target)
 
-        pairs.append(
+        pair_rows.append(
             {
-                "pair": f"{source}-{target}",
-                "d_viz": d_viz(x_viz_s, x_viz_t),
-                "d_score_E": d_score_euclidean(x_score_s, x_score_t),
-                "d_score_M": d_score_mahalanobis_value,
-                "d_w_cos": d_w_cosine(weights_source, weights_target),
-                "d_w_JS": d_w_js(weights_source, weights_target),
+                "pair": f"{source_iso3}-{target_iso3}",
+                "d_viz": d_viz(x_viz_source, x_viz_target),
+                "d_score_E": d_score_euclidean(x_score_source, x_score_target),
+                "d_score_M_intra": d_score_mahalanobis_intra_value,
+                "d_score_M_centroids": d_score_mahalanobis_centroids_value,
+                "d_w_cos": d_w_cosine(affinity_source, affinity_target),
+                "d_w_JS": d_w_js(affinity_source, affinity_target),
                 "d_w_W": d_w_wasserstein_value,
-                "d_T": d_T_value,
+                "d_M_F": d_M_frobenius_value,
                 "d_hyb": d_hybrid(
-                    d_score_mahalanobis_value, d_w_wasserstein_value, d_T_value, weights
+                    d_score_mahalanobis_intra_value,
+                    d_w_wasserstein_value,
+                    d_M_frobenius_value,
+                    hybrid_weights,
                 ),
             }
         )
 
-st.dataframe(pd.DataFrame(pairs), use_container_width=True)
+st.dataframe(pd.DataFrame(pair_rows), use_container_width=True)
 
 st.subheader("Heatmap — d_hyb")
-n = len(selected)
-distance_matrix = np.zeros((n, n))
-for entry in pairs:
-    source, target = entry["pair"].split("-")
-    i, j = selected.index(source), selected.index(target)
-    distance_matrix[i, j] = entry["d_hyb"]
-    distance_matrix[j, i] = entry["d_hyb"]
+n_selected = len(selected_iso3s)
+distance_matrix = np.zeros((n_selected, n_selected))
+for row in pair_rows:
+    source_iso3, target_iso3 = row["pair"].split("-")
+    left_index, right_index = selected_iso3s.index(source_iso3), selected_iso3s.index(target_iso3)
+    distance_matrix[left_index, right_index] = row["d_hyb"]
+    distance_matrix[right_index, left_index] = row["d_hyb"]
 st.plotly_chart(
-    charts.heatmap(distance_matrix, selected, "d_hyb"),
+    charts.heatmap(distance_matrix, selected_iso3s, "d_hyb"),
     use_container_width=True,
 )
 
-if len(selected) >= 3:
+if len(selected_iso3s) >= 3:
     st.subheader("Dendrogramme Ward sur d_hyb")
     st.plotly_chart(
-        charts.dendrogram_from_condensed(distance_matrix, selected, "Clustering hiérarchique"),
+        charts.dendrogram_from_condensed(distance_matrix, selected_iso3s, "Clustering hiérarchique"),
         use_container_width=True,
     )

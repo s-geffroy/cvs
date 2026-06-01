@@ -1,0 +1,73 @@
+{
+  "_meta": {
+    "method": "softmax_beta_sweep",
+    "default_beta": 0.05,
+    "civilization_id_order": [
+      "western",
+      "orthodox",
+      "islamic",
+      "sinic",
+      "hindic",
+      "japanese",
+      "buddhist",
+      "latin_american",
+      "african",
+      "indigenous",
+      "oceanian"
+    ]
+  },
+  "per_beta": [
+    {
+      "beta": 0.01,
+      "mean_entropy": 2.380023999192911,
+      "median_max_weight": 0.12457359152738712,
+      "n_states": 63
+    },
+    {
+      "beta": 0.025,
+      "mean_entropy": 2.2828003540835904,
+      "median_max_weight": 0.18622518840468297,
+      "n_states": 63
+    },
+    {
+      "beta": 0.05,
+      "mean_entropy": 1.969810520384937,
+      "median_max_weight": 0.30781561705059,
+      "n_states": 63
+    },
+    {
+      "beta": 0.1,
+      "mean_entropy": 1.3275462409749366,
+      "median_max_weight": 0.5397762786254163,
+      "n_states": 63
+    },
+    {
+      "beta": 0.2,
+      "mean_entropy": 0.7051989473969167,
+      "median_max_weight": 0.8434435810324855,
+      "n_states": 63
+    }
+  ],
+  "argmax_agreement_with_default": [
+    {
+      "beta": 0.01,
+      "fraction_argmax_matches_default": 1.0
+    },
+    {
+      "beta": 0.025,
+      "fraction_argmax_matches_default": 1.0
+    },
+    {
+      "beta": 0.05,
+      "fraction_argmax_matches_default": 1.0
+    },
+    {
+      "beta": 0.1,
+      "fraction_argmax_matches_default": 1.0
+    },
+    {
+      "beta": 0.2,
+      "fraction_argmax_matches_default": 1.0
+    }
+  ]
+}
