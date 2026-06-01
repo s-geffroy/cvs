@@ -7,6 +7,22 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Published — v3.0.0a1 en ligne (2026-06-01)
+
+- Republication automatique via `.github/workflows/publish.yml` (workflow success).
+- Nouvelles URLs live (HTTP 200 vérifié) sur <https://s-geffroy.github.io/cvs/> :
+  - `/methodology/09_civilizational_second_moment/` (M(s) renommé)
+  - `/methodology/11_critiques_and_responses/` (27 critiques anticipées + sources)
+  - `/methodology/12_empirical_validation/`
+  - `/methodology/13_sensitivity_analysis/`
+  - `/methodology/14_baseline_unsupervised/`
+  - `/methodology/15_glossary/`
+  - `/moments/` (anciennement `/tensions/`)
+  - `/assets/data/state_moments.json` (champ JSON `M` + décomposition `Cov_w + biais`)
+  - `/assets/data/empirical/{sensitivity_leave_one_out, sensitivity_beta_sweep, sensitivity_hybrid_weights, baseline_clustering, external_validation}.json`
+- Bannière éthique présente sur toutes les nouvelles pages méthodologiques.
+- Pages renommées et termes-clés vérifiés en ligne (« Second moment civilisationnel », « physics envy », « McSweeney »).
+
 ### Changed — v3.0.0a1 : rigueur méthodologique étoffée (2026-06-01)
 
 **Breaking change** : le **tenseur de tension `T(s)`** est renommé en
