@@ -8,10 +8,15 @@ import numpy as np
 from apps.basis_builder.paths import B_SCORE_PATH, B_VIZ_PATH
 
 
-def test_B_viz_dimensions_are_two_and_orthogonal_by_construction() -> None:
+def test_B_viz_dimensions_are_two_and_orthogonality_label_is_honest() -> None:
+    """v3.0 corrects the v2.0 misleading 'empirical_orthogonal_by_construction'
+    label to 'postulated_orthogonal_not_empirically_verified' since the
+    Inglehart-Welzel axes have ~0.15 residual correlation in wave 7
+    (cf. doc 11 section A3).
+    """
     b_viz = json.loads(B_VIZ_PATH.read_text())
     assert b_viz["dimensions"] == 2
-    assert b_viz["orthogonality"] == "empirical_orthogonal_by_construction"
+    assert b_viz["orthogonality"] == "postulated_orthogonal_not_empirically_verified"
 
 
 def test_B_score_dimensions_are_six() -> None:

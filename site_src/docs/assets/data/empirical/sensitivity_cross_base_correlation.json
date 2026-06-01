@@ -1,0 +1,9 @@
+{
+  "_meta": {
+    "method": "cross_base_pairwise_correlation",
+    "n_states_paired": 62,
+    "n_pairs": 1891
+  },
+  "spearman_rho_d_viz_vs_d_score_euclidean": 0.5855689935541866,
+  "interpretation": "rho > 0.7: the two bases largely agree (B_viz and B_score capture overlapping signal); rho in [0.4, 0.7]: moderate agreement, complementary information; rho < 0.4: bases diverge — the mixed pipeline is informationally richer but mixing pommes/oranges is more salient (cf. doc 11 section B5)."
+}

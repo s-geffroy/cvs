@@ -1,6 +1,6 @@
 {
   "id": "B_score",
-  "version": "2.0.0",
+  "version": "3.0.0",
   "label": "Hofstede 6-dimensional psycho-social basis",
   "dimensions": 6,
   "axes": [
@@ -53,7 +53,8 @@
       "interpretation_high": "Indulgence: free gratification, leisure-oriented"
     }
   ],
-  "orthogonality": "empirical_orthogonal_by_construction",
+  "orthogonality": "postulated_orthogonal_not_empirically_verified",
+  "orthogonality_note": "Hofstede dimensions are postulated independent by factorial construction (Hofstede 1980, 2010). The empirical orthogonality on contemporary values is NOT verified: MAS-IDV are correlated, UAI has low explained variance (cf. McSweeney 2002; doc 11 section A2). Use d_score_mahalanobis_intra for axis-weighted distance instead of assuming orthogonality.",
   "domain": [[0, 100], [0, 100], [0, 100], [0, 100], [0, 100], [0, 100]],
   "sources": ["hofstede_2010"]
 }

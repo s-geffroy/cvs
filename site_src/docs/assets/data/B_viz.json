@@ -1,6 +1,6 @@
 {
   "id": "B_viz",
-  "version": "2.0.0",
+  "version": "3.0.0",
   "label": "Inglehart-Welzel cultural map basis",
   "dimensions": 2,
   "axes": [
@@ -21,7 +21,8 @@
       "interpretation_high": "Self-Expression: autonomy, diversity tolerance, post-materialism"
     }
   ],
-  "orthogonality": "empirical_orthogonal_by_construction",
+  "orthogonality": "postulated_orthogonal_not_empirically_verified",
+  "orthogonality_note": "TS and SE axes are postulated independent by Inglehart-Welzel factor analysis (2005, 2010). Empirically in WVS wave 7 there is a residual correlation ~0.15 between TS and SE. Treated as postulated, not measured (cf. doc 11 section A3).",
   "domain": [[-2.5, 2.5], [-2.5, 2.5]],
   "sources": [
     "inglehart_welzel_2005",

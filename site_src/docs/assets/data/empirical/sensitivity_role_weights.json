@@ -1,0 +1,95 @@
+{
+  "_meta": {
+    "method": "role_weight_sweep_on_periphery",
+    "default_periphery_weight": 0.5,
+    "core_weight_fixed": 1.0,
+    "ambiguous_weight_fixed": 0.0
+  },
+  "sensitivity": [
+    {
+      "periphery_weight": 0.0,
+      "centroid_displacements_vs_default": {
+        "western": 0.0,
+        "orthodox": 0.0,
+        "islamic": 0.0,
+        "sinic": 0.0,
+        "hindic": 0.0,
+        "japanese": 0.0,
+        "buddhist": 0.0,
+        "latin_american": 0.0,
+        "african": 4.401234833038978,
+        "indigenous": 9.690344564450628,
+        "oceanian": 0.0
+      },
+      "max_displacement": 9.690344564450628
+    },
+    {
+      "periphery_weight": 0.25,
+      "centroid_displacements_vs_default": {
+        "western": 0.0,
+        "orthodox": 0.0,
+        "islamic": 0.0,
+        "sinic": 0.0,
+        "hindic": 0.0,
+        "japanese": 0.0,
+        "buddhist": 0.0,
+        "latin_american": 0.0,
+        "african": 2.0005612877449908,
+        "indigenous": 3.876137825780261,
+        "oceanian": 0.0
+      },
+      "max_displacement": 3.876137825780261
+    },
+    {
+      "periphery_weight": 0.5,
+      "centroid_displacements_vs_default": {
+        "western": 0.0,
+        "orthodox": 0.0,
+        "islamic": 0.0,
+        "sinic": 0.0,
+        "hindic": 0.0,
+        "japanese": 0.0,
+        "buddhist": 0.0,
+        "latin_american": 0.0,
+        "african": 0.0,
+        "indigenous": 0.0,
+        "oceanian": 0.0
+      },
+      "max_displacement": 0.0
+    },
+    {
+      "periphery_weight": 0.75,
+      "centroid_displacements_vs_default": {
+        "western": 0.0,
+        "orthodox": 0.0,
+        "islamic": 0.0,
+        "sinic": 0.0,
+        "hindic": 0.0,
+        "japanese": 0.0,
+        "buddhist": 0.0,
+        "latin_american": 0.0,
+        "african": 1.6927826280918998,
+        "indigenous": 2.7686698755573267,
+        "oceanian": 0.0
+      },
+      "max_displacement": 2.7686698755573267
+    },
+    {
+      "periphery_weight": 1.0,
+      "centroid_displacements_vs_default": {
+        "western": 0.0,
+        "orthodox": 0.0,
+        "islamic": 0.0,
+        "sinic": 0.0,
+        "hindic": 0.0,
+        "japanese": 0.0,
+        "buddhist": 0.0,
+        "latin_american": 0.0,
+        "african": 3.143739166456403,
+        "indigenous": 4.84517228222531,
+        "oceanian": 0.0
+      },
+      "max_displacement": 4.84517228222531
+    }
+  ]
+}

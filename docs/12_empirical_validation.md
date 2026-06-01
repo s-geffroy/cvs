@@ -82,6 +82,35 @@ bootstrap permettent de filtrer les associations significatives à 95%.
 - **Direction opposée à l'attendu** : signal d'alerte — réviser la
   taxonomie ou les centroïdes pour la civilisation concernée.
 
+### 6.2 Résultats v3.0 — top corrélations
+
+Mesures publiées dans `assets/data/empirical/external_validation.json` :
+
+#### Pew Religious Composition 2020 — part du groupe religieux dominant
+
+| Civilisation | `ρ` (Spearman) | Direction attendue | Verdict |
+|---|---|---|---|
+| `islamic` | **+0.52** | + (Pew musulman dominant) | **OK** |
+| `buddhist` | **+0.49** | + (Pew bouddhiste dominant) | **OK** |
+| `latin_american` | **+0.47** | + (Pew chrétien dominant) | **OK** |
+
+#### WGI Rule of Law 2022
+
+| Civilisation | `ρ` | Direction attendue | Verdict |
+|---|---|---|---|
+| `western` | **+0.63** | + (gouvernance forte) | **OK** |
+| `indigenous` | **−0.59** | (non prédit) | Signal exogène à investiguer |
+| `buddhist` | **−0.57** | (non prédit) | Signal exogène à investiguer |
+
+#### Fragile States Index 2024
+
+| Civilisation | `ρ` | Direction attendue | Verdict |
+|---|---|---|---|
+| `western` | **−0.57** | − (États occidentaux moins fragiles) | **OK** |
+| `islamic` | **+0.56** | (non prédit explicitement, intuitif) | Signal cohérent |
+
+**Conclusion** : les **3 hypothèses pré-spécifiées** (Western↔WGI+, Islamic↔Pew musulman+, Western↔FSI−) sont **toutes confirmées** avec `|ρ| > 0.5`. Les signaux exogènes sur `indigenous` et `buddhist` méritent une investigation séparée (probablement des biais de couverture WGI sur les petits États asiatiques et indigènes).
+
 ### 6.2 Cas de figure
 
 Si les hypothèses `western ↔ WGI+`, `islamic ↔ Pew(musulman)+`, etc.

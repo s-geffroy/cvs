@@ -1,7 +1,8 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "state_profile.v2.schema.json",
-  "title": "State Profile v2 (with B_vec coordinates and tension tensor)",
+  "title": "State Profile v2 (with B_vec coordinates and second moment M(s))",
+  "description": "Per-state profile carrying B_viz / B_score coordinates, affinity vector w_s, and the civilizational second moment M(s). v3.0 rename: tension_tensor -> second_moment_M (cf. doc 11 sections C9-C13).",
   "type": "object",
   "required": [
     "unit_type",
@@ -11,7 +12,7 @@
     "x_viz",
     "x_score",
     "affinity_vector",
-    "tension_tensor",
+    "second_moment_M",
     "publication_warning",
     "evidence_trace",
     "data_quality"
@@ -43,8 +44,9 @@
         "maximum": 1
       }
     },
-    "tension_tensor": {
+    "second_moment_M": {
       "type": "object",
+      "description": "Civilizational second moment M(s) = sum_i w_s[i] * (mu_i - x_s)(mu_i - x_s)^T. Conforms to schemas/state_moment.schema.json.",
       "required": ["matrix", "eigenvalues", "anisotropy"],
       "properties": {
         "matrix": {
@@ -67,8 +69,8 @@
         "invariants": {
           "type": "object",
           "properties": {
-            "I1": { "type": "number" },
-            "I2": { "type": "number" },
+            "I1_trace": { "type": "number" },
+            "I2_von_mises": { "type": "number" },
             "det": { "type": "number" }
           }
         },

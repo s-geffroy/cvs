@@ -97,34 +97,62 @@ point du simplexe, `(α, β, γ)` + `spearman_rho_vs_default`.
 Le scoring devrait être robuste pour `(α, β, γ)` proches de l'uniforme
 (0.33, 0.33, 0.33), mais sensible aux **coins** (γ=1 = Frobenius seul).
 
-## 4. Plausibilité des cas connus (confrontation des prédictions doc 09 §6)
+## 4. Sensibilité aux poids `role` (core/periphery/ambiguous)
 
-Doc 09 §6 (« Lectures appliquées ») énonçait des prédictions pour JPN,
-FRA, TUR, IND, LBN. Cette section publie la **confrontation aux
-données calculées**.
+### Protocole
 
-| État | `I1_trace` mesuré | Anisotropie mesurée | Prédiction respectée ? |
-|---|---|---|---|
-| JPN | (cf. `state_moments.json`) | (cf.) | À mesurer |
-| FRA | (cf.) | (cf.) | À mesurer |
-| TUR | (cf.) | (cf.) | À mesurer |
-| IND | (cf.) | (cf.) | À mesurer |
-| LBN | (non couvert — LBN absent du panel v3.0) | — | — |
+Le poids `periphery=0.5` du calcul des centroïdes (cf. [doc 08 §4.1](08_civilizational_basis.md)) est éditorial. Cette sensibilité balaye `periphery_weight ∈ {0.0, 0.25, 0.5, 0.75, 1.0}` en gardant `core=1.0, ambiguous=0.0`, et mesure le déplacement Euclidien de chaque centroïde `μᵢ^score` par rapport au défaut.
 
-**Note** : LBN (Liban) n'est pas dans le panel actuel par manque de données
-Hofstede et WVS suffisamment qualifiées. Sa prédiction de « tension
-multi-confessionnelle structurelle » reste à valider quand les données
-seront disponibles.
+### Sortie
 
-Pour les autres États, l'utilisateur peut consulter
-`assets/data/state_moments.json` et vérifier `I1_trace` et `anisotropy`.
+`assets/data/empirical/sensitivity_role_weights.json`. Pour chaque civilisation et chaque valeur de `periphery_weight`, le déplacement du centroïde par rapport au défaut.
 
-## 5. Limites et travaux futurs
+### Lecture
 
-1. **Pas de propagation d'incertitude WVS** : les CI publiés par WVS ne
-   sont pas propagés dans `M(s)`, `wₛ`, `d_hyb`. Travail futur : bootstrap
-   sur les CI WVS pour estimer l'incertitude finale.
-2. **Pas de sweep sur les pondérations role** (core=1, periphery=0.5,
-   ambiguous=0). Travail futur : sweep également ces poids.
-3. **Pas d'analyse de stabilité temporelle** : v3.0 utilise WVS wave 7.
-   Comparaison à waves antérieures non implémentée.
+- `max_displacement < 3` unités Hofstede : pondération `0.5` **robuste**.
+- `max_displacement > 10` : sensibilité réelle pour certaines civilisations, à examiner.
+
+## 5. Corrélation cross-base `d_viz` ↔ `d_score_euclidean`
+
+### Protocole
+
+Pour toutes les paires d'États avec coordonnées IW + Hofstede complètes, calculer `d_viz(s, t)` et `d_score_euclidean(s, t)` et reporter le coefficient de Spearman.
+
+### Sortie
+
+`assets/data/empirical/sensitivity_cross_base_correlation.json` — un seul scalaire `spearman_rho`.
+
+### Lecture
+
+- `ρ > 0.7` : les deux bases sont **largement redondantes** — IW et Hofstede capturent un signal majoritairement partagé.
+- `ρ ∈ [0.4, 0.7]` : **complémentaires** — chaque base apporte de l'information distincte.
+- `ρ < 0.4` : **divergence forte** — la critique « mélange pommes/oranges » (cf. [doc 11 §B5](11_critiques_and_responses.md)) prend de l'ampleur.
+
+## 6. Plausibilité des cas connus (confrontation des prédictions doc 09)
+
+[Doc 09 §6](09_civilizational_second_moment.md) énonçait des prédictions pour JPN, FRA, TUR, IND, LBN. Confrontation aux mesures publiées dans `state_moments.json` :
+
+| État | `I1_trace` mesuré | Anisotropie `A(s)` | Prédiction doc 09 | Verdict |
+|---|---|---|---|---|
+| JPN | ~993 | 0.998 | "basse anisotropie" (État cohérent) | **VIOLÉE** : A très élevée |
+| FRA | ~3400 | 0.978 | "modérée" | **VIOLÉE** : A très élevée |
+| TUR | ~1440 | 0.979 | "élevée" | Cohérent en A, faible en I1 |
+| IND | ~1051 | 0.982 | "modérée" | **VIOLÉE** en A, cohérent en I1 |
+| LBN | — | — | non couvert (LBN absent du panel) | — |
+
+### Finding empirique : `A(s)` n'est PAS discriminante
+
+La mesure révèle que **tous les États publiés ont une anisotropie A > 0.97**. Cause mathématique : `M(s)` est une somme pondérée de 11 outer-products (`(μᵢ − xₛ)(μᵢ − xₛ)ᵀ`), chacun de rang 1. Pour la plupart des États, la dispersion des centroïdes dans `B_score` a **une direction dominante** (capturée par le premier axe principal), ce qui fait `λ₁ ≫ λ₆` partout — donc `A ≈ 1` partout.
+
+**Conclusion** : `A(s)` ne discrimine pas entre États « cohérents » et « fracturés ». Le bon indicateur est `I1 = tr(M)` (magnitude totale), qui varie de ~600 (États proches d'un archétype) à ~3500+ (États comme FRA, fortement écartés de tous les archétypes simultanément).
+
+Cette finding est **publiée en l'état** (pas de réécriture rétroactive des prédictions). Elle suggère que :
+
+1. La métaphore mécanique de « fracture orientée » est trompeuse dans ce contexte (cf. [doc 11 §C13](11_critiques_and_responses.md)).
+2. `I1` est la statistique scalaire informative dérivée de `M(s)`.
+3. Les **directions** `eₖ` restent potentiellement utiles localement, mais leur interprétation globale comme « directions de fracture » est invalidée.
+
+## 7. Limites et travaux futurs
+
+1. **Pas de propagation d'incertitude WVS** : les CI publiés par WVS ne sont pas propagés dans `M(s)`, `wₛ`, `d_hyb`. Travail futur : bootstrap sur les CI WVS pour estimer l'incertitude finale.
+2. **Pas d'analyse de stabilité temporelle** : v3.0 utilise WVS wave 7. Comparaison à waves antérieures non implémentée.

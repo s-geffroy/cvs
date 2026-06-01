@@ -436,6 +436,160 @@ def sweep_hybrid_weights(grid_step: float = 0.1) -> dict:
     }
 
 
+def sweep_role_weights(
+    periphery_weight_values: tuple[float, ...] = (0.0, 0.25, 0.5, 0.75, 1.0),
+) -> dict:
+    """Recompute civilization centroids under varying ``periphery`` archetype weight.
+
+    Reports the maximum displacement in ``B_score`` of each centroid relative
+    to the default (periphery=0.5) — a direct measure of sensitivity to the
+    editorial periphery-vs-core weighting choice.
+    """
+    iw_coords = load_inglehart_welzel()
+    hofstede_profiles = load_hofstede()
+    taxonomy = json.loads(MACRO_CIVILIZATIONS_V2_PATH.read_text())
+
+    default_periphery_weight = 0.5
+    per_periphery_results: list[dict] = []
+    default_mu_score_by_civilization: dict[str, np.ndarray] = {}
+
+    for periphery_weight in periphery_weight_values:
+        custom_role_weights = {"core": 1.0, "periphery": float(periphery_weight),
+                               "interface": 0.0, "ambiguous": 0.0}
+        civilization_records: list[dict] = []
+        for civilization in taxonomy["civilizations"]:
+            civilization_id = civilization["id"]
+            viz_points: list[np.ndarray] = []
+            viz_weights: list[float] = []
+            score_points: list[np.ndarray] = []
+            score_weights: list[float] = []
+            for member_record in civilization["member_states"]:
+                role_weight_value = custom_role_weights.get(member_record["role"], 0.0)
+                if role_weight_value == 0.0:
+                    continue
+                iso3 = member_record["iso3"]
+                iw_record = iw_coords.get(iso3)
+                if iw_record is not None:
+                    viz_points.append(np.array([iw_record.ts, iw_record.se], dtype=float))
+                    viz_weights.append(role_weight_value)
+                hofstede_record = hofstede_profiles.get(iso3)
+                if hofstede_record is not None and hofstede_record.coverage != "missing":
+                    mean_fill = np.nanmean(hofstede_record.values)
+                    values = np.where(np.isnan(hofstede_record.values), mean_fill, hofstede_record.values)
+                    score_points.append(values)
+                    score_weights.append(role_weight_value)
+            if score_points and score_weights:
+                weight_sum = sum(score_weights)
+                weights_array = np.array(score_weights, dtype=float) / weight_sum
+                mu_score = np.average(score_points, axis=0, weights=weights_array)
+            else:
+                mu_score = np.full(6, np.nan)
+            civilization_records.append({
+                "civilization_id": civilization_id,
+                "mu_score": [float(v) if not np.isnan(v) else None for v in mu_score],
+            })
+            if np.isclose(periphery_weight, default_periphery_weight):
+                default_mu_score_by_civilization[civilization_id] = mu_score
+
+        per_periphery_results.append({
+            "periphery_weight": float(periphery_weight),
+            "centroids": civilization_records,
+        })
+
+    sensitivity_results: list[dict] = []
+    for record in per_periphery_results:
+        peripheryweight = record["periphery_weight"]
+        displacements: dict[str, float] = {}
+        for civilization in record["centroids"]:
+            civilization_id = civilization["civilization_id"]
+            mu_score_array = np.array(
+                [v if v is not None else np.nan for v in civilization["mu_score"]],
+                dtype=float,
+            )
+            default_mu_score = default_mu_score_by_civilization.get(civilization_id)
+            if default_mu_score is None:
+                continue
+            valid_mask = ~np.isnan(mu_score_array) & ~np.isnan(default_mu_score)
+            if valid_mask.any():
+                displacement = float(np.linalg.norm(
+                    mu_score_array[valid_mask] - default_mu_score[valid_mask]
+                ))
+            else:
+                displacement = float("nan")
+            displacements[civilization_id] = displacement
+        sensitivity_results.append({
+            "periphery_weight": peripheryweight,
+            "centroid_displacements_vs_default": displacements,
+            "max_displacement": max(
+                [v for v in displacements.values() if not np.isnan(v)],
+                default=0.0,
+            ),
+        })
+
+    return {
+        "_meta": {
+            "method": "role_weight_sweep_on_periphery",
+            "default_periphery_weight": default_periphery_weight,
+            "core_weight_fixed": 1.0,
+            "ambiguous_weight_fixed": 0.0,
+        },
+        "sensitivity": sensitivity_results,
+    }
+
+
+def correlation_d_viz_vs_d_score() -> dict:
+    """Spearman rank correlation between d_viz and d_score_euclidean across all state pairs.
+
+    Quantifies whether the two-base mix (IW + Hofstede) is internally
+    consistent: a high correlation means the two bases agree on which states
+    are close; a low correlation indicates that the bases capture different
+    cultural dimensions (and the mixed pipeline is informationally richer).
+    """
+    from packages.civvec_core.algebra.distances import d_score_euclidean, d_viz
+
+    centroids = compute_centroids()
+    state_coordinates = project_states(centroids)
+
+    iso3_list: list[str] = []
+    x_viz_records: list[np.ndarray] = []
+    x_score_records: list[np.ndarray] = []
+    for iso3, state in state_coordinates.items():
+        if any(value is None for value in state.x_viz):
+            continue
+        if any(value is None for value in state.x_score):
+            continue
+        iso3_list.append(iso3)
+        x_viz_records.append(np.array(state.x_viz, dtype=float))
+        x_score_records.append(np.array(state.x_score, dtype=float))
+
+    n_states = len(iso3_list)
+    d_viz_values: list[float] = []
+    d_score_values: list[float] = []
+    for left in range(n_states):
+        for right in range(left + 1, n_states):
+            d_viz_values.append(d_viz(x_viz_records[left], x_viz_records[right]))
+            d_score_values.append(d_score_euclidean(x_score_records[left], x_score_records[right]))
+
+    d_viz_array = np.asarray(d_viz_values, dtype=float)
+    d_score_array = np.asarray(d_score_values, dtype=float)
+    spearman_rho = _rank_correlation_spearman(d_viz_array, d_score_array)
+
+    return {
+        "_meta": {
+            "method": "cross_base_pairwise_correlation",
+            "n_states_paired": n_states,
+            "n_pairs": len(d_viz_values),
+        },
+        "spearman_rho_d_viz_vs_d_score_euclidean": spearman_rho,
+        "interpretation": (
+            "rho > 0.7: the two bases largely agree (B_viz and B_score capture overlapping signal);"
+            " rho in [0.4, 0.7]: moderate agreement, complementary information;"
+            " rho < 0.4: bases diverge — the mixed pipeline is informationally richer"
+            " but mixing pommes/oranges is more salient (cf. doc 11 section B5)."
+        ),
+    }
+
+
 def run_all_sensitivity_analyses() -> dict[str, str]:
     EMPIRICAL_DIR.mkdir(parents=True, exist_ok=True)
     paths_written: dict[str, str] = {}
@@ -454,5 +608,15 @@ def run_all_sensitivity_analyses() -> dict[str, str]:
     hybrid_path = EMPIRICAL_DIR / "sensitivity_hybrid_weights.json"
     hybrid_path.write_text(json.dumps(hybrid_payload, indent=2, ensure_ascii=False))
     paths_written["hybrid_sweep"] = str(hybrid_path)
+
+    role_weights_payload = sweep_role_weights()
+    role_weights_path = EMPIRICAL_DIR / "sensitivity_role_weights.json"
+    role_weights_path.write_text(json.dumps(role_weights_payload, indent=2, ensure_ascii=False))
+    paths_written["role_weights"] = str(role_weights_path)
+
+    cross_base_payload = correlation_d_viz_vs_d_score()
+    cross_base_path = EMPIRICAL_DIR / "sensitivity_cross_base_correlation.json"
+    cross_base_path.write_text(json.dumps(cross_base_payload, indent=2, ensure_ascii=False))
+    paths_written["cross_base_correlation"] = str(cross_base_path)
 
     return paths_written

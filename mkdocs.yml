@@ -2,9 +2,11 @@ site_name: Civilizational Vector State (cvs)
 site_description: >-
   Pipeline bayésien d'affiliation civilisationnelle des États souverains à
   partir de sources publiques (Huntington, Inglehart-Welzel, Hofstede, WVS).
-  Deux bases (documentaire + vectorielle), mécanique tensorielle, algèbre des
-  distances. Phase 2 — taxonomie + méthodologie + États + carte interactive
-  + base vectorielle + tensions + distances publiés.
+  Deux bases (documentaire + vectorielle), second moment civilisationnel M(s),
+  algèbre des distances multi-métriques. v3.0 — taxonomie + méthodologie
+  + États + carte interactive + base vectorielle + moments M(s) + distances
+  + critiques anticipées + validation empirique externe + sensibilité
+  + baseline non-supervisé + glossaire.
 site_url: https://s-geffroy.github.io/cvs/
 repo_url: https://github.com/s-geffroy/cvs
 repo_name: s-geffroy/cvs

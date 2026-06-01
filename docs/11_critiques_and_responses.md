@@ -187,10 +187,12 @@ suppose une commensurabilité qui n'est pas démontrée.
 2. **Rôles différents** : `B_viz` = visualisation 2D primaire ; `B_score` =
    scoring et tenseur. La doc 08 le précise.
 3. **Non-simultanéité admise** : voir [doc 08 §5.4](08_civilizational_basis.md).
-4. **Comparaison empirique** : la corrélation entre `d_viz` et
-   `d_score_euclidean` est publiée dans
-   [doc 13 — Sensitivity §4](13_sensitivity_analysis.md) — si elle est faible,
-   l'utilisateur sait que les deux bases ne se renforcent pas.
+4. **Comparaison empirique** : la corrélation de Spearman entre `d_viz` et
+   `d_score_euclidean` sur toutes les paires d'États du panel est publiée
+   dans [doc 13 §5](13_sensitivity_analysis.md) (artefact
+   `assets/data/empirical/sensitivity_cross_base_correlation.json`). Une
+   valeur intermédiaire indiquerait des bases complémentaires ; une valeur
+   faible confirmerait la critique de divergence pommes/oranges.
 
 ### B6. Le poids `α = 0.5` pour les États periphery est arbitraire
 
@@ -199,11 +201,13 @@ n'est pas justifiée. Aucune sensibilité publiée.
 
 **Réponse du projet** :
 
-1. **Sensibilité publiée** : [doc 13 §1](13_sensitivity_analysis.md) compare
-   plusieurs schémas de pondération (uniforme, 1/0.5/0, 1/0.75/0, 1/0.5/0.25).
+1. **Sensibilité publiée** : [doc 13 §4](13_sensitivity_analysis.md) balaye
+   `periphery_weight ∈ {0.0, 0.25, 0.5, 0.75, 1.0}` et publie le déplacement
+   Euclidien de chaque centroïde par rapport au défaut dans
+   `assets/data/empirical/sensitivity_role_weights.json`.
 2. **Justification doc 08 §4.1** : `0.5` est documenté comme **valeur
    éditoriale** dans [doc 08 §4.1](08_civilizational_basis.md),
-   pas comme estimation.
+   pas comme estimation calibrée.
 3. **Manipulable** : la UI Streamlit `1_Documentary_Basis.py` permet
    d'itérer sur les pondérations.
 
