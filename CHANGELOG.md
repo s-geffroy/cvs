@@ -7,6 +7,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Published — Phase 2 en ligne (2026-06-01)
+
+- Republication automatique via `.github/workflows/publish.yml` (workflow run 26748986987, conclusion=success).
+- URLs live (HTTP 200 vérifié) sur <https://s-geffroy.github.io/cvs/> :
+  - `/states/` + 63 fiches État (`/states/<ISO3>/`)
+  - `/map/` (MapLibre choropleth)
+  - `/basis/` (Plotly scatter B_viz + radar B_score)
+  - `/tensions/` (anisotropie + heatmap T(s))
+  - `/distances/` (matrice d_hyb + détail toutes-distances)
+  - `/assets/data/global_state_baseline.geojson` (provenance Natural Earth confirmée, `contains_gadm_geometry: false`)
+- Bannière éthique présente sur chaque page Phase 2 (vérifié via grep sur HTML servi).
+
 ### Added — Phase 2 livrée (2026-06-01)
 
 - **Géométries Natural Earth ADM0 110m** versionnées dans `data_sources/natural_earth/admin0_countries_110m.geojson` — pinned commit `nvkelso/natural-earth-vector @ ca96624a56`, domaine public ; 62/63 ISO3 couverts (HKG et SGP absents à cette résolution, mention explicite). Aucune géométrie GADM publiée.
