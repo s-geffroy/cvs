@@ -127,3 +127,149 @@ def test_only_allowed_geometry_sources_constant() -> None:
 
 def test_ethical_warning_fr_includes_individuals_clause() -> None:
     assert "individus réels" in ETHICAL_WARNING_FR
+
+
+# ---------------------------------------------------------------------------
+# Phase 2 invariants — states + map + basis + tensions + distances.
+# These tests only run when the basis artefacts (state_coordinates, tensors,
+# centroids) are available — they're produced by `civvec basis build`, which
+# is always run before pytest in the container CMD.
+# ---------------------------------------------------------------------------
+
+
+def _phase2_artefact_paths_present() -> bool:
+    from apps.basis_builder.paths import (
+        B_SCORE_PATH,
+        B_VIZ_PATH,
+        CIVILIZATION_CENTROIDS_PATH,
+        STATE_COORDINATES_PATH,
+        STATE_TENSORS_PATH,
+    )
+
+    return all(
+        path.exists()
+        for path in (
+            B_VIZ_PATH,
+            B_SCORE_PATH,
+            CIVILIZATION_CENTROIDS_PATH,
+            STATE_COORDINATES_PATH,
+            STATE_TENSORS_PATH,
+        )
+    )
+
+
+def test_phase2_states_index_present(built_dist: Path) -> None:
+    if not _phase2_artefact_paths_present():
+        pytest.skip("Phase 2 artefacts not built — skipping")
+    states_index_html = (built_dist / "states" / "index.html").read_text()
+    assert "ne doit pas être utilisé" in states_index_html
+
+
+def test_phase2_state_page_FRA_contains_x_viz_and_hofstede_and_tension(built_dist: Path) -> None:
+    if not _phase2_artefact_paths_present():
+        pytest.skip("Phase 2 artefacts not built — skipping")
+    fra_html = (built_dist / "states" / "FRA" / "index.html").read_text()
+    assert "x_viz" in fra_html
+    assert "Power Distance" in fra_html
+    assert "Tenseur de tension" in fra_html
+    assert "FRA.profile.json" in fra_html
+
+
+def test_phase2_state_data_assets_present(built_dist: Path) -> None:
+    if not _phase2_artefact_paths_present():
+        pytest.skip("Phase 2 artefacts not built — skipping")
+    for relative_path in (
+        "assets/data/state_coordinates.json",
+        "assets/data/civilization_centroids.json",
+        "assets/data/state_tensors.json",
+        "assets/data/state_distance_matrix.json",
+        "assets/data/B_viz.json",
+        "assets/data/B_score.json",
+        "assets/data/global_state_baseline.geojson",
+    ):
+        assert (built_dist / relative_path).exists(), f"missing Phase 2 asset: {relative_path}"
+
+
+def test_phase2_map_page_wires_maplibre_and_geojson(built_dist: Path) -> None:
+    if not _phase2_artefact_paths_present():
+        pytest.skip("Phase 2 artefacts not built — skipping")
+    map_html = (built_dist / "map" / "index.html").read_text()
+    assert 'id="civvec-map"' in map_html
+    assert "maplibre-gl" in map_html
+    assert "global_state_baseline.geojson" in map_html
+
+
+def test_phase2_basis_page_loads_plotly_and_centroids(built_dist: Path) -> None:
+    if not _phase2_artefact_paths_present():
+        pytest.skip("Phase 2 artefacts not built — skipping")
+    basis_html = (built_dist / "basis" / "index.html").read_text()
+    assert 'id="civvec-basis-scatter"' in basis_html
+    assert 'id="civvec-basis-radar"' in basis_html
+    assert "plotly" in basis_html.lower()
+
+
+def test_phase2_tensions_page_present(built_dist: Path) -> None:
+    if not _phase2_artefact_paths_present():
+        pytest.skip("Phase 2 artefacts not built — skipping")
+    tensions_html = (built_dist / "tensions" / "index.html").read_text()
+    assert 'id="civvec-tensions-heatmap"' in tensions_html
+    assert "anisotropie" in tensions_html.lower()
+
+
+def test_phase2_distances_page_present(built_dist: Path) -> None:
+    if not _phase2_artefact_paths_present():
+        pytest.skip("Phase 2 artefacts not built — skipping")
+    distances_html = (built_dist / "distances" / "index.html").read_text()
+    assert 'id="civvec-distances-heatmap"' in distances_html
+    assert "d_hyb" in distances_html
+
+
+def test_phase2_global_state_baseline_geojson_has_natural_earth_provenance(
+    built_dist: Path,
+) -> None:
+    import json
+
+    if not _phase2_artefact_paths_present():
+        pytest.skip("Phase 2 artefacts not built — skipping")
+    geojson_payload = json.loads(
+        (built_dist / "assets" / "data" / "global_state_baseline.geojson").read_text()
+    )
+    provenance = geojson_payload["properties"]["geometry_provenance"]
+    assert provenance["geometry_source"] == "Natural Earth"
+    assert provenance["contains_gadm_geometry"] is False
+    assert provenance["geometry_source"] in ALLOWED_GEOMETRY_SOURCES
+
+
+def test_phase2_per_state_geojson_files_all_natural_earth(built_dist: Path) -> None:
+    import json
+
+    if not _phase2_artefact_paths_present():
+        pytest.skip("Phase 2 artefacts not built — skipping")
+    states_dir = built_dist / "assets" / "data" / "states"
+    geojson_files = list(states_dir.glob("*.geojson"))
+    assert geojson_files, "expected per-state GeoJSON files under assets/data/states/"
+    for geojson_path in geojson_files:
+        payload = json.loads(geojson_path.read_text())
+        provenance = payload["properties"]["geometry_provenance"]
+        assert provenance["geometry_source"] == "Natural Earth", geojson_path.name
+        assert provenance["contains_gadm_geometry"] is False, geojson_path.name
+
+
+def test_phase2_distance_matrix_is_symmetric_and_zero_diagonal(built_dist: Path) -> None:
+    import json
+
+    if not _phase2_artefact_paths_present():
+        pytest.skip("Phase 2 artefacts not built — skipping")
+    distance_payload = json.loads(
+        (built_dist / "assets" / "data" / "state_distance_matrix.json").read_text()
+    )
+    iso3_order = distance_payload["iso3_order"]
+    n_states = len(iso3_order)
+    for metric_key, matrix in distance_payload["matrices"].items():
+        for index in range(n_states):
+            assert abs(matrix[index][index]) < 1e-9, f"{metric_key} diagonal not 0 at {iso3_order[index]}"
+        for left in range(n_states):
+            for right in range(left + 1, n_states):
+                assert abs(matrix[left][right] - matrix[right][left]) < 1e-6, (
+                    f"{metric_key} asymmetric at ({iso3_order[left]}, {iso3_order[right]})"
+                )

@@ -3,7 +3,8 @@ site_description: >-
   Pipeline bayésien d'affiliation civilisationnelle des États souverains à
   partir de sources publiques (Huntington, Inglehart-Welzel, Hofstede, WVS).
   Deux bases (documentaire + vectorielle), mécanique tensorielle, algèbre des
-  distances. Phase 1b — taxonomie + méthodologie publiées pour relecture.
+  distances. Phase 2 — taxonomie + méthodologie + États + carte interactive
+  + base vectorielle + tensions + distances publiés.
 site_url: https://s-geffroy.github.io/cvs/
 repo_url: https://github.com/s-geffroy/cvs
 repo_name: s-geffroy/cvs
@@ -43,6 +44,19 @@ theme:
 
 extra_css:
   - assets/css/extra.css
+  - https://cdn.jsdelivr.net/npm/maplibre-gl@4.7.1/dist/maplibre-gl.min.css
+
+extra_javascript:
+  - https://cdn.jsdelivr.net/npm/maplibre-gl@4.7.1/dist/maplibre-gl.min.js
+  - https://cdn.plot.ly/plotly-2.35.2.min.js
+  - assets/js/map.js
+  - assets/js/basis_viz.js
+  - assets/js/tensors.js
+  - assets/js/distances.js
+
+not_in_nav: |
+  /states/*.md
+  !/states/index.md
 
 markdown_extensions:
   - admonition
@@ -95,6 +109,12 @@ nav:
           - taxonomy/civilizations/african.md
           - taxonomy/civilizations/indigenous.md
           - taxonomy/civilizations/oceanian.md
+  - États:
+      - states/index.md
+  - Carte: map/index.md
+  - Base vectorielle: basis/index.md
+  - Tensions: tensions/index.md
+  - Distances: distances/index.md
   - Sources: sources/index.md
   - Schémas: schemas/index.md
   - ADM1 (préparé): adm1_policy.md

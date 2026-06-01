@@ -1,0 +1,49 @@
+# Matrice de distances civilisationnelles
+
+!!! warning "Avertissement éthique"
+    {{ ethical_warning_fr }}
+
+Distance hybride `d_hyb = α · d_score^M + β · d_w^W + γ · d_T` calculée pour
+les **{{ state_count }} États** publiés, avec les poids par défaut `(α, β, γ) = (0.4, 0.4, 0.2)`.
+
+Voir la [méthodologie 10 — Algèbre des distances](../methodology/10_distance_algebra.md)
+pour les définitions formelles et propriétés.
+
+## Heatmap interactive
+
+<div id="civvec-distances-heatmap" style="width: 100%; height: 720px;"></div>
+
+## Détail d'une paire
+
+Sélectionnez deux États pour voir toutes les distances calculées :
+
+<div id="civvec-distances-pair" style="width: 100%; min-height: 220px;"></div>
+
+<noscript>
+Les graphiques interactifs nécessitent JavaScript. Données téléchargeables :
+[`state_distance_matrix.json`](../assets/data/state_distance_matrix.json).
+</noscript>
+
+## Distances exposées
+
+| Symbole | Espace | Type | Bornes |
+|---|---|---|---|
+| `d_viz` | `B_viz = ℝ²` | distance Euclidienne | ≥ 0 |
+| `d_score^E` | `B_score = ℝ⁶` | Euclidienne | ≥ 0 |
+| `d_score^M` | `B_score` | Mahalanobis pondérée | ≥ 0 |
+| `d_w^cos` | simplexe `Δ¹⁰` | dissimilarité cosinus | `[0, 2]` |
+| `d_w^JS` | simplexe | Jensen-Shannon | `[0, √ln 2]` |
+| `d_w^W` | simplexe | Wasserstein-2 (Sinkhorn) | ≥ 0 |
+| `d_T` | tenseurs | Frobenius | ≥ 0 |
+| `d_hyb` | combinaison | convexe `(α, β, γ)` | ≥ 0 |
+
+## Téléchargements
+
+- [`state_distance_matrix.json`](../assets/data/state_distance_matrix.json) — matrices complètes (`d_score^E`, `d_w^cos`, `d_w^JS`, `d_T`, `d_hyb`)
+- Code source : [`packages/civvec_core/algebra/distances.py`](https://github.com/s-geffroy/cvs/blob/main/packages/civvec_core/algebra/distances.py)
+
+---
+
+[Liste des États](../states/index.md) ·
+[Tensions](../tensions/index.md) ·
+[Base vectorielle](../basis/index.md)

@@ -7,6 +7,19 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added — Phase 2 livrée (2026-06-01)
+
+- **Géométries Natural Earth ADM0 110m** versionnées dans `data_sources/natural_earth/admin0_countries_110m.geojson` — pinned commit `nvkelso/natural-earth-vector @ ca96624a56`, domaine public ; 62/63 ISO3 couverts (HKG et SGP absents à cette résolution, mention explicite). Aucune géométrie GADM publiée.
+- **Module `apps/basis_builder/geometries.py`** : `fetch_and_filter_natural_earth_admin0()` reproductible, tagging `geometry_source = "Natural Earth"` + `contains_gadm_geometry: false` sur chaque feature. CLI `civvec basis fetch-geometries`.
+- **Templates Jinja2 Phase 2** (`site_src/templates/`) : `state_page.md.j2`, `states_index.md.j2`, `map_page.md.j2`, `basis_page.md.j2`, `tensions_page.md.j2`, `distances_page.md.j2` — bannière éthique sur chaque page.
+- **Builder Phase 2** (`apps/site_builder/builder.py`) : `render_states`, `render_map_page`, `render_basis_page`, `render_tensions_page`, `render_distances_page` + calcul global de la matrice de distances (8 métriques : `d_viz`, `d_score^E`, `d_score^M`, `d_w^cos`, `d_w^JS`, `d_w^W`, `d_T`, `d_hyb`).
+- **Pages publiées** : 63 fiches États (`/states/<ISO3>/`) + `/states/`, `/map/`, `/basis/`, `/tensions/`, `/distances/`.
+- **Assets data** (`dist/assets/data/`) : `state_coordinates.json`, `civilization_centroids.json`, `state_tensors.json`, `state_distance_matrix.json`, `B_viz.json`, `B_score.json`, `global_state_baseline.geojson` + dossier `states/<ISO3>.profile.json` et `states/<ISO3>.geojson`.
+- **Assets JS** (`site_src/docs/assets/js/`) : `map.js` (MapLibre GL JS 4.7.1, choropleth par civilisation dominante, sans fond externe), `basis_viz.js` (Plotly 2.35.2 scatter B_viz + radar B_score), `tensors.js` (anisotropie + heatmap 6×6 avec sélecteur ISO3), `distances.js` (heatmap matrice + détail toutes-distances par paire).
+- **`mkdocs.yml`** : nav étendue (États / Carte / Base vectorielle / Tensions / Distances), CDN MapLibre + Plotly pinné, `not_in_nav` pour les 63 fiches États.
+- **Tests Phase 2** (`tests/test_site_build.py`) : présence et provenance Natural Earth, FRA carry `x_viz` + Hofstede + tenseur, matrice de distance symétrique avec diagonale 0, JS hooks `civvec-*` présents, assets data téléchargeables (10 nouveaux tests).
+- Vérification end-to-end : `docker compose build civvec_site` ✓, suite 51 tests ✓ en image site, suite 33 tests ✓ en image UI, nginx preview `HTTP 200` sur `/states/FRA/`, `/map/`, `/basis/`, `/tensions/`, `/distances/`.
+
 ### Published — Phase 1b en ligne (2026-05-30)
 
 - Dépôt initialisé sur `git@github.com:s-geffroy/cvs.git` (public).

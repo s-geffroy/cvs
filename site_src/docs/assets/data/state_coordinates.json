@@ -1,0 +1,3217 @@
+{
+  "_meta": {
+    "schema": "state_coordinates.schema.json",
+    "dimension_order_score": [
+      "pdi",
+      "idv",
+      "mas",
+      "uai",
+      "lto",
+      "ivr"
+    ],
+    "affinity_beta": 0.05
+  },
+  "states": [
+    {
+      "iso3": "ARG",
+      "label": null,
+      "x_viz": [
+        -0.6,
+        0.65
+      ],
+      "x_viz_ellipse": {
+        "sigma": [
+          [
+            0.0324,
+            0.0
+          ],
+          [
+            0.0,
+            0.0324
+          ]
+        ],
+        "confidence_level": 0.8
+      },
+      "x_score": [
+        49.0,
+        46.0,
+        56.0,
+        86.0,
+        20.0,
+        62.0
+      ],
+      "affinity_vector": {
+        "western": 0.08821226984281333,
+        "orthodox": 0.031329654949023095,
+        "islamic": 0.1025689885446492,
+        "sinic": 0.01634462145409361,
+        "hindic": 0.035151543548930186,
+        "japanese": 0.021928965453636363,
+        "buddhist": 0.09429898391418097,
+        "latin_american": 0.2485335279791517,
+        "african": 0.14360348095265987,
+        "indigenous": 0.0663955360935612,
+        "oceanian": 0.15163242726730053
+      },
+      "data_quality": {
+        "iw_coverage": "present",
+        "hofstede_coverage": "present",
+        "low_evidence": false
+      },
+      "source_refs": [
+        "wvs_wave7_2022",
+        "hofstede_2010"
+      ]
+    },
+    {
+      "iso3": "AUS",
+      "label": null,
+      "x_viz": [
+        0.5,
+        1.65
+      ],
+      "x_viz_ellipse": {
+        "sigma": [
+          [
+            0.0225,
+            0.0
+          ],
+          [
+            0.0,
+            0.0225
+          ]
+        ],
+        "confidence_level": 0.8
+      },
+      "x_score": [
+        38.0,
+        90.0,
+        61.0,
+        51.0,
+        21.0,
+        71.0
+      ],
+      "affinity_vector": {
+        "western": 0.4595060059692703,
+        "orthodox": 0.010697673726926718,
+        "islamic": 0.03908130118701421,
+        "sinic": 0.01715941864388148,
+        "hindic": 0.05278272405203477,
+        "japanese": 0.017521901113755983,
+        "buddhist": 0.028869720778117437,
+        "latin_american": 0.047348970903691646,
+        "african": 0.0858559028845632,
+        "indigenous": 0.016948315046004327,
+        "oceanian": 0.22422806569473994
+      },
+      "data_quality": {
+        "iw_coverage": "present",
+        "hofstede_coverage": "present",
+        "low_evidence": false
+      },
+      "source_refs": [
+        "wvs_wave7_2022",
+        "hofstede_2010"
+      ]
+    },
+    {
+      "iso3": "BGD",
+      "label": null,
+      "x_viz": [
+        -1.05,
+        -0.65
+      ],
+      "x_viz_ellipse": {
+        "sigma": [
+          [
+            0.04000000000000001,
+            0.0
+          ],
+          [
+            0.0,
+            0.04000000000000001
+          ]
+        ],
+        "confidence_level": 0.8
+      },
+      "x_score": [
+        80.0,
+        20.0,
+        55.0,
+        60.0,
+        47.0,
+        20.0
+      ],
+      "affinity_vector": {
+        "western": 0.013849811215862512,
+        "orthodox": 0.08058600632999914,
+        "islamic": 0.25453741687252374,
+        "sinic": 0.09328108654106973,
+        "hindic": 0.13036934853378587,
+        "japanese": 0.01513607828474124,
+        "buddhist": 0.1698930194520773,
+        "latin_american": 0.03764794531884969,
+        "african": 0.07238159436479248,
+        "indigenous": 0.09204577686350739,
+        "oceanian": 0.040271916222791
+      },
+      "data_quality": {
+        "iw_coverage": "present",
+        "hofstede_coverage": "present",
+        "low_evidence": false
+      },
+      "source_refs": [
+        "wvs_wave7_2022",
+        "hofstede_2010"
+      ]
+    },
+    {
+      "iso3": "BGR",
+      "label": null,
+      "x_viz": [
+        -0.25,
+        -0.95
+      ],
+      "x_viz_ellipse": {
+        "sigma": [
+          [
+            0.0324,
+            0.0
+          ],
+          [
+            0.0,
+            0.0324
+          ]
+        ],
+        "confidence_level": 0.8
+      },
+      "x_score": [
+        70.0,
+        30.0,
+        40.0,
+        85.0,
+        69.0,
+        16.0
+      ],
+      "affinity_vector": {
+        "western": 0.018875641221919665,
+        "orthodox": 0.4019503339254866,
+        "islamic": 0.10716195296008099,
+        "sinic": 0.059629886662384175,
+        "hindic": 0.06456756921378538,
+        "japanese": 0.03453820934544356,
+        "buddhist": 0.11866998391824339,
+        "latin_american": 0.03414044776839663,
+        "african": 0.03488463252124659,
+        "indigenous": 0.0955024662110597,
+        "oceanian": 0.030078876251953365
+      },
+      "data_quality": {
+        "iw_coverage": "present",
+        "hofstede_coverage": "present",
+        "low_evidence": false
+      },
+      "source_refs": [
+        "wvs_wave7_2022",
+        "hofstede_2010"
+      ]
+    },
+    {
+      "iso3": "BLR",
+      "label": null,
+      "x_viz": [
+        0.45,
+        -1.2
+      ],
+      "x_viz_ellipse": {
+        "sigma": [
+          [
+            0.0324,
+            0.0
+          ],
+          [
+            0.0,
+            0.0324
+          ]
+        ],
+        "confidence_level": 0.8
+      },
+      "x_score": [
+        95.0,
+        25.0,
+        20.0,
+        95.0,
+        81.0,
+        15.0
+      ],
+      "affinity_vector": {
+        "western": 0.011023781586331076,
+        "orthodox": 0.5426608120615843,
+        "islamic": 0.0687226533854942,
+        "sinic": 0.04677366566217189,
+        "hindic": 0.0419419421840736,
+        "japanese": 0.02117285372126577,
+        "buddhist": 0.10131361741916091,
+        "latin_american": 0.02929470220554305,
+        "african": 0.02385950228923009,
+        "indigenous": 0.09668478446838456,
+        "oceanian": 0.016551685016760544
+      },
+      "data_quality": {
+        "iw_coverage": "present",
+        "hofstede_coverage": "present",
+        "low_evidence": false
+      },
+      "source_refs": [
+        "wvs_wave7_2022",
+        "hofstede_2010"
+      ]
+    },
+    {
+      "iso3": "BOL",
+      "label": null,
+      "x_viz": [
+        -1.1,
+        0.05
+      ],
+      "x_viz_ellipse": {
+        "sigma": [
+          [
+            0.0484,
+            0.0
+          ],
+          [
+            0.0,
+            0.0484
+          ]
+        ],
+        "confidence_level": 0.8
+      },
+      "x_score": [
+        78.0,
+        10.0,
+        42.0,
+        87.0,
+        54.25,
+        54.25
+      ],
+      "affinity_vector": {
+        "western": 0.009630617680082863,
+        "orthodox": 0.08543079595909787,
+        "islamic": 0.07440658925425137,
+        "sinic": 0.027011453153143038,
+        "hindic": 0.020559886995655204,
+        "japanese": 0.01299595759651793,
+        "buddhist": 0.19195985717629482,
+        "latin_american": 0.10731088342814467,
+        "african": 0.05942386770212553,
+        "indigenous": 0.3843412207660191,
+        "oceanian": 0.026928870288667715
+      },
+      "data_quality": {
+        "iw_coverage": "present",
+        "hofstede_coverage": "imputed",
+        "low_evidence": false
+      },
+      "source_refs": [
+        "wvs_wave7_2022",
+        "hofstede_2010"
+      ]
+    },
+    {
+      "iso3": "BRA",
+      "label": null,
+      "x_viz": [
+        -1.05,
+        0.85
+      ],
+      "x_viz_ellipse": {
+        "sigma": [
+          [
+            0.0225,
+            0.0
+          ],
+          [
+            0.0,
+            0.0225
+          ]
+        ],
+        "confidence_level": 0.8
+      },
+      "x_score": [
+        69.0,
+        38.0,
+        49.0,
+        76.0,
+        44.0,
+        59.0
+      ],
+      "affinity_vector": {
+        "western": 0.0413544452822945,
+        "orthodox": 0.04819056902481638,
+        "islamic": 0.1095332810820806,
+        "sinic": 0.02858179892317377,
+        "hindic": 0.04498104898311377,
+        "japanese": 0.017880219353824143,
+        "buddhist": 0.16383835102421718,
+        "latin_american": 0.16738119504406107,
+        "african": 0.1587580984532509,
+        "indigenous": 0.11672672921989731,
+        "oceanian": 0.10277426360927033
+      },
+      "data_quality": {
+        "iw_coverage": "present",
+        "hofstede_coverage": "present",
+        "low_evidence": false
+      },
+      "source_refs": [
+        "wvs_wave7_2022",
+        "hofstede_2010"
+      ]
+    },
+    {
+      "iso3": "CAN",
+      "label": null,
+      "x_viz": [
+        0.55,
+        1.7
+      ],
+      "x_viz_ellipse": {
+        "sigma": [
+          [
+            0.0225,
+            0.0
+          ],
+          [
+            0.0,
+            0.0225
+          ]
+        ],
+        "confidence_level": 0.8
+      },
+      "x_score": [
+        39.0,
+        80.0,
+        52.0,
+        48.0,
+        36.0,
+        68.0
+      ],
+      "affinity_vector": {
+        "western": 0.5382271458257608,
+        "orthodox": 0.009225179105759151,
+        "islamic": 0.028917240978877216,
+        "sinic": 0.01803199285126904,
+        "hindic": 0.04478728459124647,
+        "japanese": 0.012775869511402175,
+        "buddhist": 0.02392554399303421,
+        "latin_american": 0.0314405086967182,
+        "african": 0.06546869146117291,
+        "indigenous": 0.014474607071059398,
+        "oceanian": 0.21272593591370056
+      },
+      "data_quality": {
+        "iw_coverage": "present",
+        "hofstede_coverage": "present",
+        "low_evidence": false
+      },
+      "source_refs": [
+        "wvs_wave7_2022",
+        "hofstede_2010"
+      ]
+    },
+    {
+      "iso3": "CHL",
+      "label": null,
+      "x_viz": [
+        -0.2,
+        0.85
+      ],
+      "x_viz_ellipse": {
+        "sigma": [
+          [
+            0.0324,
+            0.0
+          ],
+          [
+            0.0,
+            0.0324
+          ]
+        ],
+        "confidence_level": 0.8
+      },
+      "x_score": [
+        63.0,
+        23.0,
+        28.0,
+        86.0,
+        31.0,
+        68.0
+      ],
+      "affinity_vector": {
+        "western": 0.03159588510734211,
+        "orthodox": 0.04579590480745747,
+        "islamic": 0.08681485245441323,
+        "sinic": 0.01893977128878817,
+        "hindic": 0.022136273453881153,
+        "japanese": 0.008790781932989638,
+        "buddhist": 0.158783422283114,
+        "latin_american": 0.3098327843098675,
+        "african": 0.10799481181703327,
+        "indigenous": 0.13766611514559668,
+        "oceanian": 0.07164939739951666
+      },
+      "data_quality": {
+        "iw_coverage": "present",
+        "hofstede_coverage": "present",
+        "low_evidence": false
+      },
+      "source_refs": [
+        "wvs_wave7_2022",
+        "hofstede_2010"
+      ]
+    },
+    {
+      "iso3": "CHN",
+      "label": null,
+      "x_viz": [
+        0.75,
+        -0.95
+      ],
+      "x_viz_ellipse": {
+        "sigma": [
+          [
+            0.0324,
+            0.0
+          ],
+          [
+            0.0,
+            0.0324
+          ]
+        ],
+        "confidence_level": 0.8
+      },
+      "x_score": [
+        80.0,
+        20.0,
+        66.0,
+        30.0,
+        87.0,
+        24.0
+      ],
+      "affinity_vector": {
+        "western": 0.01598859985909827,
+        "orthodox": 0.04104891212442626,
+        "islamic": 0.05515367485341545,
+        "sinic": 0.4950235024843037,
+        "hindic": 0.15410199110697245,
+        "japanese": 0.03130479627279182,
+        "buddhist": 0.056163403738932666,
+        "latin_american": 0.014847201403818564,
+        "african": 0.04743513391978757,
+        "indigenous": 0.050490942522584,
+        "oceanian": 0.03844184171386915
+      },
+      "data_quality": {
+        "iw_coverage": "present",
+        "hofstede_coverage": "present",
+        "low_evidence": false
+      },
+      "source_refs": [
+        "wvs_wave7_2022",
+        "hofstede_2010"
+      ]
+    },
+    {
+      "iso3": "COL",
+      "label": null,
+      "x_viz": [
+        -0.9,
+        1.1
+      ],
+      "x_viz_ellipse": {
+        "sigma": [
+          [
+            0.0324,
+            0.0
+          ],
+          [
+            0.0,
+            0.0324
+          ]
+        ],
+        "confidence_level": 0.8
+      },
+      "x_score": [
+        67.0,
+        13.0,
+        64.0,
+        80.0,
+        13.0,
+        83.0
+      ],
+      "affinity_vector": {
+        "western": 0.02101970740381618,
+        "orthodox": 0.018524202594402437,
+        "islamic": 0.07414917538206149,
+        "sinic": 0.015328672401977658,
+        "hindic": 0.019349029441413798,
+        "japanese": 0.011341171006924233,
+        "buddhist": 0.09973368491509434,
+        "latin_american": 0.38456128207376716,
+        "african": 0.17822499097419792,
+        "indigenous": 0.10554094736169672,
+        "oceanian": 0.07222713644464814
+      },
+      "data_quality": {
+        "iw_coverage": "present",
+        "hofstede_coverage": "present",
+        "low_evidence": false
+      },
+      "source_refs": [
+        "wvs_wave7_2022",
+        "hofstede_2010"
+      ]
+    },
+    {
+      "iso3": "DEU",
+      "label": null,
+      "x_viz": [
+        1.4,
+        1.15
+      ],
+      "x_viz_ellipse": {
+        "sigma": [
+          [
+            0.0225,
+            0.0
+          ],
+          [
+            0.0,
+            0.0225
+          ]
+        ],
+        "confidence_level": 0.8
+      },
+      "x_score": [
+        35.0,
+        67.0,
+        66.0,
+        65.0,
+        83.0,
+        40.0
+      ],
+      "affinity_vector": {
+        "western": 0.19970375599872545,
+        "orthodox": 0.05146836001539659,
+        "islamic": 0.05001224355232864,
+        "sinic": 0.07827639157477737,
+        "hindic": 0.10082020032657422,
+        "japanese": 0.21127620738553393,
+        "buddhist": 0.04651336866045212,
+        "latin_american": 0.03190577363246614,
+        "african": 0.05771121062779508,
+        "indigenous": 0.040493895311791595,
+        "oceanian": 0.13181859291415887
+      },
+      "data_quality": {
+        "iw_coverage": "present",
+        "hofstede_coverage": "present",
+        "low_evidence": false
+      },
+      "source_refs": [
+        "wvs_wave7_2022",
+        "hofstede_2010"
+      ]
+    },
+    {
+      "iso3": "DNK",
+      "label": null,
+      "x_viz": [
+        1.5,
+        2.2
+      ],
+      "x_viz_ellipse": {
+        "sigma": [
+          [
+            0.0225,
+            0.0
+          ],
+          [
+            0.0,
+            0.0225
+          ]
+        ],
+        "confidence_level": 0.8
+      },
+      "x_score": [
+        18.0,
+        74.0,
+        16.0,
+        23.0,
+        35.0,
+        70.0
+      ],
+      "affinity_vector": {
+        "western": 0.47478713784005183,
+        "orthodox": 0.01117803558523281,
+        "islamic": 0.033367397119814894,
+        "sinic": 0.037130596184773684,
+        "hindic": 0.054951580295316466,
+        "japanese": 0.008069068854756516,
+        "buddhist": 0.030748057389816175,
+        "latin_american": 0.03170529475379742,
+        "african": 0.06762633437949833,
+        "indigenous": 0.01804895348572213,
+        "oceanian": 0.23238754411121984
+      },
+      "data_quality": {
+        "iw_coverage": "present",
+        "hofstede_coverage": "present",
+        "low_evidence": false
+      },
+      "source_refs": [
+        "wvs_wave7_2022",
+        "hofstede_2010"
+      ]
+    },
+    {
+      "iso3": "ECU",
+      "label": null,
+      "x_viz": [
+        -1.05,
+        0.3
+      ],
+      "x_viz_ellipse": {
+        "sigma": [
+          [
+            0.0484,
+            0.0
+          ],
+          [
+            0.0,
+            0.0484
+          ]
+        ],
+        "confidence_level": 0.8
+      },
+      "x_score": [
+        78.0,
+        8.0,
+        63.0,
+        67.0,
+        54.0,
+        54.0
+      ],
+      "affinity_vector": {
+        "western": 0.01196935220355198,
+        "orthodox": 0.046169930251683394,
+        "islamic": 0.10108756772652862,
+        "sinic": 0.06476138401924925,
+        "hindic": 0.0424426696534109,
+        "japanese": 0.0208973649964594,
+        "buddhist": 0.18070262201335038,
+        "latin_american": 0.08869025065885804,
+        "african": 0.12784228843092632,
+        "indigenous": 0.26911675733446466,
+        "oceanian": 0.046319812711517
+      },
+      "data_quality": {
+        "iw_coverage": "present",
+        "hofstede_coverage": "imputed",
+        "low_evidence": false
+      },
+      "source_refs": [
+        "wvs_wave7_2022",
+        "hofstede_2010"
+      ]
+    },
+    {
+      "iso3": "EGY",
+      "label": null,
+      "x_viz": [
+        -1.55,
+        -1.2
+      ],
+      "x_viz_ellipse": {
+        "sigma": [
+          [
+            0.04000000000000001,
+            0.0
+          ],
+          [
+            0.0,
+            0.04000000000000001
+          ]
+        ],
+        "confidence_level": 0.8
+      },
+      "x_score": [
+        70.0,
+        25.0,
+        45.0,
+        80.0,
+        7.0,
+        4.0
+      ],
+      "affinity_vector": {
+        "western": 0.023729550153206602,
+        "orthodox": 0.09116254446399473,
+        "islamic": 0.33182061196972745,
+        "sinic": 0.032001161444508604,
+        "hindic": 0.08181730250621026,
+        "japanese": 0.012346312475378244,
+        "buddhist": 0.15551817955266997,
+        "latin_american": 0.07766438209442349,
+        "african": 0.0721252646705271,
+        "indigenous": 0.07224867579629811,
+        "oceanian": 0.04956601487305542
+      },
+      "data_quality": {
+        "iw_coverage": "present",
+        "hofstede_coverage": "present",
+        "low_evidence": false
+      },
+      "source_refs": [
+        "wvs_wave7_2022",
+        "hofstede_2010"
+      ]
+    },
+    {
+      "iso3": "ESP",
+      "label": null,
+      "x_viz": [
+        0.65,
+        0.95
+      ],
+      "x_viz_ellipse": {
+        "sigma": [
+          [
+            0.0225,
+            0.0
+          ],
+          [
+            0.0,
+            0.0225
+          ]
+        ],
+        "confidence_level": 0.8
+      },
+      "x_score": [
+        57.0,
+        51.0,
+        42.0,
+        86.0,
+        48.0,
+        44.0
+      ],
+      "affinity_vector": {
+        "western": 0.0966624559226998,
+        "orthodox": 0.10859749471147837,
+        "islamic": 0.1267808513829797,
+        "sinic": 0.03251208293032362,
+        "hindic": 0.0643559946048713,
+        "japanese": 0.03586708478097294,
+        "buddhist": 0.13367919137557474,
+        "latin_american": 0.11006448015020703,
+        "african": 0.08960840998569083,
+        "indigenous": 0.08808384818988287,
+        "oceanian": 0.11378810596531881
+      },
+      "data_quality": {
+        "iw_coverage": "present",
+        "hofstede_coverage": "present",
+        "low_evidence": false
+      },
+      "source_refs": [
+        "wvs_wave7_2022",
+        "hofstede_2010"
+      ]
+    },
+    {
+      "iso3": "ETH",
+      "label": null,
+      "x_viz": [
+        -1.1,
+        -0.65
+      ],
+      "x_viz_ellipse": {
+        "sigma": [
+          [
+            0.0484,
+            0.0
+          ],
+          [
+            0.0,
+            0.0484
+          ]
+        ],
+        "confidence_level": 0.8
+      },
+      "x_score": [
+        70.0,
+        20.0,
+        65.0,
+        55.0,
+        52.5,
+        52.5
+      ],
+      "affinity_vector": {
+        "western": 0.022987345055302193,
+        "orthodox": 0.03279364693772634,
+        "islamic": 0.11133174245358303,
+        "sinic": 0.09847902582524468,
+        "hindic": 0.07790496787344342,
+        "japanese": 0.022683691666598782,
+        "buddhist": 0.14123272869050876,
+        "latin_american": 0.06964759410478456,
+        "african": 0.2006782680333512,
+        "indigenous": 0.12880207983191577,
+        "oceanian": 0.0934589095275413
+      },
+      "data_quality": {
+        "iw_coverage": "present",
+        "hofstede_coverage": "imputed",
+        "low_evidence": false
+      },
+      "source_refs": [
+        "wvs_wave7_2022",
+        "hofstede_2010"
+      ]
+    },
+    {
+      "iso3": "FIN",
+      "label": null,
+      "x_viz": [
+        0.9,
+        1.5
+      ],
+      "x_viz_ellipse": {
+        "sigma": [
+          [
+            0.0225,
+            0.0
+          ],
+          [
+            0.0,
+            0.0225
+          ]
+        ],
+        "confidence_level": 0.8
+      },
+      "x_score": [
+        33.0,
+        63.0,
+        26.0,
+        59.0,
+        38.0,
+        57.0
+      ],
+      "affinity_vector": {
+        "western": 0.43135333813403154,
+        "orthodox": 0.021112480586978507,
+        "islamic": 0.04925911628357719,
+        "sinic": 0.026255648937378858,
+        "hindic": 0.04761609156234778,
+        "japanese": 0.011172718123512665,
+        "buddhist": 0.04676449085103536,
+        "latin_american": 0.04973775226232765,
+        "african": 0.0701618666904641,
+        "indigenous": 0.02746068577905814,
+        "oceanian": 0.21910581078928815
+      },
+      "data_quality": {
+        "iw_coverage": "present",
+        "hofstede_coverage": "present",
+        "low_evidence": false
+      },
+      "source_refs": [
+        "wvs_wave7_2022",
+        "hofstede_2010"
+      ]
+    },
+    {
+      "iso3": "FJI",
+      "label": null,
+      "x_viz": [
+        -0.8,
+        0.4
+      ],
+      "x_viz_ellipse": {
+        "sigma": [
+          [
+            0.09,
+            0.0
+          ],
+          [
+            0.0,
+            0.09
+          ]
+        ],
+        "confidence_level": 0.8
+      },
+      "x_score": [
+        78.0,
+        14.0,
+        46.0,
+        48.0,
+        46.5,
+        46.5
+      ],
+      "affinity_vector": {
+        "western": 0.017480882036399775,
+        "orthodox": 0.03637723197285694,
+        "islamic": 0.14104336949272545,
+        "sinic": 0.11696458882169379,
+        "hindic": 0.08453650103426509,
+        "japanese": 0.008619757581652404,
+        "buddhist": 0.1950823351956564,
+        "latin_american": 0.05697861267421786,
+        "african": 0.1516449716721628,
+        "indigenous": 0.12250358732303755,
+        "oceanian": 0.06876816219533212
+      },
+      "data_quality": {
+        "iw_coverage": "present",
+        "hofstede_coverage": "imputed",
+        "low_evidence": false
+      },
+      "source_refs": [
+        "wvs_wave7_2022",
+        "hofstede_2010"
+      ]
+    },
+    {
+      "iso3": "FRA",
+      "label": null,
+      "x_viz": [
+        1.2,
+        1.45
+      ],
+      "x_viz_ellipse": {
+        "sigma": [
+          [
+            0.0225,
+            0.0
+          ],
+          [
+            0.0,
+            0.0225
+          ]
+        ],
+        "confidence_level": 0.8
+      },
+      "x_score": [
+        68.0,
+        71.0,
+        43.0,
+        86.0,
+        63.0,
+        48.0
+      ],
+      "affinity_vector": {
+        "western": 0.15069741720676616,
+        "orthodox": 0.13320360773572648,
+        "islamic": 0.0884558057386555,
+        "sinic": 0.039484013137932775,
+        "hindic": 0.0894143697427992,
+        "japanese": 0.06750344988924172,
+        "buddhist": 0.09829228959424113,
+        "latin_american": 0.07732472037504956,
+        "african": 0.07773042601541978,
+        "indigenous": 0.07113389446734698,
+        "oceanian": 0.10676000609682076
+      },
+      "data_quality": {
+        "iw_coverage": "present",
+        "hofstede_coverage": "present",
+        "low_evidence": false
+      },
+      "source_refs": [
+        "wvs_wave7_2022",
+        "hofstede_2010"
+      ]
+    },
+    {
+      "iso3": "GBR",
+      "label": null,
+      "x_viz": [
+        0.85,
+        1.5
+      ],
+      "x_viz_ellipse": {
+        "sigma": [
+          [
+            0.0225,
+            0.0
+          ],
+          [
+            0.0,
+            0.0225
+          ]
+        ],
+        "confidence_level": 0.8
+      },
+      "x_score": [
+        35.0,
+        89.0,
+        66.0,
+        35.0,
+        51.0,
+        69.0
+      ],
+      "affinity_vector": {
+        "western": 0.4846647887219141,
+        "orthodox": 0.010215272175281788,
+        "islamic": 0.028090331872234982,
+        "sinic": 0.03238526387489993,
+        "hindic": 0.06935354687175121,
+        "japanese": 0.02815936670210799,
+        "buddhist": 0.023008541049231723,
+        "latin_american": 0.025862183179490253,
+        "african": 0.06839778022723464,
+        "indigenous": 0.015348120400830681,
+        "oceanian": 0.21451480492502262
+      },
+      "data_quality": {
+        "iw_coverage": "present",
+        "hofstede_coverage": "present",
+        "low_evidence": false
+      },
+      "source_refs": [
+        "wvs_wave7_2022",
+        "hofstede_2010"
+      ]
+    },
+    {
+      "iso3": "GHA",
+      "label": null,
+      "x_viz": [
+        -1.45,
+        0.2
+      ],
+      "x_viz_ellipse": {
+        "sigma": [
+          [
+            0.0484,
+            0.0
+          ],
+          [
+            0.0,
+            0.0484
+          ]
+        ],
+        "confidence_level": 0.8
+      },
+      "x_score": [
+        80.0,
+        15.0,
+        40.0,
+        65.0,
+        4.0,
+        72.0
+      ],
+      "affinity_vector": {
+        "western": 0.022887274571175936,
+        "orthodox": 0.02247701683127481,
+        "islamic": 0.11769855192042535,
+        "sinic": 0.021023885625936167,
+        "hindic": 0.030973921722770553,
+        "japanese": 0.005086405587870331,
+        "buddhist": 0.14607154670077166,
+        "latin_american": 0.26013347756044913,
+        "african": 0.1981312706302697,
+        "indigenous": 0.09755153779831033,
+        "oceanian": 0.07796511105074609
+      },
+      "data_quality": {
+        "iw_coverage": "present",
+        "hofstede_coverage": "present",
+        "low_evidence": false
+      },
+      "source_refs": [
+        "wvs_wave7_2022",
+        "hofstede_2010"
+      ]
+    },
+    {
+      "iso3": "GRC",
+      "label": null,
+      "x_viz": [
+        -0.1,
+        0.05
+      ],
+      "x_viz_ellipse": {
+        "sigma": [
+          [
+            0.0324,
+            0.0
+          ],
+          [
+            0.0,
+            0.0324
+          ]
+        ],
+        "confidence_level": 0.8
+      },
+      "x_score": [
+        60.0,
+        35.0,
+        57.0,
+        112.0,
+        45.0,
+        50.0
+      ],
+      "affinity_vector": {
+        "western": 0.03378649158868689,
+        "orthodox": 0.13115310465603366,
+        "islamic": 0.10377562140844533,
+        "sinic": 0.01915321477055329,
+        "hindic": 0.0290891343460265,
+        "japanese": 0.06646623991449963,
+        "buddhist": 0.1325983539084213,
+        "latin_american": 0.20698665478568753,
+        "african": 0.07332850155486431,
+        "indigenous": 0.14928822508229012,
+        "oceanian": 0.05437445798449139
+      },
+      "data_quality": {
+        "iw_coverage": "present",
+        "hofstede_coverage": "present",
+        "low_evidence": false
+      },
+      "source_refs": [
+        "wvs_wave7_2022",
+        "hofstede_2010"
+      ]
+    },
+    {
+      "iso3": "GTM",
+      "label": null,
+      "x_viz": [
+        -1.25,
+        0.3
+      ],
+      "x_viz_ellipse": {
+        "sigma": [
+          [
+            0.0484,
+            0.0
+          ],
+          [
+            0.0,
+            0.0484
+          ]
+        ],
+        "confidence_level": 0.8
+      },
+      "x_score": [
+        95.0,
+        6.0,
+        37.0,
+        101.0,
+        59.75,
+        59.75
+      ],
+      "affinity_vector": {
+        "western": 0.009141430730586689,
+        "orthodox": 0.153945598510142,
+        "islamic": 0.07012313859838082,
+        "sinic": 0.026691998492654977,
+        "hindic": 0.020376556417571728,
+        "japanese": 0.017893299865603556,
+        "buddhist": 0.1732801544737713,
+        "latin_american": 0.12658091096511026,
+        "african": 0.054515358686641306,
+        "indigenous": 0.3249429293144369,
+        "oceanian": 0.02250862394510043
+      },
+      "data_quality": {
+        "iw_coverage": "present",
+        "hofstede_coverage": "imputed",
+        "low_evidence": false
+      },
+      "source_refs": [
+        "wvs_wave7_2022",
+        "hofstede_2010"
+      ]
+    },
+    {
+      "iso3": "HKG",
+      "label": null,
+      "x_viz": [
+        0.5,
+        0.0
+      ],
+      "x_viz_ellipse": {
+        "sigma": [
+          [
+            0.04000000000000001,
+            0.0
+          ],
+          [
+            0.0,
+            0.04000000000000001
+          ]
+        ],
+        "confidence_level": 0.8
+      },
+      "x_score": [
+        68.0,
+        25.0,
+        57.0,
+        29.0,
+        61.0,
+        17.0
+      ],
+      "affinity_vector": {
+        "western": 0.022708234417060335,
+        "orthodox": 0.03231687887165732,
+        "islamic": 0.08988202040880491,
+        "sinic": 0.35292702919425295,
+        "hindic": 0.24932021541850266,
+        "japanese": 0.015290131435507046,
+        "buddhist": 0.06486478624441748,
+        "latin_american": 0.016700720742971516,
+        "african": 0.058867498916665185,
+        "indigenous": 0.039871166467849176,
+        "oceanian": 0.05725131788231134
+      },
+      "data_quality": {
+        "iw_coverage": "present",
+        "hofstede_coverage": "present",
+        "low_evidence": false
+      },
+      "source_refs": [
+        "wvs_wave7_2022",
+        "hofstede_2010"
+      ]
+    },
+    {
+      "iso3": "IDN",
+      "label": null,
+      "x_viz": [
+        -1.1,
+        -0.3
+      ],
+      "x_viz_ellipse": {
+        "sigma": [
+          [
+            0.04000000000000001,
+            0.0
+          ],
+          [
+            0.0,
+            0.04000000000000001
+          ]
+        ],
+        "confidence_level": 0.8
+      },
+      "x_score": [
+        78.0,
+        14.0,
+        46.0,
+        48.0,
+        62.0,
+        38.0
+      ],
+      "affinity_vector": {
+        "western": 0.01624373258181443,
+        "orthodox": 0.055468828853742165,
+        "islamic": 0.11136480491477418,
+        "sinic": 0.24896524457264166,
+        "hindic": 0.10507408934064287,
+        "japanese": 0.013130830460556329,
+        "buddhist": 0.15403751639728383,
+        "latin_american": 0.036106086493706974,
+        "african": 0.08863512894567081,
+        "indigenous": 0.11860198241929931,
+        "oceanian": 0.05237175501986754
+      },
+      "data_quality": {
+        "iw_coverage": "present",
+        "hofstede_coverage": "present",
+        "low_evidence": false
+      },
+      "source_refs": [
+        "wvs_wave7_2022",
+        "hofstede_2010"
+      ]
+    },
+    {
+      "iso3": "IND",
+      "label": null,
+      "x_viz": [
+        -0.6,
+        -0.2
+      ],
+      "x_viz_ellipse": {
+        "sigma": [
+          [
+            0.0324,
+            0.0
+          ],
+          [
+            0.0,
+            0.0324
+          ]
+        ],
+        "confidence_level": 0.8
+      },
+      "x_score": [
+        77.0,
+        48.0,
+        56.0,
+        40.0,
+        51.0,
+        26.0
+      ],
+      "affinity_vector": {
+        "western": 0.027814484760636242,
+        "orthodox": 0.0245462076446768,
+        "islamic": 0.08133573265191064,
+        "sinic": 0.08357757655267302,
+        "hindic": 0.5707177198409048,
+        "japanese": 0.01050877643403674,
+        "buddhist": 0.05032508329280763,
+        "latin_american": 0.01579489805987169,
+        "african": 0.05491749208574903,
+        "indigenous": 0.024395642468918146,
+        "oceanian": 0.0560663862078151
+      },
+      "data_quality": {
+        "iw_coverage": "present",
+        "hofstede_coverage": "present",
+        "low_evidence": false
+      },
+      "source_refs": [
+        "wvs_wave7_2022",
+        "hofstede_2010"
+      ]
+    },
+    {
+      "iso3": "IRL",
+      "label": null,
+      "x_viz": [
+        0.1,
+        1.1
+      ],
+      "x_viz_ellipse": {
+        "sigma": [
+          [
+            0.0225,
+            0.0
+          ],
+          [
+            0.0,
+            0.0225
+          ]
+        ],
+        "confidence_level": 0.8
+      },
+      "x_score": [
+        28.0,
+        70.0,
+        68.0,
+        35.0,
+        24.0,
+        65.0
+      ],
+      "affinity_vector": {
+        "western": 0.33604753632719647,
+        "orthodox": 0.008825960398626553,
+        "islamic": 0.042845542281641356,
+        "sinic": 0.028634911571251826,
+        "hindic": 0.06495261370266728,
+        "japanese": 0.017313190072675993,
+        "buddhist": 0.030160240868490625,
+        "latin_american": 0.04043522822836434,
+        "african": 0.10475224015652457,
+        "indigenous": 0.018356817759594607,
+        "oceanian": 0.3076757186329664
+      },
+      "data_quality": {
+        "iw_coverage": "present",
+        "hofstede_coverage": "present",
+        "low_evidence": false
+      },
+      "source_refs": [
+        "wvs_wave7_2022",
+        "hofstede_2010"
+      ]
+    },
+    {
+      "iso3": "IRN",
+      "label": null,
+      "x_viz": [
+        -1.1,
+        -0.4
+      ],
+      "x_viz_ellipse": {
+        "sigma": [
+          [
+            0.0324,
+            0.0
+          ],
+          [
+            0.0,
+            0.0324
+          ]
+        ],
+        "confidence_level": 0.8
+      },
+      "x_score": [
+        58.0,
+        41.0,
+        43.0,
+        59.0,
+        14.0,
+        40.0
+      ],
+      "affinity_vector": {
+        "western": 0.06942604245306866,
+        "orthodox": 0.028818185602706554,
+        "islamic": 0.20535718097799796,
+        "sinic": 0.03078262879839104,
+        "hindic": 0.08451143345344717,
+        "japanese": 0.008280739177204573,
+        "buddhist": 0.11721974790020846,
+        "latin_american": 0.093706368774612,
+        "african": 0.1515686766624334,
+        "indigenous": 0.04914331979493774,
+        "oceanian": 0.16118567640499254
+      },
+      "data_quality": {
+        "iw_coverage": "present",
+        "hofstede_coverage": "present",
+        "low_evidence": false
+      },
+      "source_refs": [
+        "wvs_wave7_2022",
+        "hofstede_2010"
+      ]
+    },
+    {
+      "iso3": "IRQ",
+      "label": null,
+      "x_viz": [
+        -1.45,
+        -1.15
+      ],
+      "x_viz_ellipse": {
+        "sigma": [
+          [
+            0.0484,
+            0.0
+          ],
+          [
+            0.0,
+            0.0484
+          ]
+        ],
+        "confidence_level": 0.8
+      },
+      "x_score": [
+        95.0,
+        30.0,
+        70.0,
+        85.0,
+        25.0,
+        17.0
+      ],
+      "affinity_vector": {
+        "western": 0.014616774833870184,
+        "orthodox": 0.11106885169573769,
+        "islamic": 0.28551720293253713,
+        "sinic": 0.03143559752435083,
+        "hindic": 0.08587848712178381,
+        "japanese": 0.025018952297213765,
+        "buddhist": 0.15957764940567395,
+        "latin_american": 0.07909000911644928,
+        "african": 0.07848692929413603,
+        "indigenous": 0.09402706167052333,
+        "oceanian": 0.03528248410772403
+      },
+      "data_quality": {
+        "iw_coverage": "present",
+        "hofstede_coverage": "present",
+        "low_evidence": false
+      },
+      "source_refs": [
+        "wvs_wave7_2022",
+        "hofstede_2010"
+      ]
+    },
+    {
+      "iso3": "ITA",
+      "label": null,
+      "x_viz": [
+        0.4,
+        0.85
+      ],
+      "x_viz_ellipse": {
+        "sigma": [
+          [
+            0.0225,
+            0.0
+          ],
+          [
+            0.0,
+            0.0225
+          ]
+        ],
+        "confidence_level": 0.8
+      },
+      "x_score": [
+        50.0,
+        76.0,
+        70.0,
+        75.0,
+        61.0,
+        30.0
+      ],
+      "affinity_vector": {
+        "western": 0.17956034020498277,
+        "orthodox": 0.06778093498061669,
+        "islamic": 0.08300235532881543,
+        "sinic": 0.04774068474017176,
+        "hindic": 0.1350068052373492,
+        "japanese": 0.158720731825092,
+        "buddhist": 0.05854816327075091,
+        "latin_american": 0.04205827349497557,
+        "african": 0.06640961157797276,
+        "indigenous": 0.04000630350831275,
+        "oceanian": 0.12116579583096028
+      },
+      "data_quality": {
+        "iw_coverage": "present",
+        "hofstede_coverage": "present",
+        "low_evidence": false
+      },
+      "source_refs": [
+        "wvs_wave7_2022",
+        "hofstede_2010"
+      ]
+    },
+    {
+      "iso3": "JOR",
+      "label": null,
+      "x_viz": [
+        -1.3,
+        -1.05
+      ],
+      "x_viz_ellipse": {
+        "sigma": [
+          [
+            0.04000000000000001,
+            0.0
+          ],
+          [
+            0.0,
+            0.04000000000000001
+          ]
+        ],
+        "confidence_level": 0.8
+      },
+      "x_score": [
+        70.0,
+        30.0,
+        45.0,
+        65.0,
+        16.0,
+        43.0
+      ],
+      "affinity_vector": {
+        "western": 0.02923792110465196,
+        "orthodox": 0.03169400795393265,
+        "islamic": 0.2526349179107335,
+        "sinic": 0.02591637782840426,
+        "hindic": 0.05880536560615265,
+        "japanese": 0.006793701256514253,
+        "buddhist": 0.1641082589900779,
+        "latin_american": 0.11960246493203061,
+        "african": 0.1546135903412628,
+        "indigenous": 0.06869517386550408,
+        "oceanian": 0.08789822021073533
+      },
+      "data_quality": {
+        "iw_coverage": "present",
+        "hofstede_coverage": "present",
+        "low_evidence": false
+      },
+      "source_refs": [
+        "wvs_wave7_2022",
+        "hofstede_2010"
+      ]
+    },
+    {
+      "iso3": "JPN",
+      "label": null,
+      "x_viz": [
+        1.95,
+        0.45
+      ],
+      "x_viz_ellipse": {
+        "sigma": [
+          [
+            0.0225,
+            0.0
+          ],
+          [
+            0.0,
+            0.0225
+          ]
+        ],
+        "confidence_level": 0.8
+      },
+      "x_score": [
+        54.0,
+        46.0,
+        95.0,
+        92.0,
+        88.0,
+        42.0
+      ],
+      "affinity_vector": {
+        "western": 0.011468381836041111,
+        "orthodox": 0.02281933945412782,
+        "islamic": 0.014672382884459496,
+        "sinic": 0.014735189965114335,
+        "hindic": 0.015492080336225103,
+        "japanese": 0.8413543499170417,
+        "buddhist": 0.015737680351946125,
+        "latin_american": 0.01281351748974058,
+        "african": 0.01479785603365698,
+        "indigenous": 0.020876770094116204,
+        "oceanian": 0.015232451637530514
+      },
+      "data_quality": {
+        "iw_coverage": "present",
+        "hofstede_coverage": "present",
+        "low_evidence": false
+      },
+      "source_refs": [
+        "wvs_wave7_2022",
+        "hofstede_2010"
+      ]
+    },
+    {
+      "iso3": "KEN",
+      "label": null,
+      "x_viz": [
+        -1.55,
+        -0.65
+      ],
+      "x_viz_ellipse": {
+        "sigma": [
+          [
+            0.0484,
+            0.0
+          ],
+          [
+            0.0,
+            0.0484
+          ]
+        ],
+        "confidence_level": 0.8
+      },
+      "x_score": [
+        70.0,
+        25.0,
+        60.0,
+        50.0,
+        51.25,
+        51.25
+      ],
+      "affinity_vector": {
+        "western": 0.027762401249690427,
+        "orthodox": 0.02924540307144445,
+        "islamic": 0.11175089319293739,
+        "sinic": 0.10913967220205709,
+        "hindic": 0.09871399018447756,
+        "japanese": 0.017087503674367725,
+        "buddhist": 0.13055745281979,
+        "latin_american": 0.057908797725995866,
+        "african": 0.20928327892575638,
+        "indigenous": 0.09632861247030154,
+        "oceanian": 0.11222199448318163
+      },
+      "data_quality": {
+        "iw_coverage": "present",
+        "hofstede_coverage": "imputed",
+        "low_evidence": false
+      },
+      "source_refs": [
+        "wvs_wave7_2022",
+        "hofstede_2010"
+      ]
+    },
+    {
+      "iso3": "KOR",
+      "label": null,
+      "x_viz": [
+        1.65,
+        0.55
+      ],
+      "x_viz_ellipse": {
+        "sigma": [
+          [
+            0.0225,
+            0.0
+          ],
+          [
+            0.0,
+            0.0225
+          ]
+        ],
+        "confidence_level": 0.8
+      },
+      "x_score": [
+        60.0,
+        18.0,
+        39.0,
+        85.0,
+        100.0,
+        29.0
+      ],
+      "affinity_vector": {
+        "western": 0.024728128261900444,
+        "orthodox": 0.27708252044106574,
+        "islamic": 0.06403558296673467,
+        "sinic": 0.12305537845535228,
+        "hindic": 0.05377550414615436,
+        "japanese": 0.09407056615563661,
+        "buddhist": 0.10315183471390733,
+        "latin_american": 0.038155640999588125,
+        "african": 0.03915663755598492,
+        "indigenous": 0.14504060164855503,
+        "oceanian": 0.03774760465512046
+      },
+      "data_quality": {
+        "iw_coverage": "present",
+        "hofstede_coverage": "present",
+        "low_evidence": false
+      },
+      "source_refs": [
+        "wvs_wave7_2022",
+        "hofstede_2010"
+      ]
+    },
+    {
+      "iso3": "MAR",
+      "label": null,
+      "x_viz": [
+        -1.15,
+        -0.95
+      ],
+      "x_viz_ellipse": {
+        "sigma": [
+          [
+            0.04000000000000001,
+            0.0
+          ],
+          [
+            0.0,
+            0.04000000000000001
+          ]
+        ],
+        "confidence_level": 0.8
+      },
+      "x_score": [
+        70.0,
+        46.0,
+        53.0,
+        68.0,
+        14.0,
+        25.0
+      ],
+      "affinity_vector": {
+        "western": 0.04493078088301431,
+        "orthodox": 0.04758252447161458,
+        "islamic": 0.30472655219529277,
+        "sinic": 0.028867056380495155,
+        "hindic": 0.11390134416991227,
+        "japanese": 0.012392952132953468,
+        "buddhist": 0.12382458338703563,
+        "latin_american": 0.07715202478397225,
+        "african": 0.1084403921903671,
+        "indigenous": 0.0499370423743367,
+        "oceanian": 0.08824474703100593
+      },
+      "data_quality": {
+        "iw_coverage": "present",
+        "hofstede_coverage": "present",
+        "low_evidence": false
+      },
+      "source_refs": [
+        "wvs_wave7_2022",
+        "hofstede_2010"
+      ]
+    },
+    {
+      "iso3": "MEX",
+      "label": null,
+      "x_viz": [
+        -0.8,
+        0.7
+      ],
+      "x_viz_ellipse": {
+        "sigma": [
+          [
+            0.0324,
+            0.0
+          ],
+          [
+            0.0,
+            0.0324
+          ]
+        ],
+        "confidence_level": 0.8
+      },
+      "x_score": [
+        81.0,
+        30.0,
+        69.0,
+        82.0,
+        24.0,
+        97.0
+      ],
+      "affinity_vector": {
+        "western": 0.030144792341932295,
+        "orthodox": 0.021971751650662546,
+        "islamic": 0.06191287460736371,
+        "sinic": 0.016612407303949882,
+        "hindic": 0.023621231587354016,
+        "japanese": 0.018803941518121436,
+        "buddhist": 0.0922392922987217,
+        "latin_american": 0.3527212873715509,
+        "african": 0.19533552241529528,
+        "indigenous": 0.10491192175698977,
+        "oceanian": 0.0817249771480585
+      },
+      "data_quality": {
+        "iw_coverage": "present",
+        "hofstede_coverage": "present",
+        "low_evidence": false
+      },
+      "source_refs": [
+        "wvs_wave7_2022",
+        "hofstede_2010"
+      ]
+    },
+    {
+      "iso3": "MMR",
+      "label": null,
+      "x_viz": [
+        -0.5,
+        -0.05
+      ],
+      "x_viz_ellipse": {
+        "sigma": [
+          [
+            0.0484,
+            0.0
+          ],
+          [
+            0.0,
+            0.0484
+          ]
+        ],
+        "confidence_level": 0.8
+      },
+      "x_score": [
+        80.0,
+        20.0,
+        50.0,
+        60.0,
+        52.5,
+        52.5
+      ],
+      "affinity_vector": {
+        "western": 0.01687805476390782,
+        "orthodox": 0.04552680514926555,
+        "islamic": 0.11610149138695885,
+        "sinic": 0.07396832232442886,
+        "hindic": 0.06129157106046294,
+        "japanese": 0.012375292797404118,
+        "buddhist": 0.22170562486424686,
+        "latin_american": 0.0723811678812398,
+        "african": 0.14645626875230286,
+        "indigenous": 0.17324722285757863,
+        "oceanian": 0.06006817816220362
+      },
+      "data_quality": {
+        "iw_coverage": "present",
+        "hofstede_coverage": "imputed",
+        "low_evidence": false
+      },
+      "source_refs": [
+        "wvs_wave7_2022",
+        "hofstede_2010"
+      ]
+    },
+    {
+      "iso3": "MNG",
+      "label": null,
+      "x_viz": [
+        -0.2,
+        -0.65
+      ],
+      "x_viz_ellipse": {
+        "sigma": [
+          [
+            0.04000000000000001,
+            0.0
+          ],
+          [
+            0.0,
+            0.04000000000000001
+          ]
+        ],
+        "confidence_level": 0.8
+      },
+      "x_score": [
+        93.0,
+        21.0,
+        48.0,
+        92.0,
+        44.0,
+        37.0
+      ],
+      "affinity_vector": {
+        "western": 0.009783339799096723,
+        "orthodox": 0.1755145512551352,
+        "islamic": 0.15282037918390945,
+        "sinic": 0.024865774653311523,
+        "hindic": 0.03600082793954967,
+        "japanese": 0.015511341595793125,
+        "buddhist": 0.22498557715521192,
+        "latin_american": 0.09381003238934779,
+        "african": 0.0579528093198795,
+        "indigenous": 0.18462741754757359,
+        "oceanian": 0.02412794916119148
+      },
+      "data_quality": {
+        "iw_coverage": "present",
+        "hofstede_coverage": "present",
+        "low_evidence": false
+      },
+      "source_refs": [
+        "wvs_wave7_2022",
+        "hofstede_2010"
+      ]
+    },
+    {
+      "iso3": "MYS",
+      "label": null,
+      "x_viz": [
+        -0.95,
+        -0.2
+      ],
+      "x_viz_ellipse": {
+        "sigma": [
+          [
+            0.04000000000000001,
+            0.0
+          ],
+          [
+            0.0,
+            0.04000000000000001
+          ]
+        ],
+        "confidence_level": 0.8
+      },
+      "x_score": [
+        100.0,
+        26.0,
+        50.0,
+        36.0,
+        41.0,
+        57.0
+      ],
+      "affinity_vector": {
+        "western": 0.023405195126896358,
+        "orthodox": 0.030588786354824614,
+        "islamic": 0.12145343790617055,
+        "sinic": 0.10483241920675883,
+        "hindic": 0.13052352439102965,
+        "japanese": 0.00857892344088528,
+        "buddhist": 0.14336083809123978,
+        "latin_american": 0.06241444032574128,
+        "african": 0.20558126646535607,
+        "indigenous": 0.08822949270819068,
+        "oceanian": 0.08103167598290689
+      },
+      "data_quality": {
+        "iw_coverage": "present",
+        "hofstede_coverage": "present",
+        "low_evidence": false
+      },
+      "source_refs": [
+        "wvs_wave7_2022",
+        "hofstede_2010"
+      ]
+    },
+    {
+      "iso3": "NGA",
+      "label": null,
+      "x_viz": [
+        -1.45,
+        -0.9
+      ],
+      "x_viz_ellipse": {
+        "sigma": [
+          [
+            0.04000000000000001,
+            0.0
+          ],
+          [
+            0.0,
+            0.04000000000000001
+          ]
+        ],
+        "confidence_level": 0.8
+      },
+      "x_score": [
+        80.0,
+        30.0,
+        60.0,
+        55.0,
+        13.0,
+        84.0
+      ],
+      "affinity_vector": {
+        "western": 0.03513784861248714,
+        "orthodox": 0.01476020224606936,
+        "islamic": 0.08233334668702413,
+        "sinic": 0.023480988454352834,
+        "hindic": 0.03867458340355223,
+        "japanese": 0.008162451352612739,
+        "buddhist": 0.09518703381897795,
+        "latin_american": 0.20211277645602926,
+        "african": 0.30781561705059,
+        "indigenous": 0.07008914851268337,
+        "oceanian": 0.12224600340562104
+      },
+      "data_quality": {
+        "iw_coverage": "present",
+        "hofstede_coverage": "present",
+        "low_evidence": false
+      },
+      "source_refs": [
+        "wvs_wave7_2022",
+        "hofstede_2010"
+      ]
+    },
+    {
+      "iso3": "NLD",
+      "label": null,
+      "x_viz": [
+        1.45,
+        1.65
+      ],
+      "x_viz_ellipse": {
+        "sigma": [
+          [
+            0.0225,
+            0.0
+          ],
+          [
+            0.0,
+            0.0225
+          ]
+        ],
+        "confidence_level": 0.8
+      },
+      "x_score": [
+        38.0,
+        80.0,
+        14.0,
+        53.0,
+        67.0,
+        68.0
+      ],
+      "affinity_vector": {
+        "western": 0.4957940905199169,
+        "orthodox": 0.028694582938105714,
+        "islamic": 0.03393319985139104,
+        "sinic": 0.04143639789920095,
+        "hindic": 0.05661712453088485,
+        "japanese": 0.01847345305898865,
+        "buddhist": 0.04050308749101439,
+        "latin_american": 0.03637706398013224,
+        "african": 0.056148743420633127,
+        "indigenous": 0.028332736242395382,
+        "oceanian": 0.16368952006733664
+      },
+      "data_quality": {
+        "iw_coverage": "present",
+        "hofstede_coverage": "present",
+        "low_evidence": false
+      },
+      "source_refs": [
+        "wvs_wave7_2022",
+        "hofstede_2010"
+      ]
+    },
+    {
+      "iso3": "NOR",
+      "label": null,
+      "x_viz": [
+        1.55,
+        2.3
+      ],
+      "x_viz_ellipse": {
+        "sigma": [
+          [
+            0.0225,
+            0.0
+          ],
+          [
+            0.0,
+            0.0225
+          ]
+        ],
+        "confidence_level": 0.8
+      },
+      "x_score": [
+        31.0,
+        69.0,
+        8.0,
+        50.0,
+        35.0,
+        55.0
+      ],
+      "affinity_vector": {
+        "western": 0.4330961381717241,
+        "orthodox": 0.024013013825927965,
+        "islamic": 0.052602847908047416,
+        "sinic": 0.033167224610027385,
+        "hindic": 0.05901951638114886,
+        "japanese": 0.008920092578312009,
+        "buddhist": 0.04951261430701628,
+        "latin_american": 0.04582670091214928,
+        "african": 0.06750063980567703,
+        "indigenous": 0.026993285016060915,
+        "oceanian": 0.19934792648390884
+      },
+      "data_quality": {
+        "iw_coverage": "present",
+        "hofstede_coverage": "present",
+        "low_evidence": false
+      },
+      "source_refs": [
+        "wvs_wave7_2022",
+        "hofstede_2010"
+      ]
+    },
+    {
+      "iso3": "NZL",
+      "label": null,
+      "x_viz": [
+        0.65,
+        1.85
+      ],
+      "x_viz_ellipse": {
+        "sigma": [
+          [
+            0.0225,
+            0.0
+          ],
+          [
+            0.0,
+            0.0225
+          ]
+        ],
+        "confidence_level": 0.8
+      },
+      "x_score": [
+        22.0,
+        79.0,
+        58.0,
+        49.0,
+        33.0,
+        75.0
+      ],
+      "affinity_vector": {
+        "western": 0.5030779279175346,
+        "orthodox": 0.00884358521444868,
+        "islamic": 0.0284592593472373,
+        "sinic": 0.018575904614095865,
+        "hindic": 0.03818177458148163,
+        "japanese": 0.01826490708615988,
+        "buddhist": 0.02393979403974245,
+        "latin_american": 0.03883116672313086,
+        "african": 0.07076298490712052,
+        "indigenous": 0.016130448653847183,
+        "oceanian": 0.2349322469152011
+      },
+      "data_quality": {
+        "iw_coverage": "present",
+        "hofstede_coverage": "present",
+        "low_evidence": false
+      },
+      "source_refs": [
+        "wvs_wave7_2022",
+        "hofstede_2010"
+      ]
+    },
+    {
+      "iso3": "PAK",
+      "label": null,
+      "x_viz": [
+        -1.3,
+        -0.95
+      ],
+      "x_viz_ellipse": {
+        "sigma": [
+          [
+            0.04000000000000001,
+            0.0
+          ],
+          [
+            0.0,
+            0.04000000000000001
+          ]
+        ],
+        "confidence_level": 0.8
+      },
+      "x_score": [
+        55.0,
+        14.0,
+        50.0,
+        70.0,
+        50.0,
+        0.0
+      ],
+      "affinity_vector": {
+        "western": 0.02291850763379988,
+        "orthodox": 0.14230712276641405,
+        "islamic": 0.2099031899815484,
+        "sinic": 0.1043189392634224,
+        "hindic": 0.10963016144843124,
+        "japanese": 0.031292618578435134,
+        "buddhist": 0.14010386983023176,
+        "latin_american": 0.04073622989306359,
+        "african": 0.055546250738115734,
+        "indigenous": 0.09413460420917005,
+        "oceanian": 0.04910850565736793
+      },
+      "data_quality": {
+        "iw_coverage": "present",
+        "hofstede_coverage": "present",
+        "low_evidence": false
+      },
+      "source_refs": [
+        "wvs_wave7_2022",
+        "hofstede_2010"
+      ]
+    },
+    {
+      "iso3": "PER",
+      "label": null,
+      "x_viz": [
+        -0.85,
+        0.4
+      ],
+      "x_viz_ellipse": {
+        "sigma": [
+          [
+            0.04000000000000001,
+            0.0
+          ],
+          [
+            0.0,
+            0.04000000000000001
+          ]
+        ],
+        "confidence_level": 0.8
+      },
+      "x_score": [
+        64.0,
+        16.0,
+        42.0,
+        87.0,
+        25.0,
+        46.0
+      ],
+      "affinity_vector": {
+        "western": 0.01837684465766281,
+        "orthodox": 0.057171133293233665,
+        "islamic": 0.1656814209274083,
+        "sinic": 0.019990124372373814,
+        "hindic": 0.02738771153031311,
+        "japanese": 0.01004597320129253,
+        "buddhist": 0.204619995675283,
+        "latin_american": 0.2102736662078303,
+        "african": 0.0932396000397322,
+        "indigenous": 0.14255916521239195,
+        "oceanian": 0.050654364882478306
+      },
+      "data_quality": {
+        "iw_coverage": "present",
+        "hofstede_coverage": "present",
+        "low_evidence": false
+      },
+      "source_refs": [
+        "wvs_wave7_2022",
+        "hofstede_2010"
+      ]
+    },
+    {
+      "iso3": "ROU",
+      "label": null,
+      "x_viz": [
+        -0.35,
+        -0.4
+      ],
+      "x_viz_ellipse": {
+        "sigma": [
+          [
+            0.0324,
+            0.0
+          ],
+          [
+            0.0,
+            0.0324
+          ]
+        ],
+        "confidence_level": 0.8
+      },
+      "x_score": [
+        90.0,
+        30.0,
+        42.0,
+        90.0,
+        52.0,
+        20.0
+      ],
+      "affinity_vector": {
+        "western": 0.011628037534336515,
+        "orthodox": 0.3754315437122197,
+        "islamic": 0.1465885735380041,
+        "sinic": 0.031657177520811354,
+        "hindic": 0.05271769308911009,
+        "japanese": 0.017909709146644623,
+        "buddhist": 0.15476642745840533,
+        "latin_american": 0.04608927295360723,
+        "african": 0.03823351083844989,
+        "indigenous": 0.10289039562825159,
+        "oceanian": 0.02208765858015962
+      },
+      "data_quality": {
+        "iw_coverage": "present",
+        "hofstede_coverage": "present",
+        "low_evidence": false
+      },
+      "source_refs": [
+        "wvs_wave7_2022",
+        "hofstede_2010"
+      ]
+    },
+    {
+      "iso3": "RUS",
+      "label": null,
+      "x_viz": [
+        0.05,
+        -1.05
+      ],
+      "x_viz_ellipse": {
+        "sigma": [
+          [
+            0.0225,
+            0.0
+          ],
+          [
+            0.0,
+            0.0225
+          ]
+        ],
+        "confidence_level": 0.8
+      },
+      "x_score": [
+        93.0,
+        39.0,
+        36.0,
+        95.0,
+        81.0,
+        20.0
+      ],
+      "affinity_vector": {
+        "western": 0.013677914246791358,
+        "orthodox": 0.5526701195760307,
+        "islamic": 0.06585098372324617,
+        "sinic": 0.040976758660051675,
+        "hindic": 0.04857391201720423,
+        "japanese": 0.035547377173166535,
+        "buddhist": 0.08796805286934475,
+        "latin_american": 0.028766157237330812,
+        "african": 0.025461944757588707,
+        "indigenous": 0.08183898799255711,
+        "oceanian": 0.01866779174668798
+      },
+      "data_quality": {
+        "iw_coverage": "present",
+        "hofstede_coverage": "present",
+        "low_evidence": false
+      },
+      "source_refs": [
+        "wvs_wave7_2022",
+        "hofstede_2010"
+      ]
+    },
+    {
+      "iso3": "SAU",
+      "label": null,
+      "x_viz": [
+        null,
+        null
+      ],
+      "x_viz_ellipse": null,
+      "x_score": [
+        95.0,
+        25.0,
+        60.0,
+        80.0,
+        36.0,
+        52.0
+      ],
+      "affinity_vector": {
+        "western": 0.01278861519442907,
+        "orthodox": 0.06200675594156729,
+        "islamic": 0.15556529552791998,
+        "sinic": 0.025857278293840047,
+        "hindic": 0.04331888324262233,
+        "japanese": 0.014941190997761785,
+        "buddhist": 0.211080810436493,
+        "latin_american": 0.14868050451323703,
+        "african": 0.12336458606715446,
+        "indigenous": 0.16365159242516092,
+        "oceanian": 0.03874448735981411
+      },
+      "data_quality": {
+        "iw_coverage": "missing",
+        "hofstede_coverage": "present",
+        "low_evidence": true
+      },
+      "source_refs": [
+        "wvs_wave7_2022",
+        "hofstede_2010"
+      ]
+    },
+    {
+      "iso3": "SGP",
+      "label": null,
+      "x_viz": [
+        0.3,
+        -0.4
+      ],
+      "x_viz_ellipse": {
+        "sigma": [
+          [
+            0.0324,
+            0.0
+          ],
+          [
+            0.0,
+            0.0324
+          ]
+        ],
+        "confidence_level": 0.8
+      },
+      "x_score": [
+        74.0,
+        20.0,
+        48.0,
+        8.0,
+        72.0,
+        46.0
+      ],
+      "affinity_vector": {
+        "western": 0.028554081966556503,
+        "orthodox": 0.020101192098132173,
+        "islamic": 0.05067202565130683,
+        "sinic": 0.4704241750478129,
+        "hindic": 0.1430707696619802,
+        "japanese": 0.011257202099511459,
+        "buddhist": 0.056842098697868396,
+        "latin_american": 0.01911064280773561,
+        "african": 0.0797954235667977,
+        "indigenous": 0.04387430520463017,
+        "oceanian": 0.0762980831976681
+      },
+      "data_quality": {
+        "iw_coverage": "present",
+        "hofstede_coverage": "present",
+        "low_evidence": false
+      },
+      "source_refs": [
+        "wvs_wave7_2022",
+        "hofstede_2010"
+      ]
+    },
+    {
+      "iso3": "SRB",
+      "label": null,
+      "x_viz": [
+        0.15,
+        -0.65
+      ],
+      "x_viz_ellipse": {
+        "sigma": [
+          [
+            0.0324,
+            0.0
+          ],
+          [
+            0.0,
+            0.0324
+          ]
+        ],
+        "confidence_level": 0.8
+      },
+      "x_score": [
+        86.0,
+        25.0,
+        43.0,
+        92.0,
+        52.0,
+        28.0
+      ],
+      "affinity_vector": {
+        "western": 0.01088730305697775,
+        "orthodox": 0.32525713576815285,
+        "islamic": 0.13619549416577442,
+        "sinic": 0.028571109949993498,
+        "hindic": 0.0399406398764261,
+        "japanese": 0.01778540362185755,
+        "buddhist": 0.17981711073485088,
+        "latin_american": 0.0587465029647624,
+        "african": 0.0418311147776119,
+        "indigenous": 0.13829729579517155,
+        "oceanian": 0.02267088928842126
+      },
+      "data_quality": {
+        "iw_coverage": "present",
+        "hofstede_coverage": "present",
+        "low_evidence": false
+      },
+      "source_refs": [
+        "wvs_wave7_2022",
+        "hofstede_2010"
+      ]
+    },
+    {
+      "iso3": "SWE",
+      "label": null,
+      "x_viz": [
+        1.78,
+        2.35
+      ],
+      "x_viz_ellipse": {
+        "sigma": [
+          [
+            0.0225,
+            0.0
+          ],
+          [
+            0.0,
+            0.0225
+          ]
+        ],
+        "confidence_level": 0.8
+      },
+      "x_score": [
+        31.0,
+        71.0,
+        5.0,
+        29.0,
+        53.0,
+        78.0
+      ],
+      "affinity_vector": {
+        "western": 0.4331467370015721,
+        "orthodox": 0.017363129411675032,
+        "islamic": 0.03470361009059812,
+        "sinic": 0.05046074722325236,
+        "hindic": 0.05815052977271819,
+        "japanese": 0.009799489786641816,
+        "buddhist": 0.04032389848525261,
+        "latin_american": 0.03809980421059992,
+        "african": 0.0734885709706863,
+        "indigenous": 0.02646618567182643,
+        "oceanian": 0.21799729737517712
+      },
+      "data_quality": {
+        "iw_coverage": "present",
+        "hofstede_coverage": "present",
+        "low_evidence": false
+      },
+      "source_refs": [
+        "wvs_wave7_2022",
+        "hofstede_2010"
+      ]
+    },
+    {
+      "iso3": "THA",
+      "label": null,
+      "x_viz": [
+        -0.2,
+        0.2
+      ],
+      "x_viz_ellipse": {
+        "sigma": [
+          [
+            0.04000000000000001,
+            0.0
+          ],
+          [
+            0.0,
+            0.04000000000000001
+          ]
+        ],
+        "confidence_level": 0.8
+      },
+      "x_score": [
+        64.0,
+        20.0,
+        34.0,
+        64.0,
+        32.0,
+        45.0
+      ],
+      "affinity_vector": {
+        "western": 0.026988168719244997,
+        "orthodox": 0.04271894350034216,
+        "islamic": 0.18424535254460198,
+        "sinic": 0.04147302118995137,
+        "hindic": 0.050473316593934954,
+        "japanese": 0.007005138060265091,
+        "buddhist": 0.22386169807484496,
+        "latin_american": 0.10372283009491928,
+        "african": 0.1275091812101106,
+        "indigenous": 0.10787208020203459,
+        "oceanian": 0.08413026980975011
+      },
+      "data_quality": {
+        "iw_coverage": "present",
+        "hofstede_coverage": "present",
+        "low_evidence": false
+      },
+      "source_refs": [
+        "wvs_wave7_2022",
+        "hofstede_2010"
+      ]
+    },
+    {
+      "iso3": "TUR",
+      "label": null,
+      "x_viz": [
+        -0.85,
+        -0.65
+      ],
+      "x_viz_ellipse": {
+        "sigma": [
+          [
+            0.0324,
+            0.0
+          ],
+          [
+            0.0,
+            0.0324
+          ]
+        ],
+        "confidence_level": 0.8
+      },
+      "x_score": [
+        66.0,
+        37.0,
+        45.0,
+        85.0,
+        46.0,
+        49.0
+      ],
+      "affinity_vector": {
+        "western": 0.03801038822662221,
+        "orthodox": 0.09236187282033731,
+        "islamic": 0.1334790608872913,
+        "sinic": 0.02813813895880586,
+        "hindic": 0.044425869697151135,
+        "japanese": 0.02263421133194631,
+        "buddhist": 0.18806926803650192,
+        "latin_american": 0.14506981095553118,
+        "african": 0.09900099872243683,
+        "indigenous": 0.13334063923478676,
+        "oceanian": 0.0754697411285891
+      },
+      "data_quality": {
+        "iw_coverage": "present",
+        "hofstede_coverage": "present",
+        "low_evidence": false
+      },
+      "source_refs": [
+        "wvs_wave7_2022",
+        "hofstede_2010"
+      ]
+    },
+    {
+      "iso3": "TWN",
+      "label": null,
+      "x_viz": [
+        0.85,
+        0.85
+      ],
+      "x_viz_ellipse": {
+        "sigma": [
+          [
+            0.0324,
+            0.0
+          ],
+          [
+            0.0,
+            0.0324
+          ]
+        ],
+        "confidence_level": 0.8
+      },
+      "x_score": [
+        58.0,
+        17.0,
+        45.0,
+        69.0,
+        93.0,
+        49.0
+      ],
+      "affinity_vector": {
+        "western": 0.03342583172979585,
+        "orthodox": 0.11999762624427318,
+        "islamic": 0.06228728906827122,
+        "sinic": 0.18168431038419644,
+        "hindic": 0.059535605062584734,
+        "japanese": 0.07540129489938664,
+        "buddhist": 0.11356648474943416,
+        "latin_american": 0.04975755287895386,
+        "african": 0.06648730643384661,
+        "indigenous": 0.1737044733899136,
+        "oceanian": 0.06415222515934368
+      },
+      "data_quality": {
+        "iw_coverage": "present",
+        "hofstede_coverage": "present",
+        "low_evidence": false
+      },
+      "source_refs": [
+        "wvs_wave7_2022",
+        "hofstede_2010"
+      ]
+    },
+    {
+      "iso3": "UKR",
+      "label": null,
+      "x_viz": [
+        0.2,
+        -0.85
+      ],
+      "x_viz_ellipse": {
+        "sigma": [
+          [
+            0.0324,
+            0.0
+          ],
+          [
+            0.0,
+            0.0324
+          ]
+        ],
+        "confidence_level": 0.8
+      },
+      "x_score": [
+        92.0,
+        25.0,
+        27.0,
+        95.0,
+        86.0,
+        18.0
+      ],
+      "affinity_vector": {
+        "western": 0.010927064593023141,
+        "orthodox": 0.5451773331346026,
+        "islamic": 0.06230575763321579,
+        "sinic": 0.049516991612641593,
+        "hindic": 0.040630729916811666,
+        "japanese": 0.02809366845432222,
+        "buddhist": 0.09475469074911387,
+        "latin_american": 0.02821858151851611,
+        "african": 0.023673621120204446,
+        "indigenous": 0.10009414082863284,
+        "oceanian": 0.016607420438915593
+      },
+      "data_quality": {
+        "iw_coverage": "present",
+        "hofstede_coverage": "present",
+        "low_evidence": false
+      },
+      "source_refs": [
+        "wvs_wave7_2022",
+        "hofstede_2010"
+      ]
+    },
+    {
+      "iso3": "URY",
+      "label": null,
+      "x_viz": [
+        -0.05,
+        1.1
+      ],
+      "x_viz_ellipse": {
+        "sigma": [
+          [
+            0.04000000000000001,
+            0.0
+          ],
+          [
+            0.0,
+            0.04000000000000001
+          ]
+        ],
+        "confidence_level": 0.8
+      },
+      "x_score": [
+        61.0,
+        36.0,
+        38.0,
+        99.0,
+        26.0,
+        53.0
+      ],
+      "affinity_vector": {
+        "western": 0.040485965258815114,
+        "orthodox": 0.07417616926816807,
+        "islamic": 0.12607242598145835,
+        "sinic": 0.01562883326187994,
+        "hindic": 0.028422287966003695,
+        "japanese": 0.01596597763100684,
+        "buddhist": 0.15186252541958992,
+        "latin_american": 0.27874267583162915,
+        "african": 0.09008973226536016,
+        "indigenous": 0.10949592299115438,
+        "oceanian": 0.06905748412493441
+      },
+      "data_quality": {
+        "iw_coverage": "present",
+        "hofstede_coverage": "present",
+        "low_evidence": false
+      },
+      "source_refs": [
+        "wvs_wave7_2022",
+        "hofstede_2010"
+      ]
+    },
+    {
+      "iso3": "USA",
+      "label": null,
+      "x_viz": [
+        -0.1,
+        1.55
+      ],
+      "x_viz_ellipse": {
+        "sigma": [
+          [
+            0.0225,
+            0.0
+          ],
+          [
+            0.0,
+            0.0225
+          ]
+        ],
+        "confidence_level": 0.8
+      },
+      "x_score": [
+        40.0,
+        91.0,
+        62.0,
+        46.0,
+        26.0,
+        68.0
+      ],
+      "affinity_vector": {
+        "western": 0.47248624888910784,
+        "orthodox": 0.010329318563404641,
+        "islamic": 0.03712908402412326,
+        "sinic": 0.019277900888595684,
+        "hindic": 0.05991094401026835,
+        "japanese": 0.017713631308588135,
+        "buddhist": 0.027005776293663703,
+        "latin_american": 0.03884871584037246,
+        "african": 0.08090052857399765,
+        "indigenous": 0.01565117570289182,
+        "oceanian": 0.2207466759049864
+      },
+      "data_quality": {
+        "iw_coverage": "present",
+        "hofstede_coverage": "present",
+        "low_evidence": false
+      },
+      "source_refs": [
+        "wvs_wave7_2022",
+        "hofstede_2010"
+      ]
+    },
+    {
+      "iso3": "VEN",
+      "label": null,
+      "x_viz": [
+        -1.1,
+        0.7
+      ],
+      "x_viz_ellipse": {
+        "sigma": [
+          [
+            0.0484,
+            0.0
+          ],
+          [
+            0.0,
+            0.0484
+          ]
+        ],
+        "confidence_level": 0.8
+      },
+      "x_score": [
+        81.0,
+        12.0,
+        73.0,
+        76.0,
+        16.0,
+        100.0
+      ],
+      "affinity_vector": {
+        "western": 0.02210908955988933,
+        "orthodox": 0.019042651693362077,
+        "islamic": 0.0665099703207722,
+        "sinic": 0.019421856437429177,
+        "hindic": 0.02255081092435376,
+        "japanese": 0.015319393152318802,
+        "buddhist": 0.09836276863721634,
+        "latin_american": 0.33237625750121985,
+        "african": 0.2091331130225684,
+        "indigenous": 0.11983671800369337,
+        "oceanian": 0.07533737074717674
+      },
+      "data_quality": {
+        "iw_coverage": "present",
+        "hofstede_coverage": "present",
+        "low_evidence": false
+      },
+      "source_refs": [
+        "wvs_wave7_2022",
+        "hofstede_2010"
+      ]
+    },
+    {
+      "iso3": "VNM",
+      "label": null,
+      "x_viz": [
+        0.05,
+        -0.2
+      ],
+      "x_viz_ellipse": {
+        "sigma": [
+          [
+            0.04000000000000001,
+            0.0
+          ],
+          [
+            0.0,
+            0.04000000000000001
+          ]
+        ],
+        "confidence_level": 0.8
+      },
+      "x_score": [
+        70.0,
+        20.0,
+        40.0,
+        30.0,
+        57.0,
+        35.0
+      ],
+      "affinity_vector": {
+        "western": 0.02614127653799922,
+        "orthodox": 0.031069831639227212,
+        "islamic": 0.09225092812090899,
+        "sinic": 0.34278441953425587,
+        "hindic": 0.15783165065224258,
+        "japanese": 0.008803186063114914,
+        "buddhist": 0.09420535872774537,
+        "latin_american": 0.025565107072191635,
+        "african": 0.08668234211470087,
+        "indigenous": 0.05764960207156986,
+        "oceanian": 0.07701629746604349
+      },
+      "data_quality": {
+        "iw_coverage": "present",
+        "hofstede_coverage": "present",
+        "low_evidence": false
+      },
+      "source_refs": [
+        "wvs_wave7_2022",
+        "hofstede_2010"
+      ]
+    },
+    {
+      "iso3": "ZAF",
+      "label": null,
+      "x_viz": [
+        -0.6,
+        0.0
+      ],
+      "x_viz_ellipse": {
+        "sigma": [
+          [
+            0.04000000000000001,
+            0.0
+          ],
+          [
+            0.0,
+            0.04000000000000001
+          ]
+        ],
+        "confidence_level": 0.8
+      },
+      "x_score": [
+        49.0,
+        65.0,
+        63.0,
+        49.0,
+        34.0,
+        63.0
+      ],
+      "affinity_vector": {
+        "western": 0.25240972412803697,
+        "orthodox": 0.01235153931857809,
+        "islamic": 0.05110203660083526,
+        "sinic": 0.02706744712523509,
+        "hindic": 0.06984200834246522,
+        "japanese": 0.017352066570372002,
+        "buddhist": 0.0397622603863781,
+        "latin_american": 0.0489544882383128,
+        "african": 0.12695809428800306,
+        "indigenous": 0.024004305976883477,
+        "oceanian": 0.3301960290249
+      },
+      "data_quality": {
+        "iw_coverage": "present",
+        "hofstede_coverage": "present",
+        "low_evidence": false
+      },
+      "source_refs": [
+        "wvs_wave7_2022",
+        "hofstede_2010"
+      ]
+    },
+    {
+      "iso3": "ZMB",
+      "label": null,
+      "x_viz": [
+        -1.2,
+        -0.3
+      ],
+      "x_viz_ellipse": {
+        "sigma": [
+          [
+            0.0625,
+            0.0
+          ],
+          [
+            0.0,
+            0.0625
+          ]
+        ],
+        "confidence_level": 0.8
+      },
+      "x_score": [
+        75.0,
+        30.0,
+        60.0,
+        55.0,
+        55.0,
+        55.0
+      ],
+      "affinity_vector": {
+        "western": 0.029681483724300167,
+        "orthodox": 0.035794193930328407,
+        "islamic": 0.10320168866870395,
+        "sinic": 0.09176533061869427,
+        "hindic": 0.09405565313394862,
+        "japanese": 0.021321024993448023,
+        "buddhist": 0.13798626632307084,
+        "latin_american": 0.06627804943273642,
+        "african": 0.20533056539786346,
+        "indigenous": 0.10992036573244396,
+        "oceanian": 0.1046653780444621
+      },
+      "data_quality": {
+        "iw_coverage": "present",
+        "hofstede_coverage": "imputed",
+        "low_evidence": false
+      },
+      "source_refs": [
+        "wvs_wave7_2022",
+        "hofstede_2010"
+      ]
+    },
+    {
+      "iso3": "ZWE",
+      "label": null,
+      "x_viz": [
+        -1.15,
+        -0.4
+      ],
+      "x_viz_ellipse": {
+        "sigma": [
+          [
+            0.0625,
+            0.0
+          ],
+          [
+            0.0,
+            0.0625
+          ]
+        ],
+        "confidence_level": 0.8
+      },
+      "x_score": [
+        75.0,
+        25.0,
+        60.0,
+        55.0,
+        53.75,
+        53.75
+      ],
+      "affinity_vector": {
+        "western": 0.024192704006473276,
+        "orthodox": 0.03539909940276959,
+        "islamic": 0.10907324531297671,
+        "sinic": 0.09428092771878699,
+        "hindic": 0.08491250259448262,
+        "japanese": 0.019138505284828418,
+        "buddhist": 0.1504192065944316,
+        "latin_american": 0.06699419840018221,
+        "african": 0.20073916332472105,
+        "indigenous": 0.12349327522483891,
+        "oceanian": 0.0913571721355087
+      },
+      "data_quality": {
+        "iw_coverage": "present",
+        "hofstede_coverage": "imputed",
+        "low_evidence": false
+      },
+      "source_refs": [
+        "wvs_wave7_2022",
+        "hofstede_2010"
+      ]
+    }
+  ]
+}

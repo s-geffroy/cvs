@@ -1,0 +1,51 @@
+{
+  "iso3": "GTM",
+  "label": null,
+  "x_viz": [
+    -1.25,
+    0.3
+  ],
+  "x_viz_ellipse": {
+    "sigma": [
+      [
+        0.0484,
+        0.0
+      ],
+      [
+        0.0,
+        0.0484
+      ]
+    ],
+    "confidence_level": 0.8
+  },
+  "x_score": [
+    95.0,
+    6.0,
+    37.0,
+    101.0,
+    59.75,
+    59.75
+  ],
+  "affinity_vector": {
+    "western": 0.009141430730586689,
+    "orthodox": 0.153945598510142,
+    "islamic": 0.07012313859838082,
+    "sinic": 0.026691998492654977,
+    "hindic": 0.020376556417571728,
+    "japanese": 0.017893299865603556,
+    "buddhist": 0.1732801544737713,
+    "latin_american": 0.12658091096511026,
+    "african": 0.054515358686641306,
+    "indigenous": 0.3249429293144369,
+    "oceanian": 0.02250862394510043
+  },
+  "data_quality": {
+    "iw_coverage": "present",
+    "hofstede_coverage": "imputed",
+    "low_evidence": false
+  },
+  "source_refs": [
+    "wvs_wave7_2022",
+    "hofstede_2010"
+  ]
+}

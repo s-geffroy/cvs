@@ -1,0 +1,51 @@
+{
+  "iso3": "JPN",
+  "label": null,
+  "x_viz": [
+    1.95,
+    0.45
+  ],
+  "x_viz_ellipse": {
+    "sigma": [
+      [
+        0.0225,
+        0.0
+      ],
+      [
+        0.0,
+        0.0225
+      ]
+    ],
+    "confidence_level": 0.8
+  },
+  "x_score": [
+    54.0,
+    46.0,
+    95.0,
+    92.0,
+    88.0,
+    42.0
+  ],
+  "affinity_vector": {
+    "western": 0.011468381836041111,
+    "orthodox": 0.02281933945412782,
+    "islamic": 0.014672382884459496,
+    "sinic": 0.014735189965114335,
+    "hindic": 0.015492080336225103,
+    "japanese": 0.8413543499170417,
+    "buddhist": 0.015737680351946125,
+    "latin_american": 0.01281351748974058,
+    "african": 0.01479785603365698,
+    "indigenous": 0.020876770094116204,
+    "oceanian": 0.015232451637530514
+  },
+  "data_quality": {
+    "iw_coverage": "present",
+    "hofstede_coverage": "present",
+    "low_evidence": false
+  },
+  "source_refs": [
+    "wvs_wave7_2022",
+    "hofstede_2010"
+  ]
+}

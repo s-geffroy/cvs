@@ -1,0 +1,28 @@
+# États publiés
+
+!!! warning "Avertissement éthique"
+    {{ ethical_warning_fr }}
+
+Liste des **{{ states | length }} États** dont les coordonnées `x_viz` et `x_score` ont
+été calculées dans la base vectorielle (Phase 2). Pour la méthodologie,
+voir [`08_civilizational_basis.md`](../methodology/08_civilizational_basis.md).
+
+| ISO3 | `x_viz` (TS, SE) | Hofstede complet | Géométrie 110m |
+|---|---|---|---|
+{% for state in states %}
+| [`{{ state.iso3 }}`]({{ state.iso3 }}.md) | {{ ("`[" ~ "%.2f" | format(state.x_viz[0]) ~ ", " ~ "%.2f" | format(state.x_viz[1]) ~ "]`") if (state.x_viz[0] is not none and state.x_viz[1] is not none) else "—" }} | {{ "✓" if (state.x_score and state.x_score[0] is not none) else "manquant" }} | {{ "✓" if state.iso3 in iso3_with_geometry else "—" }} |
+{% endfor %}
+
+## Téléchargements en bloc
+
+- [Coordonnées États (`state_coordinates.json`)](../assets/data/state_coordinates.json)
+- [Centroïdes civilisationnels (`civilization_centroids.json`)](../assets/data/civilization_centroids.json)
+- [Tenseurs de tension (`state_tensors.json`)](../assets/data/state_tensors.json)
+- [Géométries ADM0 110m (`global_state_baseline.geojson`)](../assets/data/global_state_baseline.geojson)
+
+---
+
+[Carte interactive](../map/index.md) ·
+[Base vectorielle B_vec](../basis/index.md) ·
+[Tensions](../tensions/index.md) ·
+[Distances](../distances/index.md)

@@ -1,0 +1,51 @@
+{
+  "iso3": "FJI",
+  "label": null,
+  "x_viz": [
+    -0.8,
+    0.4
+  ],
+  "x_viz_ellipse": {
+    "sigma": [
+      [
+        0.09,
+        0.0
+      ],
+      [
+        0.0,
+        0.09
+      ]
+    ],
+    "confidence_level": 0.8
+  },
+  "x_score": [
+    78.0,
+    14.0,
+    46.0,
+    48.0,
+    46.5,
+    46.5
+  ],
+  "affinity_vector": {
+    "western": 0.017480882036399775,
+    "orthodox": 0.03637723197285694,
+    "islamic": 0.14104336949272545,
+    "sinic": 0.11696458882169379,
+    "hindic": 0.08453650103426509,
+    "japanese": 0.008619757581652404,
+    "buddhist": 0.1950823351956564,
+    "latin_american": 0.05697861267421786,
+    "african": 0.1516449716721628,
+    "indigenous": 0.12250358732303755,
+    "oceanian": 0.06876816219533212
+  },
+  "data_quality": {
+    "iw_coverage": "present",
+    "hofstede_coverage": "imputed",
+    "low_evidence": false
+  },
+  "source_refs": [
+    "wvs_wave7_2022",
+    "hofstede_2010"
+  ]
+}

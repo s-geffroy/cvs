@@ -1,0 +1,112 @@
+# État `NGA` — profil civilisationnel
+
+!!! warning "Avertissement éthique"
+    Ce profil est inféré à partir de sources publiques agrégées. Il ne doit pas être utilisé pour classer des individus réels.
+
+**ISO3** : `NGA` ·
+**Couverture B_vec** : B_viz + B_score (complet) ·
+**Données géométriques** : Natural Earth 110m
+
+## Coordonnées B_vec
+
+### `B_viz = ℝ²` — Inglehart-Welzel
+
+
+- **`x_viz`** (Traditional ↔ Secular-Rational, Survival ↔ Self-Expression) =
+  `[-1.450, -0.900]`
+
+- **Ellipse 80 %** (`Σ_viz`) — covariance =
+  ```
+  [[0.0400, 0.0000],
+   [0.0000, 0.0400]]
+  ```
+
+
+
+
+### `B_score = ℝ⁶` — Hofstede
+
+| Dimension | Score | Notation |
+|---|---|---|
+| Power Distance (PDI) | `80.0` | `e_PDI` |
+| Individualism (IDV) | `30.0` | `e_IDV` |
+| Masculinity (MAS) | `60.0` | `e_MAS` |
+| Uncertainty Avoidance (UAI) | `55.0` | `e_UAI` |
+| Long-Term Orientation (LTO) | `13.0` | `e_LTO` |
+| Indulgence vs Restraint (IVR) | `84.0` | `e_IVR` |
+
+
+
+## Vecteur d'affinité civilisationnelle
+
+Distribution dérivée par softmax inverse-distance dans `B_score` (β = 0.05).
+Somme = 1, w ≥ 0.
+
+| Civilisation | Affinité |
+|---|---|
+
+| [African](../taxonomy/civilizations/african.md) | `0.3078` |
+
+| [Latin American](../taxonomy/civilizations/latin_american.md) | `0.2021` |
+
+| [Oceanian](../taxonomy/civilizations/oceanian.md) | `0.1222` |
+
+| [Buddhist](../taxonomy/civilizations/buddhist.md) | `0.0952` |
+
+| [Islamic](../taxonomy/civilizations/islamic.md) | `0.0823` |
+
+| [Indigenous](../taxonomy/civilizations/indigenous.md) | `0.0701` |
+
+| [Hindic](../taxonomy/civilizations/hindic.md) | `0.0387` |
+
+| [Western](../taxonomy/civilizations/western.md) | `0.0351` |
+
+| [Sinic](../taxonomy/civilizations/sinic.md) | `0.0235` |
+
+| [Orthodox](../taxonomy/civilizations/orthodox.md) | `0.0148` |
+
+| [Japanese](../taxonomy/civilizations/japanese.md) | `0.0082` |
+
+
+
+
+## Tenseur de tension civilisationnelle `T(NGA)`
+
+`T(s) ∈ ℝ^{6×6}` symétrique semi-défini positif, analogue au tenseur des contraintes
+en mécanique des milieux continus. Cf. [Méthodologie 09](../methodology/09_civilizational_mechanics.md).
+
+### Invariants scalaires
+
+| Invariant | Valeur | Interprétation |
+|---|---|---|
+| `I1 = tr(T)` | `2572.60` | Tension totale |
+| `I2` (déviatorique) | `2689502.84` | Asymétrie |
+| `det(T)` | `4.63e+12` | Rigidité |
+| `A` (anisotropie) | `0.991` | (λ₁−λ₆)/λ₁ |
+
+### Tensions principales (eigenvalues triées)
+
+`[1900.6, 378.75, 175.15, 69.24, 32.58, 16.27]`
+
+
+
+## Géométrie
+
+- **Source** : Natural Earth 110m (`ne_110m_admin_0_countries`), domaine public.
+- **Téléchargement** : [`NGA.geojson`](../assets/data/states/NGA.geojson)
+- **Provenance** : `geometry_source = "Natural Earth"` · `contains_gadm_geometry = false`.
+
+
+## Téléchargements
+
+- [Profil JSON brut (`NGA.profile.json`)](../assets/data/states/NGA.profile.json)
+
+- [Géométrie (`NGA.geojson`)](../assets/data/states/NGA.geojson)
+
+
+---
+
+[Retour à la liste des États](../index.md) ·
+[Carte interactive](../map/index.md) ·
+[Base vectorielle B_vec](../basis/index.md) ·
+[Algèbre des distances](../distances/index.md)

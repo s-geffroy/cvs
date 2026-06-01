@@ -12,6 +12,10 @@ from apps.basis_builder.centroids import (
     inject_centroid_coords_into_taxonomy,
     write_centroids,
 )
+from apps.basis_builder.geometries import (
+    NATURAL_EARTH_ADM0_PATH,
+    fetch_and_filter_natural_earth_admin0,
+)
 from apps.basis_builder.paths import (
     BASIS_DIR,
     CIVILIZATION_CENTROIDS_PATH,
@@ -51,6 +55,16 @@ def build(
     tensions = compute_all_tensions()
     write_tensions(tensions)
     typer.echo(f"      wrote {STATE_TENSORS_PATH.relative_to(BASIS_DIR.parents[2])}")
+
+
+@app.command("fetch-geometries")
+def fetch_geometries(
+    force: bool = typer.Option(False, "--force", help="Re-download even if local file exists."),
+) -> None:
+    """Fetch Natural Earth ADM0 110m, filter to our ISO3, write data_sources/natural_earth/."""
+    target_path = fetch_and_filter_natural_earth_admin0(force_refresh=force)
+    typer.echo(f"[geometries] wrote {target_path.relative_to(BASIS_DIR.parents[2])}")
+    typer.echo(f"[geometries] expected: {NATURAL_EARTH_ADM0_PATH}")
 
 
 @app.command("validate")

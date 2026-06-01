@@ -1,0 +1,51 @@
+{
+  "iso3": "ETH",
+  "label": null,
+  "x_viz": [
+    -1.1,
+    -0.65
+  ],
+  "x_viz_ellipse": {
+    "sigma": [
+      [
+        0.0484,
+        0.0
+      ],
+      [
+        0.0,
+        0.0484
+      ]
+    ],
+    "confidence_level": 0.8
+  },
+  "x_score": [
+    70.0,
+    20.0,
+    65.0,
+    55.0,
+    52.5,
+    52.5
+  ],
+  "affinity_vector": {
+    "western": 0.022987345055302193,
+    "orthodox": 0.03279364693772634,
+    "islamic": 0.11133174245358303,
+    "sinic": 0.09847902582524468,
+    "hindic": 0.07790496787344342,
+    "japanese": 0.022683691666598782,
+    "buddhist": 0.14123272869050876,
+    "latin_american": 0.06964759410478456,
+    "african": 0.2006782680333512,
+    "indigenous": 0.12880207983191577,
+    "oceanian": 0.0934589095275413
+  },
+  "data_quality": {
+    "iw_coverage": "present",
+    "hofstede_coverage": "imputed",
+    "low_evidence": false
+  },
+  "source_refs": [
+    "wvs_wave7_2022",
+    "hofstede_2010"
+  ]
+}
