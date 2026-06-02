@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="index,follow">
+  <title>Glossaire illustré — cvs vulgarisation</title>
+  <meta name="description" content="Comprendre Civilizational Vector State sans les maths. Pages transverses (tous publics).">
+  <link rel="stylesheet" href="./assets/css/reset.css">
+  <link rel="stylesheet" href="./assets/css/vulgarisation.css">
+  <link rel="stylesheet" media="print" href="./assets/css/print.css">
+</head>
+<body data-section="glossaire-illustre">
+
+<a class="skip-link" href="#main">Aller au contenu</a>
+
+<div class="ethics-sticky" role="region" aria-label="Avertissement éthique">
+  <strong>Avertissement éthique :</strong>
+  Ce profil est inféré à partir de sources publiques agrégées. Il ne doit pas être utilisé pour classer des individus réels.
+</div>
+
+<header class="site-header">
+  <div class="brand">
+    <a href="./index.html">cvs · vulgarisation</a>
+  </div>
+  <nav class="audience-switcher" aria-label="Choisir un niveau">
+    
+      <a href="./niveau-1-citoyen/index.html"
+         class="audience-pill ">Niveau 1 — Citoyen curieux</a>
+    
+      <a href="./niveau-2-journaliste/index.html"
+         class="audience-pill ">Niveau 2 — Journaliste, décideur</a>
+    
+      <a href="./niveau-3-etudiant-shs/index.html"
+         class="audience-pill ">Niveau 3 — Étudiant SHS</a>
+    
+  </nav>
+  <a class="main-site-link" href="../">↗ Site principal (méthodologie)</a>
+</header>
+
+<main id="main" class="layout">
+
+  <aside class="sub-nav" aria-label="Sommaire du niveau">
+    
+    <h2 class="sub-nav-title">Transverse</h2>
+    <ul>
+      
+        <li><a href="./glossaire-illustre.html">Glossaire illustré</a></li>
+      
+        <li><a href="./faq.html">Questions fréquentes</a></li>
+      
+        <li><a href="./credits.html">Crédits et sources</a></li>
+      
+    </ul>
+  </aside>
+
+  <article class="page-body">
+    <p class="audience-line">Pages transverses (tous publics).</p>
+    <h1>Glossaire illustré</h1>
+    <p>Tous les termes du projet, expliqués en <strong>langage courant</strong>, avec une <strong>image mentale</strong> pour chacun.</p>
+<h2 id="a">A</h2>
+<p><strong>Affinité (vecteur d')</strong> — Pour un pays donné, la liste des <strong>pourcentages de proximité</strong> à chaque famille civilisationnelle. Ex : France = { occidentale: 71 %, latine: 11 %, orthodoxe: 7 %, … }.</p>
+<blockquote>
+<p>🎨 <em>Image</em> : une palette de couleurs, où chaque couleur est une famille civilisationnelle, et la <strong>proportion</strong> de chaque couleur dans la palette est l'affinité.</p>
+</blockquote>
+<h2 id="b">B</h2>
+<p><strong>B_doc</strong> — La « <strong>base documentaire</strong> » : les <strong>livres</strong> et <strong>articles</strong> sur lesquels cvs s'appuie pour son prior (Huntington, Hofstede, Inglehart-Welzel).</p>
+<blockquote>
+<p>📚 <em>Image</em> : une bibliothèque de référence.</p>
+</blockquote>
+<p><strong>B_score</strong> — Les <strong>6 dimensions de Hofstede</strong> (PDI, IDV, MAS, UAI, LTO, IVR), un point par pays dans un espace 6D.</p>
+<blockquote>
+<p>📏 <em>Image</em> : un profil de personnalité à 6 traits.</p>
+</blockquote>
+<p><strong>B_vec</strong> — La « <strong>base vectorielle</strong> » : la <strong>représentation numérique</strong> des pays, qui combine <code>B_viz</code> (2D) et <code>B_score</code> (6D).</p>
+<blockquote>
+<p>🧮 <em>Image</em> : une fiche-pays informatisée.</p>
+</blockquote>
+<p><strong>B_viz</strong> — La <strong>carte 2D d'Inglehart-Welzel</strong> : deux axes (tradition ↔ rationnel, survie ↔ expression de soi).</p>
+<blockquote>
+<p>🗺️ <em>Image</em> : une carte 2D du monde des valeurs.</p>
+</blockquote>
+<p><strong>Bayésien</strong> — Une <strong>manière de raisonner</strong> : partir d'une croyance (prior), la confronter aux données, en sortir une croyance révisée (posterior).</p>
+<blockquote>
+<p>🔄 <em>Image</em> : une enquête policière : on part d'une suspicion, on collecte les indices, on révise la suspicion.</p>
+</blockquote>
+<h2 id="c">C</h2>
+<p><strong>Centroïde</strong> — Le <strong>point moyen</strong> d'une famille civilisationnelle dans <code>B_score</code>.</p>
+<blockquote>
+<p>🎯 <em>Image</em> : le centre de gravité d'un nuage de points.</p>
+</blockquote>
+<p><strong>Civilisation</strong> — Dans cvs, un <strong>regroupement statistique</strong> de pays qui se ressemblent. <strong>Pas</strong> une essence, <strong>pas</strong> un destin.</p>
+<blockquote>
+<p>👨‍👩‍👧 <em>Image</em> : une famille de cuisines.</p>
+</blockquote>
+<p><strong>Cluster</strong> — Synonyme de regroupement statistique.</p>
+<p><strong>Covariance</strong> — Une mesure de la façon dont <strong>deux quantités varient ensemble</strong>. Sert à construire des distances Mahalanobis.</p>
+<h2 id="d">D</h2>
+<p><strong><code>d_hyb</code></strong> — La <strong>distance hybride</strong>, recommandée par défaut. Mélange équilibré de plusieurs distances complémentaires.</p>
+<blockquote>
+<p>🧪 <em>Image</em> : un cocktail bien dosé.</p>
+</blockquote>
+<p><strong><code>d_viz</code></strong> — La <strong>distance euclidienne</strong> sur la carte 2D.</p>
+<blockquote>
+<p>📐 <em>Image</em> : la distance à la règle.</p>
+</blockquote>
+<p><strong><code>d_score</code></strong> — La <strong>distance dans l'espace 6D</strong> de Hofstede. Plusieurs variantes (euclidienne, Mahalanobis).</p>
+<p><strong><code>d_M_F</code></strong> — La <strong>distance entre deux seconds moments</strong> (Frobenius). Mesure si <strong>les tensions internes</strong> se ressemblent.</p>
+<p><strong>Désambiguïsation</strong> — La <strong>règle explicite</strong> qui décide à quelle famille rattacher un pays charnière (Corée, Thaïlande, Bolivie…).</p>
+<h2 id="h">H</h2>
+<p><strong>Hofstede</strong> — Voir <a href="niveau-3-etudiant-shs/hofstede-en-2-pages.html">Hofstede en 2 pages</a>.</p>
+<p><strong>Huntington</strong> — Voir <a href="niveau-3-etudiant-shs/huntington-en-2-pages.html">Huntington en 2 pages</a>.</p>
+<h2 id="i">I</h2>
+<p><strong>Inglehart-Welzel</strong> — Voir <a href="niveau-3-etudiant-shs/inglehart-welzel-en-2-pages.html">Inglehart-Welzel en 2 pages</a>.</p>
+<p><strong>ISO3</strong> — Un <strong>code à 3 lettres</strong> pour chaque État souverain (FRA = France, JPN = Japon, BRA = Brésil…). Norme ISO 3166-1 alpha-3.</p>
+<h2 id="m">M</h2>
+<p><strong><code>M(s)</code></strong> — Le <strong>second moment civilisationnel</strong> d'un État. Mesure les <strong>tensions internes</strong> : à quel point ce pays est dispersé autour de sa moyenne.</p>
+<blockquote>
+<p>⚖️ <em>Image</em> : la « turbulence » intérieure d'un pays.</p>
+</blockquote>
+<p><strong>Mahalanobis (distance de)</strong> — Une distance qui <strong>tient compte</strong> du fait que toutes les dimensions n'ont pas la même importance.</p>
+<blockquote>
+<p>📊 <em>Image</em> : la distance à la règle, mais avec une règle qui se déforme selon l'axe.</p>
+</blockquote>
+<p><strong>Mélange (mixture)</strong> — En probabilité, une <strong>combinaison pondérée</strong> de plusieurs distributions. cvs publie chaque pays comme un <strong>mélange</strong> de familles civilisationnelles.</p>
+<h2 id="p">P</h2>
+<p><strong>PDI / IDV / MAS / UAI / LTO / IVR</strong> — Les <strong>6 dimensions de Hofstede</strong> :
+- <strong>PDI</strong> : <em>Power Distance Index</em> — acceptation de la hiérarchie.
+- <strong>IDV</strong> : <em>Individualism</em> — « je » avant « nous ».
+- <strong>MAS</strong> : <em>Masculinity</em> — compétition vs coopération.
+- <strong>UAI</strong> : <em>Uncertainty Avoidance Index</em> — tolérance à l'incertitude.
+- <strong>LTO</strong> : <em>Long-Term Orientation</em> — orientation long terme.
+- <strong>IVR</strong> : <em>Indulgence vs Restraint</em> — autorisation de la gratification.</p>
+<p><strong>Posterior</strong> — En bayésien, la <strong>croyance révisée</strong> après confrontation aux données.</p>
+<p><strong>Prior</strong> — En bayésien, la <strong>croyance de départ</strong> avant confrontation aux données. Chez cvs, c'est la taxonomie de Huntington.</p>
+<h2 id="s">S</h2>
+<p><strong>Softmax</strong> — Une <strong>fonction mathématique</strong> qui transforme des <strong>distances</strong> en <strong>probabilités</strong> qui somment à 1. Le paramètre <code>β</code> contrôle la « température ».</p>
+<p><strong>Spearman (corrélation de)</strong> — Une mesure de <strong>corrélation par rang</strong>. Utilisée par cvs pour la validation empirique externe.</p>
+<h2 id="t">T</h2>
+<p><strong>T(s) — ANCIEN nom</strong> — L'ancien nom du second moment <code>M(s)</code>. Renommé en v3.0 pour évacuer le « physics envy » (cf. <a href="../methodology/11_critiques_and_responses/">doc 11</a>).</p>
+<h2 id="w">W</h2>
+<p><strong>Wasserstein-2</strong> — Une <strong>distance de transport optimal</strong>. Mesure le coût minimal pour transformer une distribution en une autre. Utilisée pour comparer des <strong>vecteurs d'affiliation</strong>.</p>
+<blockquote>
+<p>🚚 <em>Image</em> : le coût minimal pour déplacer le sable d'une dune à une autre.</p>
+</blockquote>
+<p><strong>WVS</strong> — <em>World Values Survey</em>. La grande enquête mondiale sur les valeurs, qui fournit la matière première de cvs.</p>
+<blockquote>
+<p>🌍 <em>Image</em> : un questionnaire planétaire posé à des dizaines de milliers de personnes.</p>
+</blockquote>
+<h2 id="pour-aller-plus-loin">Pour aller plus loin</h2>
+<p>Le glossaire <strong>complet</strong> (avec formules) est sur le site principal : <a href="../methodology/15_glossary/">doc 15 — Glossaire</a>.</p>
+  </article>
+
+</main>
+
+<footer class="site-footer">
+  <nav aria-label="Liens vers le site principal">
+    <a href="../">Méthodologie complète</a>
+    <a href="../states/">États</a>
+    <a href="../map/">Carte</a>
+    <a href="../basis/">Base vectorielle</a>
+    <a href="../moments/">Moments M(s)</a>
+    <a href="../distances/">Distances</a>
+    <a href="../ethics/">Éthique officielle</a>
+    <a href="https://github.com/s-geffroy/cvs" rel="noopener">GitHub</a>
+  </nav>
+  <p class="footer-note">cvs · publié sous licence MIT · données WVS (CC-BY), Hofstede (usage scientifique), Natural Earth (domaine public), geoBoundaries (CC-BY 4.0). Aucune géométrie GADM publiée.</p>
+</footer>
+
+</body>
+</html>

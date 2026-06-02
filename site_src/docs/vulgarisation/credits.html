@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="index,follow">
+  <title>Crédits et sources — cvs vulgarisation</title>
+  <meta name="description" content="Comprendre Civilizational Vector State sans les maths. Pages transverses (tous publics).">
+  <link rel="stylesheet" href="./assets/css/reset.css">
+  <link rel="stylesheet" href="./assets/css/vulgarisation.css">
+  <link rel="stylesheet" media="print" href="./assets/css/print.css">
+</head>
+<body data-section="credits">
+
+<a class="skip-link" href="#main">Aller au contenu</a>
+
+<div class="ethics-sticky" role="region" aria-label="Avertissement éthique">
+  <strong>Avertissement éthique :</strong>
+  Ce profil est inféré à partir de sources publiques agrégées. Il ne doit pas être utilisé pour classer des individus réels.
+</div>
+
+<header class="site-header">
+  <div class="brand">
+    <a href="./index.html">cvs · vulgarisation</a>
+  </div>
+  <nav class="audience-switcher" aria-label="Choisir un niveau">
+    
+      <a href="./niveau-1-citoyen/index.html"
+         class="audience-pill ">Niveau 1 — Citoyen curieux</a>
+    
+      <a href="./niveau-2-journaliste/index.html"
+         class="audience-pill ">Niveau 2 — Journaliste, décideur</a>
+    
+      <a href="./niveau-3-etudiant-shs/index.html"
+         class="audience-pill ">Niveau 3 — Étudiant SHS</a>
+    
+  </nav>
+  <a class="main-site-link" href="../">↗ Site principal (méthodologie)</a>
+</header>
+
+<main id="main" class="layout">
+
+  <aside class="sub-nav" aria-label="Sommaire du niveau">
+    
+    <h2 class="sub-nav-title">Transverse</h2>
+    <ul>
+      
+        <li><a href="./glossaire-illustre.html">Glossaire illustré</a></li>
+      
+        <li><a href="./faq.html">Questions fréquentes</a></li>
+      
+        <li><a href="./credits.html">Crédits et sources</a></li>
+      
+    </ul>
+  </aside>
+
+  <article class="page-body">
+    <p class="audience-line">Pages transverses (tous publics).</p>
+    <h1>Crédits et sources</h1>
+    <h2 id="qui">Qui ?</h2>
+<p>cvs est un projet <strong>open source</strong> dirigé par <strong>s-geffroy</strong> (auteur principal). Le projet accueille les contributions externes via <a href="https://github.com/s-geffroy/cvs/issues">GitHub</a>.</p>
+<h2 id="quoi">Quoi ?</h2>
+<p>cvs (<em>Civilizational Vector State</em>) est un pipeline Python bayésien produisant un <strong>vecteur d'affiliation civilisationnelle</strong> par État souverain. Il publie :</p>
+<ul>
+<li>Un <strong>site MkDocs</strong> complet avec méthodologie, taxonomie, fiches États, carte interactive, base vectorielle, seconds moments, distances.</li>
+<li>Un <strong>mini-site de vulgarisation</strong> (cette section).</li>
+<li>Un ensemble de <strong>fichiers JSON</strong> machine-lisibles (sous <code>assets/data/</code>).</li>
+<li>Des <strong>schémas JSON v3</strong> (sous <code>assets/schemas/</code>).</li>
+<li>Un <strong>CLI Python</strong> (<code>civvec …</code>) pour reconstruire localement.</li>
+</ul>
+<h2 id="licences">Licences</h2>
+<table>
+<thead>
+<tr>
+<th>Élément</th>
+<th>Licence</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Code source</strong></td>
+<td>MIT</td>
+</tr>
+<tr>
+<td><strong>Documentation et site</strong></td>
+<td>MIT (incluant cette section)</td>
+</tr>
+<tr>
+<td><strong>WVS</strong> (données)</td>
+<td>CC-BY</td>
+</tr>
+<tr>
+<td><strong>Hofstede</strong> (données)</td>
+<td>Usage scientifique autorisé</td>
+</tr>
+<tr>
+<td><strong>Inglehart-Welzel</strong> (données)</td>
+<td>Reprise des publications WVS</td>
+</tr>
+<tr>
+<td><strong>Natural Earth</strong> (géométries)</td>
+<td>Domaine public</td>
+</tr>
+<tr>
+<td><strong>geoBoundaries</strong> (géométries)</td>
+<td>CC-BY 4.0</td>
+</tr>
+<tr>
+<td><strong>GADM</strong> (géométries)</td>
+<td><strong>Non utilisé</strong> — restriction de redistribution</td>
+</tr>
+</tbody>
+</table>
+<p>Voir le fichier <code>data_sources/SOURCES.md</code> du dépôt pour la traçabilité complète.</p>
+<h2 id="comment-citer-cvs">Comment citer cvs ?</h2>
+<pre><code class="language-bibtex">@misc{cvs2026,
+  author       = {Geffroy, S.},
+  title        = {Civilizational Vector State: A Bayesian Pipeline for
+                  State-Level Civilizational Affiliation Vectors},
+  year         = {2026},
+  version      = {3.0.0a1},
+  url          = {https://github.com/s-geffroy/cvs},
+  note         = {Published under MIT License. Accessed via
+                  \url{https://s-geffroy.github.io/cvs/}}
+}
+</code></pre>
+<p>Pour citer une <strong>page spécifique</strong> (méthodologie 09, par exemple), citer l'URL pleine : <code>https://s-geffroy.github.io/cvs/methodology/09_civilizational_second_moment/</code>.</p>
+<h2 id="remerciements">Remerciements</h2>
+<p>Le projet repose sur les <strong>travaux de toute une communauté académique</strong>, qu'il agrège :</p>
+<ul>
+<li><strong>Ronald Inglehart</strong> (1934-2021) et <strong>Christian Welzel</strong>, pour le <em>World Values Survey</em> et la carte 2D des valeurs.</li>
+<li><strong>Geert Hofstede</strong> (1928-2020) et <strong>Michael Minkov</strong>, pour les 6 dimensions culturelles.</li>
+<li><strong>Samuel Huntington</strong> (1927-2008), pour la taxonomie de départ — <strong>utilisée comme prior</strong>, critiquée et complétée.</li>
+<li>L'équipe <strong>Natural Earth</strong> (Tom Patterson, Nathaniel Kelso) pour les géométries en domaine public.</li>
+<li>L'équipe <strong>geoBoundaries</strong> (William &amp; Mary) pour les géométries CC-BY 4.0.</li>
+</ul>
+<h2 id="et-les-critiques-academiques">Et les critiques académiques ?</h2>
+<p>cvs <strong>inclut</strong> dans sa documentation officielle 27 critiques anticipées — y compris celles qu'il <strong>n'a pas su corriger</strong>. Voir <a href="niveau-3-etudiant-shs/controverses-academiques.html">Controverses académiques</a> (vulgarisation) et <a href="../methodology/11_critiques_and_responses/">doc 11</a> (site principal).</p>
+<h2 id="contact">Contact</h2>
+<ul>
+<li><strong>Issues</strong> (bug, critique, suggestion) : <a href="https://github.com/s-geffroy/cvs/issues">https://github.com/s-geffroy/cvs/issues</a></li>
+<li><strong>Pull Requests</strong> : <a href="https://github.com/s-geffroy/cvs/pulls">https://github.com/s-geffroy/cvs/pulls</a></li>
+<li><strong>Pas d'email public</strong> ; tous les échanges passent par GitHub pour la traçabilité.</li>
+</ul>
+<h2 id="version-de-cette-page">Version de cette page</h2>
+<p>Cette section de vulgarisation accompagne cvs <strong>v3.0.0a1</strong> (publication 2026). Les chiffres cités (proximités, distances) sont <strong>stables</strong> sur cette version mais peuvent évoluer aux versions suivantes.</p>
+  </article>
+
+</main>
+
+<footer class="site-footer">
+  <nav aria-label="Liens vers le site principal">
+    <a href="../">Méthodologie complète</a>
+    <a href="../states/">États</a>
+    <a href="../map/">Carte</a>
+    <a href="../basis/">Base vectorielle</a>
+    <a href="../moments/">Moments M(s)</a>
+    <a href="../distances/">Distances</a>
+    <a href="../ethics/">Éthique officielle</a>
+    <a href="https://github.com/s-geffroy/cvs" rel="noopener">GitHub</a>
+  </nav>
+  <p class="footer-note">cvs · publié sous licence MIT · données WVS (CC-BY), Hofstede (usage scientifique), Natural Earth (domaine public), geoBoundaries (CC-BY 4.0). Aucune géométrie GADM publiée.</p>
+</footer>
+
+</body>
+</html>

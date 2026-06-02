@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="index,follow">
+  <title>Comment on « classe » un pays ? — cvs vulgarisation</title>
+  <meta name="description" content="Comprendre Civilizational Vector State sans les maths. Citoyen / lycéen — métaphores, exemples concrets, zéro math.">
+  <link rel="stylesheet" href="../assets/css/reset.css">
+  <link rel="stylesheet" href="../assets/css/vulgarisation.css">
+  <link rel="stylesheet" media="print" href="../assets/css/print.css">
+</head>
+<body data-section="niveau-1-citoyen">
+
+<a class="skip-link" href="#main">Aller au contenu</a>
+
+<div class="ethics-sticky" role="region" aria-label="Avertissement éthique">
+  <strong>Avertissement éthique :</strong>
+  Ce profil est inféré à partir de sources publiques agrégées. Il ne doit pas être utilisé pour classer des individus réels.
+</div>
+
+<header class="site-header">
+  <div class="brand">
+    <a href="../index.html">cvs · vulgarisation</a>
+  </div>
+  <nav class="audience-switcher" aria-label="Choisir un niveau">
+    
+      <a href="../niveau-1-citoyen/index.html"
+         class="audience-pill audience-pill--active">Niveau 1 — Citoyen curieux</a>
+    
+      <a href="../niveau-2-journaliste/index.html"
+         class="audience-pill ">Niveau 2 — Journaliste, décideur</a>
+    
+      <a href="../niveau-3-etudiant-shs/index.html"
+         class="audience-pill ">Niveau 3 — Étudiant SHS</a>
+    
+  </nav>
+  <a class="main-site-link" href="../../">↗ Site principal (méthodologie)</a>
+</header>
+
+<main id="main" class="layout">
+
+  <aside class="sub-nav" aria-label="Sommaire du niveau">
+    
+      <h2 class="sub-nav-title">Niveau 1 — Citoyen curieux</h2>
+      <ul>
+        
+          <li><a href="index.html">Le tour en 5 minutes</a></li>
+        
+          <li><a href="qu-est-ce-qu-une-civilisation.html">Qu'est-ce qu'une « civilisation » ici ?</a></li>
+        
+          <li><a href="comment-on-classe-un-pays.html">Comment on « classe » un pays ?</a></li>
+        
+          <li><a href="si-la-france-etait.html">Si la France était…</a></li>
+        
+          <li><a href="pourquoi-c-est-imparfait.html">Pourquoi c'est imparfait</a></li>
+        
+      </ul>
+    
+    <h2 class="sub-nav-title">Transverse</h2>
+    <ul>
+      
+        <li><a href="../glossaire-illustre.html">Glossaire illustré</a></li>
+      
+        <li><a href="../faq.html">Questions fréquentes</a></li>
+      
+        <li><a href="../credits.html">Crédits et sources</a></li>
+      
+    </ul>
+  </aside>
+
+  <article class="page-body">
+    <p class="audience-line">Citoyen / lycéen — métaphores, exemples concrets, zéro math.</p>
+    <h1>Comment on « classe » un pays ?</h1>
+    <h2 id="une-metaphore-la-playlist-spotify">Une métaphore : la playlist Spotify</h2>
+<p>Quand Spotify vous classe dans « auditeur de pop indie + rap français + un peu de jazz », il ne vous met <strong>pas dans une boîte</strong>. Il dit : « voilà à quoi vous ressemblez, en pourcentage ».</p>
+<p>cvs fait exactement pareil avec les pays. Au lieu de dire « la France est occidentale, point », il dit :</p>
+<table>
+<thead>
+<tr>
+<th>Famille</th>
+<th>% de proximité</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Occidentale</td>
+<td>71 %</td>
+</tr>
+<tr>
+<td>Latino-américaine</td>
+<td>11 %</td>
+</tr>
+<tr>
+<td>Orthodoxe</td>
+<td>7 %</td>
+</tr>
+<tr>
+<td>Autres</td>
+<td>11 %</td>
+</tr>
+</tbody>
+</table>
+<p>(Les chiffres exacts viennent du fichier <code>state_coordinates.json</code> du projet ; ils peuvent varier avec les versions.)</p>
+<h2 id="dou-viennent-les-chiffres">D'où viennent les chiffres ?</h2>
+<p>Trois sources, <strong>toutes publiques</strong> :</p>
+<ol>
+<li><strong>WVS</strong> — la <em>World Values Survey</em>, une grande enquête mondiale qui pose à des dizaines de milliers de personnes des questions du type : « Faites-vous confiance à vos voisins ? », « Pour vous, la religion est-elle importante ? ».</li>
+<li><strong>Hofstede</strong> — six grandes dimensions qui décrivent les cultures (hiérarchique vs égalitaire, individualiste vs collectiviste, etc.). Ces six chiffres ont été calculés à partir d'employés d'IBM dans les années 70, puis affinés depuis.</li>
+<li><strong>Inglehart-Welzel</strong> — une carte en 2D qui place les pays sur deux axes : <em>tradition ↔ rationalité</em> et <em>survie ↔ expression de soi</em>.</li>
+</ol>
+<p>cvs <strong>mélange</strong> ces sources et calcule, pour chaque pays, sa <strong>distance</strong> à chacune des familles civilisationnelles. Plus la distance est petite, plus le % de proximité est grand.</p>
+<h2 id="les-ingredients-en-images">Les ingrédients en images</h2>
+<blockquote>
+<p>🥦 WVS = ce que les gens <strong>disent</strong> dans une enquête.</p>
+<p>📏 Hofstede = six chiffres qui résument la <strong>culture professionnelle</strong>.</p>
+<p>🗺️ Inglehart-Welzel = une <strong>carte 2D</strong> des grandes valeurs.</p>
+</blockquote>
+<p>Mélangez les trois → un vecteur de proximité par pays.</p>
+<h2 id="ce-quon-ne-fait-pas">Ce qu'on <strong>ne</strong> fait <strong>pas</strong></h2>
+<ul>
+<li>On ne va <strong>pas</strong> chercher la religion officielle d'un pays.</li>
+<li>On ne va <strong>pas</strong> chercher sa langue.</li>
+<li>On ne va <strong>pas</strong> chercher son histoire coloniale.</li>
+<li>On ne va <strong>pas</strong> chercher son PIB.</li>
+</ul>
+<p>Tout repose sur <strong>ce que les habitants ont déclaré</strong> dans des enquêtes, et sur quelques chiffres culturels agrégés.</p>
+<h2 id="en-une-ligne">En une ligne</h2>
+<blockquote>
+<p>Classer un pays = mesurer sa <strong>distance</strong> à chaque famille, et dire « voilà à quoi tu ressembles, en pourcentage ».</p>
+</blockquote>
+  </article>
+
+</main>
+
+<footer class="site-footer">
+  <nav aria-label="Liens vers le site principal">
+    <a href="../../">Méthodologie complète</a>
+    <a href="../../states/">États</a>
+    <a href="../../map/">Carte</a>
+    <a href="../../basis/">Base vectorielle</a>
+    <a href="../../moments/">Moments M(s)</a>
+    <a href="../../distances/">Distances</a>
+    <a href="../../ethics/">Éthique officielle</a>
+    <a href="https://github.com/s-geffroy/cvs" rel="noopener">GitHub</a>
+  </nav>
+  <p class="footer-note">cvs · publié sous licence MIT · données WVS (CC-BY), Hofstede (usage scientifique), Natural Earth (domaine public), geoBoundaries (CC-BY 4.0). Aucune géométrie GADM publiée.</p>
+</footer>
+
+</body>
+</html>
