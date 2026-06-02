@@ -53,43 +53,43 @@ IW: TS très négatif (catholicisme persistant, valeurs traditionnelles), SE pos
 
 ## États membres
 
-| ISO3 | Rôle | Rationale | Citations |
-|---|---|---|---|
+| État | ISO3 | Rôle | Rationale | Citations |
+|---|---|---|---|---|
 
-| `BRA` | core | Brésil, héritage portugais | huntington_1996 |
+| Brésil | `BRA` | core | Brésil, héritage portugais | huntington_1996 |
 
-| `MEX` | core | Mexique, héritage espagnol + substrat mésoaméricain | huntington_1996 |
+| Mexique | `MEX` | core | Mexique, héritage espagnol + substrat mésoaméricain | huntington_1996 |
 
-| `ARG` | core | Argentine, Cône Sud, fortement européanisé | huntington_1996 |
+| Argentine | `ARG` | core | Argentine, Cône Sud, fortement européanisé | huntington_1996 |
 
-| `CHL` | core | Chili, Cône Sud | huntington_1996 |
+| Chili | `CHL` | core | Chili, Cône Sud | huntington_1996 |
 
-| `COL` | core | Colombie, andine | huntington_1996 |
+| Colombie | `COL` | core | Colombie, andine | huntington_1996 |
 
-| `PER` | core | Pérou, andin + substrat quechua-aymara | huntington_1996 |
+| Pérou | `PER` | core | Pérou, andin + substrat quechua-aymara | huntington_1996 |
 
-| `URY` | core | Uruguay, Cône Sud, laïcisé | huntington_1996 |
+| Uruguay | `URY` | core | Uruguay, Cône Sud, laïcisé | huntington_1996 |
 
-| `VEN` | core | Venezuela, caribéen | huntington_1996 |
+| Venezuela | `VEN` | core | Venezuela, caribéen | huntington_1996 |
 
-| `GTM` | core | Guatemala, méso-américain + substrat maya | huntington_1996 |
+| Guatemala | `GTM` | core | Guatemala, méso-américain + substrat maya | huntington_1996 |
 
-| `BOL` | interface | Bolivie, identité plurinationale (latino + aymara/quechua/guarani) | huntington_1996, smith_2012 |
+| Bolivie | `BOL` | interface | Bolivie, identité plurinationale (latino + aymara/quechua/guarani) | huntington_1996, smith_2012 |
 
-| `ECU` | interface | Équateur, identité métisse + indigène (Kichwa) | huntington_1996, smith_2012 |
+| Équateur | `ECU` | interface | Équateur, identité métisse + indigène (Kichwa) | huntington_1996, smith_2012 |
 
 
 
 ## Sous-clusters
 
 
-- **Cône Sud** (`southern_cone`) — ARG, CHL, URY
+- **Cône Sud** (`southern_cone`) — Argentine (`ARG`), Chili (`CHL`), Uruguay (`URY`)
 
-- **Andin** (`andean`) — COL, PER, BOL, ECU
+- **Andin** (`andean`) — Colombie (`COL`), Pérou (`PER`), Bolivie (`BOL`), Équateur (`ECU`)
 
-- **Mexique / Amérique centrale** (`mexican_central_american`) — MEX, GTM
+- **Mexique / Amérique centrale** (`mexican_central_american`) — Mexique (`MEX`), Guatemala (`GTM`)
 
-- **Brésil + Caraïbes** (`brazil_caribbean`) — BRA, VEN
+- **Brésil + Caraïbes** (`brazil_caribbean`) — Brésil (`BRA`), Venezuela (`VEN`)
 
 
 
@@ -97,13 +97,13 @@ IW: TS très négatif (catholicisme persistant, valeurs traditionnelles), SE pos
 ## Cas ambigus / controverses documentées
 
 
-### `MEX`
+### Mexique (`MEX`)
 
 - **Civilisations en concurrence** : latin_american, western
 - **Discussion** : Membre USMCA, intégration économique nord-américaine, mais identité culturelle latino-américaine forte.
 - **Citations** : huntington_1996
 
-### `BOL`
+### Bolivie (`BOL`)
 
 - **Civilisations en concurrence** : latin_american, indigenous
 - **Discussion** : Constitution 2009 reconnaît État plurinational. Identité indigène majoritaire dans certaines régions.

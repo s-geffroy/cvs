@@ -47,5 +47,12 @@
   "source_refs": [
     "wvs_wave7_2022",
     "hofstede_2010"
-  ]
+  ],
+  "curated_civilization": "western",
+  "curated_role": "core",
+  "curated_civilizations_competing": [
+    "oceanian"
+  ],
+  "sub_cluster_id": "english_speaking",
+  "sub_cluster_label": "Anglo / English-speaking"
 }

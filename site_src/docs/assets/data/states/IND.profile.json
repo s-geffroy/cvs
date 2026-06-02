@@ -47,5 +47,10 @@
   "source_refs": [
     "wvs_wave7_2022",
     "hofstede_2010"
-  ]
+  ],
+  "curated_civilization": "hindic",
+  "curated_role": "core",
+  "curated_civilizations_competing": null,
+  "sub_cluster_id": "indian_subcontinent_hindu",
+  "sub_cluster_label": "Sous-continent indien hindou"
 }

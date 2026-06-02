@@ -61,7 +61,12 @@
       "source_refs": [
         "wvs_wave7_2022",
         "hofstede_2010"
-      ]
+      ],
+      "curated_civilization": "latin_american",
+      "curated_role": "core",
+      "curated_civilizations_competing": null,
+      "sub_cluster_id": "southern_cone",
+      "sub_cluster_label": "Cône Sud"
     },
     {
       "iso3": "AUS",
@@ -112,7 +117,14 @@
       "source_refs": [
         "wvs_wave7_2022",
         "hofstede_2010"
-      ]
+      ],
+      "curated_civilization": "western",
+      "curated_role": "core",
+      "curated_civilizations_competing": [
+        "oceanian"
+      ],
+      "sub_cluster_id": "english_speaking",
+      "sub_cluster_label": "Anglo / English-speaking"
     },
     {
       "iso3": "BGD",
@@ -163,7 +175,12 @@
       "source_refs": [
         "wvs_wave7_2022",
         "hofstede_2010"
-      ]
+      ],
+      "curated_civilization": "islamic",
+      "curated_role": "core",
+      "curated_civilizations_competing": null,
+      "sub_cluster_id": "south_asian_islamic",
+      "sub_cluster_label": "Islam sud-asiatique"
     },
     {
       "iso3": "BGR",
@@ -214,7 +231,12 @@
       "source_refs": [
         "wvs_wave7_2022",
         "hofstede_2010"
-      ]
+      ],
+      "curated_civilization": "orthodox",
+      "curated_role": "core",
+      "curated_civilizations_competing": null,
+      "sub_cluster_id": "balkan_orthodox",
+      "sub_cluster_label": "Orthodoxe balkanique"
     },
     {
       "iso3": "BLR",
@@ -265,7 +287,12 @@
       "source_refs": [
         "wvs_wave7_2022",
         "hofstede_2010"
-      ]
+      ],
+      "curated_civilization": "orthodox",
+      "curated_role": "core",
+      "curated_civilizations_competing": null,
+      "sub_cluster_id": "slavic_orthodox",
+      "sub_cluster_label": "Orthodoxe slave"
     },
     {
       "iso3": "BOL",
@@ -316,7 +343,15 @@
       "source_refs": [
         "wvs_wave7_2022",
         "hofstede_2010"
-      ]
+      ],
+      "curated_civilization": "indigenous",
+      "curated_role": "core",
+      "curated_civilizations_competing": [
+        "latin_american",
+        "indigenous"
+      ],
+      "sub_cluster_id": "andean",
+      "sub_cluster_label": "Andin"
     },
     {
       "iso3": "BRA",
@@ -367,7 +402,56 @@
       "source_refs": [
         "wvs_wave7_2022",
         "hofstede_2010"
-      ]
+      ],
+      "curated_civilization": "latin_american",
+      "curated_role": "core",
+      "curated_civilizations_competing": null,
+      "sub_cluster_id": "brazil_caribbean",
+      "sub_cluster_label": "Brésil + Caraïbes"
+    },
+    {
+      "iso3": "BTN",
+      "label": null,
+      "x_viz": [
+        null,
+        null
+      ],
+      "x_viz_ellipse": null,
+      "x_score": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "affinity_vector": {
+        "western": 0.09090909090909091,
+        "orthodox": 0.09090909090909091,
+        "islamic": 0.09090909090909091,
+        "sinic": 0.09090909090909091,
+        "hindic": 0.09090909090909091,
+        "japanese": 0.09090909090909091,
+        "buddhist": 0.09090909090909091,
+        "latin_american": 0.09090909090909091,
+        "african": 0.09090909090909091,
+        "indigenous": 0.09090909090909091,
+        "oceanian": 0.09090909090909091
+      },
+      "data_quality": {
+        "iw_coverage": "missing",
+        "hofstede_coverage": "missing",
+        "low_evidence": true
+      },
+      "source_refs": [
+        "wvs_wave7_2022",
+        "hofstede_2010"
+      ],
+      "curated_civilization": "buddhist",
+      "curated_role": "core",
+      "curated_civilizations_competing": null,
+      "sub_cluster_id": "mahayana",
+      "sub_cluster_label": "Mahayana"
     },
     {
       "iso3": "CAN",
@@ -418,7 +502,12 @@
       "source_refs": [
         "wvs_wave7_2022",
         "hofstede_2010"
-      ]
+      ],
+      "curated_civilization": "western",
+      "curated_role": "core",
+      "curated_civilizations_competing": null,
+      "sub_cluster_id": "english_speaking",
+      "sub_cluster_label": "Anglo / English-speaking"
     },
     {
       "iso3": "CHL",
@@ -469,7 +558,12 @@
       "source_refs": [
         "wvs_wave7_2022",
         "hofstede_2010"
-      ]
+      ],
+      "curated_civilization": "latin_american",
+      "curated_role": "core",
+      "curated_civilizations_competing": null,
+      "sub_cluster_id": "southern_cone",
+      "sub_cluster_label": "Cône Sud"
     },
     {
       "iso3": "CHN",
@@ -520,7 +614,12 @@
       "source_refs": [
         "wvs_wave7_2022",
         "hofstede_2010"
-      ]
+      ],
+      "curated_civilization": "sinic",
+      "curated_role": "core",
+      "curated_civilizations_competing": null,
+      "sub_cluster_id": "mainland_sinic",
+      "sub_cluster_label": "Sinic continental"
     },
     {
       "iso3": "COL",
@@ -571,7 +670,12 @@
       "source_refs": [
         "wvs_wave7_2022",
         "hofstede_2010"
-      ]
+      ],
+      "curated_civilization": "latin_american",
+      "curated_role": "core",
+      "curated_civilizations_competing": null,
+      "sub_cluster_id": "andean",
+      "sub_cluster_label": "Andin"
     },
     {
       "iso3": "DEU",
@@ -622,7 +726,12 @@
       "source_refs": [
         "wvs_wave7_2022",
         "hofstede_2010"
-      ]
+      ],
+      "curated_civilization": "western",
+      "curated_role": "core",
+      "curated_civilizations_competing": null,
+      "sub_cluster_id": "protestant_europe",
+      "sub_cluster_label": "Protestant Europe"
     },
     {
       "iso3": "DNK",
@@ -673,7 +782,12 @@
       "source_refs": [
         "wvs_wave7_2022",
         "hofstede_2010"
-      ]
+      ],
+      "curated_civilization": "western",
+      "curated_role": "core",
+      "curated_civilizations_competing": null,
+      "sub_cluster_id": "protestant_europe",
+      "sub_cluster_label": "Protestant Europe"
     },
     {
       "iso3": "ECU",
@@ -724,7 +838,14 @@
       "source_refs": [
         "wvs_wave7_2022",
         "hofstede_2010"
-      ]
+      ],
+      "curated_civilization": "indigenous",
+      "curated_role": "periphery",
+      "curated_civilizations_competing": [
+        "latin_american"
+      ],
+      "sub_cluster_id": "andean",
+      "sub_cluster_label": "Andin"
     },
     {
       "iso3": "EGY",
@@ -775,7 +896,12 @@
       "source_refs": [
         "wvs_wave7_2022",
         "hofstede_2010"
-      ]
+      ],
+      "curated_civilization": "islamic",
+      "curated_role": "core",
+      "curated_civilizations_competing": null,
+      "sub_cluster_id": "arab_islamic",
+      "sub_cluster_label": "Islam arabe"
     },
     {
       "iso3": "ESP",
@@ -826,7 +952,12 @@
       "source_refs": [
         "wvs_wave7_2022",
         "hofstede_2010"
-      ]
+      ],
+      "curated_civilization": "western",
+      "curated_role": "core",
+      "curated_civilizations_competing": null,
+      "sub_cluster_id": "catholic_europe",
+      "sub_cluster_label": "Catholic Europe"
     },
     {
       "iso3": "ETH",
@@ -877,7 +1008,15 @@
       "source_refs": [
         "wvs_wave7_2022",
         "hofstede_2010"
-      ]
+      ],
+      "curated_civilization": "african",
+      "curated_role": "core",
+      "curated_civilizations_competing": [
+        "african",
+        "orthodox"
+      ],
+      "sub_cluster_id": "east_africa",
+      "sub_cluster_label": "Afrique de l'Est"
     },
     {
       "iso3": "FIN",
@@ -928,7 +1067,12 @@
       "source_refs": [
         "wvs_wave7_2022",
         "hofstede_2010"
-      ]
+      ],
+      "curated_civilization": "western",
+      "curated_role": "core",
+      "curated_civilizations_competing": null,
+      "sub_cluster_id": "protestant_europe",
+      "sub_cluster_label": "Protestant Europe"
     },
     {
       "iso3": "FJI",
@@ -979,7 +1123,12 @@
       "source_refs": [
         "wvs_wave7_2022",
         "hofstede_2010"
-      ]
+      ],
+      "curated_civilization": "oceanian",
+      "curated_role": "core",
+      "curated_civilizations_competing": null,
+      "sub_cluster_id": "melanesia",
+      "sub_cluster_label": "Mélanésie"
     },
     {
       "iso3": "FRA",
@@ -1030,7 +1179,12 @@
       "source_refs": [
         "wvs_wave7_2022",
         "hofstede_2010"
-      ]
+      ],
+      "curated_civilization": "western",
+      "curated_role": "core",
+      "curated_civilizations_competing": null,
+      "sub_cluster_id": "catholic_europe",
+      "sub_cluster_label": "Catholic Europe"
     },
     {
       "iso3": "GBR",
@@ -1081,7 +1235,12 @@
       "source_refs": [
         "wvs_wave7_2022",
         "hofstede_2010"
-      ]
+      ],
+      "curated_civilization": "western",
+      "curated_role": "core",
+      "curated_civilizations_competing": null,
+      "sub_cluster_id": "english_speaking",
+      "sub_cluster_label": "Anglo / English-speaking"
     },
     {
       "iso3": "GHA",
@@ -1132,7 +1291,12 @@
       "source_refs": [
         "wvs_wave7_2022",
         "hofstede_2010"
-      ]
+      ],
+      "curated_civilization": "african",
+      "curated_role": "core",
+      "curated_civilizations_competing": null,
+      "sub_cluster_id": "west_africa",
+      "sub_cluster_label": "Afrique de l'Ouest"
     },
     {
       "iso3": "GRC",
@@ -1183,7 +1347,15 @@
       "source_refs": [
         "wvs_wave7_2022",
         "hofstede_2010"
-      ]
+      ],
+      "curated_civilization": "orthodox",
+      "curated_role": "core",
+      "curated_civilizations_competing": [
+        "orthodox",
+        "western"
+      ],
+      "sub_cluster_id": "balkan_orthodox",
+      "sub_cluster_label": "Orthodoxe balkanique"
     },
     {
       "iso3": "GTM",
@@ -1234,7 +1406,14 @@
       "source_refs": [
         "wvs_wave7_2022",
         "hofstede_2010"
-      ]
+      ],
+      "curated_civilization": "latin_american",
+      "curated_role": "core",
+      "curated_civilizations_competing": [
+        "indigenous"
+      ],
+      "sub_cluster_id": "mexican_central_american",
+      "sub_cluster_label": "Mexique / Amérique centrale"
     },
     {
       "iso3": "HKG",
@@ -1285,7 +1464,12 @@
       "source_refs": [
         "wvs_wave7_2022",
         "hofstede_2010"
-      ]
+      ],
+      "curated_civilization": "sinic",
+      "curated_role": "core",
+      "curated_civilizations_competing": null,
+      "sub_cluster_id": "insular_sinic",
+      "sub_cluster_label": "Sinic insulaire / diasporique"
     },
     {
       "iso3": "IDN",
@@ -1336,7 +1520,12 @@
       "source_refs": [
         "wvs_wave7_2022",
         "hofstede_2010"
-      ]
+      ],
+      "curated_civilization": "islamic",
+      "curated_role": "core",
+      "curated_civilizations_competing": null,
+      "sub_cluster_id": "southeast_asian_islamic",
+      "sub_cluster_label": "Islam sud-est asiatique"
     },
     {
       "iso3": "IND",
@@ -1387,7 +1576,12 @@
       "source_refs": [
         "wvs_wave7_2022",
         "hofstede_2010"
-      ]
+      ],
+      "curated_civilization": "hindic",
+      "curated_role": "core",
+      "curated_civilizations_competing": null,
+      "sub_cluster_id": "indian_subcontinent_hindu",
+      "sub_cluster_label": "Sous-continent indien hindou"
     },
     {
       "iso3": "IRL",
@@ -1438,7 +1632,12 @@
       "source_refs": [
         "wvs_wave7_2022",
         "hofstede_2010"
-      ]
+      ],
+      "curated_civilization": "western",
+      "curated_role": "core",
+      "curated_civilizations_competing": null,
+      "sub_cluster_id": "english_speaking",
+      "sub_cluster_label": "Anglo / English-speaking"
     },
     {
       "iso3": "IRN",
@@ -1489,7 +1688,12 @@
       "source_refs": [
         "wvs_wave7_2022",
         "hofstede_2010"
-      ]
+      ],
+      "curated_civilization": "islamic",
+      "curated_role": "core",
+      "curated_civilizations_competing": null,
+      "sub_cluster_id": "turco_iranian",
+      "sub_cluster_label": "Turco-iranien"
     },
     {
       "iso3": "IRQ",
@@ -1540,7 +1744,59 @@
       "source_refs": [
         "wvs_wave7_2022",
         "hofstede_2010"
-      ]
+      ],
+      "curated_civilization": "islamic",
+      "curated_role": "core",
+      "curated_civilizations_competing": null,
+      "sub_cluster_id": "arab_islamic",
+      "sub_cluster_label": "Islam arabe"
+    },
+    {
+      "iso3": "ISR",
+      "label": null,
+      "x_viz": [
+        null,
+        null
+      ],
+      "x_viz_ellipse": null,
+      "x_score": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "affinity_vector": {
+        "western": 0.09090909090909091,
+        "orthodox": 0.09090909090909091,
+        "islamic": 0.09090909090909091,
+        "sinic": 0.09090909090909091,
+        "hindic": 0.09090909090909091,
+        "japanese": 0.09090909090909091,
+        "buddhist": 0.09090909090909091,
+        "latin_american": 0.09090909090909091,
+        "african": 0.09090909090909091,
+        "indigenous": 0.09090909090909091,
+        "oceanian": 0.09090909090909091
+      },
+      "data_quality": {
+        "iw_coverage": "missing",
+        "hofstede_coverage": "missing",
+        "low_evidence": true
+      },
+      "source_refs": [
+        "wvs_wave7_2022",
+        "hofstede_2010"
+      ],
+      "curated_civilization": null,
+      "curated_role": "ambiguous",
+      "curated_civilizations_competing": [
+        "western",
+        "islamic"
+      ],
+      "sub_cluster_id": null,
+      "sub_cluster_label": null
     },
     {
       "iso3": "ITA",
@@ -1591,7 +1847,12 @@
       "source_refs": [
         "wvs_wave7_2022",
         "hofstede_2010"
-      ]
+      ],
+      "curated_civilization": "western",
+      "curated_role": "core",
+      "curated_civilizations_competing": null,
+      "sub_cluster_id": "catholic_europe",
+      "sub_cluster_label": "Catholic Europe"
     },
     {
       "iso3": "JOR",
@@ -1642,7 +1903,12 @@
       "source_refs": [
         "wvs_wave7_2022",
         "hofstede_2010"
-      ]
+      ],
+      "curated_civilization": "islamic",
+      "curated_role": "core",
+      "curated_civilizations_competing": null,
+      "sub_cluster_id": "arab_islamic",
+      "sub_cluster_label": "Islam arabe"
     },
     {
       "iso3": "JPN",
@@ -1693,7 +1959,12 @@
       "source_refs": [
         "wvs_wave7_2022",
         "hofstede_2010"
-      ]
+      ],
+      "curated_civilization": "japanese",
+      "curated_role": "core",
+      "curated_civilizations_competing": null,
+      "sub_cluster_id": null,
+      "sub_cluster_label": null
     },
     {
       "iso3": "KEN",
@@ -1744,7 +2015,56 @@
       "source_refs": [
         "wvs_wave7_2022",
         "hofstede_2010"
-      ]
+      ],
+      "curated_civilization": "african",
+      "curated_role": "core",
+      "curated_civilizations_competing": null,
+      "sub_cluster_id": "east_africa",
+      "sub_cluster_label": "Afrique de l'Est"
+    },
+    {
+      "iso3": "KHM",
+      "label": null,
+      "x_viz": [
+        null,
+        null
+      ],
+      "x_viz_ellipse": null,
+      "x_score": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "affinity_vector": {
+        "western": 0.09090909090909091,
+        "orthodox": 0.09090909090909091,
+        "islamic": 0.09090909090909091,
+        "sinic": 0.09090909090909091,
+        "hindic": 0.09090909090909091,
+        "japanese": 0.09090909090909091,
+        "buddhist": 0.09090909090909091,
+        "latin_american": 0.09090909090909091,
+        "african": 0.09090909090909091,
+        "indigenous": 0.09090909090909091,
+        "oceanian": 0.09090909090909091
+      },
+      "data_quality": {
+        "iw_coverage": "missing",
+        "hofstede_coverage": "missing",
+        "low_evidence": true
+      },
+      "source_refs": [
+        "wvs_wave7_2022",
+        "hofstede_2010"
+      ],
+      "curated_civilization": "buddhist",
+      "curated_role": "core",
+      "curated_civilizations_competing": null,
+      "sub_cluster_id": "theravada",
+      "sub_cluster_label": "Theravada"
     },
     {
       "iso3": "KOR",
@@ -1795,7 +2115,107 @@
       "source_refs": [
         "wvs_wave7_2022",
         "hofstede_2010"
-      ]
+      ],
+      "curated_civilization": null,
+      "curated_role": "ambiguous",
+      "curated_civilizations_competing": [
+        "sinic",
+        "buddhist",
+        "japanese"
+      ],
+      "sub_cluster_id": "mahayana",
+      "sub_cluster_label": "Mahayana"
+    },
+    {
+      "iso3": "LAO",
+      "label": null,
+      "x_viz": [
+        null,
+        null
+      ],
+      "x_viz_ellipse": null,
+      "x_score": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "affinity_vector": {
+        "western": 0.09090909090909091,
+        "orthodox": 0.09090909090909091,
+        "islamic": 0.09090909090909091,
+        "sinic": 0.09090909090909091,
+        "hindic": 0.09090909090909091,
+        "japanese": 0.09090909090909091,
+        "buddhist": 0.09090909090909091,
+        "latin_american": 0.09090909090909091,
+        "african": 0.09090909090909091,
+        "indigenous": 0.09090909090909091,
+        "oceanian": 0.09090909090909091
+      },
+      "data_quality": {
+        "iw_coverage": "missing",
+        "hofstede_coverage": "missing",
+        "low_evidence": true
+      },
+      "source_refs": [
+        "wvs_wave7_2022",
+        "hofstede_2010"
+      ],
+      "curated_civilization": "buddhist",
+      "curated_role": "core",
+      "curated_civilizations_competing": null,
+      "sub_cluster_id": "theravada",
+      "sub_cluster_label": "Theravada"
+    },
+    {
+      "iso3": "LKA",
+      "label": null,
+      "x_viz": [
+        null,
+        null
+      ],
+      "x_viz_ellipse": null,
+      "x_score": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "affinity_vector": {
+        "western": 0.09090909090909091,
+        "orthodox": 0.09090909090909091,
+        "islamic": 0.09090909090909091,
+        "sinic": 0.09090909090909091,
+        "hindic": 0.09090909090909091,
+        "japanese": 0.09090909090909091,
+        "buddhist": 0.09090909090909091,
+        "latin_american": 0.09090909090909091,
+        "african": 0.09090909090909091,
+        "indigenous": 0.09090909090909091,
+        "oceanian": 0.09090909090909091
+      },
+      "data_quality": {
+        "iw_coverage": "missing",
+        "hofstede_coverage": "missing",
+        "low_evidence": true
+      },
+      "source_refs": [
+        "wvs_wave7_2022",
+        "hofstede_2010"
+      ],
+      "curated_civilization": "hindic",
+      "curated_role": "periphery",
+      "curated_civilizations_competing": [
+        "hindic",
+        "buddhist"
+      ],
+      "sub_cluster_id": "indian_subcontinent_hindu",
+      "sub_cluster_label": "Sous-continent indien hindou"
     },
     {
       "iso3": "MAR",
@@ -1846,7 +2266,12 @@
       "source_refs": [
         "wvs_wave7_2022",
         "hofstede_2010"
-      ]
+      ],
+      "curated_civilization": "islamic",
+      "curated_role": "core",
+      "curated_civilizations_competing": null,
+      "sub_cluster_id": "arab_islamic",
+      "sub_cluster_label": "Islam arabe"
     },
     {
       "iso3": "MEX",
@@ -1897,7 +2322,15 @@
       "source_refs": [
         "wvs_wave7_2022",
         "hofstede_2010"
-      ]
+      ],
+      "curated_civilization": "latin_american",
+      "curated_role": "core",
+      "curated_civilizations_competing": [
+        "western",
+        "latin_american"
+      ],
+      "sub_cluster_id": "mexican_central_american",
+      "sub_cluster_label": "Mexique / Amérique centrale"
     },
     {
       "iso3": "MMR",
@@ -1948,7 +2381,12 @@
       "source_refs": [
         "wvs_wave7_2022",
         "hofstede_2010"
-      ]
+      ],
+      "curated_civilization": "buddhist",
+      "curated_role": "core",
+      "curated_civilizations_competing": null,
+      "sub_cluster_id": "theravada",
+      "sub_cluster_label": "Theravada"
     },
     {
       "iso3": "MNG",
@@ -1999,7 +2437,56 @@
       "source_refs": [
         "wvs_wave7_2022",
         "hofstede_2010"
-      ]
+      ],
+      "curated_civilization": "buddhist",
+      "curated_role": "core",
+      "curated_civilizations_competing": null,
+      "sub_cluster_id": "mahayana",
+      "sub_cluster_label": "Mahayana"
+    },
+    {
+      "iso3": "MUS",
+      "label": null,
+      "x_viz": [
+        null,
+        null
+      ],
+      "x_viz_ellipse": null,
+      "x_score": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "affinity_vector": {
+        "western": 0.09090909090909091,
+        "orthodox": 0.09090909090909091,
+        "islamic": 0.09090909090909091,
+        "sinic": 0.09090909090909091,
+        "hindic": 0.09090909090909091,
+        "japanese": 0.09090909090909091,
+        "buddhist": 0.09090909090909091,
+        "latin_american": 0.09090909090909091,
+        "african": 0.09090909090909091,
+        "indigenous": 0.09090909090909091,
+        "oceanian": 0.09090909090909091
+      },
+      "data_quality": {
+        "iw_coverage": "missing",
+        "hofstede_coverage": "missing",
+        "low_evidence": true
+      },
+      "source_refs": [
+        "wvs_wave7_2022",
+        "hofstede_2010"
+      ],
+      "curated_civilization": "hindic",
+      "curated_role": "periphery",
+      "curated_civilizations_competing": null,
+      "sub_cluster_id": null,
+      "sub_cluster_label": null
     },
     {
       "iso3": "MYS",
@@ -2050,7 +2537,12 @@
       "source_refs": [
         "wvs_wave7_2022",
         "hofstede_2010"
-      ]
+      ],
+      "curated_civilization": "islamic",
+      "curated_role": "core",
+      "curated_civilizations_competing": null,
+      "sub_cluster_id": "southeast_asian_islamic",
+      "sub_cluster_label": "Islam sud-est asiatique"
     },
     {
       "iso3": "NGA",
@@ -2101,7 +2593,12 @@
       "source_refs": [
         "wvs_wave7_2022",
         "hofstede_2010"
-      ]
+      ],
+      "curated_civilization": "african",
+      "curated_role": "core",
+      "curated_civilizations_competing": null,
+      "sub_cluster_id": "west_africa",
+      "sub_cluster_label": "Afrique de l'Ouest"
     },
     {
       "iso3": "NLD",
@@ -2152,7 +2649,12 @@
       "source_refs": [
         "wvs_wave7_2022",
         "hofstede_2010"
-      ]
+      ],
+      "curated_civilization": "western",
+      "curated_role": "core",
+      "curated_civilizations_competing": null,
+      "sub_cluster_id": "protestant_europe",
+      "sub_cluster_label": "Protestant Europe"
     },
     {
       "iso3": "NOR",
@@ -2203,7 +2705,56 @@
       "source_refs": [
         "wvs_wave7_2022",
         "hofstede_2010"
-      ]
+      ],
+      "curated_civilization": "western",
+      "curated_role": "core",
+      "curated_civilizations_competing": null,
+      "sub_cluster_id": "protestant_europe",
+      "sub_cluster_label": "Protestant Europe"
+    },
+    {
+      "iso3": "NPL",
+      "label": null,
+      "x_viz": [
+        null,
+        null
+      ],
+      "x_viz_ellipse": null,
+      "x_score": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "affinity_vector": {
+        "western": 0.09090909090909091,
+        "orthodox": 0.09090909090909091,
+        "islamic": 0.09090909090909091,
+        "sinic": 0.09090909090909091,
+        "hindic": 0.09090909090909091,
+        "japanese": 0.09090909090909091,
+        "buddhist": 0.09090909090909091,
+        "latin_american": 0.09090909090909091,
+        "african": 0.09090909090909091,
+        "indigenous": 0.09090909090909091,
+        "oceanian": 0.09090909090909091
+      },
+      "data_quality": {
+        "iw_coverage": "missing",
+        "hofstede_coverage": "missing",
+        "low_evidence": true
+      },
+      "source_refs": [
+        "wvs_wave7_2022",
+        "hofstede_2010"
+      ],
+      "curated_civilization": "hindic",
+      "curated_role": "periphery",
+      "curated_civilizations_competing": null,
+      "sub_cluster_id": "indian_subcontinent_hindu",
+      "sub_cluster_label": "Sous-continent indien hindou"
     },
     {
       "iso3": "NZL",
@@ -2254,7 +2805,15 @@
       "source_refs": [
         "wvs_wave7_2022",
         "hofstede_2010"
-      ]
+      ],
+      "curated_civilization": "oceanian",
+      "curated_role": "core",
+      "curated_civilizations_competing": [
+        "western",
+        "oceanian"
+      ],
+      "sub_cluster_id": "english_speaking",
+      "sub_cluster_label": "Anglo / English-speaking"
     },
     {
       "iso3": "PAK",
@@ -2305,7 +2864,12 @@
       "source_refs": [
         "wvs_wave7_2022",
         "hofstede_2010"
-      ]
+      ],
+      "curated_civilization": "islamic",
+      "curated_role": "core",
+      "curated_civilizations_competing": null,
+      "sub_cluster_id": "south_asian_islamic",
+      "sub_cluster_label": "Islam sud-asiatique"
     },
     {
       "iso3": "PER",
@@ -2356,7 +2920,14 @@
       "source_refs": [
         "wvs_wave7_2022",
         "hofstede_2010"
-      ]
+      ],
+      "curated_civilization": "latin_american",
+      "curated_role": "core",
+      "curated_civilizations_competing": [
+        "indigenous"
+      ],
+      "sub_cluster_id": "andean",
+      "sub_cluster_label": "Andin"
     },
     {
       "iso3": "ROU",
@@ -2407,7 +2978,12 @@
       "source_refs": [
         "wvs_wave7_2022",
         "hofstede_2010"
-      ]
+      ],
+      "curated_civilization": "orthodox",
+      "curated_role": "core",
+      "curated_civilizations_competing": null,
+      "sub_cluster_id": "balkan_orthodox",
+      "sub_cluster_label": "Orthodoxe balkanique"
     },
     {
       "iso3": "RUS",
@@ -2458,7 +3034,12 @@
       "source_refs": [
         "wvs_wave7_2022",
         "hofstede_2010"
-      ]
+      ],
+      "curated_civilization": "orthodox",
+      "curated_role": "core",
+      "curated_civilizations_competing": null,
+      "sub_cluster_id": "slavic_orthodox",
+      "sub_cluster_label": "Orthodoxe slave"
     },
     {
       "iso3": "SAU",
@@ -2497,7 +3078,12 @@
       "source_refs": [
         "wvs_wave7_2022",
         "hofstede_2010"
-      ]
+      ],
+      "curated_civilization": "islamic",
+      "curated_role": "core",
+      "curated_civilizations_competing": null,
+      "sub_cluster_id": "arab_islamic",
+      "sub_cluster_label": "Islam arabe"
     },
     {
       "iso3": "SGP",
@@ -2548,7 +3134,16 @@
       "source_refs": [
         "wvs_wave7_2022",
         "hofstede_2010"
-      ]
+      ],
+      "curated_civilization": "sinic",
+      "curated_role": "core",
+      "curated_civilizations_competing": [
+        "sinic",
+        "islamic",
+        "western"
+      ],
+      "sub_cluster_id": "insular_sinic",
+      "sub_cluster_label": "Sinic insulaire / diasporique"
     },
     {
       "iso3": "SRB",
@@ -2599,7 +3194,12 @@
       "source_refs": [
         "wvs_wave7_2022",
         "hofstede_2010"
-      ]
+      ],
+      "curated_civilization": "orthodox",
+      "curated_role": "core",
+      "curated_civilizations_competing": null,
+      "sub_cluster_id": "slavic_orthodox",
+      "sub_cluster_label": "Orthodoxe slave"
     },
     {
       "iso3": "SWE",
@@ -2650,7 +3250,12 @@
       "source_refs": [
         "wvs_wave7_2022",
         "hofstede_2010"
-      ]
+      ],
+      "curated_civilization": "western",
+      "curated_role": "core",
+      "curated_civilizations_competing": null,
+      "sub_cluster_id": "protestant_europe",
+      "sub_cluster_label": "Protestant Europe"
     },
     {
       "iso3": "THA",
@@ -2701,7 +3306,12 @@
       "source_refs": [
         "wvs_wave7_2022",
         "hofstede_2010"
-      ]
+      ],
+      "curated_civilization": "buddhist",
+      "curated_role": "core",
+      "curated_civilizations_competing": null,
+      "sub_cluster_id": "theravada",
+      "sub_cluster_label": "Theravada"
     },
     {
       "iso3": "TUR",
@@ -2752,7 +3362,15 @@
       "source_refs": [
         "wvs_wave7_2022",
         "hofstede_2010"
-      ]
+      ],
+      "curated_civilization": "islamic",
+      "curated_role": "core",
+      "curated_civilizations_competing": [
+        "islamic",
+        "western"
+      ],
+      "sub_cluster_id": "turco_iranian",
+      "sub_cluster_label": "Turco-iranien"
     },
     {
       "iso3": "TWN",
@@ -2803,7 +3421,12 @@
       "source_refs": [
         "wvs_wave7_2022",
         "hofstede_2010"
-      ]
+      ],
+      "curated_civilization": "sinic",
+      "curated_role": "core",
+      "curated_civilizations_competing": null,
+      "sub_cluster_id": "insular_sinic",
+      "sub_cluster_label": "Sinic insulaire / diasporique"
     },
     {
       "iso3": "UKR",
@@ -2854,7 +3477,15 @@
       "source_refs": [
         "wvs_wave7_2022",
         "hofstede_2010"
-      ]
+      ],
+      "curated_civilization": "orthodox",
+      "curated_role": "core",
+      "curated_civilizations_competing": [
+        "orthodox",
+        "western"
+      ],
+      "sub_cluster_id": "slavic_orthodox",
+      "sub_cluster_label": "Orthodoxe slave"
     },
     {
       "iso3": "URY",
@@ -2905,7 +3536,12 @@
       "source_refs": [
         "wvs_wave7_2022",
         "hofstede_2010"
-      ]
+      ],
+      "curated_civilization": "latin_american",
+      "curated_role": "core",
+      "curated_civilizations_competing": null,
+      "sub_cluster_id": "southern_cone",
+      "sub_cluster_label": "Cône Sud"
     },
     {
       "iso3": "USA",
@@ -2956,7 +3592,12 @@
       "source_refs": [
         "wvs_wave7_2022",
         "hofstede_2010"
-      ]
+      ],
+      "curated_civilization": "western",
+      "curated_role": "core",
+      "curated_civilizations_competing": null,
+      "sub_cluster_id": "english_speaking",
+      "sub_cluster_label": "Anglo / English-speaking"
     },
     {
       "iso3": "VEN",
@@ -3007,7 +3648,12 @@
       "source_refs": [
         "wvs_wave7_2022",
         "hofstede_2010"
-      ]
+      ],
+      "curated_civilization": "latin_american",
+      "curated_role": "core",
+      "curated_civilizations_competing": null,
+      "sub_cluster_id": "brazil_caribbean",
+      "sub_cluster_label": "Brésil + Caraïbes"
     },
     {
       "iso3": "VNM",
@@ -3058,7 +3704,15 @@
       "source_refs": [
         "wvs_wave7_2022",
         "hofstede_2010"
-      ]
+      ],
+      "curated_civilization": "sinic",
+      "curated_role": "core",
+      "curated_civilizations_competing": [
+        "sinic",
+        "buddhist"
+      ],
+      "sub_cluster_id": "mainland_sinic",
+      "sub_cluster_label": "Sinic continental"
     },
     {
       "iso3": "ZAF",
@@ -3109,7 +3763,15 @@
       "source_refs": [
         "wvs_wave7_2022",
         "hofstede_2010"
-      ]
+      ],
+      "curated_civilization": "african",
+      "curated_role": "core",
+      "curated_civilizations_competing": [
+        "african",
+        "western"
+      ],
+      "sub_cluster_id": "southern_africa",
+      "sub_cluster_label": "Afrique australe"
     },
     {
       "iso3": "ZMB",
@@ -3160,7 +3822,12 @@
       "source_refs": [
         "wvs_wave7_2022",
         "hofstede_2010"
-      ]
+      ],
+      "curated_civilization": "african",
+      "curated_role": "periphery",
+      "curated_civilizations_competing": null,
+      "sub_cluster_id": "southern_africa",
+      "sub_cluster_label": "Afrique australe"
     },
     {
       "iso3": "ZWE",
@@ -3211,7 +3878,12 @@
       "source_refs": [
         "wvs_wave7_2022",
         "hofstede_2010"
-      ]
+      ],
+      "curated_civilization": "african",
+      "curated_role": "periphery",
+      "curated_civilizations_competing": null,
+      "sub_cluster_id": "southern_africa",
+      "sub_cluster_label": "Afrique australe"
     }
   ]
 }

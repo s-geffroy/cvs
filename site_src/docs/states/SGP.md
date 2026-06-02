@@ -1,11 +1,12 @@
-# État `SGP` — profil civilisationnel
+# Singapour (`SGP`) — profil civilisationnel
 
 !!! warning "Avertissement éthique"
     Ce profil est inféré à partir de sources publiques agrégées. Il ne doit pas être utilisé pour classer des individus réels.
 
+**Nom (FR)** : Singapour ·
 **ISO3** : `SGP` ·
 **Couverture B_vec** : B_viz + B_score (complet) ·
-**Données géométriques** : (simplification 110m — territoire non rendu)
+**Données géométriques** : Natural Earth
 
 ## Coordonnées B_vec
 
@@ -103,10 +104,18 @@ Cf. [Méthodologie 09 — Second moment civilisationnel](../methodology/09_civil
 
 
 
+## Géométrie
+
+- **Source** : Natural Earth 110m (`ne_110m_admin_0_countries`), domaine public.
+- **Téléchargement** : [`SGP.geojson`](../assets/data/states/SGP.geojson)
+- **Provenance** : `geometry_source = "Natural Earth"` · `contains_gadm_geometry = false`.
+
 
 ## Téléchargements
 
 - [Profil JSON brut (`SGP.profile.json`)](../assets/data/states/SGP.profile.json)
+
+- [Géométrie (`SGP.geojson`)](../assets/data/states/SGP.geojson)
 
 
 ---

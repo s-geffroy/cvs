@@ -49,25 +49,25 @@ Aucun État souverain n'est purement indigène. Présence forte en strate en BOL
 
 ## États membres
 
-| ISO3 | Rôle | Rationale | Citations |
-|---|---|---|---|
+| État | ISO3 | Rôle | Rationale | Citations |
+|---|---|---|---|---|
 
-| `BOL` | core | Bolivie, État plurinational (2009), majorité indigène | smith_2012, un_unpfii |
+| Bolivie | `BOL` | core | Bolivie, État plurinational (2009), majorité indigène | smith_2012, un_unpfii |
 
-| `ECU` | periphery | Équateur, État plurinational (2008), populations kichwa/shuar | smith_2012, un_unpfii |
+| Équateur | `ECU` | periphery | Équateur, État plurinational (2008), populations kichwa/shuar | smith_2012, un_unpfii |
 
-| `GTM` | interface | Guatemala, populations mayas majoritaires dans certaines régions | smith_2012 |
+| Guatemala | `GTM` | interface | Guatemala, populations mayas majoritaires dans certaines régions | smith_2012 |
 
-| `PER` | interface | Pérou, populations quechua-aymara | smith_2012 |
+| Pérou | `PER` | interface | Pérou, populations quechua-aymara | smith_2012 |
 
 
 
 ## Sous-clusters
 
 
-- **Andin indigène** (`andean_indigenous`) — BOL, ECU, PER
+- **Andin indigène** (`andean_indigenous`) — Bolivie (`BOL`), Équateur (`ECU`), Pérou (`PER`)
 
-- **Mésoaméricain indigène** (`mesoamerican_indigenous`) — GTM
+- **Mésoaméricain indigène** (`mesoamerican_indigenous`) — Guatemala (`GTM`)
 
 
 
@@ -75,7 +75,7 @@ Aucun État souverain n'est purement indigène. Présence forte en strate en BOL
 ## Cas ambigus / controverses documentées
 
 
-### `BOL`
+### Bolivie (`BOL`)
 
 - **Civilisations en concurrence** : indigenous, latin_american
 - **Discussion** : État plurinational reconnaît cosmovisions indigènes, mais classification IW/Hofstede agrège l'ensemble.

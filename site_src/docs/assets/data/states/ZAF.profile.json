@@ -47,5 +47,13 @@
   "source_refs": [
     "wvs_wave7_2022",
     "hofstede_2010"
-  ]
+  ],
+  "curated_civilization": "african",
+  "curated_role": "core",
+  "curated_civilizations_competing": [
+    "african",
+    "western"
+  ],
+  "sub_cluster_id": "southern_africa",
+  "sub_cluster_label": "Afrique australe"
 }

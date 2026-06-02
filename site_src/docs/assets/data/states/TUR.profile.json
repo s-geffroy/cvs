@@ -47,5 +47,13 @@
   "source_refs": [
     "wvs_wave7_2022",
     "hofstede_2010"
-  ]
+  ],
+  "curated_civilization": "islamic",
+  "curated_role": "core",
+  "curated_civilizations_competing": [
+    "islamic",
+    "western"
+  ],
+  "sub_cluster_id": "turco_iranian",
+  "sub_cluster_label": "Turco-iranien"
 }

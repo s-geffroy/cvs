@@ -49,23 +49,23 @@ Extension de Huntington. États-membres: Nouvelle-Zélande (ambiguë Western/Oce
 
 ## États membres
 
-| ISO3 | Rôle | Rationale | Citations |
-|---|---|---|---|
+| État | ISO3 | Rôle | Rationale | Citations |
+|---|---|---|---|---|
 
-| `NZL` | core | Nouvelle-Zélande, identité bi-culturelle Pakeha/Maori, partenariat Te Tiriti | hauofa_1994 |
+| Nouvelle-Zélande | `NZL` | core | Nouvelle-Zélande, identité bi-culturelle Pakeha/Maori, partenariat Te Tiriti | hauofa_1994 |
 
-| `FJI` | core | Fidji, mélanésien | hauofa_1994 |
+| Fidji | `FJI` | core | Fidji, mélanésien | hauofa_1994 |
 
-| `AUS` | interface | Australie: cluster Western dominant, composante aborigène minoritaire mais reconnue (Uluru Statement 2017) | hauofa_1994 |
+| Australie | `AUS` | interface | Australie: cluster Western dominant, composante aborigène minoritaire mais reconnue (Uluru Statement 2017) | hauofa_1994 |
 
 
 
 ## Sous-clusters
 
 
-- **Polynésie** (`polynesia`) — NZL
+- **Polynésie** (`polynesia`) — Nouvelle-Zélande (`NZL`)
 
-- **Mélanésie** (`melanesia`) — FJI
+- **Mélanésie** (`melanesia`) — Fidji (`FJI`)
 
 
 
@@ -73,7 +73,7 @@ Extension de Huntington. États-membres: Nouvelle-Zélande (ambiguë Western/Oce
 ## Cas ambigus / controverses documentées
 
 
-### `NZL`
+### Nouvelle-Zélande (`NZL`)
 
 - **Civilisations en concurrence** : western, oceanian
 - **Discussion** : Nouvelle-Zélande: Anglo-celtique majoritaire, mais Te Tiriti o Waitangi (1840) consacre un partenariat avec les Maoris.

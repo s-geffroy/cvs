@@ -240,6 +240,83 @@ def test_phase2_global_state_baseline_geojson_has_natural_earth_provenance(
     assert provenance["geometry_source"] in ALLOWED_GEOMETRY_SOURCES
 
 
+def test_geojson_includes_full_natural_earth_coverage(built_dist: Path) -> None:
+    import json
+
+    if not _phase2_artefact_paths_present():
+        pytest.skip("Phase 2 artefacts not built — skipping")
+    geojson_payload = json.loads(
+        (built_dist / "assets" / "data" / "global_state_baseline.geojson").read_text()
+    )
+    feature_count = geojson_payload["properties"]["feature_count"]
+    iso3_set = {feature["properties"]["iso3"] for feature in geojson_payload["features"]}
+    iso3_excluded = set(geojson_payload["properties"].get("iso3_excluded", []))
+    assert feature_count >= 170, f"expected >=170 features, got {feature_count}"
+    for required_iso3 in ("POL", "PAK", "ZAF", "EGY", "CHE", "PRT", "AUT"):
+        assert required_iso3 in iso3_set, f"{required_iso3} should appear after de-filtering"
+    assert "ATA" not in iso3_set, "Antarctica must be excluded"
+    assert "ATA" in iso3_excluded
+
+
+def test_state_coordinates_curated_membership(built_dist: Path) -> None:
+    import json
+
+    if not _phase2_artefact_paths_present():
+        pytest.skip("Phase 2 artefacts not built — skipping")
+    state_payload = json.loads(
+        (built_dist / "assets" / "data" / "state_coordinates.json").read_text()
+    )
+    states_by_iso3 = {state["iso3"]: state for state in state_payload["states"]}
+    expectations = {
+        "DEU": "western",
+        "ESP": "western",
+        "SAU": "islamic",
+        "MYS": "islamic",
+        "JPN": "japanese",
+        "USA": "western",
+        "CHN": "sinic",
+        "IND": "hindic",
+    }
+    for iso3, expected_civilization in expectations.items():
+        assert iso3 in states_by_iso3, f"{iso3} missing from state_coordinates"
+        assert states_by_iso3[iso3]["curated_civilization"] == expected_civilization, (
+            f"{iso3}: expected curated={expected_civilization}, "
+            f"got {states_by_iso3[iso3].get('curated_civilization')}"
+        )
+
+
+def test_state_coordinates_sub_clusters(built_dist: Path) -> None:
+    import json
+
+    if not _phase2_artefact_paths_present():
+        pytest.skip("Phase 2 artefacts not built — skipping")
+    state_payload = json.loads(
+        (built_dist / "assets" / "data" / "state_coordinates.json").read_text()
+    )
+    states_by_iso3 = {state["iso3"]: state for state in state_payload["states"]}
+    expectations = {
+        "USA": "english_speaking",
+        "DEU": "protestant_europe",
+        "ESP": "catholic_europe",
+        "MYS": "southeast_asian_islamic",
+        "SAU": "arab_islamic",
+    }
+    for iso3, expected_sub_cluster in expectations.items():
+        assert states_by_iso3[iso3]["sub_cluster_id"] == expected_sub_cluster, (
+            f"{iso3}: expected sub_cluster={expected_sub_cluster}, "
+            f"got {states_by_iso3[iso3].get('sub_cluster_id')}"
+        )
+
+
+def test_map_page_has_mode_toggle(built_dist: Path) -> None:
+    if not _phase2_artefact_paths_present():
+        pytest.skip("Phase 2 artefacts not built — skipping")
+    map_html = (built_dist / "map" / "index.html").read_text()
+    assert 'id="civvec-map-mode"' in map_html
+    assert 'value="macro"' in map_html
+    assert 'value="sub"' in map_html
+
+
 def test_phase2_per_state_geojson_files_all_natural_earth(built_dist: Path) -> None:
     import json
 

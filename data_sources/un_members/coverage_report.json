@@ -1,0 +1,1938 @@
+{
+  "_meta": {
+    "total_un_members": 193,
+    "schema_version": "1.0.0"
+  },
+  "records": [
+    {
+      "iso3": "AFG",
+      "name_fr": "Afghanistan",
+      "in_geojson": true,
+      "hofstede_coverage": "missing",
+      "iw_coverage": "missing",
+      "curated_civilization": null,
+      "curated_role": null,
+      "sub_cluster_id": null
+    },
+    {
+      "iso3": "AGO",
+      "name_fr": "Angola",
+      "in_geojson": true,
+      "hofstede_coverage": "missing",
+      "iw_coverage": "missing",
+      "curated_civilization": null,
+      "curated_role": null,
+      "sub_cluster_id": null
+    },
+    {
+      "iso3": "ALB",
+      "name_fr": "Albanie",
+      "in_geojson": true,
+      "hofstede_coverage": "missing",
+      "iw_coverage": "missing",
+      "curated_civilization": null,
+      "curated_role": null,
+      "sub_cluster_id": null
+    },
+    {
+      "iso3": "AND",
+      "name_fr": "Andorre",
+      "in_geojson": true,
+      "hofstede_coverage": "missing",
+      "iw_coverage": "missing",
+      "curated_civilization": null,
+      "curated_role": null,
+      "sub_cluster_id": null
+    },
+    {
+      "iso3": "ARE",
+      "name_fr": "Émirats arabes unis",
+      "in_geojson": true,
+      "hofstede_coverage": "missing",
+      "iw_coverage": "missing",
+      "curated_civilization": null,
+      "curated_role": null,
+      "sub_cluster_id": null
+    },
+    {
+      "iso3": "ARG",
+      "name_fr": "Argentine",
+      "in_geojson": true,
+      "hofstede_coverage": "present",
+      "iw_coverage": "present",
+      "curated_civilization": "latin_american",
+      "curated_role": "core",
+      "sub_cluster_id": "southern_cone"
+    },
+    {
+      "iso3": "ARM",
+      "name_fr": "Arménie",
+      "in_geojson": true,
+      "hofstede_coverage": "missing",
+      "iw_coverage": "missing",
+      "curated_civilization": null,
+      "curated_role": null,
+      "sub_cluster_id": null
+    },
+    {
+      "iso3": "ATG",
+      "name_fr": "Antigua-et-Barbuda",
+      "in_geojson": true,
+      "hofstede_coverage": "missing",
+      "iw_coverage": "missing",
+      "curated_civilization": null,
+      "curated_role": null,
+      "sub_cluster_id": null
+    },
+    {
+      "iso3": "AUS",
+      "name_fr": "Australie",
+      "in_geojson": true,
+      "hofstede_coverage": "present",
+      "iw_coverage": "present",
+      "curated_civilization": "western",
+      "curated_role": "core",
+      "sub_cluster_id": "english_speaking"
+    },
+    {
+      "iso3": "AUT",
+      "name_fr": "Autriche",
+      "in_geojson": true,
+      "hofstede_coverage": "missing",
+      "iw_coverage": "missing",
+      "curated_civilization": null,
+      "curated_role": null,
+      "sub_cluster_id": null
+    },
+    {
+      "iso3": "AZE",
+      "name_fr": "Azerbaïdjan",
+      "in_geojson": true,
+      "hofstede_coverage": "missing",
+      "iw_coverage": "missing",
+      "curated_civilization": null,
+      "curated_role": null,
+      "sub_cluster_id": null
+    },
+    {
+      "iso3": "BDI",
+      "name_fr": "Burundi",
+      "in_geojson": true,
+      "hofstede_coverage": "missing",
+      "iw_coverage": "missing",
+      "curated_civilization": null,
+      "curated_role": null,
+      "sub_cluster_id": null
+    },
+    {
+      "iso3": "BEL",
+      "name_fr": "Belgique",
+      "in_geojson": true,
+      "hofstede_coverage": "missing",
+      "iw_coverage": "missing",
+      "curated_civilization": null,
+      "curated_role": null,
+      "sub_cluster_id": null
+    },
+    {
+      "iso3": "BEN",
+      "name_fr": "Bénin",
+      "in_geojson": true,
+      "hofstede_coverage": "missing",
+      "iw_coverage": "missing",
+      "curated_civilization": null,
+      "curated_role": null,
+      "sub_cluster_id": null
+    },
+    {
+      "iso3": "BFA",
+      "name_fr": "Burkina Faso",
+      "in_geojson": true,
+      "hofstede_coverage": "missing",
+      "iw_coverage": "missing",
+      "curated_civilization": null,
+      "curated_role": null,
+      "sub_cluster_id": null
+    },
+    {
+      "iso3": "BGD",
+      "name_fr": "Bangladesh",
+      "in_geojson": true,
+      "hofstede_coverage": "present",
+      "iw_coverage": "present",
+      "curated_civilization": "islamic",
+      "curated_role": "core",
+      "sub_cluster_id": "south_asian_islamic"
+    },
+    {
+      "iso3": "BGR",
+      "name_fr": "Bulgarie",
+      "in_geojson": true,
+      "hofstede_coverage": "present",
+      "iw_coverage": "present",
+      "curated_civilization": "orthodox",
+      "curated_role": "core",
+      "sub_cluster_id": "balkan_orthodox"
+    },
+    {
+      "iso3": "BHR",
+      "name_fr": "Bahreïn",
+      "in_geojson": true,
+      "hofstede_coverage": "missing",
+      "iw_coverage": "missing",
+      "curated_civilization": null,
+      "curated_role": null,
+      "sub_cluster_id": null
+    },
+    {
+      "iso3": "BHS",
+      "name_fr": "Bahamas",
+      "in_geojson": true,
+      "hofstede_coverage": "missing",
+      "iw_coverage": "missing",
+      "curated_civilization": null,
+      "curated_role": null,
+      "sub_cluster_id": null
+    },
+    {
+      "iso3": "BIH",
+      "name_fr": "Bosnie-Herzégovine",
+      "in_geojson": true,
+      "hofstede_coverage": "missing",
+      "iw_coverage": "missing",
+      "curated_civilization": null,
+      "curated_role": null,
+      "sub_cluster_id": null
+    },
+    {
+      "iso3": "BLR",
+      "name_fr": "Bélarus",
+      "in_geojson": true,
+      "hofstede_coverage": "present",
+      "iw_coverage": "present",
+      "curated_civilization": "orthodox",
+      "curated_role": "core",
+      "sub_cluster_id": "slavic_orthodox"
+    },
+    {
+      "iso3": "BLZ",
+      "name_fr": "Belize",
+      "in_geojson": true,
+      "hofstede_coverage": "missing",
+      "iw_coverage": "missing",
+      "curated_civilization": null,
+      "curated_role": null,
+      "sub_cluster_id": null
+    },
+    {
+      "iso3": "BOL",
+      "name_fr": "Bolivie",
+      "in_geojson": true,
+      "hofstede_coverage": "imputed",
+      "iw_coverage": "present",
+      "curated_civilization": "indigenous",
+      "curated_role": "core",
+      "sub_cluster_id": "andean"
+    },
+    {
+      "iso3": "BRA",
+      "name_fr": "Brésil",
+      "in_geojson": true,
+      "hofstede_coverage": "present",
+      "iw_coverage": "present",
+      "curated_civilization": "latin_american",
+      "curated_role": "core",
+      "sub_cluster_id": "brazil_caribbean"
+    },
+    {
+      "iso3": "BRB",
+      "name_fr": "Barbade",
+      "in_geojson": true,
+      "hofstede_coverage": "missing",
+      "iw_coverage": "missing",
+      "curated_civilization": null,
+      "curated_role": null,
+      "sub_cluster_id": null
+    },
+    {
+      "iso3": "BRN",
+      "name_fr": "Brunéi Darussalam",
+      "in_geojson": true,
+      "hofstede_coverage": "missing",
+      "iw_coverage": "missing",
+      "curated_civilization": null,
+      "curated_role": null,
+      "sub_cluster_id": null
+    },
+    {
+      "iso3": "BTN",
+      "name_fr": "Bhoutan",
+      "in_geojson": true,
+      "hofstede_coverage": "missing",
+      "iw_coverage": "missing",
+      "curated_civilization": "buddhist",
+      "curated_role": "core",
+      "sub_cluster_id": "mahayana"
+    },
+    {
+      "iso3": "BWA",
+      "name_fr": "Botswana",
+      "in_geojson": true,
+      "hofstede_coverage": "missing",
+      "iw_coverage": "missing",
+      "curated_civilization": null,
+      "curated_role": null,
+      "sub_cluster_id": null
+    },
+    {
+      "iso3": "CAF",
+      "name_fr": "République centrafricaine",
+      "in_geojson": true,
+      "hofstede_coverage": "missing",
+      "iw_coverage": "missing",
+      "curated_civilization": null,
+      "curated_role": null,
+      "sub_cluster_id": null
+    },
+    {
+      "iso3": "CAN",
+      "name_fr": "Canada",
+      "in_geojson": true,
+      "hofstede_coverage": "present",
+      "iw_coverage": "present",
+      "curated_civilization": "western",
+      "curated_role": "core",
+      "sub_cluster_id": "english_speaking"
+    },
+    {
+      "iso3": "CHE",
+      "name_fr": "Suisse",
+      "in_geojson": true,
+      "hofstede_coverage": "missing",
+      "iw_coverage": "missing",
+      "curated_civilization": null,
+      "curated_role": null,
+      "sub_cluster_id": null
+    },
+    {
+      "iso3": "CHL",
+      "name_fr": "Chili",
+      "in_geojson": true,
+      "hofstede_coverage": "present",
+      "iw_coverage": "present",
+      "curated_civilization": "latin_american",
+      "curated_role": "core",
+      "sub_cluster_id": "southern_cone"
+    },
+    {
+      "iso3": "CHN",
+      "name_fr": "Chine",
+      "in_geojson": true,
+      "hofstede_coverage": "present",
+      "iw_coverage": "present",
+      "curated_civilization": "sinic",
+      "curated_role": "core",
+      "sub_cluster_id": "mainland_sinic"
+    },
+    {
+      "iso3": "CIV",
+      "name_fr": "Côte d'Ivoire",
+      "in_geojson": true,
+      "hofstede_coverage": "missing",
+      "iw_coverage": "missing",
+      "curated_civilization": null,
+      "curated_role": null,
+      "sub_cluster_id": null
+    },
+    {
+      "iso3": "CMR",
+      "name_fr": "Cameroun",
+      "in_geojson": true,
+      "hofstede_coverage": "missing",
+      "iw_coverage": "missing",
+      "curated_civilization": null,
+      "curated_role": null,
+      "sub_cluster_id": null
+    },
+    {
+      "iso3": "COD",
+      "name_fr": "République démocratique du Congo",
+      "in_geojson": true,
+      "hofstede_coverage": "missing",
+      "iw_coverage": "missing",
+      "curated_civilization": null,
+      "curated_role": null,
+      "sub_cluster_id": null
+    },
+    {
+      "iso3": "COG",
+      "name_fr": "Congo",
+      "in_geojson": true,
+      "hofstede_coverage": "missing",
+      "iw_coverage": "missing",
+      "curated_civilization": null,
+      "curated_role": null,
+      "sub_cluster_id": null
+    },
+    {
+      "iso3": "COL",
+      "name_fr": "Colombie",
+      "in_geojson": true,
+      "hofstede_coverage": "present",
+      "iw_coverage": "present",
+      "curated_civilization": "latin_american",
+      "curated_role": "core",
+      "sub_cluster_id": "andean"
+    },
+    {
+      "iso3": "COM",
+      "name_fr": "Comores",
+      "in_geojson": true,
+      "hofstede_coverage": "missing",
+      "iw_coverage": "missing",
+      "curated_civilization": null,
+      "curated_role": null,
+      "sub_cluster_id": null
+    },
+    {
+      "iso3": "CPV",
+      "name_fr": "Cabo Verde",
+      "in_geojson": true,
+      "hofstede_coverage": "missing",
+      "iw_coverage": "missing",
+      "curated_civilization": null,
+      "curated_role": null,
+      "sub_cluster_id": null
+    },
+    {
+      "iso3": "CRI",
+      "name_fr": "Costa Rica",
+      "in_geojson": true,
+      "hofstede_coverage": "missing",
+      "iw_coverage": "missing",
+      "curated_civilization": null,
+      "curated_role": null,
+      "sub_cluster_id": null
+    },
+    {
+      "iso3": "CUB",
+      "name_fr": "Cuba",
+      "in_geojson": true,
+      "hofstede_coverage": "missing",
+      "iw_coverage": "missing",
+      "curated_civilization": null,
+      "curated_role": null,
+      "sub_cluster_id": null
+    },
+    {
+      "iso3": "CYP",
+      "name_fr": "Chypre",
+      "in_geojson": true,
+      "hofstede_coverage": "missing",
+      "iw_coverage": "missing",
+      "curated_civilization": null,
+      "curated_role": null,
+      "sub_cluster_id": null
+    },
+    {
+      "iso3": "CZE",
+      "name_fr": "Tchéquie",
+      "in_geojson": true,
+      "hofstede_coverage": "missing",
+      "iw_coverage": "missing",
+      "curated_civilization": null,
+      "curated_role": null,
+      "sub_cluster_id": null
+    },
+    {
+      "iso3": "DEU",
+      "name_fr": "Allemagne",
+      "in_geojson": true,
+      "hofstede_coverage": "present",
+      "iw_coverage": "present",
+      "curated_civilization": "western",
+      "curated_role": "core",
+      "sub_cluster_id": "protestant_europe"
+    },
+    {
+      "iso3": "DJI",
+      "name_fr": "Djibouti",
+      "in_geojson": true,
+      "hofstede_coverage": "missing",
+      "iw_coverage": "missing",
+      "curated_civilization": null,
+      "curated_role": null,
+      "sub_cluster_id": null
+    },
+    {
+      "iso3": "DMA",
+      "name_fr": "Dominique",
+      "in_geojson": true,
+      "hofstede_coverage": "missing",
+      "iw_coverage": "missing",
+      "curated_civilization": null,
+      "curated_role": null,
+      "sub_cluster_id": null
+    },
+    {
+      "iso3": "DNK",
+      "name_fr": "Danemark",
+      "in_geojson": true,
+      "hofstede_coverage": "present",
+      "iw_coverage": "present",
+      "curated_civilization": "western",
+      "curated_role": "core",
+      "sub_cluster_id": "protestant_europe"
+    },
+    {
+      "iso3": "DOM",
+      "name_fr": "République dominicaine",
+      "in_geojson": true,
+      "hofstede_coverage": "missing",
+      "iw_coverage": "missing",
+      "curated_civilization": null,
+      "curated_role": null,
+      "sub_cluster_id": null
+    },
+    {
+      "iso3": "DZA",
+      "name_fr": "Algérie",
+      "in_geojson": true,
+      "hofstede_coverage": "missing",
+      "iw_coverage": "missing",
+      "curated_civilization": null,
+      "curated_role": null,
+      "sub_cluster_id": null
+    },
+    {
+      "iso3": "ECU",
+      "name_fr": "Équateur",
+      "in_geojson": true,
+      "hofstede_coverage": "imputed",
+      "iw_coverage": "present",
+      "curated_civilization": "indigenous",
+      "curated_role": "periphery",
+      "sub_cluster_id": "andean"
+    },
+    {
+      "iso3": "EGY",
+      "name_fr": "Égypte",
+      "in_geojson": true,
+      "hofstede_coverage": "present",
+      "iw_coverage": "present",
+      "curated_civilization": "islamic",
+      "curated_role": "core",
+      "sub_cluster_id": "arab_islamic"
+    },
+    {
+      "iso3": "ERI",
+      "name_fr": "Érythrée",
+      "in_geojson": true,
+      "hofstede_coverage": "missing",
+      "iw_coverage": "missing",
+      "curated_civilization": null,
+      "curated_role": null,
+      "sub_cluster_id": null
+    },
+    {
+      "iso3": "ESP",
+      "name_fr": "Espagne",
+      "in_geojson": true,
+      "hofstede_coverage": "present",
+      "iw_coverage": "present",
+      "curated_civilization": "western",
+      "curated_role": "core",
+      "sub_cluster_id": "catholic_europe"
+    },
+    {
+      "iso3": "EST",
+      "name_fr": "Estonie",
+      "in_geojson": true,
+      "hofstede_coverage": "missing",
+      "iw_coverage": "missing",
+      "curated_civilization": null,
+      "curated_role": null,
+      "sub_cluster_id": null
+    },
+    {
+      "iso3": "ETH",
+      "name_fr": "Éthiopie",
+      "in_geojson": true,
+      "hofstede_coverage": "imputed",
+      "iw_coverage": "present",
+      "curated_civilization": "african",
+      "curated_role": "core",
+      "sub_cluster_id": "east_africa"
+    },
+    {
+      "iso3": "FIN",
+      "name_fr": "Finlande",
+      "in_geojson": true,
+      "hofstede_coverage": "present",
+      "iw_coverage": "present",
+      "curated_civilization": "western",
+      "curated_role": "core",
+      "sub_cluster_id": "protestant_europe"
+    },
+    {
+      "iso3": "FJI",
+      "name_fr": "Fidji",
+      "in_geojson": true,
+      "hofstede_coverage": "imputed",
+      "iw_coverage": "present",
+      "curated_civilization": "oceanian",
+      "curated_role": "core",
+      "sub_cluster_id": "melanesia"
+    },
+    {
+      "iso3": "FRA",
+      "name_fr": "France",
+      "in_geojson": true,
+      "hofstede_coverage": "present",
+      "iw_coverage": "present",
+      "curated_civilization": "western",
+      "curated_role": "core",
+      "sub_cluster_id": "catholic_europe"
+    },
+    {
+      "iso3": "FSM",
+      "name_fr": "Micronésie",
+      "in_geojson": true,
+      "hofstede_coverage": "missing",
+      "iw_coverage": "missing",
+      "curated_civilization": null,
+      "curated_role": null,
+      "sub_cluster_id": null
+    },
+    {
+      "iso3": "GAB",
+      "name_fr": "Gabon",
+      "in_geojson": true,
+      "hofstede_coverage": "missing",
+      "iw_coverage": "missing",
+      "curated_civilization": null,
+      "curated_role": null,
+      "sub_cluster_id": null
+    },
+    {
+      "iso3": "GBR",
+      "name_fr": "Royaume-Uni",
+      "in_geojson": true,
+      "hofstede_coverage": "present",
+      "iw_coverage": "present",
+      "curated_civilization": "western",
+      "curated_role": "core",
+      "sub_cluster_id": "english_speaking"
+    },
+    {
+      "iso3": "GEO",
+      "name_fr": "Géorgie",
+      "in_geojson": true,
+      "hofstede_coverage": "missing",
+      "iw_coverage": "missing",
+      "curated_civilization": null,
+      "curated_role": null,
+      "sub_cluster_id": null
+    },
+    {
+      "iso3": "GHA",
+      "name_fr": "Ghana",
+      "in_geojson": true,
+      "hofstede_coverage": "present",
+      "iw_coverage": "present",
+      "curated_civilization": "african",
+      "curated_role": "core",
+      "sub_cluster_id": "west_africa"
+    },
+    {
+      "iso3": "GIN",
+      "name_fr": "Guinée",
+      "in_geojson": true,
+      "hofstede_coverage": "missing",
+      "iw_coverage": "missing",
+      "curated_civilization": null,
+      "curated_role": null,
+      "sub_cluster_id": null
+    },
+    {
+      "iso3": "GMB",
+      "name_fr": "Gambie",
+      "in_geojson": true,
+      "hofstede_coverage": "missing",
+      "iw_coverage": "missing",
+      "curated_civilization": null,
+      "curated_role": null,
+      "sub_cluster_id": null
+    },
+    {
+      "iso3": "GNB",
+      "name_fr": "Guinée-Bissau",
+      "in_geojson": true,
+      "hofstede_coverage": "missing",
+      "iw_coverage": "missing",
+      "curated_civilization": null,
+      "curated_role": null,
+      "sub_cluster_id": null
+    },
+    {
+      "iso3": "GNQ",
+      "name_fr": "Guinée équatoriale",
+      "in_geojson": true,
+      "hofstede_coverage": "missing",
+      "iw_coverage": "missing",
+      "curated_civilization": null,
+      "curated_role": null,
+      "sub_cluster_id": null
+    },
+    {
+      "iso3": "GRC",
+      "name_fr": "Grèce",
+      "in_geojson": true,
+      "hofstede_coverage": "present",
+      "iw_coverage": "present",
+      "curated_civilization": "orthodox",
+      "curated_role": "core",
+      "sub_cluster_id": "balkan_orthodox"
+    },
+    {
+      "iso3": "GRD",
+      "name_fr": "Grenade",
+      "in_geojson": true,
+      "hofstede_coverage": "missing",
+      "iw_coverage": "missing",
+      "curated_civilization": null,
+      "curated_role": null,
+      "sub_cluster_id": null
+    },
+    {
+      "iso3": "GTM",
+      "name_fr": "Guatemala",
+      "in_geojson": true,
+      "hofstede_coverage": "imputed",
+      "iw_coverage": "present",
+      "curated_civilization": "latin_american",
+      "curated_role": "core",
+      "sub_cluster_id": "mexican_central_american"
+    },
+    {
+      "iso3": "GUY",
+      "name_fr": "Guyana",
+      "in_geojson": true,
+      "hofstede_coverage": "missing",
+      "iw_coverage": "missing",
+      "curated_civilization": null,
+      "curated_role": null,
+      "sub_cluster_id": null
+    },
+    {
+      "iso3": "HND",
+      "name_fr": "Honduras",
+      "in_geojson": true,
+      "hofstede_coverage": "missing",
+      "iw_coverage": "missing",
+      "curated_civilization": null,
+      "curated_role": null,
+      "sub_cluster_id": null
+    },
+    {
+      "iso3": "HRV",
+      "name_fr": "Croatie",
+      "in_geojson": true,
+      "hofstede_coverage": "missing",
+      "iw_coverage": "missing",
+      "curated_civilization": null,
+      "curated_role": null,
+      "sub_cluster_id": null
+    },
+    {
+      "iso3": "HTI",
+      "name_fr": "Haïti",
+      "in_geojson": true,
+      "hofstede_coverage": "missing",
+      "iw_coverage": "missing",
+      "curated_civilization": null,
+      "curated_role": null,
+      "sub_cluster_id": null
+    },
+    {
+      "iso3": "HUN",
+      "name_fr": "Hongrie",
+      "in_geojson": true,
+      "hofstede_coverage": "missing",
+      "iw_coverage": "missing",
+      "curated_civilization": null,
+      "curated_role": null,
+      "sub_cluster_id": null
+    },
+    {
+      "iso3": "IDN",
+      "name_fr": "Indonésie",
+      "in_geojson": true,
+      "hofstede_coverage": "present",
+      "iw_coverage": "present",
+      "curated_civilization": "islamic",
+      "curated_role": "core",
+      "sub_cluster_id": "southeast_asian_islamic"
+    },
+    {
+      "iso3": "IND",
+      "name_fr": "Inde",
+      "in_geojson": true,
+      "hofstede_coverage": "present",
+      "iw_coverage": "present",
+      "curated_civilization": "hindic",
+      "curated_role": "core",
+      "sub_cluster_id": "indian_subcontinent_hindu"
+    },
+    {
+      "iso3": "IRL",
+      "name_fr": "Irlande",
+      "in_geojson": true,
+      "hofstede_coverage": "present",
+      "iw_coverage": "present",
+      "curated_civilization": "western",
+      "curated_role": "core",
+      "sub_cluster_id": "english_speaking"
+    },
+    {
+      "iso3": "IRN",
+      "name_fr": "Iran",
+      "in_geojson": true,
+      "hofstede_coverage": "present",
+      "iw_coverage": "present",
+      "curated_civilization": "islamic",
+      "curated_role": "core",
+      "sub_cluster_id": "turco_iranian"
+    },
+    {
+      "iso3": "IRQ",
+      "name_fr": "Iraq",
+      "in_geojson": true,
+      "hofstede_coverage": "present",
+      "iw_coverage": "present",
+      "curated_civilization": "islamic",
+      "curated_role": "core",
+      "sub_cluster_id": "arab_islamic"
+    },
+    {
+      "iso3": "ISL",
+      "name_fr": "Islande",
+      "in_geojson": true,
+      "hofstede_coverage": "missing",
+      "iw_coverage": "missing",
+      "curated_civilization": null,
+      "curated_role": null,
+      "sub_cluster_id": null
+    },
+    {
+      "iso3": "ISR",
+      "name_fr": "Israël",
+      "in_geojson": true,
+      "hofstede_coverage": "missing",
+      "iw_coverage": "missing",
+      "curated_civilization": null,
+      "curated_role": "ambiguous",
+      "sub_cluster_id": null
+    },
+    {
+      "iso3": "ITA",
+      "name_fr": "Italie",
+      "in_geojson": true,
+      "hofstede_coverage": "present",
+      "iw_coverage": "present",
+      "curated_civilization": "western",
+      "curated_role": "core",
+      "sub_cluster_id": "catholic_europe"
+    },
+    {
+      "iso3": "JAM",
+      "name_fr": "Jamaïque",
+      "in_geojson": true,
+      "hofstede_coverage": "missing",
+      "iw_coverage": "missing",
+      "curated_civilization": null,
+      "curated_role": null,
+      "sub_cluster_id": null
+    },
+    {
+      "iso3": "JOR",
+      "name_fr": "Jordanie",
+      "in_geojson": true,
+      "hofstede_coverage": "present",
+      "iw_coverage": "present",
+      "curated_civilization": "islamic",
+      "curated_role": "core",
+      "sub_cluster_id": "arab_islamic"
+    },
+    {
+      "iso3": "JPN",
+      "name_fr": "Japon",
+      "in_geojson": true,
+      "hofstede_coverage": "present",
+      "iw_coverage": "present",
+      "curated_civilization": "japanese",
+      "curated_role": "core",
+      "sub_cluster_id": null
+    },
+    {
+      "iso3": "KAZ",
+      "name_fr": "Kazakhstan",
+      "in_geojson": true,
+      "hofstede_coverage": "missing",
+      "iw_coverage": "missing",
+      "curated_civilization": null,
+      "curated_role": null,
+      "sub_cluster_id": null
+    },
+    {
+      "iso3": "KEN",
+      "name_fr": "Kenya",
+      "in_geojson": true,
+      "hofstede_coverage": "imputed",
+      "iw_coverage": "present",
+      "curated_civilization": "african",
+      "curated_role": "core",
+      "sub_cluster_id": "east_africa"
+    },
+    {
+      "iso3": "KGZ",
+      "name_fr": "Kirghizistan",
+      "in_geojson": true,
+      "hofstede_coverage": "missing",
+      "iw_coverage": "missing",
+      "curated_civilization": null,
+      "curated_role": null,
+      "sub_cluster_id": null
+    },
+    {
+      "iso3": "KHM",
+      "name_fr": "Cambodge",
+      "in_geojson": true,
+      "hofstede_coverage": "missing",
+      "iw_coverage": "missing",
+      "curated_civilization": "buddhist",
+      "curated_role": "core",
+      "sub_cluster_id": "theravada"
+    },
+    {
+      "iso3": "KIR",
+      "name_fr": "Kiribati",
+      "in_geojson": true,
+      "hofstede_coverage": "missing",
+      "iw_coverage": "missing",
+      "curated_civilization": null,
+      "curated_role": null,
+      "sub_cluster_id": null
+    },
+    {
+      "iso3": "KNA",
+      "name_fr": "Saint-Kitts-et-Nevis",
+      "in_geojson": true,
+      "hofstede_coverage": "missing",
+      "iw_coverage": "missing",
+      "curated_civilization": null,
+      "curated_role": null,
+      "sub_cluster_id": null
+    },
+    {
+      "iso3": "KOR",
+      "name_fr": "Corée du Sud",
+      "in_geojson": true,
+      "hofstede_coverage": "present",
+      "iw_coverage": "present",
+      "curated_civilization": null,
+      "curated_role": "ambiguous",
+      "sub_cluster_id": "mahayana"
+    },
+    {
+      "iso3": "KWT",
+      "name_fr": "Koweït",
+      "in_geojson": true,
+      "hofstede_coverage": "missing",
+      "iw_coverage": "missing",
+      "curated_civilization": null,
+      "curated_role": null,
+      "sub_cluster_id": null
+    },
+    {
+      "iso3": "LAO",
+      "name_fr": "Laos",
+      "in_geojson": true,
+      "hofstede_coverage": "missing",
+      "iw_coverage": "missing",
+      "curated_civilization": "buddhist",
+      "curated_role": "core",
+      "sub_cluster_id": "theravada"
+    },
+    {
+      "iso3": "LBN",
+      "name_fr": "Liban",
+      "in_geojson": true,
+      "hofstede_coverage": "missing",
+      "iw_coverage": "missing",
+      "curated_civilization": null,
+      "curated_role": null,
+      "sub_cluster_id": null
+    },
+    {
+      "iso3": "LBR",
+      "name_fr": "Libéria",
+      "in_geojson": true,
+      "hofstede_coverage": "missing",
+      "iw_coverage": "missing",
+      "curated_civilization": null,
+      "curated_role": null,
+      "sub_cluster_id": null
+    },
+    {
+      "iso3": "LBY",
+      "name_fr": "Libye",
+      "in_geojson": true,
+      "hofstede_coverage": "missing",
+      "iw_coverage": "missing",
+      "curated_civilization": null,
+      "curated_role": null,
+      "sub_cluster_id": null
+    },
+    {
+      "iso3": "LCA",
+      "name_fr": "Sainte-Lucie",
+      "in_geojson": true,
+      "hofstede_coverage": "missing",
+      "iw_coverage": "missing",
+      "curated_civilization": null,
+      "curated_role": null,
+      "sub_cluster_id": null
+    },
+    {
+      "iso3": "LIE",
+      "name_fr": "Liechtenstein",
+      "in_geojson": true,
+      "hofstede_coverage": "missing",
+      "iw_coverage": "missing",
+      "curated_civilization": null,
+      "curated_role": null,
+      "sub_cluster_id": null
+    },
+    {
+      "iso3": "LKA",
+      "name_fr": "Sri Lanka",
+      "in_geojson": true,
+      "hofstede_coverage": "missing",
+      "iw_coverage": "missing",
+      "curated_civilization": "hindic",
+      "curated_role": "periphery",
+      "sub_cluster_id": "indian_subcontinent_hindu"
+    },
+    {
+      "iso3": "LSO",
+      "name_fr": "Lesotho",
+      "in_geojson": true,
+      "hofstede_coverage": "missing",
+      "iw_coverage": "missing",
+      "curated_civilization": null,
+      "curated_role": null,
+      "sub_cluster_id": null
+    },
+    {
+      "iso3": "LTU",
+      "name_fr": "Lituanie",
+      "in_geojson": true,
+      "hofstede_coverage": "missing",
+      "iw_coverage": "missing",
+      "curated_civilization": null,
+      "curated_role": null,
+      "sub_cluster_id": null
+    },
+    {
+      "iso3": "LUX",
+      "name_fr": "Luxembourg",
+      "in_geojson": true,
+      "hofstede_coverage": "missing",
+      "iw_coverage": "missing",
+      "curated_civilization": null,
+      "curated_role": null,
+      "sub_cluster_id": null
+    },
+    {
+      "iso3": "LVA",
+      "name_fr": "Lettonie",
+      "in_geojson": true,
+      "hofstede_coverage": "missing",
+      "iw_coverage": "missing",
+      "curated_civilization": null,
+      "curated_role": null,
+      "sub_cluster_id": null
+    },
+    {
+      "iso3": "MAR",
+      "name_fr": "Maroc",
+      "in_geojson": true,
+      "hofstede_coverage": "present",
+      "iw_coverage": "present",
+      "curated_civilization": "islamic",
+      "curated_role": "core",
+      "sub_cluster_id": "arab_islamic"
+    },
+    {
+      "iso3": "MCO",
+      "name_fr": "Monaco",
+      "in_geojson": true,
+      "hofstede_coverage": "missing",
+      "iw_coverage": "missing",
+      "curated_civilization": null,
+      "curated_role": null,
+      "sub_cluster_id": null
+    },
+    {
+      "iso3": "MDA",
+      "name_fr": "Moldova",
+      "in_geojson": true,
+      "hofstede_coverage": "missing",
+      "iw_coverage": "missing",
+      "curated_civilization": null,
+      "curated_role": null,
+      "sub_cluster_id": null
+    },
+    {
+      "iso3": "MDG",
+      "name_fr": "Madagascar",
+      "in_geojson": true,
+      "hofstede_coverage": "missing",
+      "iw_coverage": "missing",
+      "curated_civilization": null,
+      "curated_role": null,
+      "sub_cluster_id": null
+    },
+    {
+      "iso3": "MDV",
+      "name_fr": "Maldives",
+      "in_geojson": true,
+      "hofstede_coverage": "missing",
+      "iw_coverage": "missing",
+      "curated_civilization": null,
+      "curated_role": null,
+      "sub_cluster_id": null
+    },
+    {
+      "iso3": "MEX",
+      "name_fr": "Mexique",
+      "in_geojson": true,
+      "hofstede_coverage": "present",
+      "iw_coverage": "present",
+      "curated_civilization": "latin_american",
+      "curated_role": "core",
+      "sub_cluster_id": "mexican_central_american"
+    },
+    {
+      "iso3": "MHL",
+      "name_fr": "Îles Marshall",
+      "in_geojson": true,
+      "hofstede_coverage": "missing",
+      "iw_coverage": "missing",
+      "curated_civilization": null,
+      "curated_role": null,
+      "sub_cluster_id": null
+    },
+    {
+      "iso3": "MKD",
+      "name_fr": "Macédoine du Nord",
+      "in_geojson": true,
+      "hofstede_coverage": "missing",
+      "iw_coverage": "missing",
+      "curated_civilization": null,
+      "curated_role": null,
+      "sub_cluster_id": null
+    },
+    {
+      "iso3": "MLI",
+      "name_fr": "Mali",
+      "in_geojson": true,
+      "hofstede_coverage": "missing",
+      "iw_coverage": "missing",
+      "curated_civilization": null,
+      "curated_role": null,
+      "sub_cluster_id": null
+    },
+    {
+      "iso3": "MLT",
+      "name_fr": "Malte",
+      "in_geojson": true,
+      "hofstede_coverage": "missing",
+      "iw_coverage": "missing",
+      "curated_civilization": null,
+      "curated_role": null,
+      "sub_cluster_id": null
+    },
+    {
+      "iso3": "MMR",
+      "name_fr": "Myanmar",
+      "in_geojson": true,
+      "hofstede_coverage": "imputed",
+      "iw_coverage": "present",
+      "curated_civilization": "buddhist",
+      "curated_role": "core",
+      "sub_cluster_id": "theravada"
+    },
+    {
+      "iso3": "MNE",
+      "name_fr": "Monténégro",
+      "in_geojson": true,
+      "hofstede_coverage": "missing",
+      "iw_coverage": "missing",
+      "curated_civilization": null,
+      "curated_role": null,
+      "sub_cluster_id": null
+    },
+    {
+      "iso3": "MNG",
+      "name_fr": "Mongolie",
+      "in_geojson": true,
+      "hofstede_coverage": "present",
+      "iw_coverage": "present",
+      "curated_civilization": "buddhist",
+      "curated_role": "core",
+      "sub_cluster_id": "mahayana"
+    },
+    {
+      "iso3": "MOZ",
+      "name_fr": "Mozambique",
+      "in_geojson": true,
+      "hofstede_coverage": "missing",
+      "iw_coverage": "missing",
+      "curated_civilization": null,
+      "curated_role": null,
+      "sub_cluster_id": null
+    },
+    {
+      "iso3": "MRT",
+      "name_fr": "Mauritanie",
+      "in_geojson": true,
+      "hofstede_coverage": "missing",
+      "iw_coverage": "missing",
+      "curated_civilization": null,
+      "curated_role": null,
+      "sub_cluster_id": null
+    },
+    {
+      "iso3": "MUS",
+      "name_fr": "Maurice",
+      "in_geojson": true,
+      "hofstede_coverage": "missing",
+      "iw_coverage": "missing",
+      "curated_civilization": "hindic",
+      "curated_role": "periphery",
+      "sub_cluster_id": null
+    },
+    {
+      "iso3": "MWI",
+      "name_fr": "Malawi",
+      "in_geojson": true,
+      "hofstede_coverage": "missing",
+      "iw_coverage": "missing",
+      "curated_civilization": null,
+      "curated_role": null,
+      "sub_cluster_id": null
+    },
+    {
+      "iso3": "MYS",
+      "name_fr": "Malaisie",
+      "in_geojson": true,
+      "hofstede_coverage": "present",
+      "iw_coverage": "present",
+      "curated_civilization": "islamic",
+      "curated_role": "core",
+      "sub_cluster_id": "southeast_asian_islamic"
+    },
+    {
+      "iso3": "NAM",
+      "name_fr": "Namibie",
+      "in_geojson": true,
+      "hofstede_coverage": "missing",
+      "iw_coverage": "missing",
+      "curated_civilization": null,
+      "curated_role": null,
+      "sub_cluster_id": null
+    },
+    {
+      "iso3": "NER",
+      "name_fr": "Niger",
+      "in_geojson": true,
+      "hofstede_coverage": "missing",
+      "iw_coverage": "missing",
+      "curated_civilization": null,
+      "curated_role": null,
+      "sub_cluster_id": null
+    },
+    {
+      "iso3": "NGA",
+      "name_fr": "Nigéria",
+      "in_geojson": true,
+      "hofstede_coverage": "present",
+      "iw_coverage": "present",
+      "curated_civilization": "african",
+      "curated_role": "core",
+      "sub_cluster_id": "west_africa"
+    },
+    {
+      "iso3": "NIC",
+      "name_fr": "Nicaragua",
+      "in_geojson": true,
+      "hofstede_coverage": "missing",
+      "iw_coverage": "missing",
+      "curated_civilization": null,
+      "curated_role": null,
+      "sub_cluster_id": null
+    },
+    {
+      "iso3": "NLD",
+      "name_fr": "Pays-Bas",
+      "in_geojson": true,
+      "hofstede_coverage": "present",
+      "iw_coverage": "present",
+      "curated_civilization": "western",
+      "curated_role": "core",
+      "sub_cluster_id": "protestant_europe"
+    },
+    {
+      "iso3": "NOR",
+      "name_fr": "Norvège",
+      "in_geojson": true,
+      "hofstede_coverage": "present",
+      "iw_coverage": "present",
+      "curated_civilization": "western",
+      "curated_role": "core",
+      "sub_cluster_id": "protestant_europe"
+    },
+    {
+      "iso3": "NPL",
+      "name_fr": "Népal",
+      "in_geojson": true,
+      "hofstede_coverage": "missing",
+      "iw_coverage": "missing",
+      "curated_civilization": "hindic",
+      "curated_role": "periphery",
+      "sub_cluster_id": "indian_subcontinent_hindu"
+    },
+    {
+      "iso3": "NRU",
+      "name_fr": "Nauru",
+      "in_geojson": true,
+      "hofstede_coverage": "missing",
+      "iw_coverage": "missing",
+      "curated_civilization": null,
+      "curated_role": null,
+      "sub_cluster_id": null
+    },
+    {
+      "iso3": "NZL",
+      "name_fr": "Nouvelle-Zélande",
+      "in_geojson": true,
+      "hofstede_coverage": "present",
+      "iw_coverage": "present",
+      "curated_civilization": "oceanian",
+      "curated_role": "core",
+      "sub_cluster_id": "english_speaking"
+    },
+    {
+      "iso3": "OMN",
+      "name_fr": "Oman",
+      "in_geojson": true,
+      "hofstede_coverage": "missing",
+      "iw_coverage": "missing",
+      "curated_civilization": null,
+      "curated_role": null,
+      "sub_cluster_id": null
+    },
+    {
+      "iso3": "PAK",
+      "name_fr": "Pakistan",
+      "in_geojson": true,
+      "hofstede_coverage": "present",
+      "iw_coverage": "present",
+      "curated_civilization": "islamic",
+      "curated_role": "core",
+      "sub_cluster_id": "south_asian_islamic"
+    },
+    {
+      "iso3": "PAN",
+      "name_fr": "Panama",
+      "in_geojson": true,
+      "hofstede_coverage": "missing",
+      "iw_coverage": "missing",
+      "curated_civilization": null,
+      "curated_role": null,
+      "sub_cluster_id": null
+    },
+    {
+      "iso3": "PER",
+      "name_fr": "Pérou",
+      "in_geojson": true,
+      "hofstede_coverage": "present",
+      "iw_coverage": "present",
+      "curated_civilization": "latin_american",
+      "curated_role": "core",
+      "sub_cluster_id": "andean"
+    },
+    {
+      "iso3": "PHL",
+      "name_fr": "Philippines",
+      "in_geojson": true,
+      "hofstede_coverage": "missing",
+      "iw_coverage": "missing",
+      "curated_civilization": null,
+      "curated_role": null,
+      "sub_cluster_id": null
+    },
+    {
+      "iso3": "PLW",
+      "name_fr": "Palaos",
+      "in_geojson": true,
+      "hofstede_coverage": "missing",
+      "iw_coverage": "missing",
+      "curated_civilization": null,
+      "curated_role": null,
+      "sub_cluster_id": null
+    },
+    {
+      "iso3": "PNG",
+      "name_fr": "Papouasie-Nouvelle-Guinée",
+      "in_geojson": true,
+      "hofstede_coverage": "missing",
+      "iw_coverage": "missing",
+      "curated_civilization": null,
+      "curated_role": null,
+      "sub_cluster_id": null
+    },
+    {
+      "iso3": "POL",
+      "name_fr": "Pologne",
+      "in_geojson": true,
+      "hofstede_coverage": "missing",
+      "iw_coverage": "missing",
+      "curated_civilization": null,
+      "curated_role": null,
+      "sub_cluster_id": null
+    },
+    {
+      "iso3": "PRK",
+      "name_fr": "Corée du Nord",
+      "in_geojson": true,
+      "hofstede_coverage": "missing",
+      "iw_coverage": "missing",
+      "curated_civilization": null,
+      "curated_role": null,
+      "sub_cluster_id": null
+    },
+    {
+      "iso3": "PRT",
+      "name_fr": "Portugal",
+      "in_geojson": true,
+      "hofstede_coverage": "missing",
+      "iw_coverage": "missing",
+      "curated_civilization": null,
+      "curated_role": null,
+      "sub_cluster_id": null
+    },
+    {
+      "iso3": "PRY",
+      "name_fr": "Paraguay",
+      "in_geojson": true,
+      "hofstede_coverage": "missing",
+      "iw_coverage": "missing",
+      "curated_civilization": null,
+      "curated_role": null,
+      "sub_cluster_id": null
+    },
+    {
+      "iso3": "QAT",
+      "name_fr": "Qatar",
+      "in_geojson": true,
+      "hofstede_coverage": "missing",
+      "iw_coverage": "missing",
+      "curated_civilization": null,
+      "curated_role": null,
+      "sub_cluster_id": null
+    },
+    {
+      "iso3": "ROU",
+      "name_fr": "Roumanie",
+      "in_geojson": true,
+      "hofstede_coverage": "present",
+      "iw_coverage": "present",
+      "curated_civilization": "orthodox",
+      "curated_role": "core",
+      "sub_cluster_id": "balkan_orthodox"
+    },
+    {
+      "iso3": "RUS",
+      "name_fr": "Russie",
+      "in_geojson": true,
+      "hofstede_coverage": "present",
+      "iw_coverage": "present",
+      "curated_civilization": "orthodox",
+      "curated_role": "core",
+      "sub_cluster_id": "slavic_orthodox"
+    },
+    {
+      "iso3": "RWA",
+      "name_fr": "Rwanda",
+      "in_geojson": true,
+      "hofstede_coverage": "missing",
+      "iw_coverage": "missing",
+      "curated_civilization": null,
+      "curated_role": null,
+      "sub_cluster_id": null
+    },
+    {
+      "iso3": "SAU",
+      "name_fr": "Arabie saoudite",
+      "in_geojson": true,
+      "hofstede_coverage": "present",
+      "iw_coverage": "missing",
+      "curated_civilization": "islamic",
+      "curated_role": "core",
+      "sub_cluster_id": "arab_islamic"
+    },
+    {
+      "iso3": "SDN",
+      "name_fr": "Soudan",
+      "in_geojson": true,
+      "hofstede_coverage": "missing",
+      "iw_coverage": "missing",
+      "curated_civilization": null,
+      "curated_role": null,
+      "sub_cluster_id": null
+    },
+    {
+      "iso3": "SEN",
+      "name_fr": "Sénégal",
+      "in_geojson": true,
+      "hofstede_coverage": "missing",
+      "iw_coverage": "missing",
+      "curated_civilization": null,
+      "curated_role": null,
+      "sub_cluster_id": null
+    },
+    {
+      "iso3": "SGP",
+      "name_fr": "Singapour",
+      "in_geojson": true,
+      "hofstede_coverage": "present",
+      "iw_coverage": "present",
+      "curated_civilization": "sinic",
+      "curated_role": "core",
+      "sub_cluster_id": "insular_sinic"
+    },
+    {
+      "iso3": "SLB",
+      "name_fr": "Îles Salomon",
+      "in_geojson": true,
+      "hofstede_coverage": "missing",
+      "iw_coverage": "missing",
+      "curated_civilization": null,
+      "curated_role": null,
+      "sub_cluster_id": null
+    },
+    {
+      "iso3": "SLE",
+      "name_fr": "Sierra Leone",
+      "in_geojson": true,
+      "hofstede_coverage": "missing",
+      "iw_coverage": "missing",
+      "curated_civilization": null,
+      "curated_role": null,
+      "sub_cluster_id": null
+    },
+    {
+      "iso3": "SLV",
+      "name_fr": "El Salvador",
+      "in_geojson": true,
+      "hofstede_coverage": "missing",
+      "iw_coverage": "missing",
+      "curated_civilization": null,
+      "curated_role": null,
+      "sub_cluster_id": null
+    },
+    {
+      "iso3": "SMR",
+      "name_fr": "Saint-Marin",
+      "in_geojson": true,
+      "hofstede_coverage": "missing",
+      "iw_coverage": "missing",
+      "curated_civilization": null,
+      "curated_role": null,
+      "sub_cluster_id": null
+    },
+    {
+      "iso3": "SOM",
+      "name_fr": "Somalie",
+      "in_geojson": true,
+      "hofstede_coverage": "missing",
+      "iw_coverage": "missing",
+      "curated_civilization": null,
+      "curated_role": null,
+      "sub_cluster_id": null
+    },
+    {
+      "iso3": "SRB",
+      "name_fr": "Serbie",
+      "in_geojson": true,
+      "hofstede_coverage": "present",
+      "iw_coverage": "present",
+      "curated_civilization": "orthodox",
+      "curated_role": "core",
+      "sub_cluster_id": "slavic_orthodox"
+    },
+    {
+      "iso3": "SSD",
+      "name_fr": "Soudan du Sud",
+      "in_geojson": true,
+      "hofstede_coverage": "missing",
+      "iw_coverage": "missing",
+      "curated_civilization": null,
+      "curated_role": null,
+      "sub_cluster_id": null
+    },
+    {
+      "iso3": "STP",
+      "name_fr": "Sao Tomé-et-Principe",
+      "in_geojson": true,
+      "hofstede_coverage": "missing",
+      "iw_coverage": "missing",
+      "curated_civilization": null,
+      "curated_role": null,
+      "sub_cluster_id": null
+    },
+    {
+      "iso3": "SUR",
+      "name_fr": "Suriname",
+      "in_geojson": true,
+      "hofstede_coverage": "missing",
+      "iw_coverage": "missing",
+      "curated_civilization": null,
+      "curated_role": null,
+      "sub_cluster_id": null
+    },
+    {
+      "iso3": "SVK",
+      "name_fr": "Slovaquie",
+      "in_geojson": true,
+      "hofstede_coverage": "missing",
+      "iw_coverage": "missing",
+      "curated_civilization": null,
+      "curated_role": null,
+      "sub_cluster_id": null
+    },
+    {
+      "iso3": "SVN",
+      "name_fr": "Slovénie",
+      "in_geojson": true,
+      "hofstede_coverage": "missing",
+      "iw_coverage": "missing",
+      "curated_civilization": null,
+      "curated_role": null,
+      "sub_cluster_id": null
+    },
+    {
+      "iso3": "SWE",
+      "name_fr": "Suède",
+      "in_geojson": true,
+      "hofstede_coverage": "present",
+      "iw_coverage": "present",
+      "curated_civilization": "western",
+      "curated_role": "core",
+      "sub_cluster_id": "protestant_europe"
+    },
+    {
+      "iso3": "SWZ",
+      "name_fr": "Eswatini",
+      "in_geojson": true,
+      "hofstede_coverage": "missing",
+      "iw_coverage": "missing",
+      "curated_civilization": null,
+      "curated_role": null,
+      "sub_cluster_id": null
+    },
+    {
+      "iso3": "SYC",
+      "name_fr": "Seychelles",
+      "in_geojson": true,
+      "hofstede_coverage": "missing",
+      "iw_coverage": "missing",
+      "curated_civilization": null,
+      "curated_role": null,
+      "sub_cluster_id": null
+    },
+    {
+      "iso3": "SYR",
+      "name_fr": "Syrie",
+      "in_geojson": true,
+      "hofstede_coverage": "missing",
+      "iw_coverage": "missing",
+      "curated_civilization": null,
+      "curated_role": null,
+      "sub_cluster_id": null
+    },
+    {
+      "iso3": "TCD",
+      "name_fr": "Tchad",
+      "in_geojson": true,
+      "hofstede_coverage": "missing",
+      "iw_coverage": "missing",
+      "curated_civilization": null,
+      "curated_role": null,
+      "sub_cluster_id": null
+    },
+    {
+      "iso3": "TGO",
+      "name_fr": "Togo",
+      "in_geojson": true,
+      "hofstede_coverage": "missing",
+      "iw_coverage": "missing",
+      "curated_civilization": null,
+      "curated_role": null,
+      "sub_cluster_id": null
+    },
+    {
+      "iso3": "THA",
+      "name_fr": "Thaïlande",
+      "in_geojson": true,
+      "hofstede_coverage": "present",
+      "iw_coverage": "present",
+      "curated_civilization": "buddhist",
+      "curated_role": "core",
+      "sub_cluster_id": "theravada"
+    },
+    {
+      "iso3": "TJK",
+      "name_fr": "Tadjikistan",
+      "in_geojson": true,
+      "hofstede_coverage": "missing",
+      "iw_coverage": "missing",
+      "curated_civilization": null,
+      "curated_role": null,
+      "sub_cluster_id": null
+    },
+    {
+      "iso3": "TKM",
+      "name_fr": "Turkménistan",
+      "in_geojson": true,
+      "hofstede_coverage": "missing",
+      "iw_coverage": "missing",
+      "curated_civilization": null,
+      "curated_role": null,
+      "sub_cluster_id": null
+    },
+    {
+      "iso3": "TLS",
+      "name_fr": "Timor-Leste",
+      "in_geojson": true,
+      "hofstede_coverage": "missing",
+      "iw_coverage": "missing",
+      "curated_civilization": null,
+      "curated_role": null,
+      "sub_cluster_id": null
+    },
+    {
+      "iso3": "TON",
+      "name_fr": "Tonga",
+      "in_geojson": true,
+      "hofstede_coverage": "missing",
+      "iw_coverage": "missing",
+      "curated_civilization": null,
+      "curated_role": null,
+      "sub_cluster_id": null
+    },
+    {
+      "iso3": "TTO",
+      "name_fr": "Trinité-et-Tobago",
+      "in_geojson": true,
+      "hofstede_coverage": "missing",
+      "iw_coverage": "missing",
+      "curated_civilization": null,
+      "curated_role": null,
+      "sub_cluster_id": null
+    },
+    {
+      "iso3": "TUN",
+      "name_fr": "Tunisie",
+      "in_geojson": true,
+      "hofstede_coverage": "missing",
+      "iw_coverage": "missing",
+      "curated_civilization": null,
+      "curated_role": null,
+      "sub_cluster_id": null
+    },
+    {
+      "iso3": "TUR",
+      "name_fr": "Turquie",
+      "in_geojson": true,
+      "hofstede_coverage": "present",
+      "iw_coverage": "present",
+      "curated_civilization": "islamic",
+      "curated_role": "core",
+      "sub_cluster_id": "turco_iranian"
+    },
+    {
+      "iso3": "TUV",
+      "name_fr": "Tuvalu",
+      "in_geojson": true,
+      "hofstede_coverage": "missing",
+      "iw_coverage": "missing",
+      "curated_civilization": null,
+      "curated_role": null,
+      "sub_cluster_id": null
+    },
+    {
+      "iso3": "TZA",
+      "name_fr": "Tanzanie",
+      "in_geojson": true,
+      "hofstede_coverage": "missing",
+      "iw_coverage": "missing",
+      "curated_civilization": null,
+      "curated_role": null,
+      "sub_cluster_id": null
+    },
+    {
+      "iso3": "UGA",
+      "name_fr": "Ouganda",
+      "in_geojson": true,
+      "hofstede_coverage": "missing",
+      "iw_coverage": "missing",
+      "curated_civilization": null,
+      "curated_role": null,
+      "sub_cluster_id": null
+    },
+    {
+      "iso3": "UKR",
+      "name_fr": "Ukraine",
+      "in_geojson": true,
+      "hofstede_coverage": "present",
+      "iw_coverage": "present",
+      "curated_civilization": "orthodox",
+      "curated_role": "core",
+      "sub_cluster_id": "slavic_orthodox"
+    },
+    {
+      "iso3": "URY",
+      "name_fr": "Uruguay",
+      "in_geojson": true,
+      "hofstede_coverage": "present",
+      "iw_coverage": "present",
+      "curated_civilization": "latin_american",
+      "curated_role": "core",
+      "sub_cluster_id": "southern_cone"
+    },
+    {
+      "iso3": "USA",
+      "name_fr": "États-Unis",
+      "in_geojson": true,
+      "hofstede_coverage": "present",
+      "iw_coverage": "present",
+      "curated_civilization": "western",
+      "curated_role": "core",
+      "sub_cluster_id": "english_speaking"
+    },
+    {
+      "iso3": "UZB",
+      "name_fr": "Ouzbékistan",
+      "in_geojson": true,
+      "hofstede_coverage": "missing",
+      "iw_coverage": "missing",
+      "curated_civilization": null,
+      "curated_role": null,
+      "sub_cluster_id": null
+    },
+    {
+      "iso3": "VCT",
+      "name_fr": "Saint-Vincent-et-les Grenadines",
+      "in_geojson": true,
+      "hofstede_coverage": "missing",
+      "iw_coverage": "missing",
+      "curated_civilization": null,
+      "curated_role": null,
+      "sub_cluster_id": null
+    },
+    {
+      "iso3": "VEN",
+      "name_fr": "Venezuela",
+      "in_geojson": true,
+      "hofstede_coverage": "present",
+      "iw_coverage": "present",
+      "curated_civilization": "latin_american",
+      "curated_role": "core",
+      "sub_cluster_id": "brazil_caribbean"
+    },
+    {
+      "iso3": "VNM",
+      "name_fr": "Viet Nam",
+      "in_geojson": true,
+      "hofstede_coverage": "present",
+      "iw_coverage": "present",
+      "curated_civilization": "sinic",
+      "curated_role": "core",
+      "sub_cluster_id": "mainland_sinic"
+    },
+    {
+      "iso3": "VUT",
+      "name_fr": "Vanuatu",
+      "in_geojson": true,
+      "hofstede_coverage": "missing",
+      "iw_coverage": "missing",
+      "curated_civilization": null,
+      "curated_role": null,
+      "sub_cluster_id": null
+    },
+    {
+      "iso3": "WSM",
+      "name_fr": "Samoa",
+      "in_geojson": true,
+      "hofstede_coverage": "missing",
+      "iw_coverage": "missing",
+      "curated_civilization": null,
+      "curated_role": null,
+      "sub_cluster_id": null
+    },
+    {
+      "iso3": "YEM",
+      "name_fr": "Yémen",
+      "in_geojson": true,
+      "hofstede_coverage": "missing",
+      "iw_coverage": "missing",
+      "curated_civilization": null,
+      "curated_role": null,
+      "sub_cluster_id": null
+    },
+    {
+      "iso3": "ZAF",
+      "name_fr": "Afrique du Sud",
+      "in_geojson": true,
+      "hofstede_coverage": "present",
+      "iw_coverage": "present",
+      "curated_civilization": "african",
+      "curated_role": "core",
+      "sub_cluster_id": "southern_africa"
+    },
+    {
+      "iso3": "ZMB",
+      "name_fr": "Zambie",
+      "in_geojson": true,
+      "hofstede_coverage": "imputed",
+      "iw_coverage": "present",
+      "curated_civilization": "african",
+      "curated_role": "periphery",
+      "sub_cluster_id": "southern_africa"
+    },
+    {
+      "iso3": "ZWE",
+      "name_fr": "Zimbabwe",
+      "in_geojson": true,
+      "hofstede_coverage": "imputed",
+      "iw_coverage": "present",
+      "curated_civilization": "african",
+      "curated_role": "periphery",
+      "sub_cluster_id": "southern_africa"
+    }
+  ]
+}

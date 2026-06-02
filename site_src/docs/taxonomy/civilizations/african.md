@@ -53,33 +53,33 @@ Huntington note la difficulté de parler d'une 'civilisation africaine' unique. 
 
 ## États membres
 
-| ISO3 | Rôle | Rationale | Citations |
-|---|---|---|---|
+| État | ISO3 | Rôle | Rationale | Citations |
+|---|---|---|---|---|
 
-| `NGA` | core | Nigéria, État le plus peuplé d'Afrique, ouest-africain | huntington_1996 |
+| Nigéria | `NGA` | core | Nigéria, État le plus peuplé d'Afrique, ouest-africain | huntington_1996 |
 
-| `ZAF` | core | Afrique du Sud, hybride afro-européen post-apartheid | huntington_1996 |
+| Afrique du Sud | `ZAF` | core | Afrique du Sud, hybride afro-européen post-apartheid | huntington_1996 |
 
-| `KEN` | core | Kenya, est-africain | huntington_1996 |
+| Kenya | `KEN` | core | Kenya, est-africain | huntington_1996 |
 
-| `GHA` | core | Ghana, ouest-africain anglophone | huntington_1996 |
+| Ghana | `GHA` | core | Ghana, ouest-africain anglophone | huntington_1996 |
 
-| `ETH` | core | Éthiopie, jamais colonisée, orthodoxe-musulmane | huntington_1996 |
+| Éthiopie | `ETH` | core | Éthiopie, jamais colonisée, orthodoxe-musulmane | huntington_1996 |
 
-| `ZWE` | periphery | Zimbabwe, austral | huntington_1996 |
+| Zimbabwe | `ZWE` | periphery | Zimbabwe, austral | huntington_1996 |
 
-| `ZMB` | periphery | Zambie, australe | huntington_1996 |
+| Zambie | `ZMB` | periphery | Zambie, australe | huntington_1996 |
 
 
 
 ## Sous-clusters
 
 
-- **Afrique de l'Ouest** (`west_africa`) — NGA, GHA
+- **Afrique de l'Ouest** (`west_africa`) — Nigéria (`NGA`), Ghana (`GHA`)
 
-- **Afrique de l'Est** (`east_africa`) — KEN, ETH
+- **Afrique de l'Est** (`east_africa`) — Kenya (`KEN`), Éthiopie (`ETH`)
 
-- **Afrique australe** (`southern_africa`) — ZAF, ZWE, ZMB
+- **Afrique australe** (`southern_africa`) — Afrique du Sud (`ZAF`), Zimbabwe (`ZWE`), Zambie (`ZMB`)
 
 
 
@@ -87,13 +87,13 @@ Huntington note la difficulté de parler d'une 'civilisation africaine' unique. 
 ## Cas ambigus / controverses documentées
 
 
-### `ETH`
+### Éthiopie (`ETH`)
 
 - **Civilisations en concurrence** : african, orthodox
 - **Discussion** : Éthiopie: christianisme orthodoxe tewahedo, parfois rapproché du monde orthodoxe.
 - **Citations** : huntington_1996
 
-### `ZAF`
+### Afrique du Sud (`ZAF`)
 
 - **Civilisations en concurrence** : african, western
 - **Discussion** : Afrique du Sud post-apartheid: identité hybride afrikaans/anglo + bantoue.

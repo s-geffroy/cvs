@@ -28,21 +28,27 @@
     return response.json();
   }
 
-  function renderAnisotropyBars(momentsPayload) {
+  function labelForIso3(iso3, iso3ToNameFr) {
+    const nameFr = iso3ToNameFr[iso3];
+    return nameFr ? `${nameFr} (${iso3})` : iso3;
+  }
+
+  function renderAnisotropyBars(momentsPayload, iso3ToNameFr) {
     const momentEntries = [...momentsPayload.moments].sort(
       (left, right) => right.anisotropy - left.anisotropy
     );
     const anisotropyTrace = {
-      x: momentEntries.map((entry) => entry.iso3),
+      x: momentEntries.map((entry) => labelForIso3(entry.iso3, iso3ToNameFr)),
       y: momentEntries.map((entry) => entry.anisotropy),
       type: 'bar',
-      marker: { color: '#d62728' }
+      marker: { color: '#d62728' },
+      hovertemplate: '<b>%{x}</b><br>A(s)=%{y:.3f}<extra></extra>'
     };
     const layout = {
       title: 'Anisotropie A(s) = (λ₁ − λ₆) / λ₁ — États triés',
-      xaxis: { title: 'ISO3', tickangle: -60 },
+      xaxis: { title: 'État', tickangle: -60 },
       yaxis: { title: 'A(s) ∈ [0, 1]', range: [0, 1] },
-      margin: { t: 60, l: 60, r: 30, b: 100 }
+      margin: { t: 60, l: 60, r: 30, b: 140 }
     };
     Plotly.newPlot('civvec-moments-anisotropy', [anisotropyTrace], layout, {
       responsive: true,
@@ -50,7 +56,7 @@
     });
   }
 
-  function renderHeatmap(momentEntry) {
+  function renderHeatmap(momentEntry, iso3ToNameFr) {
     const heatmapTrace = {
       z: momentEntry.M,
       x: hofstedeDimensionLabels,
@@ -61,7 +67,7 @@
       colorbar: { title: 'M_ij' }
     };
     const layout = {
-      title: `M(${momentEntry.iso3}) — second moment 6×6`,
+      title: `M(${labelForIso3(momentEntry.iso3, iso3ToNameFr)}) — second moment 6×6`,
       xaxis: { side: 'top' },
       yaxis: { autorange: 'reversed' },
       margin: { t: 60, l: 60, r: 30, b: 30 }
@@ -72,7 +78,7 @@
     });
   }
 
-  function injectStateSelectorAbove(heatmapContainer, momentEntries, defaultIso3) {
+  function injectStateSelectorAbove(heatmapContainer, momentEntries, defaultIso3, iso3ToNameFr) {
     const selectorWrapper = document.createElement('div');
     selectorWrapper.style.marginBottom = '0.5rem';
     selectorWrapper.innerHTML =
@@ -80,7 +86,7 @@
       `<select id="civvec-moments-state-selector">${momentEntries
         .map(
           (entry) =>
-            `<option value="${entry.iso3}"${entry.iso3 === defaultIso3 ? ' selected' : ''}>${entry.iso3}</option>`
+            `<option value="${entry.iso3}"${entry.iso3 === defaultIso3 ? ' selected' : ''}>${labelForIso3(entry.iso3, iso3ToNameFr)}</option>`
         )
         .join('')}</select>`;
     heatmapContainer.parentNode.insertBefore(selectorWrapper, heatmapContainer);
@@ -89,7 +95,7 @@
       const selectedIso3 = changeEvent.target.value;
       const matchedEntry = momentEntries.find((entry) => entry.iso3 === selectedIso3);
       if (matchedEntry) {
-        renderHeatmap(matchedEntry);
+        renderHeatmap(matchedEntry, iso3ToNameFr);
       }
     });
   }
@@ -97,9 +103,10 @@
   async function bootstrapMoments() {
     const momentsPayload = await fetchJson('../assets/data/state_moments.json');
     const momentEntries = momentsPayload.moments;
+    const iso3ToNameFr = (momentsPayload._meta && momentsPayload._meta.iso3_to_name_fr) || {};
 
     if (document.querySelector(anisotropyContainerSelector)) {
-      renderAnisotropyBars(momentsPayload);
+      renderAnisotropyBars(momentsPayload, iso3ToNameFr);
     }
 
     if (document.querySelector(heatmapContainerSelector) && momentEntries.length > 0) {
@@ -107,9 +114,9 @@
       const defaultIso3 = momentEntries.find((entry) => entry.iso3 === 'FRA')
         ? 'FRA'
         : momentEntries[0].iso3;
-      injectStateSelectorAbove(heatmapContainer, momentEntries, defaultIso3);
+      injectStateSelectorAbove(heatmapContainer, momentEntries, defaultIso3, iso3ToNameFr);
       const initialEntry = momentEntries.find((entry) => entry.iso3 === defaultIso3);
-      renderHeatmap(initialEntry);
+      renderHeatmap(initialEntry, iso3ToNameFr);
     }
   }
 

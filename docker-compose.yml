@@ -9,7 +9,7 @@ services:
     volumes:
       - ./taxonomies:/app/taxonomies
       - ./packages/civvec_core/basis:/app/packages/civvec_core/basis
-      - ./data_sources:/app/data_sources:ro
+      - ./data_sources:/app/data_sources
       - ./docs:/app/docs:ro
       - ./schemas:/app/schemas:ro
       - ./outputs:/app/outputs
@@ -27,7 +27,7 @@ services:
       - ./dist:/app/dist
       - ./taxonomies:/app/taxonomies
       - ./packages/civvec_core/basis:/app/packages/civvec_core/basis
-      - ./data_sources:/app/data_sources:ro
+      - ./data_sources:/app/data_sources
       - ./docs:/app/docs:ro
       - ./schemas:/app/schemas:ro
       - ./site_src:/app/site_src

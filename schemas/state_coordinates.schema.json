@@ -60,6 +60,26 @@
     "source_refs": {
       "type": "array",
       "items": { "type": "string" }
+    },
+    "curated_civilization": {
+      "type": ["string", "null"],
+      "description": "Civilisation curatée depuis la taxonomie (rôles core/periphery uniquement). Null si l'état n'est listé qu'en interface/ambiguous, ou absent de la taxonomie."
+    },
+    "curated_role": {
+      "type": ["string", "null"],
+      "enum": [null, "core", "periphery", "interface", "ambiguous"]
+    },
+    "curated_civilizations_competing": {
+      "type": ["array", "null"],
+      "items": { "type": "string" },
+      "description": "Civilisations en compétition pour les états en interface/ambiguous (taxonomie member_states ou ambiguous_cases)."
+    },
+    "sub_cluster_id": {
+      "type": ["string", "null"],
+      "description": "Identifiant du sous-ensemble civilisationnel (anglo, catholic_europe, arab_islamic, ...) si listé dans la taxonomie."
+    },
+    "sub_cluster_label": {
+      "type": ["string", "null"]
     }
   },
   "additionalProperties": false

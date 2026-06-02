@@ -47,5 +47,10 @@
   "source_refs": [
     "wvs_wave7_2022",
     "hofstede_2010"
-  ]
+  ],
+  "curated_civilization": "western",
+  "curated_role": "core",
+  "curated_civilizations_competing": null,
+  "sub_cluster_id": "catholic_europe",
+  "sub_cluster_label": "Catholic Europe"
 }

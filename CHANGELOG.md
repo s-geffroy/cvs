@@ -7,6 +7,78 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added — Couverture complète des États ONU + noms en français (2026-06-02)
+
+- **Liste canonique des 193 États membres de l'ONU** dans
+  `data_sources/un_members/iso3_to_name_fr.json` (ISO3 → nom court en français).
+- **Complétion géométrique** : `apps/basis_builder/geometries.py` télécharge
+  Natural Earth 110m **et** complète les 28 micro-États ONU absents à cette
+  résolution depuis Natural Earth 50m (Andorre, Monaco, Saint-Marin,
+  Liechtenstein, Malte, Singapour, Maldives, Seychelles, Maurice, Cabo Verde,
+  Sao Tomé, Comores, Bahreïn, Antigua-et-Barbuda, Barbade, Dominique, Grenade,
+  Sainte-Lucie, Saint-Vincent, Saint-Kitts-et-Nevis, Kiribati, Tuvalu, Nauru,
+  Palaos, Îles Marshall, Micronésie, Samoa, Tonga). Le geojson final compte
+  **201 features** et le champ `iso3_un_still_missing` est vide.
+- **Rapport de couverture** : nouvelle commande `civvec basis coverage-report`
+  qui écrit `data_sources/un_members/coverage_report.{md,json}` croisant les
+  193 États ONU avec géométrie / Hofstede / Inglehart-Welzel / taxonomie
+  pour matérialiser la liste des données encore à combler (132 Hofstede,
+  133 IW, 127 sans civilisation curatée).
+- **Noms en français sur l'ensemble des pages GitHub Pages** : nouveau
+  module `apps/basis_builder/un_members.py`, injection dans le builder
+  (`apps/site_builder/builder.py`) qui propage la table iso3→name_fr dans :
+  - les templates `state_page.md.j2`, `states_index.md.j2`,
+    `civilization_page.md.j2` (titres, breadcrumbs, tables membres et
+    sous-clusters, cas ambigus) ;
+  - les JSON servis aux visualisations Plotly (`state_coordinates.json`,
+    `state_moments.json`, `state_distance_matrix.json` reçoivent un
+    `_meta.iso3_to_name_fr`) ;
+  - les scripts client `assets/js/basis_viz.js`, `assets/js/moments.js`,
+    `assets/js/distances.js` qui étiquettent désormais les axes, hovers,
+    titres et sélecteurs avec « Nom français (ISO3) » ;
+  - le geojson global qui porte `properties.name_fr` sur chaque feature et
+    la carte (`assets/js/map.js`) qui l'utilise dans le popup au clic et
+    dans un tooltip suspendu au survol.
+- `docker-compose.yml` : le mount `data_sources` n'est plus `:ro` afin que
+  la commande `civvec basis fetch-geometries` puisse réécrire le geojson
+  depuis le conteneur.
+
+### Fixed — Carte choroplèthe : couverture, affiliations et sous-ensembles (2026-06-02)
+
+- **Couverture géojson complète** : `apps/basis_builder/geometries.py` ne filtre
+  plus Natural Earth 110m sur les pays disposant de données Hofstede/IW. Toute
+  la collection (≈ 177 États souverains) est conservée, Antarctique exclu
+  (`EXCLUDED_ISO3_CODES`). La carte affiche désormais Pologne, Suisse, Pakistan,
+  Égypte, Asie centrale, Afrique entière, etc., avec bordures sur tous les pays.
+  `fetch_and_filter_natural_earth_admin0` renommée en
+  `fetch_and_tag_natural_earth_admin0` (CLI `civvec basis fetch-geometries`
+  inchangée côté UX).
+- **Affiliations civilisationnelles curatées** : nouveau module
+  `apps/basis_builder/taxonomy_membership.py` qui index les `member_states[]`
+  et `sub_clusters[]` de `taxonomies/macro_civilizations.v2.json`.
+  `apps/basis_builder/projector.py` propage cinq champs jusqu'à
+  `state_coordinates.json` : `curated_civilization`, `curated_role`,
+  `curated_civilizations_competing`, `sub_cluster_id`, `sub_cluster_label`.
+  Corrige les mauvaises affiliations argmax (Allemagne → western au lieu de
+  japanese, Espagne → western au lieu de buddhist, Arabie saoudite et Malaisie
+  → islamic). L'argmax du vecteur d'affinité reste utilisé en repli pour les
+  pays absents de la taxonomie. Schéma `schemas/state_coordinates.schema.json`
+  étendu en conséquence.
+- **Sous-ensembles civilisationnels** propagés dans `state_coordinates.json`
+  et rendus dans la carte par variation HSL stable de la couleur parente
+  (Anglo, Europe protestante, Europe catholique, Arab islamic, etc.).
+- **Toggle Macro/Sous-ensemble + popup enrichi** : `site_src/docs/assets/js/map.js`
+  refondu — `decorateFeaturesWithMembership`, mode `macro`/`sub` piloté par
+  radios dans `site_src/templates/map_page.md.j2`, bordures épaissies sur survol
+  via `feature-state`, popup au clic indiquant la civilisation curatée, le
+  sous-ensemble, l'argmax d'affinité et l'origine de la couleur (curatée vs
+  affinité). Légende reconstruite selon le mode actif et avec entrée grise
+  « Pas de données / hors taxonomie ».
+- **Tests** : nouvelles assertions dans `tests/test_site_build.py`
+  (`test_geojson_includes_full_natural_earth_coverage`,
+  `test_state_coordinates_curated_membership`,
+  `test_state_coordinates_sub_clusters`, `test_map_page_has_mode_toggle`).
+
 ### Added — Mini-site de vulgarisation grand public (2026-06-02)
 
 - Nouveau **mini-site autonome** hébergé sous `/vulgarisation/` (hors thème

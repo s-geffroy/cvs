@@ -7,10 +7,10 @@ Liste des **{{ states | length }} États** dont les coordonnées `x_viz` et `x_s
 été calculées dans la base vectorielle (Phase 2). Pour la méthodologie,
 voir [`08_civilizational_basis.md`](../methodology/08_civilizational_basis.md).
 
-| ISO3 | `x_viz` (TS, SE) | Hofstede complet | Géométrie 110m |
-|---|---|---|---|
+| État | ISO3 | `x_viz` (TS, SE) | Hofstede complet | Géométrie |
+|---|---|---|---|---|
 {% for state in states %}
-| [`{{ state.iso3 }}`]({{ state.iso3 }}.md) | {{ ("`[" ~ "%.2f" | format(state.x_viz[0]) ~ ", " ~ "%.2f" | format(state.x_viz[1]) ~ "]`") if (state.x_viz[0] is not none and state.x_viz[1] is not none) else "—" }} | {{ "✓" if (state.x_score and state.x_score[0] is not none) else "manquant" }} | {{ "✓" if state.iso3 in iso3_with_geometry else "—" }} |
+| [{{ iso3_to_name_fr.get(state.iso3, state.iso3) }}]({{ state.iso3 }}.md) | `{{ state.iso3 }}` | {{ ("`[" ~ "%.2f" | format(state.x_viz[0]) ~ ", " ~ "%.2f" | format(state.x_viz[1]) ~ "]`") if (state.x_viz[0] is not none and state.x_viz[1] is not none) else "—" }} | {{ "✓" if (state.x_score and state.x_score[0] is not none) else "manquant" }} | {{ "✓" if state.iso3 in iso3_with_geometry else "—" }} |
 {% endfor %}
 
 ## Téléchargements en bloc

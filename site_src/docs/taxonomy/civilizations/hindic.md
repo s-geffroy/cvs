@@ -53,23 +53,23 @@ IW: TS modérément négatif, SE négatif. Hofstede: PDI élevé (77), IDV bas-m
 
 ## États membres
 
-| ISO3 | Rôle | Rationale | Citations |
-|---|---|---|---|
+| État | ISO3 | Rôle | Rationale | Citations |
+|---|---|---|---|---|
 
-| `IND` | core | Inde, majorité hindoue, héritage sanskrit | huntington_1996 |
+| Inde | `IND` | core | Inde, majorité hindoue, héritage sanskrit | huntington_1996 |
 
-| `NPL` | periphery | Népal, monarchie hindoue historique (jusqu'en 2008), majorité hindoue | huntington_1996 |
+| Népal | `NPL` | periphery | Népal, monarchie hindoue historique (jusqu'en 2008), majorité hindoue | huntington_1996 |
 
-| `LKA` | periphery | Sri Lanka, hindoue (Tamouls) + bouddhiste (Cingalais) | huntington_1996 |
+| Sri Lanka | `LKA` | periphery | Sri Lanka, hindoue (Tamouls) + bouddhiste (Cingalais) | huntington_1996 |
 
-| `MUS` | periphery | Île Maurice, majorité hindoue (diaspora indienne) | huntington_1996 |
+| Maurice | `MUS` | periphery | Île Maurice, majorité hindoue (diaspora indienne) | huntington_1996 |
 
 
 
 ## Sous-clusters
 
 
-- **Sous-continent indien hindou** (`indian_subcontinent_hindu`) — IND, NPL, LKA
+- **Sous-continent indien hindou** (`indian_subcontinent_hindu`) — Inde (`IND`), Népal (`NPL`), Sri Lanka (`LKA`)
 
 
 
@@ -77,7 +77,7 @@ IW: TS modérément négatif, SE négatif. Hofstede: PDI élevé (77), IDV bas-m
 ## Cas ambigus / controverses documentées
 
 
-### `LKA`
+### Sri Lanka (`LKA`)
 
 - **Civilisations en concurrence** : hindic, buddhist
 - **Discussion** : Sri Lanka: bouddhiste cingalais majoritaire, hindou tamoul minoritaire, conflit civilisationnel historique.

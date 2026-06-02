@@ -47,5 +47,14 @@
   "source_refs": [
     "wvs_wave7_2022",
     "hofstede_2010"
-  ]
+  ],
+  "curated_civilization": "sinic",
+  "curated_role": "core",
+  "curated_civilizations_competing": [
+    "sinic",
+    "islamic",
+    "western"
+  ],
+  "sub_cluster_id": "insular_sinic",
+  "sub_cluster_label": "Sinic insulaire / diasporique"
 }

@@ -1,0 +1,44 @@
+{
+  "iso3": "BTN",
+  "label": null,
+  "x_viz": [
+    null,
+    null
+  ],
+  "x_viz_ellipse": null,
+  "x_score": [
+    null,
+    null,
+    null,
+    null,
+    null,
+    null
+  ],
+  "affinity_vector": {
+    "western": 0.09090909090909091,
+    "orthodox": 0.09090909090909091,
+    "islamic": 0.09090909090909091,
+    "sinic": 0.09090909090909091,
+    "hindic": 0.09090909090909091,
+    "japanese": 0.09090909090909091,
+    "buddhist": 0.09090909090909091,
+    "latin_american": 0.09090909090909091,
+    "african": 0.09090909090909091,
+    "indigenous": 0.09090909090909091,
+    "oceanian": 0.09090909090909091
+  },
+  "data_quality": {
+    "iw_coverage": "missing",
+    "hofstede_coverage": "missing",
+    "low_evidence": true
+  },
+  "source_refs": [
+    "wvs_wave7_2022",
+    "hofstede_2010"
+  ],
+  "curated_civilization": "buddhist",
+  "curated_role": "core",
+  "curated_civilizations_competing": null,
+  "sub_cluster_id": "mahayana",
+  "sub_cluster_label": "Mahayana"
+}

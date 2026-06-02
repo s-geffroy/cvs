@@ -14,6 +14,7 @@ from apps.basis_builder.geometries import (
     extract_single_state_geojson,
     load_admin0_collection,
 )
+from apps.basis_builder.un_members import load_un_member_names_fr
 from apps.basis_builder.paths import (
     B_SCORE_PATH,
     B_VIZ_PATH,
@@ -84,6 +85,17 @@ def _jinja_env() -> Environment:
     )
 
 
+def _iso3_to_name_fr() -> dict[str, str]:
+    """Charge la table ISO3 → nom court en français (193 États ONU)."""
+    return load_un_member_names_fr()
+
+
+def _format_state_label(iso3: str, name_fr_index: dict[str, str]) -> str:
+    """Forme courte 'Nom (ISO3)' lorsque le nom français est connu."""
+    name_fr = name_fr_index.get(iso3)
+    return f"{name_fr} ({iso3})" if name_fr else iso3
+
+
 def render_methodology() -> None:
     METHODOLOGY_OUT_DIR.mkdir(parents=True, exist_ok=True)
     env = _jinja_env()
@@ -114,12 +126,14 @@ def render_taxonomy() -> None:
     env = _jinja_env()
     taxonomy = load_taxonomy_v2()
     biblio_index = {entry["id"]: entry for entry in taxonomy["bibliography"]}
+    iso3_to_name_fr = _iso3_to_name_fr()
 
     civilization_template = env.get_template("civilization_page.md.j2")
     for civ in taxonomy["civilizations"]:
         rendered = civilization_template.render(
             civ=civ,
             biblio_index=biblio_index,
+            iso3_to_name_fr=iso3_to_name_fr,
             ethical_warning=ETHICAL_WARNING,
             ethical_warning_fr=ETHICAL_WARNING_FR,
         )
@@ -130,6 +144,7 @@ def render_taxonomy() -> None:
         index_template.render(
             taxonomy=taxonomy,
             version_major=taxonomy["version"].split(".")[0] or "2",
+            iso3_to_name_fr=iso3_to_name_fr,
             ethical_warning_fr=ETHICAL_WARNING_FR,
         )
     )
@@ -210,9 +225,19 @@ def _civilization_label_index(centroids_payload: dict) -> dict[str, str]:
 def _copy_basis_artefacts_to_data_assets(artefacts: dict) -> None:
     DATA_ASSETS_DIR.mkdir(parents=True, exist_ok=True)
     DATA_EMPIRICAL_DIR.mkdir(parents=True, exist_ok=True)
-    shutil.copyfile(STATE_COORDINATES_PATH, DATA_ASSETS_DIR / "state_coordinates.json")
+    iso3_to_name_fr = _iso3_to_name_fr()
+
+    def _dump_with_name_fr(source_path: Path, target_name: str) -> None:
+        payload = json.loads(source_path.read_text())
+        payload.setdefault("_meta", {})
+        payload["_meta"]["iso3_to_name_fr"] = iso3_to_name_fr
+        (DATA_ASSETS_DIR / target_name).write_text(
+            json.dumps(payload, ensure_ascii=False, indent=2)
+        )
+
+    _dump_with_name_fr(STATE_COORDINATES_PATH, "state_coordinates.json")
+    _dump_with_name_fr(STATE_MOMENTS_PATH, "state_moments.json")
     shutil.copyfile(CIVILIZATION_CENTROIDS_PATH, DATA_ASSETS_DIR / "civilization_centroids.json")
-    shutil.copyfile(STATE_MOMENTS_PATH, DATA_ASSETS_DIR / "state_moments.json")
     shutil.copyfile(B_VIZ_PATH, DATA_ASSETS_DIR / "B_viz.json")
     shutil.copyfile(B_SCORE_PATH, DATA_ASSETS_DIR / "B_score.json")
     if NATURAL_EARTH_ADM0_PATH.exists():
@@ -244,6 +269,7 @@ def render_states(artefacts: dict) -> None:
     moments_by_iso3 = {entry["iso3"]: entry for entry in artefacts["moments"]["moments"]}
     label_index = _civilization_label_index(artefacts["centroids"])
     affinity_beta = artefacts["state_coordinates"]["_meta"]["affinity_beta"]
+    iso3_to_name_fr = _iso3_to_name_fr()
 
     iso3_with_geometry: set[str] = set()
     if NATURAL_EARTH_ADM0_PATH.exists():
@@ -260,10 +286,12 @@ def render_states(artefacts: dict) -> None:
 
         rendered = state_template.render(
             state=state_entry,
+            state_name_fr=iso3_to_name_fr.get(iso3),
             moment=moments_by_iso3.get(iso3),
             affinity_table=affinity_rows,
             affinity_beta=affinity_beta,
             has_geometry=has_geometry,
+            iso3_to_name_fr=iso3_to_name_fr,
             ethical_warning_fr=ETHICAL_WARNING_FR,
         )
         (STATES_OUT_DIR / f"{iso3}.md").write_text(rendered)
@@ -283,6 +311,7 @@ def render_states(artefacts: dict) -> None:
         states_index_template.render(
             states=state_entries,
             iso3_with_geometry=iso3_with_geometry,
+            iso3_to_name_fr=iso3_to_name_fr,
             ethical_warning_fr=ETHICAL_WARNING_FR,
         )
     )
@@ -472,6 +501,7 @@ def _compute_state_distance_matrix(artefacts: dict) -> dict:
             ],
             "panel_medians": median_normaliser,
             "affinity_beta": artefacts["state_coordinates"]["_meta"]["affinity_beta"],
+            "iso3_to_name_fr": _iso3_to_name_fr(),
         },
         "iso3_order": iso3_order,
         "matrices": matrices,
