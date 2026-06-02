@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="index,follow">
+  <title>Ce que le bayésien apporte (sans dériver) — cvs vulgarisation</title>
+  <meta name="description" content="Comprendre Civilizational Vector State sans les maths. Étudiant en sciences humaines — Huntington, Hofstede, IW, sans le bayésien.">
+  <link rel="stylesheet" href="../assets/css/reset.css">
+  <link rel="stylesheet" href="../assets/css/vulgarisation.css">
+  <link rel="stylesheet" media="print" href="../assets/css/print.css">
+</head>
+<body data-section="niveau-3-etudiant-shs">
+
+<a class="skip-link" href="#main">Aller au contenu</a>
+
+<div class="ethics-sticky" role="region" aria-label="Avertissement éthique">
+  <strong>Avertissement éthique :</strong>
+  Ce profil est inféré à partir de sources publiques agrégées. Il ne doit pas être utilisé pour classer des individus réels.
+</div>
+
+<header class="site-header">
+  <div class="brand">
+    <a href="../index.html">cvs · vulgarisation</a>
+  </div>
+  <nav class="audience-switcher" aria-label="Choisir un niveau">
+    
+      <a href="../niveau-1-citoyen/index.html"
+         class="audience-pill ">Niveau 1 — Citoyen curieux</a>
+    
+      <a href="../niveau-2-journaliste/index.html"
+         class="audience-pill ">Niveau 2 — Journaliste, décideur</a>
+    
+      <a href="../niveau-3-etudiant-shs/index.html"
+         class="audience-pill audience-pill--active">Niveau 3 — Étudiant SHS</a>
+    
+  </nav>
+  <a class="main-site-link" href="../../">↗ Site principal (méthodologie)</a>
+</header>
+
+<main id="main" class="layout">
+
+  <aside class="sub-nav" aria-label="Sommaire du niveau">
+    
+      <h2 class="sub-nav-title">Niveau 3 — Étudiant SHS</h2>
+      <ul>
+        
+          <li><a href="index.html">Le panorama académique</a></li>
+        
+          <li><a href="huntington-en-2-pages.html">Huntington en 2 pages</a></li>
+        
+          <li><a href="hofstede-en-2-pages.html">Hofstede en 2 pages</a></li>
+        
+          <li><a href="inglehart-welzel-en-2-pages.html">Inglehart-Welzel en 2 pages</a></li>
+        
+          <li><a href="ce-que-le-bayesien-apporte.html">Ce que le bayésien apporte (sans dériver)</a></li>
+        
+          <li><a href="controverses-academiques.html">Controverses académiques</a></li>
+        
+      </ul>
+    
+    <h2 class="sub-nav-title">Transverse</h2>
+    <ul>
+      
+        <li><a href="../glossaire-illustre.html">Glossaire illustré</a></li>
+      
+        <li><a href="../faq.html">Questions fréquentes</a></li>
+      
+        <li><a href="../credits.html">Crédits et sources</a></li>
+      
+    </ul>
+  </aside>
+
+  <article class="page-body">
+    <p class="audience-line">Étudiant en sciences humaines — Huntington, Hofstede, IW, sans le bayésien.</p>
+    <h1>Ce que le bayésien apporte (sans dériver)</h1>
+    <p>cvs se présente comme un <strong>pipeline bayésien</strong>. Cette page explique <strong>ce que ça veut dire concrètement</strong> sans aucune formule (toutes les démonstrations sont sur le site principal).</p>
+<h2 id="bayesien-on-part-dun-prior-on-confronte-aux-donnees-on-publie-un-posterior">Bayésien = on part d'un prior, on confronte aux données, on publie un posterior</h2>
+<h3 id="1-un-prior-la-taxonomie-de-huntington">1. Un <strong>prior</strong> : la taxonomie de Huntington</h3>
+<p>cvs ne <strong>part</strong> pas d'un tableau blanc. Il part de la <strong>carte de Huntington</strong> (11 familles civilisationnelles enrichies). Cette carte est un <strong>prior</strong> : une croyance de départ sur le découpage du monde.</p>
+<h3 id="2-des-donnees-wvs-hofstede-inglehart-welzel">2. Des <strong>données</strong> : WVS + Hofstede + Inglehart-Welzel</h3>
+<p>Les enquêtes mondiales fournissent, pour chaque pays, une grande quantité de <strong>mesures</strong> : 6 chiffres Hofstede, ~250 questions WVS, 2 coordonnées Inglehart-Welzel.</p>
+<h3 id="3-un-posterior-le-vecteur-daffiliation-civilisationnelle">3. Un <strong>posterior</strong> : le vecteur d'affiliation civilisationnelle</h3>
+<p>Pour chaque pays, cvs calcule un <strong>vecteur</strong> qui dit « voici, à la lumière des données, à quel point ce pays appartient à chaque famille du prior ».</p>
+<p>C'est un <strong>mélange</strong> (au sens probabiliste : mixture model), pas une affectation dure. C'est ce qui fait que la France n'est pas « occidentale » au sens binaire, mais « occidentale à 70 %, latine à 10 %, etc. ».</p>
+<h2 id="pourquoi-le-bayesien-plutot-quun-clustering-classique">Pourquoi le bayésien plutôt qu'un clustering classique ?</h2>
+<table>
+<thead>
+<tr>
+<th>Approche</th>
+<th>Caractéristique</th>
+<th>Limite</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Clustering classique (k-means)</strong></td>
+<td>On ne <strong>part</strong> de rien, on laisse l'algo trouver des groupes</td>
+<td>Les groupes sont <strong>arbitraires</strong> et peu interprétables</td>
+</tr>
+<tr>
+<td><strong>Classification supervisée</strong></td>
+<td>On apprend à reproduire un découpage donné</td>
+<td>Pas de <strong>doute</strong> : un pays est affecté à un cluster, point</td>
+</tr>
+<tr>
+<td><strong>Bayésien (mélange)</strong></td>
+<td>On part d'un prior théorique, on le révise avec les données, on publie l'<strong>incertitude</strong></td>
+<td>Plus complexe à implémenter, demande des choix explicites</td>
+</tr>
+</tbody>
+</table>
+<p>cvs publie aussi un <strong>baseline non-supervisé</strong> (k-means + HDBSCAN-lite, cf. <a href="../../methodology/14_baseline_unsupervised/">doc 14</a>) <strong>pour comparaison</strong>. Si les clusters non-supervisés diffèrent énormément du prior huntingtonien, c'est un signal que le prior est mauvais — et <strong>cvs le publie</strong>.</p>
+<h2 id="le-second-moment-ms-ce-qui-nexiste-pas-chez-huntington">Le second moment <code>M(s)</code> : ce qui n'existe pas chez Huntington</h2>
+<p>En physique des milieux continus, le <strong>second moment</strong> d'un objet décrit sa <strong>dispersion autour de son centre</strong>. cvs reprend cette idée pour mesurer, par État, <strong>à quel point un pays est intérieurement « tendu »</strong> (présence de sous-cultures, dispersion des réponses WVS).</p>
+<blockquote>
+<p>Un pays homogène a un <code>M(s)</code> faible.</p>
+<p>Un pays composite (Inde, Russie, Suisse) a un <code>M(s)</code> élevé.</p>
+</blockquote>
+<p>C'est <strong>précisément</strong> ce que Huntington évacuait. Voir <a href="../../methodology/09_civilizational_second_moment/">doc 09</a> du site principal pour le formalisme.</p>
+<h2 id="les-choix-de-calibration">Les choix de calibration</h2>
+<p>cvs fait plusieurs <strong>choix de calibration</strong> explicites :</p>
+<ol>
+<li><strong><code>β</code></strong> (le « softmax » qui transforme des distances en probabilités) — sa valeur est défendue dans <a href="../../methodology/05_scoring_calibration/">doc 05</a> et <strong>testée</strong> par sweep dans <a href="../../methodology/13_sensitivity_analysis/">doc 13</a>.</li>
+<li><strong><code>(α, β, γ)</code></strong> (les poids de la distance hybride) — également testés par sweep.</li>
+<li><strong>Méthode de désambiguïsation</strong> pour les pays charnières — explicite dans <a href="../../methodology/08_civilizational_basis/">doc 08 §3.4</a>.</li>
+</ol>
+<p>Aucun de ces choix n'est « la vérité » ; ils sont tous <strong>publiés</strong>, <strong>discutés</strong> et <strong>testés en sensibilité</strong>.</p>
+<h2 id="validation-empirique-externe">Validation empirique externe</h2>
+<p>cvs ne se contente pas de <strong>publier des chiffres</strong> : il vérifie qu'ils <strong>corrèlent</strong> avec des sources externes indépendantes :</p>
+<ul>
+<li><strong>Pew</strong> (composition religieuse 2020)</li>
+<li><strong>World Bank WGI</strong> (Rule of Law 2022)</li>
+<li><strong>Fund For Peace FSI</strong> (Fragility States Index 2024)</li>
+</ul>
+<p>Les coefficients de corrélation de Spearman + intervalles de confiance bootstrap sont publiés en <a href="../../methodology/12_empirical_validation/">doc 12</a>.</p>
+<h2 id="en-resume-trois-apports-du-bayesien">En résumé : trois apports du bayésien</h2>
+<ol>
+<li><strong>Un prior théorique explicite</strong> (Huntington), confronté aux données — pas un clustering aveugle.</li>
+<li><strong>Un mélange</strong> (pas une affectation dure) → publication de l'<strong>incertitude</strong> sous forme de vecteur de pourcentages.</li>
+<li><strong>Un second moment</strong> <code>M(s)</code> qui rend visible la <strong>dispersion intra-pays</strong> que les approches non-bayésiennes occultent.</li>
+</ol>
+<h2 id="pour-aller-plus-loin">Pour aller plus loin</h2>
+<ul>
+<li>Site principal cvs : <a href="../../methodology/09_civilizational_second_moment/">doc 09 — Second moment</a>, <a href="../../methodology/12_empirical_validation/">doc 12 — Validation empirique</a>, <a href="../../methodology/13_sensitivity_analysis/">doc 13 — Sensibilité</a>.</li>
+<li>Gelman, Carlin, Stern, Rubin, <em>Bayesian Data Analysis</em>, 3ᵉ éd., pour la formalisation.</li>
+</ul>
+  </article>
+
+</main>
+
+<footer class="site-footer">
+  <nav aria-label="Liens vers le site principal">
+    <a href="../../">Méthodologie complète</a>
+    <a href="../../states/">États</a>
+    <a href="../../map/">Carte</a>
+    <a href="../../basis/">Base vectorielle</a>
+    <a href="../../moments/">Moments M(s)</a>
+    <a href="../../distances/">Distances</a>
+    <a href="../../ethics/">Éthique officielle</a>
+    <a href="https://github.com/s-geffroy/cvs" rel="noopener">GitHub</a>
+  </nav>
+  <p class="footer-note">cvs · publié sous licence MIT · données WVS (CC-BY), Hofstede (usage scientifique), Natural Earth (domaine public), geoBoundaries (CC-BY 4.0). Aucune géométrie GADM publiée.</p>
+</footer>
+
+</body>
+</html>

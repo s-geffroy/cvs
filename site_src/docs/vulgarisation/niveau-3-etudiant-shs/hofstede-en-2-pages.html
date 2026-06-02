@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="index,follow">
+  <title>Hofstede en 2 pages — cvs vulgarisation</title>
+  <meta name="description" content="Comprendre Civilizational Vector State sans les maths. Étudiant en sciences humaines — Huntington, Hofstede, IW, sans le bayésien.">
+  <link rel="stylesheet" href="../assets/css/reset.css">
+  <link rel="stylesheet" href="../assets/css/vulgarisation.css">
+  <link rel="stylesheet" media="print" href="../assets/css/print.css">
+</head>
+<body data-section="niveau-3-etudiant-shs">
+
+<a class="skip-link" href="#main">Aller au contenu</a>
+
+<div class="ethics-sticky" role="region" aria-label="Avertissement éthique">
+  <strong>Avertissement éthique :</strong>
+  Ce profil est inféré à partir de sources publiques agrégées. Il ne doit pas être utilisé pour classer des individus réels.
+</div>
+
+<header class="site-header">
+  <div class="brand">
+    <a href="../index.html">cvs · vulgarisation</a>
+  </div>
+  <nav class="audience-switcher" aria-label="Choisir un niveau">
+    
+      <a href="../niveau-1-citoyen/index.html"
+         class="audience-pill ">Niveau 1 — Citoyen curieux</a>
+    
+      <a href="../niveau-2-journaliste/index.html"
+         class="audience-pill ">Niveau 2 — Journaliste, décideur</a>
+    
+      <a href="../niveau-3-etudiant-shs/index.html"
+         class="audience-pill audience-pill--active">Niveau 3 — Étudiant SHS</a>
+    
+  </nav>
+  <a class="main-site-link" href="../../">↗ Site principal (méthodologie)</a>
+</header>
+
+<main id="main" class="layout">
+
+  <aside class="sub-nav" aria-label="Sommaire du niveau">
+    
+      <h2 class="sub-nav-title">Niveau 3 — Étudiant SHS</h2>
+      <ul>
+        
+          <li><a href="index.html">Le panorama académique</a></li>
+        
+          <li><a href="huntington-en-2-pages.html">Huntington en 2 pages</a></li>
+        
+          <li><a href="hofstede-en-2-pages.html">Hofstede en 2 pages</a></li>
+        
+          <li><a href="inglehart-welzel-en-2-pages.html">Inglehart-Welzel en 2 pages</a></li>
+        
+          <li><a href="ce-que-le-bayesien-apporte.html">Ce que le bayésien apporte (sans dériver)</a></li>
+        
+          <li><a href="controverses-academiques.html">Controverses académiques</a></li>
+        
+      </ul>
+    
+    <h2 class="sub-nav-title">Transverse</h2>
+    <ul>
+      
+        <li><a href="../glossaire-illustre.html">Glossaire illustré</a></li>
+      
+        <li><a href="../faq.html">Questions fréquentes</a></li>
+      
+        <li><a href="../credits.html">Crédits et sources</a></li>
+      
+    </ul>
+  </aside>
+
+  <article class="page-body">
+    <p class="audience-line">Étudiant en sciences humaines — Huntington, Hofstede, IW, sans le bayésien.</p>
+    <h1>Hofstede en 2 pages</h1>
+    <h2 id="lidee-principale">L'idée principale</h2>
+<p>Geert <strong>Hofstede</strong> (1928-2020), psychologue social néerlandais, dirige un service de recherche RH chez <strong>IBM</strong> dans les années 1970. Il analyse les questionnaires de salariés d'IBM dans une cinquantaine de pays et identifie <strong>6 grandes dimensions</strong> sur lesquelles les cultures nationales se distinguent.</p>
+<table>
+<thead>
+<tr>
+<th>Dimension</th>
+<th>Question simple</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>PDI</strong> — <em>Power Distance Index</em></td>
+<td>À quel point l'inégalité hiérarchique est-elle acceptée ?</td>
+</tr>
+<tr>
+<td><strong>IDV</strong> — <em>Individualism vs Collectivism</em></td>
+<td>Le « je » prime-t-il sur le « nous » ?</td>
+</tr>
+<tr>
+<td><strong>MAS</strong> — <em>Masculinity vs Femininity</em></td>
+<td>La société valorise-t-elle compétition/réussite ou soin/coopération ?</td>
+</tr>
+<tr>
+<td><strong>UAI</strong> — <em>Uncertainty Avoidance Index</em></td>
+<td>Tolère-t-on l'incertitude ou la fuit-on ?</td>
+</tr>
+<tr>
+<td><strong>LTO</strong> — <em>Long-Term Orientation</em></td>
+<td>Préfère-t-on tradition + court terme ou pragmatisme + long terme ?</td>
+</tr>
+<tr>
+<td><strong>IVR</strong> — <em>Indulgence vs Restraint</em></td>
+<td>La société autorise-t-elle la gratification ou la réprime-t-elle ?</td>
+</tr>
+</tbody>
+</table>
+<p>À l'origine il y avait 4 dimensions ; LTO et IVR ont été ajoutées dans les années 90 et 2000 grâce à des collaborations (Bond, Minkov).</p>
+<h2 id="pourquoi-cest-utile-pour-cvs">Pourquoi c'est utile pour cvs</h2>
+<ul>
+<li><strong>Six chiffres par pays</strong> → cvs construit <code>B_score = ℝ⁶</code>, un espace de dimension 6 dans lequel chaque pays est un point.</li>
+<li>Données <strong>largement publiées</strong>, faciles à intégrer, <strong>interprétables</strong>.</li>
+<li>Permet de calculer des <strong>distances Mahalanobis</strong> entre pays (qui tiennent compte du fait que toutes les dimensions n'ont pas la même variance).</li>
+</ul>
+<h2 id="critiques-principales">Critiques principales</h2>
+<table>
+<thead>
+<tr>
+<th>Critique</th>
+<th>Auteur clé</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Échantillon biaisé</strong> : ne s'appuie que sur des employés IBM (cadres et techniciens) — pas représentatif de la population générale</td>
+<td>McSweeney (2002)</td>
+</tr>
+<tr>
+<td><strong>Stabilité postulée</strong> : Hofstede présente les dimensions comme stables sur des décennies, c'est empiriquement discutable</td>
+<td>Ailon (2008)</td>
+</tr>
+<tr>
+<td><strong>Orthogonalité postulée</strong> : les 6 dimensions sont présentées comme indépendantes, mais les corrélations empiriques sont fortes</td>
+<td>Minkov &amp; Hofstede (2014) — autocritique partielle</td>
+</tr>
+<tr>
+<td><strong>Effet « culture nationale »</strong> : Hofstede confond la culture nationale avec la culture d'une entreprise multinationale particulière (IBM)</td>
+<td>McSweeney (2002)</td>
+</tr>
+<tr>
+<td><strong>Échelle simplifiée</strong> : 6 chiffres pour résumer la culture d'un pays, c'est réducteur</td>
+<td>Baskerville (2003)</td>
+</tr>
+</tbody>
+</table>
+<p>Voir <a href="../../methodology/08_civilizational_basis/">doc 08 §3.2</a> du site principal — qui étiquette explicitement l'orthogonalité comme <strong>« postulée non vérifiée empiriquement »</strong>.</p>
+<h2 id="comment-cvs-traite-ces-critiques">Comment cvs traite ces critiques</h2>
+<ul>
+<li><strong>Échantillon biaisé</strong> : cvs <strong>complète</strong> Hofstede avec WVS (échantillon population générale) et avec Inglehart-Welzel — donc le biais IBM est noyé dans des sources plus larges.</li>
+<li><strong>Orthogonalité</strong> : cvs utilise des <strong>distances Mahalanobis intra-civilisationnelles</strong> qui tiennent compte de la covariance réelle entre dimensions (pas une orthogonalité postulée).</li>
+<li><strong>Stabilité</strong> : cvs publie une <strong>date de capture</strong> explicite et prévoit des <strong>réplications</strong> futures sur les vagues WVS suivantes.</li>
+<li><strong>Échelle simplifiée</strong> : cvs ajoute la couche <code>M(s)</code> (second moment) qui mesure la <strong>dispersion</strong> autour de la moyenne — autrement dit, la simplification à 6 chiffres est <strong>accompagnée</strong> d'une mesure de la perte d'information.</li>
+</ul>
+<h2 id="lattitude-de-cvs-envers-hofstede">L'attitude de cvs envers Hofstede</h2>
+<blockquote>
+<p>cvs <strong>utilise</strong> Hofstede comme une <strong>commodité métrique</strong> (6 axes interprétables), pas comme une vérité culturelle absolue. Les axes sont utiles parce qu'ils sont <strong>partagés</strong> par d'autres travaux académiques — pas parce qu'on croit qu'ils épuisent ce qu'est une culture.</p>
+</blockquote>
+<h2 id="pour-aller-plus-loin">Pour aller plus loin</h2>
+<ul>
+<li>Hofstede, <em>Cultures and Organizations: Software of the Mind</em>, 2010 (3ᵉ éd.).</li>
+<li>McSweeney, <em>Hofstede's Model of National Cultural Differences and their Consequences: A Triumph of Faith — a Failure of Analysis</em>, 2002 (la critique de référence).</li>
+<li>Site principal cvs : <a href="../../methodology/08_civilizational_basis/">doc 08 — Base civilisationnelle</a>.</li>
+</ul>
+  </article>
+
+</main>
+
+<footer class="site-footer">
+  <nav aria-label="Liens vers le site principal">
+    <a href="../../">Méthodologie complète</a>
+    <a href="../../states/">États</a>
+    <a href="../../map/">Carte</a>
+    <a href="../../basis/">Base vectorielle</a>
+    <a href="../../moments/">Moments M(s)</a>
+    <a href="../../distances/">Distances</a>
+    <a href="../../ethics/">Éthique officielle</a>
+    <a href="https://github.com/s-geffroy/cvs" rel="noopener">GitHub</a>
+  </nav>
+  <p class="footer-note">cvs · publié sous licence MIT · données WVS (CC-BY), Hofstede (usage scientifique), Natural Earth (domaine public), geoBoundaries (CC-BY 4.0). Aucune géométrie GADM publiée.</p>
+</footer>
+
+</body>
+</html>

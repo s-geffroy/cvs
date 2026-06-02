@@ -1,0 +1,210 @@
+/* Vulgarisation mini-site — identité visuelle propre (HORS thème MkDocs Material).
+   Pas de classes md-* ni d'éléments du theme parent ; le sous-site doit pouvoir
+   être servi de façon autonome. */
+
+:root {
+  --color-bg: #fbfaf6;
+  --color-bg-soft: #f3efe5;
+  --color-fg: #1f1d18;
+  --color-muted: #5b574c;
+  --color-accent: #b25527;       /* terre cuite — distinct du theme principal */
+  --color-accent-soft: #f1cfb4;
+  --color-divider: #d9d3c4;
+  --color-ethics-bg: #1f1d18;
+  --color-ethics-fg: #fff6ea;
+  --color-level1: #2c7a55;
+  --color-level2: #2a5d92;
+  --color-level3: #6a3f9c;
+  --radius: 6px;
+  --width-prose: 64ch;
+  --width-page: 1180px;
+  --font-prose: "Iowan Old Style", "Source Serif Pro", Georgia, "Times New Roman", serif;
+  --font-ui: -apple-system, BlinkMacSystemFont, "Segoe UI", "Inter", sans-serif;
+}
+
+html { background: var(--color-bg); color: var(--color-fg); }
+body {
+  font-family: var(--font-prose);
+  font-size: 1.05rem;
+  color: var(--color-fg);
+  background: var(--color-bg);
+  min-height: 100vh;
+}
+
+.skip-link {
+  position: absolute; top: -100px; left: 0;
+  background: var(--color-ethics-bg); color: var(--color-ethics-fg);
+  padding: 0.5rem 1rem; z-index: 1000;
+}
+.skip-link:focus { top: 0; }
+
+/* Sticky ethics banner (toujours visible). */
+.ethics-sticky {
+  position: sticky; top: 0; z-index: 50;
+  background: var(--color-ethics-bg); color: var(--color-ethics-fg);
+  font-family: var(--font-ui);
+  font-size: 0.85rem;
+  padding: 0.6rem 1rem;
+  border-bottom: 1px solid #000;
+}
+.ethics-sticky strong { color: #ffd098; }
+
+/* Header. */
+.site-header {
+  max-width: var(--width-page);
+  margin: 0 auto;
+  padding: 1.25rem 1.25rem 0.75rem;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 1rem;
+  align-items: center;
+  border-bottom: 1px dashed var(--color-divider);
+}
+.brand a {
+  font-family: var(--font-ui);
+  font-weight: 700;
+  text-decoration: none;
+  font-size: 1.1rem;
+  letter-spacing: 0.02em;
+}
+.audience-switcher {
+  display: flex; flex-wrap: wrap; gap: 0.4rem;
+  justify-content: center;
+  font-family: var(--font-ui);
+}
+.audience-pill {
+  background: var(--color-bg-soft);
+  border: 1px solid var(--color-divider);
+  border-radius: 999px;
+  padding: 0.3rem 0.75rem;
+  font-size: 0.82rem;
+  text-decoration: none;
+  color: var(--color-fg);
+}
+.audience-pill--active {
+  background: var(--color-accent);
+  color: #fff;
+  border-color: var(--color-accent);
+}
+.main-site-link {
+  font-family: var(--font-ui);
+  font-size: 0.85rem;
+  text-decoration: none;
+  color: var(--color-muted);
+}
+.main-site-link:hover { color: var(--color-accent); }
+
+/* Layout — deux colonnes (sub-nav + corps). */
+.layout {
+  max-width: var(--width-page);
+  margin: 0 auto;
+  padding: 1.5rem 1.25rem 3rem;
+  display: grid;
+  grid-template-columns: 230px 1fr;
+  gap: 2.5rem;
+}
+@media (max-width: 800px) {
+  .layout { grid-template-columns: 1fr; }
+  .sub-nav { order: 2; }
+}
+
+.sub-nav {
+  font-family: var(--font-ui);
+  font-size: 0.92rem;
+  border-right: 1px solid var(--color-divider);
+  padding-right: 1rem;
+}
+.sub-nav-title {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--color-muted);
+  margin: 0 0 0.5rem;
+}
+.sub-nav ul { list-style: none; padding: 0; margin: 0 0 1.25rem; }
+.sub-nav li { margin: 0.25rem 0; }
+.sub-nav a { text-decoration: none; color: var(--color-fg); }
+.sub-nav a:hover { color: var(--color-accent); }
+
+/* Body. */
+.page-body { max-width: var(--width-prose); }
+.audience-line {
+  font-family: var(--font-ui);
+  font-size: 0.82rem;
+  color: var(--color-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin: 0 0 0.5rem;
+}
+.page-body h1 { font-size: 2.1rem; margin: 0.25rem 0 1.25rem; line-height: 1.2; }
+.page-body h2 { font-size: 1.45rem; margin: 2rem 0 0.5rem; }
+.page-body h3 { font-size: 1.15rem; margin: 1.5rem 0 0.4rem; }
+.page-body p, .page-body li { font-size: 1.05rem; }
+.page-body blockquote {
+  margin: 1rem 0;
+  padding: 0.75rem 1rem;
+  background: var(--color-bg-soft);
+  border-left: 4px solid var(--color-accent);
+  font-style: italic;
+}
+.page-body table { width: 100%; margin: 1rem 0; }
+.page-body th, .page-body td {
+  border: 1px solid var(--color-divider);
+  padding: 0.4rem 0.6rem;
+  text-align: left;
+  font-family: var(--font-ui);
+  font-size: 0.92rem;
+}
+.page-body th { background: var(--color-bg-soft); }
+
+.page-body .callout {
+  background: var(--color-bg-soft);
+  border: 1px solid var(--color-divider);
+  border-radius: var(--radius);
+  padding: 1rem 1.25rem;
+  margin: 1.25rem 0;
+}
+.page-body .callout--warning { border-left: 6px solid var(--color-accent); }
+.page-body .callout--how { border-left: 6px solid var(--color-level2); }
+.page-body .callout--limit { border-left: 6px solid #b22d2d; }
+.page-body .callout h3 { margin-top: 0; }
+
+/* Hub-spécifique : 3 portes. */
+.portes {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  margin: 1.5rem 0;
+}
+.porte {
+  display: block;
+  padding: 1.25rem;
+  border: 1px solid var(--color-divider);
+  border-radius: var(--radius);
+  background: #fff;
+  text-decoration: none;
+  color: var(--color-fg);
+  box-shadow: 0 1px 0 var(--color-divider);
+}
+.porte:hover { transform: translateY(-2px); transition: transform 0.15s; }
+.porte--niveau-1 { border-top: 4px solid var(--color-level1); }
+.porte--niveau-2 { border-top: 4px solid var(--color-level2); }
+.porte--niveau-3 { border-top: 4px solid var(--color-level3); }
+.porte--maths { border-top: 4px solid var(--color-accent); }
+.porte h2 { font-size: 1.1rem; margin: 0 0 0.5rem; }
+.porte p { font-size: 0.95rem; margin: 0; color: var(--color-muted); }
+
+/* Footer. */
+.site-footer {
+  max-width: var(--width-page);
+  margin: 2rem auto 0;
+  padding: 1.5rem 1.25rem 2.5rem;
+  border-top: 1px dashed var(--color-divider);
+  font-family: var(--font-ui);
+  font-size: 0.85rem;
+  color: var(--color-muted);
+}
+.site-footer nav { display: flex; flex-wrap: wrap; gap: 1rem; margin-bottom: 0.75rem; }
+.site-footer nav a { color: var(--color-fg); text-decoration: none; }
+.site-footer nav a:hover { color: var(--color-accent); }
+.footer-note { margin: 0; line-height: 1.4; }
