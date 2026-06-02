@@ -4,6 +4,10 @@
     Ce profil est inféré à partir de sources publiques agrégées.
     **Il ne doit pas être utilisé pour classer des individus réels.**
 
+!!! tip "Pas matheux ? Lisez d'abord la version grand public"
+    Un **mini-site de vulgarisation** explique cvs en français courant, sans formules, avec trois portes d'entrée (citoyen / journaliste / étudiant SHS). →
+    [Comprendre cvs sans les maths](vulgarisation/index.html){target=_blank}
+
 ## Pitch
 
 `cvs/` est un pipeline Python bayésien produisant pour chaque **État souverain** un

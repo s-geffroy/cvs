@@ -59,6 +59,7 @@ extra_javascript:
 not_in_nav: |
   /states/*.md
   !/states/index.md
+  /vulgarisation/**
 
 markdown_extensions:
   - admonition
@@ -126,3 +127,4 @@ nav:
   - Schémas: schemas/index.md
   - ADM1 (préparé): adm1_policy.md
   - Relecture: review/index.md
+  - "Vulgarisation ↗": https://s-geffroy.github.io/cvs/vulgarisation/index.html

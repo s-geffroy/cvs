@@ -21,3 +21,4 @@
 
 - [Méthodologie 07 — Politique éthique de publication](methodology/07_ethics_publication_policy.md)
 - [Politique ADM1 préparée](adm1_policy.md)
+- [Version grand public — « Pourquoi c'est imparfait »](vulgarisation/niveau-1-citoyen/pourquoi-c-est-imparfait.html){target=_blank}

@@ -515,9 +515,12 @@ def render_phase2() -> None:
 
 
 def render_all() -> None:
+    from apps.site_builder.vulgarisation import render_vulgarisation
+
     render_methodology()
     render_taxonomy()
     render_sources()
     render_schemas()
     render_phase2()
-    print("[site] rendered methodology, taxonomy, sources, schemas, phase2")
+    render_vulgarisation()
+    print("[site] rendered methodology, taxonomy, sources, schemas, phase2, vulgarisation")

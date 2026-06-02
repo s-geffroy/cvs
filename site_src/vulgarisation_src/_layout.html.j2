@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="index,follow">
+  <title>{{ page_title }} — cvs vulgarisation</title>
+  <meta name="description" content="Comprendre Civilizational Vector State sans les maths. {{ audience }}">
+  <link rel="stylesheet" href="{{ relative_to_root }}assets/css/reset.css">
+  <link rel="stylesheet" href="{{ relative_to_root }}assets/css/vulgarisation.css">
+  <link rel="stylesheet" media="print" href="{{ relative_to_root }}assets/css/print.css">
+</head>
+<body data-section="{{ section_slug }}">
+
+<a class="skip-link" href="#main">Aller au contenu</a>
+
+<div class="ethics-sticky" role="region" aria-label="Avertissement éthique">
+  <strong>Avertissement éthique :</strong>
+  {{ ethical_warning_fr }}
+</div>
+
+<header class="site-header">
+  <div class="brand">
+    <a href="{{ relative_to_root }}index.html">cvs · vulgarisation</a>
+  </div>
+  <nav class="audience-switcher" aria-label="Choisir un niveau">
+    {% for s in all_sections %}
+      <a href="{{ relative_to_root }}{{ s.slug }}/index.html"
+         class="audience-pill {% if s.slug == section_slug %}audience-pill--active{% endif %}">{{ s.label }}</a>
+    {% endfor %}
+  </nav>
+  <a class="main-site-link" href="{{ relative_to_main_site }}">↗ Site principal (méthodologie)</a>
+</header>
+
+<main id="main" class="layout">
+
+  <aside class="sub-nav" aria-label="Sommaire du niveau">
+    {% if sub_nav %}
+      <h2 class="sub-nav-title">{{ section_label }}</h2>
+      <ul>
+        {% for item in sub_nav %}
+          <li><a href="{{ item.href }}">{{ item.label }}</a></li>
+        {% endfor %}
+      </ul>
+    {% endif %}
+    <h2 class="sub-nav-title">Transverse</h2>
+    <ul>
+      {% for slug, label, _ in transverse_pages %}
+        <li><a href="{{ relative_to_root }}{{ slug }}.html">{{ label }}</a></li>
+      {% endfor %}
+    </ul>
+  </aside>
+
+  <article class="page-body">
+    <p class="audience-line">{{ audience }}</p>
+    <h1>{{ page_title }}</h1>
+    {{ body_html | safe }}
+  </article>
+
+</main>
+
+<footer class="site-footer">
+  <nav aria-label="Liens vers le site principal">
+    <a href="{{ relative_to_main_site }}">Méthodologie complète</a>
+    <a href="{{ relative_to_main_site }}states/">États</a>
+    <a href="{{ relative_to_main_site }}map/">Carte</a>
+    <a href="{{ relative_to_main_site }}basis/">Base vectorielle</a>
+    <a href="{{ relative_to_main_site }}moments/">Moments M(s)</a>
+    <a href="{{ relative_to_main_site }}distances/">Distances</a>
+    <a href="{{ relative_to_main_site }}ethics/">Éthique officielle</a>
+    <a href="https://github.com/s-geffroy/cvs" rel="noopener">GitHub</a>
+  </nav>
+  <p class="footer-note">cvs · publié sous licence MIT · données WVS (CC-BY), Hofstede (usage scientifique), Natural Earth (domaine public), geoBoundaries (CC-BY 4.0). Aucune géométrie GADM publiée.</p>
+</footer>
+
+</body>
+</html>

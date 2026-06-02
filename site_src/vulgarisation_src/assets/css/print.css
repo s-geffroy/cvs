@@ -1,0 +1,7 @@
+@media print {
+  .ethics-sticky { position: static; background: #000 !important; color: #fff !important; }
+  .audience-switcher, .sub-nav, .site-footer nav { display: none !important; }
+  .layout { display: block; }
+  .page-body { max-width: 100%; }
+  a[href]::after { content: " (" attr(href) ")"; font-size: 0.8em; color: #555; }
+}

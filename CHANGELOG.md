@@ -7,6 +7,44 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added — Mini-site de vulgarisation grand public (2026-06-02)
+
+- Nouveau **mini-site autonome** hébergé sous `/vulgarisation/` (hors thème
+  MkDocs Material, identité visuelle propre — terre cuite, serif, ethics
+  sticky en haut, plan responsive 2-colonnes). Trois portes d'entrée
+  stratifiées : citoyen / journaliste / étudiant SHS, plus un hub d'accueil
+  et trois pages transverses (glossaire illustré, FAQ, crédits).
+- **Sources** : `site_src/vulgarisation_src/` (Markdown + Jinja2 layout).
+- **Builder** : `apps/site_builder/vulgarisation.py::render_vulgarisation()`,
+  branché dans `apps/site_builder/builder.py::render_all()`. Conversion
+  Markdown→HTML via la lib `markdown` (transitivement installée par
+  mkdocs-material), enveloppage Jinja2 dans `_layout.html.j2`. Le sous-arbre
+  HTML est copié tel quel par `mkdocs build` (les `.html` non-Markdown ne
+  sont pas enveloppés par Material).
+- **mkdocs.yml** : `not_in_nav` étendu de `/vulgarisation/**` et entrée nav
+  externe `Vulgarisation ↗ → /cvs/vulgarisation/`.
+- **Pages livrées** (19 au total) :
+  - Hub : `index.html` (3 portes + 1 porte « je veux les vraies maths »).
+  - Niveau 1 — citoyen (5 pages) : `qu-est-ce-qu-une-civilisation`,
+    `comment-on-classe-un-pays`, `si-la-france-etait`, `pourquoi-c-est-imparfait`.
+  - Niveau 2 — journaliste/décideur (5 pages) : `comment-lire-la-carte`,
+    `les-3-distances-en-1-image`, `ce-que-ces-chiffres-ne-disent-pas`,
+    `boite-a-outils-redactionnelle`.
+  - Niveau 3 — étudiant SHS (6 pages) : `huntington-en-2-pages`,
+    `hofstede-en-2-pages`, `inglehart-welzel-en-2-pages`,
+    `ce-que-le-bayesien-apporte`, `controverses-academiques`.
+  - Transverses : `glossaire-illustre`, `faq`, `credits`.
+- **Avertissement éthique sticky** sur chaque page HTML (token identique au
+  site principal, vérifié par `test_vulgarisation_ethics_sticky_on_every_html`).
+- **Cross-linking** : site principal → vulgarisation (encart `tip` sur
+  `index.md` et lien « Voir aussi » sur `ethics.md`) ; vulgarisation →
+  méthodologie/états/carte/distances/éthique (footer commun) + liens
+  inline (« pour aller plus loin ») sur chaque page de niveau 3.
+- **Tests** : `tests/test_vulgarisation.py` (11 cas) — présence du hub, des
+  3 niveaux, sticky éthique partout, absence de classes Material (md-*),
+  liens retour vers méthodologie, footer, assets présents, absence de
+  GADM, exclusion `not_in_nav`, entrée nav externe, lien depuis l'accueil.
+
 ### Published — v3.0.0a1 en ligne (2026-06-01)
 
 - Republication automatique via `.github/workflows/publish.yml` (workflow success).
