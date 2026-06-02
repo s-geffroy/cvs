@@ -31,7 +31,7 @@ Les graphiques interactifs nécessitent JavaScript. Les données restent téléc
 - [`B_viz.json`](../assets/data/B_viz.json) (2 axes)
 - [`B_score.json`](../assets/data/B_score.json) (6 axes)
 - [`civilization_centroids.json`](../assets/data/civilization_centroids.json) (11 civilisations)
-- [`state_coordinates.json`](../assets/data/state_coordinates.json) (63 États)
+- [`state_coordinates.json`](../assets/data/state_coordinates.json) (70 États)
 
 ## Détails techniques
 

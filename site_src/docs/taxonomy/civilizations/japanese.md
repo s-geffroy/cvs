@@ -53,10 +53,10 @@ IW: TS très élevé (laïcisation extrême, religiosité instrumentale), SE moy
 
 ## États membres
 
-| ISO3 | Rôle | Rationale | Citations |
-|---|---|---|---|
+| État | ISO3 | Rôle | Rationale | Citations |
+|---|---|---|---|---|
 
-| `JPN` | core | Japon, civilisation sui generis | huntington_1996 |
+| Japon | `JPN` | core | Japon, civilisation sui generis | huntington_1996 |
 
 
 

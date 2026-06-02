@@ -53,27 +53,27 @@ IW: TS+ (laïcisation forte, post-confucianisme), SE négatif (survival). Hofste
 
 ## États membres
 
-| ISO3 | Rôle | Rationale | Citations |
-|---|---|---|---|
+| État | ISO3 | Rôle | Rationale | Citations |
+|---|---|---|---|---|
 
-| `CHN` | core | Chine continentale, cœur Han | huntington_1996 |
+| Chine | `CHN` | core | Chine continentale, cœur Han | huntington_1996 |
 
-| `SGP` | core | Singapour, majorité chinoise, cité-État confucéenne | huntington_1996 |
+| Singapour | `SGP` | core | Singapour, majorité chinoise, cité-État confucéenne | huntington_1996 |
 
-| `HKG` | core | Hong Kong, RAS de Chine, hybride Sinic-Western | huntington_1996 |
+| HKG | `HKG` | core | Hong Kong, RAS de Chine, hybride Sinic-Western | huntington_1996 |
 
-| `TWN` | core | Taïwan, République de Chine | huntington_1996 |
+| TWN | `TWN` | core | Taïwan, République de Chine | huntington_1996 |
 
-| `VNM` | core | Vietnam, sinisation millénaire (1000 ans de domination chinoise) | huntington_1996 |
+| Viet Nam | `VNM` | core | Vietnam, sinisation millénaire (1000 ans de domination chinoise) | huntington_1996 |
 
 
 
 ## Sous-clusters
 
 
-- **Sinic continental** (`mainland_sinic`) — CHN, VNM
+- **Sinic continental** (`mainland_sinic`) — Chine (`CHN`), Viet Nam (`VNM`)
 
-- **Sinic insulaire / diasporique** (`insular_sinic`) — TWN, SGP, HKG
+- **Sinic insulaire / diasporique** (`insular_sinic`) — TWN (`TWN`), Singapour (`SGP`), HKG (`HKG`)
 
 
 
@@ -81,13 +81,13 @@ IW: TS+ (laïcisation forte, post-confucianisme), SE négatif (survival). Hofste
 ## Cas ambigus / controverses documentées
 
 
-### `KOR`
+### Corée du Sud (`KOR`)
 
 - **Civilisations en concurrence** : sinic, buddhist, japanese
 - **Discussion** : Corée du Sud: héritage confucéen (Sinic) mais identité distincte du fait de l'occupation japonaise et de l'orientation Western post-1953. Classée ici en Buddhist par défaut, mais affinités Sinic fortes.
 - **Citations** : huntington_1996
 
-### `SGP`
+### Singapour (`SGP`)
 
 - **Civilisations en concurrence** : sinic, islamic, western
 - **Discussion** : Multi-ethnique (chinois, malais, indien), mais Sinic dominant culturellement.

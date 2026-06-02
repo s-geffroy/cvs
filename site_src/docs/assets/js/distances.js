@@ -22,13 +22,19 @@
     return response.json();
   }
 
-  function renderDistanceHeatmap(distancePayload) {
+  function labelForIso3(iso3, iso3ToNameFr) {
+    const nameFr = iso3ToNameFr[iso3];
+    return nameFr ? `${nameFr} (${iso3})` : iso3;
+  }
+
+  function renderDistanceHeatmap(distancePayload, iso3ToNameFr) {
     const iso3List = distancePayload.iso3_order;
     const hybridMatrix = distancePayload.matrices.d_hybrid;
+    const labels = iso3List.map((iso3) => labelForIso3(iso3, iso3ToNameFr));
     const heatmapTrace = {
       z: hybridMatrix,
-      x: iso3List,
-      y: iso3List,
+      x: labels,
+      y: labels,
       type: 'heatmap',
       colorscale: 'Viridis',
       colorbar: { title: 'd_hyb' },
@@ -38,7 +44,7 @@
       title: 'Distance hybride d_hyb (α=0.4 d_score^M + β=0.4 d_w^W + γ=0.2 d_T)',
       xaxis: { tickangle: -75 },
       yaxis: { autorange: 'reversed' },
-      margin: { t: 60, l: 80, r: 30, b: 100 }
+      margin: { t: 60, l: 160, r: 30, b: 160 }
     };
     Plotly.newPlot('civvec-distances-heatmap', [heatmapTrace], layout, {
       responsive: true,
@@ -46,7 +52,7 @@
     });
   }
 
-  function renderPairDetail(distancePayload, leftIso3, rightIso3) {
+  function renderPairDetail(distancePayload, leftIso3, rightIso3, iso3ToNameFr) {
     const iso3List = distancePayload.iso3_order;
     const leftIndex = iso3List.indexOf(leftIso3);
     const rightIndex = iso3List.indexOf(rightIso3);
@@ -62,25 +68,24 @@
       })
       .join('');
     pairContainer.innerHTML =
-      `<table><thead><tr><th>Métrique</th><th>${leftIso3} ↔ ${rightIso3}</th></tr></thead>` +
+      `<table><thead><tr><th>Métrique</th><th>${labelForIso3(leftIso3, iso3ToNameFr)} ↔ ${labelForIso3(rightIso3, iso3ToNameFr)}</th></tr></thead>` +
       `<tbody>${metricsRows}</tbody></table>`;
   }
 
-  function injectPairSelectors(distancePayload) {
+  function injectPairSelectors(distancePayload, iso3ToNameFr) {
     const iso3List = distancePayload.iso3_order;
     const pairContainer = document.querySelector(pairContainerSelector);
     if (!pairContainer) {
       return;
     }
+    const optionsHtml = iso3List
+      .map((iso3) => `<option value="${iso3}">${labelForIso3(iso3, iso3ToNameFr)}</option>`)
+      .join('');
     const selectorWrapper = document.createElement('div');
     selectorWrapper.style.marginBottom = '0.5rem';
     selectorWrapper.innerHTML =
-      '<label>État A : <select id="civvec-distances-state-a">' +
-      iso3List.map((iso3) => `<option value="${iso3}">${iso3}</option>`).join('') +
-      '</select></label> &nbsp; ' +
-      '<label>État B : <select id="civvec-distances-state-b">' +
-      iso3List.map((iso3) => `<option value="${iso3}">${iso3}</option>`).join('') +
-      '</select></label>';
+      `<label>État A : <select id="civvec-distances-state-a">${optionsHtml}</select></label> &nbsp; ` +
+      `<label>État B : <select id="civvec-distances-state-b">${optionsHtml}</select></label>`;
     pairContainer.parentNode.insertBefore(selectorWrapper, pairContainer);
 
     const stateAElement = document.getElementById('civvec-distances-state-a');
@@ -91,20 +96,21 @@
     stateBElement.value = defaultRightIso3;
 
     const onChange = () => {
-      renderPairDetail(distancePayload, stateAElement.value, stateBElement.value);
+      renderPairDetail(distancePayload, stateAElement.value, stateBElement.value, iso3ToNameFr);
     };
     stateAElement.addEventListener('change', onChange);
     stateBElement.addEventListener('change', onChange);
-    renderPairDetail(distancePayload, defaultLeftIso3, defaultRightIso3);
+    renderPairDetail(distancePayload, defaultLeftIso3, defaultRightIso3, iso3ToNameFr);
   }
 
   async function bootstrapDistances() {
     const distancePayload = await fetchJson('../assets/data/state_distance_matrix.json');
+    const iso3ToNameFr = (distancePayload._meta && distancePayload._meta.iso3_to_name_fr) || {};
     if (document.querySelector(heatmapContainerSelector)) {
-      renderDistanceHeatmap(distancePayload);
+      renderDistanceHeatmap(distancePayload, iso3ToNameFr);
     }
     if (document.querySelector(pairContainerSelector)) {
-      injectPairSelectors(distancePayload);
+      injectPairSelectors(distancePayload, iso3ToNameFr);
     }
   }
 

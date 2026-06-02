@@ -1,11 +1,12 @@
-# État `PER` — profil civilisationnel
+# Pérou (`PER`) — profil civilisationnel
 
 !!! warning "Avertissement éthique"
     Ce profil est inféré à partir de sources publiques agrégées. Il ne doit pas être utilisé pour classer des individus réels.
 
+**Nom (FR)** : Pérou ·
 **ISO3** : `PER` ·
 **Couverture B_vec** : B_viz + B_score (complet) ·
-**Données géométriques** : Natural Earth 110m
+**Données géométriques** : Natural Earth
 
 ## Coordonnées B_vec
 

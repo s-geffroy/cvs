@@ -1,11 +1,12 @@
-# État `{{ state.iso3 }}` — profil civilisationnel
+# {{ state_name_fr if state_name_fr else state.iso3 }} (`{{ state.iso3 }}`) — profil civilisationnel
 
 !!! warning "Avertissement éthique"
     {{ ethical_warning_fr }}
 
+**Nom (FR)** : {{ state_name_fr if state_name_fr else "_(non répertorié ONU)_" }} ·
 **ISO3** : `{{ state.iso3 }}` ·
 **Couverture B_vec** : {{ "B_viz + B_score (complet)" if (state.x_score and state.x_score[0] is not none) else "B_viz seul (Hofstede manquant)" }} ·
-**Données géométriques** : {{ "Natural Earth 110m" if has_geometry else "(simplification 110m — territoire non rendu)" }}
+**Données géométriques** : {{ "Natural Earth" if has_geometry else "(non rendu)" }}
 
 ## Coordonnées B_vec
 

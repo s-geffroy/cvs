@@ -1,11 +1,12 @@
-# État `GHA` — profil civilisationnel
+# Ghana (`GHA`) — profil civilisationnel
 
 !!! warning "Avertissement éthique"
     Ce profil est inféré à partir de sources publiques agrégées. Il ne doit pas être utilisé pour classer des individus réels.
 
+**Nom (FR)** : Ghana ·
 **ISO3** : `GHA` ·
 **Couverture B_vec** : B_viz + B_score (complet) ·
-**Données géométriques** : Natural Earth 110m
+**Données géométriques** : Natural Earth
 
 ## Coordonnées B_vec
 

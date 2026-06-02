@@ -53,31 +53,31 @@ Extension de Huntington qui classait le bouddhisme comme civilisation 'non clair
 
 ## États membres
 
-| ISO3 | Rôle | Rationale | Citations |
-|---|---|---|---|
+| État | ISO3 | Rôle | Rationale | Citations |
+|---|---|---|---|---|
 
-| `THA` | core | Thaïlande, Theravada | huntington_1996 |
+| Thaïlande | `THA` | core | Thaïlande, Theravada | huntington_1996 |
 
-| `KHM` | core | Cambodge, Theravada | huntington_1996 |
+| Cambodge | `KHM` | core | Cambodge, Theravada | huntington_1996 |
 
-| `LAO` | core | Laos, Theravada | huntington_1996 |
+| Laos | `LAO` | core | Laos, Theravada | huntington_1996 |
 
-| `MMR` | core | Myanmar, Theravada | huntington_1996 |
+| Myanmar | `MMR` | core | Myanmar, Theravada | huntington_1996 |
 
-| `MNG` | core | Mongolie, Mahayana tibétain | huntington_1996 |
+| Mongolie | `MNG` | core | Mongolie, Mahayana tibétain | huntington_1996 |
 
-| `KOR` | ambiguous | Corée du Sud: bouddhisme historique + confucianisme actif + christianisme important. Classification débattue Sinic/Buddhist. | huntington_1996 |
+| Corée du Sud | `KOR` | ambiguous | Corée du Sud: bouddhisme historique + confucianisme actif + christianisme important. Classification débattue Sinic/Buddhist. | huntington_1996 |
 
-| `BTN` | core | Bhoutan, Mahayana | huntington_1996 |
+| Bhoutan | `BTN` | core | Bhoutan, Mahayana | huntington_1996 |
 
 
 
 ## Sous-clusters
 
 
-- **Theravada** (`theravada`) — THA, KHM, LAO, MMR
+- **Theravada** (`theravada`) — Thaïlande (`THA`), Cambodge (`KHM`), Laos (`LAO`), Myanmar (`MMR`)
 
-- **Mahayana** (`mahayana`) — KOR, MNG, BTN
+- **Mahayana** (`mahayana`) — Corée du Sud (`KOR`), Mongolie (`MNG`), Bhoutan (`BTN`)
 
 
 
@@ -85,13 +85,13 @@ Extension de Huntington qui classait le bouddhisme comme civilisation 'non clair
 ## Cas ambigus / controverses documentées
 
 
-### `KOR`
+### Corée du Sud (`KOR`)
 
 - **Civilisations en concurrence** : buddhist, sinic
 - **Discussion** : Corée: forte sinisation confucéenne historique. Inglehart-Welzel la place proche du cluster Confucian. Choix éditorial: Buddhist par tradition religieuse, mais membre périphérie Sinic.
 - **Citations** : huntington_1996
 
-### `VNM`
+### Viet Nam (`VNM`)
 
 - **Civilisations en concurrence** : sinic, buddhist
 - **Discussion** : Vietnam: Mahayana actif mais classé Sinic par convention historique.

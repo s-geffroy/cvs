@@ -3,138 +3,152 @@
 !!! warning "Avertissement éthique"
     Ce profil est inféré à partir de sources publiques agrégées. Il ne doit pas être utilisé pour classer des individus réels.
 
-Liste des **63 États** dont les coordonnées `x_viz` et `x_score` ont
+Liste des **70 États** dont les coordonnées `x_viz` et `x_score` ont
 été calculées dans la base vectorielle (Phase 2). Pour la méthodologie,
 voir [`08_civilizational_basis.md`](../methodology/08_civilizational_basis.md).
 
-| ISO3 | `x_viz` (TS, SE) | Hofstede complet | Géométrie 110m |
-|---|---|---|---|
+| État | ISO3 | `x_viz` (TS, SE) | Hofstede complet | Géométrie |
+|---|---|---|---|---|
 
-| [`ARG`](ARG.md) | `[-0.60, 0.65]` | ✓ | ✓ |
+| [Argentine](ARG.md) | `ARG` | `[-0.60, 0.65]` | ✓ | ✓ |
 
-| [`AUS`](AUS.md) | `[0.50, 1.65]` | ✓ | ✓ |
+| [Australie](AUS.md) | `AUS` | `[0.50, 1.65]` | ✓ | ✓ |
 
-| [`BGD`](BGD.md) | `[-1.05, -0.65]` | ✓ | ✓ |
+| [Bangladesh](BGD.md) | `BGD` | `[-1.05, -0.65]` | ✓ | ✓ |
 
-| [`BGR`](BGR.md) | `[-0.25, -0.95]` | ✓ | ✓ |
+| [Bulgarie](BGR.md) | `BGR` | `[-0.25, -0.95]` | ✓ | ✓ |
 
-| [`BLR`](BLR.md) | `[0.45, -1.20]` | ✓ | ✓ |
+| [Bélarus](BLR.md) | `BLR` | `[0.45, -1.20]` | ✓ | ✓ |
 
-| [`BOL`](BOL.md) | `[-1.10, 0.05]` | ✓ | ✓ |
+| [Bolivie](BOL.md) | `BOL` | `[-1.10, 0.05]` | ✓ | ✓ |
 
-| [`BRA`](BRA.md) | `[-1.05, 0.85]` | ✓ | ✓ |
+| [Brésil](BRA.md) | `BRA` | `[-1.05, 0.85]` | ✓ | ✓ |
 
-| [`CAN`](CAN.md) | `[0.55, 1.70]` | ✓ | ✓ |
+| [Bhoutan](BTN.md) | `BTN` | — | manquant | ✓ |
 
-| [`CHL`](CHL.md) | `[-0.20, 0.85]` | ✓ | ✓ |
+| [Canada](CAN.md) | `CAN` | `[0.55, 1.70]` | ✓ | ✓ |
 
-| [`CHN`](CHN.md) | `[0.75, -0.95]` | ✓ | ✓ |
+| [Chili](CHL.md) | `CHL` | `[-0.20, 0.85]` | ✓ | ✓ |
 
-| [`COL`](COL.md) | `[-0.90, 1.10]` | ✓ | ✓ |
+| [Chine](CHN.md) | `CHN` | `[0.75, -0.95]` | ✓ | ✓ |
 
-| [`DEU`](DEU.md) | `[1.40, 1.15]` | ✓ | ✓ |
+| [Colombie](COL.md) | `COL` | `[-0.90, 1.10]` | ✓ | ✓ |
 
-| [`DNK`](DNK.md) | `[1.50, 2.20]` | ✓ | ✓ |
+| [Allemagne](DEU.md) | `DEU` | `[1.40, 1.15]` | ✓ | ✓ |
 
-| [`ECU`](ECU.md) | `[-1.05, 0.30]` | ✓ | ✓ |
+| [Danemark](DNK.md) | `DNK` | `[1.50, 2.20]` | ✓ | ✓ |
 
-| [`EGY`](EGY.md) | `[-1.55, -1.20]` | ✓ | ✓ |
+| [Équateur](ECU.md) | `ECU` | `[-1.05, 0.30]` | ✓ | ✓ |
 
-| [`ESP`](ESP.md) | `[0.65, 0.95]` | ✓ | ✓ |
+| [Égypte](EGY.md) | `EGY` | `[-1.55, -1.20]` | ✓ | ✓ |
 
-| [`ETH`](ETH.md) | `[-1.10, -0.65]` | ✓ | ✓ |
+| [Espagne](ESP.md) | `ESP` | `[0.65, 0.95]` | ✓ | ✓ |
 
-| [`FIN`](FIN.md) | `[0.90, 1.50]` | ✓ | ✓ |
+| [Éthiopie](ETH.md) | `ETH` | `[-1.10, -0.65]` | ✓ | ✓ |
 
-| [`FJI`](FJI.md) | `[-0.80, 0.40]` | ✓ | ✓ |
+| [Finlande](FIN.md) | `FIN` | `[0.90, 1.50]` | ✓ | ✓ |
 
-| [`FRA`](FRA.md) | `[1.20, 1.45]` | ✓ | ✓ |
+| [Fidji](FJI.md) | `FJI` | `[-0.80, 0.40]` | ✓ | ✓ |
 
-| [`GBR`](GBR.md) | `[0.85, 1.50]` | ✓ | ✓ |
+| [France](FRA.md) | `FRA` | `[1.20, 1.45]` | ✓ | ✓ |
 
-| [`GHA`](GHA.md) | `[-1.45, 0.20]` | ✓ | ✓ |
+| [Royaume-Uni](GBR.md) | `GBR` | `[0.85, 1.50]` | ✓ | ✓ |
 
-| [`GRC`](GRC.md) | `[-0.10, 0.05]` | ✓ | ✓ |
+| [Ghana](GHA.md) | `GHA` | `[-1.45, 0.20]` | ✓ | ✓ |
 
-| [`GTM`](GTM.md) | `[-1.25, 0.30]` | ✓ | ✓ |
+| [Grèce](GRC.md) | `GRC` | `[-0.10, 0.05]` | ✓ | ✓ |
 
-| [`HKG`](HKG.md) | `[0.50, 0.00]` | ✓ | — |
+| [Guatemala](GTM.md) | `GTM` | `[-1.25, 0.30]` | ✓ | ✓ |
 
-| [`IDN`](IDN.md) | `[-1.10, -0.30]` | ✓ | ✓ |
+| [HKG](HKG.md) | `HKG` | `[0.50, 0.00]` | ✓ | — |
 
-| [`IND`](IND.md) | `[-0.60, -0.20]` | ✓ | ✓ |
+| [Indonésie](IDN.md) | `IDN` | `[-1.10, -0.30]` | ✓ | ✓ |
 
-| [`IRL`](IRL.md) | `[0.10, 1.10]` | ✓ | ✓ |
+| [Inde](IND.md) | `IND` | `[-0.60, -0.20]` | ✓ | ✓ |
 
-| [`IRN`](IRN.md) | `[-1.10, -0.40]` | ✓ | ✓ |
+| [Irlande](IRL.md) | `IRL` | `[0.10, 1.10]` | ✓ | ✓ |
 
-| [`IRQ`](IRQ.md) | `[-1.45, -1.15]` | ✓ | ✓ |
+| [Iran](IRN.md) | `IRN` | `[-1.10, -0.40]` | ✓ | ✓ |
 
-| [`ITA`](ITA.md) | `[0.40, 0.85]` | ✓ | ✓ |
+| [Iraq](IRQ.md) | `IRQ` | `[-1.45, -1.15]` | ✓ | ✓ |
 
-| [`JOR`](JOR.md) | `[-1.30, -1.05]` | ✓ | ✓ |
+| [Israël](ISR.md) | `ISR` | — | manquant | ✓ |
 
-| [`JPN`](JPN.md) | `[1.95, 0.45]` | ✓ | ✓ |
+| [Italie](ITA.md) | `ITA` | `[0.40, 0.85]` | ✓ | ✓ |
 
-| [`KEN`](KEN.md) | `[-1.55, -0.65]` | ✓ | ✓ |
+| [Jordanie](JOR.md) | `JOR` | `[-1.30, -1.05]` | ✓ | ✓ |
 
-| [`KOR`](KOR.md) | `[1.65, 0.55]` | ✓ | ✓ |
+| [Japon](JPN.md) | `JPN` | `[1.95, 0.45]` | ✓ | ✓ |
 
-| [`MAR`](MAR.md) | `[-1.15, -0.95]` | ✓ | ✓ |
+| [Kenya](KEN.md) | `KEN` | `[-1.55, -0.65]` | ✓ | ✓ |
 
-| [`MEX`](MEX.md) | `[-0.80, 0.70]` | ✓ | ✓ |
+| [Cambodge](KHM.md) | `KHM` | — | manquant | ✓ |
 
-| [`MMR`](MMR.md) | `[-0.50, -0.05]` | ✓ | ✓ |
+| [Corée du Sud](KOR.md) | `KOR` | `[1.65, 0.55]` | ✓ | ✓ |
 
-| [`MNG`](MNG.md) | `[-0.20, -0.65]` | ✓ | ✓ |
+| [Laos](LAO.md) | `LAO` | — | manquant | ✓ |
 
-| [`MYS`](MYS.md) | `[-0.95, -0.20]` | ✓ | ✓ |
+| [Sri Lanka](LKA.md) | `LKA` | — | manquant | ✓ |
 
-| [`NGA`](NGA.md) | `[-1.45, -0.90]` | ✓ | ✓ |
+| [Maroc](MAR.md) | `MAR` | `[-1.15, -0.95]` | ✓ | ✓ |
 
-| [`NLD`](NLD.md) | `[1.45, 1.65]` | ✓ | ✓ |
+| [Mexique](MEX.md) | `MEX` | `[-0.80, 0.70]` | ✓ | ✓ |
 
-| [`NOR`](NOR.md) | `[1.55, 2.30]` | ✓ | ✓ |
+| [Myanmar](MMR.md) | `MMR` | `[-0.50, -0.05]` | ✓ | ✓ |
 
-| [`NZL`](NZL.md) | `[0.65, 1.85]` | ✓ | ✓ |
+| [Mongolie](MNG.md) | `MNG` | `[-0.20, -0.65]` | ✓ | ✓ |
 
-| [`PAK`](PAK.md) | `[-1.30, -0.95]` | ✓ | ✓ |
+| [Maurice](MUS.md) | `MUS` | — | manquant | ✓ |
 
-| [`PER`](PER.md) | `[-0.85, 0.40]` | ✓ | ✓ |
+| [Malaisie](MYS.md) | `MYS` | `[-0.95, -0.20]` | ✓ | ✓ |
 
-| [`ROU`](ROU.md) | `[-0.35, -0.40]` | ✓ | ✓ |
+| [Nigéria](NGA.md) | `NGA` | `[-1.45, -0.90]` | ✓ | ✓ |
 
-| [`RUS`](RUS.md) | `[0.05, -1.05]` | ✓ | ✓ |
+| [Pays-Bas](NLD.md) | `NLD` | `[1.45, 1.65]` | ✓ | ✓ |
 
-| [`SAU`](SAU.md) | — | ✓ | ✓ |
+| [Norvège](NOR.md) | `NOR` | `[1.55, 2.30]` | ✓ | ✓ |
 
-| [`SGP`](SGP.md) | `[0.30, -0.40]` | ✓ | — |
+| [Népal](NPL.md) | `NPL` | — | manquant | ✓ |
 
-| [`SRB`](SRB.md) | `[0.15, -0.65]` | ✓ | ✓ |
+| [Nouvelle-Zélande](NZL.md) | `NZL` | `[0.65, 1.85]` | ✓ | ✓ |
 
-| [`SWE`](SWE.md) | `[1.78, 2.35]` | ✓ | ✓ |
+| [Pakistan](PAK.md) | `PAK` | `[-1.30, -0.95]` | ✓ | ✓ |
 
-| [`THA`](THA.md) | `[-0.20, 0.20]` | ✓ | ✓ |
+| [Pérou](PER.md) | `PER` | `[-0.85, 0.40]` | ✓ | ✓ |
 
-| [`TUR`](TUR.md) | `[-0.85, -0.65]` | ✓ | ✓ |
+| [Roumanie](ROU.md) | `ROU` | `[-0.35, -0.40]` | ✓ | ✓ |
 
-| [`TWN`](TWN.md) | `[0.85, 0.85]` | ✓ | ✓ |
+| [Russie](RUS.md) | `RUS` | `[0.05, -1.05]` | ✓ | ✓ |
 
-| [`UKR`](UKR.md) | `[0.20, -0.85]` | ✓ | ✓ |
+| [Arabie saoudite](SAU.md) | `SAU` | — | ✓ | ✓ |
 
-| [`URY`](URY.md) | `[-0.05, 1.10]` | ✓ | ✓ |
+| [Singapour](SGP.md) | `SGP` | `[0.30, -0.40]` | ✓ | ✓ |
 
-| [`USA`](USA.md) | `[-0.10, 1.55]` | ✓ | ✓ |
+| [Serbie](SRB.md) | `SRB` | `[0.15, -0.65]` | ✓ | ✓ |
 
-| [`VEN`](VEN.md) | `[-1.10, 0.70]` | ✓ | ✓ |
+| [Suède](SWE.md) | `SWE` | `[1.78, 2.35]` | ✓ | ✓ |
 
-| [`VNM`](VNM.md) | `[0.05, -0.20]` | ✓ | ✓ |
+| [Thaïlande](THA.md) | `THA` | `[-0.20, 0.20]` | ✓ | ✓ |
 
-| [`ZAF`](ZAF.md) | `[-0.60, 0.00]` | ✓ | ✓ |
+| [Turquie](TUR.md) | `TUR` | `[-0.85, -0.65]` | ✓ | ✓ |
 
-| [`ZMB`](ZMB.md) | `[-1.20, -0.30]` | ✓ | ✓ |
+| [TWN](TWN.md) | `TWN` | `[0.85, 0.85]` | ✓ | ✓ |
 
-| [`ZWE`](ZWE.md) | `[-1.15, -0.40]` | ✓ | ✓ |
+| [Ukraine](UKR.md) | `UKR` | `[0.20, -0.85]` | ✓ | ✓ |
+
+| [Uruguay](URY.md) | `URY` | `[-0.05, 1.10]` | ✓ | ✓ |
+
+| [États-Unis](USA.md) | `USA` | `[-0.10, 1.55]` | ✓ | ✓ |
+
+| [Venezuela](VEN.md) | `VEN` | `[-1.10, 0.70]` | ✓ | ✓ |
+
+| [Viet Nam](VNM.md) | `VNM` | `[0.05, -0.20]` | ✓ | ✓ |
+
+| [Afrique du Sud](ZAF.md) | `ZAF` | `[-0.60, 0.00]` | ✓ | ✓ |
+
+| [Zambie](ZMB.md) | `ZMB` | `[-1.20, -0.30]` | ✓ | ✓ |
+
+| [Zimbabwe](ZWE.md) | `ZWE` | `[-1.15, -0.40]` | ✓ | ✓ |
 
 
 ## Téléchargements en bloc

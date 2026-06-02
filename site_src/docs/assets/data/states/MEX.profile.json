@@ -47,5 +47,13 @@
   "source_refs": [
     "wvs_wave7_2022",
     "hofstede_2010"
-  ]
+  ],
+  "curated_civilization": "latin_american",
+  "curated_role": "core",
+  "curated_civilizations_competing": [
+    "western",
+    "latin_american"
+  ],
+  "sub_cluster_id": "mexican_central_american",
+  "sub_cluster_label": "Mexique / Amérique centrale"
 }

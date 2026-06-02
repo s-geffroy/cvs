@@ -53,43 +53,43 @@ IW: TS négatif (traditionnel), SE négatif (survival) — quadrant Sud-Ouest. H
 
 ## États membres
 
-| ISO3 | Rôle | Rationale | Citations |
-|---|---|---|---|
+| État | ISO3 | Rôle | Rationale | Citations |
+|---|---|---|---|---|
 
-| `TUR` | core | Turquie, héritage ottoman, identité islamique post-Atatürk | huntington_1996 |
+| Turquie | `TUR` | core | Turquie, héritage ottoman, identité islamique post-Atatürk | huntington_1996 |
 
-| `IRN` | core | Iran, chiite, distinct du monde arabe sunnite | huntington_1996 |
+| Iran | `IRN` | core | Iran, chiite, distinct du monde arabe sunnite | huntington_1996 |
 
-| `EGY` | core | Égypte, centre intellectuel sunnite (Al-Azhar) | huntington_1996 |
+| Égypte | `EGY` | core | Égypte, centre intellectuel sunnite (Al-Azhar) | huntington_1996 |
 
-| `SAU` | core | Arabie Saoudite, gardien des lieux saints | huntington_1996 |
+| Arabie saoudite | `SAU` | core | Arabie Saoudite, gardien des lieux saints | huntington_1996 |
 
-| `JOR` | core | Jordanie, monarchie sunnite | huntington_1996 |
+| Jordanie | `JOR` | core | Jordanie, monarchie sunnite | huntington_1996 |
 
-| `MAR` | core | Maroc, Maghreb arabo-berbère | huntington_1996 |
+| Maroc | `MAR` | core | Maroc, Maghreb arabo-berbère | huntington_1996 |
 
-| `IRQ` | core | Irak, sunnite-chiite | huntington_1996 |
+| Iraq | `IRQ` | core | Irak, sunnite-chiite | huntington_1996 |
 
-| `PAK` | core | Pakistan, État islamique sud-asiatique | huntington_1996 |
+| Pakistan | `PAK` | core | Pakistan, État islamique sud-asiatique | huntington_1996 |
 
-| `BGD` | core | Bangladesh, sunnite bengali | huntington_1996 |
+| Bangladesh | `BGD` | core | Bangladesh, sunnite bengali | huntington_1996 |
 
-| `IDN` | core | Indonésie, plus grand pays musulman | huntington_1996 |
+| Indonésie | `IDN` | core | Indonésie, plus grand pays musulman | huntington_1996 |
 
-| `MYS` | core | Malaisie, islam malais | huntington_1996 |
+| Malaisie | `MYS` | core | Malaisie, islam malais | huntington_1996 |
 
 
 
 ## Sous-clusters
 
 
-- **Islam arabe** (`arab_islamic`) — EGY, SAU, JOR, MAR, IRQ
+- **Islam arabe** (`arab_islamic`) — Égypte (`EGY`), Arabie saoudite (`SAU`), Jordanie (`JOR`), Maroc (`MAR`), Iraq (`IRQ`)
 
-- **Turco-iranien** (`turco_iranian`) — TUR, IRN
+- **Turco-iranien** (`turco_iranian`) — Turquie (`TUR`), Iran (`IRN`)
 
-- **Islam sud-asiatique** (`south_asian_islamic`) — PAK, BGD
+- **Islam sud-asiatique** (`south_asian_islamic`) — Pakistan (`PAK`), Bangladesh (`BGD`)
 
-- **Islam sud-est asiatique** (`southeast_asian_islamic`) — IDN, MYS
+- **Islam sud-est asiatique** (`southeast_asian_islamic`) — Indonésie (`IDN`), Malaisie (`MYS`)
 
 
 
@@ -97,13 +97,13 @@ IW: TS négatif (traditionnel), SE négatif (survival) — quadrant Sud-Ouest. H
 ## Cas ambigus / controverses documentées
 
 
-### `TUR`
+### Turquie (`TUR`)
 
 - **Civilisations en concurrence** : islamic, western
 - **Discussion** : Candidat UE depuis 1999, alliance OTAN, mais réislamisation politique. Huntington classait Turquie en État 'déchiré' (torn state).
 - **Citations** : huntington_1996
 
-### `ISR`
+### Israël (`ISR`)
 
 - **Civilisations en concurrence** : western, islamic
 - **Discussion** : État juif au Moyen-Orient — ni Western ni Islamic stricto sensu.

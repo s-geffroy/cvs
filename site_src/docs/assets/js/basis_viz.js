@@ -42,13 +42,19 @@
       textfont: { size: 11 }
     };
 
+    const iso3ToNameFr =
+      (stateCoordinatesPayload._meta && stateCoordinatesPayload._meta.iso3_to_name_fr) || {};
+    const labelFor = (iso3) => {
+      const nameFr = iso3ToNameFr[iso3];
+      return nameFr ? `${nameFr} (${iso3})` : iso3;
+    };
     const eligibleStates = stateEntries.filter(
       (stateEntry) => Array.isArray(stateEntry.x_viz) && stateEntry.x_viz[0] !== null
     );
     const statesTrace = {
       x: eligibleStates.map((stateEntry) => stateEntry.x_viz[0]),
       y: eligibleStates.map((stateEntry) => stateEntry.x_viz[1]),
-      text: eligibleStates.map((stateEntry) => stateEntry.iso3),
+      text: eligibleStates.map((stateEntry) => labelFor(stateEntry.iso3)),
       mode: 'markers',
       type: 'scatter',
       name: 'États (x_viz)',

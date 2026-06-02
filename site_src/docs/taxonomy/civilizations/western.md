@@ -53,49 +53,49 @@ Caractérisée par un fort post-matérialisme (SE++), une laïcisation avancée 
 
 ## États membres
 
-| ISO3 | Rôle | Rationale | Citations |
-|---|---|---|---|
+| État | ISO3 | Rôle | Rationale | Citations |
+|---|---|---|---|---|
 
-| `USA` | core | Anglo, protestant majoritaire | huntington_1996, inglehart_welzel_2010 |
+| États-Unis | `USA` | core | Anglo, protestant majoritaire | huntington_1996, inglehart_welzel_2010 |
 
-| `GBR` | core | Anglo | huntington_1996 |
+| Royaume-Uni | `GBR` | core | Anglo | huntington_1996 |
 
-| `FRA` | core | Europe latine, République laïque | huntington_1996 |
+| France | `FRA` | core | Europe latine, République laïque | huntington_1996 |
 
-| `DEU` | core | Europe germanique | huntington_1996 |
+| Allemagne | `DEU` | core | Europe germanique | huntington_1996 |
 
-| `NLD` | core | Europe protestante de l'Ouest | huntington_1996 |
+| Pays-Bas | `NLD` | core | Europe protestante de l'Ouest | huntington_1996 |
 
-| `SWE` | core | Europe nordique | huntington_1996 |
+| Suède | `SWE` | core | Europe nordique | huntington_1996 |
 
-| `NOR` | core | Europe nordique | huntington_1996 |
+| Norvège | `NOR` | core | Europe nordique | huntington_1996 |
 
-| `DNK` | core | Europe nordique | huntington_1996 |
+| Danemark | `DNK` | core | Europe nordique | huntington_1996 |
 
-| `FIN` | core | Europe nordique, héritage luthérien | huntington_1996 |
+| Finlande | `FIN` | core | Europe nordique, héritage luthérien | huntington_1996 |
 
-| `CAN` | core | Anglo + québécois latin | huntington_1996 |
+| Canada | `CAN` | core | Anglo + québécois latin | huntington_1996 |
 
-| `AUS` | core | Anglo, présence Oceanian discutée | huntington_1996, hauofa_1994 |
+| Australie | `AUS` | core | Anglo, présence Oceanian discutée | huntington_1996, hauofa_1994 |
 
-| `NZL` | ambiguous | Western Anglo + identité pacifique (Hau'ofa 1994) | huntington_1996, hauofa_1994 |
+| Nouvelle-Zélande | `NZL` | ambiguous | Western Anglo + identité pacifique (Hau'ofa 1994) | huntington_1996, hauofa_1994 |
 
-| `ITA` | core | Europe latine, catholicisme historique | huntington_1996 |
+| Italie | `ITA` | core | Europe latine, catholicisme historique | huntington_1996 |
 
-| `ESP` | core | Europe latine ibérique | huntington_1996 |
+| Espagne | `ESP` | core | Europe latine ibérique | huntington_1996 |
 
-| `IRL` | core | Anglo + catholicisme | huntington_1996 |
+| Irlande | `IRL` | core | Anglo + catholicisme | huntington_1996 |
 
 
 
 ## Sous-clusters
 
 
-- **Anglo / English-speaking** (`english_speaking`) — USA, GBR, CAN, AUS, NZL, IRL
+- **Anglo / English-speaking** (`english_speaking`) — États-Unis (`USA`), Royaume-Uni (`GBR`), Canada (`CAN`), Australie (`AUS`), Nouvelle-Zélande (`NZL`), Irlande (`IRL`)
 
-- **Protestant Europe** (`protestant_europe`) — DEU, NLD, SWE, NOR, DNK, FIN
+- **Protestant Europe** (`protestant_europe`) — Allemagne (`DEU`), Pays-Bas (`NLD`), Suède (`SWE`), Norvège (`NOR`), Danemark (`DNK`), Finlande (`FIN`)
 
-- **Catholic Europe** (`catholic_europe`) — FRA, ITA, ESP, IRL
+- **Catholic Europe** (`catholic_europe`) — France (`FRA`), Italie (`ITA`), Espagne (`ESP`), Irlande (`IRL`)
 
 
 
@@ -103,13 +103,13 @@ Caractérisée par un fort post-matérialisme (SE++), une laïcisation avancée 
 ## Cas ambigus / controverses documentées
 
 
-### `ISR`
+### Israël (`ISR`)
 
 - **Civilisations en concurrence** : western, islamic
 - **Discussion** : Identité civilisationnelle juive distincte, alliée Western politiquement mais ancrée Moyen-Orient géographiquement.
 - **Citations** : huntington_1996
 
-### `MEX`
+### Mexique (`MEX`)
 
 - **Civilisations en concurrence** : western, latin_american
 - **Discussion** : Huntington (1996) classe Mexique en Latin American mais membre USMCA, partage IW Western+catholique.

@@ -53,31 +53,31 @@ Distance hiérarchique très élevée (PDI souvent >85), individualisme bas-moye
 
 ## États membres
 
-| ISO3 | Rôle | Rationale | Citations |
-|---|---|---|---|
+| État | ISO3 | Rôle | Rationale | Citations |
+|---|---|---|---|---|
 
-| `RUS` | core | Russie, héritage byzantin via Moscou-Tiers Rome | huntington_1996 |
+| Russie | `RUS` | core | Russie, héritage byzantin via Moscou-Tiers Rome | huntington_1996 |
 
-| `UKR` | core | Christianisme orthodoxe, partition uniate | huntington_1996 |
+| Ukraine | `UKR` | core | Christianisme orthodoxe, partition uniate | huntington_1996 |
 
-| `BLR` | core | Christianisme orthodoxe | huntington_1996 |
+| Bélarus | `BLR` | core | Christianisme orthodoxe | huntington_1996 |
 
-| `ROU` | core | Roumain orthodoxe | huntington_1996 |
+| Roumanie | `ROU` | core | Roumain orthodoxe | huntington_1996 |
 
-| `BGR` | core | Bulgare orthodoxe | huntington_1996 |
+| Bulgarie | `BGR` | core | Bulgare orthodoxe | huntington_1996 |
 
-| `GRC` | core | Grec orthodoxe, membre UE — frontière Western | huntington_1996 |
+| Grèce | `GRC` | core | Grec orthodoxe, membre UE — frontière Western | huntington_1996 |
 
-| `SRB` | core | Serbe orthodoxe | huntington_1996 |
+| Serbie | `SRB` | core | Serbe orthodoxe | huntington_1996 |
 
 
 
 ## Sous-clusters
 
 
-- **Orthodoxe slave** (`slavic_orthodox`) — RUS, UKR, BLR, SRB
+- **Orthodoxe slave** (`slavic_orthodox`) — Russie (`RUS`), Ukraine (`UKR`), Bélarus (`BLR`), Serbie (`SRB`)
 
-- **Orthodoxe balkanique** (`balkan_orthodox`) — BGR, ROU, GRC, SRB
+- **Orthodoxe balkanique** (`balkan_orthodox`) — Bulgarie (`BGR`), Roumanie (`ROU`), Grèce (`GRC`), Serbie (`SRB`)
 
 
 
@@ -85,13 +85,13 @@ Distance hiérarchique très élevée (PDI souvent >85), individualisme bas-moye
 ## Cas ambigus / controverses documentées
 
 
-### `UKR`
+### Ukraine (`UKR`)
 
 - **Civilisations en concurrence** : orthodox, western
 - **Discussion** : Partition uniate vs orthodoxe, alignement EU/OTAN depuis 2014/2022.
 - **Citations** : huntington_1996
 
-### `GRC`
+### Grèce (`GRC`)
 
 - **Civilisations en concurrence** : orthodox, western
 - **Discussion** : Membre UE/OTAN, mais identité orthodoxe persistante.

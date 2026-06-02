@@ -1,11 +1,12 @@
-# État `SAU` — profil civilisationnel
+# Arabie saoudite (`SAU`) — profil civilisationnel
 
 !!! warning "Avertissement éthique"
     Ce profil est inféré à partir de sources publiques agrégées. Il ne doit pas être utilisé pour classer des individus réels.
 
+**Nom (FR)** : Arabie saoudite ·
 **ISO3** : `SAU` ·
 **Couverture B_vec** : B_viz + B_score (complet) ·
-**Données géométriques** : Natural Earth 110m
+**Données géométriques** : Natural Earth
 
 ## Coordonnées B_vec
 

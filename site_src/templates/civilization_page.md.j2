@@ -43,17 +43,17 @@
 
 ## États membres
 
-| ISO3 | Rôle | Rationale | Citations |
-|---|---|---|---|
+| État | ISO3 | Rôle | Rationale | Citations |
+|---|---|---|---|---|
 {% for member in civ.member_states %}
-| `{{ member.iso3 }}` | {{ member.role }} | {{ member.rationale }} | {{ member.citation_ids | join(", ") }} |
+| {{ iso3_to_name_fr.get(member.iso3, member.iso3) }} | `{{ member.iso3 }}` | {{ member.role }} | {{ member.rationale }} | {{ member.citation_ids | join(", ") }} |
 {% endfor %}
 
 {% if civ.sub_clusters %}
 ## Sous-clusters
 
 {% for cluster in civ.sub_clusters %}
-- **{{ cluster.label }}** (`{{ cluster.id }}`) — {{ cluster.states | join(", ") }}
+- **{{ cluster.label }}** (`{{ cluster.id }}`) — {% for member_iso3 in cluster.states %}{{ iso3_to_name_fr.get(member_iso3, member_iso3) }} (`{{ member_iso3 }}`){% if not loop.last %}, {% endif %}{% endfor %}
 {% endfor %}
 {% endif %}
 
@@ -61,7 +61,7 @@
 ## Cas ambigus / controverses documentées
 
 {% for case in civ.ambiguous_cases %}
-### `{{ case.iso3 }}`
+### {{ iso3_to_name_fr.get(case.iso3, case.iso3) }} (`{{ case.iso3 }}`)
 
 - **Civilisations en concurrence** : {{ case.civilizations_competing | join(", ") }}
 - **Discussion** : {{ case.discussion }}

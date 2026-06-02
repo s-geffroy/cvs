@@ -16,6 +16,7 @@ from .centroids import CivilizationCentroid, compute_centroids
 from .load_hofstede import HOFSTEDE_DIMENSION_ORDER, load_hofstede
 from .load_iw import load_inglehart_welzel
 from .paths import STATE_COORDINATES_PATH
+from .taxonomy_membership import load_iso3_to_membership
 
 DEFAULT_AFFINITY_BETA: float = 0.05
 
@@ -30,6 +31,11 @@ class StateCoordinates:
     affinity_vector: dict[str, float]
     data_quality: dict[str, Any]
     source_refs: list[str]
+    curated_civilization: str | None = None
+    curated_role: str | None = None
+    curated_civilizations_competing: list[str] | None = None
+    sub_cluster_id: str | None = None
+    sub_cluster_label: str | None = None
 
 
 def softmax_affinity(
@@ -71,7 +77,8 @@ def project_states(
 
     iw_coords = load_inglehart_welzel()
     hofstede_profiles = load_hofstede()
-    all_iso3s = set(iw_coords.keys()) | set(hofstede_profiles.keys())
+    membership_index = load_iso3_to_membership()
+    all_iso3s = set(iw_coords.keys()) | set(hofstede_profiles.keys()) | set(membership_index.keys())
 
     state_coords: dict[str, StateCoordinates] = {}
     for iso3 in sorted(all_iso3s):
@@ -113,6 +120,17 @@ def project_states(
 
         low_evidence = iw_coverage == "missing" or hofstede_coverage == "missing"
 
+        membership_entry = membership_index.get(iso3)
+        curated_civilization = membership_entry.curated_civilization if membership_entry else None
+        curated_role = membership_entry.curated_role if membership_entry else None
+        curated_competing = (
+            list(membership_entry.curated_civilizations_competing)
+            if membership_entry and membership_entry.curated_civilizations_competing
+            else None
+        )
+        sub_cluster_id = membership_entry.sub_cluster_id if membership_entry else None
+        sub_cluster_label = membership_entry.sub_cluster_label if membership_entry else None
+
         state_coords[iso3] = StateCoordinates(
             iso3=iso3,
             label=None,
@@ -126,6 +144,11 @@ def project_states(
                 "low_evidence": low_evidence,
             },
             source_refs=["wvs_wave7_2022", "hofstede_2010"],
+            curated_civilization=curated_civilization,
+            curated_role=curated_role,
+            curated_civilizations_competing=curated_competing,
+            sub_cluster_id=sub_cluster_id,
+            sub_cluster_label=sub_cluster_label,
         )
     return state_coords
 

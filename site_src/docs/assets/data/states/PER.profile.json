@@ -47,5 +47,12 @@
   "source_refs": [
     "wvs_wave7_2022",
     "hofstede_2010"
-  ]
+  ],
+  "curated_civilization": "latin_american",
+  "curated_role": "core",
+  "curated_civilizations_competing": [
+    "indigenous"
+  ],
+  "sub_cluster_id": "andean",
+  "sub_cluster_label": "Andin"
 }
