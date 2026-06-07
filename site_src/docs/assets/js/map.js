@@ -482,13 +482,28 @@
     const layerId = 'continuous-field-layer';
     const rasterUrl = `../assets/data/continuous_field/${currentContinuousField.component}_${currentContinuousField.metric}.png`;
 
-    const bbox =
+    // MapLibre image sources are projected to Web Mercator; latitudes of
+    // ±90° map to ±Infinity. Clamp the corner latitudes to the standard
+    // Web Mercator bounds (≈ ±85.0511°) so MapLibre can place the raster.
+    const WEB_MERCATOR_LATITUDE_BOUND_DEG = 85.0511;
+    const bboxRaw =
       (continuousFieldIndex && continuousFieldIndex.bbox) || {
         longitude_min_deg: -180,
         longitude_max_deg: 180,
         latitude_min_deg: -90,
         latitude_max_deg: 90
       };
+    const clampLatitude = (latitude) =>
+      Math.max(
+        -WEB_MERCATOR_LATITUDE_BOUND_DEG,
+        Math.min(WEB_MERCATOR_LATITUDE_BOUND_DEG, latitude)
+      );
+    const bbox = {
+      longitude_min_deg: bboxRaw.longitude_min_deg,
+      longitude_max_deg: bboxRaw.longitude_max_deg,
+      latitude_min_deg: clampLatitude(bboxRaw.latitude_min_deg),
+      latitude_max_deg: clampLatitude(bboxRaw.latitude_max_deg)
+    };
     const coordinates = [
       [bbox.longitude_min_deg, bbox.latitude_max_deg],
       [bbox.longitude_max_deg, bbox.latitude_max_deg],
