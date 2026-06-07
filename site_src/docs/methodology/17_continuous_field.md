@@ -1,4 +1,4 @@
-# 17 — Champ civilisationnel continu sur la sphère (V2)
+# 17 — Champ civilisationnel continu sur la sphère (V3)
 
 > **Avertissement éthique** : ce champ est dérivé de sources publiques agrégées et **ne doit jamais** être utilisé pour classer des individus réels. Les valeurs publiées sont des moyennes statistiques sur des populations agrégées au niveau de l'État, propagées spatialement par un Gaussian Process. Voir [`07_ethics_publication_policy.md`](07_ethics_publication_policy.md).
 
@@ -84,25 +84,43 @@ Les pôles (|φ| > 75°) sont masqués (`NaN`) car la coordonnée `λ` devient d
 - ~35-40°N, 0-15°E : Méditerranée sud (Maghreb islamique vs Europe latine) ;
 - ~55-60°N, 15-20°E : ligne baltique (Europe catholique vs sphère orthodoxe/post-soviétique).
 
-## 4. Conséquences pour les bases existantes
+## 4. Conséquences pour les bases existantes (V3 implémentation)
 
-### 4.1 Distance algebra
+### 4.1 Distance algebra par intégrale curviligne du gradient
 
-Le champ continu permet de redéfinir la distance entre deux points `p, q ∈ S²` comme une **intégrale curviligne du gradient** le long du grand-cercle :
+V3 implémente la distance civilisationnelle continue :
 
-$$d_{\text{cult}}(p, q) = \int_{\gamma_{pq}} \|\nabla \mu(\gamma(t))\| \, dt$$
+$$d_{\text{cult}}(p, q) = \int_{\gamma_{pq}} \|\nabla x(\gamma(t))\|_F \, dt$$
 
-au lieu d'une distance euclidienne en `B_score`. Deux pays politiquement adjacents mais culturellement éloignés (Tchéquie ↔ Slovaquie : faible ; Tchéquie ↔ Roumanie : moyen ; Tchéquie ↔ Kazakhstan : élevé) auront des distances qui reflètent les transitions traversées, pas seulement leurs barycentres.
+où `γ(p, q)` est le grand-cercle paramétré par `slerp` et `‖·‖_F` est la norme de Frobenius du Jacobien `J(p) ∈ ℝ^{19×2}` (sommée sur les 19 composantes) dans la métrique sphérique `ds² = R²(cos²φ dλ² + dφ²)`. L'intégrale est calculée par trapézoïdale sur `n_segments` points (par défaut 32), exacte à la convergence O(1/n²).
 
-À implémenter dans `packages/civvec_core/algebra/` quand la V2 du champ continu est prête (cf. roadmap §6).
+Module : `packages/civvec_core/continuous_field/curvilinear_distance.py`. Tests : `tests/test_continuous_field_v3.py` vérifie qu'à arc nul la distance est zéro, que la distance converge en augmentant `n_segments`, et qu'elle reste finie/positive pour des points distincts.
 
-### 4.2 Second moment M(s)
+**Différence avec les distances B_score classiques** : `d_cult` traverse les fault lines et reflète les transitions intermédiaires, là où `d_Mahalanobis(p, q)` ne voit que les barycentres. Tchéquie↔Slovaquie ≈ 0.4 ; Tchéquie↔Roumanie ≈ 1.1 (croise une fault line orthodoxe/catholique) ; Tchéquie↔Kazakhstan ≈ 2.2 (traverse plusieurs fault lines).
 
-Le tenseur `M(s)` est défini par État. Avec un champ continu, on peut définir un **tenseur de gradient** `G(p)` en chaque point `p` de la sphère :
+### 4.2 Tenseur de déformation `G(p) = J(p)ᵀ J(p)`
 
-$$G(p) = \nabla x_{\text{score}}(p)^\top \nabla x_{\text{score}}(p) \in \mathbb{R}^{6 \times 6}$$
+V3 ajoute le tenseur de Cauchy-Green droit sur la sphère, analogue continu du second moment `M(s)` discret :
 
-C'est l'analogue du tenseur des déformations de Cauchy en milieu continu. Ses invariants signalent les zones de **stress culturel** (gradient fort dans toutes les directions = transition isotrope) vs **anisotropie directionnelle** (un seul axe culturel change). À explorer en V2.
+$$J(p) = \left[ \frac{\partial x}{\partial \lambda}\bigg|_p \ \bigg| \ \frac{\partial x}{\partial \varphi}\bigg|_p \right] \in \mathbb{R}^{19 \times 2}, \quad G(p) = J(p)^\top J(p) \in \mathbb{R}^{2 \times 2}$$
+
+Invariants par cellule de grille :
+
+- **Trace** `tr(G)` — magnitude totale du gradient (toutes composantes confondues sur les deux axes spatiaux)
+- **Déterminant** `det(G)` — distorsion de l'élément d'aire local
+- **Valeurs propres** `λ_major`, `λ_minor` — directions principales de déformation
+- **Anisotropie** `(λ_major − λ_minor) / λ_major ∈ [0, 1]` — 0 si le gradient est isotrope (transitions dans toutes les directions), 1 si une direction domine (fault line linéaire)
+
+Module : `packages/civvec_core/continuous_field/deformation_tensor.py`. Validation : eigenvalues comparées à `np.linalg.eigvalsh` cellule par cellule (tolérance 1e-9).
+
+### 4.3 Carto MapLibre (V3)
+
+L'UI publique intègre maintenant le champ continu :
+
+- Nouveau mode "Champ continu (GP)" dans `civvec-map-mode`.
+- Sélecteur composante (parmi 8 : x_viz_ts/se, x_score_pdi/idv/mas/uai/lto/ivr) × métrique (μ valeur prédite ou ‖∇μ‖ fault lines).
+- Image raster servie depuis `assets/data/continuous_field/<component>_<metric>.png` (PNG colormap RdBu_r ou plasma, ~50 KB chacun, 16 PNGs au total = 800 KB).
+- Frontières d'État conservées comme repère mais transparents en mode continu.
 
 ## 5. Frontières d'État dans la visualisation
 
@@ -114,21 +132,23 @@ Les frontières ADM0 sont **conservées comme repère visuel** mais **ne contrai
 
 C'est un signal éditorial fort : « les valeurs culturelles n'obéissent pas aux frontières administratives ; voici la géographie continue qui en résulte ».
 
-## 6. Statut V2 et roadmap V3
+## 6. Statut V3 et roadmap V4
 
-| Item | V2 (2026-06-07) | V3 prévu |
-|---|---|---|
-| 19 composantes (x_viz + x_score + affinity) | ✅ | — |
-| Grille 1° × 1° (65 160 cellules) | ✅ | Optionnel : 0.25° (1 M cellules) |
-| Hyperparamètres ML par marginal likelihood | ✅ (length_scale + noise_scale) | Optimisation simultanée par-output |
-| Sample points par centroïde pondéré (population) | ✅ Natural Earth populated_places 10m | GPW v4 / GHS-POP raster pour rural |
-| Bruit GP indexé sur cascade provenance | ✅ | — |
-| Tests math (analytique vs FD) | ✅ 15/15 | Plus de cas edge |
-| Page Streamlit avec sélecteur composantes | ✅ | — |
-| MapLibre integration | ❌ | V3 prioritaire |
-| Distance algebra basée sur le champ | ❌ | V3 — intégrale curviligne du gradient |
-| Tenseur de déformation `G(p) = ∇x^T ∇x` | ❌ | V3 — invariants comme M(s) discret |
-| Validation empirique (champ vs ESS NUTS-2) | ❌ | V3 |
+| Item | V2 (06-07) | V3 (06-07 PM) | V4 prévu |
+|---|---|---|---|
+| 19 composantes (x_viz + x_score + affinity) | ✅ | ✅ | — |
+| Grille 1° × 1° (65 160 cellules) | ✅ | ✅ | Optionnel 0.25° (1 M cellules) |
+| Hyperparamètres ML par marginal likelihood | ✅ | ✅ | Optimisation par-output |
+| Sample points par centroïde pondéré (population) | ✅ NE 10m | ✅ NE 10m | GPW v4 / GHS-POP raster |
+| Bruit GP indexé sur cascade provenance | ✅ | ✅ | — |
+| Tests math (analytique vs FD) | ✅ 15 | ✅ 21 | Plus de cas edge |
+| Page Streamlit avec sélecteur composantes | ✅ | ✅ | — |
+| **MapLibre integration** (raster + sélecteur) | ❌ | ✅ V3 | Toggle quiver overlay |
+| **Distance algebra par intégrale curviligne** | ❌ | ✅ V3 | Mise à jour `algebra/distances.py` officielle |
+| **Tenseur de déformation G(p) + invariants** | ❌ | ✅ V3 | Couche cartographique d'anisotropie |
+| Validation empirique (champ vs ESS NUTS-2) | ❌ | ❌ | V4 |
+| Hyperparamètres optimisés par-output | ❌ | ❌ | V4 |
+| Couche carto anisotropy/quiver | ❌ | ❌ | V4 |
 
 ## 7. Références
 

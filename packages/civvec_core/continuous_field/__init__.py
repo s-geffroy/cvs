@@ -19,10 +19,22 @@ unit, not the natural support of human values).
 from .kernels import matern_3_2_sphere, matern_3_2_sphere_gradient
 from .gp import SphericalGaussianProcess
 from .sample_points import generate_sample_points_per_state
+from .deformation_tensor import (
+    DeformationTensorInvariants,
+    cauchy_green_per_cell,
+    deformation_tensor_invariants,
+    stack_jacobian_per_component,
+)
+from .curvilinear_distance import curvilinear_cultural_distance
 
 __all__ = [
     "matern_3_2_sphere",
     "matern_3_2_sphere_gradient",
     "SphericalGaussianProcess",
     "generate_sample_points_per_state",
+    "DeformationTensorInvariants",
+    "cauchy_green_per_cell",
+    "deformation_tensor_invariants",
+    "stack_jacobian_per_component",
+    "curvilinear_cultural_distance",
 ]

@@ -18,7 +18,21 @@
 <div id="civvec-map-mode" role="radiogroup" aria-label="Mode de coloration" style="margin-bottom: 0.5rem; font-size: 0.9rem;">
   <label style="margin-right: 1rem;"><input type="radio" name="civvec-map-mode" value="macro" checked> Macro civilisation</label>
   <label style="margin-right: 1rem;"><input type="radio" name="civvec-map-mode" value="sub"> Sous-ensemble</label>
-  <label><input type="radio" name="civvec-map-mode" value="provenance"> Provenance (cascade)</label>
+  <label style="margin-right: 1rem;"><input type="radio" name="civvec-map-mode" value="provenance"> Provenance (cascade)</label>
+  <label><input type="radio" name="civvec-map-mode" value="continuous"> Champ continu (GP)</label>
+</div>
+<div id="civvec-map-continuous-selector" style="display:none; gap:1rem; margin-bottom:0.5rem; font-size:0.9rem;">
+  <label>Composante :
+    <select id="civvec-continuous-component-select" name="continuous-component">
+      <option value="x_viz_ts" selected>x_viz ts</option>
+    </select>
+  </label>
+  <label>Métrique :
+    <select name="continuous-metric">
+      <option value="mean" selected>μ (valeur prédite)</option>
+      <option value="grad_magnitude">‖∇μ‖ (fault lines)</option>
+    </select>
+  </label>
 </div>
 <div id="civvec-map" style="width: 100%; height: 560px; border: 1px solid var(--md-default-fg-color--lightest);"></div>
 <div id="civvec-map-legend" style="margin-top: 0.75rem; font-size: 0.85rem;"></div>

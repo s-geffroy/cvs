@@ -299,6 +299,38 @@
   }
 
   function buildLegend(legendContainer, mode) {
+    if (mode === 'continuous') {
+      const matchedRaster = continuousFieldIndex && continuousFieldIndex.rasters
+        ? continuousFieldIndex.rasters.find(
+            (raster) =>
+              raster.component === currentContinuousField.component &&
+              raster.metric === currentContinuousField.metric
+          )
+        : null;
+      if (!matchedRaster) {
+        legendContainer.innerHTML =
+          '<em>Champ continu indisponible — raster manquant.</em>';
+        return;
+      }
+      const colormapKeyToLabel = {
+        RdBu_r: 'Rouge ↔ Bleu (échelle signée)',
+        plasma: 'Plasma (magnitude)'
+      };
+      legendContainer.innerHTML = `
+<strong>Légende — champ continu (cascade ⇒ Gaussian Process)</strong><br/>
+<div style="margin-top:0.3em; font-size:0.95em;">
+  <code>${matchedRaster.component}</code> / <code>${matchedRaster.metric}</code><br/>
+  Plage : <code>[${matchedRaster.value_min.toFixed(2)}, ${matchedRaster.value_max.toFixed(2)}]</code><br/>
+  Palette : ${colormapKeyToLabel[matchedRaster.colormap] || matchedRaster.colormap}<br/>
+  <em>${matchedRaster.description_fr}</em>
+</div>
+<div style="margin-top:0.4em; font-size:0.85em;">
+  Le champ est interpolé par un GP Matérn 3/2 sphérique à partir de
+  237 sample points (centroïdes de population par État). Cf.
+  <a href="../methodology/17_continuous_field/">doc 17</a>.
+</div>`;
+      return;
+    }
     if (mode === 'provenance') {
       const parts = [
         '<strong>Légende — provenance des coordonnées (cascade d\'imputation)</strong><br/>',
@@ -361,44 +393,185 @@
       ` &nbsp; <span style="display:inline-block;width:0.9em;height:0.9em;background:${fallbackColor};margin-right:0.3em;vertical-align:middle;"></span>Pas de données / hors taxonomie`;
   }
 
+  let continuousFieldIndex = null;
+  let currentContinuousField = { component: 'x_viz_ts', metric: 'mean' };
+
+  function populateContinuousFieldSelector() {
+    const componentSelect = document.querySelector(
+      '#civvec-continuous-component-select'
+    );
+    if (!componentSelect || !continuousFieldIndex || !continuousFieldIndex.rasters) {
+      return;
+    }
+    const distinctComponents = Array.from(
+      new Set(continuousFieldIndex.rasters.map((raster) => raster.component))
+    );
+    componentSelect.innerHTML = distinctComponents
+      .map((component) => `<option value="${component}">${component.replace(/_/g, ' ')}</option>`)
+      .join('');
+    componentSelect.value = currentContinuousField.component;
+  }
+
+  async function loadContinuousFieldIndex() {
+    if (continuousFieldIndex !== null) {
+      return continuousFieldIndex;
+    }
+    try {
+      continuousFieldIndex = await fetchJson(
+        '../assets/data/continuous_field/index.json'
+      );
+    } catch (error) {
+      console.warn('[civvec/map] continuous field index unavailable', error);
+      continuousFieldIndex = { rasters: [], bbox: null };
+    }
+    return continuousFieldIndex;
+  }
+
   function applyDisplayMode(map, legendContainer, mode) {
-    const allowedModes = ['macro', 'sub', 'provenance'];
+    const allowedModes = ['macro', 'sub', 'provenance', 'continuous'];
     currentDisplayMode = allowedModes.includes(mode) ? mode : 'macro';
     const propertyKeyByMode = {
       macro: 'fill_color_macro',
       sub: 'fill_color_sub',
       provenance: 'fill_color_provenance'
     };
-    const propertyKey = propertyKeyByMode[currentDisplayMode];
-    if (map.getLayer('states-fill')) {
-      map.setPaintProperty('states-fill', 'fill-color', [
-        'coalesce',
-        ['get', propertyKey],
-        fallbackColor
-      ]);
-      map.setPaintProperty('states-fill', 'fill-opacity', [
-        'coalesce',
-        ['get', 'fill_opacity'],
-        0.78
-      ]);
+
+    const continuousLayerExists = map.getLayer('continuous-field-layer');
+    if (currentDisplayMode === 'continuous') {
+      if (map.getLayer('states-fill')) {
+        map.setPaintProperty('states-fill', 'fill-opacity', 0.0);
+      }
+      if (continuousLayerExists) {
+        map.setLayoutProperty('continuous-field-layer', 'visibility', 'visible');
+      }
+      applyContinuousFieldRaster(map);
+    } else {
+      const propertyKey = propertyKeyByMode[currentDisplayMode];
+      if (map.getLayer('states-fill')) {
+        map.setPaintProperty('states-fill', 'fill-color', [
+          'coalesce',
+          ['get', propertyKey],
+          fallbackColor
+        ]);
+        map.setPaintProperty('states-fill', 'fill-opacity', [
+          'coalesce',
+          ['get', 'fill_opacity'],
+          0.78
+        ]);
+      }
+      if (continuousLayerExists) {
+        map.setLayoutProperty('continuous-field-layer', 'visibility', 'none');
+      }
     }
+
+    const continuousSelectorContainer = document.querySelector(
+      '#civvec-map-continuous-selector'
+    );
+    if (continuousSelectorContainer) {
+      continuousSelectorContainer.style.display =
+        currentDisplayMode === 'continuous' ? 'flex' : 'none';
+    }
+
     if (legendContainer) {
       buildLegend(legendContainer, currentDisplayMode);
     }
   }
 
+  function applyContinuousFieldRaster(map) {
+    const sourceId = 'continuous-field-source';
+    const layerId = 'continuous-field-layer';
+    const rasterUrl = `../assets/data/continuous_field/${currentContinuousField.component}_${currentContinuousField.metric}.png`;
+
+    const bbox =
+      (continuousFieldIndex && continuousFieldIndex.bbox) || {
+        longitude_min_deg: -180,
+        longitude_max_deg: 180,
+        latitude_min_deg: -90,
+        latitude_max_deg: 90
+      };
+    const coordinates = [
+      [bbox.longitude_min_deg, bbox.latitude_max_deg],
+      [bbox.longitude_max_deg, bbox.latitude_max_deg],
+      [bbox.longitude_max_deg, bbox.latitude_min_deg],
+      [bbox.longitude_min_deg, bbox.latitude_min_deg]
+    ];
+
+    if (map.getSource(sourceId)) {
+      try {
+        map.getSource(sourceId).updateImage({ url: rasterUrl, coordinates });
+      } catch (error) {
+        console.warn('[civvec/map] updateImage failed, recreating source', error);
+        map.removeLayer(layerId);
+        map.removeSource(sourceId);
+      }
+    }
+
+    if (!map.getSource(sourceId)) {
+      map.addSource(sourceId, {
+        type: 'image',
+        url: rasterUrl,
+        coordinates
+      });
+      map.addLayer(
+        {
+          id: layerId,
+          source: sourceId,
+          type: 'raster',
+          paint: {
+            'raster-opacity': 0.85
+          }
+        },
+        'states-outline'
+      );
+    } else if (!map.getLayer(layerId)) {
+      map.addLayer(
+        {
+          id: layerId,
+          source: sourceId,
+          type: 'raster',
+          paint: {
+            'raster-opacity': 0.85
+          }
+        },
+        'states-outline'
+      );
+    }
+  }
+
   function wireModeToggle(map, legendContainer) {
     const modeContainer = document.querySelector(modeContainerSelector);
-    if (!modeContainer) {
-      return;
+    if (modeContainer) {
+      modeContainer.addEventListener('change', (changeEvent) => {
+        const target = changeEvent.target;
+        if (!target || target.name !== 'civvec-map-mode') {
+          return;
+        }
+        applyDisplayMode(map, legendContainer, target.value);
+      });
     }
-    modeContainer.addEventListener('change', (changeEvent) => {
-      const target = changeEvent.target;
-      if (!target || target.name !== 'civvec-map-mode') {
-        return;
-      }
-      applyDisplayMode(map, legendContainer, target.value);
-    });
+
+    const continuousSelector = document.querySelector(
+      '#civvec-map-continuous-selector'
+    );
+    if (continuousSelector) {
+      continuousSelector.addEventListener('change', (changeEvent) => {
+        const target = changeEvent.target;
+        if (!target) return;
+        if (target.name === 'continuous-component') {
+          currentContinuousField.component = target.value;
+        } else if (target.name === 'continuous-metric') {
+          currentContinuousField.metric = target.value;
+        } else {
+          return;
+        }
+        if (currentDisplayMode === 'continuous') {
+          applyContinuousFieldRaster(map);
+          if (legendContainer) {
+            buildLegend(legendContainer, currentDisplayMode);
+          }
+        }
+      });
+    }
   }
 
   async function bootstrapMap() {
@@ -406,6 +579,8 @@
       fetchJson('../assets/data/global_state_baseline.geojson'),
       fetchJson('../assets/data/state_coordinates.json')
     ]);
+
+    await loadContinuousFieldIndex();
 
     const stateCoordinatesByIso3 = indexStateCoordinatesByIso3(stateCoordinatesPayload);
     const decoratedGeojson = decorateFeaturesWithMembership(
@@ -417,6 +592,8 @@
     if (legendContainer) {
       buildLegend(legendContainer, currentDisplayMode);
     }
+
+    populateContinuousFieldSelector();
 
     const map = new maplibregl.Map({
       container: 'civvec-map',
