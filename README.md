@@ -11,6 +11,7 @@ Pipeline Python bayésien produisant pour chaque État un vecteur d'affiliation 
 
 - **Mécanique tensorielle** des tensions internes d'un État (`T(s) ∈ ℝ^{6×6}`, analogue au tenseur des contraintes en milieux continus).
 - **Algèbre des distances** civilisationnelles (Euclidienne, Mahalanobis, cosinus, Jensen-Shannon, Wasserstein-2, Frobenius, hybride pondérée).
+- **Cascade d'imputation V2.1** ([`docs/16_imputation_cascade.md`](docs/16_imputation_cascade.md)) garantissant `x_viz ∈ ℝ²` et `x_score ∈ ℝ⁶` non-nuls pour les **193 États membres de l'ONU**, en cinq tiers de qualité décroissante alimentés par WVS Time-Series, Pew composition complète, UNDP HDR, UN GA voting (Voeten), V-Dem v16, WGI, FSI. Couverture finale : **0 État au tier `centroid_prior`**.
 
 ADM1 préparé architecturalement, **non activé** en V1.
 
@@ -54,14 +55,15 @@ cvs/
 
 ## Bases
 
-- `taxonomies/macro_civilizations.v2.json` — 11 civilisations enrichies : citations, sous-clusters, États membres, controverses, coordonnées B_vec.
+- `taxonomies/macro_civilizations.v2.json` — 11 civilisations enrichies, **193/193 États ONU mappés** : citations, sous-clusters, États membres, controverses, coordonnées B_vec.
 - `packages/civvec_core/basis/civilization_centroids.json` — barycentres μ et covariances Σ par civilisation.
-- `packages/civvec_core/basis/state_coordinates.json` — `x_viz` (ℝ²) + `x_score` (ℝ⁶) par État.
-- `packages/civvec_core/basis/state_tensors.json` — tenseurs de tension `T(s)` + invariants + eigenvalues.
+- `packages/civvec_core/basis/state_coordinates.json` — `x_viz` (ℝ²) + `x_score` (ℝ⁶) par État (**193 entrées non-nulles, provenance par coordonnée**).
+- `packages/civvec_core/basis/state_moments.json` — tenseurs `M(s)` + invariants + eigenvalues (**193 entrées, inflation diagonale propagée pour les coordonnées imputées**).
+- `data_sources/un_members/coverage_report.md` — rapport de couverture régénéré par `civvec basis coverage-report` avec distribution par tier de la cascade.
 
 ## Licences des sources
 
-Cf. `data_sources/SOURCES.md`. WVS = CC-BY ; Hofstede = usage scientifique ; Natural Earth = domaine public ; geoBoundaries = CC-BY 4.0. **GADM jamais publié** (restriction de redistribution).
+Cf. `data_sources/SOURCES.md`. WVS = CC-BY ; Hofstede = usage scientifique ; Natural Earth = domaine public ; geoBoundaries = CC-BY 4.0 ; UNDP HDR = libre avec citation ; Voeten UN GA voting = CC-0 ; V-Dem = CC-BY 4.0 ; Pew = citation académique. **GADM jamais publié** (restriction de redistribution). Les fichiers volumineux (WVS time-series 1.3 GB, V-Dem RData 33 MB, UNDP HDR CSV 2 MB) sont hors-tracking git (cf. `.gitignore`) ; re-téléchargeables via les URL et procédures documentées.
 
 ## Liens
 

@@ -132,3 +132,23 @@
 | `PSD` | Positive Semi-Definite — matrice symétrique à valeurs propres ≥ 0 |
 | `WGI` | Worldwide Governance Indicators (World Bank) |
 | `WVS` | World Values Survey |
+| `V-Dem` | Varieties of Democracy — V-Dem Institute, Université de Göteborg |
+| `UNDP HDR` | United Nations Development Programme Human Development Report |
+| `UN GA voting` | UN General Assembly votes ; idealpoint estimates par Voeten/Strezhnev/Bailey (Harvard Dataverse) |
+| `Pew RC` | Pew Research Center Religious Composition by Country (7 catégories : Christians, Muslims, Hindus, Buddhists, Jews, Unaffiliated, Other) |
+| `COW alpha` | Correlates of War 3-letter country code (différent de ISO3 pour ~60 États ; mapping dans `_wvs_extraction.py`) |
+
+## Cascade d'imputation (V2)
+
+| Terme | Définition |
+|---|---|
+| **Cascade** | Procédure de repli en trois tiers utilisée par le projecteur pour garantir un vecteur `(x_viz, x_score)` non nul pour chaque ISO3 ONU. Voir [doc 16](16_imputation_cascade.md). |
+| **`provenance`** | Étiquette par coordonnée précisant son origine : `observed`, `observed_with_dim_imputation`, `imputed_pew`, `imputed_governance`, `centroid_prior`. Présente dans `data_quality.x_viz_provenance` et `data_quality.x_score_provenance`. |
+| **`observed`** | Coordonnée tirée directement d'un sondage canonique (IW wave 7 pour `x_viz`, Hofstede 2010 pour `x_score`). |
+| **`observed_with_dim_imputation`** | `x_score` partiellement observé : Hofstede présent mais certaines dimensions remplies par moyenne ligne. |
+| **`imputed_wvs_items`** | `x_viz` prédit par régression ridge sur les 10 items de la factor analysis Inglehart-Welzel agrégés depuis WVS Time-Series (waves 5-6), calibrée sur les 57 États de l'intersection avec wave-7. RMSE LOO 0.38 (ts) / 0.54 (se). Méthodologiquement plus proche de `observed` que de `imputed_pew`. |
+| **`imputed_pew`** | `x_viz` prédit par régression ridge sur (Pew 7 proportions + UNDP HDR + UN voting + V-Dem) → IW. RMSE LOO 0.48 (ts) / 0.62 (se). |
+| **`imputed_governance`** | `x_score` prédit par régression ridge sur (WGI + FSI + UNDP HDR + UN voting + V-Dem) → 6 dimensions Hofstede. RMSE LOO par dimension publié. |
+| **`centroid_prior`** | `x_viz = μ_viz(civ)` et/ou `x_score = μ_score(civ)` quand aucune observation n'est disponible ; la covariance du centroïde est reportée comme ellipse d'incertitude. |
+| **`low_evidence`** | Drapeau booléen ; `True` dès qu'au moins une des deux coordonnées est imputée ou prior. |
+| **`prior_variance_inflation`** | Terme `diag(σ_prior²)` ajouté à `M(s)` pour les États dont `x_score_provenance != observed`, propageant l'incertitude d'imputation. |

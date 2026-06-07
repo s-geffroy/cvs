@@ -22,8 +22,32 @@ centroids = centroids_payload["centroids"]
 state_coords = state_coords_payload["states"] if state_coords_payload else []
 
 st.subheader("B_viz = ℝ² (Inglehart-Welzel)")
+provenance_filter = st.multiselect(
+    "Filtrer par provenance des coordonnées x_viz",
+    options=[
+        "observed",
+        "imputed_wvs_items",
+        "imputed_pew",
+        "centroid_prior",
+    ],
+    default=["observed", "imputed_wvs_items", "imputed_pew", "centroid_prior"],
+    help=(
+        "Provenance tier de la cascade. `observed` = WVS wave-7 officiel. "
+        "`imputed_wvs_items` = WVS waves 5-6 prédit par ridge. "
+        "`imputed_pew` = composition religieuse Pew + UNDP HDR + UN voting + V-Dem. "
+        "`centroid_prior` = barycentre civilisationnel. Cf. doc 16."
+    ),
+)
+filtered_state_coords = [
+    state
+    for state in state_coords
+    if state.get("data_quality", {}).get("x_viz_provenance") in provenance_filter
+]
+st.caption(
+    f"Affichés : {len(filtered_state_coords)} / {len(state_coords)} États selon la sélection."
+)
 st.plotly_chart(
-    charts.scatter_viz(centroids, state_coords),
+    charts.scatter_viz(centroids, filtered_state_coords),
     use_container_width=True,
 )
 

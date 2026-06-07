@@ -8,6 +8,12 @@
 **Couverture B_vec** : B_viz + B_score (complet) ·
 **Données géométriques** : Natural Earth
 
+**Provenance des coordonnées** (cascade [doc 16](../methodology/16_imputation_cascade.md)) :
+`x_viz = observed` ·
+`x_score = observed` · centroïde de repli : `western`.
+
+
+
 ## Coordonnées B_vec
 
 ### `B_viz = ℝ²` — Inglehart-Welzel
@@ -91,12 +97,13 @@ Cf. [Méthodologie 09 — Second moment civilisationnel](../methodology/09_civil
 | `det(M)` | `1.24e+13` | Déterminant |
 | `A` (anisotropie) | `0.995` | (λ₁−λ₆)/λ₁ |
 
-### Décomposition M = Cov_w + biais
+### Décomposition M = Cov_w + biais + inflation prior
 
 | Composante | tr(.) | Interprétation |
 |---|---|---|
 | Dispersion intra (Cov_w) | `1048.00` | Étalement pondéré des centroïdes autour de μ̄ |
 | Biais (μ̄ − xₛ)(μ̄ − xₛ)ᵀ | `2265.82` | Écart de l'État à son barycentre d'affinité |
+| Inflation prior `diag(σ_prior²)` | `0.00` | Variance d'imputation propagée (≠ 0 si `x_score` non observé) |
 
 ### Valeurs propres (descendantes)
 

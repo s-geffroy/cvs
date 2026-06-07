@@ -51,6 +51,8 @@ Version actuelle : **`2.0.0-state-first-adm1-ready-two-bases`** — 11 civilisat
 
 | `two_bases_coupled` | `True` |
 
+| `completion_to_un_members` | `{'completed_to': 193, 'method': 'deterministic heuristic on geography + dominant religion (Pew 2020) + Huntington (1996) regional sphere', 'ambiguous_cases_treated_as': "co-listed in competing civilizations' ambiguous_cases; excluded from centroid computation (ROLE_WEIGHT == 0)", 'review_status': 'first-pass automatic — manual review encouraged via coverage report'}` |
+
 
 ## Couplage B_doc ↔ B_vec
 

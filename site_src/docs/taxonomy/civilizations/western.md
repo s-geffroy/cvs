@@ -46,7 +46,7 @@ Caractérisée par un fort post-matérialisme (SE++), une laïcisation avancée 
 
 ## Coordonnées B_vec (centroïdes)
 
-- **`μ_viz`** (Inglehart-Welzel : TS, SE) = `[0.91, 1.56]`
+- **`μ_viz`** (Inglehart-Welzel : TS, SE) = `[0.74, 1.22]`
 - **`μ_score`** (Hofstede PDI, IDV, MAS, UAI, LTO, IVR) =
   `[38.6, 74.4, 42.8, 52.9, 45.8, 59.4]`
 
@@ -86,6 +86,68 @@ Caractérisée par un fort post-matérialisme (SE++), une laïcisation avancée 
 
 | Irlande | `IRL` | core | Anglo + catholicisme | huntington_1996 |
 
+| Andorre | `AND` | core | Microétat catholique des Pyrénées, héritage catalan/français. | huntington_1996 |
+
+| Autriche | `AUT` | core | Catholique germanophone, Habsburg, UE. | huntington_1996 |
+
+| Belgique | `BEL` | core | Catholique, fondateur de l'UE. | huntington_1996 |
+
+| Suisse | `CHE` | core | Confédération germano-romande-italophone protestante/catholique. | huntington_1996 |
+
+| Tchéquie | `CZE` | core | Tchéquie catholique/laïque, Habsburg, UE — frontière occidentale chez Huntington. | huntington_1996 |
+
+| Estonie | `EST` | periphery | Luthérienne historique, UE, Schengen — basculement post-1991 vers l'Occident. | huntington_1996 |
+
+| Croatie | `HRV` | periphery | Catholique, héritage Habsburg, UE — frontière sud-est de l'Occident. | huntington_1996 |
+
+| Hongrie | `HUN` | core | Catholique/protestante, Habsburg, UE. | huntington_1996 |
+
+| Islande | `ISL` | core | Luthérienne, scandinave. | huntington_1996 |
+
+| Liechtenstein | `LIE` | core | Microétat catholique germanophone. | huntington_1996 |
+
+| Lituanie | `LTU` | periphery | Catholique, UE — frontière occidentale (Huntington 1996 ch. 8). | huntington_1996 |
+
+| Luxembourg | `LUX` | core | Catholique, fondateur UE. | huntington_1996 |
+
+| Lettonie | `LVA` | periphery | Luthérienne/catholique, UE — frontière occidentale. | huntington_1996 |
+
+| Monaco | `MCO` | core | Microétat catholique francophone. | huntington_1996 |
+
+| Malte | `MLT` | core | Catholique, UE. | huntington_1996 |
+
+| Pologne | `POL` | core | Catholique, UE — pilier de l'Occident centro-est chez Huntington. | huntington_1996 |
+
+| Portugal | `PRT` | core | Catholique, ibérique, UE. | huntington_1996 |
+
+| Saint-Marin | `SMR` | core | Microétat catholique italien. | huntington_1996 |
+
+| Slovaquie | `SVK` | core | Catholique, UE. | huntington_1996 |
+
+| Slovénie | `SVN` | core | Catholique, Habsburg, UE. | huntington_1996 |
+
+| Antigua-et-Barbuda | `ATG` | periphery | Caraïbe anglophone, Commonwealth, chrétienne — Occident via colonisation britannique. | huntington_1996 |
+
+| Bahamas | `BHS` | periphery | Caraïbe anglophone, Commonwealth. | huntington_1996 |
+
+| Barbade | `BRB` | periphery | Caraïbe anglophone, Commonwealth. | huntington_1996 |
+
+| Belize | `BLZ` | periphery | Anglophone, Commonwealth — distinct du noyau latino-américain hispanique. | huntington_1996 |
+
+| Dominique | `DMA` | periphery | Caraïbe anglophone, Commonwealth. | huntington_1996 |
+
+| Grenade | `GRD` | periphery | Caraïbe anglophone, Commonwealth. | huntington_1996 |
+
+| Jamaïque | `JAM` | periphery | Caraïbe anglophone, Commonwealth. | huntington_1996 |
+
+| Saint-Kitts-et-Nevis | `KNA` | periphery | Caraïbe anglophone, Commonwealth. | huntington_1996 |
+
+| Sainte-Lucie | `LCA` | periphery | Caraïbe anglophone, Commonwealth. | huntington_1996 |
+
+| Trinité-et-Tobago | `TTO` | periphery | Caraïbe anglophone (40% chrétienne, 18% hindoue, 5% musulmane) — Occident anglophone dominant. | huntington_1996 |
+
+| Saint-Vincent-et-les Grenadines | `VCT` | periphery | Caraïbe anglophone, Commonwealth. | huntington_1996 |
+
 
 
 ## Sous-clusters
@@ -113,6 +175,18 @@ Caractérisée par un fort post-matérialisme (SE++), une laïcisation avancée 
 
 - **Civilisations en concurrence** : western, latin_american
 - **Discussion** : Huntington (1996) classe Mexique en Latin American mais membre USMCA, partage IW Western+catholique.
+- **Citations** : huntington_1996
+
+### Bosnie-Herzégovine (`BIH`)
+
+- **Civilisations en concurrence** : islamic, orthodox, western
+- **Discussion** : Bosniaque musulmane ~50%, Serbe orthodoxe ~30%, Croate catholique ~15% — frontière des trois civilisations.
+- **Citations** : huntington_1996
+
+### Liban (`LBN`)
+
+- **Civilisations en concurrence** : islamic, western
+- **Discussion** : Sunnite/chiite ~67% + chrétienne maronite/orthodoxe/uniate ~32% — interface arabo-méditerranéenne.
 - **Citations** : huntington_1996
 
 

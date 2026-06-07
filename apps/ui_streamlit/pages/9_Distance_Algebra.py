@@ -27,6 +27,15 @@ ethics_banner.render()
 
 st.title("Algèbre des distances")
 
+st.info(
+    "ℹ️ Les coordonnées d'origine peuvent être `observed`, `imputed_wvs_items`, "
+    "`imputed_pew` ou `imputed_governance` (cf. [doc 16](../methodology/16_imputation_cascade/)). "
+    "Les distances calculées sont valides sur n'importe quel tier, mais leur interprétation "
+    "doit tenir compte de la provenance : deux États tous deux observés produisent une distance "
+    "directement comparable à la littérature ; un État imputé voit son ellipse d'incertitude "
+    "déjà gonflée — la distance reste finie, mais son RMSE de calibration s'ajoute."
+)
+
 state_payload = loaders.load_state_coordinates()
 centroids_payload = loaders.load_centroids()
 moments_payload = loaders.load_state_moments()
@@ -122,9 +131,16 @@ for source_iso3 in selected_iso3s:
         )
         d_M_frobenius_value = d_M_frobenius(moment_source, moment_target)
 
+        source_provenance = state_source.get("data_quality", {}).get(
+            "x_viz_provenance", "—"
+        )
+        target_provenance = state_target.get("data_quality", {}).get(
+            "x_viz_provenance", "—"
+        )
         pair_rows.append(
             {
                 "pair": f"{source_iso3}-{target_iso3}",
+                "provenance": f"{source_provenance} / {target_provenance}",
                 "d_viz": d_viz(x_viz_source, x_viz_target),
                 "d_score_E": d_score_euclidean(x_score_source, x_score_target),
                 "d_score_M_intra": d_score_mahalanobis_intra_value,

@@ -1,0 +1,84 @@
+{
+  "iso3": "MLI",
+  "label": null,
+  "x_viz": [
+    -1.2476296883602722,
+    -0.26622323993291697
+  ],
+  "x_viz_ellipse": {
+    "sigma": [
+      [
+        0.14149611837262427,
+        0.0
+      ],
+      [
+        0.0,
+        0.29336848480021727
+      ]
+    ],
+    "confidence_level": 0.8,
+    "source": "wvs_wave5_predicted_from_items"
+  },
+  "x_score": [
+    63.828334930075115,
+    18.06838016949343,
+    54.410822802789475,
+    29.185183783976,
+    26.9940239715853,
+    42.730452871820056
+  ],
+  "affinity_vector": {
+    "western": 0.03436880096651963,
+    "orthodox": 0.018637945143111595,
+    "islamic": 0.14474623820215166,
+    "sinic": 0.10956938579221248,
+    "hindic": 0.12908231789473165,
+    "japanese": 0.007954599559968308,
+    "buddhist": 0.10518859848086444,
+    "latin_american": 0.05157563714168071,
+    "african": 0.19904510002648684,
+    "indigenous": 0.05698237670749622,
+    "oceanian": 0.1428490000847765
+  },
+  "data_quality": {
+    "iw_coverage": "present",
+    "hofstede_coverage": "missing",
+    "low_evidence": true,
+    "x_viz_provenance": "imputed_wvs_items",
+    "x_score_provenance": "imputed_governance",
+    "x_score_sigma_prior": [
+      12.89482013219045,
+      16.654266762366433,
+      17.276090153261453,
+      19.840361952573588,
+      23.703391973204358,
+      22.027751828622787
+    ],
+    "fallback_civilization_id": "islamic",
+    "pew_to_iw_model": {
+      "training_n": 93,
+      "rmse_ts": 0.4826353981600494,
+      "rmse_se": 0.647842466967669
+    },
+    "governance_to_hofstede_model": {
+      "training_n": 63,
+      "rmse_per_dimension": {
+        "pdi": 12.89482013219045,
+        "idv": 16.654266762366433,
+        "mas": 17.276090153261453,
+        "uai": 19.840361952573588,
+        "lto": 23.703391973204358,
+        "ivr": 22.027751828622787
+      }
+    }
+  },
+  "source_refs": [
+    "wgi_2022",
+    "fsi_2024"
+  ],
+  "curated_civilization": "islamic",
+  "curated_role": "core",
+  "curated_civilizations_competing": null,
+  "sub_cluster_id": null,
+  "sub_cluster_label": null
+}

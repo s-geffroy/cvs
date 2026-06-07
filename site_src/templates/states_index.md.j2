@@ -4,13 +4,25 @@
     {{ ethical_warning_fr }}
 
 Liste des **{{ states | length }} États** dont les coordonnées `x_viz` et `x_score` ont
-été calculées dans la base vectorielle (Phase 2). Pour la méthodologie,
-voir [`08_civilizational_basis.md`](../methodology/08_civilizational_basis.md).
+été calculées dans la base vectorielle. Pour la méthodologie,
+voir [`08_civilizational_basis.md`](../methodology/08_civilizational_basis.md) et
+[`16_imputation_cascade.md`](../methodology/16_imputation_cascade.md) pour la
+cascade d'imputation qui garantit la couverture des 193 États ONU.
 
-| État | ISO3 | `x_viz` (TS, SE) | Hofstede complet | Géométrie |
-|---|---|---|---|---|
+La colonne **Provenance** indique le tier de la cascade ayant produit chaque
+coordonnée. Tiers (par qualité décroissante) :
+
+- `observed` — sondage canonique direct (WVS wave 7 / Hofstede 2010)
+- `observed_with_dim_imputation` — Hofstede présent mais dimensions partielles
+- `imputed_wvs_items` — WVS waves 5-6 prédites par ridge sur les 10 items IW
+- `imputed_pew` — régression Pew + UNDP + UN voting + V-Dem → IW
+- `imputed_governance` — régression WGI + FSI + UNDP + UN voting + V-Dem → Hofstede
+- `centroid_prior` — barycentre civilisationnel (cas-limite ; 0 État actuellement)
+
+| État | ISO3 | `x_viz` (TS, SE) | Prov. `x_viz` | Prov. `x_score` | Géométrie |
+|---|---|---|---|---|---|
 {% for state in states %}
-| [{{ iso3_to_name_fr.get(state.iso3, state.iso3) }}]({{ state.iso3 }}.md) | `{{ state.iso3 }}` | {{ ("`[" ~ "%.2f" | format(state.x_viz[0]) ~ ", " ~ "%.2f" | format(state.x_viz[1]) ~ "]`") if (state.x_viz[0] is not none and state.x_viz[1] is not none) else "—" }} | {{ "✓" if (state.x_score and state.x_score[0] is not none) else "manquant" }} | {{ "✓" if state.iso3 in iso3_with_geometry else "—" }} |
+| [{{ iso3_to_name_fr.get(state.iso3, state.iso3) }}]({{ state.iso3 }}.md) | `{{ state.iso3 }}` | {{ ("`[" ~ "%.2f" | format(state.x_viz[0]) ~ ", " ~ "%.2f" | format(state.x_viz[1]) ~ "]`") if (state.x_viz[0] is not none and state.x_viz[1] is not none) else "—" }} | `{{ state.data_quality.x_viz_provenance or "—" }}` | `{{ state.data_quality.x_score_provenance or "—" }}` | {{ "✓" if state.iso3 in iso3_with_geometry else "—" }} |
 {% endfor %}
 
 ## Téléchargements en bloc

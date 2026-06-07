@@ -66,6 +66,8 @@ IW: TS+ (laïcisation forte, post-confucianisme), SE négatif (survival). Hofste
 
 | Viet Nam | `VNM` | core | Vietnam, sinisation millénaire (1000 ans de domination chinoise) | huntington_1996 |
 
+| Corée du Nord | `PRK` | periphery | Héritage confucéen-coréen, juché — sphère sinique alignée historiquement sur Pékin/Moscou. | huntington_1996 |
+
 
 
 ## Sous-clusters

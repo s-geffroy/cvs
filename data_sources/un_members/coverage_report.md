@@ -8,8 +8,24 @@ Croise la liste canonique des 193 États membres de l'ONU avec les quatre source
 - Couverture intégrale (géométrie + Hofstede + IW + taxonomie) : **59**
 - Géométrie absente : **0**
 - Hofstede manquant : **132**
-- Inglehart-Welzel manquant : **133**
-- Civilisation curatée manquante : **127**
+- Inglehart-Welzel manquant : **103**
+- Civilisation curatée manquante : **6**
+
+## Provenance des coordonnées (cascade d'imputation)
+
+- États avec `x_viz` ET `x_score` non-nuls dans `state_coordinates.json` : **193 / 193**
+
+Provenance de `x_viz` :
+- `imputed_pew` : 103
+- `imputed_wvs_items` : 30
+- `observed` : 60
+
+Provenance de `x_score` :
+- `imputed_governance` : 132
+- `observed` : 52
+- `observed_with_dim_imputation` : 9
+
+Cf. `docs/16_imputation_cascade.md` pour la définition de chaque tier (`observed` > `imputed_pew` / `imputed_governance` > `centroid_prior`).
 
 ## États sans polygone (à charger depuis NE 50m ou source équivalente)
 
@@ -155,16 +171,12 @@ _(aucun)_
 - `AFG` — Afghanistan
 - `AGO` — Angola
 - `ALB` — Albanie
-- `AND` — Andorre
 - `ARE` — Émirats arabes unis
-- `ARM` — Arménie
 - `ATG` — Antigua-et-Barbuda
 - `AUT` — Autriche
-- `AZE` — Azerbaïdjan
 - `BDI` — Burundi
 - `BEL` — Belgique
 - `BEN` — Bénin
-- `BFA` — Burkina Faso
 - `BHR` — Bahreïn
 - `BHS` — Bahamas
 - `BIH` — Bosnie-Herzégovine
@@ -174,7 +186,6 @@ _(aucun)_
 - `BTN` — Bhoutan
 - `BWA` — Botswana
 - `CAF` — République centrafricaine
-- `CHE` — Suisse
 - `CIV` — Côte d'Ivoire
 - `CMR` — Cameroun
 - `COD` — République démocratique du Congo
@@ -183,17 +194,12 @@ _(aucun)_
 - `CPV` — Cabo Verde
 - `CRI` — Costa Rica
 - `CUB` — Cuba
-- `CYP` — Chypre
-- `CZE` — Tchéquie
 - `DJI` — Djibouti
 - `DMA` — Dominique
 - `DOM` — République dominicaine
-- `DZA` — Algérie
 - `ERI` — Érythrée
-- `EST` — Estonie
 - `FSM` — Micronésie
 - `GAB` — Gabon
-- `GEO` — Géorgie
 - `GIN` — Guinée
 - `GMB` — Gambie
 - `GNB` — Guinée-Bissau
@@ -203,20 +209,14 @@ _(aucun)_
 - `HND` — Honduras
 - `HRV` — Croatie
 - `HTI` — Haïti
-- `HUN` — Hongrie
 - `ISL` — Islande
 - `ISR` — Israël
 - `JAM` — Jamaïque
-- `KAZ` — Kazakhstan
-- `KGZ` — Kirghizistan
 - `KHM` — Cambodge
 - `KIR` — Kiribati
 - `KNA` — Saint-Kitts-et-Nevis
-- `KWT` — Koweït
 - `LAO` — Laos
-- `LBN` — Liban
 - `LBR` — Libéria
-- `LBY` — Libye
 - `LCA` — Sainte-Lucie
 - `LIE` — Liechtenstein
 - `LKA` — Sri Lanka
@@ -226,11 +226,9 @@ _(aucun)_
 - `LVA` — Lettonie
 - `MCO` — Monaco
 - `MDA` — Moldova
-- `MDG` — Madagascar
 - `MDV` — Maldives
 - `MHL` — Îles Marshall
 - `MKD` — Macédoine du Nord
-- `MLI` — Mali
 - `MLT` — Malte
 - `MNE` — Monténégro
 - `MOZ` — Mozambique
@@ -239,20 +237,15 @@ _(aucun)_
 - `MWI` — Malawi
 - `NAM` — Namibie
 - `NER` — Niger
-- `NIC` — Nicaragua
 - `NPL` — Népal
 - `NRU` — Nauru
 - `OMN` — Oman
 - `PAN` — Panama
-- `PHL` — Philippines
 - `PLW` — Palaos
 - `PNG` — Papouasie-Nouvelle-Guinée
-- `POL` — Pologne
 - `PRK` — Corée du Nord
 - `PRT` — Portugal
 - `PRY` — Paraguay
-- `QAT` — Qatar
-- `RWA` — Rwanda
 - `SAU` — Arabie saoudite
 - `SDN` — Soudan
 - `SEN` — Sénégal
@@ -264,352 +257,224 @@ _(aucun)_
 - `SSD` — Soudan du Sud
 - `STP` — Sao Tomé-et-Principe
 - `SUR` — Suriname
-- `SVK` — Slovaquie
-- `SVN` — Slovénie
 - `SWZ` — Eswatini
 - `SYC` — Seychelles
 - `SYR` — Syrie
 - `TCD` — Tchad
 - `TGO` — Togo
-- `TJK` — Tadjikistan
 - `TKM` — Turkménistan
 - `TLS` — Timor-Leste
 - `TON` — Tonga
-- `TTO` — Trinité-et-Tobago
-- `TUN` — Tunisie
 - `TUV` — Tuvalu
 - `TZA` — Tanzanie
 - `UGA` — Ouganda
-- `UZB` — Ouzbékistan
 - `VCT` — Saint-Vincent-et-les Grenadines
 - `VUT` — Vanuatu
 - `WSM` — Samoa
-- `YEM` — Yémen
 
 ## États sans rattachement curaté dans la taxonomie
 
-- `AFG` — Afghanistan
-- `AGO` — Angola
-- `ALB` — Albanie
-- `AND` — Andorre
-- `ARE` — Émirats arabes unis
-- `ARM` — Arménie
-- `ATG` — Antigua-et-Barbuda
-- `AUT` — Autriche
-- `AZE` — Azerbaïdjan
-- `BDI` — Burundi
-- `BEL` — Belgique
-- `BEN` — Bénin
-- `BFA` — Burkina Faso
-- `BHR` — Bahreïn
-- `BHS` — Bahamas
 - `BIH` — Bosnie-Herzégovine
-- `BLZ` — Belize
-- `BRB` — Barbade
-- `BRN` — Brunéi Darussalam
-- `BWA` — Botswana
-- `CAF` — République centrafricaine
-- `CHE` — Suisse
 - `CIV` — Côte d'Ivoire
-- `CMR` — Cameroun
-- `COD` — République démocratique du Congo
-- `COG` — Congo
-- `COM` — Comores
-- `CPV` — Cabo Verde
-- `CRI` — Costa Rica
-- `CUB` — Cuba
-- `CYP` — Chypre
-- `CZE` — Tchéquie
-- `DJI` — Djibouti
-- `DMA` — Dominique
-- `DOM` — République dominicaine
-- `DZA` — Algérie
-- `ERI` — Érythrée
-- `EST` — Estonie
-- `FSM` — Micronésie
-- `GAB` — Gabon
-- `GEO` — Géorgie
-- `GIN` — Guinée
-- `GMB` — Gambie
-- `GNB` — Guinée-Bissau
-- `GNQ` — Guinée équatoriale
-- `GRD` — Grenade
-- `GUY` — Guyana
-- `HND` — Honduras
-- `HRV` — Croatie
-- `HTI` — Haïti
-- `HUN` — Hongrie
-- `ISL` — Islande
 - `ISR` — Israël
-- `JAM` — Jamaïque
-- `KAZ` — Kazakhstan
-- `KGZ` — Kirghizistan
-- `KIR` — Kiribati
-- `KNA` — Saint-Kitts-et-Nevis
 - `KOR` — Corée du Sud
-- `KWT` — Koweït
 - `LBN` — Liban
-- `LBR` — Libéria
-- `LBY` — Libye
-- `LCA` — Sainte-Lucie
-- `LIE` — Liechtenstein
-- `LSO` — Lesotho
-- `LTU` — Lituanie
-- `LUX` — Luxembourg
-- `LVA` — Lettonie
-- `MCO` — Monaco
-- `MDA` — Moldova
-- `MDG` — Madagascar
-- `MDV` — Maldives
-- `MHL` — Îles Marshall
-- `MKD` — Macédoine du Nord
-- `MLI` — Mali
-- `MLT` — Malte
-- `MNE` — Monténégro
-- `MOZ` — Mozambique
-- `MRT` — Mauritanie
-- `MWI` — Malawi
-- `NAM` — Namibie
-- `NER` — Niger
-- `NIC` — Nicaragua
-- `NRU` — Nauru
-- `OMN` — Oman
-- `PAN` — Panama
-- `PHL` — Philippines
-- `PLW` — Palaos
-- `PNG` — Papouasie-Nouvelle-Guinée
-- `POL` — Pologne
-- `PRK` — Corée du Nord
-- `PRT` — Portugal
-- `PRY` — Paraguay
-- `QAT` — Qatar
-- `RWA` — Rwanda
-- `SDN` — Soudan
-- `SEN` — Sénégal
-- `SLB` — Îles Salomon
-- `SLE` — Sierra Leone
-- `SLV` — El Salvador
-- `SMR` — Saint-Marin
-- `SOM` — Somalie
-- `SSD` — Soudan du Sud
-- `STP` — Sao Tomé-et-Principe
-- `SUR` — Suriname
-- `SVK` — Slovaquie
-- `SVN` — Slovénie
-- `SWZ` — Eswatini
-- `SYC` — Seychelles
-- `SYR` — Syrie
 - `TCD` — Tchad
-- `TGO` — Togo
-- `TJK` — Tadjikistan
-- `TKM` — Turkménistan
-- `TLS` — Timor-Leste
-- `TON` — Tonga
-- `TTO` — Trinité-et-Tobago
-- `TUN` — Tunisie
-- `TUV` — Tuvalu
-- `TZA` — Tanzanie
-- `UGA` — Ouganda
-- `UZB` — Ouzbékistan
-- `VCT` — Saint-Vincent-et-les Grenadines
-- `VUT` — Vanuatu
-- `WSM` — Samoa
-- `YEM` — Yémen
 
 ## Tableau détaillé
 
-| ISO3 | Nom (fr) | Géo | Hofstede | IW | Civ. curatée | Sous-ensemble |
-|------|----------|-----|----------|----|--------------|---------------|
-| `AFG` | Afghanistan | ✓ | missing | missing | — | — |
-| `AGO` | Angola | ✓ | missing | missing | — | — |
-| `ALB` | Albanie | ✓ | missing | missing | — | — |
-| `AND` | Andorre | ✓ | missing | missing | — | — |
-| `ARE` | Émirats arabes unis | ✓ | missing | missing | — | — |
-| `ARG` | Argentine | ✓ | present | present | latin_american | southern_cone |
-| `ARM` | Arménie | ✓ | missing | missing | — | — |
-| `ATG` | Antigua-et-Barbuda | ✓ | missing | missing | — | — |
-| `AUS` | Australie | ✓ | present | present | western | english_speaking |
-| `AUT` | Autriche | ✓ | missing | missing | — | — |
-| `AZE` | Azerbaïdjan | ✓ | missing | missing | — | — |
-| `BDI` | Burundi | ✓ | missing | missing | — | — |
-| `BEL` | Belgique | ✓ | missing | missing | — | — |
-| `BEN` | Bénin | ✓ | missing | missing | — | — |
-| `BFA` | Burkina Faso | ✓ | missing | missing | — | — |
-| `BGD` | Bangladesh | ✓ | present | present | islamic | south_asian_islamic |
-| `BGR` | Bulgarie | ✓ | present | present | orthodox | balkan_orthodox |
-| `BHR` | Bahreïn | ✓ | missing | missing | — | — |
-| `BHS` | Bahamas | ✓ | missing | missing | — | — |
-| `BIH` | Bosnie-Herzégovine | ✓ | missing | missing | — | — |
-| `BLR` | Bélarus | ✓ | present | present | orthodox | slavic_orthodox |
-| `BLZ` | Belize | ✓ | missing | missing | — | — |
-| `BOL` | Bolivie | ✓ | imputed | present | indigenous | andean |
-| `BRA` | Brésil | ✓ | present | present | latin_american | brazil_caribbean |
-| `BRB` | Barbade | ✓ | missing | missing | — | — |
-| `BRN` | Brunéi Darussalam | ✓ | missing | missing | — | — |
-| `BTN` | Bhoutan | ✓ | missing | missing | buddhist | mahayana |
-| `BWA` | Botswana | ✓ | missing | missing | — | — |
-| `CAF` | République centrafricaine | ✓ | missing | missing | — | — |
-| `CAN` | Canada | ✓ | present | present | western | english_speaking |
-| `CHE` | Suisse | ✓ | missing | missing | — | — |
-| `CHL` | Chili | ✓ | present | present | latin_american | southern_cone |
-| `CHN` | Chine | ✓ | present | present | sinic | mainland_sinic |
-| `CIV` | Côte d'Ivoire | ✓ | missing | missing | — | — |
-| `CMR` | Cameroun | ✓ | missing | missing | — | — |
-| `COD` | République démocratique du Congo | ✓ | missing | missing | — | — |
-| `COG` | Congo | ✓ | missing | missing | — | — |
-| `COL` | Colombie | ✓ | present | present | latin_american | andean |
-| `COM` | Comores | ✓ | missing | missing | — | — |
-| `CPV` | Cabo Verde | ✓ | missing | missing | — | — |
-| `CRI` | Costa Rica | ✓ | missing | missing | — | — |
-| `CUB` | Cuba | ✓ | missing | missing | — | — |
-| `CYP` | Chypre | ✓ | missing | missing | — | — |
-| `CZE` | Tchéquie | ✓ | missing | missing | — | — |
-| `DEU` | Allemagne | ✓ | present | present | western | protestant_europe |
-| `DJI` | Djibouti | ✓ | missing | missing | — | — |
-| `DMA` | Dominique | ✓ | missing | missing | — | — |
-| `DNK` | Danemark | ✓ | present | present | western | protestant_europe |
-| `DOM` | République dominicaine | ✓ | missing | missing | — | — |
-| `DZA` | Algérie | ✓ | missing | missing | — | — |
-| `ECU` | Équateur | ✓ | imputed | present | indigenous | andean |
-| `EGY` | Égypte | ✓ | present | present | islamic | arab_islamic |
-| `ERI` | Érythrée | ✓ | missing | missing | — | — |
-| `ESP` | Espagne | ✓ | present | present | western | catholic_europe |
-| `EST` | Estonie | ✓ | missing | missing | — | — |
-| `ETH` | Éthiopie | ✓ | imputed | present | african | east_africa |
-| `FIN` | Finlande | ✓ | present | present | western | protestant_europe |
-| `FJI` | Fidji | ✓ | imputed | present | oceanian | melanesia |
-| `FRA` | France | ✓ | present | present | western | catholic_europe |
-| `FSM` | Micronésie | ✓ | missing | missing | — | — |
-| `GAB` | Gabon | ✓ | missing | missing | — | — |
-| `GBR` | Royaume-Uni | ✓ | present | present | western | english_speaking |
-| `GEO` | Géorgie | ✓ | missing | missing | — | — |
-| `GHA` | Ghana | ✓ | present | present | african | west_africa |
-| `GIN` | Guinée | ✓ | missing | missing | — | — |
-| `GMB` | Gambie | ✓ | missing | missing | — | — |
-| `GNB` | Guinée-Bissau | ✓ | missing | missing | — | — |
-| `GNQ` | Guinée équatoriale | ✓ | missing | missing | — | — |
-| `GRC` | Grèce | ✓ | present | present | orthodox | balkan_orthodox |
-| `GRD` | Grenade | ✓ | missing | missing | — | — |
-| `GTM` | Guatemala | ✓ | imputed | present | latin_american | mexican_central_american |
-| `GUY` | Guyana | ✓ | missing | missing | — | — |
-| `HND` | Honduras | ✓ | missing | missing | — | — |
-| `HRV` | Croatie | ✓ | missing | missing | — | — |
-| `HTI` | Haïti | ✓ | missing | missing | — | — |
-| `HUN` | Hongrie | ✓ | missing | missing | — | — |
-| `IDN` | Indonésie | ✓ | present | present | islamic | southeast_asian_islamic |
-| `IND` | Inde | ✓ | present | present | hindic | indian_subcontinent_hindu |
-| `IRL` | Irlande | ✓ | present | present | western | english_speaking |
-| `IRN` | Iran | ✓ | present | present | islamic | turco_iranian |
-| `IRQ` | Iraq | ✓ | present | present | islamic | arab_islamic |
-| `ISL` | Islande | ✓ | missing | missing | — | — |
-| `ISR` | Israël | ✓ | missing | missing | — | — |
-| `ITA` | Italie | ✓ | present | present | western | catholic_europe |
-| `JAM` | Jamaïque | ✓ | missing | missing | — | — |
-| `JOR` | Jordanie | ✓ | present | present | islamic | arab_islamic |
-| `JPN` | Japon | ✓ | present | present | japanese | — |
-| `KAZ` | Kazakhstan | ✓ | missing | missing | — | — |
-| `KEN` | Kenya | ✓ | imputed | present | african | east_africa |
-| `KGZ` | Kirghizistan | ✓ | missing | missing | — | — |
-| `KHM` | Cambodge | ✓ | missing | missing | buddhist | theravada |
-| `KIR` | Kiribati | ✓ | missing | missing | — | — |
-| `KNA` | Saint-Kitts-et-Nevis | ✓ | missing | missing | — | — |
-| `KOR` | Corée du Sud | ✓ | present | present | — | mahayana |
-| `KWT` | Koweït | ✓ | missing | missing | — | — |
-| `LAO` | Laos | ✓ | missing | missing | buddhist | theravada |
-| `LBN` | Liban | ✓ | missing | missing | — | — |
-| `LBR` | Libéria | ✓ | missing | missing | — | — |
-| `LBY` | Libye | ✓ | missing | missing | — | — |
-| `LCA` | Sainte-Lucie | ✓ | missing | missing | — | — |
-| `LIE` | Liechtenstein | ✓ | missing | missing | — | — |
-| `LKA` | Sri Lanka | ✓ | missing | missing | hindic | indian_subcontinent_hindu |
-| `LSO` | Lesotho | ✓ | missing | missing | — | — |
-| `LTU` | Lituanie | ✓ | missing | missing | — | — |
-| `LUX` | Luxembourg | ✓ | missing | missing | — | — |
-| `LVA` | Lettonie | ✓ | missing | missing | — | — |
-| `MAR` | Maroc | ✓ | present | present | islamic | arab_islamic |
-| `MCO` | Monaco | ✓ | missing | missing | — | — |
-| `MDA` | Moldova | ✓ | missing | missing | — | — |
-| `MDG` | Madagascar | ✓ | missing | missing | — | — |
-| `MDV` | Maldives | ✓ | missing | missing | — | — |
-| `MEX` | Mexique | ✓ | present | present | latin_american | mexican_central_american |
-| `MHL` | Îles Marshall | ✓ | missing | missing | — | — |
-| `MKD` | Macédoine du Nord | ✓ | missing | missing | — | — |
-| `MLI` | Mali | ✓ | missing | missing | — | — |
-| `MLT` | Malte | ✓ | missing | missing | — | — |
-| `MMR` | Myanmar | ✓ | imputed | present | buddhist | theravada |
-| `MNE` | Monténégro | ✓ | missing | missing | — | — |
-| `MNG` | Mongolie | ✓ | present | present | buddhist | mahayana |
-| `MOZ` | Mozambique | ✓ | missing | missing | — | — |
-| `MRT` | Mauritanie | ✓ | missing | missing | — | — |
-| `MUS` | Maurice | ✓ | missing | missing | hindic | — |
-| `MWI` | Malawi | ✓ | missing | missing | — | — |
-| `MYS` | Malaisie | ✓ | present | present | islamic | southeast_asian_islamic |
-| `NAM` | Namibie | ✓ | missing | missing | — | — |
-| `NER` | Niger | ✓ | missing | missing | — | — |
-| `NGA` | Nigéria | ✓ | present | present | african | west_africa |
-| `NIC` | Nicaragua | ✓ | missing | missing | — | — |
-| `NLD` | Pays-Bas | ✓ | present | present | western | protestant_europe |
-| `NOR` | Norvège | ✓ | present | present | western | protestant_europe |
-| `NPL` | Népal | ✓ | missing | missing | hindic | indian_subcontinent_hindu |
-| `NRU` | Nauru | ✓ | missing | missing | — | — |
-| `NZL` | Nouvelle-Zélande | ✓ | present | present | oceanian | english_speaking |
-| `OMN` | Oman | ✓ | missing | missing | — | — |
-| `PAK` | Pakistan | ✓ | present | present | islamic | south_asian_islamic |
-| `PAN` | Panama | ✓ | missing | missing | — | — |
-| `PER` | Pérou | ✓ | present | present | latin_american | andean |
-| `PHL` | Philippines | ✓ | missing | missing | — | — |
-| `PLW` | Palaos | ✓ | missing | missing | — | — |
-| `PNG` | Papouasie-Nouvelle-Guinée | ✓ | missing | missing | — | — |
-| `POL` | Pologne | ✓ | missing | missing | — | — |
-| `PRK` | Corée du Nord | ✓ | missing | missing | — | — |
-| `PRT` | Portugal | ✓ | missing | missing | — | — |
-| `PRY` | Paraguay | ✓ | missing | missing | — | — |
-| `QAT` | Qatar | ✓ | missing | missing | — | — |
-| `ROU` | Roumanie | ✓ | present | present | orthodox | balkan_orthodox |
-| `RUS` | Russie | ✓ | present | present | orthodox | slavic_orthodox |
-| `RWA` | Rwanda | ✓ | missing | missing | — | — |
-| `SAU` | Arabie saoudite | ✓ | present | missing | islamic | arab_islamic |
-| `SDN` | Soudan | ✓ | missing | missing | — | — |
-| `SEN` | Sénégal | ✓ | missing | missing | — | — |
-| `SGP` | Singapour | ✓ | present | present | sinic | insular_sinic |
-| `SLB` | Îles Salomon | ✓ | missing | missing | — | — |
-| `SLE` | Sierra Leone | ✓ | missing | missing | — | — |
-| `SLV` | El Salvador | ✓ | missing | missing | — | — |
-| `SMR` | Saint-Marin | ✓ | missing | missing | — | — |
-| `SOM` | Somalie | ✓ | missing | missing | — | — |
-| `SRB` | Serbie | ✓ | present | present | orthodox | slavic_orthodox |
-| `SSD` | Soudan du Sud | ✓ | missing | missing | — | — |
-| `STP` | Sao Tomé-et-Principe | ✓ | missing | missing | — | — |
-| `SUR` | Suriname | ✓ | missing | missing | — | — |
-| `SVK` | Slovaquie | ✓ | missing | missing | — | — |
-| `SVN` | Slovénie | ✓ | missing | missing | — | — |
-| `SWE` | Suède | ✓ | present | present | western | protestant_europe |
-| `SWZ` | Eswatini | ✓ | missing | missing | — | — |
-| `SYC` | Seychelles | ✓ | missing | missing | — | — |
-| `SYR` | Syrie | ✓ | missing | missing | — | — |
-| `TCD` | Tchad | ✓ | missing | missing | — | — |
-| `TGO` | Togo | ✓ | missing | missing | — | — |
-| `THA` | Thaïlande | ✓ | present | present | buddhist | theravada |
-| `TJK` | Tadjikistan | ✓ | missing | missing | — | — |
-| `TKM` | Turkménistan | ✓ | missing | missing | — | — |
-| `TLS` | Timor-Leste | ✓ | missing | missing | — | — |
-| `TON` | Tonga | ✓ | missing | missing | — | — |
-| `TTO` | Trinité-et-Tobago | ✓ | missing | missing | — | — |
-| `TUN` | Tunisie | ✓ | missing | missing | — | — |
-| `TUR` | Turquie | ✓ | present | present | islamic | turco_iranian |
-| `TUV` | Tuvalu | ✓ | missing | missing | — | — |
-| `TZA` | Tanzanie | ✓ | missing | missing | — | — |
-| `UGA` | Ouganda | ✓ | missing | missing | — | — |
-| `UKR` | Ukraine | ✓ | present | present | orthodox | slavic_orthodox |
-| `URY` | Uruguay | ✓ | present | present | latin_american | southern_cone |
-| `USA` | États-Unis | ✓ | present | present | western | english_speaking |
-| `UZB` | Ouzbékistan | ✓ | missing | missing | — | — |
-| `VCT` | Saint-Vincent-et-les Grenadines | ✓ | missing | missing | — | — |
-| `VEN` | Venezuela | ✓ | present | present | latin_american | brazil_caribbean |
-| `VNM` | Viet Nam | ✓ | present | present | sinic | mainland_sinic |
-| `VUT` | Vanuatu | ✓ | missing | missing | — | — |
-| `WSM` | Samoa | ✓ | missing | missing | — | — |
-| `YEM` | Yémen | ✓ | missing | missing | — | — |
-| `ZAF` | Afrique du Sud | ✓ | present | present | african | southern_africa |
-| `ZMB` | Zambie | ✓ | imputed | present | african | southern_africa |
-| `ZWE` | Zimbabwe | ✓ | imputed | present | african | southern_africa |
+| ISO3 | Nom (fr) | Géo | Hofstede | IW | Civ. curatée | Sous-ensemble | x_viz prov. | x_score prov. |
+|------|----------|-----|----------|----|--------------|---------------|-------------|---------------|
+| `AFG` | Afghanistan | ✓ | missing | missing | islamic | — | imputed_pew | imputed_governance |
+| `AGO` | Angola | ✓ | missing | missing | african | — | imputed_pew | imputed_governance |
+| `ALB` | Albanie | ✓ | missing | missing | islamic | — | imputed_pew | imputed_governance |
+| `AND` | Andorre | ✓ | missing | present | western | — | imputed_wvs_items | imputed_governance |
+| `ARE` | Émirats arabes unis | ✓ | missing | missing | islamic | — | imputed_pew | imputed_governance |
+| `ARG` | Argentine | ✓ | present | present | latin_american | southern_cone | observed | observed |
+| `ARM` | Arménie | ✓ | missing | present | orthodox | — | imputed_wvs_items | imputed_governance |
+| `ATG` | Antigua-et-Barbuda | ✓ | missing | missing | western | — | imputed_pew | imputed_governance |
+| `AUS` | Australie | ✓ | present | present | western | english_speaking | observed | observed |
+| `AUT` | Autriche | ✓ | missing | missing | western | — | imputed_pew | imputed_governance |
+| `AZE` | Azerbaïdjan | ✓ | missing | present | islamic | — | imputed_wvs_items | imputed_governance |
+| `BDI` | Burundi | ✓ | missing | missing | african | — | imputed_pew | imputed_governance |
+| `BEL` | Belgique | ✓ | missing | missing | western | — | imputed_pew | imputed_governance |
+| `BEN` | Bénin | ✓ | missing | missing | african | — | imputed_pew | imputed_governance |
+| `BFA` | Burkina Faso | ✓ | missing | present | islamic | — | imputed_wvs_items | imputed_governance |
+| `BGD` | Bangladesh | ✓ | present | present | islamic | south_asian_islamic | observed | observed |
+| `BGR` | Bulgarie | ✓ | present | present | orthodox | balkan_orthodox | observed | observed |
+| `BHR` | Bahreïn | ✓ | missing | missing | islamic | — | imputed_pew | imputed_governance |
+| `BHS` | Bahamas | ✓ | missing | missing | western | — | imputed_pew | imputed_governance |
+| `BIH` | Bosnie-Herzégovine | ✓ | missing | missing | — | — | imputed_pew | imputed_governance |
+| `BLR` | Bélarus | ✓ | present | present | orthodox | slavic_orthodox | observed | observed |
+| `BLZ` | Belize | ✓ | missing | missing | western | — | imputed_pew | imputed_governance |
+| `BOL` | Bolivie | ✓ | imputed | present | indigenous | andean | observed | observed_with_dim_imputation |
+| `BRA` | Brésil | ✓ | present | present | latin_american | brazil_caribbean | observed | observed |
+| `BRB` | Barbade | ✓ | missing | missing | western | — | imputed_pew | imputed_governance |
+| `BRN` | Brunéi Darussalam | ✓ | missing | missing | islamic | — | imputed_pew | imputed_governance |
+| `BTN` | Bhoutan | ✓ | missing | missing | buddhist | mahayana | imputed_pew | imputed_governance |
+| `BWA` | Botswana | ✓ | missing | missing | african | — | imputed_pew | imputed_governance |
+| `CAF` | République centrafricaine | ✓ | missing | missing | african | — | imputed_pew | imputed_governance |
+| `CAN` | Canada | ✓ | present | present | western | english_speaking | observed | observed |
+| `CHE` | Suisse | ✓ | missing | present | western | — | imputed_wvs_items | imputed_governance |
+| `CHL` | Chili | ✓ | present | present | latin_american | southern_cone | observed | observed |
+| `CHN` | Chine | ✓ | present | present | sinic | mainland_sinic | observed | observed |
+| `CIV` | Côte d'Ivoire | ✓ | missing | missing | — | — | imputed_pew | imputed_governance |
+| `CMR` | Cameroun | ✓ | missing | missing | african | — | imputed_pew | imputed_governance |
+| `COD` | République démocratique du Congo | ✓ | missing | missing | african | — | imputed_pew | imputed_governance |
+| `COG` | Congo | ✓ | missing | missing | african | — | imputed_pew | imputed_governance |
+| `COL` | Colombie | ✓ | present | present | latin_american | andean | observed | observed |
+| `COM` | Comores | ✓ | missing | missing | islamic | — | imputed_pew | imputed_governance |
+| `CPV` | Cabo Verde | ✓ | missing | missing | african | — | imputed_pew | imputed_governance |
+| `CRI` | Costa Rica | ✓ | missing | missing | latin_american | — | imputed_pew | imputed_governance |
+| `CUB` | Cuba | ✓ | missing | missing | latin_american | — | imputed_pew | imputed_governance |
+| `CYP` | Chypre | ✓ | missing | present | orthodox | — | imputed_wvs_items | imputed_governance |
+| `CZE` | Tchéquie | ✓ | missing | present | western | — | imputed_wvs_items | imputed_governance |
+| `DEU` | Allemagne | ✓ | present | present | western | protestant_europe | observed | observed |
+| `DJI` | Djibouti | ✓ | missing | missing | islamic | — | imputed_pew | imputed_governance |
+| `DMA` | Dominique | ✓ | missing | missing | western | — | imputed_pew | imputed_governance |
+| `DNK` | Danemark | ✓ | present | present | western | protestant_europe | observed | observed |
+| `DOM` | République dominicaine | ✓ | missing | missing | latin_american | — | imputed_pew | imputed_governance |
+| `DZA` | Algérie | ✓ | missing | present | islamic | — | imputed_wvs_items | imputed_governance |
+| `ECU` | Équateur | ✓ | imputed | present | indigenous | andean | observed | observed_with_dim_imputation |
+| `EGY` | Égypte | ✓ | present | present | islamic | arab_islamic | observed | observed |
+| `ERI` | Érythrée | ✓ | missing | missing | african | — | imputed_pew | imputed_governance |
+| `ESP` | Espagne | ✓ | present | present | western | catholic_europe | observed | observed |
+| `EST` | Estonie | ✓ | missing | present | western | — | imputed_wvs_items | imputed_governance |
+| `ETH` | Éthiopie | ✓ | imputed | present | african | east_africa | observed | observed_with_dim_imputation |
+| `FIN` | Finlande | ✓ | present | present | western | protestant_europe | observed | observed |
+| `FJI` | Fidji | ✓ | imputed | present | oceanian | melanesia | observed | observed_with_dim_imputation |
+| `FRA` | France | ✓ | present | present | western | catholic_europe | observed | observed |
+| `FSM` | Micronésie | ✓ | missing | missing | oceanian | — | imputed_pew | imputed_governance |
+| `GAB` | Gabon | ✓ | missing | missing | african | — | imputed_pew | imputed_governance |
+| `GBR` | Royaume-Uni | ✓ | present | present | western | english_speaking | observed | observed |
+| `GEO` | Géorgie | ✓ | missing | present | orthodox | — | imputed_wvs_items | imputed_governance |
+| `GHA` | Ghana | ✓ | present | present | african | west_africa | observed | observed |
+| `GIN` | Guinée | ✓ | missing | missing | islamic | — | imputed_pew | imputed_governance |
+| `GMB` | Gambie | ✓ | missing | missing | islamic | — | imputed_pew | imputed_governance |
+| `GNB` | Guinée-Bissau | ✓ | missing | missing | african | — | imputed_pew | imputed_governance |
+| `GNQ` | Guinée équatoriale | ✓ | missing | missing | african | — | imputed_pew | imputed_governance |
+| `GRC` | Grèce | ✓ | present | present | orthodox | balkan_orthodox | observed | observed |
+| `GRD` | Grenade | ✓ | missing | missing | western | — | imputed_pew | imputed_governance |
+| `GTM` | Guatemala | ✓ | imputed | present | latin_american | mexican_central_american | observed | observed_with_dim_imputation |
+| `GUY` | Guyana | ✓ | missing | missing | latin_american | — | imputed_pew | imputed_governance |
+| `HND` | Honduras | ✓ | missing | missing | latin_american | — | imputed_pew | imputed_governance |
+| `HRV` | Croatie | ✓ | missing | missing | western | — | imputed_pew | imputed_governance |
+| `HTI` | Haïti | ✓ | missing | missing | latin_american | — | imputed_pew | imputed_governance |
+| `HUN` | Hongrie | ✓ | missing | present | western | — | imputed_wvs_items | imputed_governance |
+| `IDN` | Indonésie | ✓ | present | present | islamic | southeast_asian_islamic | observed | observed |
+| `IND` | Inde | ✓ | present | present | hindic | indian_subcontinent_hindu | observed | observed |
+| `IRL` | Irlande | ✓ | present | present | western | english_speaking | observed | observed |
+| `IRN` | Iran | ✓ | present | present | islamic | turco_iranian | observed | observed |
+| `IRQ` | Iraq | ✓ | present | present | islamic | arab_islamic | observed | observed |
+| `ISL` | Islande | ✓ | missing | missing | western | — | imputed_pew | imputed_governance |
+| `ISR` | Israël | ✓ | missing | missing | — | — | imputed_pew | imputed_governance |
+| `ITA` | Italie | ✓ | present | present | western | catholic_europe | observed | observed |
+| `JAM` | Jamaïque | ✓ | missing | missing | western | — | imputed_pew | imputed_governance |
+| `JOR` | Jordanie | ✓ | present | present | islamic | arab_islamic | observed | observed |
+| `JPN` | Japon | ✓ | present | present | japanese | — | observed | observed |
+| `KAZ` | Kazakhstan | ✓ | missing | present | islamic | — | imputed_wvs_items | imputed_governance |
+| `KEN` | Kenya | ✓ | imputed | present | african | east_africa | observed | observed_with_dim_imputation |
+| `KGZ` | Kirghizistan | ✓ | missing | present | islamic | — | imputed_wvs_items | imputed_governance |
+| `KHM` | Cambodge | ✓ | missing | missing | buddhist | theravada | imputed_pew | imputed_governance |
+| `KIR` | Kiribati | ✓ | missing | missing | oceanian | — | imputed_pew | imputed_governance |
+| `KNA` | Saint-Kitts-et-Nevis | ✓ | missing | missing | western | — | imputed_pew | imputed_governance |
+| `KOR` | Corée du Sud | ✓ | present | present | — | mahayana | observed | observed |
+| `KWT` | Koweït | ✓ | missing | present | islamic | — | imputed_wvs_items | imputed_governance |
+| `LAO` | Laos | ✓ | missing | missing | buddhist | theravada | imputed_pew | imputed_governance |
+| `LBN` | Liban | ✓ | missing | present | — | — | imputed_wvs_items | imputed_governance |
+| `LBR` | Libéria | ✓ | missing | missing | african | — | imputed_pew | imputed_governance |
+| `LBY` | Libye | ✓ | missing | present | islamic | — | imputed_wvs_items | imputed_governance |
+| `LCA` | Sainte-Lucie | ✓ | missing | missing | western | — | imputed_pew | imputed_governance |
+| `LIE` | Liechtenstein | ✓ | missing | missing | western | — | imputed_pew | imputed_governance |
+| `LKA` | Sri Lanka | ✓ | missing | missing | hindic | indian_subcontinent_hindu | imputed_pew | imputed_governance |
+| `LSO` | Lesotho | ✓ | missing | missing | african | — | imputed_pew | imputed_governance |
+| `LTU` | Lituanie | ✓ | missing | missing | western | — | imputed_pew | imputed_governance |
+| `LUX` | Luxembourg | ✓ | missing | missing | western | — | imputed_pew | imputed_governance |
+| `LVA` | Lettonie | ✓ | missing | missing | western | — | imputed_pew | imputed_governance |
+| `MAR` | Maroc | ✓ | present | present | islamic | arab_islamic | observed | observed |
+| `MCO` | Monaco | ✓ | missing | missing | western | — | imputed_pew | imputed_governance |
+| `MDA` | Moldova | ✓ | missing | missing | orthodox | — | imputed_pew | imputed_governance |
+| `MDG` | Madagascar | ✓ | missing | present | african | — | imputed_wvs_items | imputed_governance |
+| `MDV` | Maldives | ✓ | missing | missing | islamic | — | imputed_pew | imputed_governance |
+| `MEX` | Mexique | ✓ | present | present | latin_american | mexican_central_american | observed | observed |
+| `MHL` | Îles Marshall | ✓ | missing | missing | oceanian | — | imputed_pew | imputed_governance |
+| `MKD` | Macédoine du Nord | ✓ | missing | missing | orthodox | — | imputed_pew | imputed_governance |
+| `MLI` | Mali | ✓ | missing | present | islamic | — | imputed_wvs_items | imputed_governance |
+| `MLT` | Malte | ✓ | missing | missing | western | — | imputed_pew | imputed_governance |
+| `MMR` | Myanmar | ✓ | imputed | present | buddhist | theravada | observed | observed_with_dim_imputation |
+| `MNE` | Monténégro | ✓ | missing | missing | orthodox | — | imputed_pew | imputed_governance |
+| `MNG` | Mongolie | ✓ | present | present | buddhist | mahayana | observed | observed |
+| `MOZ` | Mozambique | ✓ | missing | missing | african | — | imputed_pew | imputed_governance |
+| `MRT` | Mauritanie | ✓ | missing | missing | islamic | — | imputed_pew | imputed_governance |
+| `MUS` | Maurice | ✓ | missing | missing | hindic | — | imputed_pew | imputed_governance |
+| `MWI` | Malawi | ✓ | missing | missing | african | — | imputed_pew | imputed_governance |
+| `MYS` | Malaisie | ✓ | present | present | islamic | southeast_asian_islamic | observed | observed |
+| `NAM` | Namibie | ✓ | missing | missing | african | — | imputed_pew | imputed_governance |
+| `NER` | Niger | ✓ | missing | missing | islamic | — | imputed_pew | imputed_governance |
+| `NGA` | Nigéria | ✓ | present | present | african | west_africa | observed | observed |
+| `NIC` | Nicaragua | ✓ | missing | present | latin_american | — | imputed_wvs_items | imputed_governance |
+| `NLD` | Pays-Bas | ✓ | present | present | western | protestant_europe | observed | observed |
+| `NOR` | Norvège | ✓ | present | present | western | protestant_europe | observed | observed |
+| `NPL` | Népal | ✓ | missing | missing | hindic | indian_subcontinent_hindu | imputed_pew | imputed_governance |
+| `NRU` | Nauru | ✓ | missing | missing | oceanian | — | imputed_pew | imputed_governance |
+| `NZL` | Nouvelle-Zélande | ✓ | present | present | oceanian | english_speaking | observed | observed |
+| `OMN` | Oman | ✓ | missing | missing | islamic | — | imputed_pew | imputed_governance |
+| `PAK` | Pakistan | ✓ | present | present | islamic | south_asian_islamic | observed | observed |
+| `PAN` | Panama | ✓ | missing | missing | latin_american | — | imputed_pew | imputed_governance |
+| `PER` | Pérou | ✓ | present | present | latin_american | andean | observed | observed |
+| `PHL` | Philippines | ✓ | missing | present | latin_american | — | imputed_wvs_items | imputed_governance |
+| `PLW` | Palaos | ✓ | missing | missing | oceanian | — | imputed_pew | imputed_governance |
+| `PNG` | Papouasie-Nouvelle-Guinée | ✓ | missing | missing | oceanian | — | imputed_pew | imputed_governance |
+| `POL` | Pologne | ✓ | missing | present | western | — | imputed_wvs_items | imputed_governance |
+| `PRK` | Corée du Nord | ✓ | missing | missing | sinic | — | imputed_pew | imputed_governance |
+| `PRT` | Portugal | ✓ | missing | missing | western | — | imputed_pew | imputed_governance |
+| `PRY` | Paraguay | ✓ | missing | missing | latin_american | — | imputed_pew | imputed_governance |
+| `QAT` | Qatar | ✓ | missing | present | islamic | — | imputed_wvs_items | imputed_governance |
+| `ROU` | Roumanie | ✓ | present | present | orthodox | balkan_orthodox | observed | observed |
+| `RUS` | Russie | ✓ | present | present | orthodox | slavic_orthodox | observed | observed |
+| `RWA` | Rwanda | ✓ | missing | present | african | — | imputed_wvs_items | imputed_governance |
+| `SAU` | Arabie saoudite | ✓ | present | missing | islamic | arab_islamic | imputed_pew | observed |
+| `SDN` | Soudan | ✓ | missing | missing | islamic | — | imputed_pew | imputed_governance |
+| `SEN` | Sénégal | ✓ | missing | missing | islamic | — | imputed_pew | imputed_governance |
+| `SGP` | Singapour | ✓ | present | present | sinic | insular_sinic | observed | observed |
+| `SLB` | Îles Salomon | ✓ | missing | missing | oceanian | — | imputed_pew | imputed_governance |
+| `SLE` | Sierra Leone | ✓ | missing | missing | islamic | — | imputed_pew | imputed_governance |
+| `SLV` | El Salvador | ✓ | missing | missing | latin_american | — | imputed_pew | imputed_governance |
+| `SMR` | Saint-Marin | ✓ | missing | missing | western | — | imputed_pew | imputed_governance |
+| `SOM` | Somalie | ✓ | missing | missing | islamic | — | imputed_pew | imputed_governance |
+| `SRB` | Serbie | ✓ | present | present | orthodox | slavic_orthodox | observed | observed |
+| `SSD` | Soudan du Sud | ✓ | missing | missing | african | — | imputed_pew | imputed_governance |
+| `STP` | Sao Tomé-et-Principe | ✓ | missing | missing | african | — | imputed_pew | imputed_governance |
+| `SUR` | Suriname | ✓ | missing | missing | latin_american | — | imputed_pew | imputed_governance |
+| `SVK` | Slovaquie | ✓ | missing | present | western | — | imputed_wvs_items | imputed_governance |
+| `SVN` | Slovénie | ✓ | missing | present | western | — | imputed_wvs_items | imputed_governance |
+| `SWE` | Suède | ✓ | present | present | western | protestant_europe | observed | observed |
+| `SWZ` | Eswatini | ✓ | missing | missing | african | — | imputed_pew | imputed_governance |
+| `SYC` | Seychelles | ✓ | missing | missing | african | — | imputed_pew | imputed_governance |
+| `SYR` | Syrie | ✓ | missing | missing | islamic | — | imputed_pew | imputed_governance |
+| `TCD` | Tchad | ✓ | missing | missing | — | — | imputed_pew | imputed_governance |
+| `TGO` | Togo | ✓ | missing | missing | african | — | imputed_pew | imputed_governance |
+| `THA` | Thaïlande | ✓ | present | present | buddhist | theravada | observed | observed |
+| `TJK` | Tadjikistan | ✓ | missing | present | islamic | — | imputed_wvs_items | imputed_governance |
+| `TKM` | Turkménistan | ✓ | missing | missing | islamic | — | imputed_pew | imputed_governance |
+| `TLS` | Timor-Leste | ✓ | missing | missing | latin_american | — | imputed_pew | imputed_governance |
+| `TON` | Tonga | ✓ | missing | missing | oceanian | — | imputed_pew | imputed_governance |
+| `TTO` | Trinité-et-Tobago | ✓ | missing | present | western | — | imputed_wvs_items | imputed_governance |
+| `TUN` | Tunisie | ✓ | missing | present | islamic | — | imputed_wvs_items | imputed_governance |
+| `TUR` | Turquie | ✓ | present | present | islamic | turco_iranian | observed | observed |
+| `TUV` | Tuvalu | ✓ | missing | missing | oceanian | — | imputed_pew | imputed_governance |
+| `TZA` | Tanzanie | ✓ | missing | missing | african | — | imputed_pew | imputed_governance |
+| `UGA` | Ouganda | ✓ | missing | missing | african | — | imputed_pew | imputed_governance |
+| `UKR` | Ukraine | ✓ | present | present | orthodox | slavic_orthodox | observed | observed |
+| `URY` | Uruguay | ✓ | present | present | latin_american | southern_cone | observed | observed |
+| `USA` | États-Unis | ✓ | present | present | western | english_speaking | observed | observed |
+| `UZB` | Ouzbékistan | ✓ | missing | present | islamic | — | imputed_wvs_items | imputed_governance |
+| `VCT` | Saint-Vincent-et-les Grenadines | ✓ | missing | missing | western | — | imputed_pew | imputed_governance |
+| `VEN` | Venezuela | ✓ | present | present | latin_american | brazil_caribbean | observed | observed |
+| `VNM` | Viet Nam | ✓ | present | present | sinic | mainland_sinic | observed | observed |
+| `VUT` | Vanuatu | ✓ | missing | missing | oceanian | — | imputed_pew | imputed_governance |
+| `WSM` | Samoa | ✓ | missing | missing | oceanian | — | imputed_pew | imputed_governance |
+| `YEM` | Yémen | ✓ | missing | present | islamic | — | imputed_wvs_items | imputed_governance |
+| `ZAF` | Afrique du Sud | ✓ | present | present | african | southern_africa | observed | observed |
+| `ZMB` | Zambie | ✓ | imputed | present | african | southern_africa | observed | observed_with_dim_imputation |
+| `ZWE` | Zimbabwe | ✓ | imputed | present | african | southern_africa | observed | observed_with_dim_imputation |

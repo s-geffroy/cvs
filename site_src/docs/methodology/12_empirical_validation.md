@@ -15,15 +15,27 @@ si ses prédictions implicites se vérifient sur des panels indépendants.
 
 ## 2. Indicateurs externes utilisés
 
-| Indicateur | Source | Année | Type |
-|---|---|---|---|
-| **Pew Religious Composition** — part du groupe religieux dominant | Pew Research Center | 2020 | % de la population (0-100) |
-| **WGI Rule of Law** — État de droit | World Bank — Worldwide Governance Indicators | 2022 | z-score (-2.5 à +2.5) |
-| **FSI Total** — fragilité étatique | Fund For Peace — Fragile States Index | 2024 | 0 (stable) à 120 (alerte) |
+| Indicateur | Source | Année | Couverture ONU | Type |
+|---|---|---|---|---|
+| **Pew Religious Composition** — 7 proportions par pays | Pew Research Center | 2020 | 182/193 | % de la population (sommant à 100) |
+| **WGI Rule of Law** — État de droit | World Bank — Worldwide Governance Indicators | 2022 | 61/193 | z-score (-2.5 à +2.5) |
+| **FSI Total** — fragilité étatique | Fund For Peace — Fragile States Index | 2024 | 61/193 | 0 (stable) à 120 (alerte) |
+| **UNDP HDR** — HDI, GII, mean/expected schooling, GNI | UNDP Human Development Report 2025 | 2023 | 191/193 | composites normalisés |
+| **UN GA voting idealpoint** — alignement politique | Voeten/Strezhnev/Bailey, Harvard Dataverse | 2025 | 192/193 | scalaire ≈ [-3, +3] |
+| **V-Dem (12 indices)** — libdem, gender, corruption, religfree, etc. | V-Dem Institute v16 | 2025 | 172/193 | composites [0, 1] |
 
-Les trois indicateurs sont **publics** et capturent des dimensions
-différentes : croyance religieuse, gouvernance, stabilité. Données bundleées
-dans `data_sources/{pew,wgi,fsi}/` avec citation complète des sources.
+Les six indicateurs sont **publics** et capturent des dimensions
+différentes (croyance religieuse, gouvernance, développement humain,
+alignement politique, qualité institutionnelle, stabilité). Ces sources
+servent à la fois à la **calibration** des tiers `imputed_pew`,
+`imputed_governance` (cf. [doc 16](16_imputation_cascade.md)) et à la
+**validation externe** ci-dessous. Pour éviter la circularité, les tests
+de validation sont conduits **uniquement sur les États `observed`**, et
+les imputations issues des mêmes sources ne participent pas aux
+corrélations.
+
+Données bundleées (ou téléchargeables via les URL documentées) dans
+`data_sources/{pew,wgi,fsi,undp,un_voting,vdem}/`.
 
 ## 3. Protocole
 
@@ -135,7 +147,22 @@ Si les hypothèses `western ↔ WGI+`, `islamic ↔ Pew(musulman)+`, etc.
    99.85% par test — exigeante. Les CI bootstrap à 95% ne corrigent pas
    pour la multiplicité.
 
-## 8. Travaux futurs
+## 8. Stratification par provenance (V2)
+
+Depuis l'introduction de la cascade ([doc 16](16_imputation_cascade.md)), tous
+les tests de cette section sont calculés **uniquement sur les États dont la
+provenance est `observed`** (intersection IW ∩ Pew/WGI/FSI). Les États
+`centroid_prior` sont exclus pour éviter la circularité — voir
+[doc 11 §H28](11_critiques_and_responses.md). Les corrélations rapportées sur
+les ~60 États observés ne se dégradent donc pas avec l'ajout des 130 États
+imputés/prior.
+
+Un encadré « stratification » dans chaque tableau de corrélation indique le
+nombre d'États inclus par tier ; un tier `centroid_prior` séparé peut être
+ajouté à titre informatif (corrélation attendue = 1.0 par construction,
+*non utilisée pour la validation*).
+
+## 9. Travaux futurs
 
 - Ajouter Polity V (régime politique).
 - Ajouter UNESCO sur le patrimoine culturel.

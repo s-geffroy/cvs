@@ -1,0 +1,84 @@
+{
+  "iso3": "HUN",
+  "label": null,
+  "x_viz": [
+    0.4314418573606771,
+    0.048045949852679626
+  ],
+  "x_viz_ellipse": {
+    "sigma": [
+      [
+        0.14149611837262427,
+        0.0
+      ],
+      [
+        0.0,
+        0.29336848480021727
+      ]
+    ],
+    "confidence_level": 0.8,
+    "source": "wvs_wave5_predicted_from_items"
+  },
+  "x_score": [
+    66.24557751536935,
+    46.06113265972063,
+    50.00580708444211,
+    76.3144007910183,
+    55.04260773919035,
+    40.22349610753653
+  ],
+  "affinity_vector": {
+    "western": 0.05775796642463072,
+    "orthodox": 0.11037241822616936,
+    "islamic": 0.14230321170782598,
+    "sinic": 0.049824618818929134,
+    "hindic": 0.09531268657693427,
+    "japanese": 0.03855626935466654,
+    "buddhist": 0.14758905558046428,
+    "latin_american": 0.07393130783741389,
+    "african": 0.09435697120078432,
+    "indigenous": 0.09492541565769866,
+    "oceanian": 0.09507007861448284
+  },
+  "data_quality": {
+    "iw_coverage": "present",
+    "hofstede_coverage": "missing",
+    "low_evidence": true,
+    "x_viz_provenance": "imputed_wvs_items",
+    "x_score_provenance": "imputed_governance",
+    "x_score_sigma_prior": [
+      12.89482013219045,
+      16.654266762366433,
+      17.276090153261453,
+      19.840361952573588,
+      23.703391973204358,
+      22.027751828622787
+    ],
+    "fallback_civilization_id": "western",
+    "pew_to_iw_model": {
+      "training_n": 93,
+      "rmse_ts": 0.4826353981600494,
+      "rmse_se": 0.647842466967669
+    },
+    "governance_to_hofstede_model": {
+      "training_n": 63,
+      "rmse_per_dimension": {
+        "pdi": 12.89482013219045,
+        "idv": 16.654266762366433,
+        "mas": 17.276090153261453,
+        "uai": 19.840361952573588,
+        "lto": 23.703391973204358,
+        "ivr": 22.027751828622787
+      }
+    }
+  },
+  "source_refs": [
+    "wgi_2022",
+    "fsi_2024"
+  ],
+  "curated_civilization": "western",
+  "curated_role": "core",
+  "curated_civilizations_competing": null,
+  "sub_cluster_id": null,
+  "sub_cluster_label": null
+}

@@ -15,7 +15,7 @@ taxonomy = loaders.load_taxonomy_v2()
 state_payload = loaders.load_state_coordinates()
 centroids_payload = loaders.load_centroids()
 
-st.subheader("Couverture par État")
+st.subheader("Couverture par État (cascade d'imputation)")
 if state_payload:
     rows = [
         {
@@ -23,10 +23,24 @@ if state_payload:
             "iw_coverage": state["data_quality"]["iw_coverage"],
             "hofstede_coverage": state["data_quality"]["hofstede_coverage"],
             "low_evidence": state["data_quality"]["low_evidence"],
+            "x_viz_provenance": state["data_quality"].get("x_viz_provenance", "—"),
+            "x_score_provenance": state["data_quality"].get("x_score_provenance", "—"),
         }
         for state in state_payload["states"]
     ]
-    st.dataframe(pd.DataFrame(rows), use_container_width=True)
+    df_coverage = pd.DataFrame(rows)
+    st.dataframe(df_coverage, use_container_width=True)
+    st.caption(
+        "Tiers de la cascade : `observed` > `imputed_wvs_items` > `imputed_pew` > "
+        "`imputed_governance` > `centroid_prior`. Cf. `docs/16_imputation_cascade.md`."
+    )
+    summary_cols = st.columns(2)
+    with summary_cols[0]:
+        st.markdown("**Distribution provenance `x_viz`**")
+        st.bar_chart(df_coverage["x_viz_provenance"].value_counts())
+    with summary_cols[1]:
+        st.markdown("**Distribution provenance `x_score`**")
+        st.bar_chart(df_coverage["x_score_provenance"].value_counts())
 
 st.subheader("Civilisations à faible évidence")
 low_evidence_civilizations = [

@@ -1,0 +1,85 @@
+{
+  "iso3": "PRT",
+  "label": null,
+  "x_viz": [
+    0.09539314247344977,
+    0.7056938052318924
+  ],
+  "x_viz_ellipse": {
+    "sigma": [
+      [
+        0.23293692755710943,
+        0.0
+      ],
+      [
+        0.0,
+        0.4196998620067553
+      ]
+    ],
+    "confidence_level": 0.8,
+    "source": "imputed_pew"
+  },
+  "x_score": [
+    62.67711078404814,
+    47.42247744577839,
+    48.03349593853974,
+    83.77080132593406,
+    49.62297586338706,
+    49.35010201848229
+  ],
+  "affinity_vector": {
+    "western": 0.07131814997150267,
+    "orthodox": 0.09267402563288443,
+    "islamic": 0.12182074655126256,
+    "sinic": 0.03266264172229737,
+    "hindic": 0.06055517807323827,
+    "japanese": 0.03672272953734478,
+    "buddhist": 0.14394091053253158,
+    "latin_american": 0.12351774375226912,
+    "african": 0.1057783723631601,
+    "indigenous": 0.1025133953810798,
+    "oceanian": 0.10849610648242929
+  },
+  "data_quality": {
+    "iw_coverage": "missing",
+    "hofstede_coverage": "missing",
+    "low_evidence": true,
+    "x_viz_provenance": "imputed_pew",
+    "x_score_provenance": "imputed_governance",
+    "x_score_sigma_prior": [
+      12.89482013219045,
+      16.654266762366433,
+      17.276090153261453,
+      19.840361952573588,
+      23.703391973204358,
+      22.027751828622787
+    ],
+    "fallback_civilization_id": "western",
+    "pew_to_iw_model": {
+      "training_n": 93,
+      "rmse_ts": 0.4826353981600494,
+      "rmse_se": 0.647842466967669
+    },
+    "governance_to_hofstede_model": {
+      "training_n": 63,
+      "rmse_per_dimension": {
+        "pdi": 12.89482013219045,
+        "idv": 16.654266762366433,
+        "mas": 17.276090153261453,
+        "uai": 19.840361952573588,
+        "lto": 23.703391973204358,
+        "ivr": 22.027751828622787
+      }
+    }
+  },
+  "source_refs": [
+    "pew_religious_composition_2020",
+    "wgi_2022",
+    "fsi_2024"
+  ],
+  "curated_civilization": "western",
+  "curated_role": "core",
+  "curated_civilizations_competing": null,
+  "sub_cluster_id": null,
+  "sub_cluster_label": null
+}

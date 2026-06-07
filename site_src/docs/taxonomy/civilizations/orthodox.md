@@ -46,7 +46,7 @@ Distance hiérarchique très élevée (PDI souvent >85), individualisme bas-moye
 
 ## Coordonnées B_vec (centroïdes)
 
-- **`μ_viz`** (Inglehart-Welzel : TS, SE) = `[0.02, -0.72]`
+- **`μ_viz`** (Inglehart-Welzel : TS, SE) = `[-0.27, -0.72]`
 - **`μ_score`** (Hofstede PDI, IDV, MAS, UAI, LTO, IVR) =
   `[83.7, 29.9, 37.9, 94.9, 66.6, 23.9]`
 
@@ -69,6 +69,18 @@ Distance hiérarchique très élevée (PDI souvent >85), individualisme bas-moye
 | Grèce | `GRC` | core | Grec orthodoxe, membre UE — frontière Western | huntington_1996 |
 
 | Serbie | `SRB` | core | Serbe orthodoxe | huntington_1996 |
+
+| Arménie | `ARM` | core | Arménie apostolique (Église orientale orthodoxe) — Huntington classe l'Arménie en sphère orthodoxe. | huntington_1996 |
+
+| Chypre | `CYP` | periphery | République de Chypre majoritairement grecque-orthodoxe — partagée avec Occident via UE. | huntington_1996 |
+
+| Géorgie | `GEO` | core | Église orthodoxe géorgienne — Caucase orthodoxe. | huntington_1996 |
+
+| Moldova | `MDA` | core | Orthodoxe roumanophone — sphère post-soviétique orthodoxe. | huntington_1996 |
+
+| Macédoine du Nord | `MKD` | core | Orthodoxe macédonienne, Balkans. | huntington_1996 |
+
+| Monténégro | `MNE` | core | Orthodoxe, Balkans. | huntington_1996 |
 
 
 
@@ -95,6 +107,12 @@ Distance hiérarchique très élevée (PDI souvent >85), individualisme bas-moye
 
 - **Civilisations en concurrence** : orthodox, western
 - **Discussion** : Membre UE/OTAN, mais identité orthodoxe persistante.
+- **Citations** : huntington_1996
+
+### Bosnie-Herzégovine (`BIH`)
+
+- **Civilisations en concurrence** : islamic, orthodox, western
+- **Discussion** : Bosniaque musulmane ~50%, Serbe orthodoxe ~30%, Croate catholique ~15% — frontière des trois civilisations.
 - **Citations** : huntington_1996
 
 

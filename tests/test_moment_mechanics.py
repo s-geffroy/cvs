@@ -66,14 +66,24 @@ def test_principal_directions_are_orthonormal(computed_state_moments) -> None:
 
 
 def test_decomposition_consistency(computed_state_moments) -> None:
-    """M(s) = Cov_w(mu;w) + sum(w) * (mu_bar - x_s)(mu_bar - x_s)^T (up to numerical noise)."""
+    """M(s) = Cov_w(mu;w) + sum(w) * (mu_bar - x_s)(mu_bar - x_s)^T + diag(sigma_prior^2).
+
+    The third term is the prior-variance inflation that propagates imputation
+    uncertainty for states whose ``x_score`` is not directly observed.
+    """
     for iso3, moment in computed_state_moments.items():
         matrix_M = np.array(moment.M, dtype=float)
         intra_covariance = np.array(
             moment.decomposition["intra_civilizational_covariance"], dtype=float
         )
         bias_term = np.array(moment.decomposition["bias_term"], dtype=float)
-        reconstructed = intra_covariance + bias_term
+        prior_variance_inflation = np.array(
+            moment.decomposition.get(
+                "prior_variance_inflation", np.zeros((6, 6))
+            ),
+            dtype=float,
+        )
+        reconstructed = intra_covariance + bias_term + prior_variance_inflation
         assert np.allclose(matrix_M, reconstructed, atol=1e-6), (
-            f"{iso3}: decomposition M = Cov_w + bias not satisfied"
+            f"{iso3}: decomposition M = Cov_w + bias + prior_inflation not satisfied"
         )

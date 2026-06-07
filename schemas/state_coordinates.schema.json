@@ -8,7 +8,7 @@
   "properties": {
     "iso3": { "type": "string", "minLength": 3, "maxLength": 3 },
     "iso2": { "type": "string", "minLength": 2, "maxLength": 2 },
-    "label": { "type": "string" },
+    "label": { "type": ["string", "null"] },
     "x_viz": {
       "type": "array",
       "minItems": 2,
@@ -49,11 +49,38 @@
     },
     "data_quality": {
       "type": "object",
-      "required": ["iw_coverage", "hofstede_coverage", "low_evidence"],
+      "required": ["iw_coverage", "hofstede_coverage", "low_evidence", "x_viz_provenance", "x_score_provenance"],
       "properties": {
         "iw_coverage": { "type": "string", "enum": ["present", "imputed", "missing"] },
         "hofstede_coverage": { "type": "string", "enum": ["present", "imputed", "missing"] },
         "low_evidence": { "type": "boolean" },
+        "x_viz_provenance": {
+          "type": "string",
+          "enum": ["observed", "imputed_wvs_items", "imputed_pew", "centroid_prior", "unresolved"],
+          "description": "Tier of the imputation cascade that produced x_viz. See docs/16_imputation_cascade.md."
+        },
+        "x_score_provenance": {
+          "type": "string",
+          "enum": ["observed", "observed_with_dim_imputation", "imputed_governance", "centroid_prior", "unresolved"],
+          "description": "Tier of the imputation cascade that produced x_score."
+        },
+        "x_score_sigma_prior": {
+          "type": ["array", "null"],
+          "description": "Per-dimension standard deviation propagated when x_score is imputed; null for observed states.",
+          "items": { "type": "number" }
+        },
+        "fallback_civilization_id": {
+          "type": ["string", "null"],
+          "description": "Civilization whose centroid was consulted by the cascade (curated_civilization or first competing for ambiguous states)."
+        },
+        "pew_to_iw_model": {
+          "type": "object",
+          "description": "Pew → IW calibration metadata (training set size, leave-one-out RMSE per axis)."
+        },
+        "governance_to_hofstede_model": {
+          "type": "object",
+          "description": "WGI+FSI → Hofstede calibration metadata (training set size, leave-one-out RMSE per dimension)."
+        },
         "notes": { "type": "string" }
       }
     },

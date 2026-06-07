@@ -58,12 +58,14 @@
       "properties": {
         "monocivilizational": { "type": "boolean" },
         "low_evidence": { "type": "boolean" },
-        "computed_from_imputed": { "type": "boolean" }
+        "computed_from_imputed": { "type": "boolean" },
+        "x_score_provenance": { "type": "string" },
+        "diagonal_inflated_by_prior": { "type": "boolean" }
       }
     },
     "decomposition": {
       "type": "object",
-      "description": "Decomposition M = Cov_w + bias_term that disentangles intra-civilizational dispersion from the state's bias relative to the weighted barycentre mu_bar.",
+      "description": "Decomposition M = Cov_w + bias_term + prior_variance_inflation. The third term is non-zero when x_score is imputed (centroid_prior or imputed_governance) and propagates the imputation uncertainty diagonally.",
       "required": ["weighted_barycentre_mu_bar", "intra_civilizational_covariance", "bias_term"],
       "properties": {
         "weighted_barycentre_mu_bar": {
@@ -94,8 +96,21 @@
             "items": { "type": "number" }
           }
         },
+        "prior_variance_inflation": {
+          "type": "array",
+          "minItems": 6,
+          "maxItems": 6,
+          "description": "diag(sigma_prior^2) added to M when x_score is imputed; zero matrix for observed states.",
+          "items": {
+            "type": "array",
+            "minItems": 6,
+            "maxItems": 6,
+            "items": { "type": "number" }
+          }
+        },
         "trace_intra": { "type": "number" },
-        "trace_bias": { "type": "number" }
+        "trace_bias": { "type": "number" },
+        "trace_prior_inflation": { "type": "number" }
       }
     }
   },

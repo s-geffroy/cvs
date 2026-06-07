@@ -130,8 +130,13 @@ Paramètre `β = 0.05` par défaut (échelle Hofstede 0-100, distances typiques 
 
 ## 5. Limites assumées
 
-1. **Hofstede couvre ~100 pays** : ETH, FJI, et plusieurs micro-États manquent ou sont imputés depuis des proxies régionaux. Procédure d'imputation explicite : `np.nanmean` sur les axes disponibles, flag `coverage: imputed` posé sur l'État, propagation jusqu'aux outputs. Drapeau `imputed` dans `state_coordinates.json`.
-2. **IW manque pour certains pays africains/asiatiques** : utilisation des waves antérieures (5, 6) si wave 7 manque. Drapeau `iw_coverage` est positionné à `missing` quand aucune wave n'est disponible.
+> **Mise à jour V2.1** : la cascade d'imputation décrite dans [doc 16](16_imputation_cascade.md) garantit `x_viz` et `x_score` non nuls pour les 193 États ONU, avec **0 État dans le tier `centroid_prior`** depuis l'ingestion des sources étendues (UNDP HDR, UN voting, V-Dem, WVS time-series, Pew composition complète). Les limites ci-dessous restent valides ; elles décrivent maintenant les bornes du tier `observed` strict plutôt que des manques de couverture absolue.
+
+1. **Hofstede couvre 63 pays** : ETH, FJI, et plusieurs micro-États manquent ou ont certaines dimensions imputées (`np.nanmean` sur les axes disponibles, provenance `observed_with_dim_imputation`). Pour les 132 États sans aucune dimension Hofstede, la cascade impute via la régression `governance_to_hofstede` calibrée sur WGI + FSI + UNDP + UN voting + V-Dem (`imputed_governance`), avec RMSE LOO par dimension publié dans `state_coordinates.json`.
+2. **IW manque pour 131 États** :
+   - 30 États sont récupérés par `imputed_wvs_items` (waves 5-6 du WVS Time-Series 1981-2022, prédiction par ridge sur les 10 items de la factor analysis IW calibrée sur l'intersection wave-7 — RMSE LOO 0.38/0.54).
+   - 103 États sont imputés via `pew_to_iw` calibrée sur Pew 7 proportions + UNDP HDR + UN voting + V-Dem (RMSE LOO 0.48/0.62).
+   - Les drapeaux de provenance permettent de stratifier l'analyse, et la validation empirique ([doc 12](12_empirical_validation.md)) est conditionnée à `observed` uniquement pour éviter la circularité.
 3. **Les axes IW ne sont pas strictement orthogonaux** en wave 7 (corrélation ~0.15) — orthogonalité **postulée par construction factorielle**, non vérifiée empiriquement. La v3.0 corrige l'étiquetage trompeur de la v2.0 (`empirical_orthogonal_by_construction` → `postulated_orthogonal_not_empirically_verified`).
 4. **Hofstede et IW datent de différentes vagues** : pas de simultanéité temporelle stricte. Hofstede 2010 (consolidation 2015) vs WVS wave 7 (2017-2022). Limite reconnue, non corrigeable en V1.
 5. **Les centroïdes sont sensibles au choix d'États archétypes** — sensibilité quantifiée par leave-one-out dans [doc 13](13_sensitivity_analysis.md). La UI Streamlit permet d'itérer interactivement.

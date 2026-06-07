@@ -60,11 +60,21 @@ cvs ne se contente pas de **publier des chiffres** : il vérifie qu'ils **corrè
 
 Les coefficients de corrélation de Spearman + intervalles de confiance bootstrap sont publiés en [doc 12](../../methodology/12_empirical_validation/).
 
+## Quand les données manquent : le posterior **dégénère** vers le prior
+
+Sur 193 États membres de l'ONU, seuls ~60 sont mesurés par WVS *et* Hofstede. Pour les ~130 autres, la cascade d'imputation de cvs ([doc 16](../../methodology/16_imputation_cascade/)) procède en trois temps :
+
+1. **Observation directe** quand elle existe ;
+2. **Calibration** depuis une source corrélative publique (composition religieuse Pew, indicateurs de gouvernance WGI/FSI) si la régression est statistiquement défendable ;
+3. **Repli sur le centroïde de civilisation** sinon — `x = μ(civ)` avec la covariance Σ(civ) intégralement reportée comme ellipse d'incertitude.
+
+Le tier 3 est strictement bayésien : sans observation, le posterior **dégénère** vers le prior. Ce n'est pas un bug, c'est exactement ce que dicte la règle de mise à jour. Chaque coordonnée publiée porte un champ `provenance` qui signale son tier — pour qu'un lecteur ne confonde jamais une mesure et un prior.
+
 ## En résumé : trois apports du bayésien
 
 1. **Un prior théorique explicite** (Huntington), confronté aux données — pas un clustering aveugle.
 2. **Un mélange** (pas une affectation dure) → publication de l'**incertitude** sous forme de vecteur de pourcentages.
-3. **Un second moment** `M(s)` qui rend visible la **dispersion intra-pays** que les approches non-bayésiennes occultent.
+3. **Un second moment** `M(s)` qui rend visible la **dispersion intra-pays** que les approches non-bayésiennes occultent. Sa diagonale est gonflée pour les États imputés afin que l'incertitude soit *visible* dans les invariants.
 
 ## Pour aller plus loin
 

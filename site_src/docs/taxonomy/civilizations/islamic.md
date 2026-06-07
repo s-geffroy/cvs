@@ -46,7 +46,7 @@ IW: TS négatif (traditionnel), SE négatif (survival) — quadrant Sud-Ouest. H
 
 ## Coordonnées B_vec (centroïdes)
 
-- **`μ_viz`** (Inglehart-Welzel : TS, SE) = `[-1.18, -0.75]`
+- **`μ_viz`** (Inglehart-Welzel : TS, SE) = `[-1.16, -0.62]`
 - **`μ_score`** (Hofstede PDI, IDV, MAS, UAI, LTO, IVR) =
   `[76.1, 28.0, 51.1, 66.9, 32.5, 31.4]`
 
@@ -78,6 +78,70 @@ IW: TS négatif (traditionnel), SE négatif (survival) — quadrant Sud-Ouest. H
 
 | Malaisie | `MYS` | core | Malaisie, islam malais | huntington_1996 |
 
+| Émirats arabes unis | `ARE` | core | Sunnite, péninsule arabique. | huntington_1996 |
+
+| Bahreïn | `BHR` | core | Chiite majoritaire, Golfe arabe. | huntington_1996 |
+
+| Algérie | `DZA` | core | Maghreb sunnite arabophone. | huntington_1996 |
+
+| Koweït | `KWT` | core | Sunnite, Golfe arabe. | huntington_1996 |
+
+| Libye | `LBY` | core | Maghreb sunnite. | huntington_1996 |
+
+| Oman | `OMN` | core | Ibadite, péninsule arabique. | huntington_1996 |
+
+| Qatar | `QAT` | core | Sunnite wahhabite, Golfe arabe. | huntington_1996 |
+
+| Syrie | `SYR` | core | Multi-confessionnelle (sunnite ~74%, alaouite, chrétiens, druzes) — sphère arabo-islamique. | huntington_1996 |
+
+| Tunisie | `TUN` | core | Maghreb sunnite arabophone. | huntington_1996 |
+
+| Yémen | `YEM` | core | Sunnite/zaydite, péninsule arabique. | huntington_1996 |
+
+| Afghanistan | `AFG` | core | Sunnite hanafite + chiite, pachtoune/tadjike — sphère islamique d'Asie centrale. | huntington_1996 |
+
+| Albanie | `ALB` | periphery | Musulmane majoritaire (~58% sunnite/bektashi) + minorités chrétiennes orthodoxe et catholique — Balkans, fortement laïcisée. | huntington_1996 |
+
+| Azerbaïdjan | `AZE` | core | Chiite turcophone — sphère islamique, héritage soviétique. | huntington_1996 |
+
+| Kazakhstan | `KAZ` | periphery | Sunnite turcophone, sécularisation soviétique marquée — périphérie islamique. | huntington_1996 |
+
+| Kirghizistan | `KGZ` | periphery | Sunnite turcophone, sécularisation soviétique. | huntington_1996 |
+
+| Tadjikistan | `TJK` | periphery | Sunnite iranophone, sécularisation soviétique. | huntington_1996 |
+
+| Turkménistan | `TKM` | periphery | Sunnite turcophone, sécularisation soviétique. | huntington_1996 |
+
+| Ouzbékistan | `UZB` | periphery | Sunnite turcophone, sécularisation soviétique. | huntington_1996 |
+
+| Brunéi Darussalam | `BRN` | core | Sultanat sunnite malais. | huntington_1996 |
+
+| Maldives | `MDV` | core | Sunnite, océan Indien. | huntington_1996 |
+
+| Comores | `COM` | core | Sunnite swahili, océan Indien. | huntington_1996 |
+
+| Djibouti | `DJI` | core | Sunnite, Corne de l'Afrique. | huntington_1996 |
+
+| Guinée | `GIN` | core | Sunnite majoritaire (~85%), Afrique de l'Ouest. | huntington_1996 |
+
+| Gambie | `GMB` | core | Sunnite majoritaire (~95%), Afrique de l'Ouest. | huntington_1996 |
+
+| Mali | `MLI` | core | Sunnite majoritaire (~95%), Sahel. | huntington_1996 |
+
+| Mauritanie | `MRT` | core | Sunnite, Sahara occidental — pont Maghreb/Sahel. | huntington_1996 |
+
+| Niger | `NER` | core | Sunnite (~99%), Sahel. | huntington_1996 |
+
+| Sénégal | `SEN` | core | Sunnite soufi (~95%), Afrique de l'Ouest. | huntington_1996 |
+
+| Somalie | `SOM` | core | Sunnite, Corne de l'Afrique. | huntington_1996 |
+
+| Burkina Faso | `BFA` | periphery | Musulmane majoritaire (~64%), forte minorité chrétienne/animiste — frange islamique sahélienne. | huntington_1996 |
+
+| Soudan | `SDN` | core | Sunnite arabophone (post-séparation du Sud-Soudan). | huntington_1996 |
+
+| Sierra Leone | `SLE` | periphery | Musulmane majoritaire (~78%), forte minorité chrétienne — pluralisme religieux notable. | huntington_1996 |
+
 
 
 ## Sous-clusters
@@ -107,6 +171,30 @@ IW: TS négatif (traditionnel), SE négatif (survival) — quadrant Sud-Ouest. H
 
 - **Civilisations en concurrence** : western, islamic
 - **Discussion** : État juif au Moyen-Orient — ni Western ni Islamic stricto sensu.
+- **Citations** : huntington_1996
+
+### Bosnie-Herzégovine (`BIH`)
+
+- **Civilisations en concurrence** : islamic, orthodox, western
+- **Discussion** : Bosniaque musulmane ~50%, Serbe orthodoxe ~30%, Croate catholique ~15% — frontière des trois civilisations.
+- **Citations** : huntington_1996
+
+### Liban (`LBN`)
+
+- **Civilisations en concurrence** : islamic, western
+- **Discussion** : Sunnite/chiite ~67% + chrétienne maronite/orthodoxe/uniate ~32% — interface arabo-méditerranéenne.
+- **Citations** : huntington_1996
+
+### Tchad (`TCD`)
+
+- **Civilisations en concurrence** : islamic, african
+- **Discussion** : Musulmane ~55% (Nord) + chrétienne/animiste ~45% (Sud) — frontière sahélienne.
+- **Citations** : huntington_1996
+
+### Côte d'Ivoire (`CIV`)
+
+- **Civilisations en concurrence** : islamic, african
+- **Discussion** : Musulmane ~43% + chrétienne ~34% + animiste — frontière religieuse.
 - **Citations** : huntington_1996
 
 

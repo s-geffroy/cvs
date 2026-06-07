@@ -82,15 +82,26 @@ def validate_artefacts() -> None:
     """Validate all generated artefacts against their JSON Schemas."""
     pairs: list[tuple[Path, str, str | None]] = [
         (MACRO_CIVILIZATIONS_V2_PATH, "macro_civilizations.schema.json", None),
+        (CIVILIZATION_CENTROIDS_PATH, "civilization_centroid.schema.json", "centroids"),
+        (STATE_COORDINATES_PATH, "state_coordinates.schema.json", "states"),
+        (STATE_MOMENTS_PATH, "state_moment.schema.json", "moments"),
     ]
     failures: list[str] = []
     for json_path, schema_name, top_key in pairs:
+        if not json_path.exists():
+            typer.echo(f"⊘ {json_path.name} not generated yet, skipping")
+            continue
         schema = json.loads((SCHEMAS_DIR / schema_name).read_text())
         document = json.loads(json_path.read_text())
-        document_to_validate = document if top_key is None else document[top_key]
+        records_to_validate = document if top_key is None else document[top_key]
+        if top_key is None:
+            instances = [records_to_validate]
+        else:
+            instances = records_to_validate
         try:
-            validate(instance=document_to_validate, schema=schema)
-            typer.echo(f"✓ {json_path.name} valid against {schema_name}")
+            for instance in instances:
+                validate(instance=instance, schema=schema)
+            typer.echo(f"✓ {json_path.name} valid against {schema_name} ({len(instances)} record(s))")
         except Exception as exc:  # noqa: BLE001
             failures.append(f"{json_path.name}: {exc}")
             typer.echo(f"✗ {json_path.name} FAILED: {exc}")

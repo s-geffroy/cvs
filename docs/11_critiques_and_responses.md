@@ -550,7 +550,32 @@ mais reste minimale. Travail futur : étoffer.
 | G25 | Format hétérogène | **Fix : docs 00-06 prose** |
 | G26 | Pas de glossaire | **Fix : doc 15** |
 | G27 | Pas de guide contribution | **Travail futur** |
+| H28 | Circularité de la cascade d'imputation | **Réponse stratifiée** (cf. ci-dessous) |
 
 24 critiques sur 27 ont reçu un **fix** ou une **réponse argumentée** en v3.0.
 Les 3 restantes (F20, G27 et la difficulté épistémologique fondamentale E19)
 sont **explicitement admises** comme limites du projet.
+
+## Section H — Circularité de la cascade d'imputation
+
+### H28 — « Vous imputez via la taxonomie que vous prétendez valider »
+
+La V2 introduit une cascade d'imputation ([doc 16](16_imputation_cascade.md))
+qui peut faire suspecter une circularité : le centroïde civilisationnel sert
+de *prior* aux États non observés, et ce même centroïde est ensuite confronté
+aux données externes pour validation. Trois clauses brisent cette circularité :
+
+1. **Validation stratifiée par provenance** ([doc 12](12_empirical_validation.md)) :
+   les tests de cohérence avec Pew, WGI, FSI sont calculés uniquement sur les
+   États `observed`, jamais sur les `centroid_prior` (où la corrélation serait
+   tautologique).
+2. **Centroïdes calculés depuis les observés uniquement** : `compute_centroids()`
+   pondère par `ROLE_WEIGHT` (core=1.0, periphery=0.5, ambiguous/interface=0.0)
+   et n'utilise que les `member_states` avec données IW/Hofstede réelles. Les
+   États `centroid_prior` n'influent jamais sur le centroïde dont ils héritent.
+3. **Inflation de variance dans `M(s)`** ([doc 09](09_civilizational_second_moment.md)
+   §1.1) : les invariants des États imputés sont marqués comme tels et la
+   variance prior est explicite — un lecteur ne peut pas confondre une mesure
+   avec un prior.
+
+La cascade est donc un mécanisme de **couverture** sans **propagation circulaire**.

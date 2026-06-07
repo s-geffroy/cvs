@@ -1,0 +1,1398 @@
+{
+  "_meta": {
+    "source": "Voeten, Strezhnev, Bailey — UN General Assembly Voting Data",
+    "url": "https://dataverse.harvard.edu/dataset.xhtml?persistentId=hdl:1902.1/12379",
+    "license": "CC-0 (public domain)",
+    "citation": "Bailey, M.A., Strezhnev, A., Voeten, E. (2017). Estimating Dynamic State Preferences from United Nations Voting Data. Journal of Conflict Resolution, 61(2), 430-456.",
+    "indicator": "IdealPointFP — final-passage ideal point estimate per state-year (range typically -3 to +3)",
+    "extraction_policy": "latest year per ISO3 retained"
+  },
+  "values": [
+    {
+      "iso3": "AFG",
+      "country": "Afghanistan",
+      "year": 2023,
+      "idealpoint": -0.4820709,
+      "n_votes": 47
+    },
+    {
+      "iso3": "AGO",
+      "country": "Angola",
+      "year": 2025,
+      "idealpoint": -0.5438552,
+      "n_votes": 155
+    },
+    {
+      "iso3": "ALB",
+      "country": "Albania",
+      "year": 2025,
+      "idealpoint": 1.113857,
+      "n_votes": 156
+    },
+    {
+      "iso3": "AND",
+      "country": "Andorra",
+      "year": 2025,
+      "idealpoint": 0.64122,
+      "n_votes": 157
+    },
+    {
+      "iso3": "ARE",
+      "country": "United Arab Emirates",
+      "year": 2025,
+      "idealpoint": -0.5498255,
+      "n_votes": 157
+    },
+    {
+      "iso3": "ARG",
+      "country": "Argentina",
+      "year": 2025,
+      "idealpoint": 2.107613,
+      "n_votes": 138
+    },
+    {
+      "iso3": "ARM",
+      "country": "Armenia",
+      "year": 2025,
+      "idealpoint": 0.2051804,
+      "n_votes": 148
+    },
+    {
+      "iso3": "ATG",
+      "country": "Antigua & Barbuda",
+      "year": 2025,
+      "idealpoint": -0.6582231,
+      "n_votes": 148
+    },
+    {
+      "iso3": "AUS",
+      "country": "Australia",
+      "year": 2025,
+      "idealpoint": 0.9666094,
+      "n_votes": 158
+    },
+    {
+      "iso3": "AUT",
+      "country": "Austria",
+      "year": 2025,
+      "idealpoint": 0.7527947,
+      "n_votes": 158
+    },
+    {
+      "iso3": "AZE",
+      "country": "Azerbaijan",
+      "year": 2025,
+      "idealpoint": -0.7095998,
+      "n_votes": 137
+    },
+    {
+      "iso3": "BDI",
+      "country": "Burundi",
+      "year": 2025,
+      "idealpoint": -0.4121326,
+      "n_votes": 148
+    },
+    {
+      "iso3": "BEL",
+      "country": "Belgium",
+      "year": 2025,
+      "idealpoint": 0.9861501,
+      "n_votes": 158
+    },
+    {
+      "iso3": "BEN",
+      "country": "Benin",
+      "year": 2025,
+      "idealpoint": -0.7180735,
+      "n_votes": 74
+    },
+    {
+      "iso3": "BFA",
+      "country": "Burkina Faso",
+      "year": 2025,
+      "idealpoint": -0.9785306,
+      "n_votes": 149
+    },
+    {
+      "iso3": "BGD",
+      "country": "Bangladesh",
+      "year": 2025,
+      "idealpoint": -0.7928364,
+      "n_votes": 158
+    },
+    {
+      "iso3": "BGR",
+      "country": "Bulgaria",
+      "year": 2025,
+      "idealpoint": 1.161106,
+      "n_votes": 157
+    },
+    {
+      "iso3": "BHR",
+      "country": "Bahrain",
+      "year": 2025,
+      "idealpoint": -0.7771452,
+      "n_votes": 158
+    },
+    {
+      "iso3": "BHS",
+      "country": "Bahamas",
+      "year": 2025,
+      "idealpoint": -0.4259256,
+      "n_votes": 157
+    },
+    {
+      "iso3": "BIH",
+      "country": "Bosnia & Herzegovina",
+      "year": 2025,
+      "idealpoint": 0.8188952,
+      "n_votes": 158
+    },
+    {
+      "iso3": "BLR",
+      "country": "Belarus",
+      "year": 2025,
+      "idealpoint": -0.09909862,
+      "n_votes": 158
+    },
+    {
+      "iso3": "BLZ",
+      "country": "Belize",
+      "year": 2025,
+      "idealpoint": -0.6274449,
+      "n_votes": 155
+    },
+    {
+      "iso3": "BOL",
+      "country": "Bolivia",
+      "year": 2025,
+      "idealpoint": -0.376223,
+      "n_votes": 40
+    },
+    {
+      "iso3": "BRA",
+      "country": "Brazil",
+      "year": 2025,
+      "idealpoint": -0.6459563,
+      "n_votes": 158
+    },
+    {
+      "iso3": "BRB",
+      "country": "Barbados",
+      "year": 2025,
+      "idealpoint": -0.3841204,
+      "n_votes": 116
+    },
+    {
+      "iso3": "BRN",
+      "country": "Brunei",
+      "year": 2025,
+      "idealpoint": -0.9204457,
+      "n_votes": 158
+    },
+    {
+      "iso3": "BTN",
+      "country": "Bhutan",
+      "year": 2025,
+      "idealpoint": -0.5440809,
+      "n_votes": 157
+    },
+    {
+      "iso3": "BWA",
+      "country": "Botswana",
+      "year": 2025,
+      "idealpoint": -0.6836563,
+      "n_votes": 132
+    },
+    {
+      "iso3": "CAF",
+      "country": "Central African Republic",
+      "year": 2025,
+      "idealpoint": -0.06323103,
+      "n_votes": 143
+    },
+    {
+      "iso3": "CAN",
+      "country": "Canada",
+      "year": 2025,
+      "idealpoint": 1.079479,
+      "n_votes": 158
+    },
+    {
+      "iso3": "CHE",
+      "country": "Switzerland",
+      "year": 2025,
+      "idealpoint": 0.6324249,
+      "n_votes": 158
+    },
+    {
+      "iso3": "CHL",
+      "country": "Chile",
+      "year": 2025,
+      "idealpoint": -0.2134769,
+      "n_votes": 158
+    },
+    {
+      "iso3": "CHN",
+      "country": "China",
+      "year": 2025,
+      "idealpoint": -0.1623661,
+      "n_votes": 158
+    },
+    {
+      "iso3": "CIV",
+      "country": "Côte d’Ivoire",
+      "year": 2025,
+      "idealpoint": -0.3978423,
+      "n_votes": 157
+    },
+    {
+      "iso3": "CMR",
+      "country": "Cameroon",
+      "year": 2025,
+      "idealpoint": -0.08481772,
+      "n_votes": 147
+    },
+    {
+      "iso3": "COD",
+      "country": "Congo - Kinshasa",
+      "year": 2025,
+      "idealpoint": -0.2732048,
+      "n_votes": 116
+    },
+    {
+      "iso3": "COG",
+      "country": "Congo - Brazzaville",
+      "year": 2025,
+      "idealpoint": -0.3654318,
+      "n_votes": 145
+    },
+    {
+      "iso3": "COL",
+      "country": "Colombia",
+      "year": 2025,
+      "idealpoint": -0.5305218,
+      "n_votes": 158
+    },
+    {
+      "iso3": "COM",
+      "country": "Comoros",
+      "year": 2025,
+      "idealpoint": -0.8809249,
+      "n_votes": 150
+    },
+    {
+      "iso3": "CPV",
+      "country": "Cape Verde",
+      "year": 2025,
+      "idealpoint": -0.4754017,
+      "n_votes": 154
+    },
+    {
+      "iso3": "CRI",
+      "country": "Costa Rica",
+      "year": 2025,
+      "idealpoint": 0.000917669,
+      "n_votes": 158
+    },
+    {
+      "iso3": "CSK",
+      "country": "Czechoslovakia",
+      "year": 1992,
+      "idealpoint": 1.349655,
+      "n_votes": 74
+    },
+    {
+      "iso3": "CUB",
+      "country": "Cuba",
+      "year": 2025,
+      "idealpoint": -1.343674,
+      "n_votes": 155
+    },
+    {
+      "iso3": "CYP",
+      "country": "Cyprus",
+      "year": 2025,
+      "idealpoint": 0.6220404,
+      "n_votes": 158
+    },
+    {
+      "iso3": "CZE",
+      "country": "Czechia",
+      "year": 2025,
+      "idealpoint": 1.242398,
+      "n_votes": 158
+    },
+    {
+      "iso3": "DDR",
+      "country": "German Democratic Republic",
+      "year": 1989,
+      "idealpoint": -0.5741016,
+      "n_votes": 115
+    },
+    {
+      "iso3": "DEU",
+      "country": "Germany",
+      "year": 2025,
+      "idealpoint": 1.075816,
+      "n_votes": 158
+    },
+    {
+      "iso3": "DJI",
+      "country": "Djibouti",
+      "year": 2025,
+      "idealpoint": -0.812709,
+      "n_votes": 154
+    },
+    {
+      "iso3": "DMA",
+      "country": "Dominica",
+      "year": 2025,
+      "idealpoint": -0.1099947,
+      "n_votes": 42
+    },
+    {
+      "iso3": "DNK",
+      "country": "Denmark",
+      "year": 2025,
+      "idealpoint": 1.029614,
+      "n_votes": 158
+    },
+    {
+      "iso3": "DOM",
+      "country": "Dominican Republic",
+      "year": 2025,
+      "idealpoint": -0.3058666,
+      "n_votes": 157
+    },
+    {
+      "iso3": "DZA",
+      "country": "Algeria",
+      "year": 2025,
+      "idealpoint": -0.993037,
+      "n_votes": 158
+    },
+    {
+      "iso3": "ECU",
+      "country": "Ecuador",
+      "year": 2025,
+      "idealpoint": -0.07906738,
+      "n_votes": 156
+    },
+    {
+      "iso3": "EGY",
+      "country": "Egypt",
+      "year": 2025,
+      "idealpoint": -0.8657403,
+      "n_votes": 156
+    },
+    {
+      "iso3": "ERI",
+      "country": "Eritrea",
+      "year": 2025,
+      "idealpoint": -0.9381488,
+      "n_votes": 155
+    },
+    {
+      "iso3": "ESP",
+      "country": "Spain",
+      "year": 2025,
+      "idealpoint": 0.9431626,
+      "n_votes": 158
+    },
+    {
+      "iso3": "EST",
+      "country": "Estonia",
+      "year": 2025,
+      "idealpoint": 1.11452,
+      "n_votes": 157
+    },
+    {
+      "iso3": "ETH",
+      "country": "Ethiopia",
+      "year": 2025,
+      "idealpoint": -0.2675409,
+      "n_votes": 155
+    },
+    {
+      "iso3": "FIN",
+      "country": "Finland",
+      "year": 2025,
+      "idealpoint": 0.9861517,
+      "n_votes": 158
+    },
+    {
+      "iso3": "FJI",
+      "country": "Fiji",
+      "year": 2025,
+      "idealpoint": 0.2807725,
+      "n_votes": 157
+    },
+    {
+      "iso3": "FRA",
+      "country": "France",
+      "year": 2025,
+      "idealpoint": 1.336592,
+      "n_votes": 158
+    },
+    {
+      "iso3": "FSM",
+      "country": "Micronesia (Federated States of)",
+      "year": 2025,
+      "idealpoint": 1.037383,
+      "n_votes": 133
+    },
+    {
+      "iso3": "GAB",
+      "country": "Gabon",
+      "year": 2025,
+      "idealpoint": -0.7348445,
+      "n_votes": 149
+    },
+    {
+      "iso3": "GBR",
+      "country": "United Kingdom",
+      "year": 2025,
+      "idealpoint": 1.46507,
+      "n_votes": 158
+    },
+    {
+      "iso3": "GEO",
+      "country": "Georgia",
+      "year": 2025,
+      "idealpoint": 0.8272598,
+      "n_votes": 152
+    },
+    {
+      "iso3": "GHA",
+      "country": "Ghana",
+      "year": 2025,
+      "idealpoint": -0.7332664,
+      "n_votes": 149
+    },
+    {
+      "iso3": "GIN",
+      "country": "Guinea",
+      "year": 2025,
+      "idealpoint": -0.6585346,
+      "n_votes": 157
+    },
+    {
+      "iso3": "GMB",
+      "country": "Gambia",
+      "year": 2025,
+      "idealpoint": -0.7171614,
+      "n_votes": 146
+    },
+    {
+      "iso3": "GNB",
+      "country": "Guinea-Bissau",
+      "year": 2025,
+      "idealpoint": -0.7747289,
+      "n_votes": 145
+    },
+    {
+      "iso3": "GNQ",
+      "country": "Equatorial Guinea",
+      "year": 2025,
+      "idealpoint": -0.9489694,
+      "n_votes": 136
+    },
+    {
+      "iso3": "GRC",
+      "country": "Greece",
+      "year": 2025,
+      "idealpoint": 0.9333766,
+      "n_votes": 158
+    },
+    {
+      "iso3": "GRD",
+      "country": "Grenada",
+      "year": 2025,
+      "idealpoint": -0.7088187,
+      "n_votes": 87
+    },
+    {
+      "iso3": "GTM",
+      "country": "Guatemala",
+      "year": 2025,
+      "idealpoint": -0.4027516,
+      "n_votes": 158
+    },
+    {
+      "iso3": "GUY",
+      "country": "Guyana",
+      "year": 2025,
+      "idealpoint": -0.4595236,
+      "n_votes": 158
+    },
+    {
+      "iso3": "HND",
+      "country": "Honduras",
+      "year": 2025,
+      "idealpoint": -0.4858235,
+      "n_votes": 157
+    },
+    {
+      "iso3": "HRV",
+      "country": "Croatia",
+      "year": 2025,
+      "idealpoint": 1.089934,
+      "n_votes": 158
+    },
+    {
+      "iso3": "HTI",
+      "country": "Haiti",
+      "year": 2025,
+      "idealpoint": -0.4406666,
+      "n_votes": 151
+    },
+    {
+      "iso3": "HUN",
+      "country": "Hungary",
+      "year": 2025,
+      "idealpoint": 1.328957,
+      "n_votes": 158
+    },
+    {
+      "iso3": "IDN",
+      "country": "Indonesia",
+      "year": 2025,
+      "idealpoint": -0.7842167,
+      "n_votes": 158
+    },
+    {
+      "iso3": "IND",
+      "country": "India",
+      "year": 2025,
+      "idealpoint": 0.01709613,
+      "n_votes": 158
+    },
+    {
+      "iso3": "IRL",
+      "country": "Ireland",
+      "year": 2025,
+      "idealpoint": 0.6692889,
+      "n_votes": 158
+    },
+    {
+      "iso3": "IRN",
+      "country": "Iran",
+      "year": 2025,
+      "idealpoint": -0.6578709,
+      "n_votes": 152
+    },
+    {
+      "iso3": "IRQ",
+      "country": "Iraq",
+      "year": 2025,
+      "idealpoint": -1.007416,
+      "n_votes": 158
+    },
+    {
+      "iso3": "ISL",
+      "country": "Iceland",
+      "year": 2025,
+      "idealpoint": 0.8841661,
+      "n_votes": 157
+    },
+    {
+      "iso3": "ISR",
+      "country": "Israel",
+      "year": 2025,
+      "idealpoint": 2.84494,
+      "n_votes": 125
+    },
+    {
+      "iso3": "ITA",
+      "country": "Italy",
+      "year": 2025,
+      "idealpoint": 1.027252,
+      "n_votes": 158
+    },
+    {
+      "iso3": "JAM",
+      "country": "Jamaica",
+      "year": 2025,
+      "idealpoint": -0.5740533,
+      "n_votes": 156
+    },
+    {
+      "iso3": "JOR",
+      "country": "Jordan",
+      "year": 2025,
+      "idealpoint": -0.866897,
+      "n_votes": 157
+    },
+    {
+      "iso3": "JPN",
+      "country": "Japan",
+      "year": 2025,
+      "idealpoint": 0.6974211,
+      "n_votes": 158
+    },
+    {
+      "iso3": "KAZ",
+      "country": "Kazakhstan",
+      "year": 2025,
+      "idealpoint": -0.4750493,
+      "n_votes": 154
+    },
+    {
+      "iso3": "KEN",
+      "country": "Kenya",
+      "year": 2025,
+      "idealpoint": -0.6497399,
+      "n_votes": 150
+    },
+    {
+      "iso3": "KGZ",
+      "country": "Kyrgyzstan",
+      "year": 2025,
+      "idealpoint": -0.764321,
+      "n_votes": 152
+    },
+    {
+      "iso3": "KHM",
+      "country": "Cambodia",
+      "year": 2025,
+      "idealpoint": -0.7197367,
+      "n_votes": 157
+    },
+    {
+      "iso3": "KIR",
+      "country": "Kiribati",
+      "year": 2025,
+      "idealpoint": -0.7082331,
+      "n_votes": 45
+    },
+    {
+      "iso3": "KNA",
+      "country": "St. Kitts & Nevis",
+      "year": 2025,
+      "idealpoint": -0.7223089,
+      "n_votes": 151
+    },
+    {
+      "iso3": "KOR",
+      "country": "South Korea",
+      "year": 2025,
+      "idealpoint": 1.00506,
+      "n_votes": 158
+    },
+    {
+      "iso3": "KWT",
+      "country": "Kuwait",
+      "year": 2025,
+      "idealpoint": -0.7639239,
+      "n_votes": 158
+    },
+    {
+      "iso3": "LAO",
+      "country": "Laos",
+      "year": 2025,
+      "idealpoint": -0.7953732,
+      "n_votes": 154
+    },
+    {
+      "iso3": "LBN",
+      "country": "Lebanon",
+      "year": 2025,
+      "idealpoint": -0.8805684,
+      "n_votes": 158
+    },
+    {
+      "iso3": "LBR",
+      "country": "Liberia",
+      "year": 2025,
+      "idealpoint": -0.34996,
+      "n_votes": 144
+    },
+    {
+      "iso3": "LBY",
+      "country": "Libya",
+      "year": 2025,
+      "idealpoint": -0.6331238,
+      "n_votes": 153
+    },
+    {
+      "iso3": "LCA",
+      "country": "St. Lucia",
+      "year": 2025,
+      "idealpoint": -0.7257137,
+      "n_votes": 149
+    },
+    {
+      "iso3": "LIE",
+      "country": "Liechtenstein",
+      "year": 2025,
+      "idealpoint": 0.5920271,
+      "n_votes": 158
+    },
+    {
+      "iso3": "LKA",
+      "country": "Sri Lanka",
+      "year": 2025,
+      "idealpoint": -0.8784749,
+      "n_votes": 158
+    },
+    {
+      "iso3": "LSO",
+      "country": "Lesotho",
+      "year": 2025,
+      "idealpoint": -0.6381037,
+      "n_votes": 146
+    },
+    {
+      "iso3": "LTU",
+      "country": "Lithuania",
+      "year": 2025,
+      "idealpoint": 1.186942,
+      "n_votes": 158
+    },
+    {
+      "iso3": "LUX",
+      "country": "Luxembourg",
+      "year": 2025,
+      "idealpoint": 0.9849199,
+      "n_votes": 158
+    },
+    {
+      "iso3": "LVA",
+      "country": "Latvia",
+      "year": 2025,
+      "idealpoint": 1.144977,
+      "n_votes": 158
+    },
+    {
+      "iso3": "MAR",
+      "country": "Morocco",
+      "year": 2025,
+      "idealpoint": -0.5530769,
+      "n_votes": 152
+    },
+    {
+      "iso3": "MCO",
+      "country": "Monaco",
+      "year": 2025,
+      "idealpoint": 0.9969534,
+      "n_votes": 156
+    },
+    {
+      "iso3": "MDA",
+      "country": "Moldova",
+      "year": 2025,
+      "idealpoint": 0.7063865,
+      "n_votes": 158
+    },
+    {
+      "iso3": "MDG",
+      "country": "Madagascar",
+      "year": 2025,
+      "idealpoint": -0.5509521,
+      "n_votes": 1
+    },
+    {
+      "iso3": "MDV",
+      "country": "Maldives",
+      "year": 2025,
+      "idealpoint": -0.7129793,
+      "n_votes": 158
+    },
+    {
+      "iso3": "MEX",
+      "country": "Mexico",
+      "year": 2025,
+      "idealpoint": -0.2406344,
+      "n_votes": 158
+    },
+    {
+      "iso3": "MHL",
+      "country": "Marshall Islands",
+      "year": 2025,
+      "idealpoint": 0.5069792,
+      "n_votes": 150
+    },
+    {
+      "iso3": "MKD",
+      "country": "North Macedonia",
+      "year": 2025,
+      "idealpoint": 1.124014,
+      "n_votes": 158
+    },
+    {
+      "iso3": "MLI",
+      "country": "Mali",
+      "year": 2025,
+      "idealpoint": -1.047987,
+      "n_votes": 150
+    },
+    {
+      "iso3": "MLT",
+      "country": "Malta",
+      "year": 2025,
+      "idealpoint": 0.6105022,
+      "n_votes": 158
+    },
+    {
+      "iso3": "MMR",
+      "country": "Myanmar (Burma)",
+      "year": 2025,
+      "idealpoint": -0.39833,
+      "n_votes": 156
+    },
+    {
+      "iso3": "MNE",
+      "country": "Montenegro",
+      "year": 2025,
+      "idealpoint": 0.9814929,
+      "n_votes": 158
+    },
+    {
+      "iso3": "MNG",
+      "country": "Mongolia",
+      "year": 2025,
+      "idealpoint": -0.6125873,
+      "n_votes": 157
+    },
+    {
+      "iso3": "MOZ",
+      "country": "Mozambique",
+      "year": 2025,
+      "idealpoint": -0.7485918,
+      "n_votes": 157
+    },
+    {
+      "iso3": "MRT",
+      "country": "Mauritania",
+      "year": 2025,
+      "idealpoint": -0.8927691,
+      "n_votes": 156
+    },
+    {
+      "iso3": "MUS",
+      "country": "Mauritius",
+      "year": 2025,
+      "idealpoint": -0.5809238,
+      "n_votes": 154
+    },
+    {
+      "iso3": "MWI",
+      "country": "Malawi",
+      "year": 2025,
+      "idealpoint": -0.3287867,
+      "n_votes": 137
+    },
+    {
+      "iso3": "MYS",
+      "country": "Malaysia",
+      "year": 2025,
+      "idealpoint": -0.7012448,
+      "n_votes": 158
+    },
+    {
+      "iso3": "NAM",
+      "country": "Namibia",
+      "year": 2025,
+      "idealpoint": -0.2687844,
+      "n_votes": 153
+    },
+    {
+      "iso3": "NER",
+      "country": "Niger",
+      "year": 2025,
+      "idealpoint": -1.06199,
+      "n_votes": 146
+    },
+    {
+      "iso3": "NGA",
+      "country": "Nigeria",
+      "year": 2025,
+      "idealpoint": -0.5978143,
+      "n_votes": 134
+    },
+    {
+      "iso3": "NIC",
+      "country": "Nicaragua",
+      "year": 2025,
+      "idealpoint": -0.7334881,
+      "n_votes": 147
+    },
+    {
+      "iso3": "NLD",
+      "country": "Netherlands",
+      "year": 2025,
+      "idealpoint": 0.8922932,
+      "n_votes": 156
+    },
+    {
+      "iso3": "NOR",
+      "country": "Norway",
+      "year": 2025,
+      "idealpoint": 0.8595871,
+      "n_votes": 158
+    },
+    {
+      "iso3": "NPL",
+      "country": "Nepal",
+      "year": 2025,
+      "idealpoint": -0.6717159,
+      "n_votes": 156
+    },
+    {
+      "iso3": "NRU",
+      "country": "Nauru",
+      "year": 2025,
+      "idealpoint": 0.4111344,
+      "n_votes": 48
+    },
+    {
+      "iso3": "NZL",
+      "country": "New Zealand",
+      "year": 2025,
+      "idealpoint": 0.6848669,
+      "n_votes": 158
+    },
+    {
+      "iso3": "OMN",
+      "country": "Oman",
+      "year": 2025,
+      "idealpoint": -1.018389,
+      "n_votes": 158
+    },
+    {
+      "iso3": "PAK",
+      "country": "Pakistan",
+      "year": 2025,
+      "idealpoint": -0.002419161,
+      "n_votes": 158
+    },
+    {
+      "iso3": "PAN",
+      "country": "Panama",
+      "year": 2025,
+      "idealpoint": -0.04456705,
+      "n_votes": 158
+    },
+    {
+      "iso3": "PER",
+      "country": "Peru",
+      "year": 2025,
+      "idealpoint": -0.2671355,
+      "n_votes": 156
+    },
+    {
+      "iso3": "PHL",
+      "country": "Philippines",
+      "year": 2025,
+      "idealpoint": -0.5410617,
+      "n_votes": 158
+    },
+    {
+      "iso3": "PLW",
+      "country": "Palau",
+      "year": 2025,
+      "idealpoint": 0.4467324,
+      "n_votes": 144
+    },
+    {
+      "iso3": "PNG",
+      "country": "Papua New Guinea",
+      "year": 2025,
+      "idealpoint": 0.2978567,
+      "n_votes": 156
+    },
+    {
+      "iso3": "POL",
+      "country": "Poland",
+      "year": 2025,
+      "idealpoint": 1.167245,
+      "n_votes": 158
+    },
+    {
+      "iso3": "PRK",
+      "country": "North Korea",
+      "year": 2025,
+      "idealpoint": 0.1647015,
+      "n_votes": 148
+    },
+    {
+      "iso3": "PRT",
+      "country": "Portugal",
+      "year": 2025,
+      "idealpoint": 0.9645411,
+      "n_votes": 158
+    },
+    {
+      "iso3": "PRY",
+      "country": "Paraguay",
+      "year": 2025,
+      "idealpoint": 1.014734,
+      "n_votes": 157
+    },
+    {
+      "iso3": "QAT",
+      "country": "Qatar",
+      "year": 2025,
+      "idealpoint": -0.7279422,
+      "n_votes": 158
+    },
+    {
+      "iso3": "ROU",
+      "country": "Romania",
+      "year": 2025,
+      "idealpoint": 1.15062,
+      "n_votes": 158
+    },
+    {
+      "iso3": "RUS",
+      "country": "Russia",
+      "year": 2025,
+      "idealpoint": 0.4350686,
+      "n_votes": 158
+    },
+    {
+      "iso3": "RWA",
+      "country": "Rwanda",
+      "year": 2025,
+      "idealpoint": -0.3519891,
+      "n_votes": 147
+    },
+    {
+      "iso3": "SAU",
+      "country": "Saudi Arabia",
+      "year": 2025,
+      "idealpoint": -0.3587209,
+      "n_votes": 157
+    },
+    {
+      "iso3": "SDN",
+      "country": "Sudan",
+      "year": 2025,
+      "idealpoint": -0.8816295,
+      "n_votes": 157
+    },
+    {
+      "iso3": "SEN",
+      "country": "Senegal",
+      "year": 2025,
+      "idealpoint": -0.749351,
+      "n_votes": 155
+    },
+    {
+      "iso3": "SGP",
+      "country": "Singapore",
+      "year": 2025,
+      "idealpoint": -0.4088936,
+      "n_votes": 158
+    },
+    {
+      "iso3": "SLB",
+      "country": "Solomon Islands",
+      "year": 2025,
+      "idealpoint": -0.5196246,
+      "n_votes": 153
+    },
+    {
+      "iso3": "SLE",
+      "country": "Sierra Leone",
+      "year": 2025,
+      "idealpoint": -0.5165878,
+      "n_votes": 154
+    },
+    {
+      "iso3": "SLV",
+      "country": "El Salvador",
+      "year": 2025,
+      "idealpoint": -0.1671379,
+      "n_votes": 152
+    },
+    {
+      "iso3": "SMR",
+      "country": "San Marino",
+      "year": 2025,
+      "idealpoint": 0.6480487,
+      "n_votes": 158
+    },
+    {
+      "iso3": "SOM",
+      "country": "Somalia",
+      "year": 2025,
+      "idealpoint": -0.7418237,
+      "n_votes": 123
+    },
+    {
+      "iso3": "SSD",
+      "country": "South Sudan",
+      "year": 2025,
+      "idealpoint": 0.8806917,
+      "n_votes": 42
+    },
+    {
+      "iso3": "STP",
+      "country": "São Tomé & Príncipe",
+      "year": 2025,
+      "idealpoint": -0.1240192,
+      "n_votes": 5
+    },
+    {
+      "iso3": "SUR",
+      "country": "Suriname",
+      "year": 2025,
+      "idealpoint": -0.4799987,
+      "n_votes": 157
+    },
+    {
+      "iso3": "SVK",
+      "country": "Slovakia",
+      "year": 2025,
+      "idealpoint": 1.084085,
+      "n_votes": 157
+    },
+    {
+      "iso3": "SVN",
+      "country": "Slovenia",
+      "year": 2025,
+      "idealpoint": 0.9428806,
+      "n_votes": 158
+    },
+    {
+      "iso3": "SWE",
+      "country": "Sweden",
+      "year": 2025,
+      "idealpoint": 1.032634,
+      "n_votes": 158
+    },
+    {
+      "iso3": "SWZ",
+      "country": "Eswatini",
+      "year": 2025,
+      "idealpoint": -0.6822832,
+      "n_votes": 82
+    },
+    {
+      "iso3": "SYC",
+      "country": "Seychelles",
+      "year": 2025,
+      "idealpoint": -0.5464018,
+      "n_votes": 153
+    },
+    {
+      "iso3": "SYR",
+      "country": "Syria",
+      "year": 2025,
+      "idealpoint": -1.138476,
+      "n_votes": 69
+    },
+    {
+      "iso3": "TCD",
+      "country": "Chad",
+      "year": 2025,
+      "idealpoint": -0.7002323,
+      "n_votes": 156
+    },
+    {
+      "iso3": "TGO",
+      "country": "Togo",
+      "year": 2025,
+      "idealpoint": -0.347897,
+      "n_votes": 158
+    },
+    {
+      "iso3": "THA",
+      "country": "Thailand",
+      "year": 2025,
+      "idealpoint": -0.5573537,
+      "n_votes": 158
+    },
+    {
+      "iso3": "TJK",
+      "country": "Tajikistan",
+      "year": 2025,
+      "idealpoint": -0.5366255,
+      "n_votes": 152
+    },
+    {
+      "iso3": "TKM",
+      "country": "Turkmenistan",
+      "year": 2025,
+      "idealpoint": -1.04359,
+      "n_votes": 119
+    },
+    {
+      "iso3": "TLS",
+      "country": "Timor-Leste",
+      "year": 2025,
+      "idealpoint": -0.5707564,
+      "n_votes": 157
+    },
+    {
+      "iso3": "TON",
+      "country": "Tonga",
+      "year": 2025,
+      "idealpoint": 0.112109,
+      "n_votes": 154
+    },
+    {
+      "iso3": "TTO",
+      "country": "Trinidad & Tobago",
+      "year": 2025,
+      "idealpoint": -0.7328383,
+      "n_votes": 157
+    },
+    {
+      "iso3": "TUN",
+      "country": "Tunisia",
+      "year": 2025,
+      "idealpoint": -0.9375363,
+      "n_votes": 157
+    },
+    {
+      "iso3": "TUR",
+      "country": "Turkey",
+      "year": 2024,
+      "idealpoint": 0.5240251,
+      "n_votes": 7
+    },
+    {
+      "iso3": "TUV",
+      "country": "Tuvalu",
+      "year": 2025,
+      "idealpoint": -0.2015534,
+      "n_votes": 134
+    },
+    {
+      "iso3": "TWN",
+      "country": "Taiwan",
+      "year": 1971,
+      "idealpoint": 0.7613216,
+      "n_votes": 4
+    },
+    {
+      "iso3": "TZA",
+      "country": "Tanzania",
+      "year": 2025,
+      "idealpoint": -0.6100924,
+      "n_votes": 149
+    },
+    {
+      "iso3": "UGA",
+      "country": "Uganda",
+      "year": 2025,
+      "idealpoint": -0.7861491,
+      "n_votes": 156
+    },
+    {
+      "iso3": "UKR",
+      "country": "Ukraine",
+      "year": 2025,
+      "idealpoint": 1.269235,
+      "n_votes": 154
+    },
+    {
+      "iso3": "URY",
+      "country": "Uruguay",
+      "year": 2025,
+      "idealpoint": -0.4791514,
+      "n_votes": 156
+    },
+    {
+      "iso3": "USA",
+      "country": "United States",
+      "year": 2025,
+      "idealpoint": 3.362142,
+      "n_votes": 158
+    },
+    {
+      "iso3": "UZB",
+      "country": "Uzbekistan",
+      "year": 2025,
+      "idealpoint": -0.5419908,
+      "n_votes": 148
+    },
+    {
+      "iso3": "VCT",
+      "country": "St. Vincent & Grenadines",
+      "year": 2025,
+      "idealpoint": -0.4315144,
+      "n_votes": 4
+    },
+    {
+      "iso3": "VEN",
+      "country": "Venezuela",
+      "year": 2021,
+      "idealpoint": -1.775862,
+      "n_votes": 86
+    },
+    {
+      "iso3": "VNM",
+      "country": "Vietnam",
+      "year": 2025,
+      "idealpoint": -0.8683655,
+      "n_votes": 156
+    },
+    {
+      "iso3": "VUT",
+      "country": "Vanuatu",
+      "year": 2025,
+      "idealpoint": -0.3518734,
+      "n_votes": 155
+    },
+    {
+      "iso3": "WSM",
+      "country": "Samoa",
+      "year": 2025,
+      "idealpoint": -0.01287338,
+      "n_votes": 129
+    },
+    {
+      "iso3": "YAR",
+      "country": "Yemen Arab Republic",
+      "year": 1989,
+      "idealpoint": -0.56313,
+      "n_votes": 116
+    },
+    {
+      "iso3": "YEM",
+      "country": "Yemen",
+      "year": 2025,
+      "idealpoint": -0.4947308,
+      "n_votes": 158
+    },
+    {
+      "iso3": "YMD",
+      "country": "Yemen People's Republic",
+      "year": 1989,
+      "idealpoint": -0.9525549,
+      "n_votes": 113
+    },
+    {
+      "iso3": "YUG",
+      "country": "Yugoslavia",
+      "year": 2025,
+      "idealpoint": 0.5123105,
+      "n_votes": 144
+    },
+    {
+      "iso3": "ZAF",
+      "country": "South Africa",
+      "year": 2025,
+      "idealpoint": -0.4184685,
+      "n_votes": 158
+    },
+    {
+      "iso3": "ZMB",
+      "country": "Zambia",
+      "year": 2025,
+      "idealpoint": -0.6809636,
+      "n_votes": 136
+    },
+    {
+      "iso3": "ZWE",
+      "country": "Zimbabwe",
+      "year": 2025,
+      "idealpoint": -0.4921839,
+      "n_votes": 151
+    }
+  ]
+}

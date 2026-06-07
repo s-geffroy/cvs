@@ -5,17 +5,46 @@
 
 **Nom (FR)** : Bhoutan ·
 **ISO3** : `BTN` ·
-**Couverture B_vec** : B_viz seul (Hofstede manquant) ·
+**Couverture B_vec** : B_viz + B_score (complet) ·
 **Données géométriques** : Natural Earth
+
+**Provenance des coordonnées** (cascade [doc 16](../methodology/16_imputation_cascade.md)) :
+`x_viz = imputed_pew` ·
+`x_score = imputed_governance` · centroïde de repli : `buddhist`.
+
+> ⚠️ `x_viz` n'est **pas une observation directe** : voir [doc 16](../methodology/16_imputation_cascade.md) pour les implications.
+
+
+> ⚠️ `x_score` n'est **pas une observation directe** : la variance prior est gonflée dans `M(s)` ci-dessous.
+
 
 ## Coordonnées B_vec
 
 ### `B_viz = ℝ²` — Inglehart-Welzel
 
 
-- *Coordonnées Inglehart-Welzel manquantes pour cet État.*
+- **`x_viz`** (Traditional ↔ Secular-Rational, Survival ↔ Self-Expression) =
+  `[-0.469, -0.350]`
+
+- **Ellipse 80 %** (`Σ_viz`) — covariance =
+  ```
+  [[0.2329, 0.0000],
+   [0.0000, 0.4197]]
+  ```
 
 
+
+
+### `B_score = ℝ⁶` — Hofstede
+
+| Dimension | Score | Notation |
+|---|---|---|
+| Power Distance (PDI) | `74.4` | `e_PDI` |
+| Individualism (IDV) | `28.8` | `e_IDV` |
+| Masculinity (MAS) | `50.7` | `e_MAS` |
+| Uncertainty Avoidance (UAI) | `58.3` | `e_UAI` |
+| Long-Term Orientation (LTO) | `40.0` | `e_LTO` |
+| Indulgence vs Restraint (IVR) | `37.1` | `e_IVR` |
 
 
 
@@ -27,30 +56,62 @@ Somme = 1, w ≥ 0.
 | Civilisation | Affinité |
 |---|---|
 
-| [Western](../taxonomy/civilizations/western.md) | `0.0909` |
+| [Islamic](../taxonomy/civilizations/islamic.md) | `0.2602` |
 
-| [Orthodox](../taxonomy/civilizations/orthodox.md) | `0.0909` |
+| [Buddhist](../taxonomy/civilizations/buddhist.md) | `0.1842` |
 
-| [Islamic](../taxonomy/civilizations/islamic.md) | `0.0909` |
+| [African](../taxonomy/civilizations/african.md) | `0.1237` |
 
-| [Sinic](../taxonomy/civilizations/sinic.md) | `0.0909` |
+| [Hindic](../taxonomy/civilizations/hindic.md) | `0.1033` |
 
-| [Hindic](../taxonomy/civilizations/hindic.md) | `0.0909` |
+| [Indigenous](../taxonomy/civilizations/indigenous.md) | `0.0779` |
 
-| [Japanese](../taxonomy/civilizations/japanese.md) | `0.0909` |
+| [Oceanian](../taxonomy/civilizations/oceanian.md) | `0.0685` |
 
-| [Buddhist](../taxonomy/civilizations/buddhist.md) | `0.0909` |
+| [Sinic](../taxonomy/civilizations/sinic.md) | `0.0566` |
 
-| [Latin American](../taxonomy/civilizations/latin_american.md) | `0.0909` |
+| [Latin American](../taxonomy/civilizations/latin_american.md) | `0.0533` |
 
-| [African](../taxonomy/civilizations/african.md) | `0.0909` |
+| [Orthodox](../taxonomy/civilizations/orthodox.md) | `0.0413` |
 
-| [Indigenous](../taxonomy/civilizations/indigenous.md) | `0.0909` |
+| [Western](../taxonomy/civilizations/western.md) | `0.0211` |
 
-| [Oceanian](../taxonomy/civilizations/oceanian.md) | `0.0909` |
+| [Japanese](../taxonomy/civilizations/japanese.md) | `0.0099` |
 
 
 
+
+## Second moment civilisationnel `M(BTN)`
+
+`M(s) ∈ ℝ^{6×6}` symétrique semi-défini positif :
+
+```
+M(s) = Σᵢ wₛ[i] · (μᵢ − xₛ)(μᵢ − xₛ)ᵀ
+     = Cov_w(μ; wₛ) + (μ̄ − xₛ)(μ̄ − xₛ)ᵀ · Σᵢ wₛ[i]
+```
+
+Cf. [Méthodologie 09 — Second moment civilisationnel](../methodology/09_civilizational_second_moment.md).
+
+### Invariants scalaires
+
+| Invariant | Valeur | Définition |
+|---|---|---|
+| `I1 = tr(M)` | `3169.00` | Magnitude totale du second moment |
+| `I2` (von Mises) | `654.18` | √(3/2 · s:s) avec `s = M − tr(M)/6 · I` |
+| `det(M)` | `1.17e+16` | Déterminant |
+| `A` (anisotropie) | `0.732` | (λ₁−λ₆)/λ₁ |
+
+### Décomposition M = Cov_w + biais + inflation prior
+
+| Composante | tr(.) | Interprétation |
+|---|---|---|
+| Dispersion intra (Cov_w) | `904.33` | Étalement pondéré des centroïdes autour de μ̄ |
+| Biais (μ̄ − xₛ)(μ̄ − xₛ)ᵀ | `81.86` | Écart de l'État à son barycentre d'affinité |
+| Inflation prior `diag(σ_prior²)` | `2182.82` | Variance d'imputation propagée (≠ 0 si `x_score` non observé) |
+
+### Valeurs propres (descendantes)
+
+`[799.74, 721.09, 686.89, 410.87, 336.0, 214.41]`
 
 
 

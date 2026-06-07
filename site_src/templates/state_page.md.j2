@@ -8,6 +8,16 @@
 **Couverture B_vec** : {{ "B_viz + B_score (complet)" if (state.x_score and state.x_score[0] is not none) else "B_viz seul (Hofstede manquant)" }} ·
 **Données géométriques** : {{ "Natural Earth" if has_geometry else "(non rendu)" }}
 
+**Provenance des coordonnées** (cascade [doc 16](../methodology/16_imputation_cascade.md)) :
+`x_viz = {{ state.data_quality.x_viz_provenance or "—" }}` ·
+`x_score = {{ state.data_quality.x_score_provenance or "—" }}`{% if state.data_quality.fallback_civilization_id %} · centroïde de repli : `{{ state.data_quality.fallback_civilization_id }}`{% endif %}.
+{% if state.data_quality.x_viz_provenance and state.data_quality.x_viz_provenance != "observed" %}
+> ⚠️ `x_viz` n'est **pas une observation directe** : voir [doc 16](../methodology/16_imputation_cascade.md) pour les implications.
+{% endif %}
+{% if state.data_quality.x_score_provenance and state.data_quality.x_score_provenance not in ("observed", "observed_with_dim_imputation") %}
+> ⚠️ `x_score` n'est **pas une observation directe** : la variance prior est gonflée dans `M(s)` ci-dessous.
+{% endif %}
+
 ## Coordonnées B_vec
 
 ### `B_viz = ℝ²` — Inglehart-Welzel
@@ -73,12 +83,13 @@ Cf. [Méthodologie 09 — Second moment civilisationnel](../methodology/09_civil
 | `det(M)` | `{{ "%.2e" | format(moment.invariants.det) }}` | Déterminant |
 | `A` (anisotropie) | `{{ "%.3f" | format(moment.anisotropy) }}` | (λ₁−λ₆)/λ₁ |
 
-### Décomposition M = Cov_w + biais
+### Décomposition M = Cov_w + biais + inflation prior
 
 | Composante | tr(.) | Interprétation |
 |---|---|---|
 | Dispersion intra (Cov_w) | `{{ "%.2f" | format(moment.decomposition.trace_intra) }}` | Étalement pondéré des centroïdes autour de μ̄ |
 | Biais (μ̄ − xₛ)(μ̄ − xₛ)ᵀ | `{{ "%.2f" | format(moment.decomposition.trace_bias) }}` | Écart de l'État à son barycentre d'affinité |
+| Inflation prior `diag(σ_prior²)` | `{{ "%.2f" | format(moment.decomposition.trace_prior_inflation or 0.0) }}` | Variance d'imputation propagée (≠ 0 si `x_score` non observé) |
 
 ### Valeurs propres (descendantes)
 

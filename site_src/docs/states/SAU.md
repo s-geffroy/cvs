@@ -8,12 +8,28 @@
 **Couverture B_vec** : B_viz + B_score (complet) ·
 **Données géométriques** : Natural Earth
 
+**Provenance des coordonnées** (cascade [doc 16](../methodology/16_imputation_cascade.md)) :
+`x_viz = imputed_pew` ·
+`x_score = observed` · centroïde de repli : `islamic`.
+
+> ⚠️ `x_viz` n'est **pas une observation directe** : voir [doc 16](../methodology/16_imputation_cascade.md) pour les implications.
+
+
+
 ## Coordonnées B_vec
 
 ### `B_viz = ℝ²` — Inglehart-Welzel
 
 
-- *Coordonnées Inglehart-Welzel manquantes pour cet État.*
+- **`x_viz`** (Traditional ↔ Secular-Rational, Survival ↔ Self-Expression) =
+  `[-0.731, -0.357]`
+
+- **Ellipse 80 %** (`Σ_viz`) — covariance =
+  ```
+  [[0.2329, 0.0000],
+   [0.0000, 0.4197]]
+  ```
+
 
 
 
@@ -83,12 +99,13 @@ Cf. [Méthodologie 09 — Second moment civilisationnel](../methodology/09_civil
 | `det(M)` | `1.52e+13` | Déterminant |
 | `A` (anisotropie) | `0.967` | (λ₁−λ₆)/λ₁ |
 
-### Décomposition M = Cov_w + biais
+### Décomposition M = Cov_w + biais + inflation prior
 
 | Composante | tr(.) | Interprétation |
 |---|---|---|
 | Dispersion intra (Cov_w) | `865.43` | Étalement pondéré des centroïdes autour de μ̄ |
 | Biais (μ̄ − xₛ)(μ̄ − xₛ)ᵀ | `692.55` | Écart de l'État à son barycentre d'affinité |
+| Inflation prior `diag(σ_prior²)` | `0.00` | Variance d'imputation propagée (≠ 0 si `x_score` non observé) |
 
 ### Valeurs propres (descendantes)
 

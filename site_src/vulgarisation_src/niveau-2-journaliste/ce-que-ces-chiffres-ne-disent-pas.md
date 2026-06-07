@@ -23,6 +23,8 @@ Cette page est un **garde-fou éditorial**. Avant de citer cvs dans un article, 
 ### 1. « Les X-ais pensent que… »
 cvs est une **moyenne**. Une moyenne ne dit rien d'un individu : sur une population de 60 millions, la médiane et les minorités sont **complètement écrasées**.
 
+> **À savoir** : tous les pays n'ont pas été mesurés directement. Sur 193 États ONU, ~60 figurent dans les sondages canoniques (WVS, Hofstede). Pour les ~130 autres, cvs **estime** une position en s'appuyant sur la civilisation à laquelle l'État appartient (`centroid_prior` dans la table de provenance). Ces estimations sont **explicitement signalées** dans la carte et dans le rapport de couverture. Ne les présentez jamais comme des mesures directes — c'est une 9ᵉ phrase interdite implicite.
+
 ### 2. « Plus civilisé »
 cvs ne **classe** pas, il **regroupe**. Aucune famille n'est « meilleure » qu'une autre dans le projet. Les auteurs assument que toute lecture hiérarchique est un **détournement**.
 

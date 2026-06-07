@@ -2,39 +2,80 @@
   "iso3": "KHM",
   "label": null,
   "x_viz": [
-    null,
-    null
+    -0.6577793931755025,
+    -0.614748740074363
   ],
-  "x_viz_ellipse": null,
+  "x_viz_ellipse": {
+    "sigma": [
+      [
+        0.23293692755710943,
+        0.0
+      ],
+      [
+        0.0,
+        0.4196998620067553
+      ]
+    ],
+    "confidence_level": 0.8,
+    "source": "imputed_pew"
+  },
   "x_score": [
-    null,
-    null,
-    null,
-    null,
-    null,
-    null
+    60.9125738686051,
+    27.8201868939511,
+    48.635524162759296,
+    30.14638706873059,
+    34.82261583624145,
+    34.14282676251305
   ],
   "affinity_vector": {
-    "western": 0.09090909090909091,
-    "orthodox": 0.09090909090909091,
-    "islamic": 0.09090909090909091,
-    "sinic": 0.09090909090909091,
-    "hindic": 0.09090909090909091,
-    "japanese": 0.09090909090909091,
-    "buddhist": 0.09090909090909091,
-    "latin_american": 0.09090909090909091,
-    "african": 0.09090909090909091,
-    "indigenous": 0.09090909090909091,
-    "oceanian": 0.09090909090909091
+    "western": 0.04446712448730094,
+    "orthodox": 0.022066397395492147,
+    "islamic": 0.14083421974637542,
+    "sinic": 0.13343296462773654,
+    "hindic": 0.1917027786483791,
+    "japanese": 0.008507819666944609,
+    "buddhist": 0.0929521074788613,
+    "latin_american": 0.036243453973634966,
+    "african": 0.13887355647247096,
+    "indigenous": 0.04535519020465328,
+    "oceanian": 0.14556438729815077
   },
   "data_quality": {
     "iw_coverage": "missing",
     "hofstede_coverage": "missing",
-    "low_evidence": true
+    "low_evidence": true,
+    "x_viz_provenance": "imputed_pew",
+    "x_score_provenance": "imputed_governance",
+    "x_score_sigma_prior": [
+      12.89482013219045,
+      16.654266762366433,
+      17.276090153261453,
+      19.840361952573588,
+      23.703391973204358,
+      22.027751828622787
+    ],
+    "fallback_civilization_id": "buddhist",
+    "pew_to_iw_model": {
+      "training_n": 93,
+      "rmse_ts": 0.4826353981600494,
+      "rmse_se": 0.647842466967669
+    },
+    "governance_to_hofstede_model": {
+      "training_n": 63,
+      "rmse_per_dimension": {
+        "pdi": 12.89482013219045,
+        "idv": 16.654266762366433,
+        "mas": 17.276090153261453,
+        "uai": 19.840361952573588,
+        "lto": 23.703391973204358,
+        "ivr": 22.027751828622787
+      }
+    }
   },
   "source_refs": [
-    "wvs_wave7_2022",
-    "hofstede_2010"
+    "pew_religious_composition_2020",
+    "wgi_2022",
+    "fsi_2024"
   ],
   "curated_civilization": "buddhist",
   "curated_role": "core",

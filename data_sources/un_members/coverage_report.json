@@ -10,9 +10,12 @@
       "in_geojson": true,
       "hofstede_coverage": "missing",
       "iw_coverage": "missing",
-      "curated_civilization": null,
-      "curated_role": null,
-      "sub_cluster_id": null
+      "curated_civilization": "islamic",
+      "curated_role": "core",
+      "sub_cluster_id": null,
+      "x_viz_provenance": "imputed_pew",
+      "x_score_provenance": "imputed_governance",
+      "in_state_coordinates": true
     },
     {
       "iso3": "AGO",
@@ -20,9 +23,12 @@
       "in_geojson": true,
       "hofstede_coverage": "missing",
       "iw_coverage": "missing",
-      "curated_civilization": null,
-      "curated_role": null,
-      "sub_cluster_id": null
+      "curated_civilization": "african",
+      "curated_role": "core",
+      "sub_cluster_id": null,
+      "x_viz_provenance": "imputed_pew",
+      "x_score_provenance": "imputed_governance",
+      "in_state_coordinates": true
     },
     {
       "iso3": "ALB",
@@ -30,19 +36,25 @@
       "in_geojson": true,
       "hofstede_coverage": "missing",
       "iw_coverage": "missing",
-      "curated_civilization": null,
-      "curated_role": null,
-      "sub_cluster_id": null
+      "curated_civilization": "islamic",
+      "curated_role": "periphery",
+      "sub_cluster_id": null,
+      "x_viz_provenance": "imputed_pew",
+      "x_score_provenance": "imputed_governance",
+      "in_state_coordinates": true
     },
     {
       "iso3": "AND",
       "name_fr": "Andorre",
       "in_geojson": true,
       "hofstede_coverage": "missing",
-      "iw_coverage": "missing",
-      "curated_civilization": null,
-      "curated_role": null,
-      "sub_cluster_id": null
+      "iw_coverage": "present",
+      "curated_civilization": "western",
+      "curated_role": "core",
+      "sub_cluster_id": null,
+      "x_viz_provenance": "imputed_wvs_items",
+      "x_score_provenance": "imputed_governance",
+      "in_state_coordinates": true
     },
     {
       "iso3": "ARE",
@@ -50,9 +62,12 @@
       "in_geojson": true,
       "hofstede_coverage": "missing",
       "iw_coverage": "missing",
-      "curated_civilization": null,
-      "curated_role": null,
-      "sub_cluster_id": null
+      "curated_civilization": "islamic",
+      "curated_role": "core",
+      "sub_cluster_id": null,
+      "x_viz_provenance": "imputed_pew",
+      "x_score_provenance": "imputed_governance",
+      "in_state_coordinates": true
     },
     {
       "iso3": "ARG",
@@ -62,17 +77,23 @@
       "iw_coverage": "present",
       "curated_civilization": "latin_american",
       "curated_role": "core",
-      "sub_cluster_id": "southern_cone"
+      "sub_cluster_id": "southern_cone",
+      "x_viz_provenance": "observed",
+      "x_score_provenance": "observed",
+      "in_state_coordinates": true
     },
     {
       "iso3": "ARM",
       "name_fr": "Arménie",
       "in_geojson": true,
       "hofstede_coverage": "missing",
-      "iw_coverage": "missing",
-      "curated_civilization": null,
-      "curated_role": null,
-      "sub_cluster_id": null
+      "iw_coverage": "present",
+      "curated_civilization": "orthodox",
+      "curated_role": "core",
+      "sub_cluster_id": null,
+      "x_viz_provenance": "imputed_wvs_items",
+      "x_score_provenance": "imputed_governance",
+      "in_state_coordinates": true
     },
     {
       "iso3": "ATG",
@@ -80,9 +101,12 @@
       "in_geojson": true,
       "hofstede_coverage": "missing",
       "iw_coverage": "missing",
-      "curated_civilization": null,
-      "curated_role": null,
-      "sub_cluster_id": null
+      "curated_civilization": "western",
+      "curated_role": "periphery",
+      "sub_cluster_id": null,
+      "x_viz_provenance": "imputed_pew",
+      "x_score_provenance": "imputed_governance",
+      "in_state_coordinates": true
     },
     {
       "iso3": "AUS",
@@ -92,7 +116,10 @@
       "iw_coverage": "present",
       "curated_civilization": "western",
       "curated_role": "core",
-      "sub_cluster_id": "english_speaking"
+      "sub_cluster_id": "english_speaking",
+      "x_viz_provenance": "observed",
+      "x_score_provenance": "observed",
+      "in_state_coordinates": true
     },
     {
       "iso3": "AUT",
@@ -100,19 +127,25 @@
       "in_geojson": true,
       "hofstede_coverage": "missing",
       "iw_coverage": "missing",
-      "curated_civilization": null,
-      "curated_role": null,
-      "sub_cluster_id": null
+      "curated_civilization": "western",
+      "curated_role": "core",
+      "sub_cluster_id": null,
+      "x_viz_provenance": "imputed_pew",
+      "x_score_provenance": "imputed_governance",
+      "in_state_coordinates": true
     },
     {
       "iso3": "AZE",
       "name_fr": "Azerbaïdjan",
       "in_geojson": true,
       "hofstede_coverage": "missing",
-      "iw_coverage": "missing",
-      "curated_civilization": null,
-      "curated_role": null,
-      "sub_cluster_id": null
+      "iw_coverage": "present",
+      "curated_civilization": "islamic",
+      "curated_role": "core",
+      "sub_cluster_id": null,
+      "x_viz_provenance": "imputed_wvs_items",
+      "x_score_provenance": "imputed_governance",
+      "in_state_coordinates": true
     },
     {
       "iso3": "BDI",
@@ -120,9 +153,12 @@
       "in_geojson": true,
       "hofstede_coverage": "missing",
       "iw_coverage": "missing",
-      "curated_civilization": null,
-      "curated_role": null,
-      "sub_cluster_id": null
+      "curated_civilization": "african",
+      "curated_role": "core",
+      "sub_cluster_id": null,
+      "x_viz_provenance": "imputed_pew",
+      "x_score_provenance": "imputed_governance",
+      "in_state_coordinates": true
     },
     {
       "iso3": "BEL",
@@ -130,9 +166,12 @@
       "in_geojson": true,
       "hofstede_coverage": "missing",
       "iw_coverage": "missing",
-      "curated_civilization": null,
-      "curated_role": null,
-      "sub_cluster_id": null
+      "curated_civilization": "western",
+      "curated_role": "core",
+      "sub_cluster_id": null,
+      "x_viz_provenance": "imputed_pew",
+      "x_score_provenance": "imputed_governance",
+      "in_state_coordinates": true
     },
     {
       "iso3": "BEN",
@@ -140,19 +179,25 @@
       "in_geojson": true,
       "hofstede_coverage": "missing",
       "iw_coverage": "missing",
-      "curated_civilization": null,
-      "curated_role": null,
-      "sub_cluster_id": null
+      "curated_civilization": "african",
+      "curated_role": "core",
+      "sub_cluster_id": null,
+      "x_viz_provenance": "imputed_pew",
+      "x_score_provenance": "imputed_governance",
+      "in_state_coordinates": true
     },
     {
       "iso3": "BFA",
       "name_fr": "Burkina Faso",
       "in_geojson": true,
       "hofstede_coverage": "missing",
-      "iw_coverage": "missing",
-      "curated_civilization": null,
-      "curated_role": null,
-      "sub_cluster_id": null
+      "iw_coverage": "present",
+      "curated_civilization": "islamic",
+      "curated_role": "periphery",
+      "sub_cluster_id": null,
+      "x_viz_provenance": "imputed_wvs_items",
+      "x_score_provenance": "imputed_governance",
+      "in_state_coordinates": true
     },
     {
       "iso3": "BGD",
@@ -162,7 +207,10 @@
       "iw_coverage": "present",
       "curated_civilization": "islamic",
       "curated_role": "core",
-      "sub_cluster_id": "south_asian_islamic"
+      "sub_cluster_id": "south_asian_islamic",
+      "x_viz_provenance": "observed",
+      "x_score_provenance": "observed",
+      "in_state_coordinates": true
     },
     {
       "iso3": "BGR",
@@ -172,7 +220,10 @@
       "iw_coverage": "present",
       "curated_civilization": "orthodox",
       "curated_role": "core",
-      "sub_cluster_id": "balkan_orthodox"
+      "sub_cluster_id": "balkan_orthodox",
+      "x_viz_provenance": "observed",
+      "x_score_provenance": "observed",
+      "in_state_coordinates": true
     },
     {
       "iso3": "BHR",
@@ -180,9 +231,12 @@
       "in_geojson": true,
       "hofstede_coverage": "missing",
       "iw_coverage": "missing",
-      "curated_civilization": null,
-      "curated_role": null,
-      "sub_cluster_id": null
+      "curated_civilization": "islamic",
+      "curated_role": "core",
+      "sub_cluster_id": null,
+      "x_viz_provenance": "imputed_pew",
+      "x_score_provenance": "imputed_governance",
+      "in_state_coordinates": true
     },
     {
       "iso3": "BHS",
@@ -190,9 +244,12 @@
       "in_geojson": true,
       "hofstede_coverage": "missing",
       "iw_coverage": "missing",
-      "curated_civilization": null,
-      "curated_role": null,
-      "sub_cluster_id": null
+      "curated_civilization": "western",
+      "curated_role": "periphery",
+      "sub_cluster_id": null,
+      "x_viz_provenance": "imputed_pew",
+      "x_score_provenance": "imputed_governance",
+      "in_state_coordinates": true
     },
     {
       "iso3": "BIH",
@@ -201,8 +258,11 @@
       "hofstede_coverage": "missing",
       "iw_coverage": "missing",
       "curated_civilization": null,
-      "curated_role": null,
-      "sub_cluster_id": null
+      "curated_role": "ambiguous",
+      "sub_cluster_id": null,
+      "x_viz_provenance": "imputed_pew",
+      "x_score_provenance": "imputed_governance",
+      "in_state_coordinates": true
     },
     {
       "iso3": "BLR",
@@ -212,7 +272,10 @@
       "iw_coverage": "present",
       "curated_civilization": "orthodox",
       "curated_role": "core",
-      "sub_cluster_id": "slavic_orthodox"
+      "sub_cluster_id": "slavic_orthodox",
+      "x_viz_provenance": "observed",
+      "x_score_provenance": "observed",
+      "in_state_coordinates": true
     },
     {
       "iso3": "BLZ",
@@ -220,9 +283,12 @@
       "in_geojson": true,
       "hofstede_coverage": "missing",
       "iw_coverage": "missing",
-      "curated_civilization": null,
-      "curated_role": null,
-      "sub_cluster_id": null
+      "curated_civilization": "western",
+      "curated_role": "periphery",
+      "sub_cluster_id": null,
+      "x_viz_provenance": "imputed_pew",
+      "x_score_provenance": "imputed_governance",
+      "in_state_coordinates": true
     },
     {
       "iso3": "BOL",
@@ -232,7 +298,10 @@
       "iw_coverage": "present",
       "curated_civilization": "indigenous",
       "curated_role": "core",
-      "sub_cluster_id": "andean"
+      "sub_cluster_id": "andean",
+      "x_viz_provenance": "observed",
+      "x_score_provenance": "observed_with_dim_imputation",
+      "in_state_coordinates": true
     },
     {
       "iso3": "BRA",
@@ -242,7 +311,10 @@
       "iw_coverage": "present",
       "curated_civilization": "latin_american",
       "curated_role": "core",
-      "sub_cluster_id": "brazil_caribbean"
+      "sub_cluster_id": "brazil_caribbean",
+      "x_viz_provenance": "observed",
+      "x_score_provenance": "observed",
+      "in_state_coordinates": true
     },
     {
       "iso3": "BRB",
@@ -250,9 +322,12 @@
       "in_geojson": true,
       "hofstede_coverage": "missing",
       "iw_coverage": "missing",
-      "curated_civilization": null,
-      "curated_role": null,
-      "sub_cluster_id": null
+      "curated_civilization": "western",
+      "curated_role": "periphery",
+      "sub_cluster_id": null,
+      "x_viz_provenance": "imputed_pew",
+      "x_score_provenance": "imputed_governance",
+      "in_state_coordinates": true
     },
     {
       "iso3": "BRN",
@@ -260,9 +335,12 @@
       "in_geojson": true,
       "hofstede_coverage": "missing",
       "iw_coverage": "missing",
-      "curated_civilization": null,
-      "curated_role": null,
-      "sub_cluster_id": null
+      "curated_civilization": "islamic",
+      "curated_role": "core",
+      "sub_cluster_id": null,
+      "x_viz_provenance": "imputed_pew",
+      "x_score_provenance": "imputed_governance",
+      "in_state_coordinates": true
     },
     {
       "iso3": "BTN",
@@ -272,7 +350,10 @@
       "iw_coverage": "missing",
       "curated_civilization": "buddhist",
       "curated_role": "core",
-      "sub_cluster_id": "mahayana"
+      "sub_cluster_id": "mahayana",
+      "x_viz_provenance": "imputed_pew",
+      "x_score_provenance": "imputed_governance",
+      "in_state_coordinates": true
     },
     {
       "iso3": "BWA",
@@ -280,9 +361,12 @@
       "in_geojson": true,
       "hofstede_coverage": "missing",
       "iw_coverage": "missing",
-      "curated_civilization": null,
-      "curated_role": null,
-      "sub_cluster_id": null
+      "curated_civilization": "african",
+      "curated_role": "core",
+      "sub_cluster_id": null,
+      "x_viz_provenance": "imputed_pew",
+      "x_score_provenance": "imputed_governance",
+      "in_state_coordinates": true
     },
     {
       "iso3": "CAF",
@@ -290,9 +374,12 @@
       "in_geojson": true,
       "hofstede_coverage": "missing",
       "iw_coverage": "missing",
-      "curated_civilization": null,
-      "curated_role": null,
-      "sub_cluster_id": null
+      "curated_civilization": "african",
+      "curated_role": "core",
+      "sub_cluster_id": null,
+      "x_viz_provenance": "imputed_pew",
+      "x_score_provenance": "imputed_governance",
+      "in_state_coordinates": true
     },
     {
       "iso3": "CAN",
@@ -302,17 +389,23 @@
       "iw_coverage": "present",
       "curated_civilization": "western",
       "curated_role": "core",
-      "sub_cluster_id": "english_speaking"
+      "sub_cluster_id": "english_speaking",
+      "x_viz_provenance": "observed",
+      "x_score_provenance": "observed",
+      "in_state_coordinates": true
     },
     {
       "iso3": "CHE",
       "name_fr": "Suisse",
       "in_geojson": true,
       "hofstede_coverage": "missing",
-      "iw_coverage": "missing",
-      "curated_civilization": null,
-      "curated_role": null,
-      "sub_cluster_id": null
+      "iw_coverage": "present",
+      "curated_civilization": "western",
+      "curated_role": "core",
+      "sub_cluster_id": null,
+      "x_viz_provenance": "imputed_wvs_items",
+      "x_score_provenance": "imputed_governance",
+      "in_state_coordinates": true
     },
     {
       "iso3": "CHL",
@@ -322,7 +415,10 @@
       "iw_coverage": "present",
       "curated_civilization": "latin_american",
       "curated_role": "core",
-      "sub_cluster_id": "southern_cone"
+      "sub_cluster_id": "southern_cone",
+      "x_viz_provenance": "observed",
+      "x_score_provenance": "observed",
+      "in_state_coordinates": true
     },
     {
       "iso3": "CHN",
@@ -332,7 +428,10 @@
       "iw_coverage": "present",
       "curated_civilization": "sinic",
       "curated_role": "core",
-      "sub_cluster_id": "mainland_sinic"
+      "sub_cluster_id": "mainland_sinic",
+      "x_viz_provenance": "observed",
+      "x_score_provenance": "observed",
+      "in_state_coordinates": true
     },
     {
       "iso3": "CIV",
@@ -341,8 +440,11 @@
       "hofstede_coverage": "missing",
       "iw_coverage": "missing",
       "curated_civilization": null,
-      "curated_role": null,
-      "sub_cluster_id": null
+      "curated_role": "ambiguous",
+      "sub_cluster_id": null,
+      "x_viz_provenance": "imputed_pew",
+      "x_score_provenance": "imputed_governance",
+      "in_state_coordinates": true
     },
     {
       "iso3": "CMR",
@@ -350,9 +452,12 @@
       "in_geojson": true,
       "hofstede_coverage": "missing",
       "iw_coverage": "missing",
-      "curated_civilization": null,
-      "curated_role": null,
-      "sub_cluster_id": null
+      "curated_civilization": "african",
+      "curated_role": "core",
+      "sub_cluster_id": null,
+      "x_viz_provenance": "imputed_pew",
+      "x_score_provenance": "imputed_governance",
+      "in_state_coordinates": true
     },
     {
       "iso3": "COD",
@@ -360,9 +465,12 @@
       "in_geojson": true,
       "hofstede_coverage": "missing",
       "iw_coverage": "missing",
-      "curated_civilization": null,
-      "curated_role": null,
-      "sub_cluster_id": null
+      "curated_civilization": "african",
+      "curated_role": "core",
+      "sub_cluster_id": null,
+      "x_viz_provenance": "imputed_pew",
+      "x_score_provenance": "imputed_governance",
+      "in_state_coordinates": true
     },
     {
       "iso3": "COG",
@@ -370,9 +478,12 @@
       "in_geojson": true,
       "hofstede_coverage": "missing",
       "iw_coverage": "missing",
-      "curated_civilization": null,
-      "curated_role": null,
-      "sub_cluster_id": null
+      "curated_civilization": "african",
+      "curated_role": "core",
+      "sub_cluster_id": null,
+      "x_viz_provenance": "imputed_pew",
+      "x_score_provenance": "imputed_governance",
+      "in_state_coordinates": true
     },
     {
       "iso3": "COL",
@@ -382,7 +493,10 @@
       "iw_coverage": "present",
       "curated_civilization": "latin_american",
       "curated_role": "core",
-      "sub_cluster_id": "andean"
+      "sub_cluster_id": "andean",
+      "x_viz_provenance": "observed",
+      "x_score_provenance": "observed",
+      "in_state_coordinates": true
     },
     {
       "iso3": "COM",
@@ -390,9 +504,12 @@
       "in_geojson": true,
       "hofstede_coverage": "missing",
       "iw_coverage": "missing",
-      "curated_civilization": null,
-      "curated_role": null,
-      "sub_cluster_id": null
+      "curated_civilization": "islamic",
+      "curated_role": "core",
+      "sub_cluster_id": null,
+      "x_viz_provenance": "imputed_pew",
+      "x_score_provenance": "imputed_governance",
+      "in_state_coordinates": true
     },
     {
       "iso3": "CPV",
@@ -400,9 +517,12 @@
       "in_geojson": true,
       "hofstede_coverage": "missing",
       "iw_coverage": "missing",
-      "curated_civilization": null,
-      "curated_role": null,
-      "sub_cluster_id": null
+      "curated_civilization": "african",
+      "curated_role": "periphery",
+      "sub_cluster_id": null,
+      "x_viz_provenance": "imputed_pew",
+      "x_score_provenance": "imputed_governance",
+      "in_state_coordinates": true
     },
     {
       "iso3": "CRI",
@@ -410,9 +530,12 @@
       "in_geojson": true,
       "hofstede_coverage": "missing",
       "iw_coverage": "missing",
-      "curated_civilization": null,
-      "curated_role": null,
-      "sub_cluster_id": null
+      "curated_civilization": "latin_american",
+      "curated_role": "core",
+      "sub_cluster_id": null,
+      "x_viz_provenance": "imputed_pew",
+      "x_score_provenance": "imputed_governance",
+      "in_state_coordinates": true
     },
     {
       "iso3": "CUB",
@@ -420,29 +543,38 @@
       "in_geojson": true,
       "hofstede_coverage": "missing",
       "iw_coverage": "missing",
-      "curated_civilization": null,
-      "curated_role": null,
-      "sub_cluster_id": null
+      "curated_civilization": "latin_american",
+      "curated_role": "core",
+      "sub_cluster_id": null,
+      "x_viz_provenance": "imputed_pew",
+      "x_score_provenance": "imputed_governance",
+      "in_state_coordinates": true
     },
     {
       "iso3": "CYP",
       "name_fr": "Chypre",
       "in_geojson": true,
       "hofstede_coverage": "missing",
-      "iw_coverage": "missing",
-      "curated_civilization": null,
-      "curated_role": null,
-      "sub_cluster_id": null
+      "iw_coverage": "present",
+      "curated_civilization": "orthodox",
+      "curated_role": "periphery",
+      "sub_cluster_id": null,
+      "x_viz_provenance": "imputed_wvs_items",
+      "x_score_provenance": "imputed_governance",
+      "in_state_coordinates": true
     },
     {
       "iso3": "CZE",
       "name_fr": "Tchéquie",
       "in_geojson": true,
       "hofstede_coverage": "missing",
-      "iw_coverage": "missing",
-      "curated_civilization": null,
-      "curated_role": null,
-      "sub_cluster_id": null
+      "iw_coverage": "present",
+      "curated_civilization": "western",
+      "curated_role": "core",
+      "sub_cluster_id": null,
+      "x_viz_provenance": "imputed_wvs_items",
+      "x_score_provenance": "imputed_governance",
+      "in_state_coordinates": true
     },
     {
       "iso3": "DEU",
@@ -452,7 +584,10 @@
       "iw_coverage": "present",
       "curated_civilization": "western",
       "curated_role": "core",
-      "sub_cluster_id": "protestant_europe"
+      "sub_cluster_id": "protestant_europe",
+      "x_viz_provenance": "observed",
+      "x_score_provenance": "observed",
+      "in_state_coordinates": true
     },
     {
       "iso3": "DJI",
@@ -460,9 +595,12 @@
       "in_geojson": true,
       "hofstede_coverage": "missing",
       "iw_coverage": "missing",
-      "curated_civilization": null,
-      "curated_role": null,
-      "sub_cluster_id": null
+      "curated_civilization": "islamic",
+      "curated_role": "core",
+      "sub_cluster_id": null,
+      "x_viz_provenance": "imputed_pew",
+      "x_score_provenance": "imputed_governance",
+      "in_state_coordinates": true
     },
     {
       "iso3": "DMA",
@@ -470,9 +608,12 @@
       "in_geojson": true,
       "hofstede_coverage": "missing",
       "iw_coverage": "missing",
-      "curated_civilization": null,
-      "curated_role": null,
-      "sub_cluster_id": null
+      "curated_civilization": "western",
+      "curated_role": "periphery",
+      "sub_cluster_id": null,
+      "x_viz_provenance": "imputed_pew",
+      "x_score_provenance": "imputed_governance",
+      "in_state_coordinates": true
     },
     {
       "iso3": "DNK",
@@ -482,7 +623,10 @@
       "iw_coverage": "present",
       "curated_civilization": "western",
       "curated_role": "core",
-      "sub_cluster_id": "protestant_europe"
+      "sub_cluster_id": "protestant_europe",
+      "x_viz_provenance": "observed",
+      "x_score_provenance": "observed",
+      "in_state_coordinates": true
     },
     {
       "iso3": "DOM",
@@ -490,19 +634,25 @@
       "in_geojson": true,
       "hofstede_coverage": "missing",
       "iw_coverage": "missing",
-      "curated_civilization": null,
-      "curated_role": null,
-      "sub_cluster_id": null
+      "curated_civilization": "latin_american",
+      "curated_role": "core",
+      "sub_cluster_id": null,
+      "x_viz_provenance": "imputed_pew",
+      "x_score_provenance": "imputed_governance",
+      "in_state_coordinates": true
     },
     {
       "iso3": "DZA",
       "name_fr": "Algérie",
       "in_geojson": true,
       "hofstede_coverage": "missing",
-      "iw_coverage": "missing",
-      "curated_civilization": null,
-      "curated_role": null,
-      "sub_cluster_id": null
+      "iw_coverage": "present",
+      "curated_civilization": "islamic",
+      "curated_role": "core",
+      "sub_cluster_id": null,
+      "x_viz_provenance": "imputed_wvs_items",
+      "x_score_provenance": "imputed_governance",
+      "in_state_coordinates": true
     },
     {
       "iso3": "ECU",
@@ -512,7 +662,10 @@
       "iw_coverage": "present",
       "curated_civilization": "indigenous",
       "curated_role": "periphery",
-      "sub_cluster_id": "andean"
+      "sub_cluster_id": "andean",
+      "x_viz_provenance": "observed",
+      "x_score_provenance": "observed_with_dim_imputation",
+      "in_state_coordinates": true
     },
     {
       "iso3": "EGY",
@@ -522,7 +675,10 @@
       "iw_coverage": "present",
       "curated_civilization": "islamic",
       "curated_role": "core",
-      "sub_cluster_id": "arab_islamic"
+      "sub_cluster_id": "arab_islamic",
+      "x_viz_provenance": "observed",
+      "x_score_provenance": "observed",
+      "in_state_coordinates": true
     },
     {
       "iso3": "ERI",
@@ -530,9 +686,12 @@
       "in_geojson": true,
       "hofstede_coverage": "missing",
       "iw_coverage": "missing",
-      "curated_civilization": null,
-      "curated_role": null,
-      "sub_cluster_id": null
+      "curated_civilization": "african",
+      "curated_role": "periphery",
+      "sub_cluster_id": null,
+      "x_viz_provenance": "imputed_pew",
+      "x_score_provenance": "imputed_governance",
+      "in_state_coordinates": true
     },
     {
       "iso3": "ESP",
@@ -542,17 +701,23 @@
       "iw_coverage": "present",
       "curated_civilization": "western",
       "curated_role": "core",
-      "sub_cluster_id": "catholic_europe"
+      "sub_cluster_id": "catholic_europe",
+      "x_viz_provenance": "observed",
+      "x_score_provenance": "observed",
+      "in_state_coordinates": true
     },
     {
       "iso3": "EST",
       "name_fr": "Estonie",
       "in_geojson": true,
       "hofstede_coverage": "missing",
-      "iw_coverage": "missing",
-      "curated_civilization": null,
-      "curated_role": null,
-      "sub_cluster_id": null
+      "iw_coverage": "present",
+      "curated_civilization": "western",
+      "curated_role": "periphery",
+      "sub_cluster_id": null,
+      "x_viz_provenance": "imputed_wvs_items",
+      "x_score_provenance": "imputed_governance",
+      "in_state_coordinates": true
     },
     {
       "iso3": "ETH",
@@ -562,7 +727,10 @@
       "iw_coverage": "present",
       "curated_civilization": "african",
       "curated_role": "core",
-      "sub_cluster_id": "east_africa"
+      "sub_cluster_id": "east_africa",
+      "x_viz_provenance": "observed",
+      "x_score_provenance": "observed_with_dim_imputation",
+      "in_state_coordinates": true
     },
     {
       "iso3": "FIN",
@@ -572,7 +740,10 @@
       "iw_coverage": "present",
       "curated_civilization": "western",
       "curated_role": "core",
-      "sub_cluster_id": "protestant_europe"
+      "sub_cluster_id": "protestant_europe",
+      "x_viz_provenance": "observed",
+      "x_score_provenance": "observed",
+      "in_state_coordinates": true
     },
     {
       "iso3": "FJI",
@@ -582,7 +753,10 @@
       "iw_coverage": "present",
       "curated_civilization": "oceanian",
       "curated_role": "core",
-      "sub_cluster_id": "melanesia"
+      "sub_cluster_id": "melanesia",
+      "x_viz_provenance": "observed",
+      "x_score_provenance": "observed_with_dim_imputation",
+      "in_state_coordinates": true
     },
     {
       "iso3": "FRA",
@@ -592,7 +766,10 @@
       "iw_coverage": "present",
       "curated_civilization": "western",
       "curated_role": "core",
-      "sub_cluster_id": "catholic_europe"
+      "sub_cluster_id": "catholic_europe",
+      "x_viz_provenance": "observed",
+      "x_score_provenance": "observed",
+      "in_state_coordinates": true
     },
     {
       "iso3": "FSM",
@@ -600,9 +777,12 @@
       "in_geojson": true,
       "hofstede_coverage": "missing",
       "iw_coverage": "missing",
-      "curated_civilization": null,
-      "curated_role": null,
-      "sub_cluster_id": null
+      "curated_civilization": "oceanian",
+      "curated_role": "core",
+      "sub_cluster_id": null,
+      "x_viz_provenance": "imputed_pew",
+      "x_score_provenance": "imputed_governance",
+      "in_state_coordinates": true
     },
     {
       "iso3": "GAB",
@@ -610,9 +790,12 @@
       "in_geojson": true,
       "hofstede_coverage": "missing",
       "iw_coverage": "missing",
-      "curated_civilization": null,
-      "curated_role": null,
-      "sub_cluster_id": null
+      "curated_civilization": "african",
+      "curated_role": "core",
+      "sub_cluster_id": null,
+      "x_viz_provenance": "imputed_pew",
+      "x_score_provenance": "imputed_governance",
+      "in_state_coordinates": true
     },
     {
       "iso3": "GBR",
@@ -622,17 +805,23 @@
       "iw_coverage": "present",
       "curated_civilization": "western",
       "curated_role": "core",
-      "sub_cluster_id": "english_speaking"
+      "sub_cluster_id": "english_speaking",
+      "x_viz_provenance": "observed",
+      "x_score_provenance": "observed",
+      "in_state_coordinates": true
     },
     {
       "iso3": "GEO",
       "name_fr": "Géorgie",
       "in_geojson": true,
       "hofstede_coverage": "missing",
-      "iw_coverage": "missing",
-      "curated_civilization": null,
-      "curated_role": null,
-      "sub_cluster_id": null
+      "iw_coverage": "present",
+      "curated_civilization": "orthodox",
+      "curated_role": "core",
+      "sub_cluster_id": null,
+      "x_viz_provenance": "imputed_wvs_items",
+      "x_score_provenance": "imputed_governance",
+      "in_state_coordinates": true
     },
     {
       "iso3": "GHA",
@@ -642,7 +831,10 @@
       "iw_coverage": "present",
       "curated_civilization": "african",
       "curated_role": "core",
-      "sub_cluster_id": "west_africa"
+      "sub_cluster_id": "west_africa",
+      "x_viz_provenance": "observed",
+      "x_score_provenance": "observed",
+      "in_state_coordinates": true
     },
     {
       "iso3": "GIN",
@@ -650,9 +842,12 @@
       "in_geojson": true,
       "hofstede_coverage": "missing",
       "iw_coverage": "missing",
-      "curated_civilization": null,
-      "curated_role": null,
-      "sub_cluster_id": null
+      "curated_civilization": "islamic",
+      "curated_role": "core",
+      "sub_cluster_id": null,
+      "x_viz_provenance": "imputed_pew",
+      "x_score_provenance": "imputed_governance",
+      "in_state_coordinates": true
     },
     {
       "iso3": "GMB",
@@ -660,9 +855,12 @@
       "in_geojson": true,
       "hofstede_coverage": "missing",
       "iw_coverage": "missing",
-      "curated_civilization": null,
-      "curated_role": null,
-      "sub_cluster_id": null
+      "curated_civilization": "islamic",
+      "curated_role": "core",
+      "sub_cluster_id": null,
+      "x_viz_provenance": "imputed_pew",
+      "x_score_provenance": "imputed_governance",
+      "in_state_coordinates": true
     },
     {
       "iso3": "GNB",
@@ -670,9 +868,12 @@
       "in_geojson": true,
       "hofstede_coverage": "missing",
       "iw_coverage": "missing",
-      "curated_civilization": null,
-      "curated_role": null,
-      "sub_cluster_id": null
+      "curated_civilization": "african",
+      "curated_role": "periphery",
+      "sub_cluster_id": null,
+      "x_viz_provenance": "imputed_pew",
+      "x_score_provenance": "imputed_governance",
+      "in_state_coordinates": true
     },
     {
       "iso3": "GNQ",
@@ -680,9 +881,12 @@
       "in_geojson": true,
       "hofstede_coverage": "missing",
       "iw_coverage": "missing",
-      "curated_civilization": null,
-      "curated_role": null,
-      "sub_cluster_id": null
+      "curated_civilization": "african",
+      "curated_role": "core",
+      "sub_cluster_id": null,
+      "x_viz_provenance": "imputed_pew",
+      "x_score_provenance": "imputed_governance",
+      "in_state_coordinates": true
     },
     {
       "iso3": "GRC",
@@ -692,7 +896,10 @@
       "iw_coverage": "present",
       "curated_civilization": "orthodox",
       "curated_role": "core",
-      "sub_cluster_id": "balkan_orthodox"
+      "sub_cluster_id": "balkan_orthodox",
+      "x_viz_provenance": "observed",
+      "x_score_provenance": "observed",
+      "in_state_coordinates": true
     },
     {
       "iso3": "GRD",
@@ -700,9 +907,12 @@
       "in_geojson": true,
       "hofstede_coverage": "missing",
       "iw_coverage": "missing",
-      "curated_civilization": null,
-      "curated_role": null,
-      "sub_cluster_id": null
+      "curated_civilization": "western",
+      "curated_role": "periphery",
+      "sub_cluster_id": null,
+      "x_viz_provenance": "imputed_pew",
+      "x_score_provenance": "imputed_governance",
+      "in_state_coordinates": true
     },
     {
       "iso3": "GTM",
@@ -712,7 +922,10 @@
       "iw_coverage": "present",
       "curated_civilization": "latin_american",
       "curated_role": "core",
-      "sub_cluster_id": "mexican_central_american"
+      "sub_cluster_id": "mexican_central_american",
+      "x_viz_provenance": "observed",
+      "x_score_provenance": "observed_with_dim_imputation",
+      "in_state_coordinates": true
     },
     {
       "iso3": "GUY",
@@ -720,9 +933,12 @@
       "in_geojson": true,
       "hofstede_coverage": "missing",
       "iw_coverage": "missing",
-      "curated_civilization": null,
-      "curated_role": null,
-      "sub_cluster_id": null
+      "curated_civilization": "latin_american",
+      "curated_role": "periphery",
+      "sub_cluster_id": null,
+      "x_viz_provenance": "imputed_pew",
+      "x_score_provenance": "imputed_governance",
+      "in_state_coordinates": true
     },
     {
       "iso3": "HND",
@@ -730,9 +946,12 @@
       "in_geojson": true,
       "hofstede_coverage": "missing",
       "iw_coverage": "missing",
-      "curated_civilization": null,
-      "curated_role": null,
-      "sub_cluster_id": null
+      "curated_civilization": "latin_american",
+      "curated_role": "core",
+      "sub_cluster_id": null,
+      "x_viz_provenance": "imputed_pew",
+      "x_score_provenance": "imputed_governance",
+      "in_state_coordinates": true
     },
     {
       "iso3": "HRV",
@@ -740,9 +959,12 @@
       "in_geojson": true,
       "hofstede_coverage": "missing",
       "iw_coverage": "missing",
-      "curated_civilization": null,
-      "curated_role": null,
-      "sub_cluster_id": null
+      "curated_civilization": "western",
+      "curated_role": "periphery",
+      "sub_cluster_id": null,
+      "x_viz_provenance": "imputed_pew",
+      "x_score_provenance": "imputed_governance",
+      "in_state_coordinates": true
     },
     {
       "iso3": "HTI",
@@ -750,19 +972,25 @@
       "in_geojson": true,
       "hofstede_coverage": "missing",
       "iw_coverage": "missing",
-      "curated_civilization": null,
-      "curated_role": null,
-      "sub_cluster_id": null
+      "curated_civilization": "latin_american",
+      "curated_role": "periphery",
+      "sub_cluster_id": null,
+      "x_viz_provenance": "imputed_pew",
+      "x_score_provenance": "imputed_governance",
+      "in_state_coordinates": true
     },
     {
       "iso3": "HUN",
       "name_fr": "Hongrie",
       "in_geojson": true,
       "hofstede_coverage": "missing",
-      "iw_coverage": "missing",
-      "curated_civilization": null,
-      "curated_role": null,
-      "sub_cluster_id": null
+      "iw_coverage": "present",
+      "curated_civilization": "western",
+      "curated_role": "core",
+      "sub_cluster_id": null,
+      "x_viz_provenance": "imputed_wvs_items",
+      "x_score_provenance": "imputed_governance",
+      "in_state_coordinates": true
     },
     {
       "iso3": "IDN",
@@ -772,7 +1000,10 @@
       "iw_coverage": "present",
       "curated_civilization": "islamic",
       "curated_role": "core",
-      "sub_cluster_id": "southeast_asian_islamic"
+      "sub_cluster_id": "southeast_asian_islamic",
+      "x_viz_provenance": "observed",
+      "x_score_provenance": "observed",
+      "in_state_coordinates": true
     },
     {
       "iso3": "IND",
@@ -782,7 +1013,10 @@
       "iw_coverage": "present",
       "curated_civilization": "hindic",
       "curated_role": "core",
-      "sub_cluster_id": "indian_subcontinent_hindu"
+      "sub_cluster_id": "indian_subcontinent_hindu",
+      "x_viz_provenance": "observed",
+      "x_score_provenance": "observed",
+      "in_state_coordinates": true
     },
     {
       "iso3": "IRL",
@@ -792,7 +1026,10 @@
       "iw_coverage": "present",
       "curated_civilization": "western",
       "curated_role": "core",
-      "sub_cluster_id": "english_speaking"
+      "sub_cluster_id": "english_speaking",
+      "x_viz_provenance": "observed",
+      "x_score_provenance": "observed",
+      "in_state_coordinates": true
     },
     {
       "iso3": "IRN",
@@ -802,7 +1039,10 @@
       "iw_coverage": "present",
       "curated_civilization": "islamic",
       "curated_role": "core",
-      "sub_cluster_id": "turco_iranian"
+      "sub_cluster_id": "turco_iranian",
+      "x_viz_provenance": "observed",
+      "x_score_provenance": "observed",
+      "in_state_coordinates": true
     },
     {
       "iso3": "IRQ",
@@ -812,7 +1052,10 @@
       "iw_coverage": "present",
       "curated_civilization": "islamic",
       "curated_role": "core",
-      "sub_cluster_id": "arab_islamic"
+      "sub_cluster_id": "arab_islamic",
+      "x_viz_provenance": "observed",
+      "x_score_provenance": "observed",
+      "in_state_coordinates": true
     },
     {
       "iso3": "ISL",
@@ -820,9 +1063,12 @@
       "in_geojson": true,
       "hofstede_coverage": "missing",
       "iw_coverage": "missing",
-      "curated_civilization": null,
-      "curated_role": null,
-      "sub_cluster_id": null
+      "curated_civilization": "western",
+      "curated_role": "core",
+      "sub_cluster_id": null,
+      "x_viz_provenance": "imputed_pew",
+      "x_score_provenance": "imputed_governance",
+      "in_state_coordinates": true
     },
     {
       "iso3": "ISR",
@@ -832,7 +1078,10 @@
       "iw_coverage": "missing",
       "curated_civilization": null,
       "curated_role": "ambiguous",
-      "sub_cluster_id": null
+      "sub_cluster_id": null,
+      "x_viz_provenance": "imputed_pew",
+      "x_score_provenance": "imputed_governance",
+      "in_state_coordinates": true
     },
     {
       "iso3": "ITA",
@@ -842,7 +1091,10 @@
       "iw_coverage": "present",
       "curated_civilization": "western",
       "curated_role": "core",
-      "sub_cluster_id": "catholic_europe"
+      "sub_cluster_id": "catholic_europe",
+      "x_viz_provenance": "observed",
+      "x_score_provenance": "observed",
+      "in_state_coordinates": true
     },
     {
       "iso3": "JAM",
@@ -850,9 +1102,12 @@
       "in_geojson": true,
       "hofstede_coverage": "missing",
       "iw_coverage": "missing",
-      "curated_civilization": null,
-      "curated_role": null,
-      "sub_cluster_id": null
+      "curated_civilization": "western",
+      "curated_role": "periphery",
+      "sub_cluster_id": null,
+      "x_viz_provenance": "imputed_pew",
+      "x_score_provenance": "imputed_governance",
+      "in_state_coordinates": true
     },
     {
       "iso3": "JOR",
@@ -862,7 +1117,10 @@
       "iw_coverage": "present",
       "curated_civilization": "islamic",
       "curated_role": "core",
-      "sub_cluster_id": "arab_islamic"
+      "sub_cluster_id": "arab_islamic",
+      "x_viz_provenance": "observed",
+      "x_score_provenance": "observed",
+      "in_state_coordinates": true
     },
     {
       "iso3": "JPN",
@@ -872,17 +1130,23 @@
       "iw_coverage": "present",
       "curated_civilization": "japanese",
       "curated_role": "core",
-      "sub_cluster_id": null
+      "sub_cluster_id": null,
+      "x_viz_provenance": "observed",
+      "x_score_provenance": "observed",
+      "in_state_coordinates": true
     },
     {
       "iso3": "KAZ",
       "name_fr": "Kazakhstan",
       "in_geojson": true,
       "hofstede_coverage": "missing",
-      "iw_coverage": "missing",
-      "curated_civilization": null,
-      "curated_role": null,
-      "sub_cluster_id": null
+      "iw_coverage": "present",
+      "curated_civilization": "islamic",
+      "curated_role": "periphery",
+      "sub_cluster_id": null,
+      "x_viz_provenance": "imputed_wvs_items",
+      "x_score_provenance": "imputed_governance",
+      "in_state_coordinates": true
     },
     {
       "iso3": "KEN",
@@ -892,17 +1156,23 @@
       "iw_coverage": "present",
       "curated_civilization": "african",
       "curated_role": "core",
-      "sub_cluster_id": "east_africa"
+      "sub_cluster_id": "east_africa",
+      "x_viz_provenance": "observed",
+      "x_score_provenance": "observed_with_dim_imputation",
+      "in_state_coordinates": true
     },
     {
       "iso3": "KGZ",
       "name_fr": "Kirghizistan",
       "in_geojson": true,
       "hofstede_coverage": "missing",
-      "iw_coverage": "missing",
-      "curated_civilization": null,
-      "curated_role": null,
-      "sub_cluster_id": null
+      "iw_coverage": "present",
+      "curated_civilization": "islamic",
+      "curated_role": "periphery",
+      "sub_cluster_id": null,
+      "x_viz_provenance": "imputed_wvs_items",
+      "x_score_provenance": "imputed_governance",
+      "in_state_coordinates": true
     },
     {
       "iso3": "KHM",
@@ -912,7 +1182,10 @@
       "iw_coverage": "missing",
       "curated_civilization": "buddhist",
       "curated_role": "core",
-      "sub_cluster_id": "theravada"
+      "sub_cluster_id": "theravada",
+      "x_viz_provenance": "imputed_pew",
+      "x_score_provenance": "imputed_governance",
+      "in_state_coordinates": true
     },
     {
       "iso3": "KIR",
@@ -920,9 +1193,12 @@
       "in_geojson": true,
       "hofstede_coverage": "missing",
       "iw_coverage": "missing",
-      "curated_civilization": null,
-      "curated_role": null,
-      "sub_cluster_id": null
+      "curated_civilization": "oceanian",
+      "curated_role": "core",
+      "sub_cluster_id": null,
+      "x_viz_provenance": "imputed_pew",
+      "x_score_provenance": "imputed_governance",
+      "in_state_coordinates": true
     },
     {
       "iso3": "KNA",
@@ -930,9 +1206,12 @@
       "in_geojson": true,
       "hofstede_coverage": "missing",
       "iw_coverage": "missing",
-      "curated_civilization": null,
-      "curated_role": null,
-      "sub_cluster_id": null
+      "curated_civilization": "western",
+      "curated_role": "periphery",
+      "sub_cluster_id": null,
+      "x_viz_provenance": "imputed_pew",
+      "x_score_provenance": "imputed_governance",
+      "in_state_coordinates": true
     },
     {
       "iso3": "KOR",
@@ -942,17 +1221,23 @@
       "iw_coverage": "present",
       "curated_civilization": null,
       "curated_role": "ambiguous",
-      "sub_cluster_id": "mahayana"
+      "sub_cluster_id": "mahayana",
+      "x_viz_provenance": "observed",
+      "x_score_provenance": "observed",
+      "in_state_coordinates": true
     },
     {
       "iso3": "KWT",
       "name_fr": "Koweït",
       "in_geojson": true,
       "hofstede_coverage": "missing",
-      "iw_coverage": "missing",
-      "curated_civilization": null,
-      "curated_role": null,
-      "sub_cluster_id": null
+      "iw_coverage": "present",
+      "curated_civilization": "islamic",
+      "curated_role": "core",
+      "sub_cluster_id": null,
+      "x_viz_provenance": "imputed_wvs_items",
+      "x_score_provenance": "imputed_governance",
+      "in_state_coordinates": true
     },
     {
       "iso3": "LAO",
@@ -962,17 +1247,23 @@
       "iw_coverage": "missing",
       "curated_civilization": "buddhist",
       "curated_role": "core",
-      "sub_cluster_id": "theravada"
+      "sub_cluster_id": "theravada",
+      "x_viz_provenance": "imputed_pew",
+      "x_score_provenance": "imputed_governance",
+      "in_state_coordinates": true
     },
     {
       "iso3": "LBN",
       "name_fr": "Liban",
       "in_geojson": true,
       "hofstede_coverage": "missing",
-      "iw_coverage": "missing",
+      "iw_coverage": "present",
       "curated_civilization": null,
-      "curated_role": null,
-      "sub_cluster_id": null
+      "curated_role": "ambiguous",
+      "sub_cluster_id": null,
+      "x_viz_provenance": "imputed_wvs_items",
+      "x_score_provenance": "imputed_governance",
+      "in_state_coordinates": true
     },
     {
       "iso3": "LBR",
@@ -980,19 +1271,25 @@
       "in_geojson": true,
       "hofstede_coverage": "missing",
       "iw_coverage": "missing",
-      "curated_civilization": null,
-      "curated_role": null,
-      "sub_cluster_id": null
+      "curated_civilization": "african",
+      "curated_role": "core",
+      "sub_cluster_id": null,
+      "x_viz_provenance": "imputed_pew",
+      "x_score_provenance": "imputed_governance",
+      "in_state_coordinates": true
     },
     {
       "iso3": "LBY",
       "name_fr": "Libye",
       "in_geojson": true,
       "hofstede_coverage": "missing",
-      "iw_coverage": "missing",
-      "curated_civilization": null,
-      "curated_role": null,
-      "sub_cluster_id": null
+      "iw_coverage": "present",
+      "curated_civilization": "islamic",
+      "curated_role": "core",
+      "sub_cluster_id": null,
+      "x_viz_provenance": "imputed_wvs_items",
+      "x_score_provenance": "imputed_governance",
+      "in_state_coordinates": true
     },
     {
       "iso3": "LCA",
@@ -1000,9 +1297,12 @@
       "in_geojson": true,
       "hofstede_coverage": "missing",
       "iw_coverage": "missing",
-      "curated_civilization": null,
-      "curated_role": null,
-      "sub_cluster_id": null
+      "curated_civilization": "western",
+      "curated_role": "periphery",
+      "sub_cluster_id": null,
+      "x_viz_provenance": "imputed_pew",
+      "x_score_provenance": "imputed_governance",
+      "in_state_coordinates": true
     },
     {
       "iso3": "LIE",
@@ -1010,9 +1310,12 @@
       "in_geojson": true,
       "hofstede_coverage": "missing",
       "iw_coverage": "missing",
-      "curated_civilization": null,
-      "curated_role": null,
-      "sub_cluster_id": null
+      "curated_civilization": "western",
+      "curated_role": "core",
+      "sub_cluster_id": null,
+      "x_viz_provenance": "imputed_pew",
+      "x_score_provenance": "imputed_governance",
+      "in_state_coordinates": true
     },
     {
       "iso3": "LKA",
@@ -1022,7 +1325,10 @@
       "iw_coverage": "missing",
       "curated_civilization": "hindic",
       "curated_role": "periphery",
-      "sub_cluster_id": "indian_subcontinent_hindu"
+      "sub_cluster_id": "indian_subcontinent_hindu",
+      "x_viz_provenance": "imputed_pew",
+      "x_score_provenance": "imputed_governance",
+      "in_state_coordinates": true
     },
     {
       "iso3": "LSO",
@@ -1030,9 +1336,12 @@
       "in_geojson": true,
       "hofstede_coverage": "missing",
       "iw_coverage": "missing",
-      "curated_civilization": null,
-      "curated_role": null,
-      "sub_cluster_id": null
+      "curated_civilization": "african",
+      "curated_role": "core",
+      "sub_cluster_id": null,
+      "x_viz_provenance": "imputed_pew",
+      "x_score_provenance": "imputed_governance",
+      "in_state_coordinates": true
     },
     {
       "iso3": "LTU",
@@ -1040,9 +1349,12 @@
       "in_geojson": true,
       "hofstede_coverage": "missing",
       "iw_coverage": "missing",
-      "curated_civilization": null,
-      "curated_role": null,
-      "sub_cluster_id": null
+      "curated_civilization": "western",
+      "curated_role": "periphery",
+      "sub_cluster_id": null,
+      "x_viz_provenance": "imputed_pew",
+      "x_score_provenance": "imputed_governance",
+      "in_state_coordinates": true
     },
     {
       "iso3": "LUX",
@@ -1050,9 +1362,12 @@
       "in_geojson": true,
       "hofstede_coverage": "missing",
       "iw_coverage": "missing",
-      "curated_civilization": null,
-      "curated_role": null,
-      "sub_cluster_id": null
+      "curated_civilization": "western",
+      "curated_role": "core",
+      "sub_cluster_id": null,
+      "x_viz_provenance": "imputed_pew",
+      "x_score_provenance": "imputed_governance",
+      "in_state_coordinates": true
     },
     {
       "iso3": "LVA",
@@ -1060,9 +1375,12 @@
       "in_geojson": true,
       "hofstede_coverage": "missing",
       "iw_coverage": "missing",
-      "curated_civilization": null,
-      "curated_role": null,
-      "sub_cluster_id": null
+      "curated_civilization": "western",
+      "curated_role": "periphery",
+      "sub_cluster_id": null,
+      "x_viz_provenance": "imputed_pew",
+      "x_score_provenance": "imputed_governance",
+      "in_state_coordinates": true
     },
     {
       "iso3": "MAR",
@@ -1072,7 +1390,10 @@
       "iw_coverage": "present",
       "curated_civilization": "islamic",
       "curated_role": "core",
-      "sub_cluster_id": "arab_islamic"
+      "sub_cluster_id": "arab_islamic",
+      "x_viz_provenance": "observed",
+      "x_score_provenance": "observed",
+      "in_state_coordinates": true
     },
     {
       "iso3": "MCO",
@@ -1080,9 +1401,12 @@
       "in_geojson": true,
       "hofstede_coverage": "missing",
       "iw_coverage": "missing",
-      "curated_civilization": null,
-      "curated_role": null,
-      "sub_cluster_id": null
+      "curated_civilization": "western",
+      "curated_role": "core",
+      "sub_cluster_id": null,
+      "x_viz_provenance": "imputed_pew",
+      "x_score_provenance": "imputed_governance",
+      "in_state_coordinates": true
     },
     {
       "iso3": "MDA",
@@ -1090,19 +1414,25 @@
       "in_geojson": true,
       "hofstede_coverage": "missing",
       "iw_coverage": "missing",
-      "curated_civilization": null,
-      "curated_role": null,
-      "sub_cluster_id": null
+      "curated_civilization": "orthodox",
+      "curated_role": "core",
+      "sub_cluster_id": null,
+      "x_viz_provenance": "imputed_pew",
+      "x_score_provenance": "imputed_governance",
+      "in_state_coordinates": true
     },
     {
       "iso3": "MDG",
       "name_fr": "Madagascar",
       "in_geojson": true,
       "hofstede_coverage": "missing",
-      "iw_coverage": "missing",
-      "curated_civilization": null,
-      "curated_role": null,
-      "sub_cluster_id": null
+      "iw_coverage": "present",
+      "curated_civilization": "african",
+      "curated_role": "periphery",
+      "sub_cluster_id": null,
+      "x_viz_provenance": "imputed_wvs_items",
+      "x_score_provenance": "imputed_governance",
+      "in_state_coordinates": true
     },
     {
       "iso3": "MDV",
@@ -1110,9 +1440,12 @@
       "in_geojson": true,
       "hofstede_coverage": "missing",
       "iw_coverage": "missing",
-      "curated_civilization": null,
-      "curated_role": null,
-      "sub_cluster_id": null
+      "curated_civilization": "islamic",
+      "curated_role": "core",
+      "sub_cluster_id": null,
+      "x_viz_provenance": "imputed_pew",
+      "x_score_provenance": "imputed_governance",
+      "in_state_coordinates": true
     },
     {
       "iso3": "MEX",
@@ -1122,7 +1455,10 @@
       "iw_coverage": "present",
       "curated_civilization": "latin_american",
       "curated_role": "core",
-      "sub_cluster_id": "mexican_central_american"
+      "sub_cluster_id": "mexican_central_american",
+      "x_viz_provenance": "observed",
+      "x_score_provenance": "observed",
+      "in_state_coordinates": true
     },
     {
       "iso3": "MHL",
@@ -1130,9 +1466,12 @@
       "in_geojson": true,
       "hofstede_coverage": "missing",
       "iw_coverage": "missing",
-      "curated_civilization": null,
-      "curated_role": null,
-      "sub_cluster_id": null
+      "curated_civilization": "oceanian",
+      "curated_role": "core",
+      "sub_cluster_id": null,
+      "x_viz_provenance": "imputed_pew",
+      "x_score_provenance": "imputed_governance",
+      "in_state_coordinates": true
     },
     {
       "iso3": "MKD",
@@ -1140,19 +1479,25 @@
       "in_geojson": true,
       "hofstede_coverage": "missing",
       "iw_coverage": "missing",
-      "curated_civilization": null,
-      "curated_role": null,
-      "sub_cluster_id": null
+      "curated_civilization": "orthodox",
+      "curated_role": "core",
+      "sub_cluster_id": null,
+      "x_viz_provenance": "imputed_pew",
+      "x_score_provenance": "imputed_governance",
+      "in_state_coordinates": true
     },
     {
       "iso3": "MLI",
       "name_fr": "Mali",
       "in_geojson": true,
       "hofstede_coverage": "missing",
-      "iw_coverage": "missing",
-      "curated_civilization": null,
-      "curated_role": null,
-      "sub_cluster_id": null
+      "iw_coverage": "present",
+      "curated_civilization": "islamic",
+      "curated_role": "core",
+      "sub_cluster_id": null,
+      "x_viz_provenance": "imputed_wvs_items",
+      "x_score_provenance": "imputed_governance",
+      "in_state_coordinates": true
     },
     {
       "iso3": "MLT",
@@ -1160,9 +1505,12 @@
       "in_geojson": true,
       "hofstede_coverage": "missing",
       "iw_coverage": "missing",
-      "curated_civilization": null,
-      "curated_role": null,
-      "sub_cluster_id": null
+      "curated_civilization": "western",
+      "curated_role": "core",
+      "sub_cluster_id": null,
+      "x_viz_provenance": "imputed_pew",
+      "x_score_provenance": "imputed_governance",
+      "in_state_coordinates": true
     },
     {
       "iso3": "MMR",
@@ -1172,7 +1520,10 @@
       "iw_coverage": "present",
       "curated_civilization": "buddhist",
       "curated_role": "core",
-      "sub_cluster_id": "theravada"
+      "sub_cluster_id": "theravada",
+      "x_viz_provenance": "observed",
+      "x_score_provenance": "observed_with_dim_imputation",
+      "in_state_coordinates": true
     },
     {
       "iso3": "MNE",
@@ -1180,9 +1531,12 @@
       "in_geojson": true,
       "hofstede_coverage": "missing",
       "iw_coverage": "missing",
-      "curated_civilization": null,
-      "curated_role": null,
-      "sub_cluster_id": null
+      "curated_civilization": "orthodox",
+      "curated_role": "core",
+      "sub_cluster_id": null,
+      "x_viz_provenance": "imputed_pew",
+      "x_score_provenance": "imputed_governance",
+      "in_state_coordinates": true
     },
     {
       "iso3": "MNG",
@@ -1192,7 +1546,10 @@
       "iw_coverage": "present",
       "curated_civilization": "buddhist",
       "curated_role": "core",
-      "sub_cluster_id": "mahayana"
+      "sub_cluster_id": "mahayana",
+      "x_viz_provenance": "observed",
+      "x_score_provenance": "observed",
+      "in_state_coordinates": true
     },
     {
       "iso3": "MOZ",
@@ -1200,9 +1557,12 @@
       "in_geojson": true,
       "hofstede_coverage": "missing",
       "iw_coverage": "missing",
-      "curated_civilization": null,
-      "curated_role": null,
-      "sub_cluster_id": null
+      "curated_civilization": "african",
+      "curated_role": "core",
+      "sub_cluster_id": null,
+      "x_viz_provenance": "imputed_pew",
+      "x_score_provenance": "imputed_governance",
+      "in_state_coordinates": true
     },
     {
       "iso3": "MRT",
@@ -1210,9 +1570,12 @@
       "in_geojson": true,
       "hofstede_coverage": "missing",
       "iw_coverage": "missing",
-      "curated_civilization": null,
-      "curated_role": null,
-      "sub_cluster_id": null
+      "curated_civilization": "islamic",
+      "curated_role": "core",
+      "sub_cluster_id": null,
+      "x_viz_provenance": "imputed_pew",
+      "x_score_provenance": "imputed_governance",
+      "in_state_coordinates": true
     },
     {
       "iso3": "MUS",
@@ -1222,7 +1585,10 @@
       "iw_coverage": "missing",
       "curated_civilization": "hindic",
       "curated_role": "periphery",
-      "sub_cluster_id": null
+      "sub_cluster_id": null,
+      "x_viz_provenance": "imputed_pew",
+      "x_score_provenance": "imputed_governance",
+      "in_state_coordinates": true
     },
     {
       "iso3": "MWI",
@@ -1230,9 +1596,12 @@
       "in_geojson": true,
       "hofstede_coverage": "missing",
       "iw_coverage": "missing",
-      "curated_civilization": null,
-      "curated_role": null,
-      "sub_cluster_id": null
+      "curated_civilization": "african",
+      "curated_role": "core",
+      "sub_cluster_id": null,
+      "x_viz_provenance": "imputed_pew",
+      "x_score_provenance": "imputed_governance",
+      "in_state_coordinates": true
     },
     {
       "iso3": "MYS",
@@ -1242,7 +1611,10 @@
       "iw_coverage": "present",
       "curated_civilization": "islamic",
       "curated_role": "core",
-      "sub_cluster_id": "southeast_asian_islamic"
+      "sub_cluster_id": "southeast_asian_islamic",
+      "x_viz_provenance": "observed",
+      "x_score_provenance": "observed",
+      "in_state_coordinates": true
     },
     {
       "iso3": "NAM",
@@ -1250,9 +1622,12 @@
       "in_geojson": true,
       "hofstede_coverage": "missing",
       "iw_coverage": "missing",
-      "curated_civilization": null,
-      "curated_role": null,
-      "sub_cluster_id": null
+      "curated_civilization": "african",
+      "curated_role": "core",
+      "sub_cluster_id": null,
+      "x_viz_provenance": "imputed_pew",
+      "x_score_provenance": "imputed_governance",
+      "in_state_coordinates": true
     },
     {
       "iso3": "NER",
@@ -1260,9 +1635,12 @@
       "in_geojson": true,
       "hofstede_coverage": "missing",
       "iw_coverage": "missing",
-      "curated_civilization": null,
-      "curated_role": null,
-      "sub_cluster_id": null
+      "curated_civilization": "islamic",
+      "curated_role": "core",
+      "sub_cluster_id": null,
+      "x_viz_provenance": "imputed_pew",
+      "x_score_provenance": "imputed_governance",
+      "in_state_coordinates": true
     },
     {
       "iso3": "NGA",
@@ -1272,17 +1650,23 @@
       "iw_coverage": "present",
       "curated_civilization": "african",
       "curated_role": "core",
-      "sub_cluster_id": "west_africa"
+      "sub_cluster_id": "west_africa",
+      "x_viz_provenance": "observed",
+      "x_score_provenance": "observed",
+      "in_state_coordinates": true
     },
     {
       "iso3": "NIC",
       "name_fr": "Nicaragua",
       "in_geojson": true,
       "hofstede_coverage": "missing",
-      "iw_coverage": "missing",
-      "curated_civilization": null,
-      "curated_role": null,
-      "sub_cluster_id": null
+      "iw_coverage": "present",
+      "curated_civilization": "latin_american",
+      "curated_role": "core",
+      "sub_cluster_id": null,
+      "x_viz_provenance": "imputed_wvs_items",
+      "x_score_provenance": "imputed_governance",
+      "in_state_coordinates": true
     },
     {
       "iso3": "NLD",
@@ -1292,7 +1676,10 @@
       "iw_coverage": "present",
       "curated_civilization": "western",
       "curated_role": "core",
-      "sub_cluster_id": "protestant_europe"
+      "sub_cluster_id": "protestant_europe",
+      "x_viz_provenance": "observed",
+      "x_score_provenance": "observed",
+      "in_state_coordinates": true
     },
     {
       "iso3": "NOR",
@@ -1302,7 +1689,10 @@
       "iw_coverage": "present",
       "curated_civilization": "western",
       "curated_role": "core",
-      "sub_cluster_id": "protestant_europe"
+      "sub_cluster_id": "protestant_europe",
+      "x_viz_provenance": "observed",
+      "x_score_provenance": "observed",
+      "in_state_coordinates": true
     },
     {
       "iso3": "NPL",
@@ -1312,7 +1702,10 @@
       "iw_coverage": "missing",
       "curated_civilization": "hindic",
       "curated_role": "periphery",
-      "sub_cluster_id": "indian_subcontinent_hindu"
+      "sub_cluster_id": "indian_subcontinent_hindu",
+      "x_viz_provenance": "imputed_pew",
+      "x_score_provenance": "imputed_governance",
+      "in_state_coordinates": true
     },
     {
       "iso3": "NRU",
@@ -1320,9 +1713,12 @@
       "in_geojson": true,
       "hofstede_coverage": "missing",
       "iw_coverage": "missing",
-      "curated_civilization": null,
-      "curated_role": null,
-      "sub_cluster_id": null
+      "curated_civilization": "oceanian",
+      "curated_role": "core",
+      "sub_cluster_id": null,
+      "x_viz_provenance": "imputed_pew",
+      "x_score_provenance": "imputed_governance",
+      "in_state_coordinates": true
     },
     {
       "iso3": "NZL",
@@ -1332,7 +1728,10 @@
       "iw_coverage": "present",
       "curated_civilization": "oceanian",
       "curated_role": "core",
-      "sub_cluster_id": "english_speaking"
+      "sub_cluster_id": "english_speaking",
+      "x_viz_provenance": "observed",
+      "x_score_provenance": "observed",
+      "in_state_coordinates": true
     },
     {
       "iso3": "OMN",
@@ -1340,9 +1739,12 @@
       "in_geojson": true,
       "hofstede_coverage": "missing",
       "iw_coverage": "missing",
-      "curated_civilization": null,
-      "curated_role": null,
-      "sub_cluster_id": null
+      "curated_civilization": "islamic",
+      "curated_role": "core",
+      "sub_cluster_id": null,
+      "x_viz_provenance": "imputed_pew",
+      "x_score_provenance": "imputed_governance",
+      "in_state_coordinates": true
     },
     {
       "iso3": "PAK",
@@ -1352,7 +1754,10 @@
       "iw_coverage": "present",
       "curated_civilization": "islamic",
       "curated_role": "core",
-      "sub_cluster_id": "south_asian_islamic"
+      "sub_cluster_id": "south_asian_islamic",
+      "x_viz_provenance": "observed",
+      "x_score_provenance": "observed",
+      "in_state_coordinates": true
     },
     {
       "iso3": "PAN",
@@ -1360,9 +1765,12 @@
       "in_geojson": true,
       "hofstede_coverage": "missing",
       "iw_coverage": "missing",
-      "curated_civilization": null,
-      "curated_role": null,
-      "sub_cluster_id": null
+      "curated_civilization": "latin_american",
+      "curated_role": "core",
+      "sub_cluster_id": null,
+      "x_viz_provenance": "imputed_pew",
+      "x_score_provenance": "imputed_governance",
+      "in_state_coordinates": true
     },
     {
       "iso3": "PER",
@@ -1372,17 +1780,23 @@
       "iw_coverage": "present",
       "curated_civilization": "latin_american",
       "curated_role": "core",
-      "sub_cluster_id": "andean"
+      "sub_cluster_id": "andean",
+      "x_viz_provenance": "observed",
+      "x_score_provenance": "observed",
+      "in_state_coordinates": true
     },
     {
       "iso3": "PHL",
       "name_fr": "Philippines",
       "in_geojson": true,
       "hofstede_coverage": "missing",
-      "iw_coverage": "missing",
-      "curated_civilization": null,
-      "curated_role": null,
-      "sub_cluster_id": null
+      "iw_coverage": "present",
+      "curated_civilization": "latin_american",
+      "curated_role": "periphery",
+      "sub_cluster_id": null,
+      "x_viz_provenance": "imputed_wvs_items",
+      "x_score_provenance": "imputed_governance",
+      "in_state_coordinates": true
     },
     {
       "iso3": "PLW",
@@ -1390,9 +1804,12 @@
       "in_geojson": true,
       "hofstede_coverage": "missing",
       "iw_coverage": "missing",
-      "curated_civilization": null,
-      "curated_role": null,
-      "sub_cluster_id": null
+      "curated_civilization": "oceanian",
+      "curated_role": "core",
+      "sub_cluster_id": null,
+      "x_viz_provenance": "imputed_pew",
+      "x_score_provenance": "imputed_governance",
+      "in_state_coordinates": true
     },
     {
       "iso3": "PNG",
@@ -1400,19 +1817,25 @@
       "in_geojson": true,
       "hofstede_coverage": "missing",
       "iw_coverage": "missing",
-      "curated_civilization": null,
-      "curated_role": null,
-      "sub_cluster_id": null
+      "curated_civilization": "oceanian",
+      "curated_role": "core",
+      "sub_cluster_id": null,
+      "x_viz_provenance": "imputed_pew",
+      "x_score_provenance": "imputed_governance",
+      "in_state_coordinates": true
     },
     {
       "iso3": "POL",
       "name_fr": "Pologne",
       "in_geojson": true,
       "hofstede_coverage": "missing",
-      "iw_coverage": "missing",
-      "curated_civilization": null,
-      "curated_role": null,
-      "sub_cluster_id": null
+      "iw_coverage": "present",
+      "curated_civilization": "western",
+      "curated_role": "core",
+      "sub_cluster_id": null,
+      "x_viz_provenance": "imputed_wvs_items",
+      "x_score_provenance": "imputed_governance",
+      "in_state_coordinates": true
     },
     {
       "iso3": "PRK",
@@ -1420,9 +1843,12 @@
       "in_geojson": true,
       "hofstede_coverage": "missing",
       "iw_coverage": "missing",
-      "curated_civilization": null,
-      "curated_role": null,
-      "sub_cluster_id": null
+      "curated_civilization": "sinic",
+      "curated_role": "periphery",
+      "sub_cluster_id": null,
+      "x_viz_provenance": "imputed_pew",
+      "x_score_provenance": "imputed_governance",
+      "in_state_coordinates": true
     },
     {
       "iso3": "PRT",
@@ -1430,9 +1856,12 @@
       "in_geojson": true,
       "hofstede_coverage": "missing",
       "iw_coverage": "missing",
-      "curated_civilization": null,
-      "curated_role": null,
-      "sub_cluster_id": null
+      "curated_civilization": "western",
+      "curated_role": "core",
+      "sub_cluster_id": null,
+      "x_viz_provenance": "imputed_pew",
+      "x_score_provenance": "imputed_governance",
+      "in_state_coordinates": true
     },
     {
       "iso3": "PRY",
@@ -1440,19 +1869,25 @@
       "in_geojson": true,
       "hofstede_coverage": "missing",
       "iw_coverage": "missing",
-      "curated_civilization": null,
-      "curated_role": null,
-      "sub_cluster_id": null
+      "curated_civilization": "latin_american",
+      "curated_role": "core",
+      "sub_cluster_id": null,
+      "x_viz_provenance": "imputed_pew",
+      "x_score_provenance": "imputed_governance",
+      "in_state_coordinates": true
     },
     {
       "iso3": "QAT",
       "name_fr": "Qatar",
       "in_geojson": true,
       "hofstede_coverage": "missing",
-      "iw_coverage": "missing",
-      "curated_civilization": null,
-      "curated_role": null,
-      "sub_cluster_id": null
+      "iw_coverage": "present",
+      "curated_civilization": "islamic",
+      "curated_role": "core",
+      "sub_cluster_id": null,
+      "x_viz_provenance": "imputed_wvs_items",
+      "x_score_provenance": "imputed_governance",
+      "in_state_coordinates": true
     },
     {
       "iso3": "ROU",
@@ -1462,7 +1897,10 @@
       "iw_coverage": "present",
       "curated_civilization": "orthodox",
       "curated_role": "core",
-      "sub_cluster_id": "balkan_orthodox"
+      "sub_cluster_id": "balkan_orthodox",
+      "x_viz_provenance": "observed",
+      "x_score_provenance": "observed",
+      "in_state_coordinates": true
     },
     {
       "iso3": "RUS",
@@ -1472,17 +1910,23 @@
       "iw_coverage": "present",
       "curated_civilization": "orthodox",
       "curated_role": "core",
-      "sub_cluster_id": "slavic_orthodox"
+      "sub_cluster_id": "slavic_orthodox",
+      "x_viz_provenance": "observed",
+      "x_score_provenance": "observed",
+      "in_state_coordinates": true
     },
     {
       "iso3": "RWA",
       "name_fr": "Rwanda",
       "in_geojson": true,
       "hofstede_coverage": "missing",
-      "iw_coverage": "missing",
-      "curated_civilization": null,
-      "curated_role": null,
-      "sub_cluster_id": null
+      "iw_coverage": "present",
+      "curated_civilization": "african",
+      "curated_role": "core",
+      "sub_cluster_id": null,
+      "x_viz_provenance": "imputed_wvs_items",
+      "x_score_provenance": "imputed_governance",
+      "in_state_coordinates": true
     },
     {
       "iso3": "SAU",
@@ -1492,7 +1936,10 @@
       "iw_coverage": "missing",
       "curated_civilization": "islamic",
       "curated_role": "core",
-      "sub_cluster_id": "arab_islamic"
+      "sub_cluster_id": "arab_islamic",
+      "x_viz_provenance": "imputed_pew",
+      "x_score_provenance": "observed",
+      "in_state_coordinates": true
     },
     {
       "iso3": "SDN",
@@ -1500,9 +1947,12 @@
       "in_geojson": true,
       "hofstede_coverage": "missing",
       "iw_coverage": "missing",
-      "curated_civilization": null,
-      "curated_role": null,
-      "sub_cluster_id": null
+      "curated_civilization": "islamic",
+      "curated_role": "core",
+      "sub_cluster_id": null,
+      "x_viz_provenance": "imputed_pew",
+      "x_score_provenance": "imputed_governance",
+      "in_state_coordinates": true
     },
     {
       "iso3": "SEN",
@@ -1510,9 +1960,12 @@
       "in_geojson": true,
       "hofstede_coverage": "missing",
       "iw_coverage": "missing",
-      "curated_civilization": null,
-      "curated_role": null,
-      "sub_cluster_id": null
+      "curated_civilization": "islamic",
+      "curated_role": "core",
+      "sub_cluster_id": null,
+      "x_viz_provenance": "imputed_pew",
+      "x_score_provenance": "imputed_governance",
+      "in_state_coordinates": true
     },
     {
       "iso3": "SGP",
@@ -1522,7 +1975,10 @@
       "iw_coverage": "present",
       "curated_civilization": "sinic",
       "curated_role": "core",
-      "sub_cluster_id": "insular_sinic"
+      "sub_cluster_id": "insular_sinic",
+      "x_viz_provenance": "observed",
+      "x_score_provenance": "observed",
+      "in_state_coordinates": true
     },
     {
       "iso3": "SLB",
@@ -1530,9 +1986,12 @@
       "in_geojson": true,
       "hofstede_coverage": "missing",
       "iw_coverage": "missing",
-      "curated_civilization": null,
-      "curated_role": null,
-      "sub_cluster_id": null
+      "curated_civilization": "oceanian",
+      "curated_role": "core",
+      "sub_cluster_id": null,
+      "x_viz_provenance": "imputed_pew",
+      "x_score_provenance": "imputed_governance",
+      "in_state_coordinates": true
     },
     {
       "iso3": "SLE",
@@ -1540,9 +1999,12 @@
       "in_geojson": true,
       "hofstede_coverage": "missing",
       "iw_coverage": "missing",
-      "curated_civilization": null,
-      "curated_role": null,
-      "sub_cluster_id": null
+      "curated_civilization": "islamic",
+      "curated_role": "periphery",
+      "sub_cluster_id": null,
+      "x_viz_provenance": "imputed_pew",
+      "x_score_provenance": "imputed_governance",
+      "in_state_coordinates": true
     },
     {
       "iso3": "SLV",
@@ -1550,9 +2012,12 @@
       "in_geojson": true,
       "hofstede_coverage": "missing",
       "iw_coverage": "missing",
-      "curated_civilization": null,
-      "curated_role": null,
-      "sub_cluster_id": null
+      "curated_civilization": "latin_american",
+      "curated_role": "core",
+      "sub_cluster_id": null,
+      "x_viz_provenance": "imputed_pew",
+      "x_score_provenance": "imputed_governance",
+      "in_state_coordinates": true
     },
     {
       "iso3": "SMR",
@@ -1560,9 +2025,12 @@
       "in_geojson": true,
       "hofstede_coverage": "missing",
       "iw_coverage": "missing",
-      "curated_civilization": null,
-      "curated_role": null,
-      "sub_cluster_id": null
+      "curated_civilization": "western",
+      "curated_role": "core",
+      "sub_cluster_id": null,
+      "x_viz_provenance": "imputed_pew",
+      "x_score_provenance": "imputed_governance",
+      "in_state_coordinates": true
     },
     {
       "iso3": "SOM",
@@ -1570,9 +2038,12 @@
       "in_geojson": true,
       "hofstede_coverage": "missing",
       "iw_coverage": "missing",
-      "curated_civilization": null,
-      "curated_role": null,
-      "sub_cluster_id": null
+      "curated_civilization": "islamic",
+      "curated_role": "core",
+      "sub_cluster_id": null,
+      "x_viz_provenance": "imputed_pew",
+      "x_score_provenance": "imputed_governance",
+      "in_state_coordinates": true
     },
     {
       "iso3": "SRB",
@@ -1582,7 +2053,10 @@
       "iw_coverage": "present",
       "curated_civilization": "orthodox",
       "curated_role": "core",
-      "sub_cluster_id": "slavic_orthodox"
+      "sub_cluster_id": "slavic_orthodox",
+      "x_viz_provenance": "observed",
+      "x_score_provenance": "observed",
+      "in_state_coordinates": true
     },
     {
       "iso3": "SSD",
@@ -1590,9 +2064,12 @@
       "in_geojson": true,
       "hofstede_coverage": "missing",
       "iw_coverage": "missing",
-      "curated_civilization": null,
-      "curated_role": null,
-      "sub_cluster_id": null
+      "curated_civilization": "african",
+      "curated_role": "core",
+      "sub_cluster_id": null,
+      "x_viz_provenance": "imputed_pew",
+      "x_score_provenance": "imputed_governance",
+      "in_state_coordinates": true
     },
     {
       "iso3": "STP",
@@ -1600,9 +2077,12 @@
       "in_geojson": true,
       "hofstede_coverage": "missing",
       "iw_coverage": "missing",
-      "curated_civilization": null,
-      "curated_role": null,
-      "sub_cluster_id": null
+      "curated_civilization": "african",
+      "curated_role": "periphery",
+      "sub_cluster_id": null,
+      "x_viz_provenance": "imputed_pew",
+      "x_score_provenance": "imputed_governance",
+      "in_state_coordinates": true
     },
     {
       "iso3": "SUR",
@@ -1610,29 +2090,38 @@
       "in_geojson": true,
       "hofstede_coverage": "missing",
       "iw_coverage": "missing",
-      "curated_civilization": null,
-      "curated_role": null,
-      "sub_cluster_id": null
+      "curated_civilization": "latin_american",
+      "curated_role": "periphery",
+      "sub_cluster_id": null,
+      "x_viz_provenance": "imputed_pew",
+      "x_score_provenance": "imputed_governance",
+      "in_state_coordinates": true
     },
     {
       "iso3": "SVK",
       "name_fr": "Slovaquie",
       "in_geojson": true,
       "hofstede_coverage": "missing",
-      "iw_coverage": "missing",
-      "curated_civilization": null,
-      "curated_role": null,
-      "sub_cluster_id": null
+      "iw_coverage": "present",
+      "curated_civilization": "western",
+      "curated_role": "core",
+      "sub_cluster_id": null,
+      "x_viz_provenance": "imputed_wvs_items",
+      "x_score_provenance": "imputed_governance",
+      "in_state_coordinates": true
     },
     {
       "iso3": "SVN",
       "name_fr": "Slovénie",
       "in_geojson": true,
       "hofstede_coverage": "missing",
-      "iw_coverage": "missing",
-      "curated_civilization": null,
-      "curated_role": null,
-      "sub_cluster_id": null
+      "iw_coverage": "present",
+      "curated_civilization": "western",
+      "curated_role": "core",
+      "sub_cluster_id": null,
+      "x_viz_provenance": "imputed_wvs_items",
+      "x_score_provenance": "imputed_governance",
+      "in_state_coordinates": true
     },
     {
       "iso3": "SWE",
@@ -1642,7 +2131,10 @@
       "iw_coverage": "present",
       "curated_civilization": "western",
       "curated_role": "core",
-      "sub_cluster_id": "protestant_europe"
+      "sub_cluster_id": "protestant_europe",
+      "x_viz_provenance": "observed",
+      "x_score_provenance": "observed",
+      "in_state_coordinates": true
     },
     {
       "iso3": "SWZ",
@@ -1650,9 +2142,12 @@
       "in_geojson": true,
       "hofstede_coverage": "missing",
       "iw_coverage": "missing",
-      "curated_civilization": null,
-      "curated_role": null,
-      "sub_cluster_id": null
+      "curated_civilization": "african",
+      "curated_role": "core",
+      "sub_cluster_id": null,
+      "x_viz_provenance": "imputed_pew",
+      "x_score_provenance": "imputed_governance",
+      "in_state_coordinates": true
     },
     {
       "iso3": "SYC",
@@ -1660,9 +2155,12 @@
       "in_geojson": true,
       "hofstede_coverage": "missing",
       "iw_coverage": "missing",
-      "curated_civilization": null,
-      "curated_role": null,
-      "sub_cluster_id": null
+      "curated_civilization": "african",
+      "curated_role": "periphery",
+      "sub_cluster_id": null,
+      "x_viz_provenance": "imputed_pew",
+      "x_score_provenance": "imputed_governance",
+      "in_state_coordinates": true
     },
     {
       "iso3": "SYR",
@@ -1670,9 +2168,12 @@
       "in_geojson": true,
       "hofstede_coverage": "missing",
       "iw_coverage": "missing",
-      "curated_civilization": null,
-      "curated_role": null,
-      "sub_cluster_id": null
+      "curated_civilization": "islamic",
+      "curated_role": "core",
+      "sub_cluster_id": null,
+      "x_viz_provenance": "imputed_pew",
+      "x_score_provenance": "imputed_governance",
+      "in_state_coordinates": true
     },
     {
       "iso3": "TCD",
@@ -1681,8 +2182,11 @@
       "hofstede_coverage": "missing",
       "iw_coverage": "missing",
       "curated_civilization": null,
-      "curated_role": null,
-      "sub_cluster_id": null
+      "curated_role": "ambiguous",
+      "sub_cluster_id": null,
+      "x_viz_provenance": "imputed_pew",
+      "x_score_provenance": "imputed_governance",
+      "in_state_coordinates": true
     },
     {
       "iso3": "TGO",
@@ -1690,9 +2194,12 @@
       "in_geojson": true,
       "hofstede_coverage": "missing",
       "iw_coverage": "missing",
-      "curated_civilization": null,
-      "curated_role": null,
-      "sub_cluster_id": null
+      "curated_civilization": "african",
+      "curated_role": "core",
+      "sub_cluster_id": null,
+      "x_viz_provenance": "imputed_pew",
+      "x_score_provenance": "imputed_governance",
+      "in_state_coordinates": true
     },
     {
       "iso3": "THA",
@@ -1702,17 +2209,23 @@
       "iw_coverage": "present",
       "curated_civilization": "buddhist",
       "curated_role": "core",
-      "sub_cluster_id": "theravada"
+      "sub_cluster_id": "theravada",
+      "x_viz_provenance": "observed",
+      "x_score_provenance": "observed",
+      "in_state_coordinates": true
     },
     {
       "iso3": "TJK",
       "name_fr": "Tadjikistan",
       "in_geojson": true,
       "hofstede_coverage": "missing",
-      "iw_coverage": "missing",
-      "curated_civilization": null,
-      "curated_role": null,
-      "sub_cluster_id": null
+      "iw_coverage": "present",
+      "curated_civilization": "islamic",
+      "curated_role": "periphery",
+      "sub_cluster_id": null,
+      "x_viz_provenance": "imputed_wvs_items",
+      "x_score_provenance": "imputed_governance",
+      "in_state_coordinates": true
     },
     {
       "iso3": "TKM",
@@ -1720,9 +2233,12 @@
       "in_geojson": true,
       "hofstede_coverage": "missing",
       "iw_coverage": "missing",
-      "curated_civilization": null,
-      "curated_role": null,
-      "sub_cluster_id": null
+      "curated_civilization": "islamic",
+      "curated_role": "periphery",
+      "sub_cluster_id": null,
+      "x_viz_provenance": "imputed_pew",
+      "x_score_provenance": "imputed_governance",
+      "in_state_coordinates": true
     },
     {
       "iso3": "TLS",
@@ -1730,9 +2246,12 @@
       "in_geojson": true,
       "hofstede_coverage": "missing",
       "iw_coverage": "missing",
-      "curated_civilization": null,
-      "curated_role": null,
-      "sub_cluster_id": null
+      "curated_civilization": "latin_american",
+      "curated_role": "periphery",
+      "sub_cluster_id": null,
+      "x_viz_provenance": "imputed_pew",
+      "x_score_provenance": "imputed_governance",
+      "in_state_coordinates": true
     },
     {
       "iso3": "TON",
@@ -1740,29 +2259,38 @@
       "in_geojson": true,
       "hofstede_coverage": "missing",
       "iw_coverage": "missing",
-      "curated_civilization": null,
-      "curated_role": null,
-      "sub_cluster_id": null
+      "curated_civilization": "oceanian",
+      "curated_role": "core",
+      "sub_cluster_id": null,
+      "x_viz_provenance": "imputed_pew",
+      "x_score_provenance": "imputed_governance",
+      "in_state_coordinates": true
     },
     {
       "iso3": "TTO",
       "name_fr": "Trinité-et-Tobago",
       "in_geojson": true,
       "hofstede_coverage": "missing",
-      "iw_coverage": "missing",
-      "curated_civilization": null,
-      "curated_role": null,
-      "sub_cluster_id": null
+      "iw_coverage": "present",
+      "curated_civilization": "western",
+      "curated_role": "periphery",
+      "sub_cluster_id": null,
+      "x_viz_provenance": "imputed_wvs_items",
+      "x_score_provenance": "imputed_governance",
+      "in_state_coordinates": true
     },
     {
       "iso3": "TUN",
       "name_fr": "Tunisie",
       "in_geojson": true,
       "hofstede_coverage": "missing",
-      "iw_coverage": "missing",
-      "curated_civilization": null,
-      "curated_role": null,
-      "sub_cluster_id": null
+      "iw_coverage": "present",
+      "curated_civilization": "islamic",
+      "curated_role": "core",
+      "sub_cluster_id": null,
+      "x_viz_provenance": "imputed_wvs_items",
+      "x_score_provenance": "imputed_governance",
+      "in_state_coordinates": true
     },
     {
       "iso3": "TUR",
@@ -1772,7 +2300,10 @@
       "iw_coverage": "present",
       "curated_civilization": "islamic",
       "curated_role": "core",
-      "sub_cluster_id": "turco_iranian"
+      "sub_cluster_id": "turco_iranian",
+      "x_viz_provenance": "observed",
+      "x_score_provenance": "observed",
+      "in_state_coordinates": true
     },
     {
       "iso3": "TUV",
@@ -1780,9 +2311,12 @@
       "in_geojson": true,
       "hofstede_coverage": "missing",
       "iw_coverage": "missing",
-      "curated_civilization": null,
-      "curated_role": null,
-      "sub_cluster_id": null
+      "curated_civilization": "oceanian",
+      "curated_role": "core",
+      "sub_cluster_id": null,
+      "x_viz_provenance": "imputed_pew",
+      "x_score_provenance": "imputed_governance",
+      "in_state_coordinates": true
     },
     {
       "iso3": "TZA",
@@ -1790,9 +2324,12 @@
       "in_geojson": true,
       "hofstede_coverage": "missing",
       "iw_coverage": "missing",
-      "curated_civilization": null,
-      "curated_role": null,
-      "sub_cluster_id": null
+      "curated_civilization": "african",
+      "curated_role": "core",
+      "sub_cluster_id": null,
+      "x_viz_provenance": "imputed_pew",
+      "x_score_provenance": "imputed_governance",
+      "in_state_coordinates": true
     },
     {
       "iso3": "UGA",
@@ -1800,9 +2337,12 @@
       "in_geojson": true,
       "hofstede_coverage": "missing",
       "iw_coverage": "missing",
-      "curated_civilization": null,
-      "curated_role": null,
-      "sub_cluster_id": null
+      "curated_civilization": "african",
+      "curated_role": "core",
+      "sub_cluster_id": null,
+      "x_viz_provenance": "imputed_pew",
+      "x_score_provenance": "imputed_governance",
+      "in_state_coordinates": true
     },
     {
       "iso3": "UKR",
@@ -1812,7 +2352,10 @@
       "iw_coverage": "present",
       "curated_civilization": "orthodox",
       "curated_role": "core",
-      "sub_cluster_id": "slavic_orthodox"
+      "sub_cluster_id": "slavic_orthodox",
+      "x_viz_provenance": "observed",
+      "x_score_provenance": "observed",
+      "in_state_coordinates": true
     },
     {
       "iso3": "URY",
@@ -1822,7 +2365,10 @@
       "iw_coverage": "present",
       "curated_civilization": "latin_american",
       "curated_role": "core",
-      "sub_cluster_id": "southern_cone"
+      "sub_cluster_id": "southern_cone",
+      "x_viz_provenance": "observed",
+      "x_score_provenance": "observed",
+      "in_state_coordinates": true
     },
     {
       "iso3": "USA",
@@ -1832,17 +2378,23 @@
       "iw_coverage": "present",
       "curated_civilization": "western",
       "curated_role": "core",
-      "sub_cluster_id": "english_speaking"
+      "sub_cluster_id": "english_speaking",
+      "x_viz_provenance": "observed",
+      "x_score_provenance": "observed",
+      "in_state_coordinates": true
     },
     {
       "iso3": "UZB",
       "name_fr": "Ouzbékistan",
       "in_geojson": true,
       "hofstede_coverage": "missing",
-      "iw_coverage": "missing",
-      "curated_civilization": null,
-      "curated_role": null,
-      "sub_cluster_id": null
+      "iw_coverage": "present",
+      "curated_civilization": "islamic",
+      "curated_role": "periphery",
+      "sub_cluster_id": null,
+      "x_viz_provenance": "imputed_wvs_items",
+      "x_score_provenance": "imputed_governance",
+      "in_state_coordinates": true
     },
     {
       "iso3": "VCT",
@@ -1850,9 +2402,12 @@
       "in_geojson": true,
       "hofstede_coverage": "missing",
       "iw_coverage": "missing",
-      "curated_civilization": null,
-      "curated_role": null,
-      "sub_cluster_id": null
+      "curated_civilization": "western",
+      "curated_role": "periphery",
+      "sub_cluster_id": null,
+      "x_viz_provenance": "imputed_pew",
+      "x_score_provenance": "imputed_governance",
+      "in_state_coordinates": true
     },
     {
       "iso3": "VEN",
@@ -1862,7 +2417,10 @@
       "iw_coverage": "present",
       "curated_civilization": "latin_american",
       "curated_role": "core",
-      "sub_cluster_id": "brazil_caribbean"
+      "sub_cluster_id": "brazil_caribbean",
+      "x_viz_provenance": "observed",
+      "x_score_provenance": "observed",
+      "in_state_coordinates": true
     },
     {
       "iso3": "VNM",
@@ -1872,7 +2430,10 @@
       "iw_coverage": "present",
       "curated_civilization": "sinic",
       "curated_role": "core",
-      "sub_cluster_id": "mainland_sinic"
+      "sub_cluster_id": "mainland_sinic",
+      "x_viz_provenance": "observed",
+      "x_score_provenance": "observed",
+      "in_state_coordinates": true
     },
     {
       "iso3": "VUT",
@@ -1880,9 +2441,12 @@
       "in_geojson": true,
       "hofstede_coverage": "missing",
       "iw_coverage": "missing",
-      "curated_civilization": null,
-      "curated_role": null,
-      "sub_cluster_id": null
+      "curated_civilization": "oceanian",
+      "curated_role": "core",
+      "sub_cluster_id": null,
+      "x_viz_provenance": "imputed_pew",
+      "x_score_provenance": "imputed_governance",
+      "in_state_coordinates": true
     },
     {
       "iso3": "WSM",
@@ -1890,19 +2454,25 @@
       "in_geojson": true,
       "hofstede_coverage": "missing",
       "iw_coverage": "missing",
-      "curated_civilization": null,
-      "curated_role": null,
-      "sub_cluster_id": null
+      "curated_civilization": "oceanian",
+      "curated_role": "core",
+      "sub_cluster_id": null,
+      "x_viz_provenance": "imputed_pew",
+      "x_score_provenance": "imputed_governance",
+      "in_state_coordinates": true
     },
     {
       "iso3": "YEM",
       "name_fr": "Yémen",
       "in_geojson": true,
       "hofstede_coverage": "missing",
-      "iw_coverage": "missing",
-      "curated_civilization": null,
-      "curated_role": null,
-      "sub_cluster_id": null
+      "iw_coverage": "present",
+      "curated_civilization": "islamic",
+      "curated_role": "core",
+      "sub_cluster_id": null,
+      "x_viz_provenance": "imputed_wvs_items",
+      "x_score_provenance": "imputed_governance",
+      "in_state_coordinates": true
     },
     {
       "iso3": "ZAF",
@@ -1912,7 +2482,10 @@
       "iw_coverage": "present",
       "curated_civilization": "african",
       "curated_role": "core",
-      "sub_cluster_id": "southern_africa"
+      "sub_cluster_id": "southern_africa",
+      "x_viz_provenance": "observed",
+      "x_score_provenance": "observed",
+      "in_state_coordinates": true
     },
     {
       "iso3": "ZMB",
@@ -1922,7 +2495,10 @@
       "iw_coverage": "present",
       "curated_civilization": "african",
       "curated_role": "periphery",
-      "sub_cluster_id": "southern_africa"
+      "sub_cluster_id": "southern_africa",
+      "x_viz_provenance": "observed",
+      "x_score_provenance": "observed_with_dim_imputation",
+      "in_state_coordinates": true
     },
     {
       "iso3": "ZWE",
@@ -1932,7 +2508,10 @@
       "iw_coverage": "present",
       "curated_civilization": "african",
       "curated_role": "periphery",
-      "sub_cluster_id": "southern_africa"
+      "sub_cluster_id": "southern_africa",
+      "x_viz_provenance": "observed",
+      "x_score_provenance": "observed_with_dim_imputation",
+      "in_state_coordinates": true
     }
   ]
 }

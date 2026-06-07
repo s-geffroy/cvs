@@ -10,10 +10,15 @@
     - La couleur d'un État reflète sa **civilisation curatée** depuis la taxonomie
       lorsque disponible, sinon l'**argmax du vecteur d'affinité** en `B_score`. Elle
       **ne représente pas une identité** des populations.
+    - L'**opacité** d'un État reflète la provenance de ses coordonnées : pleinement
+      opaque pour les sondages directs (`observed`), volontairement estompé pour les
+      États dont la position vient d'une imputation ou du prior centroïde. Cf.
+      [doc 16 — Cascade d'imputation](../methodology/16_imputation_cascade.md).
 
 <div id="civvec-map-mode" role="radiogroup" aria-label="Mode de coloration" style="margin-bottom: 0.5rem; font-size: 0.9rem;">
   <label style="margin-right: 1rem;"><input type="radio" name="civvec-map-mode" value="macro" checked> Macro civilisation</label>
-  <label><input type="radio" name="civvec-map-mode" value="sub"> Sous-ensemble</label>
+  <label style="margin-right: 1rem;"><input type="radio" name="civvec-map-mode" value="sub"> Sous-ensemble</label>
+  <label><input type="radio" name="civvec-map-mode" value="provenance"> Provenance (cascade)</label>
 </div>
 <div id="civvec-map" style="width: 100%; height: 560px; border: 1px solid var(--md-default-fg-color--lightest);"></div>
 <div id="civvec-map-legend" style="margin-top: 0.75rem; font-size: 0.85rem;"></div>

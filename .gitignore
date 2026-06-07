@@ -32,3 +32,8 @@ env/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# Large raw data files (regenerable from documented URLs in data_sources/SOURCES.md)
+data_sources/inglehart_welzel/wvs_time_series_1981_2022.csv
+data_sources/vdem/vdem.RData
+data_sources/undp/HDR25_Composite_indices_complete_time_series.csv

@@ -14,17 +14,17 @@
     {
       "civilization_id": "western",
       "mu_viz": [
-        0.9092857142857145,
-        1.5642857142857143
+        0.7378791588076997,
+        1.2174222020281287
       ],
       "sigma_viz": [
         [
-          0.3168352040816327,
-          0.1553316326530612
+          0.42136088729300364,
+          0.2880225849012233
         ],
         [
-          0.1553316326530612,
-          0.20658163265306123
+          0.2880225849012233,
+          0.5648689598683925
         ]
       ],
       "mu_score": [
@@ -113,29 +113,184 @@
           "iso3": "IRL",
           "weight": 1.0,
           "role": "core"
+        },
+        {
+          "iso3": "AND",
+          "weight": 1.0,
+          "role": "core"
+        },
+        {
+          "iso3": "AUT",
+          "weight": 1.0,
+          "role": "core"
+        },
+        {
+          "iso3": "BEL",
+          "weight": 1.0,
+          "role": "core"
+        },
+        {
+          "iso3": "CHE",
+          "weight": 1.0,
+          "role": "core"
+        },
+        {
+          "iso3": "CZE",
+          "weight": 1.0,
+          "role": "core"
+        },
+        {
+          "iso3": "EST",
+          "weight": 0.5,
+          "role": "periphery"
+        },
+        {
+          "iso3": "HRV",
+          "weight": 0.5,
+          "role": "periphery"
+        },
+        {
+          "iso3": "HUN",
+          "weight": 1.0,
+          "role": "core"
+        },
+        {
+          "iso3": "ISL",
+          "weight": 1.0,
+          "role": "core"
+        },
+        {
+          "iso3": "LIE",
+          "weight": 1.0,
+          "role": "core"
+        },
+        {
+          "iso3": "LTU",
+          "weight": 0.5,
+          "role": "periphery"
+        },
+        {
+          "iso3": "LUX",
+          "weight": 1.0,
+          "role": "core"
+        },
+        {
+          "iso3": "LVA",
+          "weight": 0.5,
+          "role": "periphery"
+        },
+        {
+          "iso3": "MCO",
+          "weight": 1.0,
+          "role": "core"
+        },
+        {
+          "iso3": "MLT",
+          "weight": 1.0,
+          "role": "core"
+        },
+        {
+          "iso3": "POL",
+          "weight": 1.0,
+          "role": "core"
+        },
+        {
+          "iso3": "PRT",
+          "weight": 1.0,
+          "role": "core"
+        },
+        {
+          "iso3": "SMR",
+          "weight": 1.0,
+          "role": "core"
+        },
+        {
+          "iso3": "SVK",
+          "weight": 1.0,
+          "role": "core"
+        },
+        {
+          "iso3": "SVN",
+          "weight": 1.0,
+          "role": "core"
+        },
+        {
+          "iso3": "ATG",
+          "weight": 0.5,
+          "role": "periphery"
+        },
+        {
+          "iso3": "BHS",
+          "weight": 0.5,
+          "role": "periphery"
+        },
+        {
+          "iso3": "BRB",
+          "weight": 0.5,
+          "role": "periphery"
+        },
+        {
+          "iso3": "BLZ",
+          "weight": 0.5,
+          "role": "periphery"
+        },
+        {
+          "iso3": "DMA",
+          "weight": 0.5,
+          "role": "periphery"
+        },
+        {
+          "iso3": "GRD",
+          "weight": 0.5,
+          "role": "periphery"
+        },
+        {
+          "iso3": "JAM",
+          "weight": 0.5,
+          "role": "periphery"
+        },
+        {
+          "iso3": "KNA",
+          "weight": 0.5,
+          "role": "periphery"
+        },
+        {
+          "iso3": "LCA",
+          "weight": 0.5,
+          "role": "periphery"
+        },
+        {
+          "iso3": "TTO",
+          "weight": 0.5,
+          "role": "periphery"
+        },
+        {
+          "iso3": "VCT",
+          "weight": 0.5,
+          "role": "periphery"
         }
       ],
       "low_archetype_coverage": false,
-      "computed_from_n_states": 14,
+      "computed_from_n_states": 23,
       "evidence_basis": {
-        "iw_states_used": 14,
+        "iw_states_used": 23,
         "hofstede_states_used": 14
       }
     },
     {
       "civilization_id": "orthodox",
       "mu_viz": [
-        0.021428571428571425,
-        -0.7214285714285714
+        -0.2678209525412217,
+        -0.7175565387497791
       ],
       "sigma_viz": [
         [
-          0.06561224489795918,
-          -0.05418367346938775
+          0.30800958283779095,
+          -0.0026739200300793554
         ],
         [
-          -0.05418367346938775,
-          0.15846938775510203
+          -0.0026739200300793554,
+          0.18106635891609962
         ]
       ],
       "mu_score": [
@@ -189,29 +344,59 @@
           "iso3": "SRB",
           "weight": 1.0,
           "role": "core"
+        },
+        {
+          "iso3": "ARM",
+          "weight": 1.0,
+          "role": "core"
+        },
+        {
+          "iso3": "CYP",
+          "weight": 0.5,
+          "role": "periphery"
+        },
+        {
+          "iso3": "GEO",
+          "weight": 1.0,
+          "role": "core"
+        },
+        {
+          "iso3": "MDA",
+          "weight": 1.0,
+          "role": "core"
+        },
+        {
+          "iso3": "MKD",
+          "weight": 1.0,
+          "role": "core"
+        },
+        {
+          "iso3": "MNE",
+          "weight": 1.0,
+          "role": "core"
         }
       ],
       "low_archetype_coverage": false,
-      "computed_from_n_states": 7,
+      "computed_from_n_states": 10,
       "evidence_basis": {
-        "iw_states_used": 7,
+        "iw_states_used": 10,
         "hofstede_states_used": 7
       }
     },
     {
       "civilization_id": "islamic",
       "mu_viz": [
-        -1.18,
-        -0.7500000000000001
+        -1.159694359911545,
+        -0.6191948138295569
       ],
       "sigma_viz": [
         [
-          0.043100000000000006,
-          0.05649999999999998
+          0.08652161343146353,
+          0.043690956013005856
         ],
         [
-          0.05649999999999998,
-          0.11799999999999997
+          0.043690956013005856,
+          0.16027877482460656
         ]
       ],
       "mu_score": [
@@ -285,12 +470,172 @@
           "iso3": "MYS",
           "weight": 1.0,
           "role": "core"
+        },
+        {
+          "iso3": "ARE",
+          "weight": 1.0,
+          "role": "core"
+        },
+        {
+          "iso3": "BHR",
+          "weight": 1.0,
+          "role": "core"
+        },
+        {
+          "iso3": "DZA",
+          "weight": 1.0,
+          "role": "core"
+        },
+        {
+          "iso3": "KWT",
+          "weight": 1.0,
+          "role": "core"
+        },
+        {
+          "iso3": "LBY",
+          "weight": 1.0,
+          "role": "core"
+        },
+        {
+          "iso3": "OMN",
+          "weight": 1.0,
+          "role": "core"
+        },
+        {
+          "iso3": "QAT",
+          "weight": 1.0,
+          "role": "core"
+        },
+        {
+          "iso3": "SYR",
+          "weight": 1.0,
+          "role": "core"
+        },
+        {
+          "iso3": "TUN",
+          "weight": 1.0,
+          "role": "core"
+        },
+        {
+          "iso3": "YEM",
+          "weight": 1.0,
+          "role": "core"
+        },
+        {
+          "iso3": "AFG",
+          "weight": 1.0,
+          "role": "core"
+        },
+        {
+          "iso3": "ALB",
+          "weight": 0.5,
+          "role": "periphery"
+        },
+        {
+          "iso3": "AZE",
+          "weight": 1.0,
+          "role": "core"
+        },
+        {
+          "iso3": "KAZ",
+          "weight": 0.5,
+          "role": "periphery"
+        },
+        {
+          "iso3": "KGZ",
+          "weight": 0.5,
+          "role": "periphery"
+        },
+        {
+          "iso3": "TJK",
+          "weight": 0.5,
+          "role": "periphery"
+        },
+        {
+          "iso3": "TKM",
+          "weight": 0.5,
+          "role": "periphery"
+        },
+        {
+          "iso3": "UZB",
+          "weight": 0.5,
+          "role": "periphery"
+        },
+        {
+          "iso3": "BRN",
+          "weight": 1.0,
+          "role": "core"
+        },
+        {
+          "iso3": "MDV",
+          "weight": 1.0,
+          "role": "core"
+        },
+        {
+          "iso3": "COM",
+          "weight": 1.0,
+          "role": "core"
+        },
+        {
+          "iso3": "DJI",
+          "weight": 1.0,
+          "role": "core"
+        },
+        {
+          "iso3": "GIN",
+          "weight": 1.0,
+          "role": "core"
+        },
+        {
+          "iso3": "GMB",
+          "weight": 1.0,
+          "role": "core"
+        },
+        {
+          "iso3": "MLI",
+          "weight": 1.0,
+          "role": "core"
+        },
+        {
+          "iso3": "MRT",
+          "weight": 1.0,
+          "role": "core"
+        },
+        {
+          "iso3": "NER",
+          "weight": 1.0,
+          "role": "core"
+        },
+        {
+          "iso3": "SEN",
+          "weight": 1.0,
+          "role": "core"
+        },
+        {
+          "iso3": "SOM",
+          "weight": 1.0,
+          "role": "core"
+        },
+        {
+          "iso3": "BFA",
+          "weight": 0.5,
+          "role": "periphery"
+        },
+        {
+          "iso3": "SDN",
+          "weight": 1.0,
+          "role": "core"
+        },
+        {
+          "iso3": "SLE",
+          "weight": 0.5,
+          "role": "periphery"
         }
       ],
       "low_archetype_coverage": false,
-      "computed_from_n_states": 11,
+      "computed_from_n_states": 23,
       "evidence_basis": {
-        "iw_states_used": 10,
+        "iw_states_used": 23,
         "hofstede_states_used": 11
       }
     },
@@ -351,6 +696,11 @@
           "iso3": "VNM",
           "weight": 1.0,
           "role": "core"
+        },
+        {
+          "iso3": "PRK",
+          "weight": 0.5,
+          "role": "periphery"
         }
       ],
       "low_archetype_coverage": false,
@@ -541,17 +891,17 @@
     {
       "civilization_id": "latin_american",
       "mu_viz": [
-        -0.7555555555555556,
-        0.7388888888888889
+        -0.8331159452106016,
+        0.6767777348052719
       ],
       "sigma_viz": [
         [
-          0.14580246913580247,
-          0.05354938271604939
+          0.16120703598792338,
+          0.07359248668446987
         ],
         [
-          0.05354938271604939,
-          0.06709876543209878
+          0.07359248668446987,
+          0.09115268024358929
         ]
       ],
       "mu_score": [
@@ -615,29 +965,94 @@
           "iso3": "GTM",
           "weight": 1.0,
           "role": "core"
+        },
+        {
+          "iso3": "CRI",
+          "weight": 1.0,
+          "role": "core"
+        },
+        {
+          "iso3": "CUB",
+          "weight": 1.0,
+          "role": "core"
+        },
+        {
+          "iso3": "DOM",
+          "weight": 1.0,
+          "role": "core"
+        },
+        {
+          "iso3": "HND",
+          "weight": 1.0,
+          "role": "core"
+        },
+        {
+          "iso3": "HTI",
+          "weight": 0.5,
+          "role": "periphery"
+        },
+        {
+          "iso3": "NIC",
+          "weight": 1.0,
+          "role": "core"
+        },
+        {
+          "iso3": "PAN",
+          "weight": 1.0,
+          "role": "core"
+        },
+        {
+          "iso3": "PRY",
+          "weight": 1.0,
+          "role": "core"
+        },
+        {
+          "iso3": "SLV",
+          "weight": 1.0,
+          "role": "core"
+        },
+        {
+          "iso3": "GUY",
+          "weight": 0.5,
+          "role": "periphery"
+        },
+        {
+          "iso3": "SUR",
+          "weight": 0.5,
+          "role": "periphery"
+        },
+        {
+          "iso3": "PHL",
+          "weight": 0.5,
+          "role": "periphery"
+        },
+        {
+          "iso3": "TLS",
+          "weight": 0.5,
+          "role": "periphery"
         }
       ],
       "low_archetype_coverage": false,
-      "computed_from_n_states": 9,
+      "computed_from_n_states": 11,
       "evidence_basis": {
-        "iw_states_used": 9,
+        "iw_states_used": 11,
         "hofstede_states_used": 9
       }
     },
     {
       "civilization_id": "african",
       "mu_viz": [
-        -1.2208333333333334,
-        -0.39166666666666666
+        -1.1410546459656625,
+        -0.4123517621647565
       ],
       "sigma_viz": [
         [
-          0.10269097222222222,
-          0.04642361111111112
+          0.13516394113295355,
+          0.036894860405623175
         ],
         [
-          0.04642361111111112,
-          0.14993055555555554
+          0.036894860405623175,
+          0.12312258809400713
         ]
       ],
       "mu_score": [
@@ -691,12 +1106,147 @@
           "iso3": "ZMB",
           "weight": 0.5,
           "role": "periphery"
+        },
+        {
+          "iso3": "AGO",
+          "weight": 1.0,
+          "role": "core"
+        },
+        {
+          "iso3": "BDI",
+          "weight": 1.0,
+          "role": "core"
+        },
+        {
+          "iso3": "BEN",
+          "weight": 1.0,
+          "role": "core"
+        },
+        {
+          "iso3": "BWA",
+          "weight": 1.0,
+          "role": "core"
+        },
+        {
+          "iso3": "CAF",
+          "weight": 1.0,
+          "role": "core"
+        },
+        {
+          "iso3": "CMR",
+          "weight": 1.0,
+          "role": "core"
+        },
+        {
+          "iso3": "COD",
+          "weight": 1.0,
+          "role": "core"
+        },
+        {
+          "iso3": "COG",
+          "weight": 1.0,
+          "role": "core"
+        },
+        {
+          "iso3": "CPV",
+          "weight": 0.5,
+          "role": "periphery"
+        },
+        {
+          "iso3": "ERI",
+          "weight": 0.5,
+          "role": "periphery"
+        },
+        {
+          "iso3": "GAB",
+          "weight": 1.0,
+          "role": "core"
+        },
+        {
+          "iso3": "GNB",
+          "weight": 0.5,
+          "role": "periphery"
+        },
+        {
+          "iso3": "GNQ",
+          "weight": 1.0,
+          "role": "core"
+        },
+        {
+          "iso3": "LBR",
+          "weight": 1.0,
+          "role": "core"
+        },
+        {
+          "iso3": "LSO",
+          "weight": 1.0,
+          "role": "core"
+        },
+        {
+          "iso3": "MDG",
+          "weight": 0.5,
+          "role": "periphery"
+        },
+        {
+          "iso3": "MOZ",
+          "weight": 1.0,
+          "role": "core"
+        },
+        {
+          "iso3": "MWI",
+          "weight": 1.0,
+          "role": "core"
+        },
+        {
+          "iso3": "NAM",
+          "weight": 1.0,
+          "role": "core"
+        },
+        {
+          "iso3": "RWA",
+          "weight": 1.0,
+          "role": "core"
+        },
+        {
+          "iso3": "SSD",
+          "weight": 1.0,
+          "role": "core"
+        },
+        {
+          "iso3": "STP",
+          "weight": 0.5,
+          "role": "periphery"
+        },
+        {
+          "iso3": "SWZ",
+          "weight": 1.0,
+          "role": "core"
+        },
+        {
+          "iso3": "SYC",
+          "weight": 0.5,
+          "role": "periphery"
+        },
+        {
+          "iso3": "TGO",
+          "weight": 1.0,
+          "role": "core"
+        },
+        {
+          "iso3": "TZA",
+          "weight": 1.0,
+          "role": "core"
+        },
+        {
+          "iso3": "UGA",
+          "weight": 1.0,
+          "role": "core"
         }
       ],
       "low_archetype_coverage": false,
-      "computed_from_n_states": 7,
+      "computed_from_n_states": 9,
       "evidence_basis": {
-        "iw_states_used": 7,
+        "iw_states_used": 9,
         "hofstede_states_used": 7
       }
     },
@@ -791,6 +1341,61 @@
         },
         {
           "iso3": "FJI",
+          "weight": 1.0,
+          "role": "core"
+        },
+        {
+          "iso3": "FSM",
+          "weight": 1.0,
+          "role": "core"
+        },
+        {
+          "iso3": "KIR",
+          "weight": 1.0,
+          "role": "core"
+        },
+        {
+          "iso3": "MHL",
+          "weight": 1.0,
+          "role": "core"
+        },
+        {
+          "iso3": "NRU",
+          "weight": 1.0,
+          "role": "core"
+        },
+        {
+          "iso3": "PLW",
+          "weight": 1.0,
+          "role": "core"
+        },
+        {
+          "iso3": "PNG",
+          "weight": 1.0,
+          "role": "core"
+        },
+        {
+          "iso3": "SLB",
+          "weight": 1.0,
+          "role": "core"
+        },
+        {
+          "iso3": "TON",
+          "weight": 1.0,
+          "role": "core"
+        },
+        {
+          "iso3": "TUV",
+          "weight": 1.0,
+          "role": "core"
+        },
+        {
+          "iso3": "VUT",
+          "weight": 1.0,
+          "role": "core"
+        },
+        {
+          "iso3": "WSM",
           "weight": 1.0,
           "role": "core"
         }

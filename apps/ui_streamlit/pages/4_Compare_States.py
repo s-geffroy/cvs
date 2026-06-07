@@ -34,11 +34,24 @@ st.subheader("Radar B_score (Hofstede)")
 items = [{"civilization_id": s["iso3"], "mu_score": s["x_score"]} for s in selected_states]
 st.plotly_chart(charts.radar_score(items), use_container_width=True)
 
-st.subheader("Tableau B_viz (Inglehart-Welzel)")
+st.subheader("Tableau B_viz (Inglehart-Welzel) — avec provenance")
 viz_table = pd.DataFrame(
-    [{"iso3": s["iso3"], "TS": s["x_viz"][0], "SE": s["x_viz"][1]} for s in selected_states]
+    [
+        {
+            "iso3": s["iso3"],
+            "TS": s["x_viz"][0],
+            "SE": s["x_viz"][1],
+            "x_viz_provenance": s.get("data_quality", {}).get("x_viz_provenance", "—"),
+            "x_score_provenance": s.get("data_quality", {}).get("x_score_provenance", "—"),
+        }
+        for s in selected_states
+    ]
 )
 st.dataframe(viz_table, use_container_width=True)
+st.caption(
+    "Lire la colonne provenance avant toute interprétation : les valeurs `imputed_*` ou `centroid_prior` "
+    "ne sont pas des mesures directes. Cf. `docs/16_imputation_cascade.md`."
+)
 
 st.subheader("Distances Euclidiennes dans B_score")
 score_matrix = np.array([s["x_score"] for s in selected_states], dtype=float)

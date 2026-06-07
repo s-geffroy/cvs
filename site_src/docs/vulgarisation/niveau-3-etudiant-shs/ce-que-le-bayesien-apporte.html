@@ -134,11 +134,19 @@
 <li><strong>Fund For Peace FSI</strong> (Fragility States Index 2024)</li>
 </ul>
 <p>Les coefficients de corrélation de Spearman + intervalles de confiance bootstrap sont publiés en <a href="../../methodology/12_empirical_validation/">doc 12</a>.</p>
+<h2 id="quand-les-donnees-manquent-le-posterior-degenere-vers-le-prior">Quand les données manquent : le posterior <strong>dégénère</strong> vers le prior</h2>
+<p>Sur 193 États membres de l'ONU, seuls ~60 sont mesurés par WVS <em>et</em> Hofstede. Pour les ~130 autres, la cascade d'imputation de cvs (<a href="../../methodology/16_imputation_cascade/">doc 16</a>) procède en trois temps :</p>
+<ol>
+<li><strong>Observation directe</strong> quand elle existe ;</li>
+<li><strong>Calibration</strong> depuis une source corrélative publique (composition religieuse Pew, indicateurs de gouvernance WGI/FSI) si la régression est statistiquement défendable ;</li>
+<li><strong>Repli sur le centroïde de civilisation</strong> sinon — <code>x = μ(civ)</code> avec la covariance Σ(civ) intégralement reportée comme ellipse d'incertitude.</li>
+</ol>
+<p>Le tier 3 est strictement bayésien : sans observation, le posterior <strong>dégénère</strong> vers le prior. Ce n'est pas un bug, c'est exactement ce que dicte la règle de mise à jour. Chaque coordonnée publiée porte un champ <code>provenance</code> qui signale son tier — pour qu'un lecteur ne confonde jamais une mesure et un prior.</p>
 <h2 id="en-resume-trois-apports-du-bayesien">En résumé : trois apports du bayésien</h2>
 <ol>
 <li><strong>Un prior théorique explicite</strong> (Huntington), confronté aux données — pas un clustering aveugle.</li>
 <li><strong>Un mélange</strong> (pas une affectation dure) → publication de l'<strong>incertitude</strong> sous forme de vecteur de pourcentages.</li>
-<li><strong>Un second moment</strong> <code>M(s)</code> qui rend visible la <strong>dispersion intra-pays</strong> que les approches non-bayésiennes occultent.</li>
+<li><strong>Un second moment</strong> <code>M(s)</code> qui rend visible la <strong>dispersion intra-pays</strong> que les approches non-bayésiennes occultent. Sa diagonale est gonflée pour les États imputés afin que l'incertitude soit <em>visible</em> dans les invariants.</li>
 </ol>
 <h2 id="pour-aller-plus-loin">Pour aller plus loin</h2>
 <ul>

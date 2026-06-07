@@ -7,6 +7,170 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added — WVS Time-Series + Pew composition complète : tier `imputed_wvs_items` (2026-06-07, suite)
+
+- **WVS Time-Series 1981-2022 v5.0** (1.3 GB CSV téléchargé par l'utilisateur,
+  posé dans `data_sources/inglehart_welzel/wvs_time_series_1981_2022.csv`,
+  hors-tracking git via `.gitignore`).
+- **Extracteur** `apps/basis_builder/_wvs_extraction.py` — streame le CSV
+  (un milliard de cellules), agrège les **10 items de la factor analysis
+  Inglehart-Welzel** par pays par vague (Welzel 2013, ch. 2), résout les
+  codes COW alpha vers ISO3 (table de 80 mappings), et calibre une
+  **régression ridge sur les 57 États de l'intersection wave-7 officiel
+  ∩ WVS time-series** pour prédire `(ts, se)` sur les 36 États
+  additionnels présents seulement en waves 5-6. RMSE LOO : ts=0.38,
+  se=0.54.
+- **Nouveau tier `imputed_wvs_items`** dans la cascade (entre `observed`
+  et `imputed_pew`) — 30 États ONU supplémentaires gagnent un `x_viz`
+  méthodologiquement aligné sur la chaîne de calcul WVS, sans dépendre
+  des proxies religieux/économiques. `load_iw.py` lit
+  `cultural_map_pooled.json` quand il est présent.
+- **Pew composition complète** (`data_sources/pew/religious_composition_full_2020.csv`,
+  ~52 KB déposé par l'utilisateur). Extracteur
+  `apps/basis_builder/_pew_extraction.py` mappe les codes UN M49 vers
+  ISO3 (matching par nom + alias table) et produit
+  `religious_composition_full_2020.json` avec les **7 proportions**
+  (Christians, Muslims, Hindus, Buddhists, Jews, Unaffiliated, Other)
+  pour 182/193 États ONU. `load_pew.py` réécrit pour exposer
+  `PewProfile` avec ces 7 champs. `pew_to_iw.py` remplace les dummies
+  one-hot du `dominant_group` par les proportions directes — RMSE
+  pew_to_iw : ts 0.485 → 0.482, se 0.625 → 0.618.
+
+**Distribution finale de provenance** :
+
+| Tier | `x_viz` | `x_score` |
+|---|---|---|
+| `observed` (WVS wave-7 / Hofstede) | 60 | 52 |
+| `observed_with_dim_imputation` | — | 9 |
+| `imputed_wvs_items` (WVS 5-6 ridge) | **30** | — |
+| `imputed_pew` (Pew + UNDP + UN voting + V-Dem) | 103 | — |
+| `imputed_governance` (WGI + FSI + UNDP + UN voting + V-Dem) | — | 132 |
+| `centroid_prior` | **0** | **0** |
+
+Soit **90 / 193 États** avec un `x_viz` directement adossé à des
+données WVS (60 wave-7 officielles + 30 calibrées sur items WVS) — 47 %
+de la couverture observée vs 31 % avant l'extension WVS+Pew.
+
+### Added — Sources externes ingérées : zéro `centroid_prior` (2026-06-07, suite)
+
+Trois sources publiques étendues ingérées pour combler l'« angle mort »
+résiduel (États reposant sur le prior centroïde faute d'observation) :
+
+- **UNDP HDR 2025** (`data_sources/undp/`) — Composite Indices Time Series
+  téléchargé directement depuis `hdr.undp.org`. 193/193 États ONU pour HDI,
+  172/193 pour GII. Loader `apps/basis_builder/load_undp_hdr.py`. **À elle
+  seule, fait basculer 130 États de `centroid_prior` à `imputed_governance`
+  pour `x_score`**.
+- **UN voting Voeten/Strezhnev/Bailey** (`data_sources/un_voting/`) —
+  ideal-point estimates 1946-2025 téléchargés directement depuis Harvard
+  Dataverse (CC-0). 192/193 États ONU avec données 2025. Loader
+  `apps/basis_builder/load_un_voting.py`. **Élimine les 2 derniers
+  `centroid_prior` pour `x_viz` (MCO, PRK)**.
+- **V-Dem Varieties of Democracy** (`data_sources/vdem/`) — 12 indices
+  extraits depuis `vdem.RData` du package R officiel
+  (`vdeminstitute/vdemdata`, CC-BY 4.0), via `pyreadr` en container. 172/193
+  États ONU. Loader `apps/basis_builder/load_vdem.py`. Améliore les RMSE de
+  calibration (notamment SE axis : 0.731 → 0.625).
+
+Les régressions ridge `pew_to_iw` (axes IW) et `governance_to_hofstede`
+(6 dimensions Hofstede) sont étendues à 18 et 15 features respectivement,
+avec masking par-feature pour les sources manquantes (la moyenne du jeu
+d'entraînement remplace la valeur absente sans réduire l'intersection).
+
+**Résultat final** : sur 193 États ONU, distribution de provenance :
+
+| Tier | `x_viz` | `x_score` |
+|---|---|---|
+| `observed` | 60 | 52 |
+| `observed_with_dim_imputation` | 0 | 9 |
+| `imputed_pew` | 133 | 0 |
+| `imputed_governance` | 0 | 132 |
+| `centroid_prior` | **0** | **0** |
+
+L'angle mort coverage est supprimé. Améliorations futures = passer de
+`imputed_*` à `observed` en ingérant WVS waves 5+6 (~30 États
+supplémentaires en observé) et Pew composition complète — toutes deux à
+friction (inscription/403) et donc non automatisables.
+
+`data_sources/SOURCES.md` §7 mis à jour avec statut par source.
+
+### Added — Cascade d'imputation : un vecteur pour les 193 États ONU (2026-06-07)
+
+- **Cascade `observed` > `imputed_*` > `centroid_prior`** dans
+  `apps/basis_builder/projector.py` : pour chaque ISO3 ONU, la coordonnée
+  `x_viz` ∈ ℝ² et `x_score` ∈ ℝ⁶ est résolue selon trois tiers de qualité
+  décroissante. **Résultat : `state_coordinates.json` contient désormais
+  193 entrées non nulles** (vs. 70 auparavant ; vérifié par
+  `tests/test_imputation_cascade.py`).
+- **Taxonomie complétée aux 193 ONU** :
+  `taxonomies/macro_civilizations.v2.json` voit 121 nouveaux
+  `member_states` et 9 nouveaux `ambiguous_cases` injectés par
+  `apps/basis_builder/_taxonomy_completion.py` (heuristique déterministe
+  géographie + religion dominante + Huntington 1996). 187/193 ont un
+  `curated_civilization` direct ; 6 cas réellement ambigus (BIH, CIV, ISR,
+  KOR, LBN, TCD) restent en `ambiguous` avec `curated_civilizations_competing`.
+- **Loaders auxiliaires** : `apps/basis_builder/load_pew.py`,
+  `load_wgi.py`, `load_fsi.py` exposent les profils Pew, WGI et FSI sous
+  forme de `dataclass` consommables par la cascade.
+- **Modules de calibration** sous `packages/civvec_core/imputation/` :
+  - `pew_to_iw.py` — régression ridge Pew → (ts, se), validation LOO.
+  - `governance_to_hofstede.py` — six régressions ridge WGI+FSI → Hofstede 6D,
+    RMSE par dimension.
+  - `centroid_prior.py` — fallback `x = μ(civ)` avec covariance Σ(civ).
+- **`moments.py` tolère `x_score` imputé** : la diagonale de M(s) est
+  gonflée par `diag(σ_prior²)` (centroïde) ou `diag(RMSE_dim²)`
+  (imputation gouvernance). La décomposition exposée comprend désormais
+  `prior_variance_inflation`. Les 193 États produisent un M(s) fini.
+- **Nouveau chapitre méthodologique** `docs/16_imputation_cascade.md`
+  (miroir `site_src/docs/methodology/16_imputation_cascade.md`, ajouté à
+  la nav `mkdocs.yml`). Documentations 02, 08, 09, 11, 12, 15 amendées en
+  conséquence (stratification source-only, dégénérescence vers prior,
+  décomposition étendue, critique de circularité H28, stratification de
+  la validation empirique, glossaire de la cascade).
+- **Section « Provenance des coordonnées » dans le rapport de couverture**
+  (`apps/basis_builder/coverage_report.py`) — décompte par tier
+  (`observed`, `observed_with_dim_imputation`, `imputed_pew`,
+  `imputed_governance`, `centroid_prior`).
+- **Vulgarisation** : avertissements ajoutés dans
+  `site_src/vulgarisation_src/niveau-2-journaliste/ce-que-ces-chiffres-ne-disent-pas.md`
+  (« tous les pays ne sont pas mesurés ») et
+  `niveau-3-etudiant-shs/ce-que-le-bayesien-apporte.md` (« le posterior
+  dégénère vers le prior »).
+- **Tests** : `tests/test_imputation_cascade.py` — 7 tests garantissent
+  193 entrées, provenance dans les tiers connus, États observés non
+  dégradés, M(s) fini partout, inflation diagonale corrélée à la
+  provenance.
+- **Carte interactive** (`site_src/docs/assets/js/map.js`,
+  `site_src/templates/map_page.md.j2`) :
+  - nouveau mode de coloration « **Provenance (cascade)** » qui colore
+    chaque État selon le tier (`observed` bleu foncé → `imputed_*` orange
+    → `centroid_prior` gris) ;
+  - **opacité variable par tier** appliquée à tous les modes : les États
+    `centroid_prior` apparaissent volontairement estompés (opacité 0.42
+    vs 0.82 pour `observed`) pour signaler visuellement que leur position
+    n'est pas une mesure directe ;
+  - popup au clic enrichi des champs `x_viz_provenance`, `x_score_provenance`
+    et `fallback_civilization_id`, plus un avertissement quand au moins
+    une coordonnée est imputée ;
+  - **dézoom par défaut** : `zoom: 0.4`, `minZoom: 0.2` (au lieu de 1.2/1.0)
+    pour afficher le monde entier d'emblée sans coupure aux bords ;
+  - schémas et `civvec basis validate` étendus aux nouveaux champs
+    (`data_quality.x_viz_provenance`, `x_score_provenance`,
+    `x_score_sigma_prior`, `fallback_civilization_id`,
+    `prior_variance_inflation` dans `state_moments.json`).
+
+### Changed
+
+- `schemas/macro_civilizations.schema.json` : champs `bibliography[].url`
+  et `.license` acceptent désormais `null` (les livres comme Huntington
+  1996 n'ont pas d'URL canonique).
+- `apps/cli/basis.py::validate` valide maintenant 4 artefacts
+  (taxonomie + centroïdes + state_coordinates + state_moments) au lieu
+  de la seule taxonomie. Détection précoce des dérives de schéma.
+- `apps/ui_streamlit/pages/3_State_Explorer.py` et
+  `5_Diagnostics.py` affichent la provenance par État et les
+  distributions globales par tier.
+
 ### Added — Couverture complète des États ONU + noms en français (2026-06-02)
 
 - **Liste canonique des 193 États membres de l'ONU** dans

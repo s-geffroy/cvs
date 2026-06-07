@@ -37,6 +37,61 @@
   };
   const fallbackColor = '#cccccc';
 
+  const provenanceColorPalette = {
+    observed: '#08519c',
+    observed_with_dim_imputation: '#3182bd',
+    imputed_wvs_items: '#6baed6',
+    imputed_pew: '#fdae6b',
+    imputed_governance: '#e6550d',
+    centroid_prior: '#bdbdbd',
+    unresolved: fallbackColor
+  };
+
+  const provenanceLabels = {
+    observed: 'observé (sondage direct)',
+    observed_with_dim_imputation: 'observé (dimensions partiellement imputées)',
+    imputed_wvs_items: 'prédit depuis items WVS (waves 5-6, ridge sur wave-7)',
+    imputed_pew: 'imputé via Pew + UNDP + UN voting + V-Dem → IW',
+    imputed_governance: 'imputé via WGI + FSI + UNDP + UN voting + V-Dem → Hofstede',
+    centroid_prior: 'prior centroïde civilisationnel',
+    unresolved: 'non résolu'
+  };
+
+  const provenanceOpacity = {
+    observed: 0.82,
+    observed_with_dim_imputation: 0.72,
+    imputed_wvs_items: 0.72,
+    imputed_pew: 0.62,
+    imputed_governance: 0.62,
+    centroid_prior: 0.42,
+    unresolved: 0.25
+  };
+
+  function effectiveProvenance(stateEntry) {
+    if (!stateEntry || !stateEntry.data_quality) {
+      return 'unresolved';
+    }
+    const vizProvenance = stateEntry.data_quality.x_viz_provenance;
+    const scoreProvenance = stateEntry.data_quality.x_score_provenance;
+    const tierRanking = [
+      'centroid_prior',
+      'imputed_pew',
+      'imputed_governance',
+      'observed_with_dim_imputation',
+      'observed'
+    ];
+    let worstSeen = null;
+    let worstRank = tierRanking.length;
+    for (const candidate of [vizProvenance, scoreProvenance]) {
+      const rank = tierRanking.indexOf(candidate);
+      if (rank !== -1 && rank < worstRank) {
+        worstRank = rank;
+        worstSeen = candidate;
+      }
+    }
+    return worstSeen || 'unresolved';
+  }
+
   let currentDisplayMode = 'macro';
   const subClusterRegistry = new Map();
 
@@ -171,6 +226,11 @@
         feature.properties.sub_cluster_label = null;
         feature.properties.fill_color_macro = fallbackColor;
         feature.properties.fill_color_sub = fallbackColor;
+        feature.properties.fill_color_provenance = fallbackColor;
+        feature.properties.x_viz_provenance = 'unresolved';
+        feature.properties.x_score_provenance = 'unresolved';
+        feature.properties.effective_provenance = 'unresolved';
+        feature.properties.fill_opacity = provenanceOpacity.unresolved;
         continue;
       }
       const argmax = dominantCivilizationByAffinity(stateEntry.affinity_vector);
@@ -195,6 +255,14 @@
         });
       }
 
+      const stateProvenance = effectiveProvenance(stateEntry);
+      const fillColorProvenance =
+        provenanceColorPalette[stateProvenance] || fallbackColor;
+      const fillOpacity =
+        provenanceOpacity[stateProvenance] !== undefined
+          ? provenanceOpacity[stateProvenance]
+          : 0.78;
+
       feature.properties.curated_civilization = curatedCivilization;
       feature.properties.curated_role = stateEntry.curated_role || null;
       feature.properties.affinity_top_civilization = argmax.civilizationId;
@@ -205,6 +273,15 @@
       feature.properties.sub_cluster_label = subClusterLabel;
       feature.properties.fill_color_macro = fillColorMacro;
       feature.properties.fill_color_sub = fillColorSub;
+      feature.properties.fill_color_provenance = fillColorProvenance;
+      feature.properties.x_viz_provenance =
+        (stateEntry.data_quality && stateEntry.data_quality.x_viz_provenance) || 'unresolved';
+      feature.properties.x_score_provenance =
+        (stateEntry.data_quality && stateEntry.data_quality.x_score_provenance) || 'unresolved';
+      feature.properties.effective_provenance = stateProvenance;
+      feature.properties.fill_opacity = fillOpacity;
+      feature.properties.fallback_civilization_id =
+        (stateEntry.data_quality && stateEntry.data_quality.fallback_civilization_id) || null;
     }
     return geojsonCollection;
   }
@@ -222,6 +299,26 @@
   }
 
   function buildLegend(legendContainer, mode) {
+    if (mode === 'provenance') {
+      const parts = [
+        '<strong>Légende — provenance des coordonnées (cascade d\'imputation)</strong><br/>',
+        '<div style="margin-top:0.3em; font-size: 0.95em;">'
+      ];
+      for (const tier of Object.keys(provenanceColorPalette)) {
+        const color = provenanceColorPalette[tier];
+        const opacity = provenanceOpacity[tier] !== undefined ? provenanceOpacity[tier] : 1;
+        const label = provenanceLabels[tier];
+        parts.push(
+          `<div style="margin:0.15em 0;"><span style="display:inline-block;width:1.1em;height:1.1em;background:${color};opacity:${opacity};margin-right:0.4em;vertical-align:middle;border:1px solid #999;"></span><code>${tier}</code> — ${label}</div>`
+        );
+      }
+      parts.push('</div>');
+      parts.push(
+        '<div style="margin-top:0.4em; font-size: 0.85em;">L\'opacité reflète aussi le tier : les États non observés sont volontairement <em>estompés</em>. Cf. <a href="../methodology/16_imputation_cascade/">doc 16</a>.</div>'
+      );
+      legendContainer.innerHTML = parts.join('');
+      return;
+    }
     if (mode === 'sub') {
       const grouped = new Map();
       for (const entry of subClusterRegistry.values()) {
@@ -265,13 +362,24 @@
   }
 
   function applyDisplayMode(map, legendContainer, mode) {
-    currentDisplayMode = mode === 'sub' ? 'sub' : 'macro';
-    const propertyKey = currentDisplayMode === 'sub' ? 'fill_color_sub' : 'fill_color_macro';
+    const allowedModes = ['macro', 'sub', 'provenance'];
+    currentDisplayMode = allowedModes.includes(mode) ? mode : 'macro';
+    const propertyKeyByMode = {
+      macro: 'fill_color_macro',
+      sub: 'fill_color_sub',
+      provenance: 'fill_color_provenance'
+    };
+    const propertyKey = propertyKeyByMode[currentDisplayMode];
     if (map.getLayer('states-fill')) {
       map.setPaintProperty('states-fill', 'fill-color', [
         'coalesce',
         ['get', propertyKey],
         fallbackColor
+      ]);
+      map.setPaintProperty('states-fill', 'fill-opacity', [
+        'coalesce',
+        ['get', 'fill_opacity'],
+        0.78
       ]);
     }
     if (legendContainer) {
@@ -323,10 +431,10 @@
           }
         ]
       },
-      center: [10, 20],
-      zoom: 1.2,
+      center: [10, 15],
+      zoom: 0.4,
       maxZoom: 4,
-      minZoom: 1.0
+      minZoom: 0.2
     });
 
     let hoveredFeatureId = null;
@@ -343,7 +451,7 @@
         source: 'states',
         paint: {
           'fill-color': ['coalesce', ['get', 'fill_color_macro'], fallbackColor],
-          'fill-opacity': 0.78
+          'fill-opacity': ['coalesce', ['get', 'fill_opacity'], 0.78]
         }
       });
       map.addLayer({
@@ -400,13 +508,24 @@
         typeof affinityWeight === 'number' || (typeof affinityWeight === 'string' && affinityWeight !== '')
           ? Number(affinityWeight).toFixed(3)
           : '—';
+      const vizProvenance = properties.x_viz_provenance || 'unresolved';
+      const scoreProvenance = properties.x_score_provenance || 'unresolved';
+      const fallbackCivilization = properties.fallback_civilization_id;
+      const provenanceWarning =
+        vizProvenance !== 'observed' || !['observed', 'observed_with_dim_imputation'].includes(scoreProvenance)
+          ? '<div style="color:#b35900; font-size:0.85em; margin-top:0.3em;">⚠️ Au moins une coordonnée est <strong>imputée ou prior</strong> — n\'utilise pas comme mesure directe.</div>'
+          : '';
       const lines = [
         `<strong>${escapeHtml(nameFr)}</strong> <code>${escapeHtml(iso3)}</code> ${originBadge}`,
         `Civilisation : <code>${escapeHtml(effective)}</code>`,
         `Sous-ensemble : ${subLabel ? `<code>${escapeHtml(subLabel)}</code>` : '<em>—</em>'}`,
         `Curatée : ${curated ? `<code>${escapeHtml(curated)}</code> (${escapeHtml(curatedRole || '?')})` : '<em>aucune</em>'}`,
         `Argmax affinité : ${affinityCiv ? `<code>${escapeHtml(affinityCiv)}</code> (${weightDisplay})` : '<em>—</em>'}`,
-        '<em>Source géométrie : Natural Earth (domaine public)</em>'
+        `Provenance <code>x_viz</code> : <code>${escapeHtml(vizProvenance)}</code>`,
+        `Provenance <code>x_score</code> : <code>${escapeHtml(scoreProvenance)}</code>` +
+          (fallbackCivilization ? ` <small>(centroïde de repli : <code>${escapeHtml(fallbackCivilization)}</code>)</small>` : ''),
+        '<em>Source géométrie : Natural Earth (domaine public)</em>',
+        provenanceWarning
       ];
       new maplibregl.Popup()
         .setLngLat(clickEvent.lngLat)

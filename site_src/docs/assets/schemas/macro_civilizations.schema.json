@@ -28,8 +28,8 @@
           "id": { "type": "string" },
           "type": { "type": "string", "enum": ["book", "article", "dataset", "chapter", "report"] },
           "citation": { "type": "string" },
-          "url": { "type": "string" },
-          "license": { "type": "string" }
+          "url": { "type": ["string", "null"] },
+          "license": { "type": ["string", "null"] }
         }
       }
     },

@@ -75,7 +75,15 @@ def compute_second_moment(
     state: StateCoordinates,
     centroids: dict[str, CivilizationCentroid],
 ) -> StateSecondMoment | None:
-    """Return M(s) and derived quantities, or None if x_score is missing."""
+    """Return M(s) and derived quantities.
+
+    Under the imputation cascade, ``x_score`` is non-null for every UN
+    member state. When ``x_score_provenance != observed`` the diagonal of
+    ``M`` is inflated by the per-dimension prior variance
+    (``x_score_sigma_prior^2`` for ``centroid_prior``, the calibration RMSE
+    squared for ``imputed_governance``). This propagates the imputation
+    uncertainty rather than masquerading priors as hard observations.
+    """
     if any(coordinate_value is None for coordinate_value in state.x_score):
         return None
     x_score = np.array(state.x_score, dtype=float)
@@ -115,6 +123,15 @@ def compute_second_moment(
         weighted_barycentre - x_score, weighted_barycentre - x_score
     ) * weight_sum
 
+    sigma_prior = state.data_quality.get("x_score_sigma_prior")
+    if sigma_prior is not None:
+        prior_variance_inflation = np.diag(
+            np.square(np.array(sigma_prior, dtype=float))
+        )
+        moment_matrix = moment_matrix + prior_variance_inflation
+    else:
+        prior_variance_inflation = np.zeros((6, 6), dtype=float)
+
     eigenvalues, eigenvectors = np.linalg.eigh(moment_matrix)
     ordering = np.argsort(eigenvalues)[::-1]
     eigenvalues = eigenvalues[ordering]
@@ -150,15 +167,22 @@ def compute_second_moment(
             "monocivilizational": is_monocivilizational,
             "low_evidence": bool(state.data_quality.get("low_evidence", False)),
             "computed_from_imputed": state.data_quality.get(
-                "hofstede_coverage"
-            ) == "imputed",
+                "x_score_provenance"
+            )
+            in ("imputed_governance", "centroid_prior"),
+            "x_score_provenance": state.data_quality.get(
+                "x_score_provenance", "unknown"
+            ),
+            "diagonal_inflated_by_prior": sigma_prior is not None,
         },
         decomposition={
             "weighted_barycentre_mu_bar": weighted_barycentre.tolist(),
             "intra_civilizational_covariance": intra_covariance.tolist(),
             "bias_term": bias_term.tolist(),
+            "prior_variance_inflation": prior_variance_inflation.tolist(),
             "trace_intra": float(np.trace(intra_covariance)),
             "trace_bias": float(np.trace(bias_term)),
+            "trace_prior_inflation": float(np.trace(prior_variance_inflation)),
         },
     )
 

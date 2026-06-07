@@ -1,0 +1,1008 @@
+{
+  "_meta": {
+    "source": "WVS Time-Series 1981-2022 (v5.0) — Inglehart-Welzel cultural map coordinates",
+    "url": "https://www.worldvaluessurvey.org/WVSDocumentationWVL.jsp",
+    "license": "CC-BY 4.0 (non-commercial usage, citation required)",
+    "citation": "Inglehart, Haerpfer, Moreno, Welzel et al. (2022). World Values Survey: All Rounds — Country-Pooled Datafile. Dataset Version 3.0.0. doi:10.14281/18241.17",
+    "extraction_policy": "Latest wave (5-7) per country. Wave-7 countries already in cultural_map_wave7.json are kept verbatim ('source': 'wvs_wave7_official'). Countries observed only in waves 5-6 receive predicted (ts, se) from a ridge regression calibrated on the wave-7 intersection ('source': 'wvs_waveX_predicted_from_items').",
+    "calibration_metadata": {
+      "training_n": 57,
+      "rmse_ts_loo": 0.376159697964341,
+      "rmse_se_loo": 0.5416350106854405,
+      "items_used": [
+        "A006",
+        "F063",
+        "E018",
+        "G006",
+        "F120",
+        "A008",
+        "A165",
+        "Y011",
+        "E035",
+        "F118"
+      ]
+    }
+  },
+  "countries": [
+    {
+      "iso3": "AND",
+      "ts": 0.799499018912177,
+      "se": 1.6451723169253896,
+      "ts_ci": 0.376159697964341,
+      "se_ci": 0.5416350106854405,
+      "n": null,
+      "wave": 7,
+      "source": "wvs_wave7_predicted_from_items"
+    },
+    {
+      "iso3": "ARG",
+      "ts": -0.6,
+      "se": 0.65,
+      "ts_ci": 0.18,
+      "se_ci": 0.18,
+      "n": 1003,
+      "wave": 7,
+      "source": "wvs_wave7_official"
+    },
+    {
+      "iso3": "ARM",
+      "ts": -1.2138937457382806,
+      "se": -0.9085514929770335,
+      "ts_ci": 0.376159697964341,
+      "se_ci": 0.5416350106854405,
+      "n": null,
+      "wave": 7,
+      "source": "wvs_wave7_predicted_from_items"
+    },
+    {
+      "iso3": "AUS",
+      "ts": 0.5,
+      "se": 1.65,
+      "ts_ci": 0.15,
+      "se_ci": 0.15,
+      "n": 1813,
+      "wave": 7,
+      "source": "wvs_wave7_official"
+    },
+    {
+      "iso3": "AZE",
+      "ts": -0.7497667043989784,
+      "se": -0.6268133983420974,
+      "ts_ci": 0.376159697964341,
+      "se_ci": 0.5416350106854405,
+      "n": null,
+      "wave": 6,
+      "source": "wvs_wave6_predicted_from_items"
+    },
+    {
+      "iso3": "BFA",
+      "ts": -1.208462206556742,
+      "se": -0.7800882127719005,
+      "ts_ci": 0.376159697964341,
+      "se_ci": 0.5416350106854405,
+      "n": null,
+      "wave": 5,
+      "source": "wvs_wave5_predicted_from_items"
+    },
+    {
+      "iso3": "BGD",
+      "ts": -1.05,
+      "se": -0.65,
+      "ts_ci": 0.2,
+      "se_ci": 0.2,
+      "n": 1200,
+      "wave": 7,
+      "source": "wvs_wave7_official"
+    },
+    {
+      "iso3": "BGR",
+      "ts": -0.25,
+      "se": -0.95,
+      "ts_ci": 0.18,
+      "se_ci": 0.18,
+      "n": 1577,
+      "wave": 7,
+      "source": "wvs_wave7_official"
+    },
+    {
+      "iso3": "BLR",
+      "ts": 0.45,
+      "se": -1.2,
+      "ts_ci": 0.18,
+      "se_ci": 0.18,
+      "n": 1548,
+      "wave": 7,
+      "source": "wvs_wave7_official"
+    },
+    {
+      "iso3": "BOL",
+      "ts": -1.1,
+      "se": 0.05,
+      "ts_ci": 0.22,
+      "se_ci": 0.22,
+      "n": 2000,
+      "wave": 7,
+      "source": "wvs_wave7_official"
+    },
+    {
+      "iso3": "BRA",
+      "ts": -1.05,
+      "se": 0.85,
+      "ts_ci": 0.15,
+      "se_ci": 0.15,
+      "n": 1762,
+      "wave": 7,
+      "source": "wvs_wave7_official"
+    },
+    {
+      "iso3": "CAN",
+      "ts": 0.55,
+      "se": 1.7,
+      "ts_ci": 0.15,
+      "se_ci": 0.15,
+      "n": 4018,
+      "wave": 7,
+      "source": "wvs_wave7_official"
+    },
+    {
+      "iso3": "CHE",
+      "ts": 0.5266611495000928,
+      "se": 1.9911917131558858,
+      "ts_ci": 0.376159697964341,
+      "se_ci": 0.5416350106854405,
+      "n": null,
+      "wave": 5,
+      "source": "wvs_wave5_predicted_from_items"
+    },
+    {
+      "iso3": "CHL",
+      "ts": -0.2,
+      "se": 0.85,
+      "ts_ci": 0.18,
+      "se_ci": 0.18,
+      "n": 1000,
+      "wave": 7,
+      "source": "wvs_wave7_official"
+    },
+    {
+      "iso3": "CHN",
+      "ts": 0.75,
+      "se": -0.95,
+      "ts_ci": 0.18,
+      "se_ci": 0.18,
+      "n": 3036,
+      "wave": 7,
+      "source": "wvs_wave7_official"
+    },
+    {
+      "iso3": "COL",
+      "ts": -0.9,
+      "se": 1.1,
+      "ts_ci": 0.18,
+      "se_ci": 0.18,
+      "n": 1520,
+      "wave": 7,
+      "source": "wvs_wave7_official"
+    },
+    {
+      "iso3": "CYP",
+      "ts": -0.4572790787717894,
+      "se": 0.2783715145654528,
+      "ts_ci": 0.376159697964341,
+      "se_ci": 0.5416350106854405,
+      "n": null,
+      "wave": 7,
+      "source": "wvs_wave7_predicted_from_items"
+    },
+    {
+      "iso3": "CZE",
+      "ts": 1.1707295928088732,
+      "se": 0.7661023825746716,
+      "ts_ci": 0.376159697964341,
+      "se_ci": 0.5416350106854405,
+      "n": null,
+      "wave": 7,
+      "source": "wvs_wave7_predicted_from_items"
+    },
+    {
+      "iso3": "DEU",
+      "ts": 1.4,
+      "se": 1.15,
+      "ts_ci": 0.15,
+      "se_ci": 0.15,
+      "n": 1528,
+      "wave": 7,
+      "source": "wvs_wave7_official"
+    },
+    {
+      "iso3": "DNK",
+      "ts": 1.5,
+      "se": 2.2,
+      "ts_ci": 0.15,
+      "se_ci": 0.15,
+      "n": 3362,
+      "wave": 7,
+      "source": "wvs_wave7_official"
+    },
+    {
+      "iso3": "DZA",
+      "ts": -1.144359385600218,
+      "se": -0.5239490914161411,
+      "ts_ci": 0.376159697964341,
+      "se_ci": 0.5416350106854405,
+      "n": null,
+      "wave": 6,
+      "source": "wvs_wave6_predicted_from_items"
+    },
+    {
+      "iso3": "ECU",
+      "ts": -1.05,
+      "se": 0.3,
+      "ts_ci": 0.22,
+      "se_ci": 0.22,
+      "n": 1200,
+      "wave": 7,
+      "source": "wvs_wave7_official"
+    },
+    {
+      "iso3": "EGY",
+      "ts": -1.55,
+      "se": -1.2,
+      "ts_ci": 0.2,
+      "se_ci": 0.2,
+      "n": 1200,
+      "wave": 7,
+      "source": "wvs_wave7_official"
+    },
+    {
+      "iso3": "ESP",
+      "ts": 0.65,
+      "se": 0.95,
+      "ts_ci": 0.15,
+      "se_ci": 0.15,
+      "n": 1209,
+      "wave": 7,
+      "source": "wvs_wave7_official"
+    },
+    {
+      "iso3": "EST",
+      "ts": 1.1303563141728472,
+      "se": -0.34150792729263213,
+      "ts_ci": 0.376159697964341,
+      "se_ci": 0.5416350106854405,
+      "n": null,
+      "wave": 6,
+      "source": "wvs_wave6_predicted_from_items"
+    },
+    {
+      "iso3": "ETH",
+      "ts": -1.1,
+      "se": -0.65,
+      "ts_ci": 0.22,
+      "se_ci": 0.22,
+      "n": 1500,
+      "wave": 7,
+      "source": "wvs_wave7_official"
+    },
+    {
+      "iso3": "FIN",
+      "ts": 0.9,
+      "se": 1.5,
+      "ts_ci": 0.15,
+      "se_ci": 0.15,
+      "n": 1200,
+      "wave": 7,
+      "source": "wvs_wave7_official"
+    },
+    {
+      "iso3": "FJI",
+      "ts": -0.8,
+      "se": 0.4,
+      "ts_ci": 0.3,
+      "se_ci": 0.3,
+      "n": null,
+      "wave": 7,
+      "source": "wvs_wave7_official"
+    },
+    {
+      "iso3": "FRA",
+      "ts": 1.2,
+      "se": 1.45,
+      "ts_ci": 0.15,
+      "se_ci": 0.15,
+      "n": 1870,
+      "wave": 7,
+      "source": "wvs_wave7_official"
+    },
+    {
+      "iso3": "GBR",
+      "ts": 0.85,
+      "se": 1.5,
+      "ts_ci": 0.15,
+      "se_ci": 0.15,
+      "n": 2609,
+      "wave": 7,
+      "source": "wvs_wave7_official"
+    },
+    {
+      "iso3": "GEO",
+      "ts": -1.2517657640174307,
+      "se": -0.9974213824285947,
+      "ts_ci": 0.376159697964341,
+      "se_ci": 0.5416350106854405,
+      "n": null,
+      "wave": 6,
+      "source": "wvs_wave6_predicted_from_items"
+    },
+    {
+      "iso3": "GHA",
+      "ts": -1.45,
+      "se": 0.2,
+      "ts_ci": 0.22,
+      "se_ci": 0.22,
+      "n": 1552,
+      "wave": 7,
+      "source": "wvs_wave7_official"
+    },
+    {
+      "iso3": "GRC",
+      "ts": -0.1,
+      "se": 0.05,
+      "ts_ci": 0.18,
+      "se_ci": 0.18,
+      "n": 1200,
+      "wave": 7,
+      "source": "wvs_wave7_official"
+    },
+    {
+      "iso3": "GTM",
+      "ts": -1.25,
+      "se": 0.3,
+      "ts_ci": 0.22,
+      "se_ci": 0.22,
+      "n": 1203,
+      "wave": 7,
+      "source": "wvs_wave7_official"
+    },
+    {
+      "iso3": "HKG",
+      "ts": 0.5,
+      "se": 0.0,
+      "ts_ci": 0.2,
+      "se_ci": 0.2,
+      "n": 1000,
+      "wave": 7,
+      "source": "wvs_wave7_official"
+    },
+    {
+      "iso3": "HUN",
+      "ts": 0.4314418573606771,
+      "se": 0.048045949852679626,
+      "ts_ci": 0.376159697964341,
+      "se_ci": 0.5416350106854405,
+      "n": null,
+      "wave": 5,
+      "source": "wvs_wave5_predicted_from_items"
+    },
+    {
+      "iso3": "IDN",
+      "ts": -1.1,
+      "se": -0.3,
+      "ts_ci": 0.2,
+      "se_ci": 0.2,
+      "n": 3200,
+      "wave": 7,
+      "source": "wvs_wave7_official"
+    },
+    {
+      "iso3": "IND",
+      "ts": -0.6,
+      "se": -0.2,
+      "ts_ci": 0.18,
+      "se_ci": 0.18,
+      "n": 2092,
+      "wave": 7,
+      "source": "wvs_wave7_official"
+    },
+    {
+      "iso3": "IRL",
+      "ts": 0.1,
+      "se": 1.1,
+      "ts_ci": 0.15,
+      "se_ci": 0.15,
+      "n": 1100,
+      "wave": 7,
+      "source": "wvs_wave7_official"
+    },
+    {
+      "iso3": "IRN",
+      "ts": -1.1,
+      "se": -0.4,
+      "ts_ci": 0.18,
+      "se_ci": 0.18,
+      "n": 1499,
+      "wave": 7,
+      "source": "wvs_wave7_official"
+    },
+    {
+      "iso3": "IRQ",
+      "ts": -1.45,
+      "se": -1.15,
+      "ts_ci": 0.22,
+      "se_ci": 0.22,
+      "n": 1200,
+      "wave": 7,
+      "source": "wvs_wave7_official"
+    },
+    {
+      "iso3": "ITA",
+      "ts": 0.4,
+      "se": 0.85,
+      "ts_ci": 0.15,
+      "se_ci": 0.15,
+      "n": 1392,
+      "wave": 7,
+      "source": "wvs_wave7_official"
+    },
+    {
+      "iso3": "JOR",
+      "ts": -1.3,
+      "se": -1.05,
+      "ts_ci": 0.2,
+      "se_ci": 0.2,
+      "n": 1203,
+      "wave": 7,
+      "source": "wvs_wave7_official"
+    },
+    {
+      "iso3": "JPN",
+      "ts": 1.95,
+      "se": 0.45,
+      "ts_ci": 0.15,
+      "se_ci": 0.15,
+      "n": 1353,
+      "wave": 7,
+      "source": "wvs_wave7_official"
+    },
+    {
+      "iso3": "KAZ",
+      "ts": -0.11403331841069522,
+      "se": -0.5389832608694916,
+      "ts_ci": 0.376159697964341,
+      "se_ci": 0.5416350106854405,
+      "n": null,
+      "wave": 7,
+      "source": "wvs_wave7_predicted_from_items"
+    },
+    {
+      "iso3": "KEN",
+      "ts": -1.55,
+      "se": -0.65,
+      "ts_ci": 0.22,
+      "se_ci": 0.22,
+      "n": 1266,
+      "wave": 7,
+      "source": "wvs_wave7_official"
+    },
+    {
+      "iso3": "KGZ",
+      "ts": -1.0109115581927273,
+      "se": -0.5549119964106219,
+      "ts_ci": 0.376159697964341,
+      "se_ci": 0.5416350106854405,
+      "n": null,
+      "wave": 7,
+      "source": "wvs_wave7_predicted_from_items"
+    },
+    {
+      "iso3": "KOR",
+      "ts": 1.65,
+      "se": 0.55,
+      "ts_ci": 0.15,
+      "se_ci": 0.15,
+      "n": 1245,
+      "wave": 7,
+      "source": "wvs_wave7_official"
+    },
+    {
+      "iso3": "KWT",
+      "ts": -1.0366483134371047,
+      "se": 0.061559749258004115,
+      "ts_ci": 0.376159697964341,
+      "se_ci": 0.5416350106854405,
+      "n": null,
+      "wave": 6,
+      "source": "wvs_wave6_predicted_from_items"
+    },
+    {
+      "iso3": "LBN",
+      "ts": -1.0664755787933407,
+      "se": -0.44791665965180527,
+      "ts_ci": 0.376159697964341,
+      "se_ci": 0.5416350106854405,
+      "n": null,
+      "wave": 7,
+      "source": "wvs_wave7_predicted_from_items"
+    },
+    {
+      "iso3": "LBY",
+      "ts": -1.5868268081425625,
+      "se": -0.7945249628286569,
+      "ts_ci": 0.376159697964341,
+      "se_ci": 0.5416350106854405,
+      "n": null,
+      "wave": 7,
+      "source": "wvs_wave7_predicted_from_items"
+    },
+    {
+      "iso3": "MAR",
+      "ts": -1.15,
+      "se": -0.95,
+      "ts_ci": 0.2,
+      "se_ci": 0.2,
+      "n": 1200,
+      "wave": 7,
+      "source": "wvs_wave7_official"
+    },
+    {
+      "iso3": "MAU",
+      "ts": 0.9837053327592109,
+      "se": 0.32392455895228983,
+      "ts_ci": 0.376159697964341,
+      "se_ci": 0.5416350106854405,
+      "n": null,
+      "wave": 7,
+      "source": "wvs_wave7_predicted_from_items"
+    },
+    {
+      "iso3": "MDG",
+      "ts": -1.3468456739707217,
+      "se": -0.6161975092943501,
+      "ts_ci": 0.376159697964341,
+      "se_ci": 0.5416350106854405,
+      "n": null,
+      "wave": 7,
+      "source": "wvs_wave7_predicted_from_items"
+    },
+    {
+      "iso3": "MEX",
+      "ts": -0.8,
+      "se": 0.7,
+      "ts_ci": 0.18,
+      "se_ci": 0.18,
+      "n": 1739,
+      "wave": 7,
+      "source": "wvs_wave7_official"
+    },
+    {
+      "iso3": "MLD",
+      "ts": -0.2789893843701323,
+      "se": -0.9083038977707614,
+      "ts_ci": 0.376159697964341,
+      "se_ci": 0.5416350106854405,
+      "n": null,
+      "wave": 5,
+      "source": "wvs_wave5_predicted_from_items"
+    },
+    {
+      "iso3": "MLI",
+      "ts": -1.2476296883602722,
+      "se": -0.26622323993291697,
+      "ts_ci": 0.376159697964341,
+      "se_ci": 0.5416350106854405,
+      "n": null,
+      "wave": 5,
+      "source": "wvs_wave5_predicted_from_items"
+    },
+    {
+      "iso3": "MMR",
+      "ts": -0.5,
+      "se": -0.05,
+      "ts_ci": 0.22,
+      "se_ci": 0.22,
+      "n": 1200,
+      "wave": 7,
+      "source": "wvs_wave7_official"
+    },
+    {
+      "iso3": "MNG",
+      "ts": -0.2,
+      "se": -0.65,
+      "ts_ci": 0.2,
+      "se_ci": 0.2,
+      "n": 1228,
+      "wave": 7,
+      "source": "wvs_wave7_official"
+    },
+    {
+      "iso3": "MON",
+      "ts": 0.6093063153059828,
+      "se": -0.3243984165318418,
+      "ts_ci": 0.376159697964341,
+      "se_ci": 0.5416350106854405,
+      "n": null,
+      "wave": 7,
+      "source": "wvs_wave7_predicted_from_items"
+    },
+    {
+      "iso3": "MYS",
+      "ts": -0.95,
+      "se": -0.2,
+      "ts_ci": 0.2,
+      "se_ci": 0.2,
+      "n": 1313,
+      "wave": 7,
+      "source": "wvs_wave7_official"
+    },
+    {
+      "iso3": "NGA",
+      "ts": -1.45,
+      "se": -0.9,
+      "ts_ci": 0.2,
+      "se_ci": 0.2,
+      "n": 1237,
+      "wave": 7,
+      "source": "wvs_wave7_official"
+    },
+    {
+      "iso3": "NIC",
+      "ts": -1.2763576222549435,
+      "se": 0.11247474933723955,
+      "ts_ci": 0.376159697964341,
+      "se_ci": 0.5416350106854405,
+      "n": null,
+      "wave": 7,
+      "source": "wvs_wave7_predicted_from_items"
+    },
+    {
+      "iso3": "NLD",
+      "ts": 1.45,
+      "se": 1.65,
+      "ts_ci": 0.15,
+      "se_ci": 0.15,
+      "n": 1901,
+      "wave": 7,
+      "source": "wvs_wave7_official"
+    },
+    {
+      "iso3": "NOR",
+      "ts": 1.55,
+      "se": 2.3,
+      "ts_ci": 0.15,
+      "se_ci": 0.15,
+      "n": 1122,
+      "wave": 7,
+      "source": "wvs_wave7_official"
+    },
+    {
+      "iso3": "NZL",
+      "ts": 0.65,
+      "se": 1.85,
+      "ts_ci": 0.15,
+      "se_ci": 0.15,
+      "n": 1057,
+      "wave": 7,
+      "source": "wvs_wave7_official"
+    },
+    {
+      "iso3": "PAK",
+      "ts": -1.3,
+      "se": -0.95,
+      "ts_ci": 0.2,
+      "se_ci": 0.2,
+      "n": 1995,
+      "wave": 7,
+      "source": "wvs_wave7_official"
+    },
+    {
+      "iso3": "PER",
+      "ts": -0.85,
+      "se": 0.4,
+      "ts_ci": 0.2,
+      "se_ci": 0.2,
+      "n": 1400,
+      "wave": 7,
+      "source": "wvs_wave7_official"
+    },
+    {
+      "iso3": "PHL",
+      "ts": -1.342719604912746,
+      "se": 0.6873829322362293,
+      "ts_ci": 0.376159697964341,
+      "se_ci": 0.5416350106854405,
+      "n": null,
+      "wave": 7,
+      "source": "wvs_wave7_predicted_from_items"
+    },
+    {
+      "iso3": "POL",
+      "ts": -0.4756188774250991,
+      "se": 0.07706901195716254,
+      "ts_ci": 0.376159697964341,
+      "se_ci": 0.5416350106854405,
+      "n": null,
+      "wave": 6,
+      "source": "wvs_wave6_predicted_from_items"
+    },
+    {
+      "iso3": "PRI",
+      "ts": -1.2104480655469283,
+      "se": 1.0266216972345654,
+      "ts_ci": 0.376159697964341,
+      "se_ci": 0.5416350106854405,
+      "n": null,
+      "wave": 7,
+      "source": "wvs_wave7_predicted_from_items"
+    },
+    {
+      "iso3": "PSE",
+      "ts": -1.2635225103979055,
+      "se": -0.8516650655597093,
+      "ts_ci": 0.376159697964341,
+      "se_ci": 0.5416350106854405,
+      "n": null,
+      "wave": 6,
+      "source": "wvs_wave6_predicted_from_items"
+    },
+    {
+      "iso3": "QAT",
+      "ts": -1.6192828776708146,
+      "se": -0.5011618100148305,
+      "ts_ci": 0.376159697964341,
+      "se_ci": 0.5416350106854405,
+      "n": null,
+      "wave": 6,
+      "source": "wvs_wave6_predicted_from_items"
+    },
+    {
+      "iso3": "ROM",
+      "ts": -0.7375441681803743,
+      "se": -0.7476187509706205,
+      "ts_ci": 0.376159697964341,
+      "se_ci": 0.5416350106854405,
+      "n": null,
+      "wave": 7,
+      "source": "wvs_wave7_predicted_from_items"
+    },
+    {
+      "iso3": "ROU",
+      "ts": -0.35,
+      "se": -0.4,
+      "ts_ci": 0.18,
+      "se_ci": 0.18,
+      "n": 1257,
+      "wave": 7,
+      "source": "wvs_wave7_official"
+    },
+    {
+      "iso3": "RUS",
+      "ts": 0.05,
+      "se": -1.05,
+      "ts_ci": 0.15,
+      "se_ci": 0.15,
+      "n": 1810,
+      "wave": 7,
+      "source": "wvs_wave7_official"
+    },
+    {
+      "iso3": "RWA",
+      "ts": -0.559487007757107,
+      "se": -0.4345394615884985,
+      "ts_ci": 0.376159697964341,
+      "se_ci": 0.5416350106854405,
+      "n": null,
+      "wave": 6,
+      "source": "wvs_wave6_predicted_from_items"
+    },
+    {
+      "iso3": "SGP",
+      "ts": 0.3,
+      "se": -0.4,
+      "ts_ci": 0.18,
+      "se_ci": 0.18,
+      "n": 2012,
+      "wave": 7,
+      "source": "wvs_wave7_official"
+    },
+    {
+      "iso3": "SRB",
+      "ts": 0.15,
+      "se": -0.65,
+      "ts_ci": 0.18,
+      "se_ci": 0.18,
+      "n": 1200,
+      "wave": 7,
+      "source": "wvs_wave7_official"
+    },
+    {
+      "iso3": "SVK",
+      "ts": 0.2705265733062799,
+      "se": 0.09081426116569002,
+      "ts_ci": 0.376159697964341,
+      "se_ci": 0.5416350106854405,
+      "n": null,
+      "wave": 7,
+      "source": "wvs_wave7_predicted_from_items"
+    },
+    {
+      "iso3": "SVN",
+      "ts": 0.9167850734111864,
+      "se": 0.6663759233796054,
+      "ts_ci": 0.376159697964341,
+      "se_ci": 0.5416350106854405,
+      "n": null,
+      "wave": 6,
+      "source": "wvs_wave6_predicted_from_items"
+    },
+    {
+      "iso3": "SWE",
+      "ts": 1.78,
+      "se": 2.35,
+      "ts_ci": 0.15,
+      "se_ci": 0.15,
+      "n": 1186,
+      "wave": 7,
+      "source": "wvs_wave7_official"
+    },
+    {
+      "iso3": "THA",
+      "ts": -0.2,
+      "se": 0.2,
+      "ts_ci": 0.2,
+      "se_ci": 0.2,
+      "n": 1500,
+      "wave": 7,
+      "source": "wvs_wave7_official"
+    },
+    {
+      "iso3": "TJK",
+      "ts": -1.0695570852255156,
+      "se": 0.30549211533933507,
+      "ts_ci": 0.376159697964341,
+      "se_ci": 0.5416350106854405,
+      "n": null,
+      "wave": 7,
+      "source": "wvs_wave7_predicted_from_items"
+    },
+    {
+      "iso3": "TTO",
+      "ts": -1.4037221023824422,
+      "se": -0.46145830149186406,
+      "ts_ci": 0.376159697964341,
+      "se_ci": 0.5416350106854405,
+      "n": null,
+      "wave": 6,
+      "source": "wvs_wave6_predicted_from_items"
+    },
+    {
+      "iso3": "TUN",
+      "ts": -1.004625949058281,
+      "se": -1.1826613981448144,
+      "ts_ci": 0.376159697964341,
+      "se_ci": 0.5416350106854405,
+      "n": null,
+      "wave": 7,
+      "source": "wvs_wave7_predicted_from_items"
+    },
+    {
+      "iso3": "TUR",
+      "ts": -0.85,
+      "se": -0.65,
+      "ts_ci": 0.18,
+      "se_ci": 0.18,
+      "n": 2415,
+      "wave": 7,
+      "source": "wvs_wave7_official"
+    },
+    {
+      "iso3": "TWN",
+      "ts": 0.85,
+      "se": 0.85,
+      "ts_ci": 0.18,
+      "se_ci": 0.18,
+      "n": 1223,
+      "wave": 7,
+      "source": "wvs_wave7_official"
+    },
+    {
+      "iso3": "UKR",
+      "ts": 0.2,
+      "se": -0.85,
+      "ts_ci": 0.18,
+      "se_ci": 0.18,
+      "n": 1289,
+      "wave": 7,
+      "source": "wvs_wave7_official"
+    },
+    {
+      "iso3": "URY",
+      "ts": -0.05,
+      "se": 1.1,
+      "ts_ci": 0.2,
+      "se_ci": 0.2,
+      "n": 1000,
+      "wave": 7,
+      "source": "wvs_wave7_official"
+    },
+    {
+      "iso3": "USA",
+      "ts": -0.1,
+      "se": 1.55,
+      "ts_ci": 0.15,
+      "se_ci": 0.15,
+      "n": 2596,
+      "wave": 7,
+      "source": "wvs_wave7_official"
+    },
+    {
+      "iso3": "UZB",
+      "ts": -0.8038242037711014,
+      "se": 0.3877826869691472,
+      "ts_ci": 0.376159697964341,
+      "se_ci": 0.5416350106854405,
+      "n": null,
+      "wave": 7,
+      "source": "wvs_wave7_predicted_from_items"
+    },
+    {
+      "iso3": "VEN",
+      "ts": -1.1,
+      "se": 0.7,
+      "ts_ci": 0.22,
+      "se_ci": 0.22,
+      "n": 1200,
+      "wave": 7,
+      "source": "wvs_wave7_official"
+    },
+    {
+      "iso3": "VNM",
+      "ts": 0.05,
+      "se": -0.2,
+      "ts_ci": 0.2,
+      "se_ci": 0.2,
+      "n": 1200,
+      "wave": 7,
+      "source": "wvs_wave7_official"
+    },
+    {
+      "iso3": "YEM",
+      "ts": -1.4812004654400512,
+      "se": -0.7693651982126952,
+      "ts_ci": 0.376159697964341,
+      "se_ci": 0.5416350106854405,
+      "n": null,
+      "wave": 6,
+      "source": "wvs_wave6_predicted_from_items"
+    },
+    {
+      "iso3": "ZAF",
+      "ts": -0.6,
+      "se": 0.0,
+      "ts_ci": 0.2,
+      "se_ci": 0.2,
+      "n": 3531,
+      "wave": 7,
+      "source": "wvs_wave7_official"
+    },
+    {
+      "iso3": "ZMB",
+      "ts": -1.2,
+      "se": -0.3,
+      "ts_ci": 0.25,
+      "se_ci": 0.25,
+      "n": 1500,
+      "wave": 7,
+      "source": "wvs_wave7_official"
+    },
+    {
+      "iso3": "ZWE",
+      "ts": -1.15,
+      "se": -0.4,
+      "ts_ci": 0.25,
+      "se_ci": 0.25,
+      "n": 1200,
+      "wave": 7,
+      "source": "wvs_wave7_official"
+    }
+  ]
+}

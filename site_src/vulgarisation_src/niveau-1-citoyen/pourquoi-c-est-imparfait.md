@@ -8,9 +8,9 @@ cvs est imparfait. Personne ne le cache. Cette page liste **les 6 limites princi
 
 Les enquêtes WVS sont faites par vagues, sur plusieurs années. La vague utilisée (la 7ᵉ) date de 2017-2022. **Le monde a changé** depuis : pandémie, guerre, vagues populistes. Un pays qui a pris un virage net depuis 2022 n'est pas « capté » par cvs.
 
-## 2. Les enquêtes ne couvrent pas tous les pays
+## 2. Tous les pays n'ont pas été directement mesurés
 
-Sur ~190 États souverains, cvs en couvre **environ 62**. Les autres n'ont pas de données WVS fiables. Ils sont **absents** de la carte (pas « zéro », pas « inconnu » — simplement non couverts).
+Sur les 193 États membres de l'ONU, **60 seulement** ont une mesure WVS directe (vague 7) pour la position culturelle. Pour les 133 autres, cvs combine d'autres sources publiques (Pew sur la religion, UNDP HDR sur le développement humain, votes à l'ONU, V-Dem sur les institutions, WVS waves antérieures) et estime la position via une régression statistique. Chaque pays porte une étiquette de **provenance** qui dit clairement comment sa position a été obtenue. Sur la carte interactive, les pays mesurés sont pleinement opaques, les pays estimés sont volontairement plus pâles. **Aucun pays n'est plus « absent » de la carte**.
 
 ## 3. Un État ≠ un peuple
 

@@ -45,7 +45,7 @@ Les graphiques interactifs nécessitent JavaScript. Données téléchargeables :
 
 ## Téléchargements
 
-- [`state_moments.json`](../assets/data/state_moments.json) (63 États)
+- [`state_moments.json`](../assets/data/state_moments.json) (193 États)
 
 ## Limites assumées
 

@@ -30,14 +30,22 @@ civilisations. Le résultat est :
 - **symétrique** : `M = Mᵀ`,
 - **positif semi-défini** : pour tout `u`, `uᵀMu = Σᵢ wₛ[i] · ((μᵢ − xₛ)·u)² ≥ 0`.
 
-### 1.1 Décomposition Cov_w + biais
+### 1.1 Décomposition Cov_w + biais (+ inflation de prior)
 
 Soit `μ̄ = Σᵢ wₛ[i] · μᵢ` le **barycentre pondéré** des centroïdes sous
 l'affinité de l'État. Alors :
 
 ```
-M(s) = Cov_w(μ ; wₛ)  +  (Σᵢ wₛ[i]) · (μ̄ − xₛ)(μ̄ − xₛ)ᵀ
+M(s) = Cov_w(μ ; wₛ)  +  (Σᵢ wₛ[i]) · (μ̄ − xₛ)(μ̄ − xₛ)ᵀ  +  diag(σ_prior²)
 ```
+
+Le troisième terme (`prior_variance_inflation`) est nul pour les États
+`x_score_provenance == observed`. Pour les autres tiers de la cascade
+([doc 16](16_imputation_cascade.md)), il vaut `diag(σ_score(civ)²)` quand la
+provenance est `centroid_prior`, ou `diag(RMSE_dim²)` quand elle est
+`imputed_governance`. Cette inflation propage explicitement l'incertitude
+d'imputation jusque dans les invariants de `M(s)`. Le champ
+`decomposition.prior_variance_inflation` permet de vérifier l'identité.
 
 où `Cov_w(μ ; wₛ) = Σᵢ wₛ[i] · (μᵢ − μ̄)(μᵢ − μ̄)ᵀ` est la **covariance
 pondérée des centroïdes autour de leur barycentre d'affinité**.

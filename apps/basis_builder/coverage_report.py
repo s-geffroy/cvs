@@ -17,6 +17,7 @@ import json
 from apps.basis_builder.geometries import NATURAL_EARTH_ADM0_PATH
 from apps.basis_builder.load_hofstede import load_hofstede
 from apps.basis_builder.load_iw import load_inglehart_welzel
+from apps.basis_builder.projector import project_states
 from apps.basis_builder.taxonomy_membership import load_iso3_to_membership
 from apps.basis_builder.un_members import UN_MEMBERS_DIR, load_un_member_names_fr
 
@@ -37,6 +38,7 @@ def build_coverage_records() -> list[dict]:
     hofstede_profiles = load_hofstede()
     iw_coords = load_inglehart_welzel()
     membership_index = load_iso3_to_membership()
+    projected_states = project_states()
 
     records: list[dict] = []
     for iso3 in sorted(un_names.keys()):
@@ -47,6 +49,7 @@ def build_coverage_records() -> list[dict]:
         )
         iw_coverage = "present" if iso3 in iw_coords else "missing"
         membership = membership_index.get(iso3)
+        projected = projected_states.get(iso3)
         records.append(
             {
                 "iso3": iso3,
@@ -61,6 +64,15 @@ def build_coverage_records() -> list[dict]:
                 "sub_cluster_id": membership.sub_cluster_id
                 if membership is not None
                 else None,
+                "x_viz_provenance": projected.data_quality["x_viz_provenance"]
+                if projected is not None
+                else "unresolved",
+                "x_score_provenance": projected.data_quality["x_score_provenance"]
+                if projected is not None
+                else "unresolved",
+                "in_state_coordinates": projected is not None
+                and all(value is not None for value in projected.x_viz)
+                and all(value is not None for value in projected.x_score),
             }
         )
     return records
@@ -125,6 +137,37 @@ def render_markdown(records: list[dict]) -> str:
     lines.append(f"- Inglehart-Welzel manquant : **{len(missing_iw)}**")
     lines.append(f"- Civilisation curatée manquante : **{len(missing_taxonomy)}**")
     lines.append("")
+
+    in_state_coords = sum(1 for record in records if record["in_state_coordinates"])
+    viz_breakdown: dict[str, int] = {}
+    score_breakdown: dict[str, int] = {}
+    for record in records:
+        viz_breakdown[record["x_viz_provenance"]] = (
+            viz_breakdown.get(record["x_viz_provenance"], 0) + 1
+        )
+        score_breakdown[record["x_score_provenance"]] = (
+            score_breakdown.get(record["x_score_provenance"], 0) + 1
+        )
+
+    lines.append("## Provenance des coordonnées (cascade d'imputation)")
+    lines.append("")
+    lines.append(
+        f"- États avec `x_viz` ET `x_score` non-nuls dans `state_coordinates.json` : **{in_state_coords} / {total}**"
+    )
+    lines.append("")
+    lines.append("Provenance de `x_viz` :")
+    for provenance, count in sorted(viz_breakdown.items()):
+        lines.append(f"- `{provenance}` : {count}")
+    lines.append("")
+    lines.append("Provenance de `x_score` :")
+    for provenance, count in sorted(score_breakdown.items()):
+        lines.append(f"- `{provenance}` : {count}")
+    lines.append("")
+    lines.append(
+        "Cf. `docs/16_imputation_cascade.md` pour la définition de chaque tier"
+        " (`observed` > `imputed_pew` / `imputed_governance` > `centroid_prior`)."
+    )
+    lines.append("")
     lines.append("## États sans polygone (à charger depuis NE 50m ou source équivalente)")
     lines.append("")
     lines.append(bullet_list(missing_geometry))
@@ -144,14 +187,14 @@ def render_markdown(records: list[dict]) -> str:
     lines.append("## Tableau détaillé")
     lines.append("")
     lines.append(
-        "| ISO3 | Nom (fr) | Géo | Hofstede | IW | Civ. curatée | Sous-ensemble |"
+        "| ISO3 | Nom (fr) | Géo | Hofstede | IW | Civ. curatée | Sous-ensemble | x_viz prov. | x_score prov. |"
     )
     lines.append(
-        "|------|----------|-----|----------|----|--------------|---------------|"
+        "|------|----------|-----|----------|----|--------------|---------------|-------------|---------------|"
     )
     for record in records:
         lines.append(
-            "| `{iso3}` | {name} | {geo} | {hof} | {iw} | {civ} | {sub} |".format(
+            "| `{iso3}` | {name} | {geo} | {hof} | {iw} | {civ} | {sub} | {viz} | {score} |".format(
                 iso3=record["iso3"],
                 name=record["name_fr"],
                 geo="✓" if record["in_geojson"] else "✗",
@@ -159,6 +202,8 @@ def render_markdown(records: list[dict]) -> str:
                 iw=record["iw_coverage"],
                 civ=record["curated_civilization"] or "—",
                 sub=record["sub_cluster_id"] or "—",
+                viz=record["x_viz_provenance"],
+                score=record["x_score_provenance"],
             )
         )
     lines.append("")

@@ -8,7 +8,13 @@
     "raw_vector_is_source_of_truth": true,
     "normalized_vector_visualization_only": true,
     "adm1_subdivision_required_later": true,
-    "two_bases_coupled": true
+    "two_bases_coupled": true,
+    "completion_to_un_members": {
+      "completed_to": 193,
+      "method": "deterministic heuristic on geography + dominant religion (Pew 2020) + Huntington (1996) regional sphere",
+      "ambiguous_cases_treated_as": "co-listed in competing civilizations' ambiguous_cases; excluded from centroid computation (ROLE_WEIGHT == 0)",
+      "review_status": "first-pass automatic — manual review encouraged via coverage report"
+    }
   },
   "bibliography": [
     {
@@ -251,6 +257,254 @@
           "citation_ids": [
             "huntington_1996"
           ]
+        },
+        {
+          "iso3": "AND",
+          "role": "core",
+          "rationale": "Microétat catholique des Pyrénées, héritage catalan/français.",
+          "citation_ids": [
+            "huntington_1996"
+          ]
+        },
+        {
+          "iso3": "AUT",
+          "role": "core",
+          "rationale": "Catholique germanophone, Habsburg, UE.",
+          "citation_ids": [
+            "huntington_1996"
+          ]
+        },
+        {
+          "iso3": "BEL",
+          "role": "core",
+          "rationale": "Catholique, fondateur de l'UE.",
+          "citation_ids": [
+            "huntington_1996"
+          ]
+        },
+        {
+          "iso3": "CHE",
+          "role": "core",
+          "rationale": "Confédération germano-romande-italophone protestante/catholique.",
+          "citation_ids": [
+            "huntington_1996"
+          ]
+        },
+        {
+          "iso3": "CZE",
+          "role": "core",
+          "rationale": "Tchéquie catholique/laïque, Habsburg, UE — frontière occidentale chez Huntington.",
+          "citation_ids": [
+            "huntington_1996"
+          ]
+        },
+        {
+          "iso3": "EST",
+          "role": "periphery",
+          "rationale": "Luthérienne historique, UE, Schengen — basculement post-1991 vers l'Occident.",
+          "citation_ids": [
+            "huntington_1996"
+          ]
+        },
+        {
+          "iso3": "HRV",
+          "role": "periphery",
+          "rationale": "Catholique, héritage Habsburg, UE — frontière sud-est de l'Occident.",
+          "citation_ids": [
+            "huntington_1996"
+          ]
+        },
+        {
+          "iso3": "HUN",
+          "role": "core",
+          "rationale": "Catholique/protestante, Habsburg, UE.",
+          "citation_ids": [
+            "huntington_1996"
+          ]
+        },
+        {
+          "iso3": "ISL",
+          "role": "core",
+          "rationale": "Luthérienne, scandinave.",
+          "citation_ids": [
+            "huntington_1996"
+          ]
+        },
+        {
+          "iso3": "LIE",
+          "role": "core",
+          "rationale": "Microétat catholique germanophone.",
+          "citation_ids": [
+            "huntington_1996"
+          ]
+        },
+        {
+          "iso3": "LTU",
+          "role": "periphery",
+          "rationale": "Catholique, UE — frontière occidentale (Huntington 1996 ch. 8).",
+          "citation_ids": [
+            "huntington_1996"
+          ]
+        },
+        {
+          "iso3": "LUX",
+          "role": "core",
+          "rationale": "Catholique, fondateur UE.",
+          "citation_ids": [
+            "huntington_1996"
+          ]
+        },
+        {
+          "iso3": "LVA",
+          "role": "periphery",
+          "rationale": "Luthérienne/catholique, UE — frontière occidentale.",
+          "citation_ids": [
+            "huntington_1996"
+          ]
+        },
+        {
+          "iso3": "MCO",
+          "role": "core",
+          "rationale": "Microétat catholique francophone.",
+          "citation_ids": [
+            "huntington_1996"
+          ]
+        },
+        {
+          "iso3": "MLT",
+          "role": "core",
+          "rationale": "Catholique, UE.",
+          "citation_ids": [
+            "huntington_1996"
+          ]
+        },
+        {
+          "iso3": "POL",
+          "role": "core",
+          "rationale": "Catholique, UE — pilier de l'Occident centro-est chez Huntington.",
+          "citation_ids": [
+            "huntington_1996"
+          ]
+        },
+        {
+          "iso3": "PRT",
+          "role": "core",
+          "rationale": "Catholique, ibérique, UE.",
+          "citation_ids": [
+            "huntington_1996"
+          ]
+        },
+        {
+          "iso3": "SMR",
+          "role": "core",
+          "rationale": "Microétat catholique italien.",
+          "citation_ids": [
+            "huntington_1996"
+          ]
+        },
+        {
+          "iso3": "SVK",
+          "role": "core",
+          "rationale": "Catholique, UE.",
+          "citation_ids": [
+            "huntington_1996"
+          ]
+        },
+        {
+          "iso3": "SVN",
+          "role": "core",
+          "rationale": "Catholique, Habsburg, UE.",
+          "citation_ids": [
+            "huntington_1996"
+          ]
+        },
+        {
+          "iso3": "ATG",
+          "role": "periphery",
+          "rationale": "Caraïbe anglophone, Commonwealth, chrétienne — Occident via colonisation britannique.",
+          "citation_ids": [
+            "huntington_1996"
+          ]
+        },
+        {
+          "iso3": "BHS",
+          "role": "periphery",
+          "rationale": "Caraïbe anglophone, Commonwealth.",
+          "citation_ids": [
+            "huntington_1996"
+          ]
+        },
+        {
+          "iso3": "BRB",
+          "role": "periphery",
+          "rationale": "Caraïbe anglophone, Commonwealth.",
+          "citation_ids": [
+            "huntington_1996"
+          ]
+        },
+        {
+          "iso3": "BLZ",
+          "role": "periphery",
+          "rationale": "Anglophone, Commonwealth — distinct du noyau latino-américain hispanique.",
+          "citation_ids": [
+            "huntington_1996"
+          ]
+        },
+        {
+          "iso3": "DMA",
+          "role": "periphery",
+          "rationale": "Caraïbe anglophone, Commonwealth.",
+          "citation_ids": [
+            "huntington_1996"
+          ]
+        },
+        {
+          "iso3": "GRD",
+          "role": "periphery",
+          "rationale": "Caraïbe anglophone, Commonwealth.",
+          "citation_ids": [
+            "huntington_1996"
+          ]
+        },
+        {
+          "iso3": "JAM",
+          "role": "periphery",
+          "rationale": "Caraïbe anglophone, Commonwealth.",
+          "citation_ids": [
+            "huntington_1996"
+          ]
+        },
+        {
+          "iso3": "KNA",
+          "role": "periphery",
+          "rationale": "Caraïbe anglophone, Commonwealth.",
+          "citation_ids": [
+            "huntington_1996"
+          ]
+        },
+        {
+          "iso3": "LCA",
+          "role": "periphery",
+          "rationale": "Caraïbe anglophone, Commonwealth.",
+          "citation_ids": [
+            "huntington_1996"
+          ]
+        },
+        {
+          "iso3": "TTO",
+          "role": "periphery",
+          "rationale": "Caraïbe anglophone (40% chrétienne, 18% hindoue, 5% musulmane) — Occident anglophone dominant.",
+          "citation_ids": [
+            "huntington_1996"
+          ]
+        },
+        {
+          "iso3": "VCT",
+          "role": "periphery",
+          "rationale": "Caraïbe anglophone, Commonwealth.",
+          "citation_ids": [
+            "huntington_1996"
+          ]
         }
       ],
       "sub_clusters": [
@@ -320,6 +574,29 @@
           "citation_ids": [
             "huntington_1996"
           ]
+        },
+        {
+          "iso3": "BIH",
+          "civilizations_competing": [
+            "islamic",
+            "orthodox",
+            "western"
+          ],
+          "citation_ids": [
+            "huntington_1996"
+          ],
+          "discussion": "Bosniaque musulmane ~50%, Serbe orthodoxe ~30%, Croate catholique ~15% — frontière des trois civilisations."
+        },
+        {
+          "iso3": "LBN",
+          "civilizations_competing": [
+            "islamic",
+            "western"
+          ],
+          "citation_ids": [
+            "huntington_1996"
+          ],
+          "discussion": "Sunnite/chiite ~67% + chrétienne maronite/orthodoxe/uniate ~32% — interface arabo-méditerranéenne."
         }
       ],
       "sources": [
@@ -338,17 +615,17 @@
       "low_archetype_coverage": false,
       "extension_to_huntington": false,
       "mu_viz": [
-        0.9092857142857145,
-        1.5642857142857143
+        0.7378791588076997,
+        1.2174222020281287
       ],
       "sigma_viz": [
         [
-          0.3168352040816327,
-          0.1553316326530612
+          0.42136088729300364,
+          0.2880225849012233
         ],
         [
-          0.1553316326530612,
-          0.20658163265306123
+          0.2880225849012233,
+          0.5648689598683925
         ]
       ],
       "mu_score": [
@@ -471,6 +748,54 @@
           "citation_ids": [
             "huntington_1996"
           ]
+        },
+        {
+          "iso3": "ARM",
+          "role": "core",
+          "rationale": "Arménie apostolique (Église orientale orthodoxe) — Huntington classe l'Arménie en sphère orthodoxe.",
+          "citation_ids": [
+            "huntington_1996"
+          ]
+        },
+        {
+          "iso3": "CYP",
+          "role": "periphery",
+          "rationale": "République de Chypre majoritairement grecque-orthodoxe — partagée avec Occident via UE.",
+          "citation_ids": [
+            "huntington_1996"
+          ]
+        },
+        {
+          "iso3": "GEO",
+          "role": "core",
+          "rationale": "Église orthodoxe géorgienne — Caucase orthodoxe.",
+          "citation_ids": [
+            "huntington_1996"
+          ]
+        },
+        {
+          "iso3": "MDA",
+          "role": "core",
+          "rationale": "Orthodoxe roumanophone — sphère post-soviétique orthodoxe.",
+          "citation_ids": [
+            "huntington_1996"
+          ]
+        },
+        {
+          "iso3": "MKD",
+          "role": "core",
+          "rationale": "Orthodoxe macédonienne, Balkans.",
+          "citation_ids": [
+            "huntington_1996"
+          ]
+        },
+        {
+          "iso3": "MNE",
+          "role": "core",
+          "rationale": "Orthodoxe, Balkans.",
+          "citation_ids": [
+            "huntington_1996"
+          ]
         }
       ],
       "sub_clusters": [
@@ -523,6 +848,18 @@
           "citation_ids": [
             "huntington_1996"
           ]
+        },
+        {
+          "iso3": "BIH",
+          "civilizations_competing": [
+            "islamic",
+            "orthodox",
+            "western"
+          ],
+          "citation_ids": [
+            "huntington_1996"
+          ],
+          "discussion": "Bosniaque musulmane ~50%, Serbe orthodoxe ~30%, Croate catholique ~15% — frontière des trois civilisations."
         }
       ],
       "sources": [
@@ -539,17 +876,17 @@
       "low_archetype_coverage": false,
       "extension_to_huntington": false,
       "mu_viz": [
-        0.021428571428571425,
-        -0.7214285714285714
+        -0.2678209525412217,
+        -0.7175565387497791
       ],
       "sigma_viz": [
         [
-          0.06561224489795918,
-          -0.05418367346938775
+          0.30800958283779095,
+          -0.0026739200300793554
         ],
         [
-          -0.05418367346938775,
-          0.15846938775510203
+          -0.0026739200300793554,
+          0.18106635891609962
         ]
       ],
       "mu_score": [
@@ -705,6 +1042,262 @@
           "citation_ids": [
             "huntington_1996"
           ]
+        },
+        {
+          "iso3": "ARE",
+          "role": "core",
+          "rationale": "Sunnite, péninsule arabique.",
+          "citation_ids": [
+            "huntington_1996"
+          ]
+        },
+        {
+          "iso3": "BHR",
+          "role": "core",
+          "rationale": "Chiite majoritaire, Golfe arabe.",
+          "citation_ids": [
+            "huntington_1996"
+          ]
+        },
+        {
+          "iso3": "DZA",
+          "role": "core",
+          "rationale": "Maghreb sunnite arabophone.",
+          "citation_ids": [
+            "huntington_1996"
+          ]
+        },
+        {
+          "iso3": "KWT",
+          "role": "core",
+          "rationale": "Sunnite, Golfe arabe.",
+          "citation_ids": [
+            "huntington_1996"
+          ]
+        },
+        {
+          "iso3": "LBY",
+          "role": "core",
+          "rationale": "Maghreb sunnite.",
+          "citation_ids": [
+            "huntington_1996"
+          ]
+        },
+        {
+          "iso3": "OMN",
+          "role": "core",
+          "rationale": "Ibadite, péninsule arabique.",
+          "citation_ids": [
+            "huntington_1996"
+          ]
+        },
+        {
+          "iso3": "QAT",
+          "role": "core",
+          "rationale": "Sunnite wahhabite, Golfe arabe.",
+          "citation_ids": [
+            "huntington_1996"
+          ]
+        },
+        {
+          "iso3": "SYR",
+          "role": "core",
+          "rationale": "Multi-confessionnelle (sunnite ~74%, alaouite, chrétiens, druzes) — sphère arabo-islamique.",
+          "citation_ids": [
+            "huntington_1996"
+          ]
+        },
+        {
+          "iso3": "TUN",
+          "role": "core",
+          "rationale": "Maghreb sunnite arabophone.",
+          "citation_ids": [
+            "huntington_1996"
+          ]
+        },
+        {
+          "iso3": "YEM",
+          "role": "core",
+          "rationale": "Sunnite/zaydite, péninsule arabique.",
+          "citation_ids": [
+            "huntington_1996"
+          ]
+        },
+        {
+          "iso3": "AFG",
+          "role": "core",
+          "rationale": "Sunnite hanafite + chiite, pachtoune/tadjike — sphère islamique d'Asie centrale.",
+          "citation_ids": [
+            "huntington_1996"
+          ]
+        },
+        {
+          "iso3": "ALB",
+          "role": "periphery",
+          "rationale": "Musulmane majoritaire (~58% sunnite/bektashi) + minorités chrétiennes orthodoxe et catholique — Balkans, fortement laïcisée.",
+          "citation_ids": [
+            "huntington_1996"
+          ]
+        },
+        {
+          "iso3": "AZE",
+          "role": "core",
+          "rationale": "Chiite turcophone — sphère islamique, héritage soviétique.",
+          "citation_ids": [
+            "huntington_1996"
+          ]
+        },
+        {
+          "iso3": "KAZ",
+          "role": "periphery",
+          "rationale": "Sunnite turcophone, sécularisation soviétique marquée — périphérie islamique.",
+          "citation_ids": [
+            "huntington_1996"
+          ]
+        },
+        {
+          "iso3": "KGZ",
+          "role": "periphery",
+          "rationale": "Sunnite turcophone, sécularisation soviétique.",
+          "citation_ids": [
+            "huntington_1996"
+          ]
+        },
+        {
+          "iso3": "TJK",
+          "role": "periphery",
+          "rationale": "Sunnite iranophone, sécularisation soviétique.",
+          "citation_ids": [
+            "huntington_1996"
+          ]
+        },
+        {
+          "iso3": "TKM",
+          "role": "periphery",
+          "rationale": "Sunnite turcophone, sécularisation soviétique.",
+          "citation_ids": [
+            "huntington_1996"
+          ]
+        },
+        {
+          "iso3": "UZB",
+          "role": "periphery",
+          "rationale": "Sunnite turcophone, sécularisation soviétique.",
+          "citation_ids": [
+            "huntington_1996"
+          ]
+        },
+        {
+          "iso3": "BRN",
+          "role": "core",
+          "rationale": "Sultanat sunnite malais.",
+          "citation_ids": [
+            "huntington_1996"
+          ]
+        },
+        {
+          "iso3": "MDV",
+          "role": "core",
+          "rationale": "Sunnite, océan Indien.",
+          "citation_ids": [
+            "huntington_1996"
+          ]
+        },
+        {
+          "iso3": "COM",
+          "role": "core",
+          "rationale": "Sunnite swahili, océan Indien.",
+          "citation_ids": [
+            "huntington_1996"
+          ]
+        },
+        {
+          "iso3": "DJI",
+          "role": "core",
+          "rationale": "Sunnite, Corne de l'Afrique.",
+          "citation_ids": [
+            "huntington_1996"
+          ]
+        },
+        {
+          "iso3": "GIN",
+          "role": "core",
+          "rationale": "Sunnite majoritaire (~85%), Afrique de l'Ouest.",
+          "citation_ids": [
+            "huntington_1996"
+          ]
+        },
+        {
+          "iso3": "GMB",
+          "role": "core",
+          "rationale": "Sunnite majoritaire (~95%), Afrique de l'Ouest.",
+          "citation_ids": [
+            "huntington_1996"
+          ]
+        },
+        {
+          "iso3": "MLI",
+          "role": "core",
+          "rationale": "Sunnite majoritaire (~95%), Sahel.",
+          "citation_ids": [
+            "huntington_1996"
+          ]
+        },
+        {
+          "iso3": "MRT",
+          "role": "core",
+          "rationale": "Sunnite, Sahara occidental — pont Maghreb/Sahel.",
+          "citation_ids": [
+            "huntington_1996"
+          ]
+        },
+        {
+          "iso3": "NER",
+          "role": "core",
+          "rationale": "Sunnite (~99%), Sahel.",
+          "citation_ids": [
+            "huntington_1996"
+          ]
+        },
+        {
+          "iso3": "SEN",
+          "role": "core",
+          "rationale": "Sunnite soufi (~95%), Afrique de l'Ouest.",
+          "citation_ids": [
+            "huntington_1996"
+          ]
+        },
+        {
+          "iso3": "SOM",
+          "role": "core",
+          "rationale": "Sunnite, Corne de l'Afrique.",
+          "citation_ids": [
+            "huntington_1996"
+          ]
+        },
+        {
+          "iso3": "BFA",
+          "role": "periphery",
+          "rationale": "Musulmane majoritaire (~64%), forte minorité chrétienne/animiste — frange islamique sahélienne.",
+          "citation_ids": [
+            "huntington_1996"
+          ]
+        },
+        {
+          "iso3": "SDN",
+          "role": "core",
+          "rationale": "Sunnite arabophone (post-séparation du Sud-Soudan).",
+          "citation_ids": [
+            "huntington_1996"
+          ]
+        },
+        {
+          "iso3": "SLE",
+          "role": "periphery",
+          "rationale": "Musulmane majoritaire (~78%), forte minorité chrétienne — pluralisme religieux notable.",
+          "citation_ids": [
+            "huntington_1996"
+          ]
         }
       ],
       "sub_clusters": [
@@ -778,6 +1371,51 @@
           "citation_ids": [
             "huntington_1996"
           ]
+        },
+        {
+          "iso3": "BIH",
+          "civilizations_competing": [
+            "islamic",
+            "orthodox",
+            "western"
+          ],
+          "citation_ids": [
+            "huntington_1996"
+          ],
+          "discussion": "Bosniaque musulmane ~50%, Serbe orthodoxe ~30%, Croate catholique ~15% — frontière des trois civilisations."
+        },
+        {
+          "iso3": "LBN",
+          "civilizations_competing": [
+            "islamic",
+            "western"
+          ],
+          "citation_ids": [
+            "huntington_1996"
+          ],
+          "discussion": "Sunnite/chiite ~67% + chrétienne maronite/orthodoxe/uniate ~32% — interface arabo-méditerranéenne."
+        },
+        {
+          "iso3": "TCD",
+          "civilizations_competing": [
+            "islamic",
+            "african"
+          ],
+          "citation_ids": [
+            "huntington_1996"
+          ],
+          "discussion": "Musulmane ~55% (Nord) + chrétienne/animiste ~45% (Sud) — frontière sahélienne."
+        },
+        {
+          "iso3": "CIV",
+          "civilizations_competing": [
+            "islamic",
+            "african"
+          ],
+          "citation_ids": [
+            "huntington_1996"
+          ],
+          "discussion": "Musulmane ~43% + chrétienne ~34% + animiste — frontière religieuse."
         }
       ],
       "sources": [
@@ -794,17 +1432,17 @@
       "low_archetype_coverage": false,
       "extension_to_huntington": false,
       "mu_viz": [
-        -1.18,
-        -0.7500000000000001
+        -1.159694359911545,
+        -0.6191948138295569
       ],
       "sigma_viz": [
         [
-          0.043100000000000006,
-          0.05649999999999998
+          0.08652161343146353,
+          0.043690956013005856
         ],
         [
-          0.05649999999999998,
-          0.11799999999999997
+          0.043690956013005856,
+          0.16027877482460656
         ]
       ],
       "mu_score": [
@@ -907,6 +1545,14 @@
           "iso3": "VNM",
           "role": "core",
           "rationale": "Vietnam, sinisation millénaire (1000 ans de domination chinoise)",
+          "citation_ids": [
+            "huntington_1996"
+          ]
+        },
+        {
+          "iso3": "PRK",
+          "role": "periphery",
+          "rationale": "Héritage confucéen-coréen, juché — sphère sinique alignée historiquement sur Pékin/Moscou.",
           "citation_ids": [
             "huntington_1996"
           ]
@@ -1585,6 +2231,110 @@
             "huntington_1996",
             "smith_2012"
           ]
+        },
+        {
+          "iso3": "CRI",
+          "role": "core",
+          "rationale": "Catholique hispanophone, Amérique centrale.",
+          "citation_ids": [
+            "huntington_1996"
+          ]
+        },
+        {
+          "iso3": "CUB",
+          "role": "core",
+          "rationale": "Catholique/syncrétique hispanophone, Caraïbes hispaniques.",
+          "citation_ids": [
+            "huntington_1996"
+          ]
+        },
+        {
+          "iso3": "DOM",
+          "role": "core",
+          "rationale": "Catholique hispanophone.",
+          "citation_ids": [
+            "huntington_1996"
+          ]
+        },
+        {
+          "iso3": "HND",
+          "role": "core",
+          "rationale": "Catholique hispanophone, Amérique centrale.",
+          "citation_ids": [
+            "huntington_1996"
+          ]
+        },
+        {
+          "iso3": "HTI",
+          "role": "periphery",
+          "rationale": "Catholicisme + vaudou, francophone — distincte du noyau hispanique mais Amérique latine selon Huntington.",
+          "citation_ids": [
+            "huntington_1996"
+          ]
+        },
+        {
+          "iso3": "NIC",
+          "role": "core",
+          "rationale": "Catholique hispanophone.",
+          "citation_ids": [
+            "huntington_1996"
+          ]
+        },
+        {
+          "iso3": "PAN",
+          "role": "core",
+          "rationale": "Catholique hispanophone.",
+          "citation_ids": [
+            "huntington_1996"
+          ]
+        },
+        {
+          "iso3": "PRY",
+          "role": "core",
+          "rationale": "Catholique hispano-guarani.",
+          "citation_ids": [
+            "huntington_1996"
+          ]
+        },
+        {
+          "iso3": "SLV",
+          "role": "core",
+          "rationale": "Catholique hispanophone, Amérique centrale.",
+          "citation_ids": [
+            "huntington_1996"
+          ]
+        },
+        {
+          "iso3": "GUY",
+          "role": "periphery",
+          "rationale": "Anglophone, hindouisme/christianisme — Amérique latine géographique mais culturellement caraïbe-indienne.",
+          "citation_ids": [
+            "huntington_1996"
+          ]
+        },
+        {
+          "iso3": "SUR",
+          "role": "periphery",
+          "rationale": "Néerlandophone multi-confessionnelle — Amérique latine géographique mais héritage colonial non-ibérique.",
+          "citation_ids": [
+            "huntington_1996"
+          ]
+        },
+        {
+          "iso3": "PHL",
+          "role": "periphery",
+          "rationale": "Catholique (~80%), hispanisme colonial — Huntington classe les Philippines hors sinic et signale leur héritage catholique ibérique; rattachement périphérique à la sphère latino-américaine au sens culturel large.",
+          "citation_ids": [
+            "huntington_1996"
+          ]
+        },
+        {
+          "iso3": "TLS",
+          "role": "periphery",
+          "rationale": "Catholique (~96%), héritage lusophone — distinct du noyau sinique/buddhist environnant.",
+          "citation_ids": [
+            "huntington_1996"
+          ]
         }
       ],
       "sub_clusters": [
@@ -1675,17 +2425,17 @@
       "low_archetype_coverage": false,
       "extension_to_huntington": false,
       "mu_viz": [
-        -0.7555555555555556,
-        0.7388888888888889
+        -0.8331159452106016,
+        0.6767777348052719
       ],
       "sigma_viz": [
         [
-          0.14580246913580247,
-          0.05354938271604939
+          0.16120703598792338,
+          0.07359248668446987
         ],
         [
-          0.05354938271604939,
-          0.06709876543209878
+          0.07359248668446987,
+          0.09115268024358929
         ]
       ],
       "mu_score": [
@@ -1806,6 +2556,222 @@
           "citation_ids": [
             "huntington_1996"
           ]
+        },
+        {
+          "iso3": "AGO",
+          "role": "core",
+          "rationale": "Chrétienne, lusophone, Afrique australe.",
+          "citation_ids": [
+            "huntington_1996"
+          ]
+        },
+        {
+          "iso3": "BDI",
+          "role": "core",
+          "rationale": "Chrétienne, Grands Lacs.",
+          "citation_ids": [
+            "huntington_1996"
+          ]
+        },
+        {
+          "iso3": "BEN",
+          "role": "core",
+          "rationale": "Chrétienne/vodun, francophone, golfe de Guinée.",
+          "citation_ids": [
+            "huntington_1996"
+          ]
+        },
+        {
+          "iso3": "BWA",
+          "role": "core",
+          "rationale": "Chrétienne, Afrique australe.",
+          "citation_ids": [
+            "huntington_1996"
+          ]
+        },
+        {
+          "iso3": "CAF",
+          "role": "core",
+          "rationale": "Chrétienne majoritaire, Afrique centrale.",
+          "citation_ids": [
+            "huntington_1996"
+          ]
+        },
+        {
+          "iso3": "CMR",
+          "role": "core",
+          "rationale": "Chrétienne + musulmane (Nord), pluraliste — Afrique centrale francophone/anglophone.",
+          "citation_ids": [
+            "huntington_1996"
+          ]
+        },
+        {
+          "iso3": "COD",
+          "role": "core",
+          "rationale": "Chrétienne, francophone, Afrique centrale.",
+          "citation_ids": [
+            "huntington_1996"
+          ]
+        },
+        {
+          "iso3": "COG",
+          "role": "core",
+          "rationale": "Chrétienne, francophone, Afrique centrale.",
+          "citation_ids": [
+            "huntington_1996"
+          ]
+        },
+        {
+          "iso3": "CPV",
+          "role": "periphery",
+          "rationale": "Lusophone catholique, archipel — héritage créole ouest-africain.",
+          "citation_ids": [
+            "huntington_1996"
+          ]
+        },
+        {
+          "iso3": "ERI",
+          "role": "periphery",
+          "rationale": "Chrétienne orthodoxe tewahedo + musulmane, Corne — proche d'ETH culturellement.",
+          "citation_ids": [
+            "huntington_1996"
+          ]
+        },
+        {
+          "iso3": "GAB",
+          "role": "core",
+          "rationale": "Chrétienne, francophone, Afrique centrale.",
+          "citation_ids": [
+            "huntington_1996"
+          ]
+        },
+        {
+          "iso3": "GNB",
+          "role": "periphery",
+          "rationale": "Mixte chrétienne/musulmane/animiste, lusophone — pluralisme religieux.",
+          "citation_ids": [
+            "huntington_1996"
+          ]
+        },
+        {
+          "iso3": "GNQ",
+          "role": "core",
+          "rationale": "Hispanophone catholique, Afrique centrale.",
+          "citation_ids": [
+            "huntington_1996"
+          ]
+        },
+        {
+          "iso3": "LBR",
+          "role": "core",
+          "rationale": "Anglophone, chrétienne, héritage afro-américain.",
+          "citation_ids": [
+            "huntington_1996"
+          ]
+        },
+        {
+          "iso3": "LSO",
+          "role": "core",
+          "rationale": "Chrétienne, Afrique australe.",
+          "citation_ids": [
+            "huntington_1996"
+          ]
+        },
+        {
+          "iso3": "MDG",
+          "role": "periphery",
+          "rationale": "Chrétienne + traditionnelle, héritage austronésien — singularité culturelle dans la sphère africaine.",
+          "citation_ids": [
+            "huntington_1996"
+          ]
+        },
+        {
+          "iso3": "MOZ",
+          "role": "core",
+          "rationale": "Chrétienne + musulmane (côte nord), lusophone.",
+          "citation_ids": [
+            "huntington_1996"
+          ]
+        },
+        {
+          "iso3": "MWI",
+          "role": "core",
+          "rationale": "Chrétienne, Afrique australe.",
+          "citation_ids": [
+            "huntington_1996"
+          ]
+        },
+        {
+          "iso3": "NAM",
+          "role": "core",
+          "rationale": "Chrétienne, héritage germano-sud-africain.",
+          "citation_ids": [
+            "huntington_1996"
+          ]
+        },
+        {
+          "iso3": "RWA",
+          "role": "core",
+          "rationale": "Chrétienne, Grands Lacs.",
+          "citation_ids": [
+            "huntington_1996"
+          ]
+        },
+        {
+          "iso3": "SSD",
+          "role": "core",
+          "rationale": "Chrétienne + animiste, Nilotique — sphère africaine post-2011.",
+          "citation_ids": [
+            "huntington_1996"
+          ]
+        },
+        {
+          "iso3": "STP",
+          "role": "periphery",
+          "rationale": "Lusophone catholique, archipel.",
+          "citation_ids": [
+            "huntington_1996"
+          ]
+        },
+        {
+          "iso3": "SWZ",
+          "role": "core",
+          "rationale": "Chrétienne, Afrique australe.",
+          "citation_ids": [
+            "huntington_1996"
+          ]
+        },
+        {
+          "iso3": "SYC",
+          "role": "periphery",
+          "rationale": "Chrétienne créole, océan Indien — héritage colonial mixte.",
+          "citation_ids": [
+            "huntington_1996"
+          ]
+        },
+        {
+          "iso3": "TGO",
+          "role": "core",
+          "rationale": "Chrétienne/animiste, francophone, golfe de Guinée.",
+          "citation_ids": [
+            "huntington_1996"
+          ]
+        },
+        {
+          "iso3": "TZA",
+          "role": "core",
+          "rationale": "Chrétienne + musulmane (côte/Zanzibar), swahili.",
+          "citation_ids": [
+            "huntington_1996"
+          ]
+        },
+        {
+          "iso3": "UGA",
+          "role": "core",
+          "rationale": "Chrétienne, Grands Lacs.",
+          "citation_ids": [
+            "huntington_1996"
+          ]
         }
       ],
       "sub_clusters": [
@@ -1866,6 +2832,28 @@
           "citation_ids": [
             "huntington_1996"
           ]
+        },
+        {
+          "iso3": "TCD",
+          "civilizations_competing": [
+            "islamic",
+            "african"
+          ],
+          "citation_ids": [
+            "huntington_1996"
+          ],
+          "discussion": "Musulmane ~55% (Nord) + chrétienne/animiste ~45% (Sud) — frontière sahélienne."
+        },
+        {
+          "iso3": "CIV",
+          "civilizations_competing": [
+            "islamic",
+            "african"
+          ],
+          "citation_ids": [
+            "huntington_1996"
+          ],
+          "discussion": "Musulmane ~43% + chrétienne ~34% + animiste — frontière religieuse."
         }
       ],
       "sources": [
@@ -1882,17 +2870,17 @@
       "low_archetype_coverage": false,
       "extension_to_huntington": false,
       "mu_viz": [
-        -1.2208333333333334,
-        -0.39166666666666666
+        -1.1410546459656625,
+        -0.4123517621647565
       ],
       "sigma_viz": [
         [
-          0.10269097222222222,
-          0.04642361111111112
+          0.13516394113295355,
+          0.036894860405623175
         ],
         [
-          0.04642361111111112,
-          0.14993055555555554
+          0.036894860405623175,
+          0.12312258809400713
         ]
       ],
       "mu_score": [
@@ -2112,6 +3100,94 @@
           "rationale": "Australie: cluster Western dominant, composante aborigène minoritaire mais reconnue (Uluru Statement 2017)",
           "citation_ids": [
             "hauofa_1994"
+          ]
+        },
+        {
+          "iso3": "FSM",
+          "role": "core",
+          "rationale": "Micronésie, christianisme + traditions austronésiennes.",
+          "citation_ids": [
+            "huntington_1996"
+          ]
+        },
+        {
+          "iso3": "KIR",
+          "role": "core",
+          "rationale": "Micronésie, christianisme + traditions.",
+          "citation_ids": [
+            "huntington_1996"
+          ]
+        },
+        {
+          "iso3": "MHL",
+          "role": "core",
+          "rationale": "Micronésie, christianisme + traditions.",
+          "citation_ids": [
+            "huntington_1996"
+          ]
+        },
+        {
+          "iso3": "NRU",
+          "role": "core",
+          "rationale": "Micronésie, christianisme.",
+          "citation_ids": [
+            "huntington_1996"
+          ]
+        },
+        {
+          "iso3": "PLW",
+          "role": "core",
+          "rationale": "Micronésie, christianisme + religions ethniques.",
+          "citation_ids": [
+            "huntington_1996"
+          ]
+        },
+        {
+          "iso3": "PNG",
+          "role": "core",
+          "rationale": "Mélanésie, christianisme + grande diversité de langues austronésiennes/papoues.",
+          "citation_ids": [
+            "huntington_1996"
+          ]
+        },
+        {
+          "iso3": "SLB",
+          "role": "core",
+          "rationale": "Mélanésie, christianisme.",
+          "citation_ids": [
+            "huntington_1996"
+          ]
+        },
+        {
+          "iso3": "TON",
+          "role": "core",
+          "rationale": "Polynésie, christianisme.",
+          "citation_ids": [
+            "huntington_1996"
+          ]
+        },
+        {
+          "iso3": "TUV",
+          "role": "core",
+          "rationale": "Polynésie, christianisme.",
+          "citation_ids": [
+            "huntington_1996"
+          ]
+        },
+        {
+          "iso3": "VUT",
+          "role": "core",
+          "rationale": "Mélanésie, christianisme + religions ethniques.",
+          "citation_ids": [
+            "huntington_1996"
+          ]
+        },
+        {
+          "iso3": "WSM",
+          "role": "core",
+          "rationale": "Polynésie, christianisme.",
+          "citation_ids": [
+            "huntington_1996"
           ]
         }
       ],

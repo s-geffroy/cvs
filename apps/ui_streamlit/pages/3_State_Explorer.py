@@ -30,6 +30,11 @@ with col_right:
     st.write(f"**IW coverage** : {quality['iw_coverage']}")
     st.write(f"**Hofstede coverage** : {quality['hofstede_coverage']}")
     st.write(f"**low_evidence** : {quality['low_evidence']}")
+    st.write(f"**Provenance x_viz** : `{quality.get('x_viz_provenance', '—')}`")
+    st.write(f"**Provenance x_score** : `{quality.get('x_score_provenance', '—')}`")
+    fallback_civilization = quality.get("fallback_civilization_id")
+    if fallback_civilization:
+        st.caption(f"Centroïde de repli : `{fallback_civilization}`")
 
 st.markdown("### x_score (Hofstede 6D)")
 score_table = pd.DataFrame(

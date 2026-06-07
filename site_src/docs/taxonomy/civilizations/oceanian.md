@@ -58,6 +58,28 @@ Extension de Huntington. États-membres: Nouvelle-Zélande (ambiguë Western/Oce
 
 | Australie | `AUS` | interface | Australie: cluster Western dominant, composante aborigène minoritaire mais reconnue (Uluru Statement 2017) | hauofa_1994 |
 
+| Micronésie | `FSM` | core | Micronésie, christianisme + traditions austronésiennes. | huntington_1996 |
+
+| Kiribati | `KIR` | core | Micronésie, christianisme + traditions. | huntington_1996 |
+
+| Îles Marshall | `MHL` | core | Micronésie, christianisme + traditions. | huntington_1996 |
+
+| Nauru | `NRU` | core | Micronésie, christianisme. | huntington_1996 |
+
+| Palaos | `PLW` | core | Micronésie, christianisme + religions ethniques. | huntington_1996 |
+
+| Papouasie-Nouvelle-Guinée | `PNG` | core | Mélanésie, christianisme + grande diversité de langues austronésiennes/papoues. | huntington_1996 |
+
+| Îles Salomon | `SLB` | core | Mélanésie, christianisme. | huntington_1996 |
+
+| Tonga | `TON` | core | Polynésie, christianisme. | huntington_1996 |
+
+| Tuvalu | `TUV` | core | Polynésie, christianisme. | huntington_1996 |
+
+| Vanuatu | `VUT` | core | Mélanésie, christianisme + religions ethniques. | huntington_1996 |
+
+| Samoa | `WSM` | core | Polynésie, christianisme. | huntington_1996 |
+
 
 
 ## Sous-clusters

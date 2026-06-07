@@ -1,0 +1,85 @@
+{
+  "iso3": "SLV",
+  "label": null,
+  "x_viz": [
+    -0.7446783973113666,
+    -0.05899832338383426
+  ],
+  "x_viz_ellipse": {
+    "sigma": [
+      [
+        0.23293692755710943,
+        0.0
+      ],
+      [
+        0.0,
+        0.4196998620067553
+      ]
+    ],
+    "confidence_level": 0.8,
+    "source": "imputed_pew"
+  },
+  "x_score": [
+    60.939029509207614,
+    29.838732229844464,
+    51.427419920463066,
+    44.71444626126816,
+    40.91703828904347,
+    47.672939673259464
+  ],
+  "affinity_vector": {
+    "western": 0.044331018183815386,
+    "orthodox": 0.022176632196936014,
+    "islamic": 0.12180409985329044,
+    "sinic": 0.08513933433911444,
+    "hindic": 0.10971971128728804,
+    "japanese": 0.010393277767876793,
+    "buddhist": 0.10771965046039066,
+    "latin_american": 0.05248540360058992,
+    "african": 0.20132952120559025,
+    "indigenous": 0.0594047027518754,
+    "oceanian": 0.18549664835323273
+  },
+  "data_quality": {
+    "iw_coverage": "missing",
+    "hofstede_coverage": "missing",
+    "low_evidence": true,
+    "x_viz_provenance": "imputed_pew",
+    "x_score_provenance": "imputed_governance",
+    "x_score_sigma_prior": [
+      12.89482013219045,
+      16.654266762366433,
+      17.276090153261453,
+      19.840361952573588,
+      23.703391973204358,
+      22.027751828622787
+    ],
+    "fallback_civilization_id": "latin_american",
+    "pew_to_iw_model": {
+      "training_n": 93,
+      "rmse_ts": 0.4826353981600494,
+      "rmse_se": 0.647842466967669
+    },
+    "governance_to_hofstede_model": {
+      "training_n": 63,
+      "rmse_per_dimension": {
+        "pdi": 12.89482013219045,
+        "idv": 16.654266762366433,
+        "mas": 17.276090153261453,
+        "uai": 19.840361952573588,
+        "lto": 23.703391973204358,
+        "ivr": 22.027751828622787
+      }
+    }
+  },
+  "source_refs": [
+    "pew_religious_composition_2020",
+    "wgi_2022",
+    "fsi_2024"
+  ],
+  "curated_civilization": "latin_american",
+  "curated_role": "core",
+  "curated_civilizations_competing": null,
+  "sub_cluster_id": null,
+  "sub_cluster_label": null
+}

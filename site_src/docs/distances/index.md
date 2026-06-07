@@ -4,7 +4,7 @@
     Ce profil est inféré à partir de sources publiques agrégées. Il ne doit pas être utilisé pour classer des individus réels.
 
 Distance hybride `d_hyb = α · d_score^M + β · d_w^W + γ · d_T` calculée pour
-les **62 États** publiés, avec les poids par défaut `(α, β, γ) = (0.4, 0.4, 0.2)`.
+les **193 États** publiés, avec les poids par défaut `(α, β, γ) = (0.4, 0.4, 0.2)`.
 
 Voir la [méthodologie 10 — Algèbre des distances](../methodology/10_distance_algebra.md)
 pour les définitions formelles et propriétés.

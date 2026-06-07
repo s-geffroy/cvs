@@ -46,7 +46,7 @@ IW: TS très négatif (catholicisme persistant, valeurs traditionnelles), SE pos
 
 ## Coordonnées B_vec (centroïdes)
 
-- **`μ_viz`** (Inglehart-Welzel : TS, SE) = `[-0.76, 0.74]`
+- **`μ_viz`** (Inglehart-Welzel : TS, SE) = `[-0.83, 0.68]`
 - **`μ_score`** (Hofstede PDI, IDV, MAS, UAI, LTO, IVR) =
   `[70.0, 24.4, 50.7, 85.9, 28.8, 69.8]`
 
@@ -77,6 +77,32 @@ IW: TS très négatif (catholicisme persistant, valeurs traditionnelles), SE pos
 | Bolivie | `BOL` | interface | Bolivie, identité plurinationale (latino + aymara/quechua/guarani) | huntington_1996, smith_2012 |
 
 | Équateur | `ECU` | interface | Équateur, identité métisse + indigène (Kichwa) | huntington_1996, smith_2012 |
+
+| Costa Rica | `CRI` | core | Catholique hispanophone, Amérique centrale. | huntington_1996 |
+
+| Cuba | `CUB` | core | Catholique/syncrétique hispanophone, Caraïbes hispaniques. | huntington_1996 |
+
+| République dominicaine | `DOM` | core | Catholique hispanophone. | huntington_1996 |
+
+| Honduras | `HND` | core | Catholique hispanophone, Amérique centrale. | huntington_1996 |
+
+| Haïti | `HTI` | periphery | Catholicisme + vaudou, francophone — distincte du noyau hispanique mais Amérique latine selon Huntington. | huntington_1996 |
+
+| Nicaragua | `NIC` | core | Catholique hispanophone. | huntington_1996 |
+
+| Panama | `PAN` | core | Catholique hispanophone. | huntington_1996 |
+
+| Paraguay | `PRY` | core | Catholique hispano-guarani. | huntington_1996 |
+
+| El Salvador | `SLV` | core | Catholique hispanophone, Amérique centrale. | huntington_1996 |
+
+| Guyana | `GUY` | periphery | Anglophone, hindouisme/christianisme — Amérique latine géographique mais culturellement caraïbe-indienne. | huntington_1996 |
+
+| Suriname | `SUR` | periphery | Néerlandophone multi-confessionnelle — Amérique latine géographique mais héritage colonial non-ibérique. | huntington_1996 |
+
+| Philippines | `PHL` | periphery | Catholique (~80%), hispanisme colonial — Huntington classe les Philippines hors sinic et signale leur héritage catholique ibérique; rattachement périphérique à la sphère latino-américaine au sens culturel large. | huntington_1996 |
+
+| Timor-Leste | `TLS` | periphery | Catholique (~96%), héritage lusophone — distinct du noyau sinique/buddhist environnant. | huntington_1996 |
 
 
 
