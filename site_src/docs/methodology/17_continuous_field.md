@@ -1,4 +1,4 @@
-# 17 — Champ civilisationnel continu sur la sphère (prototype)
+# 17 — Champ civilisationnel continu sur la sphère (V2)
 
 > **Avertissement éthique** : ce champ est dérivé de sources publiques agrégées et **ne doit jamais** être utilisé pour classer des individus réels. Les valeurs publiées sont des moyennes statistiques sur des populations agrégées au niveau de l'État, propagées spatialement par un Gaussian Process. Voir [`07_ethics_publication_policy.md`](07_ethics_publication_policy.md).
 
@@ -35,18 +35,23 @@ Résultat : **237 sample points** pour 193 États (USA/CHN/IND/BRA = 3 points ; 
 
 **Production future** : remplacer Natural Earth 10m par **GPW v4 (SEDAC NASA)** ou **GHS-POP (JRC)** — grilles raster 1° qui captent la population rurale en plus des centres urbains.
 
-### 2.2 Gaussian Process avec kernel Matérn 3/2 sur la sphère
+### 2.2 Gaussian Process multi-output avec kernel Matérn 3/2
 
-Pour chaque composante scalaire `c` du vecteur d'État (TS, SE, PDI, IDV, …, affinités), on fit un GP indépendant :
+**V2** : un seul GP multi-output gère simultanément les **19 composantes** du vecteur d'État (`x_viz` 2D + `x_score` 6D + `affinity_vector` 11D). Le kernel est partagé ; seul le vecteur de coefficients `α` diffère par composante. Une seule factorisation Cholesky de `(K + diag(σ_n²))` est donc nécessaire — ~19× plus rapide que 19 fits indépendants.
 
 - **Kernel** : Matérn 3/2 sur grand-cercle, `k(p, q) = σ² (1 + √3 · d/ℓ) exp(-√3 · d/ℓ)` où `d = arccos(sin φ_p sin φ_q + cos φ_p cos φ_q cos(λ_q - λ_p))`.
-- **Hyperparamètres prototype** : `ℓ = 0.4 rad ≈ 2540 km`, `σ² = 1`, `noise = 0.05`. Sera optimisé par maximum de marginal likelihood en V2.
-- **Normalisation** : z-score sur les valeurs d'observation avant fit, dé-normalisation après prédiction. Stabilise numériquement le solveur Cholesky.
+- **Hyperparamètres optimisés par ML** : `length_scale` et `noise_scale` (multiplicateur global) sont ajustés en maximisant le log marginal likelihood `log p(Y | θ)` par `scipy.optimize.minimize` (L-BFGS-B, 3 restarts pour échapper aux optima locaux). Pour le fit V2 :
+  - `ℓ ≈ 0.105 rad ≈ 670 km` (plus court que la valeur initiale 0.4 rad, captant plus de structure régionale)
+  - `noise_scale ≈ 0.64` (multiplicateur appliqué au bruit de base par-sample)
+  - NLML au minimum ≈ 5820 sur 237 × 19 observations
+- **Bruit par-sample** : chaque sample point hérite d'un `σ_n²` calibré sur la provenance de l'État correspondant (`observed` → 0.05, `observed_with_dim_imputation` → 0.10, `imputed_wvs_items` → 0.25, `imputed_pew` → 0.45, `imputed_governance` → 0.45, `centroid_prior` → 1.20). Le bruit est divisé par le poids du cluster (États multipoints : le cluster principal a un poids ≈ 1, les clusters mineurs ont un bruit plus fort).
+- **Normalisation** : z-score par composante avant fit, dé-normalisation après prédiction. Stabilise le solveur Cholesky.
 
-### 2.3 Prédiction sur grille 5° × 5°
+### 2.3 Prédiction sur grille 1° × 1°
 
-- Grille longitudes ∈ [-180, 180) tous les 5°, latitudes ∈ [-90, 90] tous les 5° → 72 × 37 = 2664 cellules.
-- À chaque cellule : `(μ, σ²)` du GP plus la Jacobienne `(∂μ/∂λ, ∂μ/∂φ)`.
+- **V2** : grille longitudes ∈ [-180, 180) tous les 1°, latitudes ∈ [-90, 90] tous les 1° → 360 × 181 = 65 160 cellules.
+- À chaque cellule : `(μ_c, σ²_c)` pour chacune des 19 composantes, plus la Jacobienne `(∂μ_c/∂λ, ∂μ_c/∂φ)`.
+- **Format de sortie** : sidecar JSON (`continuous_field_v2_meta.json`, ~10 KB) avec metadata + grille + hyperparamètres + z-score stats ; archive numpy compressée (`continuous_field_v2_arrays.npz`, ~16 MB) pour les 19 × 4 = 76 grilles de `float32`. Chargement paresseux via `np.load`.
 
 ### 2.4 Calcul analytique du gradient
 
@@ -109,16 +114,21 @@ Les frontières ADM0 sont **conservées comme repère visuel** mais **ne contrai
 
 C'est un signal éditorial fort : « les valeurs culturelles n'obéissent pas aux frontières administratives ; voici la géographie continue qui en résulte ».
 
-## 6. Limites du prototype et roadmap V2
+## 6. Statut V2 et roadmap V3
 
-| Limitation prototype V2.1 | Adresse en V2 |
-|---|---|
-| 1 seule composante (TS) | 19 composantes (x_viz + x_score + affinity_vector), GP multi-output partagé K |
-| Grille 5° × 5° (2664 cellules) | Grille 1° × 1° (~65 000 cellules), output tuilé |
-| Hyperparamètres `ℓ`, `σ²`, `noise` fixés à la main | Maximisation de la marginal likelihood par L-BFGS |
-| Sample points = villes Natural Earth 10m | GPW v4 ou GHS-POP raster pour la population rurale |
-| Pas d'incertitude propagée depuis la cascade d'imputation | Bruit `σ_n²(s)` croît avec `data_quality.low_evidence` |
-| Distances et tenseur de gradient non-implémentés | Intégration dans `packages/civvec_core/algebra/` et `moments.py` |
+| Item | V2 (2026-06-07) | V3 prévu |
+|---|---|---|
+| 19 composantes (x_viz + x_score + affinity) | ✅ | — |
+| Grille 1° × 1° (65 160 cellules) | ✅ | Optionnel : 0.25° (1 M cellules) |
+| Hyperparamètres ML par marginal likelihood | ✅ (length_scale + noise_scale) | Optimisation simultanée par-output |
+| Sample points par centroïde pondéré (population) | ✅ Natural Earth populated_places 10m | GPW v4 / GHS-POP raster pour rural |
+| Bruit GP indexé sur cascade provenance | ✅ | — |
+| Tests math (analytique vs FD) | ✅ 15/15 | Plus de cas edge |
+| Page Streamlit avec sélecteur composantes | ✅ | — |
+| MapLibre integration | ❌ | V3 prioritaire |
+| Distance algebra basée sur le champ | ❌ | V3 — intégrale curviligne du gradient |
+| Tenseur de déformation `G(p) = ∇x^T ∇x` | ❌ | V3 — invariants comme M(s) discret |
+| Validation empirique (champ vs ESS NUTS-2) | ❌ | V3 |
 
 ## 7. Références
 

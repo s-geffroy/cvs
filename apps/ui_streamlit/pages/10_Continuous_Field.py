@@ -1,10 +1,12 @@
-"""Page 10 — Champ civilisationnel continu sur la sphère (prototype TS).
+"""Page 10 — Champ civilisationnel continu (V2 : multi-output, grille 1°).
 
-Visualise:
-- la valeur prédite μ(λ, φ) du Gaussian Process pour la composante TS
-  (Inglehart-Welzel Traditional ↔ Secular-Rational) ;
-- la magnitude du gradient ‖∇μ‖ (fault lines de Huntington) ;
-- les vecteurs gradient sous forme de flèches (quiver).
+Sélecteur sur les 19 composantes (TS, SE, 6 Hofstede, 11 affinités).
+Affiche la valeur prédite μ, la magnitude du gradient (fault lines),
+l'écart-type prédictif σ et un quiver des vecteurs gradient.
+
+Source data : ``packages/civvec_core/basis/continuous_field_v2_meta.json``
+(metadata) + ``..._arrays.npz`` (arrays compressed). Produced by
+``apps/basis_builder/field/train_v2.py``.
 """
 from __future__ import annotations
 
@@ -17,75 +19,110 @@ import streamlit as st
 from apps.basis_builder.paths import BASIS_DIR
 from apps.ui_streamlit.components import ethics_banner
 
-CONTINUOUS_FIELD_TS_PATH = BASIS_DIR / "continuous_field_ts.json"
+CONTINUOUS_FIELD_V2_META_PATH = BASIS_DIR / "continuous_field_v2_meta.json"
+CONTINUOUS_FIELD_V2_ARRAYS_PATH = BASIS_DIR / "continuous_field_v2_arrays.npz"
 
-st.set_page_config(page_title="10 — Continuous Field", layout="wide")
+st.set_page_config(page_title="10 — Continuous Field V2", layout="wide")
 ethics_banner.render()
 
-st.title("Champ civilisationnel continu sur la sphère — prototype TS")
+st.title("Champ civilisationnel continu sur la sphère — V2")
 
 st.markdown(
-    "Cette page abandonne la représentation par État pour montrer le champ "
-    "**continu** `μ(λ, φ)` interpolé par un Gaussian Process (kernel Matérn 3/2 "
-    "sur grand-cercle) à partir des coordonnées d'État. La dérivée `(∂μ/∂λ, ∂μ/∂φ)` "
-    "est calculée analytiquement et validée contre une différence finie. "
-    "Cf. [`docs/17_continuous_field.md`](../methodology/17_continuous_field/) "
-    "pour la méthodologie complète."
+    "Représentation **sans frontière d'État**. Un Gaussian Process à kernel "
+    "Matérn 3/2 sur grand-cercle interpole les coordonnées d'État (placées "
+    "à leur centroïde pondéré par population) en un champ continu "
+    "interrogeable à tout `(λ, φ)`. La dérivée `(∂μ/∂λ, ∂μ/∂φ)` est calculée "
+    "analytiquement et validée par tests de différence finie. "
+    "Cf. [doc 17](../methodology/17_continuous_field/)."
 )
 
-if not CONTINUOUS_FIELD_TS_PATH.exists():
+
+@st.cache_resource
+def _load_v2_field():
+    if not CONTINUOUS_FIELD_V2_META_PATH.exists():
+        return None, None
+    meta = json.loads(CONTINUOUS_FIELD_V2_META_PATH.read_text())
+    arrays_data = np.load(CONTINUOUS_FIELD_V2_ARRAYS_PATH)
+    return meta, arrays_data
+
+
+metadata_payload, arrays_archive = _load_v2_field()
+
+if metadata_payload is None:
     st.warning(
-        "Le champ continu n'a pas encore été calculé. Lance dans Docker :\n\n"
-        "`python -m apps.basis_builder.field.train_prototype`"
+        "Le champ V2 n'a pas encore été calculé. Lance dans Docker :\n\n"
+        "`python -m apps.basis_builder.field.train_v2`"
     )
     st.stop()
 
-payload = json.loads(CONTINUOUS_FIELD_TS_PATH.read_text())
-grid_longitudes_deg = np.array(payload["grid"]["longitudes_deg"])
-grid_latitudes_deg = np.array(payload["grid"]["latitudes_deg"])
-predicted_mean = np.array(payload["predicted_mean_ts"])
-predicted_variance = np.array(payload["predicted_variance_ts"])
-gradient_longitude = np.array(payload["gradient_longitude_ts"])
-gradient_latitude = np.array(payload["gradient_latitude_ts"])
-gradient_magnitude = np.array(payload["gradient_magnitude_ts"])
+grid_longitudes_deg = np.array(metadata_payload["grid"]["longitudes_deg"])
+grid_latitudes_deg = np.array(metadata_payload["grid"]["latitudes_deg"])
+component_names = metadata_payload["_meta"]["component_names"]
+hyperparameters = metadata_payload["_meta"]["hyperparameters"]
 
-meta = payload["_meta"]
 col_meta_left, col_meta_right = st.columns(2)
 with col_meta_left:
-    st.metric("Points d'entraînement", meta["n_training_points"])
-    st.metric("Cellules de grille", predicted_mean.size)
+    st.metric("Points d'entraînement", metadata_payload["_meta"]["n_training_points"])
+    st.metric("Composantes", metadata_payload["_meta"]["n_components"])
 with col_meta_right:
     st.metric(
         "Length scale (rad)",
-        f"{meta['length_scale_rad']:.3f}",
-        help=f"≈ {meta['length_scale_km_earth_equivalent']:.0f} km sur Terre",
+        f"{hyperparameters['length_scale_rad']:.3f}",
+        help=f"≈ {hyperparameters['length_scale_km_earth']:.0f} km sur Terre — optimisée par ML",
     )
-    st.metric("Pas de grille", f"{meta['grid_step_deg']}°")
+    st.metric(
+        "NLML",
+        f"{hyperparameters.get('negative_log_marginal_likelihood', float('nan')):.0f}",
+        help="Négative log marginal likelihood au minimum trouvé",
+    )
+
+component_label_groups = {
+    "Inglehart-Welzel (B_viz)": [c for c in component_names if c.startswith("x_viz_")],
+    "Hofstede (B_score)": [c for c in component_names if c.startswith("x_score_")],
+    "Affinités civilisationnelles (Δ¹⁰)": [
+        c for c in component_names if c.startswith("affinity_")
+    ],
+}
+component_display_options: list[str] = []
+for group_label, components_in_group in component_label_groups.items():
+    component_display_options.extend(components_in_group)
+
+selected_component = st.selectbox(
+    "Composante à visualiser",
+    options=component_display_options,
+    format_func=lambda x: x.replace("_", " "),
+)
 
 display_mode = st.radio(
     "Quoi afficher ?",
     options=[
-        "Valeur prédite μ(λ, φ)",
+        "Valeur prédite μ",
         "Magnitude du gradient ‖∇μ‖ (fault lines)",
-        "Écart-type prédictif σ(λ, φ)",
+        "Écart-type prédictif σ",
     ],
     horizontal=True,
 )
 
-if display_mode == "Valeur prédite μ(λ, φ)":
+predicted_mean = arrays_archive[f"{selected_component}__predicted_mean"]
+gradient_magnitude = arrays_archive[f"{selected_component}__gradient_magnitude"]
+gradient_longitude = arrays_archive[f"{selected_component}__gradient_longitude"]
+gradient_latitude = arrays_archive[f"{selected_component}__gradient_latitude"]
+predicted_variance = arrays_archive["predicted_variance"]
+
+if display_mode == "Valeur prédite μ":
     z_values = predicted_mean
     color_scale = "RdBu_r"
-    colorbar_title = "TS prédit"
+    colorbar_title = f"{selected_component} prédit"
 elif display_mode == "Magnitude du gradient ‖∇μ‖ (fault lines)":
     z_values = gradient_magnitude
     color_scale = "Plasma"
-    colorbar_title = "‖∇μ‖ (unités TS / rad)"
+    colorbar_title = "‖∇μ‖ par radian"
 else:
     z_values = np.sqrt(predicted_variance)
     color_scale = "Cividis"
     colorbar_title = "σ prédictif"
 
-heatmap = go.Figure(
+heatmap_figure = go.Figure(
     data=go.Heatmap(
         x=grid_longitudes_deg,
         y=grid_latitudes_deg,
@@ -95,42 +132,41 @@ heatmap = go.Figure(
         connectgaps=False,
     )
 )
-heatmap.update_layout(
+heatmap_figure.update_layout(
     xaxis_title="Longitude (°)",
     yaxis_title="Latitude (°)",
-    height=500,
+    height=520,
     margin={"l": 10, "r": 10, "t": 30, "b": 10},
-    title=display_mode,
+    title=f"{display_mode} — {selected_component}",
 )
-st.plotly_chart(heatmap, use_container_width=True)
+st.plotly_chart(heatmap_figure, use_container_width=True)
 
 st.subheader("Champ de vecteurs gradient (quiver)")
-
-quiver_density = st.slider(
-    "Densité des flèches (1 = toutes les cellules, 4 = 1 cellule sur 4)",
-    min_value=1,
-    max_value=6,
-    value=2,
+quiver_subsample = st.slider(
+    "Densité des flèches (1 = grille complète, 12 = 1 cellule sur 12)",
+    min_value=4,
+    max_value=18,
+    value=10,
 )
 
-quiver_longitudes = grid_longitudes_deg[::quiver_density]
-quiver_latitudes = grid_latitudes_deg[::quiver_density]
-quiver_grad_longitude = gradient_longitude[::quiver_density, ::quiver_density]
-quiver_grad_latitude = gradient_latitude[::quiver_density, ::quiver_density]
+quiver_longitudes = grid_longitudes_deg[::quiver_subsample]
+quiver_latitudes = grid_latitudes_deg[::quiver_subsample]
+quiver_grad_longitude = gradient_longitude[::quiver_subsample, ::quiver_subsample]
+quiver_grad_latitude = gradient_latitude[::quiver_subsample, ::quiver_subsample]
 
 quiver_mesh_x, quiver_mesh_y = np.meshgrid(quiver_longitudes, quiver_latitudes)
-arrow_scale = 4.0
+arrow_scale = float(quiver_subsample)
 quiver_traces = []
 for i in range(quiver_mesh_x.shape[0]):
     for j in range(quiver_mesh_x.shape[1]):
-        gx = quiver_grad_longitude[i, j]
-        gy = quiver_grad_latitude[i, j]
+        gx = float(quiver_grad_longitude[i, j])
+        gy = float(quiver_grad_latitude[i, j])
         if not np.isfinite(gx) or not np.isfinite(gy):
             continue
-        norm = np.hypot(gx, gy)
+        norm = float(np.hypot(gx, gy))
         if norm < 1e-3:
             continue
-        scale_factor = arrow_scale / max(norm, 1e-3) * min(norm, 8.0)
+        scale_factor = arrow_scale / max(norm, 1e-3) * min(norm, 6.0)
         quiver_traces.append(
             go.Scatter(
                 x=[
@@ -142,7 +178,7 @@ for i in range(quiver_mesh_x.shape[0]):
                     float(quiver_mesh_y[i, j] + gy * scale_factor / norm),
                 ],
                 mode="lines",
-                line={"color": "rgba(20,20,20,0.55)", "width": 0.6},
+                line={"color": "rgba(20,20,20,0.45)", "width": 0.6},
                 showlegend=False,
                 hoverinfo="skip",
             )
@@ -154,16 +190,19 @@ quiver_figure.update_layout(
     yaxis_title="Latitude (°)",
     xaxis={"range": [-180, 180]},
     yaxis={"range": [-90, 90]},
-    height=500,
+    height=520,
     margin={"l": 10, "r": 10, "t": 30, "b": 10},
-    title="Vecteurs gradient (∂μ/∂λ, ∂μ/∂φ) — direction où TS croît",
+    title=f"Vecteurs gradient — {selected_component}",
 )
 st.plotly_chart(quiver_figure, use_container_width=True)
 
-st.markdown(
-    "**Lecture des fault lines** : la magnitude du gradient pointe les "
-    "transitions civilisationnelles abruptes. À ~35-40°N, 0-15°E (Méditerranée "
-    "sud) correspond la frontière Maghreb islamique ↔ Europe latine ; à ~55-60°N, "
-    "15-20°E (mer Baltique) la frontière catholique ↔ orthodoxe. Ces zones sont "
-    "celles de Huntington (1996) — mais ici **émergentes du data, pas postulées**."
-)
+with st.expander("Hyperparamètres et provenance noise"):
+    st.json(metadata_payload["_meta"]["hyperparameters"])
+    st.write(
+        "**Provenance → noise** : chaque sample point porte un bruit GP "
+        "calibré sur la provenance de l'État correspondant. Les `observed` "
+        "ont un poids fort, les `centroid_prior` agissent comme anchors "
+        "doux. Le multiplicateur global est optimisé par maximum de "
+        "marginal likelihood."
+    )
+    st.json(metadata_payload["_meta"]["provenance_base_noise"])
