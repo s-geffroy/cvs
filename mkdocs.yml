@@ -104,6 +104,7 @@ nav:
       - "14 — Baseline non-supervisé": methodology/14_baseline_unsupervised.md
       - "15 — Glossaire": methodology/15_glossary.md
       - "16 — Cascade d'imputation": methodology/16_imputation_cascade.md
+      - "17 — Champ continu sur sphère": methodology/17_continuous_field.md
   - Taxonomie:
       - taxonomy/index.md
       - Civilisations:
