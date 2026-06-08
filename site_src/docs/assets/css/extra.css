@@ -58,3 +58,20 @@
   color: #1a1a1a;
   font-size: 0.85rem;
 }
+
+/* Bandeau contextuel du mode « Champ continu » (entre les sélecteurs et la
+   carte). Les fonds pastel sont fixés inline en JS ; on épingle ici une
+   couleur de texte foncée pour que le contraste reste lisible aussi en
+   thème sombre (sinon --md-typeset-color hérite en gris clair). */
+#civvec-continuous-mode-banner,
+#civvec-continuous-mode-banner strong,
+#civvec-continuous-mode-banner em,
+#civvec-continuous-mode-banner small,
+#civvec-continuous-mode-banner li,
+#civvec-continuous-mode-banner th,
+#civvec-continuous-mode-banner td {
+  color: #1a1a1a;
+}
+#civvec-continuous-mode-banner small {
+  color: #555;
+}
