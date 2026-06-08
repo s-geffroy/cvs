@@ -151,7 +151,8 @@ def _build_training_arrays(
 
 def train_v2_field(
     grid_step_deg: float = 1.0,
-    optimise_hyperparameters: bool = True,
+    optimise_hyperparameters: bool = False,
+    length_scale_rad: float = 0.25,
 ) -> V2FieldArtefacts:
     sample_points = _load_sample_points()
     states_by_iso3 = _state_records_by_iso3()
@@ -184,7 +185,7 @@ def train_v2_field(
         longitudes_train=longitudes_train_rad,
         latitudes_train=latitudes_train_rad,
         target_values_train=target_matrix_normalised,
-        length_scale=0.4,
+        length_scale=length_scale_rad,
         signal_variance=1.0,
         noise_variance=noise_vector,
     )

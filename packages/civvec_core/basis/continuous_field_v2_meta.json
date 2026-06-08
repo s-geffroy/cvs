@@ -25,13 +25,9 @@
       "affinity_oceanian"
     ],
     "hyperparameters": {
-      "length_scale_rad": 0.1051110636048538,
-      "length_scale_km_earth": 669.6625862265236,
-      "noise_variance_mean": 0.21627645716421376,
-      "ml_optimised_length_scale_rad": 0.1051110636048538,
-      "ml_optimised_noise_scale": 0.6364428145345333,
-      "negative_log_marginal_likelihood": 5820.271351254508,
-      "n_restarts": 3
+      "length_scale_rad": 0.25,
+      "length_scale_km_earth": 1592.75,
+      "noise_variance_mean": 0.3398207226557959
     },
     "grid_step_deg": 1.0,
     "z_score_means": {

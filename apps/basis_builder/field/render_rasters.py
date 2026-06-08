@@ -123,9 +123,9 @@ AGGREGATE_INDICATORS_TO_RENDER: tuple[AggregateIndicatorSpec, ...] = (
         colormap_name="plasma",
         quantile_range=(0.0, 0.98),
         description_fr=(
-            "Tension culturelle locale — somme des magnitudes de gradient sur "
-            "les 19 composantes (trace du tenseur de déformation G(p) en "
-            "métrique sphérique)."
+            "Tension culturelle locale — somme des carrés des gradients sur "
+            "les 19 composantes (z-score-normalisées par composante), "
+            "i.e. trace du tenseur de déformation G(p) en métrique sphérique."
         ),
         read_mode="paired",
         pair_with="civ_identity_sharpness",
@@ -133,7 +133,7 @@ AGGREGATE_INDICATORS_TO_RENDER: tuple[AggregateIndicatorSpec, ...] = (
     AggregateIndicatorSpec(
         component_name="civ_classification_margin",
         colormap_name="magma",
-        quantile_range=(0.05, 0.95),
+        quantile_range=(0.05, 0.85),
         description_fr=(
             "Profondeur du cœur civilisationnel — marge (d₂ − d₁) / d₁ entre "
             "les deux centroïdes les plus proches en B_score (Mahalanobis "

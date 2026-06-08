@@ -7,6 +7,33 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed — Audit critique du champ continu : length scale fixée, extrema écrêtés, descriptif corrigé (2026-06-08)
+
+Audit math du GP et des trois indicateurs synthétiques. Les fondations (noyau
+sphérique grande-circle, gradient analytique avec facteur `1/cos φ`, masquage
+des pôles à |φ| > 75°, z-score par composante) sont confirmées correctes.
+Trois ajustements pour rendre les extrema géographiquement plus cohérents :
+
+- **`apps/basis_builder/field/train_v2.py`** : `length_scale_rad` fixée à
+  **0.25 rad ≈ 1590 km** (vs 0.105 / 670 km auparavant — optimisé par marginal
+  likelihood mais surajusté aux 237 points d'entraînement, produisait un champ
+  trop « peaky »). `optimise_hyperparameters` passe à `False` par défaut.
+  Conséquences mesurées au re-rendu :
+  - `civ_texture_intensity` : max passe de 3556 → 1806 (champ moins bosselé).
+  - Gradients par composante : roughly halved (smoother field globalement).
+- **`apps/basis_builder/field/render_rasters.py`** : `civ_classification_margin`
+  passe de `quantile_range = (0.05, 0.95)` → `(0.05, 0.85)` pour écraser la
+  saturation aux cellules-centroïdes (où `d₁ → 0` fait exploser `(d₂−d₁)/d₁`).
+  Le `value_max` du raster tombe ainsi de 0.732 → 0.552.
+- **Description `civ_texture_intensity` clarifiée** : « somme des **carrés des
+  gradients** (z-score-normalisés par composante), i.e. trace du tenseur de
+  déformation G(p) » — au lieu de l'ancien wording « somme des magnitudes »
+  qui était ambigu (la trace est bien une somme de carrés, pas de magnitudes).
+
+Re-training + re-rendering complet effectués
+(`continuous_field_v2_arrays.npz`, `continuous_field_v2_meta.json`, les 19
+PNGs sous `site_src/docs/assets/data/continuous_field/` et leur `index.json`).
+
 ### Added — Trois indicateurs civilisationnels synthétiques sur la carte (2026-06-08)
 
 Nouveaux scalaires agrégés dérivés du GP, publiés comme rasters supplémentaires
