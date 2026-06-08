@@ -132,8 +132,8 @@ AGGREGATE_INDICATORS_TO_RENDER: tuple[AggregateIndicatorSpec, ...] = (
     ),
     AggregateIndicatorSpec(
         component_name="civ_classification_margin",
-        colormap_name="cividis",
-        quantile_range=(0.0, 0.95),
+        colormap_name="magma",
+        quantile_range=(0.05, 0.95),
         description_fr=(
             "Profondeur du cœur civilisationnel — marge (d₂ − d₁) / d₁ entre "
             "les deux centroïdes les plus proches en B_score (Mahalanobis "

@@ -198,8 +198,8 @@
       "component": "civ_classification_margin",
       "metric": "mean",
       "filename": "civ_classification_margin_mean.png",
-      "colormap": "cividis",
-      "value_min": 5.597967090874086e-06,
+      "colormap": "magma",
+      "value_min": 0.010447028155160987,
       "value_max": 0.7317652885058514,
       "description_fr": "Profondeur du cœur civilisationnel — marge (d₂ − d₁) / d₁ entre les deux centroïdes les plus proches en B_score (Mahalanobis intra-civilisationnelle). Élevé = cœur stable, proche de 0 = fault line.",
       "read_mode": "standalone"

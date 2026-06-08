@@ -28,7 +28,7 @@ explicites par des bandeaux contextuels :
     préchargement du raster en mémoire pour swap < 50 ms.
 - **Standalone 2.2 (lisible seul)** :
   - **Profondeur du cœur civilisationnel** (`civ_classification_margin`,
-    colormap cividis) — marge `(d₂ − d₁) / d₁` entre les deux centroïdes
+    colormap magma) — marge `(d₂ − d₁) / d₁` entre les deux centroïdes
     Mahalanobis les plus proches en B_score (Σ⁻¹ intra-civilisationnelle).
     « Élevé = cœur stable ; proche de 0 = fault line ».
   - L'UI affiche un bandeau « indicateur autonome — lisible seul » sans
@@ -52,6 +52,25 @@ Côté code :
   dans le bandeau JS (cf. `quadrantTableMarkup` + `updateContinuousReadModeBanner`
   dans `map.js`). Documentation méthodologique étendue à inscrire dans
   `docs/methodology/17_continuous_field.md` lors d'une passe ultérieure.
+
+### Fixed — Contraste illisible de `civ_classification_margin` sur la carte (2026-06-08)
+
+- Le raster `civ_classification_margin_mean.png` apparaissait quasi-uniformément
+  sombre sur la carte : combinaison d'un colormap `cividis` (bleu marine très
+  foncé au bas) + d'un `quantile_range = (0.0, 0.95)` sans écrêtage bas + d'une
+  distribution naturellement asymétrique (≈ 95 % des cellules sont des fault
+  lines proches de 0). Résultat : presque tous les pixels mappés sur la moitié
+  sombre du colormap, fault lines et cœurs visuellement indissociables.
+- Correctif dans `apps/basis_builder/field/render_rasters.py`
+  (`AGGREGATE_INDICATORS_TO_RENDER`) :
+  - `colormap_name`: `cividis` → `magma` (noir → rouge → jaune, fort contraste,
+    distinct de `viridis` (`civ_identity_sharpness`) et `plasma`
+    (`civ_texture_intensity`)).
+  - `quantile_range`: `(0.0, 0.95)` → `(0.05, 0.95)` (écrête la masse basse,
+    aligne avec la convention des autres indicateurs agrégés).
+- Régénération automatique du PNG et de l'entrée `colormap`/`value_min`/`value_max`
+  dans `assets/data/continuous_field/index.json` ; `map.js` lit ces champs et
+  adapte légende et rendu sans modification JS.
 
 ### Changed — Carte « Champ continu (GP) » : composantes et métrique explicitées (2026-06-08)
 
