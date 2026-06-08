@@ -7,6 +7,91 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added — Trois indicateurs civilisationnels synthétiques sur la carte (2026-06-08)
+
+Nouveaux scalaires agrégés dérivés du GP, publiés comme rasters supplémentaires
+dans `assets/data/continuous_field/`. Lecture en deux régimes que l'UI rend
+explicites par des bandeaux contextuels :
+
+- **Couple 2.1 ⊕ 3.1 (à lire ensemble)** :
+  - **Force d'identité civilisationnelle** (`civ_identity_sharpness`,
+    colormap viridis) — entropie inverse normalisée du vecteur d'affinité
+    GP, après clamp ≥ 0 et renormalisation simplexe. ∈ [0, 1].
+    « 1 = cœur identitaire net ; 0 = zone interstitielle ».
+  - **Tension culturelle locale** (`civ_texture_intensity`, colormap
+    plasma) — trace du tenseur de Cauchy-Green sur les 19 composantes en
+    métrique sphérique, **z-score-normalisée par composante** pour que
+    Hofstede n'écrase pas IW et les affinités dans la somme.
+  - L'UI affiche un bandeau « lecture conjointe » avec une grille 2×2
+    (cœur stable / fracture entre cœurs / plaine multiculturelle / chaos
+    transitionnel) et un bouton **« Basculer vers le partenaire »** avec
+    préchargement du raster en mémoire pour swap < 50 ms.
+- **Standalone 2.2 (lisible seul)** :
+  - **Profondeur du cœur civilisationnel** (`civ_classification_margin`,
+    colormap cividis) — marge `(d₂ − d₁) / d₁` entre les deux centroïdes
+    Mahalanobis les plus proches en B_score (Σ⁻¹ intra-civilisationnelle).
+    « Élevé = cœur stable ; proche de 0 = fault line ».
+  - L'UI affiche un bandeau « indicateur autonome — lisible seul » sans
+    référence à un partenaire.
+
+Côté code :
+
+- `packages/civvec_core/continuous_field/aggregate_indicators.py` (nouveau,
+  3 fonctions pures sans état GP).
+- `apps/basis_builder/field/render_rasters.py` étendu : 16 → 19 rasters
+  rendus, `index.json` enrichi de `read_mode ∈ {raw, paired, standalone}` et
+  `pair_with` pour piloter l'UI.
+- `site_src/docs/assets/js/map.js` : sélecteur Composante regroupé en 3
+  `<optgroup>` (synthétiques couplés / synthétique autonome / brutes),
+  bandeau contextuel selon `read_mode`, désactivation de `‖∇μ‖` pour les
+  agrégats déjà scalaires, bouton swap, cache mémoire des rasters partenaires.
+- `tests/test_aggregate_indicators.py` (nouveau, 15 cas — pure identité,
+  uniformité, clamp, z-score normalisation, marge nulle au point milieu de
+  deux centroïdes, marge grande près d'un centroïde).
+- Sémantique couple/standalone et grille 2×2 d'interprétation embarquées
+  dans le bandeau JS (cf. `quadrantTableMarkup` + `updateContinuousReadModeBanner`
+  dans `map.js`). Documentation méthodologique étendue à inscrire dans
+  `docs/methodology/17_continuous_field.md` lors d'une passe ultérieure.
+
+### Changed — Carte « Champ continu (GP) » : composantes et métrique explicitées (2026-06-08)
+
+- **Sélecteur « Composante »** (`site_src/templates/map_page.md.j2` +
+  `site_src/docs/assets/js/map.js`) : les options du dropdown affichent
+  désormais le label long parlant — p.ex. « Hofstede — PDI · Distance
+  hiérarchique » au lieu de l'identifiant brut `x_score pdi`. Mapping
+  centralisé dans `componentLabels` (8 entrées : 2 axes Inglehart-Welzel +
+  6 dimensions Hofstede). Le label brut reste lisible dans la légende
+  sous `<small>Code : …</small>` pour la traçabilité.
+- **Sélecteur « Métrique » renommé « Que montrer ? »** : options reformulées
+  en phrases — « Valeur — où se situent les sociétés sur cet axe ? » et
+  « Transition — où le changement est-il le plus rapide ? » à la place
+  des notations `μ (valeur prédite)` et `‖∇μ‖ (fault lines)`. Label parent
+  passé à « Composante (axe culturel) ». Tooltips HTML natifs ajoutés sur
+  les deux labels.
+- **Légende du mode continu enrichie** : titre composante + interprétation
+  métrique en clair au-dessus du code technique, sans changer le contenu
+  pédagogique de fond (lien vers `doc 17`).
+
+### Fixed — Carte : civilisation effective des cas ambigus + lisibilité des popups (2026-06-08)
+
+- **Civilisation effective** (`site_src/docs/assets/js/map.js`) : pour les pays
+  listés en `ambiguous_cases` dans la taxonomie (TCD, KOR, LBN, CIV, SGP, …),
+  la carte affichait l'**argmax du vecteur d'affinité** quand
+  `curated_civilization` était `null`. Sur des pays à couverture
+  Hofstede/Pew/WGI faible, cet argmax est bruité (TCD → `hindic`,
+  KOR → `orthodox`). Le projecteur produit pourtant déjà un repli sensé via
+  `data_quality.fallback_civilization_id` (TCD → `islamic`, KOR → `sinic`).
+  Nouvelle priorité : `curated_civilization` > `fallback_civilization_id` >
+  `argmax(affinity_vector)`. Le badge d'origine dans le popup distingue
+  désormais « (curatée) », « (centroïde de repli) » et « (par affinité argmax) ».
+- **Contraste des popups MapLibre** (`site_src/docs/assets/css/extra.css`) : le
+  défaut MapLibre impose `background: #fff` mais hérite la couleur de texte de
+  Material (`--md-typeset-color`, gris clair), d'où des popups illisibles
+  notamment en schéma `slate`. Ajout de règles
+  `.maplibregl-popup-content` (texte `#1a1a1a` sur fond `#fff`),
+  `code`, `strong`, `small`, `.maplibregl-popup-tip` et `.civvec-map-tooltip`
+  pour garantir un contraste suffisant dans les deux schémas.
+
 ### Added — WVS Time-Series + Pew composition complète : tier `imputed_wvs_items` (2026-06-07, suite)
 
 - **WVS Time-Series 1981-2022 v5.0** (1.3 GB CSV téléchargé par l'utilisateur,

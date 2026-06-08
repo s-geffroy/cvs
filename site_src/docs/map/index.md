@@ -22,18 +22,19 @@
   <label><input type="radio" name="civvec-map-mode" value="continuous"> Champ continu (GP)</label>
 </div>
 <div id="civvec-map-continuous-selector" style="display:none; gap:1rem; margin-bottom:0.5rem; font-size:0.9rem;">
-  <label>Composante :
+  <label title="Composante brute, indicateur synthétique couplé (à lire à deux) ou indicateur autonome">Composante :
     <select id="civvec-continuous-component-select" name="continuous-component">
-      <option value="x_viz_ts" selected>x_viz ts</option>
+      <option value="x_viz_ts" selected>Inglehart — TS · Traditionnel ↔ Séculier-rationnel</option>
     </select>
   </label>
-  <label>Métrique :
+  <label title="Que montrer du champ : sa valeur ou son taux de variation spatial">Que montrer ?
     <select name="continuous-metric">
-      <option value="mean" selected>μ (valeur prédite)</option>
-      <option value="grad_magnitude">‖∇μ‖ (fault lines)</option>
+      <option value="mean" selected>Valeur — où se situent les sociétés sur cet axe ?</option>
+      <option value="grad_magnitude">Transition — où le changement est-il le plus rapide ?</option>
     </select>
   </label>
 </div>
+<div id="civvec-continuous-mode-banner" style="display:none; margin:0.4rem 0 0.6rem 0;"></div>
 <div id="civvec-map" style="width: 100%; height: 560px; border: 1px solid var(--md-default-fg-color--lightest);"></div>
 <div id="civvec-map-legend" style="margin-top: 0.75rem; font-size: 0.85rem;"></div>
 

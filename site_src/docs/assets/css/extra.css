@@ -29,3 +29,32 @@
   font-weight: 600;
   vertical-align: middle;
 }
+
+/* MapLibre popups: texte foncé sur fond blanc, indépendamment du schéma Material
+   (sinon --md-typeset-color hérite en gris clair et rend les popups illisibles). */
+.maplibregl-popup-content {
+  color: #1a1a1a;
+  background: #ffffff;
+  line-height: 1.4;
+}
+.maplibregl-popup-content code {
+  color: #0a0a0a;
+  background: #f1f3f5;
+  padding: 0 0.25em;
+  border-radius: 3px;
+}
+.maplibregl-popup-content strong {
+  color: #000;
+}
+.maplibregl-popup-content small {
+  color: #555;
+}
+.maplibregl-popup-tip {
+  border-top-color: #ffffff !important;
+  border-bottom-color: #ffffff !important;
+}
+.civvec-map-tooltip .maplibregl-popup-content {
+  background: rgba(255, 255, 255, 0.96);
+  color: #1a1a1a;
+  font-size: 0.85rem;
+}

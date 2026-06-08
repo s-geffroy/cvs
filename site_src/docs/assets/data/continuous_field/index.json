@@ -1,7 +1,7 @@
 {
   "_meta": {
     "schema": "continuous_field_rasters_index.schema.json",
-    "n_rasters": 16,
+    "n_rasters": 19,
     "grid_step_deg": 1.0,
     "documentation": "docs/17_continuous_field.md"
   },
@@ -19,7 +19,8 @@
       "colormap": "RdBu_r",
       "value_min": -1.2732607126235962,
       "value_max": 0.3853949308395386,
-      "description_fr": "Valeur prédite μ par le GP, échelle signée centrée sur la moyenne globale."
+      "description_fr": "Valeur prédite μ par le GP, échelle signée centrée sur la moyenne globale.",
+      "read_mode": "raw"
     },
     {
       "component": "x_viz_ts",
@@ -28,7 +29,8 @@
       "colormap": "plasma",
       "value_min": 8.080455882009119e-05,
       "value_max": 9.657371520996094,
-      "description_fr": "Magnitude du gradient ‖∇μ‖ — fault lines civilisationnelles."
+      "description_fr": "Magnitude du gradient ‖∇μ‖ — fault lines civilisationnelles.",
+      "read_mode": "raw"
     },
     {
       "component": "x_viz_se",
@@ -37,7 +39,8 @@
       "colormap": "RdBu_r",
       "value_min": -0.7092422246932983,
       "value_max": 1.0538638830184937,
-      "description_fr": "Valeur prédite μ par le GP, échelle signée centrée sur la moyenne globale."
+      "description_fr": "Valeur prédite μ par le GP, échelle signée centrée sur la moyenne globale.",
+      "read_mode": "raw"
     },
     {
       "component": "x_viz_se",
@@ -46,7 +49,8 @@
       "colormap": "plasma",
       "value_min": 9.210396819980815e-05,
       "value_max": 9.742944717407227,
-      "description_fr": "Magnitude du gradient ‖∇μ‖ — fault lines civilisationnelles."
+      "description_fr": "Magnitude du gradient ‖∇μ‖ — fault lines civilisationnelles.",
+      "read_mode": "raw"
     },
     {
       "component": "x_score_pdi",
@@ -55,7 +59,8 @@
       "colormap": "RdBu_r",
       "value_min": 47.92369079589844,
       "value_max": 79.02322387695312,
-      "description_fr": "Valeur prédite μ par le GP, échelle signée centrée sur la moyenne globale."
+      "description_fr": "Valeur prédite μ par le GP, échelle signée centrée sur la moyenne globale.",
+      "read_mode": "raw"
     },
     {
       "component": "x_score_pdi",
@@ -64,7 +69,8 @@
       "colormap": "plasma",
       "value_min": 0.0004420095938257873,
       "value_max": 211.21990966796875,
-      "description_fr": "Magnitude du gradient ‖∇μ‖ — fault lines civilisationnelles."
+      "description_fr": "Magnitude du gradient ‖∇μ‖ — fault lines civilisationnelles.",
+      "read_mode": "raw"
     },
     {
       "component": "x_score_idv",
@@ -73,7 +79,8 @@
       "colormap": "RdBu_r",
       "value_min": 22.11313819885254,
       "value_max": 63.12282180786133,
-      "description_fr": "Valeur prédite μ par le GP, échelle signée centrée sur la moyenne globale."
+      "description_fr": "Valeur prédite μ par le GP, échelle signée centrée sur la moyenne globale.",
+      "read_mode": "raw"
     },
     {
       "component": "x_score_idv",
@@ -82,7 +89,8 @@
       "colormap": "plasma",
       "value_min": 0.0037681367248296738,
       "value_max": 251.70701599121094,
-      "description_fr": "Magnitude du gradient ‖∇μ‖ — fault lines civilisationnelles."
+      "description_fr": "Magnitude du gradient ‖∇μ‖ — fault lines civilisationnelles.",
+      "read_mode": "raw"
     },
     {
       "component": "x_score_mas",
@@ -91,7 +99,8 @@
       "colormap": "RdBu_r",
       "value_min": 40.813926696777344,
       "value_max": 60.10939407348633,
-      "description_fr": "Valeur prédite μ par le GP, échelle signée centrée sur la moyenne globale."
+      "description_fr": "Valeur prédite μ par le GP, échelle signée centrée sur la moyenne globale.",
+      "read_mode": "raw"
     },
     {
       "component": "x_score_mas",
@@ -100,7 +109,8 @@
       "colormap": "plasma",
       "value_min": 0.0009398316033184528,
       "value_max": 208.26052856445312,
-      "description_fr": "Magnitude du gradient ‖∇μ‖ — fault lines civilisationnelles."
+      "description_fr": "Magnitude du gradient ‖∇μ‖ — fault lines civilisationnelles.",
+      "read_mode": "raw"
     },
     {
       "component": "x_score_uai",
@@ -109,7 +119,8 @@
       "colormap": "RdBu_r",
       "value_min": 37.26531982421875,
       "value_max": 82.12472534179688,
-      "description_fr": "Valeur prédite μ par le GP, échelle signée centrée sur la moyenne globale."
+      "description_fr": "Valeur prédite μ par le GP, échelle signée centrée sur la moyenne globale.",
+      "read_mode": "raw"
     },
     {
       "component": "x_score_uai",
@@ -118,7 +129,8 @@
       "colormap": "plasma",
       "value_min": 0.0016308394260704517,
       "value_max": 283.7774353027344,
-      "description_fr": "Magnitude du gradient ‖∇μ‖ — fault lines civilisationnelles."
+      "description_fr": "Magnitude du gradient ‖∇μ‖ — fault lines civilisationnelles.",
+      "read_mode": "raw"
     },
     {
       "component": "x_score_lto",
@@ -127,7 +139,8 @@
       "colormap": "RdBu_r",
       "value_min": 26.93549346923828,
       "value_max": 61.024417877197266,
-      "description_fr": "Valeur prédite μ par le GP, échelle signée centrée sur la moyenne globale."
+      "description_fr": "Valeur prédite μ par le GP, échelle signée centrée sur la moyenne globale.",
+      "read_mode": "raw"
     },
     {
       "component": "x_score_lto",
@@ -136,7 +149,8 @@
       "colormap": "plasma",
       "value_min": 0.0005285463412292302,
       "value_max": 252.79531860351562,
-      "description_fr": "Magnitude du gradient ‖∇μ‖ — fault lines civilisationnelles."
+      "description_fr": "Magnitude du gradient ‖∇μ‖ — fault lines civilisationnelles.",
+      "read_mode": "raw"
     },
     {
       "component": "x_score_ivr",
@@ -145,7 +159,8 @@
       "colormap": "RdBu_r",
       "value_min": 28.78072738647461,
       "value_max": 64.64871978759766,
-      "description_fr": "Valeur prédite μ par le GP, échelle signée centrée sur la moyenne globale."
+      "description_fr": "Valeur prédite μ par le GP, échelle signée centrée sur la moyenne globale.",
+      "read_mode": "raw"
     },
     {
       "component": "x_score_ivr",
@@ -154,7 +169,40 @@
       "colormap": "plasma",
       "value_min": 0.0007117774221114814,
       "value_max": 256.4217834472656,
-      "description_fr": "Magnitude du gradient ‖∇μ‖ — fault lines civilisationnelles."
+      "description_fr": "Magnitude du gradient ‖∇μ‖ — fault lines civilisationnelles.",
+      "read_mode": "raw"
+    },
+    {
+      "component": "civ_identity_sharpness",
+      "metric": "mean",
+      "filename": "civ_identity_sharpness_mean.png",
+      "colormap": "viridis",
+      "value_min": 0.022371903105162204,
+      "value_max": 0.19053436578071006,
+      "description_fr": "Force d’identité civilisationnelle — 1 = cœur identitaire net, 0 = zone interstitielle (entropie inverse normalisée du vecteur d’affinité GP).",
+      "read_mode": "paired",
+      "pair_with": "civ_texture_intensity"
+    },
+    {
+      "component": "civ_texture_intensity",
+      "metric": "mean",
+      "filename": "civ_texture_intensity_mean.png",
+      "colormap": "plasma",
+      "value_min": 1.553286863037464e-06,
+      "value_max": 3556.130780642522,
+      "description_fr": "Tension culturelle locale — somme des magnitudes de gradient sur les 19 composantes (trace du tenseur de déformation G(p) en métrique sphérique).",
+      "read_mode": "paired",
+      "pair_with": "civ_identity_sharpness"
+    },
+    {
+      "component": "civ_classification_margin",
+      "metric": "mean",
+      "filename": "civ_classification_margin_mean.png",
+      "colormap": "cividis",
+      "value_min": 5.597967090874086e-06,
+      "value_max": 0.7317652885058514,
+      "description_fr": "Profondeur du cœur civilisationnel — marge (d₂ − d₁) / d₁ entre les deux centroïdes les plus proches en B_score (Mahalanobis intra-civilisationnelle). Élevé = cœur stable, proche de 0 = fault line.",
+      "read_mode": "standalone"
     }
   ]
 }

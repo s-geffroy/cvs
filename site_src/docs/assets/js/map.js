@@ -57,6 +57,40 @@
     unresolved: 'non résolu'
   };
 
+  // Labels longs des composantes du champ continu (Inglehart-Welzel + Hofstede
+  // + 3 indicateurs synthétiques agrégés) — utilisés dans le sélecteur, la
+  // légende et le bandeau de lecture.
+  const componentLabels = {
+    civ_identity_sharpness: 'Force d’identité civilisationnelle',
+    civ_texture_intensity: 'Tension culturelle locale (tr G)',
+    civ_classification_margin: 'Profondeur du cœur civilisationnel (marge)',
+    x_viz_ts: 'Inglehart — TS · Traditionnel ↔ Séculier-rationnel',
+    x_viz_se: 'Inglehart — SE · Survie ↔ Expression de soi',
+    x_score_pdi: 'Hofstede — PDI · Distance hiérarchique',
+    x_score_idv: 'Hofstede — IDV · Individualisme vs Collectivisme',
+    x_score_mas: 'Hofstede — MAS · Masculinité vs Féminité',
+    x_score_uai: 'Hofstede — UAI · Évitement de l’incertitude',
+    x_score_lto: 'Hofstede — LTO · Orientation long terme',
+    x_score_ivr: 'Hofstede — IVR · Indulgence vs Retenue'
+  };
+
+  // Labels parlants pour la métrique du champ continu.
+  const metricLabels = {
+    mean: 'Valeur — où se situent les sociétés sur cet axe ?',
+    grad_magnitude: 'Transition — où le changement est-il le plus rapide ?'
+  };
+
+  // Groupement du sélecteur Composante selon le régime de lecture.
+  const READ_MODE_GROUP_LABEL = {
+    paired: 'Indicateurs synthétiques (à lire ensemble)',
+    standalone: 'Indicateur synthétique autonome',
+    raw: 'Composantes brutes (axes culturels)'
+  };
+  const READ_MODE_GROUP_ORDER = ['paired', 'standalone', 'raw'];
+
+  // Cache mémoire des images partenaires pour swap instantané.
+  const preloadedRasterImages = new Map();
+
   const provenanceOpacity = {
     observed: 0.82,
     observed_with_dim_imputation: 0.72,
@@ -235,8 +269,15 @@
       }
       const argmax = dominantCivilizationByAffinity(stateEntry.affinity_vector);
       const curatedCivilization = stateEntry.curated_civilization || null;
-      const effectiveCivilization = curatedCivilization || argmax.civilizationId;
-      const effectiveOrigin = curatedCivilization ? 'curated' : 'affinity';
+      const fallbackCivilization =
+        (stateEntry.data_quality && stateEntry.data_quality.fallback_civilization_id) || null;
+      const effectiveCivilization =
+        curatedCivilization || fallbackCivilization || argmax.civilizationId;
+      const effectiveOrigin = curatedCivilization
+        ? 'curated'
+        : fallbackCivilization
+          ? 'fallback'
+          : 'affinity';
       const subClusterId = stateEntry.sub_cluster_id || null;
       const subClusterLabel = stateEntry.sub_cluster_label || null;
       const fillColorMacro =
@@ -316,13 +357,18 @@
         RdBu_r: 'Rouge ↔ Bleu (échelle signée)',
         plasma: 'Plasma (magnitude)'
       };
+      const componentLabel =
+        componentLabels[matchedRaster.component] || matchedRaster.component;
+      const metricLabel = metricLabels[matchedRaster.metric] || matchedRaster.metric;
       legendContainer.innerHTML = `
 <strong>Légende — champ continu (cascade ⇒ Gaussian Process)</strong><br/>
 <div style="margin-top:0.3em; font-size:0.95em;">
-  <code>${matchedRaster.component}</code> / <code>${matchedRaster.metric}</code><br/>
+  <strong>${escapeHtml(componentLabel)}</strong><br/>
+  <em>${escapeHtml(metricLabel)}</em><br/>
+  <small>Code : <code>${escapeHtml(matchedRaster.component)}</code> / <code>${escapeHtml(matchedRaster.metric)}</code></small><br/>
   Plage : <code>[${matchedRaster.value_min.toFixed(2)}, ${matchedRaster.value_max.toFixed(2)}]</code><br/>
   Palette : ${colormapKeyToLabel[matchedRaster.colormap] || matchedRaster.colormap}<br/>
-  <em>${matchedRaster.description_fr}</em>
+  <em>${escapeHtml(matchedRaster.description_fr)}</em>
 </div>
 <div style="margin-top:0.4em; font-size:0.85em;">
   Le champ est interpolé par un GP Matérn 3/2 sphérique à partir de
@@ -396,6 +442,40 @@
   let continuousFieldIndex = null;
   let currentContinuousField = { component: 'x_viz_ts', metric: 'mean' };
 
+  function rasterByComponentAndMetric(componentId, metricId) {
+    if (!continuousFieldIndex || !continuousFieldIndex.rasters) {
+      return null;
+    }
+    return (
+      continuousFieldIndex.rasters.find(
+        (raster) =>
+          raster.component === componentId && raster.metric === metricId
+      ) || null
+    );
+  }
+
+  function rasterForComponent(componentId) {
+    if (!continuousFieldIndex || !continuousFieldIndex.rasters) {
+      return null;
+    }
+    return (
+      continuousFieldIndex.rasters.find(
+        (raster) => raster.component === componentId
+      ) || null
+    );
+  }
+
+  function metricsAvailableForComponent(componentId) {
+    if (!continuousFieldIndex || !continuousFieldIndex.rasters) {
+      return new Set();
+    }
+    return new Set(
+      continuousFieldIndex.rasters
+        .filter((raster) => raster.component === componentId)
+        .map((raster) => raster.metric)
+    );
+  }
+
   function populateContinuousFieldSelector() {
     const componentSelect = document.querySelector(
       '#civvec-continuous-component-select'
@@ -403,13 +483,173 @@
     if (!componentSelect || !continuousFieldIndex || !continuousFieldIndex.rasters) {
       return;
     }
-    const distinctComponents = Array.from(
-      new Set(continuousFieldIndex.rasters.map((raster) => raster.component))
-    );
-    componentSelect.innerHTML = distinctComponents
-      .map((component) => `<option value="${component}">${component.replace(/_/g, ' ')}</option>`)
-      .join('');
+    const componentsGroupedByReadMode = new Map();
+    const seenComponents = new Set();
+    for (const raster of continuousFieldIndex.rasters) {
+      if (seenComponents.has(raster.component)) {
+        continue;
+      }
+      seenComponents.add(raster.component);
+      const readMode = raster.read_mode || 'raw';
+      if (!componentsGroupedByReadMode.has(readMode)) {
+        componentsGroupedByReadMode.set(readMode, []);
+      }
+      componentsGroupedByReadMode.get(readMode).push(raster.component);
+    }
+
+    const optgroupMarkup = READ_MODE_GROUP_ORDER.map((readMode) => {
+      const componentIds = componentsGroupedByReadMode.get(readMode);
+      if (!componentIds || componentIds.length === 0) {
+        return '';
+      }
+      const groupLabel = READ_MODE_GROUP_LABEL[readMode] || readMode;
+      const options = componentIds
+        .map((component) => {
+          const label = componentLabels[component] || component.replace(/_/g, ' ');
+          return `<option value="${component}" title="${escapeHtml(label)}">${escapeHtml(label)}</option>`;
+        })
+        .join('');
+      return `<optgroup label="${escapeHtml(groupLabel)}">${options}</optgroup>`;
+    }).join('');
+
+    componentSelect.innerHTML = optgroupMarkup;
     componentSelect.value = currentContinuousField.component;
+  }
+
+  function updateContinuousMetricSelector() {
+    const metricSelect = document.querySelector(
+      'select[name="continuous-metric"]'
+    );
+    if (!metricSelect) return;
+    const available = metricsAvailableForComponent(currentContinuousField.component);
+    for (const option of metricSelect.options) {
+      const supported = available.has(option.value);
+      option.disabled = !supported;
+      option.title = supported
+        ? metricLabels[option.value] || option.value
+        : 'Cette vue n’est pas disponible pour les indicateurs synthétiques (déjà scalaires agrégés).';
+    }
+    // If the current metric isn't supported for this component, fall back to mean.
+    if (!available.has(currentContinuousField.metric)) {
+      currentContinuousField.metric = available.has('mean')
+        ? 'mean'
+        : Array.from(available)[0] || 'mean';
+      metricSelect.value = currentContinuousField.metric;
+    }
+  }
+
+  function preloadPartnerRaster(componentId) {
+    if (!componentId) return;
+    const raster = rasterForComponent(componentId);
+    if (!raster) return;
+    const rasterUrl = `../assets/data/continuous_field/${raster.filename}`;
+    if (preloadedRasterImages.has(rasterUrl)) return;
+    const image = new Image();
+    image.src = rasterUrl;
+    preloadedRasterImages.set(rasterUrl, image);
+  }
+
+  function quadrantTableMarkup() {
+    // Trois schémas de nommage superposés par quadrant (identité × tension).
+    // Évocateur (gros), neutre (italique), description math (petit).
+    const cellStyle =
+      'border:1px solid #d0d4d9; padding:0.5em 0.6em; vertical-align:top; ' +
+      'font-size:0.85em; line-height:1.35;';
+    const headerStyle =
+      'background:#eef2f6; font-weight:600; text-align:center; padding:0.35em 0.5em; ' +
+      'font-size:0.85em;';
+    const corner = `<th style="${headerStyle}; background:transparent; border:0;"></th>`;
+    return `
+<table style="border-collapse:collapse; margin:0.45em 0 0 0; width:100%; max-width:520px;">
+  <tr>
+    ${corner}
+    <th style="${headerStyle}">Tension faible</th>
+    <th style="${headerStyle}">Tension forte</th>
+  </tr>
+  <tr>
+    <th style="${headerStyle}; text-align:right;">Identité<br/>forte</th>
+    <td style="${cellStyle}; background:#eaf4ea;">
+      <strong>Cœur stable</strong><br/>
+      <em>Noyau</em><br/>
+      <small>identité ↑, tension ↓</small>
+    </td>
+    <td style="${cellStyle}; background:#fdebe1;">
+      <strong>Fracture entre cœurs</strong><br/>
+      <em>Faille</em><br/>
+      <small>identité ↑, tension ↑</small>
+    </td>
+  </tr>
+  <tr>
+    <th style="${headerStyle}; text-align:right;">Identité<br/>faible</th>
+    <td style="${cellStyle}; background:#f3f0e6;">
+      <strong>Plaine multiculturelle</strong><br/>
+      <em>Zone diffuse</em><br/>
+      <small>identité ↓, tension ↓</small>
+    </td>
+    <td style="${cellStyle}; background:#fbe6f0;">
+      <strong>Chaos transitionnel</strong><br/>
+      <em>Turbulence</em><br/>
+      <small>identité ↓, tension ↑</small>
+    </td>
+  </tr>
+</table>`;
+  }
+
+  function updateContinuousReadModeBanner() {
+    const bannerElement = document.querySelector(
+      '#civvec-continuous-mode-banner'
+    );
+    if (!bannerElement) return;
+    const raster = rasterByComponentAndMetric(
+      currentContinuousField.component,
+      currentContinuousField.metric
+    ) || rasterForComponent(currentContinuousField.component);
+    if (!raster) {
+      bannerElement.style.display = 'none';
+      bannerElement.innerHTML = '';
+      return;
+    }
+    const readMode = raster.read_mode || 'raw';
+    if (readMode === 'paired') {
+      const partnerComponent = raster.pair_with;
+      const partnerLabel = partnerComponent
+        ? componentLabels[partnerComponent] || partnerComponent
+        : null;
+      const swapButton = partnerComponent
+        ? `<button type="button" data-action="swap-to-partner" data-target-component="${escapeHtml(partnerComponent)}" style="margin-top:0.4em; padding:0.3em 0.7em; font-size:0.85em; border:1px solid #6c8caf; background:#eaf2fa; color:#1a3a5c; border-radius:4px; cursor:pointer;">↔ Basculer vers : ${escapeHtml(partnerLabel)}</button>`
+        : '';
+      bannerElement.innerHTML = `
+<div style="border-left:4px solid #6c8caf; background:#f4f8fc; padding:0.6em 0.85em; font-size:0.9em; border-radius:0 4px 4px 0;">
+  <strong>Indicateur synthétique couplé.</strong>
+  Ces deux indicateurs (force d’identité &amp; tension culturelle) ne se
+  comprennent qu’en regardant les deux cartes ensemble. La grille
+  ci-dessous donne la lecture conjointe :
+  ${quadrantTableMarkup()}
+  ${swapButton}
+</div>`;
+      bannerElement.style.display = 'block';
+      if (partnerComponent) {
+        preloadPartnerRaster(partnerComponent);
+      }
+      return;
+    }
+    if (readMode === 'standalone') {
+      bannerElement.innerHTML = `
+<div style="border-left:4px solid #2e7d32; background:#eaf4ea; padding:0.6em 0.85em; font-size:0.9em; border-radius:0 4px 4px 0;">
+  <strong>Indicateur synthétique autonome.</strong>
+  Cet indicateur se lit seul : il combine déjà position, identité et
+  proximité aux frontières civilisationnelles en un seul scalaire.
+  <ul style="margin:0.4em 0 0 1.2em; padding:0;">
+    <li><strong>Élevé</strong> = cœur civilisationnel net et profond (la civilisation la plus proche est nettement plus proche que la deuxième).</li>
+    <li><strong>Proche de 0</strong> = lieu équidistant de deux civilisations = <em>fault line</em>.</li>
+  </ul>
+</div>`;
+      bannerElement.style.display = 'block';
+      return;
+    }
+    // Composante brute — pas de bandeau interprétatif.
+    bannerElement.style.display = 'none';
+    bannerElement.innerHTML = '';
   }
 
   async function loadContinuousFieldIndex() {
@@ -470,6 +710,17 @@
     if (continuousSelectorContainer) {
       continuousSelectorContainer.style.display =
         currentDisplayMode === 'continuous' ? 'flex' : 'none';
+    }
+    const bannerElement = document.querySelector(
+      '#civvec-continuous-mode-banner'
+    );
+    if (bannerElement) {
+      bannerElement.style.display =
+        currentDisplayMode === 'continuous' ? bannerElement.style.display || 'block' : 'none';
+    }
+    if (currentDisplayMode === 'continuous') {
+      updateContinuousMetricSelector();
+      updateContinuousReadModeBanner();
     }
 
     if (legendContainer) {
@@ -574,6 +825,7 @@
         if (!target) return;
         if (target.name === 'continuous-component') {
           currentContinuousField.component = target.value;
+          updateContinuousMetricSelector();
         } else if (target.name === 'continuous-metric') {
           currentContinuousField.metric = target.value;
         } else {
@@ -581,6 +833,37 @@
         }
         if (currentDisplayMode === 'continuous') {
           applyContinuousFieldRaster(map);
+          updateContinuousReadModeBanner();
+          if (legendContainer) {
+            buildLegend(legendContainer, currentDisplayMode);
+          }
+        }
+      });
+    }
+
+    // Bouton « Basculer vers le partenaire » (présent dans le bandeau lecture couplée).
+    const bannerElement = document.querySelector(
+      '#civvec-continuous-mode-banner'
+    );
+    if (bannerElement) {
+      bannerElement.addEventListener('click', (clickEvent) => {
+        const target = clickEvent.target;
+        if (!target || target.getAttribute('data-action') !== 'swap-to-partner') {
+          return;
+        }
+        const partnerComponent = target.getAttribute('data-target-component');
+        if (!partnerComponent) return;
+        currentContinuousField.component = partnerComponent;
+        const componentSelectElement = document.querySelector(
+          '#civvec-continuous-component-select'
+        );
+        if (componentSelectElement) {
+          componentSelectElement.value = partnerComponent;
+        }
+        updateContinuousMetricSelector();
+        if (currentDisplayMode === 'continuous') {
+          applyContinuousFieldRaster(map);
+          updateContinuousReadModeBanner();
           if (legendContainer) {
             buildLegend(legendContainer, currentDisplayMode);
           }
@@ -693,9 +976,11 @@
       const originBadge =
         origin === 'curated'
           ? '<small>(curatée)</small>'
-          : origin === 'affinity'
-            ? '<small>(par affinité argmax)</small>'
-            : '<small>(aucune donnée)</small>';
+          : origin === 'fallback'
+            ? '<small>(centroïde de repli)</small>'
+            : origin === 'affinity'
+              ? '<small>(par affinité argmax)</small>'
+              : '<small>(aucune donnée)</small>';
       const weightDisplay =
         typeof affinityWeight === 'number' || (typeof affinityWeight === 'string' && affinityWeight !== '')
           ? Number(affinityWeight).toFixed(3)
