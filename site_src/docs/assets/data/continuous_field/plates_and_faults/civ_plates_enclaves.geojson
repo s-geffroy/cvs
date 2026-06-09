@@ -6,111 +6,13 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -89.0,
-          -60.0
+          14.0,
+          43.0
         ]
       },
       "properties": {
-        "enclave_civilization": "buddhist",
-        "surrounded_by_civilization": "african"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -36.0,
-          -57.0
-        ]
-      },
-      "properties": {
-        "enclave_civilization": "buddhist",
-        "surrounded_by_civilization": "african"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -31.0,
-          -26.0
-        ]
-      },
-      "properties": {
-        "enclave_civilization": "buddhist",
-        "surrounded_by_civilization": "latin_american"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          13.0,
-          40.0
-        ]
-      },
-      "properties": {
-        "enclave_civilization": "hindic",
-        "surrounded_by_civilization": "islamic"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          11.0,
-          41.0
-        ]
-      },
-      "properties": {
-        "enclave_civilization": "hindic",
-        "surrounded_by_civilization": "islamic"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          80.0,
-          47.0
-        ]
-      },
-      "properties": {
-        "enclave_civilization": "buddhist",
+        "enclave_civilization": "islamic",
         "surrounded_by_civilization": "orthodox"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          77.0,
-          48.0
-        ]
-      },
-      "properties": {
-        "enclave_civilization": "buddhist",
-        "surrounded_by_civilization": "islamic"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          75.0,
-          49.0
-        ]
-      },
-      "properties": {
-        "enclave_civilization": "buddhist",
-        "surrounded_by_civilization": "islamic"
       }
     }
   ]

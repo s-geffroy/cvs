@@ -1,0 +1,1498 @@
+{
+  "_meta": {
+    "schema": "sccs_societies_normalised.schema.json",
+    "source": "https://raw.githubusercontent.com/D-PLACE/dplace-data/master/datasets/SCCS/societies.csv",
+    "license": "CC-BY-4.0 (D-PLACE)",
+    "n_societies": 186
+  },
+  "societies": [
+    {
+      "sccs_society_id": "SCCS2",
+      "sccs_society_name": "!Kung",
+      "glottocode": "juho1239",
+      "latitude_deg": -19.83,
+      "longitude_deg": null,
+      "region": null
+    },
+    {
+      "sccs_society_id": "SCCS1",
+      "sccs_society_name": "Nama",
+      "glottocode": "nama1265",
+      "latitude_deg": -27.5,
+      "longitude_deg": null,
+      "region": null
+    },
+    {
+      "sccs_society_id": "SCCS13",
+      "sccs_society_name": "Mbuti",
+      "glottocode": "bila1255",
+      "latitude_deg": 1.5,
+      "longitude_deg": null,
+      "region": null
+    },
+    {
+      "sccs_society_id": "SCCS9",
+      "sccs_society_name": "Hadza",
+      "glottocode": "hadz1240",
+      "latitude_deg": -3.75,
+      "longitude_deg": null,
+      "region": null
+    },
+    {
+      "sccs_society_id": "SCCS4",
+      "sccs_society_name": "Lozi",
+      "glottocode": "lozi1239",
+      "latitude_deg": -16.0,
+      "longitude_deg": null,
+      "region": null
+    },
+    {
+      "sccs_society_id": "SCCS3",
+      "sccs_society_name": "Tsonga",
+      "glottocode": "tson1249",
+      "latitude_deg": -25.83,
+      "longitude_deg": null,
+      "region": null
+    },
+    {
+      "sccs_society_id": "SCCS5",
+      "sccs_society_name": "Mbundu",
+      "glottocode": "umbu1257",
+      "latitude_deg": -12.25,
+      "longitude_deg": null,
+      "region": null
+    },
+    {
+      "sccs_society_id": "SCCS6",
+      "sccs_society_name": "Suku",
+      "glottocode": "suku1259",
+      "latitude_deg": -6.0,
+      "longitude_deg": null,
+      "region": null
+    },
+    {
+      "sccs_society_id": "SCCS7",
+      "sccs_society_name": "Bemba",
+      "glottocode": "town1238",
+      "latitude_deg": -10.5,
+      "longitude_deg": null,
+      "region": null
+    },
+    {
+      "sccs_society_id": "SCCS10",
+      "sccs_society_name": "Luguru",
+      "glottocode": "lugu1238",
+      "latitude_deg": -6.83,
+      "longitude_deg": null,
+      "region": null
+    },
+    {
+      "sccs_society_id": "SCCS11",
+      "sccs_society_name": "Kikuyu",
+      "glottocode": "kiku1240",
+      "latitude_deg": -0.67,
+      "longitude_deg": null,
+      "region": null
+    },
+    {
+      "sccs_society_id": "SCCS8",
+      "sccs_society_name": "Nyakyusa",
+      "glottocode": "nyak1261",
+      "latitude_deg": -9.5,
+      "longitude_deg": null,
+      "region": null
+    },
+    {
+      "sccs_society_id": "SCCS12",
+      "sccs_society_name": "Ganda",
+      "glottocode": "gand1255",
+      "latitude_deg": 0.33,
+      "longitude_deg": null,
+      "region": null
+    },
+    {
+      "sccs_society_id": "SCCS14",
+      "sccs_society_name": "Nkundo",
+      "glottocode": "nkun1238",
+      "latitude_deg": -0.75,
+      "longitude_deg": null,
+      "region": null
+    },
+    {
+      "sccs_society_id": "SCCS15",
+      "sccs_society_name": "Banen",
+      "glottocode": "tune1261",
+      "latitude_deg": 4.67,
+      "longitude_deg": null,
+      "region": null
+    },
+    {
+      "sccs_society_id": "SCCS18",
+      "sccs_society_name": "Fon",
+      "glottocode": "fonn1241",
+      "latitude_deg": 7.2,
+      "longitude_deg": null,
+      "region": null
+    },
+    {
+      "sccs_society_id": "SCCS17",
+      "sccs_society_name": "Igbo",
+      "glottocode": "nucl1417",
+      "latitude_deg": 5.5,
+      "longitude_deg": null,
+      "region": null
+    },
+    {
+      "sccs_society_id": "SCCS19",
+      "sccs_society_name": "Ashanti",
+      "glottocode": "asan1239",
+      "latitude_deg": 7.0,
+      "longitude_deg": null,
+      "region": null
+    },
+    {
+      "sccs_society_id": "SCCS20",
+      "sccs_society_name": "Mende",
+      "glottocode": "mend1266",
+      "latitude_deg": 7.83,
+      "longitude_deg": null,
+      "region": null
+    },
+    {
+      "sccs_society_id": "SCCS22",
+      "sccs_society_name": "Bambara",
+      "glottocode": "bamb1269",
+      "latitude_deg": 12.5,
+      "longitude_deg": null,
+      "region": null
+    },
+    {
+      "sccs_society_id": "SCCS23",
+      "sccs_society_name": "Tallensi",
+      "glottocode": "taln1239",
+      "latitude_deg": 10.66,
+      "longitude_deg": null,
+      "region": null
+    },
+    {
+      "sccs_society_id": "SCCS16",
+      "sccs_society_name": "Tiv",
+      "glottocode": "tivv1240",
+      "latitude_deg": 7.25,
+      "longitude_deg": null,
+      "region": null
+    },
+    {
+      "sccs_society_id": "SCCS30",
+      "sccs_society_name": "Otoro",
+      "glottocode": "otor1240",
+      "latitude_deg": 11.33,
+      "longitude_deg": null,
+      "region": null
+    },
+    {
+      "sccs_society_id": "SCCS28",
+      "sccs_society_name": "Azande",
+      "glottocode": "zand1248",
+      "latitude_deg": 5.08,
+      "longitude_deg": null,
+      "region": null
+    },
+    {
+      "sccs_society_id": "SCCS32",
+      "sccs_society_name": "Mao",
+      "glottocode": "hozo1236",
+      "latitude_deg": 9.27,
+      "longitude_deg": null,
+      "region": null
+    },
+    {
+      "sccs_society_id": "SCCS31",
+      "sccs_society_name": "Shilluk",
+      "glottocode": "shil1265",
+      "latitude_deg": 9.75,
+      "longitude_deg": null,
+      "region": null
+    },
+    {
+      "sccs_society_id": "SCCS27",
+      "sccs_society_name": "Masa",
+      "glottocode": "masa1322",
+      "latitude_deg": 10.5,
+      "longitude_deg": null,
+      "region": null
+    },
+    {
+      "sccs_society_id": "SCCS34",
+      "sccs_society_name": "Maasi",
+      "glottocode": "masa1300",
+      "latitude_deg": -3.5,
+      "longitude_deg": null,
+      "region": null
+    },
+    {
+      "sccs_society_id": "SCCS35",
+      "sccs_society_name": "Konso",
+      "glottocode": "kons1243",
+      "latitude_deg": 5.25,
+      "longitude_deg": null,
+      "region": null
+    },
+    {
+      "sccs_society_id": "SCCS36",
+      "sccs_society_name": "Somali (Dolbahanta)",
+      "glottocode": "nort3051",
+      "latitude_deg": 9.0,
+      "longitude_deg": null,
+      "region": null
+    },
+    {
+      "sccs_society_id": "SCCS33",
+      "sccs_society_name": "Kafa",
+      "glottocode": "kafa1242",
+      "latitude_deg": 7.27,
+      "longitude_deg": null,
+      "region": null
+    },
+    {
+      "sccs_society_id": "SCCS38",
+      "sccs_society_name": "Blin",
+      "glottocode": "bili1260",
+      "latitude_deg": 15.75,
+      "longitude_deg": null,
+      "region": null
+    },
+    {
+      "sccs_society_id": "SCCS37",
+      "sccs_society_name": "Amhara",
+      "glottocode": "amha1245",
+      "latitude_deg": 12.5,
+      "longitude_deg": null,
+      "region": null
+    },
+    {
+      "sccs_society_id": "SCCS29",
+      "sccs_society_name": "Fur",
+      "glottocode": "furr1244",
+      "latitude_deg": 13.5,
+      "longitude_deg": null,
+      "region": null
+    },
+    {
+      "sccs_society_id": "SCCS21",
+      "sccs_society_name": "Wolof",
+      "glottocode": "nucl1347",
+      "latitude_deg": 13.75,
+      "longitude_deg": null,
+      "region": null
+    },
+    {
+      "sccs_society_id": "SCCS25",
+      "sccs_society_name": "Wodaabe Fulani",
+      "glottocode": "boro1274",
+      "latitude_deg": 15.0,
+      "longitude_deg": null,
+      "region": null
+    },
+    {
+      "sccs_society_id": "SCCS26",
+      "sccs_society_name": "Zazzagawa Hausa",
+      "glottocode": "haus1257",
+      "latitude_deg": 10.5,
+      "longitude_deg": null,
+      "region": null
+    },
+    {
+      "sccs_society_id": "SCCS24",
+      "sccs_society_name": "Songhai",
+      "glottocode": "koyr1242",
+      "latitude_deg": 16.58,
+      "longitude_deg": null,
+      "region": null
+    },
+    {
+      "sccs_society_id": "SCCS40",
+      "sccs_society_name": "Teda",
+      "glottocode": "teda1241",
+      "latitude_deg": 20.5,
+      "longitude_deg": null,
+      "region": null
+    },
+    {
+      "sccs_society_id": "SCCS41",
+      "sccs_society_name": "Tuareg Ahaggar",
+      "glottocode": "hogg1238",
+      "latitude_deg": 23.0,
+      "longitude_deg": null,
+      "region": null
+    },
+    {
+      "sccs_society_id": "SCCS39",
+      "sccs_society_name": "Barabra",
+      "glottocode": "kenu1236",
+      "latitude_deg": 23.0,
+      "longitude_deg": null,
+      "region": null
+    },
+    {
+      "sccs_society_id": "SCCS43",
+      "sccs_society_name": "Egyptians",
+      "glottocode": "egyp1253",
+      "latitude_deg": 24.75,
+      "longitude_deg": null,
+      "region": null
+    },
+    {
+      "sccs_society_id": "SCCS42",
+      "sccs_society_name": "Riffians",
+      "glottocode": "tari1263",
+      "latitude_deg": 34.92,
+      "longitude_deg": null,
+      "region": null
+    },
+    {
+      "sccs_society_id": "SCCS48",
+      "sccs_society_name": "Gheg",
+      "glottocode": "gheg1238",
+      "latitude_deg": 42.0,
+      "longitude_deg": null,
+      "region": null
+    },
+    {
+      "sccs_society_id": "SCCS49",
+      "sccs_society_name": "Ancient Romans",
+      "glottocode": "lati1261",
+      "latitude_deg": 41.67,
+      "longitude_deg": null,
+      "region": null
+    },
+    {
+      "sccs_society_id": "SCCS50",
+      "sccs_society_name": "Spanish Basques",
+      "glottocode": "west1508",
+      "latitude_deg": 43.25,
+      "longitude_deg": null,
+      "region": null
+    },
+    {
+      "sccs_society_id": "SCCS51",
+      "sccs_society_name": "Irish",
+      "glottocode": "iris1253",
+      "latitude_deg": 53.5,
+      "longitude_deg": null,
+      "region": null
+    },
+    {
+      "sccs_society_id": "SCCS52",
+      "sccs_society_name": "Sami",
+      "glottocode": "nort2671",
+      "latitude_deg": 68.7,
+      "longitude_deg": null,
+      "region": null
+    },
+    {
+      "sccs_society_id": "SCCS54",
+      "sccs_society_name": "Russians",
+      "glottocode": "russ1263",
+      "latitude_deg": 52.67,
+      "longitude_deg": null,
+      "region": null
+    },
+    {
+      "sccs_society_id": "SCCS56",
+      "sccs_society_name": "Armenians",
+      "glottocode": "nucl1235",
+      "latitude_deg": 40.0,
+      "longitude_deg": null,
+      "region": null
+    },
+    {
+      "sccs_society_id": "SCCS57",
+      "sccs_society_name": "Kurd",
+      "glottocode": "cent1972",
+      "latitude_deg": 36.5,
+      "longitude_deg": null,
+      "region": null
+    },
+    {
+      "sccs_society_id": "SCCS55",
+      "sccs_society_name": "Abkhaz",
+      "glottocode": "abkh1244",
+      "latitude_deg": 43.13,
+      "longitude_deg": null,
+      "region": null
+    },
+    {
+      "sccs_society_id": "SCCS47",
+      "sccs_society_name": "Turks",
+      "glottocode": "nucl1301",
+      "latitude_deg": 39.33,
+      "longitude_deg": null,
+      "region": null
+    },
+    {
+      "sccs_society_id": "SCCS46",
+      "sccs_society_name": "Rwala",
+      "glottocode": "east2690",
+      "latitude_deg": 33.25,
+      "longitude_deg": null,
+      "region": null
+    },
+    {
+      "sccs_society_id": "SCCS44",
+      "sccs_society_name": "Hebrews",
+      "glottocode": "anci1244",
+      "latitude_deg": 31.18,
+      "longitude_deg": null,
+      "region": null
+    },
+    {
+      "sccs_society_id": "SCCS45",
+      "sccs_society_name": "Babylonians",
+      "glottocode": "akka1240",
+      "latitude_deg": 32.58,
+      "longitude_deg": null,
+      "region": null
+    },
+    {
+      "sccs_society_id": "SCCS59",
+      "sccs_society_name": "Punjabi",
+      "glottocode": "west2386",
+      "latitude_deg": 32.5,
+      "longitude_deg": null,
+      "region": null
+    },
+    {
+      "sccs_society_id": "SCCS58",
+      "sccs_society_name": "Basseri",
+      "glottocode": "bass1257",
+      "latitude_deg": 29.0,
+      "longitude_deg": null,
+      "region": null
+    },
+    {
+      "sccs_society_id": "SCCS65",
+      "sccs_society_name": "Kazakh",
+      "glottocode": "kaza1248",
+      "latitude_deg": 42.5,
+      "longitude_deg": null,
+      "region": null
+    },
+    {
+      "sccs_society_id": "SCCS66",
+      "sccs_society_name": "Khalka",
+      "glottocode": "halh1238",
+      "latitude_deg": 47.17,
+      "longitude_deg": null,
+      "region": null
+    },
+    {
+      "sccs_society_id": "SCCS119",
+      "sccs_society_name": "Nivkh",
+      "glottocode": "gily1242",
+      "latitude_deg": 53.0,
+      "longitude_deg": null,
+      "region": null
+    },
+    {
+      "sccs_society_id": "SCCS121",
+      "sccs_society_name": "Chukchi",
+      "glottocode": "chuk1273",
+      "latitude_deg": 66.5,
+      "longitude_deg": null,
+      "region": null
+    },
+    {
+      "sccs_society_id": "SCCS53",
+      "sccs_society_name": "Yurak-Samoyeds",
+      "glottocode": "nene1249",
+      "latitude_deg": 68.0,
+      "longitude_deg": null,
+      "region": null
+    },
+    {
+      "sccs_society_id": "SCCS120",
+      "sccs_society_name": "Yukaghir",
+      "glottocode": "nort2745",
+      "latitude_deg": 64.75,
+      "longitude_deg": null,
+      "region": null
+    },
+    {
+      "sccs_society_id": "SCCS118",
+      "sccs_society_name": "Ainu",
+      "glottocode": "ainu1240",
+      "latitude_deg": 42.83,
+      "longitude_deg": null,
+      "region": null
+    },
+    {
+      "sccs_society_id": "SCCS116",
+      "sccs_society_name": "Koreans",
+      "glottocode": "kore1280",
+      "latitude_deg": 37.6,
+      "longitude_deg": null,
+      "region": null
+    },
+    {
+      "sccs_society_id": "SCCS114",
+      "sccs_society_name": "Chekiang",
+      "glottocode": "wuch1236",
+      "latitude_deg": 31.0,
+      "longitude_deg": null,
+      "region": null
+    },
+    {
+      "sccs_society_id": "SCCS67",
+      "sccs_society_name": "Lolo",
+      "glottocode": "sich1238",
+      "latitude_deg": 27.5,
+      "longitude_deg": null,
+      "region": null
+    },
+    {
+      "sccs_society_id": "SCCS115",
+      "sccs_society_name": "Manchu",
+      "glottocode": "manc1252",
+      "latitude_deg": 50.0,
+      "longitude_deg": null,
+      "region": null
+    },
+    {
+      "sccs_society_id": "SCCS117",
+      "sccs_society_name": "Japanese",
+      "glottocode": "nucl1643",
+      "latitude_deg": 34.67,
+      "longitude_deg": null,
+      "region": null
+    },
+    {
+      "sccs_society_id": "SCCS64",
+      "sccs_society_name": "Burusho",
+      "glottocode": "buru1296",
+      "latitude_deg": 36.43,
+      "longitude_deg": null,
+      "region": null
+    },
+    {
+      "sccs_society_id": "SCCS68",
+      "sccs_society_name": "Lepcha",
+      "glottocode": "lepc1244",
+      "latitude_deg": 27.5,
+      "longitude_deg": null,
+      "region": null
+    },
+    {
+      "sccs_society_id": "SCCS62",
+      "sccs_society_name": "Santal",
+      "glottocode": "sant1410",
+      "latitude_deg": 23.5,
+      "longitude_deg": null,
+      "region": null
+    },
+    {
+      "sccs_society_id": "SCCS63",
+      "sccs_society_name": "Uttar Pradesh",
+      "glottocode": "bhoj1244",
+      "latitude_deg": 25.92,
+      "longitude_deg": null,
+      "region": null
+    },
+    {
+      "sccs_society_id": "SCCS60",
+      "sccs_society_name": "Madia",
+      "glottocode": "mari1414",
+      "latitude_deg": 19.63,
+      "longitude_deg": null,
+      "region": null
+    },
+    {
+      "sccs_society_id": "SCCS61",
+      "sccs_society_name": "Toda",
+      "glottocode": "toda1252",
+      "latitude_deg": 11.5,
+      "longitude_deg": null,
+      "region": null
+    },
+    {
+      "sccs_society_id": "SCCS79",
+      "sccs_society_name": "Andamanese",
+      "glottocode": "akab1249",
+      "latitude_deg": 12.0,
+      "longitude_deg": null,
+      "region": null
+    },
+    {
+      "sccs_society_id": "SCCS81",
+      "sccs_society_name": "Tanala",
+      "glottocode": "tana1285",
+      "latitude_deg": -22.0,
+      "longitude_deg": null,
+      "region": null
+    },
+    {
+      "sccs_society_id": "SCCS80",
+      "sccs_society_name": "Vedda",
+      "glottocode": "vedd1240",
+      "latitude_deg": 7.75,
+      "longitude_deg": null,
+      "region": null
+    },
+    {
+      "sccs_society_id": "SCCS78",
+      "sccs_society_name": "Nicobarese",
+      "glottocode": "carn1240",
+      "latitude_deg": 7.0,
+      "longitude_deg": null,
+      "region": null
+    },
+    {
+      "sccs_society_id": "SCCS69",
+      "sccs_society_name": "Garo",
+      "glottocode": "garo1247",
+      "latitude_deg": 26.0,
+      "longitude_deg": null,
+      "region": null
+    },
+    {
+      "sccs_society_id": "SCCS71",
+      "sccs_society_name": "Burmese",
+      "glottocode": "nucl1310",
+      "latitude_deg": 22.0,
+      "longitude_deg": null,
+      "region": null
+    },
+    {
+      "sccs_society_id": "SCCS70",
+      "sccs_society_name": "Maras",
+      "glottocode": "mara1382",
+      "latitude_deg": 22.33,
+      "longitude_deg": null,
+      "region": null
+    },
+    {
+      "sccs_society_id": "SCCS72",
+      "sccs_society_name": "Lamet",
+      "glottocode": "lame1256",
+      "latitude_deg": 20.0,
+      "longitude_deg": null,
+      "region": null
+    },
+    {
+      "sccs_society_id": "SCCS74",
+      "sccs_society_name": "Rade",
+      "glottocode": "rade1240",
+      "latitude_deg": 13.0,
+      "longitude_deg": null,
+      "region": null
+    },
+    {
+      "sccs_society_id": "SCCS75",
+      "sccs_society_name": "Ancient Khmer",
+      "glottocode": "oldk1249",
+      "latitude_deg": 13.0,
+      "longitude_deg": null,
+      "region": null
+    },
+    {
+      "sccs_society_id": "SCCS82",
+      "sccs_society_name": "Negri Sembilan",
+      "glottocode": "nege1240",
+      "latitude_deg": 2.58,
+      "longitude_deg": null,
+      "region": null
+    },
+    {
+      "sccs_society_id": "SCCS77",
+      "sccs_society_name": "Semang",
+      "glottocode": "kens1248",
+      "latitude_deg": 5.0,
+      "longitude_deg": null,
+      "region": null
+    },
+    {
+      "sccs_society_id": "SCCS73",
+      "sccs_society_name": "Annamese",
+      "glottocode": "viet1252",
+      "latitude_deg": 20.5,
+      "longitude_deg": null,
+      "region": null
+    },
+    {
+      "sccs_society_id": "SCCS76",
+      "sccs_society_name": "Thai",
+      "glottocode": "thai1261",
+      "latitude_deg": 14.0,
+      "longitude_deg": null,
+      "region": null
+    },
+    {
+      "sccs_society_id": "SCCS113",
+      "sccs_society_name": "Atayal",
+      "glottocode": "atay1247",
+      "latitude_deg": 24.33,
+      "longitude_deg": null,
+      "region": null
+    },
+    {
+      "sccs_society_id": "SCCS86",
+      "sccs_society_name": "Badjau Tawi-Tawi",
+      "glottocode": "sout2918",
+      "latitude_deg": 5.0,
+      "longitude_deg": null,
+      "region": null
+    },
+    {
+      "sccs_society_id": "SCCS112",
+      "sccs_society_name": "Ifugao",
+      "glottocode": "tuwa1243",
+      "latitude_deg": 16.83,
+      "longitude_deg": null,
+      "region": null
+    },
+    {
+      "sccs_society_id": "SCCS85",
+      "sccs_society_name": "Iban",
+      "glottocode": "iban1264",
+      "latitude_deg": 2.0,
+      "longitude_deg": null,
+      "region": null
+    },
+    {
+      "sccs_society_id": "SCCS83",
+      "sccs_society_name": "Javanese",
+      "glottocode": "java1254",
+      "latitude_deg": -7.7,
+      "longitude_deg": null,
+      "region": null
+    },
+    {
+      "sccs_society_id": "SCCS84",
+      "sccs_society_name": "Balinese",
+      "glottocode": "bali1278",
+      "latitude_deg": -8.5,
+      "longitude_deg": null,
+      "region": null
+    },
+    {
+      "sccs_society_id": "SCCS88",
+      "sccs_society_name": "Tobelorese",
+      "glottocode": "tobe1252",
+      "latitude_deg": 2.0,
+      "longitude_deg": null,
+      "region": null
+    },
+    {
+      "sccs_society_id": "SCCS89",
+      "sccs_society_name": "Alorese",
+      "glottocode": "abui1241",
+      "latitude_deg": -8.33,
+      "longitude_deg": null,
+      "region": null
+    },
+    {
+      "sccs_society_id": "SCCS87",
+      "sccs_society_name": "Toradja",
+      "glottocode": "pamo1252",
+      "latitude_deg": -2.0,
+      "longitude_deg": null,
+      "region": null
+    },
+    {
+      "sccs_society_id": "SCCS91",
+      "sccs_society_name": "Northern Aranda",
+      "glottocode": "east2379",
+      "latitude_deg": -24.25,
+      "longitude_deg": null,
+      "region": null
+    },
+    {
+      "sccs_society_id": "SCCS90",
+      "sccs_society_name": "Tiwi",
+      "glottocode": "tiwi1244",
+      "latitude_deg": -11.38,
+      "longitude_deg": null,
+      "region": null
+    },
+    {
+      "sccs_society_id": "SCCS94",
+      "sccs_society_name": "Mee",
+      "glottocode": "ekar1243",
+      "latitude_deg": -4.0,
+      "longitude_deg": null,
+      "region": null
+    },
+    {
+      "sccs_society_id": "SCCS95",
+      "sccs_society_name": "Kwoma",
+      "glottocode": "kwom1262",
+      "latitude_deg": -4.17,
+      "longitude_deg": null,
+      "region": null
+    },
+    {
+      "sccs_society_id": "SCCS93",
+      "sccs_society_name": "Kimam",
+      "glottocode": "kima1246",
+      "latitude_deg": -7.5,
+      "longitude_deg": null,
+      "region": null
+    },
+    {
+      "sccs_society_id": "SCCS92",
+      "sccs_society_name": "Orokaiva",
+      "glottocode": "orok1269",
+      "latitude_deg": -8.5,
+      "longitude_deg": null,
+      "region": null
+    },
+    {
+      "sccs_society_id": "SCCS111",
+      "sccs_society_name": "Palauans",
+      "glottocode": "pala1344",
+      "latitude_deg": 7.5,
+      "longitude_deg": null,
+      "region": null
+    },
+    {
+      "sccs_society_id": "SCCS107",
+      "sccs_society_name": "Makin",
+      "glottocode": "bana1287",
+      "latitude_deg": 3.38,
+      "longitude_deg": null,
+      "region": null
+    },
+    {
+      "sccs_society_id": "SCCS108",
+      "sccs_society_name": "Marshallese - Jaluit Atoll",
+      "glottocode": "rali1241",
+      "latitude_deg": 6.28,
+      "longitude_deg": null,
+      "region": null
+    },
+    {
+      "sccs_society_id": "SCCS109",
+      "sccs_society_name": "Trukese",
+      "glottocode": "chuu1238",
+      "latitude_deg": 7.34,
+      "longitude_deg": null,
+      "region": null
+    },
+    {
+      "sccs_society_id": "SCCS110",
+      "sccs_society_name": "Yapese",
+      "glottocode": "yape1248",
+      "latitude_deg": 9.52,
+      "longitude_deg": null,
+      "region": null
+    },
+    {
+      "sccs_society_id": "SCCS99",
+      "sccs_society_name": "Siuai",
+      "glottocode": "siwa1245",
+      "latitude_deg": -6.76,
+      "longitude_deg": null,
+      "region": null
+    },
+    {
+      "sccs_society_id": "SCCS98",
+      "sccs_society_name": "Trobriands",
+      "glottocode": "kili1267",
+      "latitude_deg": -8.54,
+      "longitude_deg": null,
+      "region": null
+    },
+    {
+      "sccs_society_id": "SCCS97",
+      "sccs_society_name": "Lesu",
+      "glottocode": "nots1237",
+      "latitude_deg": -2.71,
+      "longitude_deg": null,
+      "region": null
+    },
+    {
+      "sccs_society_id": "SCCS96",
+      "sccs_society_name": "Manus",
+      "glottocode": "tita1241",
+      "latitude_deg": -2.17,
+      "longitude_deg": null,
+      "region": null
+    },
+    {
+      "sccs_society_id": "SCCS102",
+      "sccs_society_name": "Mbau Fijians",
+      "glottocode": "bauu1243",
+      "latitude_deg": -18.0,
+      "longitude_deg": null,
+      "region": null
+    },
+    {
+      "sccs_society_id": "SCCS101",
+      "sccs_society_name": "Bunlap",
+      "glottocode": "saaa1241",
+      "latitude_deg": -15.95,
+      "longitude_deg": null,
+      "region": null
+    },
+    {
+      "sccs_society_id": "SCCS103",
+      "sccs_society_name": "Ajie",
+      "glottocode": "ajie1238",
+      "latitude_deg": -21.33,
+      "longitude_deg": null,
+      "region": null
+    },
+    {
+      "sccs_society_id": "SCCS106",
+      "sccs_society_name": "Upolu Samoans",
+      "glottocode": "samo1305",
+      "latitude_deg": -13.94,
+      "longitude_deg": null,
+      "region": null
+    },
+    {
+      "sccs_society_id": "SCCS100",
+      "sccs_society_name": "Tikopia",
+      "glottocode": "tiko1237",
+      "latitude_deg": -12.29,
+      "longitude_deg": null,
+      "region": null
+    },
+    {
+      "sccs_society_id": "SCCS104",
+      "sccs_society_name": "Māori",
+      "glottocode": "maor1246",
+      "latitude_deg": -35.33,
+      "longitude_deg": null,
+      "region": null
+    },
+    {
+      "sccs_society_id": "SCCS105",
+      "sccs_society_name": "Marquesans",
+      "glottocode": "nort2845",
+      "latitude_deg": -8.92,
+      "longitude_deg": null,
+      "region": null
+    },
+    {
+      "sccs_society_id": "SCCS128",
+      "sccs_society_name": "DeneTha",
+      "glottocode": "sout2959",
+      "latitude_deg": 62.0,
+      "longitude_deg": null,
+      "region": null
+    },
+    {
+      "sccs_society_id": "SCCS124",
+      "sccs_society_name": "Copper Inuit",
+      "glottocode": "copp1244",
+      "latitude_deg": 68.72,
+      "longitude_deg": null,
+      "region": null
+    },
+    {
+      "sccs_society_id": "SCCS125",
+      "sccs_society_name": "Montagnais",
+      "glottocode": "mont1268",
+      "latitude_deg": 50.0,
+      "longitude_deg": null,
+      "region": null
+    },
+    {
+      "sccs_society_id": "SCCS127",
+      "sccs_society_name": "Northern Saulteaux",
+      "glottocode": "alba1270",
+      "latitude_deg": 52.0,
+      "longitude_deg": null,
+      "region": null
+    },
+    {
+      "sccs_society_id": "SCCS129",
+      "sccs_society_name": "Kaska",
+      "glottocode": "kask1239",
+      "latitude_deg": 60.0,
+      "longitude_deg": null,
+      "region": null
+    },
+    {
+      "sccs_society_id": "SCCS126",
+      "sccs_society_name": "Mi'kmaq",
+      "glottocode": "mikm1235",
+      "latitude_deg": 46.99,
+      "longitude_deg": null,
+      "region": null
+    },
+    {
+      "sccs_society_id": "SCCS122",
+      "sccs_society_name": "Deg Xit'an",
+      "glottocode": "dege1248",
+      "latitude_deg": 62.5,
+      "longitude_deg": null,
+      "region": null
+    },
+    {
+      "sccs_society_id": "SCCS123",
+      "sccs_society_name": "Aleut",
+      "glottocode": "east2533",
+      "latitude_deg": 55.0,
+      "longitude_deg": null,
+      "region": null
+    },
+    {
+      "sccs_society_id": "SCCS131",
+      "sccs_society_name": "Haida",
+      "glottocode": "nort2938",
+      "latitude_deg": 54.0,
+      "longitude_deg": null,
+      "region": null
+    },
+    {
+      "sccs_society_id": "SCCS133",
+      "sccs_society_name": "Twana",
+      "glottocode": "twan1247",
+      "latitude_deg": 47.43,
+      "longitude_deg": null,
+      "region": null
+    },
+    {
+      "sccs_society_id": "SCCS134",
+      "sccs_society_name": "Yurok",
+      "glottocode": "yuro1248",
+      "latitude_deg": 41.5,
+      "longitude_deg": null,
+      "region": null
+    },
+    {
+      "sccs_society_id": "SCCS130",
+      "sccs_society_name": "Eyak",
+      "glottocode": "eyak1241",
+      "latitude_deg": 60.5,
+      "longitude_deg": null,
+      "region": null
+    },
+    {
+      "sccs_society_id": "SCCS132",
+      "sccs_society_name": "Nuxalk",
+      "glottocode": "bell1243",
+      "latitude_deg": 52.33,
+      "longitude_deg": null,
+      "region": null
+    },
+    {
+      "sccs_society_id": "SCCS135",
+      "sccs_society_name": "Eastern Pomo",
+      "glottocode": "east2545",
+      "latitude_deg": 39.0,
+      "longitude_deg": null,
+      "region": null
+    },
+    {
+      "sccs_society_id": "SCCS136",
+      "sccs_society_name": "Southern Valley Yokuts",
+      "glottocode": "vall1251",
+      "latitude_deg": 35.0,
+      "longitude_deg": null,
+      "region": null
+    },
+    {
+      "sccs_society_id": "SCCS138",
+      "sccs_society_name": "Klamath",
+      "glottocode": "klam1254",
+      "latitude_deg": 42.63,
+      "longitude_deg": null,
+      "region": null
+    },
+    {
+      "sccs_society_id": "SCCS137",
+      "sccs_society_name": "Wadadokado",
+      "glottocode": "nort1551",
+      "latitude_deg": 43.5,
+      "longitude_deg": null,
+      "region": null
+    },
+    {
+      "sccs_society_id": "SCCS150",
+      "sccs_society_name": "Havasupai",
+      "glottocode": "hava1249",
+      "latitude_deg": 35.83,
+      "longitude_deg": null,
+      "region": null
+    },
+    {
+      "sccs_society_id": "SCCS139",
+      "sccs_society_name": "Kutenai",
+      "glottocode": "kute1249",
+      "latitude_deg": 49.0,
+      "longitude_deg": null,
+      "region": null
+    },
+    {
+      "sccs_society_id": "SCCS140",
+      "sccs_society_name": "Gros Ventre",
+      "glottocode": "gros1243",
+      "latitude_deg": 48.0,
+      "longitude_deg": null,
+      "region": null
+    },
+    {
+      "sccs_society_id": "SCCS141",
+      "sccs_society_name": "Hidatsa",
+      "glottocode": "hida1246",
+      "latitude_deg": 47.0,
+      "longitude_deg": null,
+      "region": null
+    },
+    {
+      "sccs_society_id": "SCCS147",
+      "sccs_society_name": "Comanche",
+      "glottocode": "coma1245",
+      "latitude_deg": 34.0,
+      "longitude_deg": null,
+      "region": null
+    },
+    {
+      "sccs_society_id": "SCCS143",
+      "sccs_society_name": "Omaha",
+      "glottocode": "omah1248",
+      "latitude_deg": 41.43,
+      "longitude_deg": null,
+      "region": null
+    },
+    {
+      "sccs_society_id": "SCCS142",
+      "sccs_society_name": "Pawnee",
+      "glottocode": "pawn1254",
+      "latitude_deg": 42.0,
+      "longitude_deg": null,
+      "region": null
+    },
+    {
+      "sccs_society_id": "SCCS144",
+      "sccs_society_name": "Huron",
+      "glottocode": "wyan1247",
+      "latitude_deg": 44.5,
+      "longitude_deg": null,
+      "region": null
+    },
+    {
+      "sccs_society_id": "SCCS145",
+      "sccs_society_name": "Muscogee",
+      "glottocode": "cree1270",
+      "latitude_deg": 32.93,
+      "longitude_deg": null,
+      "region": null
+    },
+    {
+      "sccs_society_id": "SCCS146",
+      "sccs_society_name": "Natchez",
+      "glottocode": "natc1249",
+      "latitude_deg": 31.5,
+      "longitude_deg": null,
+      "region": null
+    },
+    {
+      "sccs_society_id": "SCCS148",
+      "sccs_society_name": "Chiricahua",
+      "glottocode": "mesc1238",
+      "latitude_deg": 32.0,
+      "longitude_deg": null,
+      "region": null
+    },
+    {
+      "sccs_society_id": "SCCS149",
+      "sccs_society_name": "Zuni",
+      "glottocode": "zuni1245",
+      "latitude_deg": 35.67,
+      "longitude_deg": null,
+      "region": null
+    },
+    {
+      "sccs_society_id": "SCCS151",
+      "sccs_society_name": "Tohono O'odham",
+      "glottocode": "toho1246",
+      "latitude_deg": 32.0,
+      "longitude_deg": null,
+      "region": null
+    },
+    {
+      "sccs_society_id": "SCCS152",
+      "sccs_society_name": "Huichol",
+      "glottocode": "huic1243",
+      "latitude_deg": 22.0,
+      "longitude_deg": null,
+      "region": null
+    },
+    {
+      "sccs_society_id": "SCCS153",
+      "sccs_society_name": "Aztec",
+      "glottocode": "clas1250",
+      "latitude_deg": 19.0,
+      "longitude_deg": null,
+      "region": null
+    },
+    {
+      "sccs_society_id": "SCCS154",
+      "sccs_society_name": "Sierra Popoluca",
+      "glottocode": "high1276",
+      "latitude_deg": 18.25,
+      "longitude_deg": null,
+      "region": null
+    },
+    {
+      "sccs_society_id": "SCCS158",
+      "sccs_society_name": "Guna",
+      "glottocode": "sanb1242",
+      "latitude_deg": 9.25,
+      "longitude_deg": null,
+      "region": null
+    },
+    {
+      "sccs_society_id": "SCCS155",
+      "sccs_society_name": "K'iche'",
+      "glottocode": "kich1262",
+      "latitude_deg": 15.0,
+      "longitude_deg": null,
+      "region": null
+    },
+    {
+      "sccs_society_id": "SCCS157",
+      "sccs_society_name": "Bribri",
+      "glottocode": "brib1243",
+      "latitude_deg": 9.0,
+      "longitude_deg": null,
+      "region": null
+    },
+    {
+      "sccs_society_id": "SCCS156",
+      "sccs_society_name": "Miskito",
+      "glottocode": "misk1235",
+      "latitude_deg": 15.16,
+      "longitude_deg": null,
+      "region": null
+    },
+    {
+      "sccs_society_id": "SCCS161",
+      "sccs_society_name": "Callinago",
+      "glottocode": "isla1278",
+      "latitude_deg": 15.41,
+      "longitude_deg": null,
+      "region": null
+    },
+    {
+      "sccs_society_id": "SCCS159",
+      "sccs_society_name": "Wayuu",
+      "glottocode": "wayu1243",
+      "latitude_deg": 11.92,
+      "longitude_deg": null,
+      "region": null
+    },
+    {
+      "sccs_society_id": "SCCS160",
+      "sccs_society_name": "Haitians",
+      "glottocode": "hait1244",
+      "latitude_deg": 18.83,
+      "longitude_deg": null,
+      "region": null
+    },
+    {
+      "sccs_society_id": "SCCS162",
+      "sccs_society_name": "Warao",
+      "glottocode": "wara1303",
+      "latitude_deg": 9.08,
+      "longitude_deg": null,
+      "region": null
+    },
+    {
+      "sccs_society_id": "SCCS164",
+      "sccs_society_name": "Barama River Carib",
+      "glottocode": "mura1272",
+      "latitude_deg": 7.42,
+      "longitude_deg": null,
+      "region": null
+    },
+    {
+      "sccs_society_id": "SCCS165",
+      "sccs_society_name": "Saramaccan",
+      "glottocode": "sara1340",
+      "latitude_deg": 3.5,
+      "longitude_deg": null,
+      "region": null
+    },
+    {
+      "sccs_society_id": "SCCS166",
+      "sccs_society_name": "Munduruku",
+      "glottocode": "mund1330",
+      "latitude_deg": -6.5,
+      "longitude_deg": null,
+      "region": null
+    },
+    {
+      "sccs_society_id": "SCCS163",
+      "sccs_society_name": "Yanomami",
+      "glottocode": "yano1261",
+      "latitude_deg": 2.42,
+      "longitude_deg": null,
+      "region": null
+    },
+    {
+      "sccs_society_id": "SCCS173",
+      "sccs_society_name": "Sirionó",
+      "glottocode": "siri1273",
+      "latitude_deg": -14.5,
+      "longitude_deg": null,
+      "region": null
+    },
+    {
+      "sccs_society_id": "SCCS169",
+      "sccs_society_name": "Shuar",
+      "glottocode": "shua1257",
+      "latitude_deg": -3.0,
+      "longitude_deg": null,
+      "region": null
+    },
+    {
+      "sccs_society_id": "SCCS167",
+      "sccs_society_name": "Cubeo",
+      "glottocode": "cube1242",
+      "latitude_deg": 1.25,
+      "longitude_deg": null,
+      "region": null
+    },
+    {
+      "sccs_society_id": "SCCS170",
+      "sccs_society_name": "Amahuaca",
+      "glottocode": "amah1246",
+      "latitude_deg": -10.33,
+      "longitude_deg": null,
+      "region": null
+    },
+    {
+      "sccs_society_id": "SCCS171",
+      "sccs_society_name": "Inca",
+      "glottocode": "cusc1236",
+      "latitude_deg": -13.5,
+      "longitude_deg": null,
+      "region": null
+    },
+    {
+      "sccs_society_id": "SCCS172",
+      "sccs_society_name": "Aymara",
+      "glottocode": "cent2142",
+      "latitude_deg": -16.0,
+      "longitude_deg": null,
+      "region": null
+    },
+    {
+      "sccs_society_id": "SCCS168",
+      "sccs_society_name": "Chachi",
+      "glottocode": "chac1249",
+      "latitude_deg": 1.0,
+      "longitude_deg": null,
+      "region": null
+    },
+    {
+      "sccs_society_id": "SCCS186",
+      "sccs_society_name": "Yahgan",
+      "glottocode": "yama1264",
+      "latitude_deg": -55.5,
+      "longitude_deg": null,
+      "region": null
+    },
+    {
+      "sccs_society_id": "SCCS184",
+      "sccs_society_name": "Mapuche",
+      "glottocode": "mapu1245",
+      "latitude_deg": -38.5,
+      "longitude_deg": null,
+      "region": null
+    },
+    {
+      "sccs_society_id": "SCCS185",
+      "sccs_society_name": "Tehuelche",
+      "glottocode": "tehu1242",
+      "latitude_deg": -40.5,
+      "longitude_deg": null,
+      "region": null
+    },
+    {
+      "sccs_society_id": "SCCS183",
+      "sccs_society_name": "Abipón",
+      "glottocode": "abip1241",
+      "latitude_deg": -28.0,
+      "longitude_deg": null,
+      "region": null
+    },
+    {
+      "sccs_society_id": "SCCS182",
+      "sccs_society_name": "Lengua",
+      "glottocode": "nort2971",
+      "latitude_deg": -23.0,
+      "longitude_deg": null,
+      "region": null
+    },
+    {
+      "sccs_society_id": "SCCS175",
+      "sccs_society_name": "Trumai",
+      "glottocode": "trum1247",
+      "latitude_deg": -11.83,
+      "longitude_deg": null,
+      "region": null
+    },
+    {
+      "sccs_society_id": "SCCS174",
+      "sccs_society_name": "Nambikwara",
+      "glottocode": "sout2994",
+      "latitude_deg": -13.0,
+      "longitude_deg": null,
+      "region": null
+    },
+    {
+      "sccs_society_id": "SCCS181",
+      "sccs_society_name": "Cayua",
+      "glottocode": "mbya1239",
+      "latitude_deg": -23.5,
+      "longitude_deg": null,
+      "region": null
+    },
+    {
+      "sccs_society_id": "SCCS179",
+      "sccs_society_name": "Shavante",
+      "glottocode": "xava1240",
+      "latitude_deg": -13.5,
+      "longitude_deg": null,
+      "region": null
+    },
+    {
+      "sccs_society_id": "SCCS180",
+      "sccs_society_name": "Aweikoma",
+      "glottocode": "xokl1240",
+      "latitude_deg": -28.0,
+      "longitude_deg": null,
+      "region": null
+    },
+    {
+      "sccs_society_id": "SCCS176",
+      "sccs_society_name": "Canela",
+      "glottocode": "cane1242",
+      "latitude_deg": -6.5,
+      "longitude_deg": null,
+      "region": null
+    },
+    {
+      "sccs_society_id": "SCCS178",
+      "sccs_society_name": "Aimoré",
+      "glottocode": "kren1239",
+      "latitude_deg": -19.0,
+      "longitude_deg": null,
+      "region": null
+    },
+    {
+      "sccs_society_id": "SCCS177",
+      "sccs_society_name": "Tupinambá",
+      "glottocode": "tupi1273",
+      "latitude_deg": -22.79,
+      "longitude_deg": null,
+      "region": null
+    }
+  ]
+}

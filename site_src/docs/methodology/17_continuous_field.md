@@ -23,17 +23,32 @@ populated_places.geojson ┼─► sample_points.json  ─► GP (Matérn 3/2)  
                                                                 ∂μ/∂λ, ∂μ/∂φ
 ```
 
-### 2.1 Sample points par État (population-weighted)
+### 2.1 Sample points — quatre stratégies de support spatial
 
-Pour chaque ISO3 ONU :
+À partir de la V3.1, le placement des sample points est gouverné par une enum de stratégies :
 
-1. Lister les villes Natural Earth 10m `populated_places` avec `ADM0_A3 == iso3` et `POP_MAX > 0`.
-2. Appliquer un k-means pondéré (par population) sur les coordonnées de ces villes pour obtenir `k = min(5, 1 + ⌊log₁₀(population_M)⌋)` centres de cluster.
-3. Pour chaque cluster, calculer son poids = fraction de la population nationale dans le cluster.
+| Stratégie CLI | Source spatiale | Pondération |
+|---|---|---|
+| `population` *(legacy)* | k-means villes NE 10m, `k = min(5, 1+⌊log₁₀(pop_M)⌋)` | `pop_fraction` dans le cluster |
+| `geoepr_population` *(défaut V3.1)* | Centroïdes GeoEPR (Ethnic Power Relations, ETH Zurich) | `group_share` du groupe ethnique dans l'État |
+| `geoepr_equal` | Centroïdes GeoEPR | `1` (chaque groupe ethnique = un sample point équipotent) |
+| `geoepr_anti_population` | Centroïdes GeoEPR | `area_km² / (group_pop_M + 1)^β` — boost spatial des minorités peu denses |
 
-Résultat : **237 sample points** pour 193 États (USA/CHN/IND/BRA = 3 points ; ~150 États = 1 point). Pour les États sans coverage populated_places, fallback sur le centroïde géométrique du polygone ADM0.
+**Stratégie `population` (legacy)** : 237 sample points pour 193 États (USA/CHN/IND/BRA = 3 points ; ~150 États = 1 point). Limites : la Bretagne, la Réunion, les Kurdes, les Aïnous, les Sami, les Mapuches sont **invisibles** au GP car écrasés par les barycentres urbains.
 
-**Production future** : remplacer Natural Earth 10m par **GPW v4 (SEDAC NASA)** ou **GHS-POP (JRC)** — grilles raster 1° qui captent la population rurale en plus des centres urbains.
+**Stratégies `geoepr_*`** : ~720 sample points sur 145 États (au prix de l'absence de petits États sans entrée GeoEPR — micro-États, Pacifique, golfe). Chaque centroïde porte aussi son `political_status` EPR (`monopoly`, `dominant`, `senior_partner`, `junior_partner`, `powerless`, `discriminated`, `state_collapse`), son `glottolog_languoid_id` (Glottolog 5.0, ~30 % matchés via Jaccard+manual overrides) et son `sccs_society_id` (Murdock, ~7 % matchés). Ces métadonnées ne rentrent **pas** dans le GP — elles enrichissent la visualisation (tooltips, filtres par famille linguistique, etc.).
+
+**Anti-pondération démographique** : pour le mode `geoepr_anti_population`, le poids par état est `w_raw = area_km² / (group_pop_M + 1)^β` normalisé à somme = 1 par État (β ∈ [0.3, 0.8], défaut 0.5). Conséquence : un groupe ethnique avec peu de population mais une grande extent géographique (Kurdistan, Touaregs, peuples autochtones, Sami) prend plus de poids que le groupe dominant qui partage la même métrique mais à population plus haute. Un plancher de `0.05` empêche les groupes minuscules d'avoir un poids nul.
+
+**Sources** :
+- GeoEPR-2021 (shapefile, ~5 MB) — https://icr.ethz.ch/data/epr/geoepr/ — CC-BY-NC-SA-4.0
+- EPR-Core-2021 (table CSV des statuts politiques) — https://icr.ethz.ch/data/epr/core/ — CC-BY-NC-SA-4.0
+- Glottolog 5.0 CLDF languages.csv (~5 MB après filtrage) — https://github.com/glottolog/glottolog-cldf — CC-BY-4.0
+- SCCS societies (D-PLACE, 186 sociétés Murdock) — https://github.com/D-PLACE/dplace-data — CC-BY-4.0
+
+**Pipeline d'ingestion** : `python -m apps.basis_builder.load_geoepr --download`, puis `python -m apps.basis_builder.load_sccs`, `python -m apps.basis_builder.load_glottolog`, enfin `python -m apps.basis_builder.ethnic_crosswalk` pour la fusion. Aucune installation locale — tout passe par le container `cvs-civvec_site:latest` (avec `pyshp` + `requests` dans les `[basis]` extras).
+
+**Production future** : remplacer le k-means NE 10m par **GPW v4 (SEDAC NASA)** ou **GHS-POP (JRC)** comme prior de population pour les stratégies `geoepr_*` ; le poids reste piloté par GeoEPR mais l'estimation de `state_pop` devient plus fiable.
 
 ### 2.2 Gaussian Process multi-output avec kernel Matérn 3/2
 

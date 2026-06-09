@@ -7,6 +7,79 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added — Quatre stratégies de support GP : GeoEPR + SCCS + Glottolog (2026-06-09)
+
+Bascule du placement des sample points GP de la population urbaine NE 10m
+vers les centroïdes ethniques GeoEPR (ETH Zurich), avec quatre stratégies
+sélectionnables par flag CLI :
+
+- **`population`** *(legacy, opt-in)* — k-means villes NE 10m pondéré pop ;
+  237 sample points sur 193 États.
+- **`geoepr_population`** *(nouveau défaut)* — un sample point par groupe
+  ethnique GeoEPR au centroïde du polygone, pondéré par `group_size`
+  (part du groupe dans la population de l'État) ; ~720 sample points sur
+  145 États.
+- **`geoepr_equal`** — chaque groupe ethnique compte pour 1, indépendamment
+  de sa démographie.
+- **`geoepr_anti_population`** — `w_raw = area_km² / (group_pop_M + 1)^β`
+  normalisé somme=1 par État (β défaut 0.5, plancher 0.05). Boost les
+  minorités spatialement étendues (Kurdes, Touaregs, Sami, peuples
+  autochtones) au détriment des dominants démographiques.
+
+Datasets ingérés (auto-download via `--download` ou première run) :
+
+- **GeoEPR-2021** (shapefile + EPR-Core CSV) — `data_sources/geoepr/`, ~13 MB,
+  CC-BY-NC-SA-4.0. Lecture via `pyshp` (encoding latin-1) ; aucune
+  dépendance GDAL.
+- **SCCS** (Standard Cross-Cultural Sample Murdock, 186 sociétés) —
+  `data_sources/sccs/`, 53 KB, CC-BY-4.0 via D-PLACE GitHub.
+- **Glottolog 5.0** (languages.csv CLDF, 13 372 languoids) —
+  `data_sources/glottolog/`, ~3 MB, CC-BY-4.0.
+
+Crosswalk heuristique (`apps/basis_builder/ethnic_crosswalk.py`) : GeoEPR
+group → Glottolog languoid via Jaccard tokens + manual overrides + tie-break
+distance ; GeoEPR group → SCCS via partage de glottocode quand disponible.
+Taux de match observé : 218/726 (30 %) → Glottolog, 53/726 (7 %) → SCCS.
+Les groupes non matchés portent `null` — le crosswalk est métadonnée, pas
+hard requirement pour le GP.
+
+Modules :
+
+- **`packages/civvec_core/continuous_field/support_strategies.py`** — enum
+  `SupportStrategy` + dispatcher `compute_sample_points_for_strategy`.
+  Pure-Python, testable sur fixtures synthétiques.
+- **`apps/basis_builder/load_geoepr.py`** — download shapefile, parse via
+  `pyshp` (encoding latin-1), centroide planaire pure-Python, lookup
+  COW→ISO3 hardcodé (200+ entrées), join EPR-Core sur `(gwid, groupid)`.
+- **`apps/basis_builder/load_sccs.py`** — CSV reader minimal.
+- **`apps/basis_builder/load_glottolog.py`** — CSV reader CLDF v5.0.
+- **`apps/basis_builder/ethnic_crosswalk.py`** — Jaccard + stem de pluriel
+  (Kurds→Kurd) + table d'overrides manuels (Kurdes, Ouïghours, Tibétains,
+  Mapuches, Aïnous, Sami, Basques, Bretons, Yoruba, etc.) + tie-break
+  géographique.
+- **`apps/basis_builder/field/train_v2.py`** — nouveau flag
+  `--support-strategy {population,geoepr_population,geoepr_equal,geoepr_anti_population}`
+  (défaut `geoepr_population`) + `--anti-pop-beta`. Persiste la stratégie
+  dans `_meta.hyperparameters.support_strategy`.
+
+Tests : 22 nouveaux cas (`tests/test_support_strategies.py`,
+`tests/test_ethnic_crosswalk.py`, `tests/test_load_geoepr_sccs_glottolog.py`)
+couvrant tous les pipelines pure-Python sur fixtures.
+
+Dépendances `[basis]` étendues : `pyshp>=2.3`, `requests>=2.31`. Image
+docker `cvs-civvec_site` rebuild requise.
+
+Impact sur la cartographie des Plaques & Failles : 153→90 failles
+fusionnées, distribution des paires civilisationnelles plus alignée avec
+Huntington (orthodox__hindic, orthodox__islamic, western__sinic,
+sinic__japanese remontent ; african__oceanian descend de 361→130 segments
+grâce au meilleur ancrage non-océanique).
+
+Roadmap V4 : crosswalk Glottolog amélioré (matching par ISO 639-3 plutôt
+que Jaccard), enrichissement Murdock SCCS pour imputation per-ethnic, et
+exposition de `political_status` + `glottolog_family` comme dimensions
+colorables dans la légende cartographique.
+
 ### Added — Mode carto « Plaques & Failles » : cartographie catégorielle Huntington-style (2026-06-09)
 
 Nouveau mode de visualisation des zones de friction civilisationnelle, en

@@ -37,3 +37,14 @@ env/
 data_sources/inglehart_welzel/wvs_time_series_1981_2022.csv
 data_sources/vdem/vdem.RData
 data_sources/undp/HDR25_Composite_indices_complete_time_series.csv
+
+# GeoEPR raw shapefile ZIP + extracted shapefile directory — auto-downloaded
+# by apps/basis_builder/load_geoepr.py. Only the normalised JSON sidecar
+# (ethnic_records_normalised.json) and the small EPR-Core CSV are committed.
+data_sources/geoepr/GeoEPR-2021.zip
+data_sources/geoepr/GeoEPR-2021/
+
+# Glottolog raw CSV — auto-downloaded by apps/basis_builder/load_glottolog.py.
+# Only the normalised JSON sidecar (glottolog_languoids_normalised.json) is
+# committed.
+data_sources/glottolog/languages.csv

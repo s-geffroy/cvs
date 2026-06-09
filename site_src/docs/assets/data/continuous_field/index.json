@@ -17,8 +17,8 @@
       "metric": "mean",
       "filename": "x_viz_ts_mean.png",
       "colormap": "RdBu_r",
-      "value_min": -1.370887041091919,
-      "value_max": 0.7749901413917542,
+      "value_min": -1.3605064153671265,
+      "value_max": 0.7659181952476501,
       "description_fr": "Valeur prédite μ par le GP, échelle signée centrée sur la moyenne globale.",
       "read_mode": "raw"
     },
@@ -27,8 +27,8 @@
       "metric": "grad_magnitude",
       "filename": "x_viz_ts_grad_magnitude.png",
       "colormap": "plasma",
-      "value_min": 0.0026556621305644512,
-      "value_max": 6.783764362335205,
+      "value_min": 0.002415378112345934,
+      "value_max": 6.795068740844727,
       "description_fr": "Magnitude du gradient ‖∇μ‖ — fault lines civilisationnelles.",
       "read_mode": "raw"
     },
@@ -37,8 +37,8 @@
       "metric": "mean",
       "filename": "x_viz_se_mean.png",
       "colormap": "RdBu_r",
-      "value_min": -0.8767610788345337,
-      "value_max": 1.519415259361267,
+      "value_min": -1.0608611106872559,
+      "value_max": 1.4643973112106323,
       "description_fr": "Valeur prédite μ par le GP, échelle signée centrée sur la moyenne globale.",
       "read_mode": "raw"
     },
@@ -47,8 +47,8 @@
       "metric": "grad_magnitude",
       "filename": "x_viz_se_grad_magnitude.png",
       "colormap": "plasma",
-      "value_min": 0.010267181321978569,
-      "value_max": 7.232720375061035,
+      "value_min": 0.007315490860491991,
+      "value_max": 7.826075553894043,
       "description_fr": "Magnitude du gradient ‖∇μ‖ — fault lines civilisationnelles.",
       "read_mode": "raw"
     },
@@ -57,8 +57,8 @@
       "metric": "mean",
       "filename": "x_score_pdi_mean.png",
       "colormap": "RdBu_r",
-      "value_min": 39.23491287231445,
-      "value_max": 83.64189147949219,
+      "value_min": 38.489444732666016,
+      "value_max": 90.3270492553711,
       "description_fr": "Valeur prédite μ par le GP, échelle signée centrée sur la moyenne globale.",
       "read_mode": "raw"
     },
@@ -67,8 +67,8 @@
       "metric": "grad_magnitude",
       "filename": "x_score_pdi_grad_magnitude.png",
       "colormap": "plasma",
-      "value_min": 0.043673738837242126,
-      "value_max": 153.59786987304688,
+      "value_min": 0.02047649957239628,
+      "value_max": 173.3609161376953,
       "description_fr": "Magnitude du gradient ‖∇μ‖ — fault lines civilisationnelles.",
       "read_mode": "raw"
     },
@@ -77,8 +77,8 @@
       "metric": "mean",
       "filename": "x_score_idv_mean.png",
       "colormap": "RdBu_r",
-      "value_min": 18.918813705444336,
-      "value_max": 76.66500091552734,
+      "value_min": 18.759227752685547,
+      "value_max": 78.27371215820312,
       "description_fr": "Valeur prédite μ par le GP, échelle signée centrée sur la moyenne globale.",
       "read_mode": "raw"
     },
@@ -87,8 +87,8 @@
       "metric": "grad_magnitude",
       "filename": "x_score_idv_grad_magnitude.png",
       "colormap": "plasma",
-      "value_min": 0.14293530583381653,
-      "value_max": 179.09860229492188,
+      "value_min": 0.052726760506629944,
+      "value_max": 211.58363342285156,
       "description_fr": "Magnitude du gradient ‖∇μ‖ — fault lines civilisationnelles.",
       "read_mode": "raw"
     },
@@ -97,8 +97,8 @@
       "metric": "mean",
       "filename": "x_score_mas_mean.png",
       "colormap": "RdBu_r",
-      "value_min": 34.46534729003906,
-      "value_max": 65.76890563964844,
+      "value_min": 35.85604476928711,
+      "value_max": 66.96541595458984,
       "description_fr": "Valeur prédite μ par le GP, échelle signée centrée sur la moyenne globale.",
       "read_mode": "raw"
     },
@@ -107,8 +107,8 @@
       "metric": "grad_magnitude",
       "filename": "x_score_mas_grad_magnitude.png",
       "colormap": "plasma",
-      "value_min": 0.06769026815891266,
-      "value_max": 149.97105407714844,
+      "value_min": 0.02038571797311306,
+      "value_max": 132.7525177001953,
       "description_fr": "Magnitude du gradient ‖∇μ‖ — fault lines civilisationnelles.",
       "read_mode": "raw"
     },
@@ -117,8 +117,8 @@
       "metric": "mean",
       "filename": "x_score_uai_mean.png",
       "colormap": "RdBu_r",
-      "value_min": 37.451904296875,
-      "value_max": 86.12126922607422,
+      "value_min": 36.76679229736328,
+      "value_max": 91.14181518554688,
       "description_fr": "Valeur prédite μ par le GP, échelle signée centrée sur la moyenne globale.",
       "read_mode": "raw"
     },
@@ -127,8 +127,8 @@
       "metric": "grad_magnitude",
       "filename": "x_score_uai_grad_magnitude.png",
       "colormap": "plasma",
-      "value_min": 0.03811601176857948,
-      "value_max": 214.46734619140625,
+      "value_min": 0.04727471247315407,
+      "value_max": 209.1114959716797,
       "description_fr": "Magnitude du gradient ‖∇μ‖ — fault lines civilisationnelles.",
       "read_mode": "raw"
     },
@@ -137,8 +137,8 @@
       "metric": "mean",
       "filename": "x_score_lto_mean.png",
       "colormap": "RdBu_r",
-      "value_min": 22.911270141601562,
-      "value_max": 68.12342834472656,
+      "value_min": 24.202953338623047,
+      "value_max": 77.97797393798828,
       "description_fr": "Valeur prédite μ par le GP, échelle signée centrée sur la moyenne globale.",
       "read_mode": "raw"
     },
@@ -147,8 +147,8 @@
       "metric": "grad_magnitude",
       "filename": "x_score_lto_grad_magnitude.png",
       "colormap": "plasma",
-      "value_min": 0.030900532379746437,
-      "value_max": 188.28846740722656,
+      "value_min": 0.07097770273685455,
+      "value_max": 205.1577606201172,
       "description_fr": "Magnitude du gradient ‖∇μ‖ — fault lines civilisationnelles.",
       "read_mode": "raw"
     },
@@ -157,8 +157,8 @@
       "metric": "mean",
       "filename": "x_score_ivr_mean.png",
       "colormap": "RdBu_r",
-      "value_min": 26.12361717224121,
-      "value_max": 70.53050994873047,
+      "value_min": 20.12676429748535,
+      "value_max": 69.94668579101562,
       "description_fr": "Valeur prédite μ par le GP, échelle signée centrée sur la moyenne globale.",
       "read_mode": "raw"
     },
@@ -167,8 +167,8 @@
       "metric": "grad_magnitude",
       "filename": "x_score_ivr_grad_magnitude.png",
       "colormap": "plasma",
-      "value_min": 0.14051364362239838,
-      "value_max": 187.5780029296875,
+      "value_min": 0.0572601743042469,
+      "value_max": 193.54580688476562,
       "description_fr": "Magnitude du gradient ‖∇μ‖ — fault lines civilisationnelles.",
       "read_mode": "raw"
     },
@@ -177,8 +177,8 @@
       "metric": "mean",
       "filename": "civ_identity_sharpness_mean.png",
       "colormap": "viridis",
-      "value_min": 0.015501813312933018,
-      "value_max": 0.27844202648601096,
+      "value_min": 0.023866292109220102,
+      "value_max": 0.315492834911917,
       "description_fr": "Force d’identité civilisationnelle — 1 = cœur identitaire net, 0 = zone interstitielle (entropie inverse normalisée du vecteur d’affinité GP).",
       "read_mode": "paired",
       "pair_with": "civ_texture_intensity"
@@ -188,8 +188,8 @@
       "metric": "mean",
       "filename": "civ_texture_intensity_mean.png",
       "colormap": "plasma",
-      "value_min": 0.5219957170279891,
-      "value_max": 1806.543684758626,
+      "value_min": 0.21879113211984558,
+      "value_max": 2224.010348437889,
       "description_fr": "Tension culturelle locale — somme des carrés des gradients sur les 19 composantes (z-score-normalisées par composante), i.e. trace du tenseur de déformation G(p) en métrique sphérique.",
       "read_mode": "paired",
       "pair_with": "civ_identity_sharpness"
@@ -199,8 +199,8 @@
       "metric": "mean",
       "filename": "civ_classification_margin_mean.png",
       "colormap": "magma",
-      "value_min": 0.008793254792731242,
-      "value_max": 0.551620881403348,
+      "value_min": 0.010422739331488453,
+      "value_max": 0.7293422115755659,
       "description_fr": "Profondeur du cœur civilisationnel — marge (d₂ − d₁) / d₁ entre les deux centroïdes les plus proches en B_score (Mahalanobis intra-civilisationnelle). Élevé = cœur stable, proche de 0 = fault line.",
       "read_mode": "standalone"
     }
@@ -216,57 +216,57 @@
           {
             "civilization_id": "western",
             "color_hex": "#1f77b4",
-            "cell_count": 16604
+            "cell_count": 12066
           },
           {
             "civilization_id": "orthodox",
             "color_hex": "#9467bd",
-            "cell_count": 3614
+            "cell_count": 6435
           },
           {
             "civilization_id": "islamic",
             "color_hex": "#2ca02c",
-            "cell_count": 2594
+            "cell_count": 2632
           },
           {
             "civilization_id": "sinic",
             "color_hex": "#d62728",
-            "cell_count": 1537
+            "cell_count": 5821
           },
           {
             "civilization_id": "hindic",
             "color_hex": "#ff7f0e",
-            "cell_count": 1392
+            "cell_count": 3782
           },
           {
             "civilization_id": "japanese",
             "color_hex": "#e377c2",
-            "cell_count": 1995
+            "cell_count": 1839
           },
           {
             "civilization_id": "buddhist",
             "color_hex": "#bcbd22",
-            "cell_count": 2046
+            "cell_count": 3199
           },
           {
             "civilization_id": "latin_american",
             "color_hex": "#17becf",
-            "cell_count": 4407
+            "cell_count": 3570
           },
           {
             "civilization_id": "african",
             "color_hex": "#8c564b",
-            "cell_count": 22014
+            "cell_count": 21086
           },
           {
             "civilization_id": "indigenous",
             "color_hex": "#7f7f7f",
-            "cell_count": 920
+            "cell_count": 847
           },
           {
             "civilization_id": "oceanian",
             "color_hex": "#aec7e8",
-            "cell_count": 8037
+            "cell_count": 3883
           }
         ],
         "civilization_color_palette": {
@@ -288,15 +288,15 @@
         "filename": "plates_and_faults/civ_plates_contested_margin.png",
         "kind": "diverging",
         "colormap": "RdGy_r",
-        "value_min": 0.000527304713614285,
-        "value_max": 0.2932824492454529,
+        "value_min": 0.0007589259766973555,
+        "value_max": 0.3816641867160797,
         "description_fr": "Marge top1 − top2 du vecteur d'affinité : faible = zone contestée (deux civilisations comparables), élevée = identité tranchée."
       },
       {
         "role": "uncertainty_mask",
         "filename": "plates_and_faults/civ_plates_uncertainty_mask.png",
         "kind": "mask",
-        "variance_threshold": 0.9234954714775085,
+        "variance_threshold": 0.8506749868392944,
         "description_fr": "Zones où la variance GP dépasse le quantile 0.60 — le champ y est peu fiable, hachuré pour signaler les artefacts du GP."
       }
     ],
@@ -310,8 +310,8 @@
           "line_opacity_on": "confidence",
           "line_color_on": "civ_pair"
         },
-        "friction_min": 0.000524876502460077,
-        "friction_max": 0.1701371922087727
+        "friction_min": 0.0014129478095462529,
+        "friction_max": 0.15909992280186158
       },
       {
         "role": "chevrons",

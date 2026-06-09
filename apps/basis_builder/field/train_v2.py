@@ -28,6 +28,12 @@ from packages.civvec_core.continuous_field.sample_points import (
     SAMPLE_POINTS_PATH,
     generate_sample_points_per_state,
 )
+from packages.civvec_core.continuous_field.support_strategies import (
+    SupportStrategy,
+    compute_sample_points_for_strategy,
+    persist_sample_points,
+    sample_points_cache_path_for,
+)
 
 CONTINUOUS_FIELD_V2_META_PATH = BASIS_DIR / "continuous_field_v2_meta.json"
 CONTINUOUS_FIELD_V2_ARRAYS_PATH = BASIS_DIR / "continuous_field_v2_arrays.npz"
@@ -82,10 +88,69 @@ class V2FieldArtefacts:
     component_names: tuple[str, ...]
 
 
-def _load_sample_points() -> list[dict]:
-    if not SAMPLE_POINTS_PATH.exists():
-        generate_sample_points_per_state()
-    payload = json.loads(SAMPLE_POINTS_PATH.read_text())
+def _load_sample_points(
+    strategy: SupportStrategy = SupportStrategy.POPULATION,
+    anti_population_beta: float = 0.5,
+) -> list[dict]:
+    """Load sample points for the chosen support strategy, materialising if needed.
+
+    For ``POPULATION`` we reuse the legacy ``state_sample_points.json``
+    sidecar. For any ``GEOEPR_*`` strategy we materialise (or refresh)
+    the per-strategy cache at ``sample_points_cache_path_for(strategy)``
+    by combining the cached GeoEPR ethnic records with the strategy
+    weighting function. This keeps strategy selection a cheap CLI flag.
+    """
+    if strategy is SupportStrategy.POPULATION:
+        if not SAMPLE_POINTS_PATH.exists():
+            generate_sample_points_per_state()
+        payload = json.loads(SAMPLE_POINTS_PATH.read_text())
+        return payload["sample_points"]
+
+    cache_path = sample_points_cache_path_for(strategy)
+    needs_materialisation = not cache_path.exists()
+    if needs_materialisation:
+        from apps.basis_builder.load_geoepr import (
+            GEOEPR_NORMALISED_JSON_PATH,
+            load_ethnic_records_from_cache,
+        )
+
+        if not GEOEPR_NORMALISED_JSON_PATH.exists():
+            raise FileNotFoundError(
+                "GeoEPR normalised cache missing — run "
+                "`python -m apps.basis_builder.load_geoepr --download` first."
+            )
+        ethnic_records = load_ethnic_records_from_cache()
+        sample_points = compute_sample_points_for_strategy(
+            strategy=strategy,
+            ethnic_records=[
+                {
+                    "iso3": record.iso3,
+                    "ethnic_group_id": record.ethnic_group_id,
+                    "ethnic_group_label": record.ethnic_group_label,
+                    "centroid_longitude_deg": record.centroid_longitude_deg,
+                    "centroid_latitude_deg": record.centroid_latitude_deg,
+                    "area_km_squared": record.area_km_squared,
+                    "state_population_estimate": record.state_population_estimate,
+                    "group_population_share": record.group_population_share,
+                    "political_status": record.political_status,
+                    "glottolog_languoid_id": record.glottolog_languoid_id,
+                    "sccs_society_id": record.sccs_society_id,
+                }
+                for record in ethnic_records
+            ],
+            anti_population_beta=anti_population_beta,
+        )
+        persist_sample_points(
+            sample_points,
+            strategy=strategy,
+            extra_meta={
+                "anti_population_beta": anti_population_beta
+                if strategy is SupportStrategy.GEOEPR_ANTI_POPULATION
+                else None,
+            },
+        )
+
+    payload = json.loads(cache_path.read_text())
     return payload["sample_points"]
 
 
@@ -153,8 +218,12 @@ def train_v2_field(
     grid_step_deg: float = 1.0,
     optimise_hyperparameters: bool = False,
     length_scale_rad: float = 0.25,
+    support_strategy: SupportStrategy = SupportStrategy.GEOEPR_POPULATION,
+    anti_population_beta: float = 0.5,
 ) -> V2FieldArtefacts:
-    sample_points = _load_sample_points()
+    sample_points = _load_sample_points(
+        strategy=support_strategy, anti_population_beta=anti_population_beta
+    )
     states_by_iso3 = _state_records_by_iso3()
 
     (
@@ -257,6 +326,12 @@ def train_v2_field(
             "length_scale_rad": gp_multi.length_scale,
             "length_scale_km_earth": gp_multi.length_scale * 6371.0,
             "noise_variance_mean": float(np.mean(gp_multi.noise_variance)),
+            "support_strategy": support_strategy.value,
+            "anti_population_beta": (
+                anti_population_beta
+                if support_strategy is SupportStrategy.GEOEPR_ANTI_POPULATION
+                else None
+            ),
             **gp_multi.metadata,
         },
         component_names=COMPONENT_NAMES,
@@ -331,9 +406,41 @@ def write_v2_artefacts(artefacts: V2FieldArtefacts) -> tuple[Path, Path]:
 
 
 if __name__ == "__main__":
+    import argparse
     import os
 
-    trained_artefacts = train_v2_field()
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument(
+        "--support-strategy",
+        choices=SupportStrategy.all_values(),
+        default=SupportStrategy.GEOEPR_POPULATION.value,
+        help=(
+            "How sample points are placed for the GP. "
+            "`population` (legacy) = NE 10m k-means weighted by POP_MAX. "
+            "`geoepr_population` (default) = GeoEPR ethnic centroids weighted by group share. "
+            "`geoepr_equal` = each ethnic group counts the same. "
+            "`geoepr_anti_population` = boost spatially-large low-density groups."
+        ),
+    )
+    parser.add_argument(
+        "--anti-pop-beta",
+        type=float,
+        default=0.5,
+        help="Anti-population exponent (only used when --support-strategy=geoepr_anti_population).",
+    )
+    parser.add_argument(
+        "--optimise-hyperparameters",
+        action="store_true",
+        help="Re-fit GP length_scale + noise_scale by marginal likelihood (slow).",
+    )
+    args = parser.parse_args()
+
+    selected_strategy = SupportStrategy(args.support_strategy)
+    trained_artefacts = train_v2_field(
+        support_strategy=selected_strategy,
+        anti_population_beta=args.anti_pop_beta,
+        optimise_hyperparameters=args.optimise_hyperparameters,
+    )
     metadata_path, arrays_path = write_v2_artefacts(trained_artefacts)
     print(
         f"Wrote {metadata_path.name} ({os.path.getsize(metadata_path) // 1024} KB) + "
@@ -341,5 +448,6 @@ if __name__ == "__main__":
         f"{trained_artefacts.n_training_points} training points × "
         f"{len(trained_artefacts.component_names)} components → "
         f"{trained_artefacts.predicted_variance_grid.size} grid cells "
-        f"(length_scale={trained_artefacts.hyperparameters['length_scale_rad']:.3f} rad)."
+        f"(strategy={selected_strategy.value}, "
+        f"length_scale={trained_artefacts.hyperparameters['length_scale_rad']:.3f} rad)."
     )

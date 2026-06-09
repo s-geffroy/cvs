@@ -26,7 +26,10 @@ ui = [
   "streamlit>=1.35",
   "plotly>=5.22",
 ]
-basis = []
+basis = [
+  "pyshp>=2.3",
+  "requests>=2.31",
+]
 site = [
   "mkdocs>=1.6",
   "mkdocs-material>=9.5",
