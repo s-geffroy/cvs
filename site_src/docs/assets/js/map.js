@@ -340,6 +340,40 @@
   }
 
   function buildLegend(legendContainer, mode) {
+    if (mode === 'plates') {
+      const manifest = platesManifest();
+      const civColorRow = Object.entries(civilizationColorPalette)
+        .map(
+          ([civilizationId, color]) =>
+            `<span style="display:inline-block;width:0.95em;height:0.95em;background:${color};margin-right:0.3em;vertical-align:middle;border:1px solid #999;"></span>${civilizationId}`
+        )
+        .join(' &nbsp; ');
+      const description = manifest && manifest.description_fr ? manifest.description_fr : '';
+      legendContainer.innerHTML = `
+<strong>Légende — Plaques &amp; Failles (Huntington-style)</strong><br/>
+<div style="margin-top:0.4em; font-size:0.92em;">
+  <strong>Plaques</strong> — argmax du vecteur d'affinité GP par cellule 1° (catégoriel) :<br/>
+  ${civColorRow}
+</div>
+<div style="margin-top:0.5em; font-size:0.9em;">
+  <strong>Failles</strong> — frontières dures entre cellules d'argmax différents. <br/>
+  Épaisseur ∝ <code>friction = (margin_A + margin_B)/2 · distance_culturelle</code>.<br/>
+  Opacité ∝ <code>confidence = 1 − var_GP / var_max</code>. Couleur = paire civilisationnelle (moyenne RGB).
+</div>
+<div style="margin-top:0.5em; font-size:0.9em;">
+  <span style="display:inline-block;width:0.8em;height:0.8em;background:#222;border-radius:50%;margin-right:0.3em;vertical-align:middle;"></span> Chevrons directionnels &nbsp;
+  <span style="display:inline-block;width:0.95em;height:0.95em;background:#ffd400;border:1px solid #222;border-radius:50%;margin-right:0.3em;vertical-align:middle;"></span> Triple junction (3+ civs au coin) &nbsp;
+  <span style="display:inline-block;width:0.95em;height:0.95em;background:#ff5577;border:1px solid #fff;border-radius:50%;margin-right:0.3em;vertical-align:middle;"></span> Enclave
+</div>
+<div style="margin-top:0.5em; font-size:0.9em;">
+  <span style="display:inline-block;width:0.95em;height:0.95em;background:repeating-linear-gradient(45deg,#666 0 3px,#bbb 3px 6px);margin-right:0.3em;vertical-align:middle;"></span> Trame grise = variance GP &gt; 90<sup>e</sup> percentile (zones hallucinées par le GP).
+</div>
+<div style="margin-top:0.5em; font-size:0.85em;">
+  <em>${escapeHtml(description)}</em>
+  Voir <a href="../methodology/17_continuous_field/">doc 17 §5</a>.
+</div>`;
+      return;
+    }
     if (mode === 'continuous') {
       const matchedRaster = continuousFieldIndex && continuousFieldIndex.rasters
         ? continuousFieldIndex.rasters.find(
@@ -441,6 +475,439 @@
 
   let continuousFieldIndex = null;
   let currentContinuousField = { component: 'x_viz_ts', metric: 'mean' };
+
+  // Plates & Faults — état des toggles secondaires (couches optionnelles).
+  const platesLayerToggleState = {
+    contested_margin: false,
+    chevrons: true,
+    triple_junctions: true,
+    enclaves: true,
+    uncertainty_mask: true
+  };
+
+  const civPairColorPalette = {};
+
+  function platesManifest() {
+    return (continuousFieldIndex && continuousFieldIndex.plates_and_faults) || null;
+  }
+
+  // Injecte dynamiquement la radio « Plaques & Failles » et son rang de
+  // toggles secondaires, sans toucher au markdown de la page (le mode
+  // peut donc être activé/désactivé via la simple présence du manifest
+  // dans index.json — pas d'édition de la page nécessaire).
+  function injectPlatesModeControls() {
+    if (!platesManifest()) return;
+    const modeContainer = document.querySelector(modeContainerSelector);
+    if (modeContainer && !modeContainer.querySelector('input[value="plates"]')) {
+      const platesLabel = document.createElement('label');
+      platesLabel.style.marginRight = '1rem';
+      platesLabel.title =
+        'Cartographie catégorielle Huntington-style : plaques par argmax du vecteur d’affinité, failles vectorielles, zones contestées, masque d’incertitude.';
+      platesLabel.innerHTML =
+        '<input type="radio" name="civvec-map-mode" value="plates"> Plaques &amp; Failles';
+      const continuousRadioLabel = modeContainer.querySelector(
+        'input[value="continuous"]'
+      );
+      if (continuousRadioLabel) {
+        modeContainer.insertBefore(platesLabel, continuousRadioLabel.parentElement);
+        const continuousInput = modeContainer.querySelector('input[value="continuous"]');
+        if (continuousInput && !continuousInput.dataset.platesRenamed) {
+          const parentLabel = continuousInput.parentElement;
+          if (parentLabel) {
+            parentLabel.childNodes.forEach((childNode) => {
+              if (childNode.nodeType === Node.TEXT_NODE) {
+                childNode.textContent = ' Champ continu (GP, vue brute)';
+              }
+            });
+          }
+          continuousInput.dataset.platesRenamed = '1';
+        }
+      } else {
+        modeContainer.appendChild(platesLabel);
+      }
+    }
+    if (!document.querySelector('#civvec-map-plates-toggles')) {
+      const togglesContainer = document.createElement('div');
+      togglesContainer.id = 'civvec-map-plates-toggles';
+      togglesContainer.style.display = 'none';
+      togglesContainer.style.gap = '1rem';
+      togglesContainer.style.flexWrap = 'wrap';
+      togglesContainer.style.margin = '0 0 0.4rem 0';
+      togglesContainer.style.fontSize = '0.88rem';
+      const toggleSpecifications = [
+        {
+          layerKey: 'contested_margin',
+          label: 'Marges contestées',
+          title:
+            "Choropleth divergent : zones où top1 − top2 du vecteur d'affinité est faible (= deux civilisations comparables, = contestée)."
+        },
+        {
+          layerKey: 'chevrons',
+          label: 'Chevrons directionnels',
+          title:
+            'Petits points orientés sur les failles : pointent du côté moins décisif vers le côté plus décisif.'
+        },
+        {
+          layerKey: 'triple_junctions',
+          label: 'Triple junctions',
+          title:
+            'Coins 2×2 où trois civilisations ou plus se rencontrent (Caucase, Sahel, Asie centrale).'
+        },
+        {
+          layerKey: 'enclaves',
+          label: 'Enclaves',
+          title:
+            "Étoiles sur les cellules dont l'argmax diffère de leurs 8 voisines (diasporas, micro-États culturels)."
+        },
+        {
+          layerKey: 'uncertainty_mask',
+          label: "Masque d'incertitude",
+          title:
+            'Trame grise sur les cellules dont la variance GP dépasse le 90e percentile (zones hallucinées par le GP).'
+        }
+      ];
+      for (const specification of toggleSpecifications) {
+        const label = document.createElement('label');
+        label.title = specification.title;
+        const checkboxInput = document.createElement('input');
+        checkboxInput.type = 'checkbox';
+        checkboxInput.dataset.platesLayer = specification.layerKey;
+        checkboxInput.checked = !!platesLayerToggleState[specification.layerKey];
+        label.appendChild(checkboxInput);
+        label.appendChild(document.createTextNode(' ' + specification.label));
+        togglesContainer.appendChild(label);
+      }
+      if (modeContainer && modeContainer.parentNode) {
+        modeContainer.parentNode.insertBefore(
+          togglesContainer,
+          modeContainer.nextSibling
+        );
+      } else {
+        document.body.appendChild(togglesContainer);
+      }
+    }
+  }
+
+  function platesRasterFilename(role) {
+    const manifest = platesManifest();
+    if (!manifest) return null;
+    const record = (manifest.rasters || []).find((entry) => entry.role === role);
+    return record ? record.filename : null;
+  }
+
+  function platesVectorFilename(role) {
+    const manifest = platesManifest();
+    if (!manifest) return null;
+    const record = (manifest.vector_layers || []).find(
+      (entry) => entry.role === role
+    );
+    return record ? record.filename : null;
+  }
+
+  function civPairColor(civPair) {
+    if (civPairColorPalette[civPair]) return civPairColorPalette[civPair];
+    const [lowCiv, highCiv] = civPair.split('__');
+    const lowColor = civilizationColorPalette[lowCiv] || fallbackColor;
+    const highColor = civilizationColorPalette[highCiv] || fallbackColor;
+    const lowRgb = hexToRgb(lowColor);
+    const highRgb = hexToRgb(highColor);
+    const mixedColor =
+      '#' +
+      [
+        Math.round((lowRgb.red + highRgb.red) / 2),
+        Math.round((lowRgb.green + highRgb.green) / 2),
+        Math.round((lowRgb.blue + highRgb.blue) / 2)
+      ]
+        .map((channel) => channel.toString(16).padStart(2, '0'))
+        .join('');
+    civPairColorPalette[civPair] = mixedColor;
+    return mixedColor;
+  }
+
+  const platesRasterCoordinates = () => {
+    const WEB_MERCATOR_LATITUDE_BOUND_DEG = 85.0511;
+    const bboxRaw =
+      (continuousFieldIndex && continuousFieldIndex.bbox) || {
+        longitude_min_deg: -180,
+        longitude_max_deg: 180,
+        latitude_min_deg: -90,
+        latitude_max_deg: 90
+      };
+    const clampLatitude = (latitude) =>
+      Math.max(
+        -WEB_MERCATOR_LATITUDE_BOUND_DEG,
+        Math.min(WEB_MERCATOR_LATITUDE_BOUND_DEG, latitude)
+      );
+    return [
+      [bboxRaw.longitude_min_deg, clampLatitude(bboxRaw.latitude_max_deg)],
+      [bboxRaw.longitude_max_deg, clampLatitude(bboxRaw.latitude_max_deg)],
+      [bboxRaw.longitude_max_deg, clampLatitude(bboxRaw.latitude_min_deg)],
+      [bboxRaw.longitude_min_deg, clampLatitude(bboxRaw.latitude_min_deg)]
+    ];
+  };
+
+  function ensurePlatesRasterLayer(map, sourceId, layerId, role, opacity, beforeLayerId) {
+    const filename = platesRasterFilename(role);
+    if (!filename) return;
+    const rasterUrl = `../assets/data/continuous_field/${filename}`;
+    const coordinates = platesRasterCoordinates();
+    if (!map.getSource(sourceId)) {
+      map.addSource(sourceId, { type: 'image', url: rasterUrl, coordinates });
+    }
+    if (!map.getLayer(layerId)) {
+      map.addLayer(
+        {
+          id: layerId,
+          source: sourceId,
+          type: 'raster',
+          paint: { 'raster-opacity': opacity }
+        },
+        beforeLayerId
+      );
+    }
+  }
+
+  async function ensurePlatesVectorLayer(map, sourceId, role) {
+    const filename = platesVectorFilename(role);
+    if (!filename) return false;
+    if (!map.getSource(sourceId)) {
+      try {
+        const data = await fetchJson(
+          `../assets/data/continuous_field/${filename}`
+        );
+        map.addSource(sourceId, { type: 'geojson', data });
+      } catch (error) {
+        console.warn(`[civvec/map] could not load ${role}`, error);
+        return false;
+      }
+    }
+    return true;
+  }
+
+  function platesFrictionRange() {
+    const manifest = platesManifest();
+    if (!manifest) return [0, 1];
+    const faultsRecord = (manifest.vector_layers || []).find(
+      (entry) => entry.role === 'faults'
+    );
+    if (!faultsRecord) return [0, 1];
+    return [
+      faultsRecord.friction_min || 0,
+      Math.max(faultsRecord.friction_max || 1, 0.001)
+    ];
+  }
+
+  async function applyPlatesMode(map) {
+    if (!platesManifest()) {
+      console.warn('[civvec/map] plates_and_faults manifest indisponible — index.json non régénéré ?');
+      return;
+    }
+    if (map.getLayer('states-fill')) {
+      map.setPaintProperty('states-fill', 'fill-opacity', 0.0);
+    }
+    if (map.getLayer('continuous-field-layer')) {
+      map.setLayoutProperty('continuous-field-layer', 'visibility', 'none');
+    }
+
+    ensurePlatesRasterLayer(
+      map,
+      'plates-base-source',
+      'plates-base-layer',
+      'plates',
+      0.85,
+      'states-outline'
+    );
+    ensurePlatesRasterLayer(
+      map,
+      'plates-margin-source',
+      'plates-margin-layer',
+      'contested_margin',
+      0.55,
+      'states-outline'
+    );
+    ensurePlatesRasterLayer(
+      map,
+      'plates-mask-source',
+      'plates-mask-layer',
+      'uncertainty_mask',
+      0.9,
+      'states-outline'
+    );
+
+    if (await ensurePlatesVectorLayer(map, 'plates-faults-source', 'faults')) {
+      if (!map.getLayer('plates-faults-layer')) {
+        const [frictionMin, frictionMax] = platesFrictionRange();
+        map.addLayer(
+          {
+            id: 'plates-faults-layer',
+            source: 'plates-faults-source',
+            type: 'line',
+            paint: {
+              'line-color': [
+                'case',
+                ['has', 'civ_pair'],
+                ['get', 'civ_pair_color'],
+                '#444444'
+              ],
+              'line-width': [
+                'interpolate',
+                ['linear'],
+                ['get', 'friction'],
+                frictionMin,
+                0.6,
+                frictionMax,
+                4.0
+              ],
+              'line-opacity': [
+                'interpolate',
+                ['linear'],
+                ['get', 'confidence'],
+                0.0,
+                0.25,
+                1.0,
+                0.95
+              ]
+            },
+            layout: { 'line-cap': 'round', 'line-join': 'round' }
+          },
+          'states-outline'
+        );
+        annotateFaultColors(map);
+      }
+    }
+    if (await ensurePlatesVectorLayer(map, 'plates-chevrons-source', 'chevrons')) {
+      if (!map.getLayer('plates-chevrons-layer')) {
+        map.addLayer(
+          {
+            id: 'plates-chevrons-layer',
+            source: 'plates-chevrons-source',
+            type: 'circle',
+            paint: {
+              'circle-radius': 2.2,
+              'circle-color': '#222',
+              'circle-stroke-color': '#fff',
+              'circle-stroke-width': 0.7,
+              'circle-opacity': 0.75
+            }
+          },
+          'states-outline'
+        );
+      }
+    }
+    if (
+      await ensurePlatesVectorLayer(
+        map,
+        'plates-triple-junctions-source',
+        'triple_junctions'
+      )
+    ) {
+      if (!map.getLayer('plates-triple-junctions-layer')) {
+        map.addLayer(
+          {
+            id: 'plates-triple-junctions-layer',
+            source: 'plates-triple-junctions-source',
+            type: 'circle',
+            paint: {
+              'circle-radius': 4.2,
+              'circle-color': '#ffd400',
+              'circle-stroke-color': '#222',
+              'circle-stroke-width': 1.0,
+              'circle-opacity': 0.92
+            }
+          },
+          'states-outline'
+        );
+      }
+    }
+    if (await ensurePlatesVectorLayer(map, 'plates-enclaves-source', 'enclaves')) {
+      if (!map.getLayer('plates-enclaves-layer')) {
+        map.addLayer(
+          {
+            id: 'plates-enclaves-layer',
+            source: 'plates-enclaves-source',
+            type: 'circle',
+            paint: {
+              'circle-radius': 5.0,
+              'circle-color': '#ff5577',
+              'circle-stroke-color': '#fff',
+              'circle-stroke-width': 1.2,
+              'circle-opacity': 0.88
+            }
+          },
+          'states-outline'
+        );
+      }
+    }
+
+    refreshPlatesLayerVisibility(map);
+  }
+
+  function annotateFaultColors(map) {
+    const sourceObject = map.getSource('plates-faults-source');
+    if (!sourceObject) return;
+    try {
+      const data = sourceObject._data;
+      if (!data || !data.features) return;
+      for (const feature of data.features) {
+        const civPair = feature.properties && feature.properties.civ_pair;
+        if (civPair) {
+          feature.properties.civ_pair_color = civPairColor(civPair);
+        }
+      }
+      sourceObject.setData(data);
+    } catch (error) {
+      console.warn('[civvec/map] annotateFaultColors a échoué', error);
+    }
+  }
+
+  function setLayerVisibility(map, layerId, visible) {
+    if (!map.getLayer(layerId)) return;
+    map.setLayoutProperty(layerId, 'visibility', visible ? 'visible' : 'none');
+  }
+
+  function refreshPlatesLayerVisibility(map) {
+    if (currentDisplayMode !== 'plates') {
+      for (const layerId of [
+        'plates-base-layer',
+        'plates-margin-layer',
+        'plates-mask-layer',
+        'plates-faults-layer',
+        'plates-chevrons-layer',
+        'plates-triple-junctions-layer',
+        'plates-enclaves-layer'
+      ]) {
+        setLayerVisibility(map, layerId, false);
+      }
+      return;
+    }
+    setLayerVisibility(map, 'plates-base-layer', true);
+    setLayerVisibility(map, 'plates-faults-layer', true);
+    setLayerVisibility(
+      map,
+      'plates-margin-layer',
+      platesLayerToggleState.contested_margin
+    );
+    setLayerVisibility(
+      map,
+      'plates-chevrons-layer',
+      platesLayerToggleState.chevrons
+    );
+    setLayerVisibility(
+      map,
+      'plates-triple-junctions-layer',
+      platesLayerToggleState.triple_junctions
+    );
+    setLayerVisibility(
+      map,
+      'plates-enclaves-layer',
+      platesLayerToggleState.enclaves
+    );
+    setLayerVisibility(
+      map,
+      'plates-mask-layer',
+      platesLayerToggleState.uncertainty_mask
+    );
+  }
 
   function rasterByComponentAndMetric(componentId, metricId) {
     if (!continuousFieldIndex || !continuousFieldIndex.rasters) {
@@ -668,7 +1135,7 @@
   }
 
   function applyDisplayMode(map, legendContainer, mode) {
-    const allowedModes = ['macro', 'sub', 'provenance', 'continuous'];
+    const allowedModes = ['macro', 'sub', 'provenance', 'continuous', 'plates'];
     currentDisplayMode = allowedModes.includes(mode) ? mode : 'macro';
     const propertyKeyByMode = {
       macro: 'fill_color_macro',
@@ -685,6 +1152,17 @@
         map.setLayoutProperty('continuous-field-layer', 'visibility', 'visible');
       }
       applyContinuousFieldRaster(map);
+      refreshPlatesLayerVisibility(map);
+    } else if (currentDisplayMode === 'plates') {
+      if (map.getLayer('states-fill')) {
+        map.setPaintProperty('states-fill', 'fill-opacity', 0.0);
+      }
+      if (continuousLayerExists) {
+        map.setLayoutProperty('continuous-field-layer', 'visibility', 'none');
+      }
+      applyPlatesMode(map).catch((error) =>
+        console.error('[civvec/map] applyPlatesMode a échoué', error)
+      );
     } else {
       const propertyKey = propertyKeyByMode[currentDisplayMode];
       if (map.getLayer('states-fill')) {
@@ -702,6 +1180,7 @@
       if (continuousLayerExists) {
         map.setLayoutProperty('continuous-field-layer', 'visibility', 'none');
       }
+      refreshPlatesLayerVisibility(map);
     }
 
     const continuousSelectorContainer = document.querySelector(
@@ -710,6 +1189,11 @@
     if (continuousSelectorContainer) {
       continuousSelectorContainer.style.display =
         currentDisplayMode === 'continuous' ? 'flex' : 'none';
+    }
+    const platesTogglesContainer = document.querySelector('#civvec-map-plates-toggles');
+    if (platesTogglesContainer) {
+      platesTogglesContainer.style.display =
+        currentDisplayMode === 'plates' ? 'flex' : 'none';
     }
     const bannerElement = document.querySelector(
       '#civvec-continuous-mode-banner'
@@ -841,6 +1325,20 @@
       });
     }
 
+    const platesTogglesContainer = document.querySelector('#civvec-map-plates-toggles');
+    if (platesTogglesContainer) {
+      platesTogglesContainer.addEventListener('change', (changeEvent) => {
+        const target = changeEvent.target;
+        if (!target || !target.dataset || !target.dataset.platesLayer) return;
+        const layerKey = target.dataset.platesLayer;
+        if (!(layerKey in platesLayerToggleState)) return;
+        platesLayerToggleState[layerKey] = !!target.checked;
+        if (currentDisplayMode === 'plates') {
+          refreshPlatesLayerVisibility(map);
+        }
+      });
+    }
+
     // Bouton « Basculer vers le partenaire » (présent dans le bandeau lecture couplée).
     const bannerElement = document.querySelector(
       '#civvec-continuous-mode-banner'
@@ -892,6 +1390,7 @@
     }
 
     populateContinuousFieldSelector();
+    injectPlatesModeControls();
 
     const map = new maplibregl.Map({
       container: 'civvec-map',

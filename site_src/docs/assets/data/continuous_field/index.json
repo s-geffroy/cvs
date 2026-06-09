@@ -204,5 +204,152 @@
       "description_fr": "Profondeur du cœur civilisationnel — marge (d₂ − d₁) / d₁ entre les deux centroïdes les plus proches en B_score (Mahalanobis intra-civilisationnelle). Élevé = cœur stable, proche de 0 = fault line.",
       "read_mode": "standalone"
     }
-  ]
+  ],
+  "plates_and_faults": {
+    "description_fr": "Cartographie catégorielle des plaques civilisationnelles + failles vectorielles + masque d'incertitude — alternative au mode diffus « Champ continu (GP) ». Voir doc 17 §5.",
+    "rasters": [
+      {
+        "role": "plates",
+        "filename": "plates_and_faults/civ_plates_argmax.png",
+        "kind": "categorical",
+        "legend": [
+          {
+            "civilization_id": "western",
+            "color_hex": "#1f77b4",
+            "cell_count": 16604
+          },
+          {
+            "civilization_id": "orthodox",
+            "color_hex": "#9467bd",
+            "cell_count": 3614
+          },
+          {
+            "civilization_id": "islamic",
+            "color_hex": "#2ca02c",
+            "cell_count": 2594
+          },
+          {
+            "civilization_id": "sinic",
+            "color_hex": "#d62728",
+            "cell_count": 1537
+          },
+          {
+            "civilization_id": "hindic",
+            "color_hex": "#ff7f0e",
+            "cell_count": 1392
+          },
+          {
+            "civilization_id": "japanese",
+            "color_hex": "#e377c2",
+            "cell_count": 1995
+          },
+          {
+            "civilization_id": "buddhist",
+            "color_hex": "#bcbd22",
+            "cell_count": 2046
+          },
+          {
+            "civilization_id": "latin_american",
+            "color_hex": "#17becf",
+            "cell_count": 4407
+          },
+          {
+            "civilization_id": "african",
+            "color_hex": "#8c564b",
+            "cell_count": 22014
+          },
+          {
+            "civilization_id": "indigenous",
+            "color_hex": "#7f7f7f",
+            "cell_count": 920
+          },
+          {
+            "civilization_id": "oceanian",
+            "color_hex": "#aec7e8",
+            "cell_count": 8037
+          }
+        ],
+        "civilization_color_palette": {
+          "western": "#1f77b4",
+          "orthodox": "#9467bd",
+          "islamic": "#2ca02c",
+          "sinic": "#d62728",
+          "hindic": "#ff7f0e",
+          "japanese": "#e377c2",
+          "buddhist": "#bcbd22",
+          "latin_american": "#17becf",
+          "african": "#8c564b",
+          "indigenous": "#7f7f7f",
+          "oceanian": "#aec7e8"
+        }
+      },
+      {
+        "role": "contested_margin",
+        "filename": "plates_and_faults/civ_plates_contested_margin.png",
+        "kind": "diverging",
+        "colormap": "RdGy_r",
+        "value_min": 0.000527304713614285,
+        "value_max": 0.2932824492454529,
+        "description_fr": "Marge top1 − top2 du vecteur d'affinité : faible = zone contestée (deux civilisations comparables), élevée = identité tranchée."
+      },
+      {
+        "role": "uncertainty_mask",
+        "filename": "plates_and_faults/civ_plates_uncertainty_mask.png",
+        "kind": "mask",
+        "variance_threshold": 0.9234954714775085,
+        "description_fr": "Zones où la variance GP dépasse le quantile 0.60 — le champ y est peu fiable, hachuré pour signaler les artefacts du GP."
+      }
+    ],
+    "vector_layers": [
+      {
+        "role": "faults",
+        "filename": "plates_and_faults/civ_plates_faults.geojson",
+        "geometry": "LineString",
+        "style_hint": {
+          "line_width_on": "friction",
+          "line_opacity_on": "confidence",
+          "line_color_on": "civ_pair"
+        },
+        "friction_min": 0.000524876502460077,
+        "friction_max": 0.1701371922087727
+      },
+      {
+        "role": "chevrons",
+        "filename": "plates_and_faults/civ_plates_faults_chevrons.geojson",
+        "geometry": "Point",
+        "style_hint": {
+          "rotation_on": "bearing_deg"
+        }
+      },
+      {
+        "role": "triple_junctions",
+        "filename": "plates_and_faults/civ_plates_triple_junctions.geojson",
+        "geometry": "Point",
+        "style_hint": {
+          "marker": "diamond"
+        }
+      },
+      {
+        "role": "enclaves",
+        "filename": "plates_and_faults/civ_plates_enclaves.geojson",
+        "geometry": "Point",
+        "style_hint": {
+          "marker": "star"
+        }
+      }
+    ],
+    "civilization_ids_order": [
+      "western",
+      "orthodox",
+      "islamic",
+      "sinic",
+      "hindic",
+      "japanese",
+      "buddhist",
+      "latin_american",
+      "african",
+      "indigenous",
+      "oceanian"
+    ]
+  }
 }

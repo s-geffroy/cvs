@@ -26,6 +26,22 @@ from .deformation_tensor import (
     stack_jacobian_per_component,
 )
 from .curvilinear_distance import curvilinear_cultural_distance
+from .plates_and_faults import (
+    Chevron,
+    FaultSegment,
+    MergedFault,
+    chevrons_to_geojson,
+    compute_argmax_plates,
+    compute_top2_margin,
+    compute_uncertainty_mask,
+    detect_enclaves,
+    detect_triple_junctions,
+    extract_fault_segments,
+    merge_segments_by_civ_pair,
+    merged_faults_to_geojson,
+    points_to_geojson,
+    sample_chevrons,
+)
 
 __all__ = [
     "matern_3_2_sphere",
@@ -37,4 +53,18 @@ __all__ = [
     "deformation_tensor_invariants",
     "stack_jacobian_per_component",
     "curvilinear_cultural_distance",
+    "Chevron",
+    "FaultSegment",
+    "MergedFault",
+    "chevrons_to_geojson",
+    "compute_argmax_plates",
+    "compute_top2_margin",
+    "compute_uncertainty_mask",
+    "detect_enclaves",
+    "detect_triple_junctions",
+    "extract_fault_segments",
+    "merge_segments_by_civ_pair",
+    "merged_faults_to_geojson",
+    "points_to_geojson",
+    "sample_chevrons",
 ]

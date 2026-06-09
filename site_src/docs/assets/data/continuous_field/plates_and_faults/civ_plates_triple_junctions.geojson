@@ -1,0 +1,1671 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -88.5,
+          -60.5
+        ]
+      },
+      "properties": {
+        "civilizations": [
+          "african",
+          "buddhist",
+          "latin_american"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -90.5,
+          -59.5
+        ]
+      },
+      "properties": {
+        "civilizations": [
+          "african",
+          "buddhist",
+          "latin_american"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -89.5,
+          -59.5
+        ]
+      },
+      "properties": {
+        "civilizations": [
+          "african",
+          "buddhist",
+          "latin_american"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -36.5,
+          -57.5
+        ]
+      },
+      "properties": {
+        "civilizations": [
+          "african",
+          "buddhist",
+          "latin_american"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -35.5,
+          -56.5
+        ]
+      },
+      "properties": {
+        "civilizations": [
+          "african",
+          "buddhist",
+          "latin_american"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -34.5,
+          -56.5
+        ]
+      },
+      "properties": {
+        "civilizations": [
+          "african",
+          "buddhist",
+          "latin_american"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -33.5,
+          -55.5
+        ]
+      },
+      "properties": {
+        "civilizations": [
+          "african",
+          "buddhist",
+          "latin_american"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          90.5,
+          -34.5
+        ]
+      },
+      "properties": {
+        "civilizations": [
+          "african",
+          "oceanian",
+          "western"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -29.5,
+          -28.5
+        ]
+      },
+      "properties": {
+        "civilizations": [
+          "african",
+          "buddhist",
+          "latin_american"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -30.5,
+          -27.5
+        ]
+      },
+      "properties": {
+        "civilizations": [
+          "african",
+          "buddhist",
+          "latin_american"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -30.5,
+          -26.5
+        ]
+      },
+      "properties": {
+        "civilizations": [
+          "african",
+          "buddhist",
+          "latin_american"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -31.5,
+          -25.5
+        ]
+      },
+      "properties": {
+        "civilizations": [
+          "african",
+          "buddhist",
+          "latin_american"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -55.5,
+          -24.5
+        ]
+      },
+      "properties": {
+        "civilizations": [
+          "buddhist",
+          "indigenous",
+          "latin_american"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          178.5,
+          -24.5
+        ]
+      },
+      "properties": {
+        "civilizations": [
+          "african",
+          "oceanian",
+          "western"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          94.5,
+          -23.5
+        ]
+      },
+      "properties": {
+        "civilizations": [
+          "african",
+          "buddhist",
+          "western"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          168.5,
+          -23.5
+        ]
+      },
+      "properties": {
+        "civilizations": [
+          "african",
+          "oceanian",
+          "western"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -37.5,
+          -19.5
+        ]
+      },
+      "properties": {
+        "civilizations": [
+          "african",
+          "buddhist",
+          "latin_american"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.5,
+          -18.5
+        ]
+      },
+      "properties": {
+        "civilizations": [
+          "african",
+          "oceanian",
+          "western"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.5,
+          -16.5
+        ]
+      },
+      "properties": {
+        "civilizations": [
+          "buddhist",
+          "indigenous",
+          "latin_american"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.5,
+          -16.5
+        ]
+      },
+      "properties": {
+        "civilizations": [
+          "buddhist",
+          "sinic",
+          "western"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          74.5,
+          -15.5
+        ]
+      },
+      "properties": {
+        "civilizations": [
+          "african",
+          "buddhist",
+          "islamic"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          116.5,
+          -15.5
+        ]
+      },
+      "properties": {
+        "civilizations": [
+          "african",
+          "sinic",
+          "western"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          70.5,
+          -13.5
+        ]
+      },
+      "properties": {
+        "civilizations": [
+          "african",
+          "buddhist",
+          "islamic"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -72.5,
+          -12.5
+        ]
+      },
+      "properties": {
+        "civilizations": [
+          "buddhist",
+          "indigenous",
+          "latin_american"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          65.5,
+          -8.5
+        ]
+      },
+      "properties": {
+        "civilizations": [
+          "african",
+          "islamic",
+          "latin_american"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          95.5,
+          -7.5
+        ]
+      },
+      "properties": {
+        "civilizations": [
+          "african",
+          "buddhist",
+          "sinic"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.5,
+          -6.5
+        ]
+      },
+      "properties": {
+        "civilizations": [
+          "buddhist",
+          "indigenous",
+          "latin_american"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.5,
+          -3.5
+        ]
+      },
+      "properties": {
+        "civilizations": [
+          "buddhist",
+          "indigenous",
+          "latin_american"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.5,
+          -3.5
+        ]
+      },
+      "properties": {
+        "civilizations": [
+          "african",
+          "buddhist",
+          "sinic"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.5,
+          -2.5
+        ]
+      },
+      "properties": {
+        "civilizations": [
+          "african",
+          "buddhist",
+          "latin_american"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -107.5,
+          -1.5
+        ]
+      },
+      "properties": {
+        "civilizations": [
+          "buddhist",
+          "indigenous",
+          "latin_american"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.5,
+          -0.5
+        ]
+      },
+      "properties": {
+        "civilizations": [
+          "african",
+          "buddhist",
+          "latin_american"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          14.5,
+          2.5
+        ]
+      },
+      "properties": {
+        "civilizations": [
+          "african",
+          "hindic",
+          "oceanian"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          56.5,
+          2.5
+        ]
+      },
+      "properties": {
+        "civilizations": [
+          "african",
+          "islamic",
+          "latin_american"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          54.5,
+          3.5
+        ]
+      },
+      "properties": {
+        "civilizations": [
+          "african",
+          "hindic",
+          "islamic"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.5,
+          6.5
+        ]
+      },
+      "properties": {
+        "civilizations": [
+          "african",
+          "hindic",
+          "oceanian"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          79.5,
+          6.5
+        ]
+      },
+      "properties": {
+        "civilizations": [
+          "african",
+          "hindic",
+          "islamic"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -83.5,
+          7.5
+        ]
+      },
+      "properties": {
+        "civilizations": [
+          "buddhist",
+          "indigenous",
+          "latin_american"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          102.5,
+          7.5
+        ]
+      },
+      "properties": {
+        "civilizations": [
+          "african",
+          "buddhist",
+          "sinic"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -84.5,
+          8.5
+        ]
+      },
+      "properties": {
+        "civilizations": [
+          "african",
+          "buddhist",
+          "indigenous"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -83.5,
+          8.5
+        ]
+      },
+      "properties": {
+        "civilizations": [
+          "african",
+          "buddhist",
+          "latin_american"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          117.5,
+          9.5
+        ]
+      },
+      "properties": {
+        "civilizations": [
+          "african",
+          "buddhist",
+          "sinic"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -85.5,
+          10.5
+        ]
+      },
+      "properties": {
+        "civilizations": [
+          "african",
+          "buddhist",
+          "indigenous"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          88.5,
+          10.5
+        ]
+      },
+      "properties": {
+        "civilizations": [
+          "african",
+          "buddhist",
+          "hindic"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -86.5,
+          13.5
+        ]
+      },
+      "properties": {
+        "civilizations": [
+          "african",
+          "buddhist",
+          "indigenous"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          134.5,
+          13.5
+        ]
+      },
+      "properties": {
+        "civilizations": [
+          "african",
+          "japanese",
+          "oceanian"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          16.5,
+          17.5
+        ]
+      },
+      "properties": {
+        "civilizations": [
+          "african",
+          "hindic",
+          "islamic"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          56.5,
+          17.5
+        ]
+      },
+      "properties": {
+        "civilizations": [
+          "buddhist",
+          "hindic",
+          "islamic"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          125.5,
+          18.5
+        ]
+      },
+      "properties": {
+        "civilizations": [
+          "african",
+          "japanese",
+          "sinic"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -90.5,
+          20.5
+        ]
+      },
+      "properties": {
+        "civilizations": [
+          "african",
+          "indigenous",
+          "latin_american"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          46.5,
+          20.5
+        ]
+      },
+      "properties": {
+        "civilizations": [
+          "buddhist",
+          "hindic",
+          "islamic"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          91.5,
+          20.5
+        ]
+      },
+      "properties": {
+        "civilizations": [
+          "buddhist",
+          "hindic",
+          "islamic"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -135.5,
+          21.5
+        ]
+      },
+      "properties": {
+        "civilizations": [
+          "african",
+          "oceanian",
+          "western"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -127.5,
+          21.5
+        ]
+      },
+      "properties": {
+        "civilizations": [
+          "african",
+          "latin_american",
+          "western"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          97.5,
+          24.5
+        ]
+      },
+      "properties": {
+        "civilizations": [
+          "buddhist",
+          "islamic",
+          "sinic"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -90.5,
+          26.5
+        ]
+      },
+      "properties": {
+        "civilizations": [
+          "african",
+          "latin_american",
+          "western"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -68.5,
+          27.5
+        ]
+      },
+      "properties": {
+        "civilizations": [
+          "african",
+          "buddhist",
+          "western"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.5,
+          29.5
+        ]
+      },
+      "properties": {
+        "civilizations": [
+          "african",
+          "buddhist",
+          "western"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -51.5,
+          33.5
+        ]
+      },
+      "properties": {
+        "civilizations": [
+          "african",
+          "oceanian",
+          "western"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.5,
+          33.5
+        ]
+      },
+      "properties": {
+        "civilizations": [
+          "japanese",
+          "orthodox",
+          "sinic"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -31.5,
+          36.5
+        ]
+      },
+      "properties": {
+        "civilizations": [
+          "african",
+          "islamic",
+          "oceanian"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          29.5,
+          36.5
+        ]
+      },
+      "properties": {
+        "civilizations": [
+          "buddhist",
+          "islamic",
+          "latin_american"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          177.5,
+          36.5
+        ]
+      },
+      "properties": {
+        "civilizations": [
+          "african",
+          "japanese",
+          "oceanian"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          18.5,
+          37.5
+        ]
+      },
+      "properties": {
+        "civilizations": [
+          "buddhist",
+          "islamic",
+          "latin_american"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          19.5,
+          39.5
+        ]
+      },
+      "properties": {
+        "civilizations": [
+          "buddhist",
+          "latin_american",
+          "orthodox"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.5,
+          39.5
+        ]
+      },
+      "properties": {
+        "civilizations": [
+          "buddhist",
+          "latin_american",
+          "orthodox"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.5,
+          40.5
+        ]
+      },
+      "properties": {
+        "civilizations": [
+          "buddhist",
+          "islamic",
+          "oceanian"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          11.5,
+          40.5
+        ]
+      },
+      "properties": {
+        "civilizations": [
+          "hindic",
+          "islamic",
+          "western"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.5,
+          40.5
+        ]
+      },
+      "properties": {
+        "civilizations": [
+          "hindic",
+          "islamic",
+          "western"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.5,
+          40.5
+        ]
+      },
+      "properties": {
+        "civilizations": [
+          "hindic",
+          "islamic",
+          "western"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.5,
+          41.5
+        ]
+      },
+      "properties": {
+        "civilizations": [
+          "hindic",
+          "islamic",
+          "western"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          14.5,
+          41.5
+        ]
+      },
+      "properties": {
+        "civilizations": [
+          "buddhist",
+          "islamic",
+          "western"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          42.5,
+          41.5
+        ]
+      },
+      "properties": {
+        "civilizations": [
+          "buddhist",
+          "islamic",
+          "orthodox"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.5,
+          42.5
+        ]
+      },
+      "properties": {
+        "civilizations": [
+          "islamic",
+          "oceanian",
+          "western"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -2.5,
+          43.5
+        ]
+      },
+      "properties": {
+        "civilizations": [
+          "buddhist",
+          "oceanian",
+          "western"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.5,
+          43.5
+        ]
+      },
+      "properties": {
+        "civilizations": [
+          "buddhist",
+          "islamic",
+          "western"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.5,
+          43.5
+        ]
+      },
+      "properties": {
+        "civilizations": [
+          "islamic",
+          "oceanian",
+          "western"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          50.5,
+          43.5
+        ]
+      },
+      "properties": {
+        "civilizations": [
+          "hindic",
+          "islamic",
+          "orthodox"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          11.5,
+          44.5
+        ]
+      },
+      "properties": {
+        "civilizations": [
+          "buddhist",
+          "japanese",
+          "western"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          92.5,
+          44.5
+        ]
+      },
+      "properties": {
+        "civilizations": [
+          "buddhist",
+          "orthodox",
+          "sinic"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          79.5,
+          46.5
+        ]
+      },
+      "properties": {
+        "civilizations": [
+          "buddhist",
+          "islamic",
+          "sinic"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.5,
+          46.5
+        ]
+      },
+      "properties": {
+        "civilizations": [
+          "buddhist",
+          "orthodox",
+          "sinic"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.5,
+          46.5
+        ]
+      },
+      "properties": {
+        "civilizations": [
+          "buddhist",
+          "orthodox",
+          "sinic"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          11.5,
+          47.5
+        ]
+      },
+      "properties": {
+        "civilizations": [
+          "buddhist",
+          "japanese",
+          "western"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.5,
+          47.5
+        ]
+      },
+      "properties": {
+        "civilizations": [
+          "buddhist",
+          "islamic",
+          "orthodox"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          79.5,
+          47.5
+        ]
+      },
+      "properties": {
+        "civilizations": [
+          "buddhist",
+          "islamic",
+          "orthodox"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          66.5,
+          48.5
+        ]
+      },
+      "properties": {
+        "civilizations": [
+          "hindic",
+          "islamic",
+          "orthodox"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.5,
+          48.5
+        ]
+      },
+      "properties": {
+        "civilizations": [
+          "buddhist",
+          "islamic",
+          "orthodox"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          76.5,
+          48.5
+        ]
+      },
+      "properties": {
+        "civilizations": [
+          "buddhist",
+          "islamic",
+          "orthodox"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          15.5,
+          49.5
+        ]
+      },
+      "properties": {
+        "civilizations": [
+          "buddhist",
+          "orthodox",
+          "western"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          74.5,
+          49.5
+        ]
+      },
+      "properties": {
+        "civilizations": [
+          "buddhist",
+          "islamic",
+          "orthodox"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          161.5,
+          61.5
+        ]
+      },
+      "properties": {
+        "civilizations": [
+          "african",
+          "islamic",
+          "japanese"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          151.5,
+          62.5
+        ]
+      },
+      "properties": {
+        "civilizations": [
+          "islamic",
+          "japanese",
+          "orthodox"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -47.5,
+          64.5
+        ]
+      },
+      "properties": {
+        "civilizations": [
+          "latin_american",
+          "oceanian",
+          "western"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -22.5,
+          64.5
+        ]
+      },
+      "properties": {
+        "civilizations": [
+          "latin_american",
+          "oceanian",
+          "western"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          153.5,
+          71.5
+        ]
+      },
+      "properties": {
+        "civilizations": [
+          "african",
+          "islamic",
+          "orthodox"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.5,
+          80.5
+        ]
+      },
+      "properties": {
+        "civilizations": [
+          "african",
+          "oceanian",
+          "orthodox"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.5,
+          81.5
+        ]
+      },
+      "properties": {
+        "civilizations": [
+          "oceanian",
+          "orthodox",
+          "western"
+        ]
+      }
+    }
+  ]
+}

@@ -117,12 +117,42 @@ Module : `packages/civvec_core/continuous_field/deformation_tensor.py`. Validati
 
 L'UI publique intègre maintenant le champ continu :
 
-- Nouveau mode "Champ continu (GP)" dans `civvec-map-mode`.
+- Mode "Champ continu (GP, vue brute)" dans `civvec-map-mode` — désormais réservé à la consultation des champs scalaires bruts par composante ; pour la lecture éditoriale des zones de friction, voir §5 (Plaques & Failles).
 - Sélecteur composante (parmi 8 : x_viz_ts/se, x_score_pdi/idv/mas/uai/lto/ivr) × métrique (μ valeur prédite ou ‖∇μ‖ fault lines).
 - Image raster servie depuis `assets/data/continuous_field/<component>_<metric>.png` (PNG colormap RdBu_r ou plasma, ~50 KB chacun, 16 PNGs au total = 800 KB).
 - Frontières d'État conservées comme repère mais transparents en mode continu.
 
-## 5. Frontières d'État dans la visualisation
+## 5. Plaques & Failles civilisationnelles (V3.1)
+
+Le mode brut `‖∇μ‖` plasma souffre de quatre limites identifiées lors de l'audit éditorial du 2026-06-09 :
+
+1. **Diffus** : le GP Matérn 3/2 (`ℓ ≈ 0,25 rad ≈ 1 590 km`) étale les transitions ; les fault lines apparaissent comme des halos plutôt que comme des lignes.
+2. **Scalaire** : `‖∇μ‖` ne dit pas *quelles* civilisations s'opposent de part et d'autre.
+3. **Artefacts GP** : dans les zones de provenance `centroid_prior` ou `imputed_governance` (σ_n² jusqu'à 1.20), le GP hallucine des gradients.
+4. **Sans direction** : on perd l'orientation E-O vs N-S de la transition.
+
+La V3.1 introduit donc une cartographie alternative **Plaques & Failles**, dérivée du *même* champ d'affinité GP 11D sans refit, composée de cinq couches coordonnées :
+
+| Couche | Sortie | Sémantique |
+|---|---|---|
+| Plaques | `civ_plates_argmax.png` | Cellule = `argmax` sur le vecteur d'affinité 11D, coloration catégorielle (11 teintes ColorBrewer-style). |
+| Marges contestées | `civ_plates_contested_margin.png` | Choropleth divergent RdGy_r de `margin = top1 − top2`. Faible = identité interstitielle (= zone contestée). |
+| Failles | `civ_plates_faults.geojson` | LineString sur chaque arête où l'`argmax` flippe entre deux cellules voisines, fusionnées par paire de civilisations via union-find sur les endpoints. `line-width ∝ friction = mean(margin_A, margin_B) · d_cult(civ_A, civ_B)`, `line-opacity ∝ confidence = 1 − var_GP_max / var_planet`. Couleur = moyenne RGB des deux couleurs civ. |
+| Chevrons | `civ_plates_faults_chevrons.geojson` | Points échantillonnés tous les ~500 km le long des failles fusionnées, portant un bearing perpendiculaire à la tangente et pointant du côté **moins décisif** vers le côté **plus décisif** (sens de la « poussée » culturelle). |
+| Masque d'incertitude | `civ_plates_uncertainty_mask.png` | Trame grise diagonale sur les cellules dont la variance GP `predicted_variance` dépasse le 90e percentile planétaire. Évite la lecture des fault lines hallucinées. |
+
+**Bonus détecteurs** :
+
+- `civ_plates_triple_junctions.geojson` — Coins 2×2 où ≥ 3 civilisations se rencontrent (Caucase, Sahel, Asie centrale).
+- `civ_plates_enclaves.geojson` — Cellules dont l'`argmax` diffère de leurs 8 voisines (diasporas, micro-États culturels, enclaves religieuses).
+
+**Distance culturelle inter-civ** : utilise `intra_civilizational_covariance_inverse` (cf. `algebra/distances.py`) sur les centroïdes `mu_score` ; cohérent avec la robustesse intra-civ par défaut du projet.
+
+**Module et CLI** : `packages/civvec_core/continuous_field/plates_and_faults.py` (logique pure NumPy) + `apps/basis_builder/field/render_plates_and_faults.py` (orchestrateur d'export). Aucune re-prédiction GP : on lit `continuous_field_v2_arrays.npz` (clé `affinity_<civ>__predicted_mean` et `predicted_variance`) et on écrit les 3 PNG + 4 GeoJSON sous `site_src/docs/assets/data/continuous_field/plates_and_faults/`.
+
+**Intégration carto** : nouveau radio `plates` dans `civvec-map-mode`, 5 toggles secondaires (`Marges contestées`, `Chevrons`, `Triple junctions`, `Enclaves`, `Masque d'incertitude`). Le `index.json` carte ces artefacts sous la clé `plates_and_faults` à côté des `rasters` historiques, donc les modes existants restent intacts.
+
+## 6. Frontières d'État dans la visualisation
 
 Les frontières ADM0 sont **conservées comme repère visuel** mais **ne contraignent pas le modèle**. Sur la carte :
 
@@ -132,25 +162,27 @@ Les frontières ADM0 sont **conservées comme repère visuel** mais **ne contrai
 
 C'est un signal éditorial fort : « les valeurs culturelles n'obéissent pas aux frontières administratives ; voici la géographie continue qui en résulte ».
 
-## 6. Statut V3 et roadmap V4
+## 7. Statut V3 et roadmap V4
 
-| Item | V2 (06-07) | V3 (06-07 PM) | V4 prévu |
-|---|---|---|---|
-| 19 composantes (x_viz + x_score + affinity) | ✅ | ✅ | — |
-| Grille 1° × 1° (65 160 cellules) | ✅ | ✅ | Optionnel 0.25° (1 M cellules) |
-| Hyperparamètres ML par marginal likelihood | ✅ | ✅ | Optimisation par-output |
-| Sample points par centroïde pondéré (population) | ✅ NE 10m | ✅ NE 10m | GPW v4 / GHS-POP raster |
-| Bruit GP indexé sur cascade provenance | ✅ | ✅ | — |
-| Tests math (analytique vs FD) | ✅ 15 | ✅ 21 | Plus de cas edge |
-| Page Streamlit avec sélecteur composantes | ✅ | ✅ | — |
-| **MapLibre integration** (raster + sélecteur) | ❌ | ✅ V3 | Toggle quiver overlay |
-| **Distance algebra par intégrale curviligne** | ❌ | ✅ V3 | Mise à jour `algebra/distances.py` officielle |
-| **Tenseur de déformation G(p) + invariants** | ❌ | ✅ V3 | Couche cartographique d'anisotropie |
-| Validation empirique (champ vs ESS NUTS-2) | ❌ | ❌ | V4 |
-| Hyperparamètres optimisés par-output | ❌ | ❌ | V4 |
-| Couche carto anisotropy/quiver | ❌ | ❌ | V4 |
+| Item | V2 (06-07) | V3 (06-07 PM) | V3.1 (06-09) | V4 prévu |
+|---|---|---|---|---|
+| 19 composantes (x_viz + x_score + affinity) | ✅ | ✅ | ✅ | — |
+| Grille 1° × 1° (65 160 cellules) | ✅ | ✅ | ✅ | Optionnel 0.25° (1 M cellules) |
+| Hyperparamètres ML par marginal likelihood | ✅ | ✅ | ✅ | Optimisation par-output |
+| Sample points par centroïde pondéré (population) | ✅ NE 10m | ✅ NE 10m | ✅ | GPW v4 / GHS-POP raster |
+| Bruit GP indexé sur cascade provenance | ✅ | ✅ | ✅ | — |
+| Tests math (analytique vs FD) | ✅ 15 | ✅ 21 | ✅ 29 | Plus de cas edge |
+| Page Streamlit avec sélecteur composantes | ✅ | ✅ | ✅ | — |
+| **MapLibre integration** (raster + sélecteur) | ❌ | ✅ V3 | ✅ | Toggle quiver overlay |
+| **Distance algebra par intégrale curviligne** | ❌ | ✅ V3 | ✅ | Mise à jour `algebra/distances.py` officielle |
+| **Tenseur de déformation G(p) + invariants** | ❌ | ✅ V3 | ✅ | Couche cartographique d'anisotropie |
+| **Plaques & Failles** (argmax + faults vectoriels + masque) | ❌ | ❌ | ✅ V3.1 | Smoothing topologique des failles |
+| **Triple junctions + enclaves** | ❌ | ❌ | ✅ V3.1 | Liens vers sources historiques |
+| Validation empirique (champ vs ESS NUTS-2) | ❌ | ❌ | ❌ | V4 |
+| Hyperparamètres optimisés par-output | ❌ | ❌ | ❌ | V4 |
+| Couche carto anisotropy/quiver | ❌ | ❌ | ❌ | V4 |
 
-## 7. Références
+## 8. Références
 
 - Rasmussen, C. E. & Williams, C. K. I. (2006). *Gaussian Processes for Machine Learning*, MIT Press, ch. 4 (Matérn family).
 - Genton, M. G. (2001). « Classes of Kernels for Machine Learning: A Statistics Perspective ». *Journal of Machine Learning Research*, 2, 299-312.

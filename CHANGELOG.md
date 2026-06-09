@@ -7,6 +7,51 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added — Mode carto « Plaques & Failles » : cartographie catégorielle Huntington-style (2026-06-09)
+
+Nouveau mode de visualisation des zones de friction civilisationnelle, en
+remplacement du rendu diffus `‖∇μ‖` plasma jugé trop lisse, sans contexte
+(quelles civilisations s'opposent ?), sujet aux artefacts du GP dans les
+zones data-sparse, et sans direction. Dérivé du **même** champ d'affinité
+GP 11D, sans refit.
+
+- **Nouveau module** `packages/civvec_core/continuous_field/plates_and_faults.py` —
+  `argmax` sur le vecteur d'affinité 11D par cellule (→ plaques catégorielles),
+  marge `top1 − top2` (→ zones contestées), extraction de segments de
+  failles sur cell-edges où l'`argmax` flippe, fusion par paire de
+  civilisations via union-find sur endpoints, échantillonnage de chevrons
+  directionnels au pas de ~500 km, détection de triple junctions
+  (coins 2×2 à ≥ 3 civilisations distinctes) et d'enclaves (cellule
+  argmax-différente des 8 voisines).
+- **Nouveau CLI orchestrateur** `apps/basis_builder/field/render_plates_and_faults.py` —
+  écrit 3 PNG (plates catégorielles, marge divergente RdGy_r, masque
+  d'incertitude à hachures sur cellules `var_GP > q90`) et 4 GeoJSON
+  (failles, chevrons, triple junctions, enclaves) sous
+  `site_src/docs/assets/data/continuous_field/plates_and_faults/`.
+- **Index étendu** : `index.json` reçoit une nouvelle clé `plates_and_faults`
+  à côté de l'array `rasters` historique — aucun mode UI préexistant
+  n'est cassé.
+- **Intégration MapLibre** : nouveau radio `plates` dans `civvec-map-mode`,
+  cinq toggles secondaires (`Marges contestées`, `Chevrons`,
+  `Triple junctions`, `Enclaves`, `Masque d'incertitude`). Le mode
+  `Champ continu (GP)` est renommé `Champ continu (GP, vue brute)`
+  pour signaler son rôle d'inspection brute des champs scalaires.
+  Légende dédiée listant 11 couleurs civ, échelle `friction`,
+  marqueurs (chevron / diamant / étoile) et trame d'incertitude.
+- **Distance culturelle inter-civ** : ré-utilise
+  `intra_civilizational_covariance_inverse` sur les centroïdes `mu_score`
+  pour pondérer l'épaisseur des failles.
+- **Tests** : `tests/test_plates_and_faults.py` ajoute 8 cas couvrant
+  argmax ↔ entropie inverse, marge ∈ [0, 1], extraction de segments,
+  fusion union-find, masque quantile-9, triple junctions, enclaves,
+  et bearings des chevrons.
+- **Doc** : `docs/17_continuous_field.md` ajoute la section §5 « Plaques &
+  Failles » avec table de couches, §4.3 renommée pour signaler la
+  démotion du GP brut, table de roadmap §7 mise à jour avec colonne V3.1.
+
+Sorties typiques (planète entière, grille 1°) : 11 plaques, ~150 failles
+fusionnées, ~880 chevrons, ~98 triple junctions, ~8 enclaves.
+
 ### Changed — Audit critique du champ continu : length scale fixée, extrema écrêtés, descriptif corrigé (2026-06-08)
 
 Audit math du GP et des trois indicateurs synthétiques. Les fondations (noyau
