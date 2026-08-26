@@ -8,6 +8,8 @@ site_description: >-
   + critiques anticipées + validation empirique externe + sensibilité
   + baseline non-supervisé + glossaire.
 site_url: https://s-geffroy.github.io/cvs/
+copyright: >-
+  Un travail de <a href="https://www.ligne-de-crete.fr/travaux/cvs/">Ligne de crête</a>
 repo_url: https://github.com/s-geffroy/cvs
 repo_name: s-geffroy/cvs
 edit_uri: edit/main/site_src/docs/
