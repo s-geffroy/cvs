@@ -57,6 +57,7 @@ extra_javascript:
   - assets/js/basis_viz.js
   - assets/js/moments.js
   - assets/js/distances.js
+  - https://www.ligne-de-crete.fr/kit/v1/ldc-kit.js
 
 not_in_nav: |
   /states/*.md
